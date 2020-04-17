@@ -224,8 +224,8 @@ public class StaffLogIn extends javax.swing.JFrame {
 
             PreparedStatement pst = handler.getdbConnection().prepareStatement(check);
             pst.setString(1, txtPassword.getText());
-//            pst.setString(2, txtPassword.getText());
-//            pst.setString(3, txtPassword.getText());
+//            pst.setString(2, txtFirstName.getText());
+//            pst.setString(3, txtEmail.getText());
             ResultSet rs = pst.executeQuery();
 
             while (rs.next()) {
@@ -234,8 +234,9 @@ public class StaffLogIn extends javax.swing.JFrame {
                     JOptionPane.showMessageDialog(this, "Details are correct");
 //                    new Form().show();
 //                    this.dispose();
-                } else if (!a.equals(rs.getString("StaffName")) && (!b.equals(rs.getString("Email"))
-                        && (!c.equals(rs.getString("Password"))))) {
+                } 
+                else if (!a.equals(rs.getString("StaffName")) || (!b.equals(rs.getString("Email"))
+                        || (!c.equals(rs.getString("Password"))))) {
                     JOptionPane.showMessageDialog(this, "Invalid Details");
                 }
             }
