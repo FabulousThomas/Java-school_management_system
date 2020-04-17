@@ -7,6 +7,9 @@ package schoolmgtsystem.view;
 
 import java.awt.Image;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.InputStream;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.logging.Level;
@@ -83,8 +86,8 @@ public class StaffSignUp extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         txtHome = new javax.swing.JTextArea();
         jLabel14 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jLabel15 = new javax.swing.JLabel();	
+        Position = new javax.swing.JComboBox<>();
+        jLabel15 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         txtJobDes = new javax.swing.JTextArea();
         jLabel16 = new javax.swing.JLabel();
@@ -94,6 +97,9 @@ public class StaffSignUp extends javax.swing.JFrame {
         lblImage = new javax.swing.JLabel();
         btnPassport = new javax.swing.JButton();
         jSeparator6 = new javax.swing.JSeparator();
+        jSeparator12 = new javax.swing.JSeparator();
+        txtPassword = new javax.swing.JTextField();
+        jLabel11 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocationByPlatform(true);
@@ -139,7 +145,7 @@ public class StaffSignUp extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(0, 153, 204));
         jLabel6.setText("Position");
-        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, 70, -1));
+        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 320, 70, -1));
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(0, 153, 204));
@@ -154,7 +160,7 @@ public class StaffSignUp extends javax.swing.JFrame {
         jLabel10.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(0, 153, 204));
         jLabel10.setText("Gender");
-        jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 430, 60, -1));
+        jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 490, 60, -1));
 
         txtName.setBackground(new java.awt.Color(255, 255, 255));
         txtName.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -170,11 +176,11 @@ public class StaffSignUp extends javax.swing.JFrame {
         txtState.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         txtState.setForeground(new java.awt.Color(51, 51, 51));
         txtState.setBorder(null);
-        jPanel2.add(txtState, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 220, 310, 20));
+        jPanel2.add(txtState, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 280, 310, 20));
 
         jSeparator3.setBackground(new java.awt.Color(0, 102, 204));
         jSeparator3.setForeground(new java.awt.Color(0, 102, 204));
-        jPanel2.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, 310, -1));
+        jPanel2.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, 310, -1));
 
         txtTel1.setBackground(new java.awt.Color(255, 255, 255));
         txtTel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -237,12 +243,12 @@ public class StaffSignUp extends javax.swing.JFrame {
                 RMaleActionPerformed(evt);
             }
         });
-        jPanel2.add(RMale, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 420, 80, 30));
+        jPanel2.add(RMale, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 480, 80, 30));
 
         buttonGroup1.add(RFemale);
         RFemale.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         RFemale.setText("Female");
-        jPanel2.add(RFemale, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 420, 100, 30));
+        jPanel2.add(RFemale, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 480, 100, 30));
 
         jLabel12.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(0, 153, 204));
@@ -276,13 +282,13 @@ public class StaffSignUp extends javax.swing.JFrame {
         jLabel14.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(0, 153, 204));
         jLabel14.setText("State of origin");
-        jPanel2.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, 100, -1));
+        jPanel2.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, 100, -1));
 
-        jComboBox1.setBackground(new java.awt.Color(255, 255, 255));
-        jComboBox1.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jComboBox1.setForeground(new java.awt.Color(51, 51, 51));
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Position", "Head Teacher", "Quiz Master/Mistress", "Sports Master", "Spelling Bee Master/Mistress", "Assembly Cordinator" }));
-        jPanel2.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 280, 310, 30));
+        Position.setBackground(new java.awt.Color(255, 255, 255));
+        Position.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        Position.setForeground(new java.awt.Color(51, 51, 51));
+        Position.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Position", "Head Teacher", "Quiz Master/Mistress", "Sports Master", "Spelling Bee Master/Mistress", "Assembly Cordinator" }));
+        jPanel2.add(Position, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 340, 310, 30));
 
         jLabel15.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(0, 153, 204));
@@ -296,12 +302,12 @@ public class StaffSignUp extends javax.swing.JFrame {
         txtJobDes.setRows(5);
         jScrollPane2.setViewportView(txtJobDes);
 
-        jPanel2.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 350, 310, 50));
+        jPanel2.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 410, 310, 50));
 
         jLabel16.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel16.setForeground(new java.awt.Color(0, 153, 204));
         jLabel16.setText("Job Description");
-        jPanel2.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 330, 120, -1));
+        jPanel2.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 390, 120, -1));
 
         StartDate.setBackground(new java.awt.Color(255, 255, 255));
         StartDate.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -335,6 +341,21 @@ public class StaffSignUp extends javax.swing.JFrame {
         jSeparator6.setBackground(new java.awt.Color(0, 102, 204));
         jSeparator6.setForeground(new java.awt.Color(0, 102, 204));
         jPanel2.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, 310, -1));
+
+        jSeparator12.setBackground(new java.awt.Color(0, 102, 204));
+        jSeparator12.setForeground(new java.awt.Color(0, 102, 204));
+        jPanel2.add(jSeparator12, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, 310, -1));
+
+        txtPassword.setBackground(new java.awt.Color(255, 255, 255));
+        txtPassword.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        txtPassword.setForeground(new java.awt.Color(51, 51, 51));
+        txtPassword.setBorder(null);
+        jPanel2.add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 220, 310, 20));
+
+        jLabel11.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(0, 153, 204));
+        jLabel11.setText("Password");
+        jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, 80, -1));
 
         jPanel1.add(jPanel2);
         jPanel2.setBounds(340, 0, 990, 600);
@@ -413,18 +434,24 @@ public class StaffSignUp extends javax.swing.JFrame {
 //        }
 
         DBHandler handler = new DBHandler();
-        String str = "Insert into Teachers values(?,?,?,?,?,?,?,?)";
+        String str = "Insert into staff_details(StaffName,Passport,Email,Tel1,Tel2,"
+                + "JobDescription,Position,HomeAddress,StartDate,EndDate,Gender,Password,State) "
+                + "values(?,?,?,?,?,?,?,?,?,?,?,?,?)";
 
         try {
+            InputStream input = new FileInputStream(new File(s));
             PreparedStatement pst = handler.getdbConnection().prepareStatement(str);
 
             pst.setString(1, txtName.getText());
-//            pst.setString(2, txtSurname.getText());
-            pst.setString(3, txtState.getText());
+            pst.setBlob(2, input);
+            pst.setString(3, txtEmail.getText());
             pst.setString(4, txtTel1.getText());
-            pst.setString(5, txtEmail.getText());
-//            pst.setString(6, txtPassword.getText());
-//            pst.setString(7, txtSubject.getText());
+            pst.setString(5, txtTel2.getText());
+            pst.setString(6, txtJobDes.getText());
+            pst.setString(7, (String) Position.getSelectedItem());
+            pst.setString(8, txtHome.getText());
+            pst.setDate(9, convertUtilDateToSqlDate(StartDate.getDate()));
+            pst.setString(10, EndDate.getDateFormatString());
 
             String gender;
             if (RMale.isSelected()) {
@@ -432,18 +459,29 @@ public class StaffSignUp extends javax.swing.JFrame {
             } else {
                 gender = "Female";
             }
-            pst.setString(8, gender);
+            pst.setString(11, gender);
+            pst.setString(12, txtPassword.getText());
+            pst.setString(13, txtState.getText());
 
             int count = pst.executeUpdate();
-            JOptionPane.showMessageDialog(this, count + " You have successfully signup");
+            JOptionPane.showMessageDialog(this, count + " Successful");
+            pst.close();
+
             txtName.setText("");
-//            txtSurname.setText("");
+            lblImage.setText("");
             txtState.setText("");
             txtTel1.setText("");
+            txtTel2.setText("");
             txtEmail.setText("");
+            EndDate.setCalendar(null);
+            StartDate.setCalendar(null);
+            txtHome.setText("");
+            txtJobDes.setText("");
+            txtPassword.setText("");
+            Position.setSelectedIndex(0);
+
 //            txtPassword.setText("");
 //            txtSubject.setText("");
-
             new StaffLogIn().show();
             this.dispose();
 //        try {
@@ -473,7 +511,7 @@ public class StaffSignUp extends javax.swing.JFrame {
 //        } catch (ClassNotFoundException ex) {
 //            Logger.getLogger(PrincipalSignUp.class.getName()).log(Level.SEVERE, null, ex);
 //        }
-        } catch (ClassNotFoundException | SQLException ex) {
+        } catch (ClassNotFoundException | SQLException | FileNotFoundException ex) {
             Logger.getLogger(StaffSignUp.class.getName()).log(Level.SEVERE, null, ex);
         }
 
@@ -564,6 +602,7 @@ public class StaffSignUp extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private com.toedter.calendar.JDateChooser EndDate;
+    private javax.swing.JComboBox<String> Position;
     private javax.swing.JRadioButton RFemale;
     private javax.swing.JRadioButton RMale;
     private com.toedter.calendar.JDateChooser StartDate;
@@ -574,9 +613,9 @@ public class StaffSignUp extends javax.swing.JFrame {
     private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.ButtonGroup buttonGroup3;
     private javax.swing.ButtonGroup buttonGroup4;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
@@ -597,6 +636,7 @@ public class StaffSignUp extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator10;
     private javax.swing.JSeparator jSeparator11;
+    private javax.swing.JSeparator jSeparator12;
     private javax.swing.JSeparator jSeparator13;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;
@@ -610,6 +650,7 @@ public class StaffSignUp extends javax.swing.JFrame {
     private javax.swing.JTextArea txtHome;
     private javax.swing.JTextArea txtJobDes;
     private javax.swing.JTextField txtName;
+    private javax.swing.JTextField txtPassword;
     private javax.swing.JTextField txtState;
     private javax.swing.JTextField txtTel1;
     private javax.swing.JTextField txtTel2;

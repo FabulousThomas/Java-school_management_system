@@ -25,7 +25,7 @@ import schoolmgtsystem.dbhelper.DBHandler;
  * @author FabulousTHO
  */
 public class StaffLogIn extends javax.swing.JFrame {
-    
+
     String conStr = "jdbc:sqlserver://localhost;instanceName=SQLEXPRESS;databaseName=SchoolManagementSystem;user=sa;password=123456789";
 
     /**
@@ -171,6 +171,11 @@ public class StaffLogIn extends javax.swing.JFrame {
         btnLogIn.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btnLogIn.setForeground(new java.awt.Color(255, 255, 255));
         btnLogIn.setText("Sign In");
+        btnLogIn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLogInActionPerformed(evt);
+            }
+        });
         jPanel1.add(btnLogIn, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 380, 110, 36));
 
         btnCancel.setBackground(new java.awt.Color(0, 153, 204));
@@ -183,6 +188,11 @@ public class StaffLogIn extends javax.swing.JFrame {
         SignUp.setForeground(new java.awt.Color(0, 153, 204));
         SignUp.setText("Sign Up instead");
         SignUp.setAlignmentX(0.5F);
+        SignUp.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                SignUpMouseClicked(evt);
+            }
+        });
         jPanel1.add(SignUp, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 460, -1, 20));
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
@@ -194,6 +204,53 @@ public class StaffLogIn extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void SignUpMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SignUpMouseClicked
+        // TODO add your handling code here:
+
+        new StaffSignUp().show();
+        this.dispose();
+
+    }//GEN-LAST:event_SignUpMouseClicked
+
+    private void btnLogInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogInActionPerformed
+        try {
+            String a = txtFirstName.getText();
+            String b = txtEmail.getText();
+            String c = txtPassword.getText();
+
+            DBHandler handler = new DBHandler();
+            String check = "SELECT StaffName, Email, Password FROM staff_details WHERE Password = ?";
+
+            PreparedStatement pst = handler.getdbConnection().prepareStatement(check);
+            pst.setString(1, txtPassword.getText());
+//            pst.setString(2, txtPassword.getText());
+//            pst.setString(3, txtPassword.getText());
+            ResultSet rs = pst.executeQuery();
+
+            while (rs.next()) {
+                if (a.equals(rs.getString("StaffName")) && (b.equals(rs.getString("Email"))
+                        && (c.equals(rs.getString("Password"))))) {
+                    JOptionPane.showMessageDialog(this, "Details are correct");
+//                    new Form().show();
+//                    this.dispose();
+                } else if (!a.equals(rs.getString("StaffName")) && (!b.equals(rs.getString("Email"))
+                        && (!c.equals(rs.getString("Password"))))) {
+                    JOptionPane.showMessageDialog(this, "Invalid Details");
+                }
+            }
+
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Student.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(StaffLogIn.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+//        } catch (ClassNotFoundException | SQLException ex) {
+//            Logger.getLogger(StaffLogIn.class.getName()).log(Level.SEVERE, null, ex);
+//        }
+
+    }//GEN-LAST:event_btnLogInActionPerformed
 
     /**
      * @param args the command line arguments
