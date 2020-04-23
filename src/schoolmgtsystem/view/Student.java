@@ -5,16 +5,12 @@
  */
 package schoolmgtsystem.view;
 
-import java.awt.HeadlessException;
-import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
 import schoolmgtsystem.dbhelper.DBHandler;
 
@@ -33,7 +29,6 @@ public class Student extends javax.swing.JFrame {
     public Student() {
         initComponents();
         setLocationRelativeTo(null);
-        txtError.setVisible(false);
     }
 
     /**
@@ -56,22 +51,13 @@ public class Student extends javax.swing.JFrame {
         jSeparator4 = new javax.swing.JSeparator();
         jSeparator7 = new javax.swing.JSeparator();
         jSeparator8 = new javax.swing.JSeparator();
-        jSeparator9 = new javax.swing.JSeparator();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        btnOk = new javax.swing.JButton();
-        txtUserName = new javax.swing.JTextField();
-        txtError = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         txtFirstName = new javax.swing.JTextField();
         jSeparator1 = new javax.swing.JSeparator();
-        jLabel9 = new javax.swing.JLabel();
-        txtAddress = new javax.swing.JTextField();
-        jSeparator5 = new javax.swing.JSeparator();
         jLabel8 = new javax.swing.JLabel();
-        jPassword = new javax.swing.JPasswordField();
+        txtPassword = new javax.swing.JPasswordField();
         jSeparator6 = new javax.swing.JSeparator();
         btncancel = new javax.swing.JButton();
         btnSignIn = new javax.swing.JButton();
@@ -90,57 +76,17 @@ public class Student extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/schoolmgtsystem/IconImages/icons8_User_Account_100px.png"))); // NOI18N
-        jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 240, -1, 80));
+        jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 180, -1, 80));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Registered Student");
-        jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 150, -1, 30));
-        jPanel3.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 360, 256, 10));
-        jPanel3.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 380, 232, 10));
-        jPanel3.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 400, 184, 10));
-        jPanel3.add(jSeparator7, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 420, 142, 10));
-        jPanel3.add(jSeparator8, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 440, 116, 10));
-
-        jSeparator9.setBackground(new java.awt.Color(0, 0, 255));
-        jSeparator9.setForeground(new java.awt.Color(0, 51, 255));
-        jPanel3.add(jSeparator9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 220, -1));
-
-        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText("UserName");
-        jPanel3.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 80, -1));
-
-        jLabel7.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel7.setText("Retrieve your details with your UserName here");
-        jPanel3.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 260, -1));
-
-        btnOk.setText("OK");
-        btnOk.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnOkActionPerformed(evt);
-            }
-        });
-        jPanel3.add(btnOk, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 70, -1, -1));
-
-        txtUserName.setBackground(new java.awt.Color(51, 102, 255));
-        txtUserName.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        txtUserName.setBorder(null);
-        jPanel3.add(txtUserName, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 220, 20));
-
-        txtError.setEditable(false);
-        txtError.setBackground(new java.awt.Color(51, 102, 255));
-        txtError.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        txtError.setForeground(new java.awt.Color(255, 255, 255));
-        txtError.setText("   UserName not recognized");
-        txtError.setBorder(null);
-        txtError.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtErrorActionPerformed(evt);
-            }
-        });
-        jPanel3.add(txtError, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 260, 30));
+        jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 90, -1, 30));
+        jPanel3.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 300, 256, 10));
+        jPanel3.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 320, 232, 10));
+        jPanel3.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 340, 184, 10));
+        jPanel3.add(jSeparator7, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 360, 142, 10));
+        jPanel3.add(jSeparator8, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 380, 116, 10));
 
         jPanel1.add(jPanel3);
         jPanel3.setBounds(0, 0, 330, 480);
@@ -157,49 +103,37 @@ public class Student extends javax.swing.JFrame {
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 102, 204));
-        jLabel3.setText("First Name");
-        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 110, -1, -1));
+        jLabel3.setText("Full Name");
+        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 170, -1, -1));
 
         txtFirstName.setBackground(new java.awt.Color(255, 255, 255));
         txtFirstName.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         txtFirstName.setBorder(null);
-        jPanel2.add(txtFirstName, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 130, 280, 20));
+        jPanel2.add(txtFirstName, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 190, 280, 20));
 
         jSeparator1.setBackground(new java.awt.Color(0, 0, 255));
         jSeparator1.setForeground(new java.awt.Color(0, 51, 255));
-        jPanel2.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 150, 280, -1));
-
-        jLabel9.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(0, 102, 204));
-        jLabel9.setText("Email Address");
-        jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 210, -1, -1));
-
-        txtAddress.setBackground(new java.awt.Color(255, 255, 255));
-        txtAddress.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        txtAddress.setBorder(null);
-        jPanel2.add(txtAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 230, 280, 20));
-
-        jSeparator5.setBackground(new java.awt.Color(0, 0, 255));
-        jSeparator5.setForeground(new java.awt.Color(0, 51, 255));
-        jPanel2.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 250, 280, -1));
+        jPanel2.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 210, 280, -1));
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(0, 102, 204));
         jLabel8.setText("Password");
-        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 300, -1, -1));
+        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 250, -1, -1));
 
-        jPassword.setBackground(new java.awt.Color(255, 255, 255));
-        jPassword.setBorder(null);
-        jPanel2.add(jPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 320, 280, 20));
+        txtPassword.setBackground(new java.awt.Color(255, 255, 255));
+        txtPassword.setBorder(null);
+        jPanel2.add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 270, 280, 20));
 
         jSeparator6.setBackground(new java.awt.Color(0, 0, 255));
         jSeparator6.setForeground(new java.awt.Color(0, 0, 255));
-        jPanel2.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 340, 280, 10));
+        jPanel2.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 290, 280, 10));
 
-        btncancel.setBackground(new java.awt.Color(0, 102, 204));
+        btncancel.setBackground(new java.awt.Color(255, 255, 255));
         btncancel.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btncancel.setForeground(new java.awt.Color(255, 255, 255));
-        btncancel.setText("Cancel");
+        btncancel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/schoolmgtsystem/IconImages/icons8_Cancel.png"))); // NOI18N
+        btncancel.setToolTipText("Cancel");
+        btncancel.setBorder(null);
         btncancel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 btncancelMousePressed(evt);
@@ -210,12 +144,14 @@ public class Student extends javax.swing.JFrame {
                 btncancelActionPerformed(evt);
             }
         });
-        jPanel2.add(btncancel, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 380, 90, 30));
+        jPanel2.add(btncancel, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 320, 50, 40));
 
-        btnSignIn.setBackground(new java.awt.Color(0, 102, 204));
+        btnSignIn.setBackground(new java.awt.Color(255, 255, 255));
         btnSignIn.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btnSignIn.setForeground(new java.awt.Color(255, 255, 255));
-        btnSignIn.setText("Sign In");
+        btnSignIn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/schoolmgtsystem/IconImages/icons8_Login.png"))); // NOI18N
+        btnSignIn.setToolTipText("Login");
+        btnSignIn.setBorder(null);
         btnSignIn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 btnSignInMousePressed(evt);
@@ -226,7 +162,7 @@ public class Student extends javax.swing.JFrame {
                 btnSignInActionPerformed(evt);
             }
         });
-        jPanel2.add(btnSignIn, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 380, 90, 30));
+        jPanel2.add(btnSignIn, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 320, 50, 40));
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(0, 102, 204));
@@ -251,52 +187,70 @@ public class Student extends javax.swing.JFrame {
 
     private void btnSignInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSignInActionPerformed
 
-        String a = txtFirstName.getText();
-        String b = txtAddress.getText();
-        String c = jPassword.getText();
-        // TODO add your handling code here:
-        Pattern myPattern1 = Pattern.compile("^[a-z]+[a-z.0-9-]+@[a-z]+(\\.[a-z]+[a-z]+)([/?].*)?$");
-        Matcher myMatcher1 = myPattern1.matcher(txtAddress.getText());
-        Boolean myBoolean1 = myMatcher1.matches();
-
-        Pattern myPattern2 = Pattern.compile("^(?=.*[0-9])(?=.*[A-Z]).{8,}");
-        Matcher myMatcher2 = myPattern2.matcher(jPassword.getText());
-        Boolean myBoolean2 = myMatcher2.matches();
-
-        if ((myBoolean1 == true) && (myBoolean2 == true)) {
-            //JOptionPane.showMessageDialog(this, "Email and Password are correct");
-        } else {
-            JOptionPane.showMessageDialog(this, "Details matches");
-        }
-
+//        handler = new DBHandler();
+//        String getDetails = "SELECT StudentName, Password FROM student_details";
+//
+//        try {
+//            Statement smt = handler.getdbConnection().createStatement();
+//            ResultSet rs = smt.executeQuery(getDetails);
+//            while(rs.next()) {
+//                String name = rs.getString("StudentName");
+//                String pwd = rs.getString("Password");
+//                System.out.println("Student Name -> "+name+", Password ->"+pwd);
+//            }
+//            
+//        } catch (ClassNotFoundException | SQLException ex) {
+//            Logger.getLogger(Student.class.getName()).log(Level.SEVERE, null, ex);
+//        }
+        
         try {
+            String a = txtFirstName.getText();
+            String b = txtPassword.getText();
 
             handler = new DBHandler();
+            String str = "SELECT StudentName, Password FROM student_details WHERE Password=?";
 
-            String str = "Select FirstName, Email, Password from StudentReg where FirstName = ?";
-            try {
-                PreparedStatement pst = handler.getdbConnection().prepareStatement(str);
+            PreparedStatement pst = handler.getdbConnection().prepareStatement(str);
+            pst.setString(1, txtPassword.getText());
+            ResultSet rs = pst.executeQuery();
 
-                pst.setString(1, txtFirstName.getText());
-                ResultSet rs = pst.executeQuery();
-                while (rs.next()) {
-                    if (a.equals(rs.getString("FirstName")) && (b.equals(rs.getString("Email"))
-                            && (c.equals(rs.getString("Password"))))) {
-                        JOptionPane.showMessageDialog(this, "Details are correct");
-                        new Form().show();
-                        this.dispose();
-                    } else {
-                        JOptionPane.showMessageDialog(this, "Invalid Details");
-                    }
-                }
-
-            } catch (ClassNotFoundException ex) {
-                Logger.getLogger(Student.class.getName()).log(Level.SEVERE, null, ex);
+            if (a.length() == 0) {
+                JOptionPane.showMessageDialog(this, "Sorry!\nName can't be empty");
+            } else if (b.length() == 0) {
+                JOptionPane.showMessageDialog(this, "Sorry!\nPassword can't be empty");
             }
 
-        } catch (SQLException e) {
-            System.out.println("Error occured " + e);
+            if (rs.next()) {
+                if (!a.equals(rs.getString("StudentName"))) {
+                    JOptionPane.showMessageDialog(this, "Incorrect Name\nPlease re-type");
+                } else if (!b.equals(rs.getString("Password"))) {
+                    JOptionPane.showMessageDialog(this, "Incorrect Password\nPlease re-type");
+                } else if (a.equals(rs.getString("StudentName")) && b.equals(rs.getString("Password"))) {
+                    JOptionPane.showMessageDialog(this, "Welcome " + rs.getString("StudentName"));
+                }
+            }
+
+        } catch (ClassNotFoundException | SQLException ex) {
+            Logger.getLogger(Student.class.getName()).log(Level.SEVERE, null, ex);
         }
+
+        String pass = txtPassword.getText();
+        String str = "SELECT StudentName, Password FROM student_details WHERE StudentName=?";
+        PreparedStatement pst;
+        try {
+            pst = handler.getdbConnection().prepareStatement(str);
+            pst.setString(1, txtFirstName.getText());
+            ResultSet rs = pst.executeQuery();
+            if (rs.next()) {
+                if (!pass.equals(rs.getString("Password"))) {
+                    JOptionPane.showMessageDialog(this, "Incorrect Password\nPlease re-type");
+                }
+            }
+
+        } catch (ClassNotFoundException | SQLException ex) {
+            Logger.getLogger(Student.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
     }//GEN-LAST:event_btnSignInActionPerformed
 
     private void btncancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncancelActionPerformed
@@ -304,45 +258,6 @@ public class Student extends javax.swing.JFrame {
         setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btncancelActionPerformed
-
-    private void btnOkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOkActionPerformed
-        String a = txtUserName.getText();
-
-        try {
-
-            handler = new DBHandler();
-
-            String str = "select * from StudentReg where Username = ?";
-
-            try {
-                PreparedStatement pst = handler.getdbConnection().prepareStatement(str);
-                pst.setString(1, txtUserName.getText());
-                ResultSet rs = pst.executeQuery();
-                while (rs.next()) {
-                    if (a.equals(rs.getString("Username"))) {
-                        txtFirstName.setText(rs.getString("FirstName"));
-                        txtAddress.setText(rs.getString("Email"));
-                        jPassword.setText(rs.getString("Password"));
-                        JOptionPane.showMessageDialog(this, "Details retrieved successfully");
-                    } else {
-                        txtError.setText("UserName not recognized");
-                        //JOptionPane.showMessageDialog(this,"UserName not recognized");
-
-                    }
-                }
-
-            } catch (ClassNotFoundException ex) {
-                Logger.getLogger(Student.class.getName()).log(Level.SEVERE, null, ex);
-            }
-
-        } catch (SQLException e) {
-            System.out.println(e);
-        }
-    }//GEN-LAST:event_btnOkActionPerformed
-
-    private void txtErrorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtErrorActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtErrorActionPerformed
 
     /**
      * @param args the command line arguments
@@ -360,58 +275,19 @@ public class Student extends javax.swing.JFrame {
                     break;
                 }
             }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Student.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Student.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Student.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(Student.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
+
+        
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Student().setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            new Student().setVisible(true);
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnOk;
     private javax.swing.JButton btnSignIn;
     private javax.swing.JButton btncancel;
     private javax.swing.ButtonGroup buttonGroup1;
@@ -420,27 +296,19 @@ public class Student extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPasswordField jPassword;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;
-    private javax.swing.JSeparator jSeparator5;
     private javax.swing.JSeparator jSeparator6;
     private javax.swing.JSeparator jSeparator7;
     private javax.swing.JSeparator jSeparator8;
-    private javax.swing.JSeparator jSeparator9;
-    private javax.swing.JTextField txtAddress;
-    private javax.swing.JTextField txtError;
     static javax.swing.JTextField txtFirstName;
-    private javax.swing.JTextField txtUserName;
+    private javax.swing.JPasswordField txtPassword;
     // End of variables declaration//GEN-END:variables
 }

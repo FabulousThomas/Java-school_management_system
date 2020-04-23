@@ -248,30 +248,30 @@ public class PrincipalLogIn extends javax.swing.JFrame {
         String b = txtEmail.getText();
         String c = txtPassword.getText();
 
-        Pattern myPattern1 = Pattern.compile("^[a-z]+[a-z.0-9-]+@[a-z]+(\\.[a-z]+[a-z]+)([/?].*)?$");
-        Matcher myMatcher1 = myPattern1.matcher(txtEmail.getText());
-        Boolean myBoolean1 = myMatcher1.matches();
-
-        Pattern myPattern2 = Pattern.compile("^(?=.*[0-9])(?=.*[A-Z]).{8,}");
-        Matcher myMatcher2 = myPattern2.matcher(txtPassword.getText());
-        Boolean myBoolean2 = myMatcher2.matches();
-
-        if ((myBoolean1 == true) && (myBoolean2 == true)) {
-            //JOptionPane.showMessageDialog(this, "Email and Password are incorrect");
-        } else {
-            JOptionPane.showMessageDialog(this, "Email and Password are correct");
-        }
+//        Pattern myPattern1 = Pattern.compile("^[a-z]+[a-z.0-9-]+@[a-z]+(\\.[a-z]+[a-z]+)([/?].*)?$");
+//        Matcher myMatcher1 = myPattern1.matcher(txtEmail.getText());
+//        Boolean myBoolean1 = myMatcher1.matches();
+//
+//        Pattern myPattern2 = Pattern.compile("^(?=.*[0-9])(?=.*[A-Z]).{8,}");
+//        Matcher myMatcher2 = myPattern2.matcher(txtPassword.getText());
+//        Boolean myBoolean2 = myMatcher2.matches();
+//
+//        if ((myBoolean1 == true) && (myBoolean2 == true)) {
+//            //JOptionPane.showMessageDialog(this, "Email and Password are incorrect");
+//        } else {
+//            JOptionPane.showMessageDialog(this, "Email and Password are correct");
+//        }
 
         try {
 
             DBHandler handler = new DBHandler();
 
-            String str = "Select FirstName, EmailAddress, Password from Principal where FirstName = ?";
+            String str = "SELECT FirstName, Email, Password FROM admin WHERE FirstName = ?";
             PreparedStatement pst = handler.getdbConnection().prepareStatement(str);
             pst.setString(1, txtFirstName.getText());
             ResultSet rs = pst.executeQuery();
             while (rs.next()) {
-                if (a.equals(rs.getString("FirstName")) && (b.equals(rs.getString("EmailAddress"))
+                if (a.equals(rs.getString("FirstName")) && (b.equals(rs.getString("Email"))
                         && (c.equals(rs.getString("Password"))))) {
                     JOptionPane.showMessageDialog(null, "Details are correct");
                     new PrincipalView().show();
@@ -354,10 +354,8 @@ public class PrincipalLogIn extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new PrincipalLogIn().setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            new PrincipalLogIn().setVisible(true);
         });
     }
 

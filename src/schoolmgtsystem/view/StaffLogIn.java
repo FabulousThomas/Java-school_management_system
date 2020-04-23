@@ -5,28 +5,22 @@
  */
 package schoolmgtsystem.view;
 
-import java.awt.HeadlessException;
-import java.sql.Connection;
-import java.sql.DriverManager;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.EventListener;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-import javax.swing.JFrame;
 import javax.swing.JOptionPane;
-import javax.swing.JPanel;
 import schoolmgtsystem.dbhelper.DBHandler;
 
 /**
  *
  * @author FabulousTHO
  */
-public class StaffLogIn extends javax.swing.JFrame {
-
-    String conStr = "jdbc:sqlserver://localhost;instanceName=SQLEXPRESS;databaseName=SchoolManagementSystem;user=sa;password=123456789";
+public class StaffLogIn extends javax.swing.JFrame implements EventListener {
 
     /**
      * Creates new form TeacherLogIn
@@ -182,6 +176,11 @@ public class StaffLogIn extends javax.swing.JFrame {
         btnCancel.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btnCancel.setForeground(new java.awt.Color(255, 255, 255));
         btnCancel.setText("Cancel");
+        btnCancel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCancelActionPerformed(evt);
+            }
+        });
         jPanel1.add(btnCancel, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 380, 110, 36));
 
         SignUp.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
@@ -220,38 +219,42 @@ public class StaffLogIn extends javax.swing.JFrame {
             String c = txtPassword.getText();
 
             DBHandler handler = new DBHandler();
-            String check = "SELECT StaffName, Email, Password FROM staff_details WHERE Password = ?";
+            String check = "SELECT StaffName, Email, Password FROM staff_details WHERE Email = ?";
 
             PreparedStatement pst = handler.getdbConnection().prepareStatement(check);
-            pst.setString(1, txtPassword.getText());
-//            pst.setString(2, txtFirstName.getText());
-//            pst.setString(3, txtEmail.getText());
+            pst.setString(1, txtEmail.getText());
             ResultSet rs = pst.executeQuery();
 
             while (rs.next()) {
-                if (a.equals(rs.getString("StaffName")) && (b.equals(rs.getString("Email"))
-                        && (c.equals(rs.getString("Password"))))) {
+                if (a.equals(rs.getString("StaffName")) && b.equals(rs.getString("Email"))
+                        && c.equals(rs.getString("Password"))) {
                     JOptionPane.showMessageDialog(this, "Details are correct");
-//                    new Form().show();
-//                    this.dispose();
-                } 
-                else if (!a.equals(rs.getString("StaffName")) || (!b.equals(rs.getString("Email"))
-                        || (!c.equals(rs.getString("Password"))))) {
-                    JOptionPane.showMessageDialog(this, "Invalid Details");
+                    new ResultEntry().show();
+                    this.dispose();
+                }
+                if (!a.equals(rs.getString("StaffName")) || !b.equals(rs.getString("Email"))
+                        || !c.equals(rs.getString("Password"))) {
+                    JOptionPane.showMessageDialog(this, "Invalid Details\nPlease check and try again");
+
                 }
             }
+            if (a.isEmpty() || b.isEmpty() || c.isEmpty()) {
+                JOptionPane.showMessageDialog(this, "Field can't be empty");
+            }
 
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(Student.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (SQLException ex) {
+        } catch (ClassNotFoundException | SQLException ex) {
             Logger.getLogger(StaffLogIn.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-//        } catch (ClassNotFoundException | SQLException ex) {
-//            Logger.getLogger(StaffLogIn.class.getName()).log(Level.SEVERE, null, ex);
-//        }
-
     }//GEN-LAST:event_btnLogInActionPerformed
+
+    private void btnCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelActionPerformed
+        // TODO add your handling code here:
+
+        new Home().show();
+        this.dispose();
+
+    }//GEN-LAST:event_btnCancelActionPerformed
 
     /**
      * @param args the command line arguments
@@ -284,12 +287,26 @@ public class StaffLogIn extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new StaffLogIn().setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            new StaffLogIn().setVisible(true);
         });
     }
+
+//    public void btnDisable() {
+//        
+//        for (int count = 0; count < 5; count++) {
+//            if (count < 5) {
+//
+//                
+//                System.out.println("printed");
+//                btnLogIn.addActionListener((ActionEvent ae) -> {
+//                    this.disable();
+//                    JOptionPane.showMessageDialog(this, "You have exceeded your trials\nPlease try again");
+//                });
+//            }
+//
+//        }
+//    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel SignUp;

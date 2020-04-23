@@ -75,6 +75,7 @@ public class Home extends javax.swing.JFrame {
         setUndecorated(true);
         setResizable(false);
 
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 102, 255), 4));
         jPanel1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -111,6 +112,7 @@ public class Home extends javax.swing.JFrame {
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 800, 190));
 
+        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
         jPanel3.setForeground(new java.awt.Color(240, 240, 240));
         jPanel3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -158,6 +160,7 @@ public class Home extends javax.swing.JFrame {
 
         jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 230, 120, 120));
 
+        jPanel4.setBackground(new java.awt.Color(255, 255, 255));
         jPanel4.setForeground(new java.awt.Color(240, 240, 240));
         jPanel4.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -202,6 +205,7 @@ public class Home extends javax.swing.JFrame {
 
         jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 510, 120, 120));
 
+        jPanel6.setBackground(new java.awt.Color(255, 255, 255));
         jPanel6.setForeground(new java.awt.Color(240, 240, 240));
         jPanel6.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -249,6 +253,7 @@ public class Home extends javax.swing.JFrame {
 
         jPanel1.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 230, 120, 120));
 
+        jPanel5.setBackground(new java.awt.Color(255, 255, 255));
         jPanel5.setForeground(new java.awt.Color(240, 240, 240));
         jPanel5.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -299,6 +304,7 @@ public class Home extends javax.swing.JFrame {
 
         jPanel1.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 229, -1, 120));
 
+        jPanel7.setBackground(new java.awt.Color(255, 255, 255));
         jPanel7.setForeground(new java.awt.Color(240, 240, 240));
         jPanel7.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -345,6 +351,7 @@ public class Home extends javax.swing.JFrame {
 
         jPanel1.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 370, 120, 120));
 
+        jPanel8.setBackground(new java.awt.Color(255, 255, 255));
         jPanel8.setForeground(new java.awt.Color(240, 240, 240));
         jPanel8.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -392,6 +399,7 @@ public class Home extends javax.swing.JFrame {
 
         jPanel1.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 370, 120, 120));
 
+        jPanel9.setBackground(new java.awt.Color(255, 255, 255));
         jPanel9.setForeground(new java.awt.Color(240, 240, 240));
         jPanel9.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -436,6 +444,7 @@ public class Home extends javax.swing.JFrame {
 
         jPanel1.add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 370, 120, 120));
 
+        jPanel10.setBackground(new java.awt.Color(255, 255, 255));
         jPanel10.setForeground(new java.awt.Color(240, 240, 240));
         jPanel10.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -483,6 +492,7 @@ public class Home extends javax.swing.JFrame {
 
         jPanel1.add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 510, -1, 120));
 
+        jPanel11.setBackground(new java.awt.Color(255, 255, 255));
         jPanel11.setForeground(new java.awt.Color(240, 240, 240));
         jPanel11.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -605,7 +615,7 @@ public class Home extends javax.swing.JFrame {
     }
 
     public void resetcolor(JPanel panel) {
-        panel.setBackground(new java.awt.Color(240, 240, 240));
+        panel.setBackground(new java.awt.Color(255,255,255));
     }
 
     private JTextField panel;
@@ -719,10 +729,10 @@ public class Home extends javax.swing.JFrame {
     private void jPanel11MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel11MousePressed
         // TODO add your handling code here:
 
-        JOptionPane.showMessageDialog(this, "Still under construction.\nComing soon");
-//        new TimeTable().show();
+//        JOptionPane.showMessageDialog(this, "Still under construction.\nComing soon");
+        new TimeTable().show();
 //        setVisible(true);
-//        this.dispose();
+        this.dispose();
 
     }//GEN-LAST:event_jPanel11MousePressed
 
@@ -744,11 +754,11 @@ public class Home extends javax.swing.JFrame {
     private void jPanel9MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel9MousePressed
         // TODO add your handling code here:
 
-        JOptionPane.showMessageDialog(this, "Still under construction.\nComing soon");
+//        JOptionPane.showMessageDialog(this, "Still under construction.\nComing soon");
 
-//        new Student().show();
+        new Student().show();
 //        setVisible(true);
-//        this.dispose();
+        this.dispose();
     }//GEN-LAST:event_jPanel9MousePressed
 
     private void jPanel10MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel10MousePressed

@@ -228,6 +228,11 @@ public class StaffSignUp extends javax.swing.JFrame {
                 btncancelMousePressed(evt);
             }
         });
+        btncancel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btncancelActionPerformed(evt);
+            }
+        });
         jPanel2.add(btncancel, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 520, 110, 36));
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
@@ -316,7 +321,7 @@ public class StaffSignUp extends javax.swing.JFrame {
 
         jLabel17.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel17.setForeground(new java.awt.Color(0, 153, 204));
-        jLabel17.setText("Date of joining");
+        jLabel17.setText("End Date");
         jPanel2.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 400, 120, -1));
 
         EndDate.setBackground(new java.awt.Color(255, 255, 255));
@@ -440,32 +445,31 @@ public class StaffSignUp extends javax.swing.JFrame {
 
         try {
             InputStream input = new FileInputStream(new File(s));
-            PreparedStatement pst = handler.getdbConnection().prepareStatement(str);
-
-            pst.setString(1, txtName.getText());
-            pst.setBlob(2, input);
-            pst.setString(3, txtEmail.getText());
-            pst.setString(4, txtTel1.getText());
-            pst.setString(5, txtTel2.getText());
-            pst.setString(6, txtJobDes.getText());
-            pst.setString(7, (String) Position.getSelectedItem());
-            pst.setString(8, txtHome.getText());
-            pst.setDate(9, convertUtilDateToSqlDate(StartDate.getDate()));
-            pst.setString(10, EndDate.getDateFormatString());
-
-            String gender;
-            if (RMale.isSelected()) {
-                gender = "Male";
-            } else {
-                gender = "Female";
+            try (PreparedStatement pst = handler.getdbConnection().prepareStatement(str)) {
+                pst.setString(1, txtName.getText());
+                pst.setBlob(2, input);
+                pst.setString(3, txtEmail.getText());
+                pst.setString(4, txtTel1.getText());
+                pst.setString(5, txtTel2.getText());
+                pst.setString(6, txtJobDes.getText());
+                pst.setString(7, (String) Position.getSelectedItem());
+                pst.setString(8, txtHome.getText());
+                pst.setDate(9, convertUtilDateToSqlDate(StartDate.getDate()));
+                pst.setDate(10, convertUtilDateToSqlDate(EndDate.getDate()));
+                
+                String gender;
+                if (RMale.isSelected()) {
+                    gender = "Male";
+                } else {
+                    gender = "Female";
+                }
+                pst.setString(11, gender);
+                pst.setString(12, txtPassword.getText());
+                pst.setString(13, txtState.getText());
+                
+                int count = pst.executeUpdate();
+                JOptionPane.showMessageDialog(this, count + " Successful");
             }
-            pst.setString(11, gender);
-            pst.setString(12, txtPassword.getText());
-            pst.setString(13, txtState.getText());
-
-            int count = pst.executeUpdate();
-            JOptionPane.showMessageDialog(this, count + " Successful");
-            pst.close();
 
             txtName.setText("");
             lblImage.setText("");
@@ -540,6 +544,14 @@ public class StaffSignUp extends javax.swing.JFrame {
         }
 
     }//GEN-LAST:event_btnPassportActionPerformed
+
+    private void btncancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncancelActionPerformed
+        // TODO add your handling code here:
+        
+        new Home().show();
+        this.dispose();
+        
+    }//GEN-LAST:event_btncancelActionPerformed
 
     /**
      * @param args the command line arguments

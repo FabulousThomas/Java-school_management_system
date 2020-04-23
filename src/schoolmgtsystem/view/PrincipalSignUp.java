@@ -5,8 +5,6 @@
  */
 package schoolmgtsystem.view;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.logging.Level;
@@ -23,7 +21,6 @@ import schoolmgtsystem.dbhelper.DBHandler;
 public class PrincipalSignUp extends javax.swing.JFrame {
 
     //String conStr = "jdbc:sqlserver://localhost;instanceName=SQLEXPRESS;databaseName=Home;user=sa;password=123456789";
-
     /**
      * Creates new form PrincipalSignUp
      */
@@ -230,7 +227,7 @@ public class PrincipalSignUp extends javax.swing.JFrame {
         String b = txtFirstName.getText();
         String c = txtSurname.getText();
         String d = txtEmail.getText();
-        String f = txtPassword.getText();
+        String e = txtPassword.getText();
 
         Pattern myPattern1 = Pattern.compile("^[a-z]+[a-z.0-9-]+@[a-z]+(\\.[a-z]+[a-z]+)([/?].*)?$");
         Matcher myMatcher1 = myPattern1.matcher(txtEmail.getText());
@@ -244,95 +241,68 @@ public class PrincipalSignUp extends javax.swing.JFrame {
         //Pattern myPattern3 = Pattern.compile("^[0-9].{11}");
         //Matcher myMatcher3 = myPattern3.matcher(Phone.getText());
         //Boolean myBoolean3 = myMatcher3.matches();
-        if ((myBoolean1 == true) && (myBoolean2 == true)) {
-            //JOptionPane.showMessageDialog(this, "Email and Password are incorrect");
-        } else {
-//            JOptionPane.showMessageDialog(this, "Email and/or Password are incorrect");
-        }
-        if ((myBoolean1 == true) && (myBoolean2 == true)) {
+//        if ((myBoolean1 == true) && (myBoolean2 == true)) {
+//            //JOptionPane.showMessageDialog(this, "Email and Password are incorrect");
+//        } else {
+////            JOptionPane.showMessageDialog(this, "Email and/or Password are incorrect");
+//        }
+//        if ((myBoolean1 == true) && (myBoolean2 == true)) {
+//
+//            new PrincipalLogIn().show();
+//            this.dispose();
+//        }
+//        if ((myBoolean1 == false) && (myBoolean2 == false)) {
+//
+////            new PrincipalSignUp().dispose();
+//        }
+//        if ((myBoolean1 == true) && (myBoolean2 == false)) {
+//
+////            new PrincipalSignUp().show();
+//            this.dispose();
+//
+//        } else if ((myBoolean1 == false) && (myBoolean2 == true)) {
+//
+////            new PrincipalSignUp().show();
+//            this.dispose();
+//        }
+
+        DBHandler handler = new DBHandler();
+
+        String str = "INSERT INTO admin(username,FirstName,Surname,Email,Password,Gender)"
+                + " VALUES(?,?,?,?,?,?)";
+
+        try {
+            PreparedStatement pst = handler.getdbConnection().prepareStatement(str);
+            pst.setString(1, txtUsername.getText());
+            pst.setString(2, txtFirstName.getText());
+            pst.setString(3, txtSurname.getText());
+            pst.setString(4, txtEmail.getText());
+            pst.setString(5, txtPassword.getText());
+
+            String gender;
+            if (male.isSelected()) {
+                gender = "Male";
+            } else {
+                gender = "Female";
+            }
+            pst.setString(6, gender);
+
+            int count = pst.executeUpdate();
+            JOptionPane.showMessageDialog(this, count + " You have successfully signed up");
+            txtUsername.setText("");
+            txtFirstName.setText("");
+            txtSurname.setText("");
+            txtEmail.setText("");
+            txtPassword.setText("");
 
             new PrincipalLogIn().show();
             this.dispose();
-        }
-        if ((myBoolean1 == false) && (myBoolean2 == false)) {
 
-//            new PrincipalSignUp().dispose();
-        }
-        if ((myBoolean1 == true) && (myBoolean2 == false)) {
-
-//            new PrincipalSignUp().show();
-            this.dispose();
-
-        } else if ((myBoolean1 == false) && (myBoolean2 == true)) {
-
-//            new PrincipalSignUp().show();
-            this.dispose();
+        } catch (ClassNotFoundException | SQLException ex) {
+            Logger.getLogger(PrincipalSignUp.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-        try {
 
-            DBHandler handler = new DBHandler();
-
-            String str = "Insert into Principal values(?,?,?,?,?,?)";
-
-            try {
-                PreparedStatement pst = handler.getdbConnection().prepareStatement(str);
-                pst.setString(1, txtUsername.getText());
-                pst.setString(2, txtFirstName.getText());
-                pst.setString(3, txtSurname.getText());
-                pst.setString(4, txtEmail.getText());
-                pst.setString(5, txtPassword.getText());
-
-                String gender;
-                if (male.isSelected()) {
-                    gender = "Male";
-                } else {
-                    gender = "Female";
-                }
-                pst.setString(6, gender);
-
-                int count = pst.executeUpdate();
-                JOptionPane.showMessageDialog(this, count + " You have successfully signed up");
-                txtUsername.setText("");
-                txtFirstName.setText("");
-                txtSurname.setText("");
-                txtEmail.setText("");
-                txtPassword.setText("");
-
-                new PrincipalLogIn().show();
-                this.dispose();
-
-            } catch (ClassNotFoundException ex) {
-                Logger.getLogger(PrincipalSignUp.class.getName()).log(Level.SEVERE, null, ex);
-            }
-
-        } catch (SQLException e) {
-            System.out.println(e);
-        }
-
-//        try {
-//            String str = "Insert into Principal values(?,?,?,?,?)";
-//            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-//            try (Connection con = DriverManager.getConnection(conStr);
-//                    PreparedStatement smt = con.prepareStatement(str);) {
-//                smt.setString(1, txtUsername.getText());
-//                smt.setString(2, txtFirstName.getText());
-//                smt.setString(3, txtSurname.getText());
-//                smt.setString(4, txtEmail.getText());
-//                smt.setString(5, txtPassword.getText());
-//                int count = smt.executeUpdate();
-//                JOptionPane.showMessageDialog(this, count + " You have successfully signup");
-//                txtUsername.setText("");
-//                txtFirstName.setText("");
-//                txtSurname.setText("");
-//                txtEmail.setText("");
-//                txtPassword.setText("");
-//            } catch (Exception e) {
-//                System.out.println(e);
-//            }
-//        } catch (ClassNotFoundException ex) {
-//            Logger.getLogger(PrincipalSignUp.class.getName()).log(Level.SEVERE, null, ex);
-//        }
     }//GEN-LAST:event_btnSignUpActionPerformed
 
     /**
@@ -363,10 +333,8 @@ public class PrincipalSignUp extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new PrincipalSignUp().setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            new PrincipalSignUp().setVisible(true);
         });
     }
 

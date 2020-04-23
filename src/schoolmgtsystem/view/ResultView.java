@@ -174,10 +174,8 @@ public class ResultView extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new ResultView().setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            new ResultView().setVisible(true);
         });
     }
 

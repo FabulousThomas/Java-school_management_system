@@ -478,7 +478,7 @@ public class ExamResult extends javax.swing.JFrame {
 
     private void btnRankingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRankingActionPerformed
         // TODO add your handling code here:
-        double[] R = new double[19];
+        double[] R = new double[20];
 
         R[0] = Double.parseDouble(txtEnglish.getText());
         R[1] = Double.parseDouble(txtMaths.getText());
@@ -497,30 +497,31 @@ public class ExamResult extends javax.swing.JFrame {
         R[14] = Double.parseDouble(txtArts.getText());
         R[15] = Double.parseDouble(txtComputer.getText());
         R[16] = Double.parseDouble(txtFrench.getText());
+        R[17] = Double.parseDouble(txtCivic.getText());
 
-        R[17] = (R[0] + R[1] + R[2] + R[3] + R[4] + R[5] + R[6] + R[7] + R[8] + R[9] + R[10] + R[11] + R[12] + R[13] + R[14]
-                + R[15] + R[16]) / 17;
+        R[18] = (R[0] + R[1] + R[2] + R[3] + R[4] + R[5] + R[6] + R[7] + R[8] + R[9] + R[10] + R[11] + R[12] + R[13] + R[14]
+                + R[15] + R[16] + R[17]) / 18;
         //R[9] = (R[0] + R[1] + R[2] + R[3] + R[5] + R[6] + R[7])/7;
-        R[18] = R[0] + R[1] + R[2] + R[3] + R[4] + R[5] + R[6] + R[7] + R[8] + R[9] + R[10] + R[11] + R[12] + R[13] + R[14]
-                + R[15] + R[16];
+        R[19] = R[0] + R[1] + R[2] + R[3] + R[4] + R[5] + R[6] + R[7] + R[8] + R[9] + R[10] + R[11] + R[12] + R[13] + R[14]
+                + R[15] + R[16] + R[17];
 
-        String Average = String.format("%.0f", R[17]);
+        String Average = String.format("%.0f", R[18]);
         txtAverage.setText(Average);
 
-        String TotalScore = String.format("%.0f", R[18]);
+        String TotalScore = String.format("%.0f", R[19]);
         txtTotalScore.setText(TotalScore);
 
-        if (R[18] >= 700) {
+        if (R[19] >= 700) {
             txtPosition.setText("1st");
-        } else if (R[18] >= 600) {
+        } else if (R[19] >= 600) {
             txtPosition.setText("2nd");
-        } else if (R[18] >= 500) {
+        } else if (R[19] >= 500) {
             txtPosition.setText("3rd");
-        } else if (R[18] >= 400) {
+        } else if (R[19] >= 400) {
             txtPosition.setText("4th");
-        } else if (R[18] >= 300) {
+        } else if (R[19] >= 300) {
             txtPosition.setText("Average");
-        } else if (R[18] >= 200) {
+        } else if (R[19] >= 200) {
             txtPosition.setText("Fail");
         }
         //else if (R[10] >= 100){
@@ -601,7 +602,7 @@ public class ExamResult extends javax.swing.JFrame {
 
     private void btnGenerateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerateActionPerformed
         // TODO add your handling code here:
-        String str = "select * from sss_one where StudentID = ?";
+        String str = "select * from sss where StudentID = ?";
 
         try {
             handler = new DBHandler();
@@ -621,14 +622,15 @@ public class ExamResult extends javax.swing.JFrame {
                 txtEcons.setText(rs.getString("Economics_Total"));
                 txtPhysics.setText(rs.getString("Physics_Total"));
                 txtBiology.setText(rs.getString("Biology_Total"));
+                txtCivic.setText(rs.getString("Civic_Total"));
                 txtCRS.setText(rs.getString("CRS_Total"));
-                txtAccounting.setText(rs.getString("Accounting_Total"));
+                txtAccounting.setText(rs.getString("Account_Total"));
                 txtFMaths.setText(rs.getString("FMaths_Total"));
                 txtGeography.setText(rs.getString("Geography_Total"));
                 txtAgric.setText(rs.getString("Agric_Total"));
                 txtGovernment.setText(rs.getString("Government_Total"));
                 txtChemistry.setText(rs.getString("Chemistry_Total"));
-                txtArts.setText(rs.getString("Fine_Arts_Total"));
+                txtArts.setText(rs.getString("Arts_Total"));
                 txtComputer.setText(rs.getString("Computer_Total"));
                 txtFrench.setText(rs.getString("French_Total"));
 
@@ -787,7 +789,7 @@ public class ExamResult extends javax.swing.JFrame {
     public void printResult() throws IOException {
 
         //PreparedStatement to get the 1st and 2nd Test score
-        String str = "select * from sss_one where StudentID = ?";
+        String str = "select * from sss where StudentID = ?";
 
         handler = new DBHandler();
 
@@ -811,56 +813,59 @@ public class ExamResult extends javax.swing.JFrame {
             while (rs.next()) {
 
                 txtStudentID.setText(rs.getString("StudentID"));
-                english1 = rs.getString("English_Test1");
-                english2 = rs.getString("English_Test2");
+                english1 = rs.getString("English1");
+                english2 = rs.getString("English2");
                 englishE = rs.getString("English_Exam");
-                maths1 = rs.getString("Maths_Test1");
-                maths2 = rs.getString("Maths_Test2");
+                maths1 = rs.getString("Maths1");
+                maths2 = rs.getString("Maths2");
                 mathsE = rs.getString("Maths_Exam");
-                crs1 = rs.getString("CRS_Test1");
-                crs2 = rs.getString("CRS_Test2");
+                crs1 = rs.getString("CRS1");
+                crs2 = rs.getString("CRS2");
                 crsE = rs.getString("CRS_Exam");
-                fmaths1 = rs.getString("FMaths_Test1");
-                fmaths2 = rs.getString("FMaths_Test2");
+                fmaths1 = rs.getString("FMaths1");
+                fmaths2 = rs.getString("FMaths2");
                 fmathsE = rs.getString("FMaths_Exam");
-                acc1 = rs.getString("Accounting_Test1");
-                acc2 = rs.getString("Accounting_Test2");
-                accE = rs.getString("Accounting_Exam");
-                phy1 = rs.getString("Physics_Test1");
-                phy2 = rs.getString("Physics_Test2");
+                acc1 = rs.getString("Account1");
+                acc2 = rs.getString("Account2");
+                accE = rs.getString("Account_Exam");
+                phy1 = rs.getString("Physics1");
+                phy2 = rs.getString("Physics2");
                 phyE = rs.getString("Physics_Exam");
-                bio1 = rs.getString("Biology_Test1");
-                bio2 = rs.getString("Biology_Test2");
+                bio1 = rs.getString("Biology1");
+                bio2 = rs.getString("Biology2");
                 bioE = rs.getString("Biology_Exam");
-                gov1 = rs.getString("Government_Test1");
-                gov2 = rs.getString("Government_Test2");
+                civic1 = rs.getString("Civic1");
+                civic2 = rs.getString("Civic2");
+                civicE = rs.getString("Civic_Exam");
+                gov1 = rs.getString("Government1");
+                gov2 = rs.getString("Government2");
                 govE = rs.getString("Government_Exam");
-                ict1 = rs.getString("Computer_Test1");
-                ict2 = rs.getString("Computer_Test2");
+                ict1 = rs.getString("Computer1");
+                ict2 = rs.getString("Computer2");
                 ictE = rs.getString("Computer_Exam");
-                econ1 = rs.getString("Economics_Test1");
-                econ2 = rs.getString("Economics_Test2");
+                econ1 = rs.getString("Economics1");
+                econ2 = rs.getString("Economics2");
                 econE = rs.getString("Economics_Exam");
-                agric1 = rs.getString("Agric_Test1");
-                agric2 = rs.getString("Agric_Test2");
+                agric1 = rs.getString("Agric1");
+                agric2 = rs.getString("Agric2");
                 agricE = rs.getString("Agric_Exam");
-                lit1 = rs.getString("Literature_Test1");
-                lit2 = rs.getString("Literature_Test2");
+                lit1 = rs.getString("Literature1");
+                lit2 = rs.getString("Literature2");
                 litE = rs.getString("Literature_Exam");
-                geo1 = rs.getString("Geography_Test1");
-                geo2 = rs.getString("Geography_Test2");
+                geo1 = rs.getString("Geography1");
+                geo2 = rs.getString("Geography2");
                 geoE = rs.getString("Geography_Exam");
-                art1 = rs.getString("Fine_Arts_Test1");
-                art2 = rs.getString("Fine_Arts_Test2");
-                artE = rs.getString("Fine_Arts_Exam");
-                comm1 = rs.getString("Commerce_Test1");
-                comm2 = rs.getString("Commerce_Test2");
+                art1 = rs.getString("Arts1");
+                art2 = rs.getString("Arts2");
+                artE = rs.getString("Arts_Exam");
+                comm1 = rs.getString("Commerce1");
+                comm2 = rs.getString("Commerce2");
                 commE = rs.getString("Commerce_Exam");
-                chem1 = rs.getString("Chemistry_Test1");
-                chem2 = rs.getString("Chemistry_Test2");
+                chem1 = rs.getString("Chemistry1");
+                chem2 = rs.getString("Chemistry2");
                 chemE = rs.getString("Chemistry_Exam");
-                fre1 = rs.getString("French_Test1");
-                fre2 = rs.getString("French_Test2");
+                fre1 = rs.getString("French1");
+                fre2 = rs.getString("French2");
                 freE = rs.getString("French_Exam");
 
             }
@@ -945,7 +950,7 @@ public class ExamResult extends javax.swing.JFrame {
             ti.setFont(tiFont);
             font = ti.getFont();
             ti.setSpacingAfter(20f);
-            font.setColor(135,198,240);
+            font.setColor(135, 198, 240);
 //            font.setSize(30);
 
             Paragraph sl = new Paragraph();
@@ -953,26 +958,26 @@ public class ExamResult extends javax.swing.JFrame {
             sl.setAlignment(Element.ALIGN_CENTER);
             font = sl.getFont();
             sl.setSpacingAfter(20f);
-            font.setColor(135,198,240);
+            font.setColor(135, 198, 240);
             font.setSize(11);
 
             Paragraph sti = new Paragraph();
             sti.add("Omorodion Osaretin Str, Off Okuwague\nEvbabogun Road, Off Sapele Road, Benin City");
             sti.setAlignment(Element.ALIGN_CENTER);
             font = sti.getFont();
-            font.setColor(135,198,240);
+            font.setColor(135, 198, 240);
 
             Paragraph tele = new Paragraph();
             tele.add("Tel: 07067183000" + " \tEmail: informbrightstars@yahoo.com");
             tele.setAlignment(Element.ALIGN_CENTER);
             font = tele.getFont();
-            font.setColor(135,198,240);
+            font.setColor(135, 198, 240);
 
             Paragraph mot = new Paragraph();
             mot.add("MOTTO: Knowledge for Excellence");
             mot.setAlignment(Element.ALIGN_CENTER);
             font = mot.getFont();
-            font.setColor(135,198,240);
+            font.setColor(135, 198, 240);
 
             Paragraph name = new Paragraph();
             name.setAlignment(Element.ALIGN_CENTER);

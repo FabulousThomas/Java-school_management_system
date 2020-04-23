@@ -5,14 +5,10 @@
  */
 package schoolmgtsystem.view;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
 import schoolmgtsystem.dbhelper.DBHandler;
 

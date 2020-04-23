@@ -5,27 +5,21 @@
  */
 package schoolmgtsystem.view;
 
-import java.awt.HeadlessException;
 import java.awt.Image;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
-import java.sql.Connection;
-import java.sql.Date;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.time.LocalDate;
+import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
-import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import javax.swing.JTextField;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import schoolmgtsystem.dbhelper.DBHandler;
 
@@ -36,8 +30,6 @@ import schoolmgtsystem.dbhelper.DBHandler;
 public class StudentSignup extends javax.swing.JFrame {
 
     String s;
-//    PreparedStatement preparedStatement;
-//    String conStr = "jdbc:sqlserver://localhost;instanceName=SQLEXPRESS;databaseName=SchoolManagementSystem;user=sa;password=123456789";
 
     /**
      * Creates new form TeacherLogIn
@@ -67,6 +59,9 @@ public class StudentSignup extends javax.swing.JFrame {
         jSeparator9 = new javax.swing.JSeparator();
         jSeparator10 = new javax.swing.JSeparator();
         jSeparator11 = new javax.swing.JSeparator();
+        jLabel15 = new javax.swing.JLabel();
+        txtParentID = new javax.swing.JTextField();
+        btnID = new javax.swing.JButton();
         jSeparator12 = new javax.swing.JSeparator();
         jSeparator1 = new javax.swing.JSeparator();
         jSeparator2 = new javax.swing.JSeparator();
@@ -94,7 +89,6 @@ public class StudentSignup extends javax.swing.JFrame {
         CYes = new javax.swing.JCheckBox();
         CNo = new javax.swing.JCheckBox();
         jLabel14 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
         EndDate = new com.toedter.calendar.JDateChooser();
         RegDate = new com.toedter.calendar.JDateChooser();
@@ -104,6 +98,10 @@ public class StudentSignup extends javax.swing.JFrame {
         Medical = new javax.swing.JComboBox<>();
         PhysicalDis = new javax.swing.JComboBox<>();
         DisabilityType = new javax.swing.JComboBox<>();
+        jLabel17 = new javax.swing.JLabel();
+        txtPassword = new javax.swing.JPasswordField();
+        jLabel18 = new javax.swing.JLabel();
+        jSeparator4 = new javax.swing.JSeparator();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocationByPlatform(true);
@@ -132,6 +130,36 @@ public class StudentSignup extends javax.swing.JFrame {
         jPanel3.add(jSeparator10, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 410, 142, 10));
         jPanel3.add(jSeparator11, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 430, 116, 10));
 
+        jLabel15.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel15.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel15.setText("Click OK for parent ID");
+        jPanel3.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 450, -1, -1));
+
+        txtParentID.setEditable(false);
+        txtParentID.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        txtParentID.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtParentID.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtParentIDMouseClicked(evt);
+            }
+        });
+        txtParentID.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtParentIDActionPerformed(evt);
+            }
+        });
+        jPanel3.add(txtParentID, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 480, 80, 30));
+
+        btnID.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        btnID.setText("OK");
+        btnID.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnIDActionPerformed(evt);
+            }
+        });
+        jPanel3.add(btnID, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 520, -1, -1));
+
         jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 340, 650));
 
         jSeparator12.setBackground(new java.awt.Color(0, 102, 204));
@@ -144,7 +172,7 @@ public class StudentSignup extends javax.swing.JFrame {
 
         jSeparator2.setBackground(new java.awt.Color(0, 102, 204));
         jSeparator2.setForeground(new java.awt.Color(0, 51, 255));
-        jPanel1.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 250, 310, -1));
+        jPanel1.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 350, 230, -1));
 
         jSeparator3.setBackground(new java.awt.Color(0, 102, 204));
         jSeparator3.setForeground(new java.awt.Color(0, 51, 255));
@@ -259,6 +287,11 @@ public class StudentSignup extends javax.swing.JFrame {
         btncancel.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btncancel.setForeground(new java.awt.Color(255, 255, 255));
         btncancel.setText("Cancel");
+        btncancel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btncancelActionPerformed(evt);
+            }
+        });
         jPanel1.add(btncancel, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 570, 120, 36));
 
         Session.setBackground(new java.awt.Color(255, 255, 255));
@@ -288,12 +321,6 @@ public class StudentSignup extends javax.swing.JFrame {
         jLabel14.setForeground(new java.awt.Color(0, 102, 204));
         jLabel14.setText("Disability ?");
         jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 450, -1, -1));
-
-        jLabel15.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel15.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel15.setForeground(new java.awt.Color(0, 102, 204));
-        jLabel15.setText("Class");
-        jPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 210, -1, -1));
 
         jLabel16.setBackground(new java.awt.Color(255, 255, 255));
         jLabel16.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -343,6 +370,27 @@ public class StudentSignup extends javax.swing.JFrame {
         DisabilityType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "None", "Vision", "Hearing", "Thinking", "Learning", "Movement", "Mental health", "Communicating", "Social relationships", "Others" }));
         jPanel1.add(DisabilityType, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 520, 310, 30));
 
+        jLabel17.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel17.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel17.setForeground(new java.awt.Color(0, 102, 204));
+        jLabel17.setText("Password");
+        jPanel1.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 330, -1, -1));
+
+        txtPassword.setBackground(new java.awt.Color(255, 255, 255));
+        txtPassword.setForeground(new java.awt.Color(51, 51, 51));
+        txtPassword.setBorder(null);
+        jPanel1.add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 320, 230, 30));
+
+        jLabel18.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel18.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel18.setForeground(new java.awt.Color(0, 102, 204));
+        jLabel18.setText("Previous Class");
+        jPanel1.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 210, -1, -1));
+
+        jSeparator4.setBackground(new java.awt.Color(0, 102, 204));
+        jSeparator4.setForeground(new java.awt.Color(0, 51, 255));
+        jPanel1.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 250, 310, -1));
+
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1130, 630));
 
         pack();
@@ -351,14 +399,15 @@ public class StudentSignup extends javax.swing.JFrame {
     private void btnsignupActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsignupActionPerformed
 
         DBHandler handler = new DBHandler();
-        String insert = "INSERT INTO student_details(StudentName,Gender,PreviousSchool,PreviousClass,AdmissionClass,"
-                + "Session,PhysicalDisability,DisabilityType,MedicalCondition,Passport,Disability,RegDate,EndDate) "
-                + "VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?)";
+        String insert = "INSERT INTO student_details(ParentID,StudentName,Gender,PreviousSchool,PreviousClass,AdmissionClass,"
+                + "Session,PhysicalDisability,DisabilityType,MedicalCondition,Passport,Disability,RegDate,EndDate,Password) "
+                + "VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 
         try {
             try (PreparedStatement pst = handler.getdbConnection().prepareStatement(insert)) {
                 InputStream input = new FileInputStream(new File(s));
-                pst.setString(1, txtName.getText());
+                pst.setString(1, txtParentID.getText());
+                pst.setString(2, txtName.getText());
 
                 String gender;
                 if (CMale.isSelected()) {
@@ -366,15 +415,15 @@ public class StudentSignup extends javax.swing.JFrame {
                 } else {
                     gender = "Female";
                 }
-                pst.setString(2, gender);
-                pst.setString(3, txtPrevSchool.getText());
-                pst.setString(4, txtClass.getText());
-                pst.setString(5, txtAdmissionClass.getText());
-                pst.setInt(6, Session.getYear());
-                pst.setString(7, (String) PhysicalDis.getSelectedItem());
-                pst.setString(8, (String) DisabilityType.getSelectedItem());
-                pst.setString(9, (String) Medical.getSelectedItem());
-                pst.setBlob(10, input);
+                pst.setString(3, gender);
+                pst.setString(4, txtPrevSchool.getText());
+                pst.setString(5, txtClass.getText());
+                pst.setString(6, txtAdmissionClass.getText());
+                pst.setInt(7, Session.getYear());
+                pst.setString(8, (String) PhysicalDis.getSelectedItem());
+                pst.setString(9, (String) DisabilityType.getSelectedItem());
+                pst.setString(10, (String) Medical.getSelectedItem());
+                pst.setBlob(11, input);
 
                 String disability;
                 if (CYes.isSelected()) {
@@ -383,9 +432,10 @@ public class StudentSignup extends javax.swing.JFrame {
                     disability = "No";
                 }
 
-                pst.setString(11, disability);
-                pst.setDate(12, convertUtilDateToSqlDate(RegDate.getDate()));
-                pst.setDate(13, convertUtilDateToSqlDate(EndDate.getDate()));
+                pst.setString(12, disability);
+                pst.setDate(13, convertUtilDateToSqlDate(RegDate.getDate()));
+                pst.setDate(14, convertUtilDateToSqlDate(EndDate.getDate()));
+                pst.setString(15, txtPassword.getText());
 
                 int count = pst.executeUpdate();
                 JOptionPane.showMessageDialog(this, count + "Successful");
@@ -420,6 +470,43 @@ public class StudentSignup extends javax.swing.JFrame {
 
 
     }//GEN-LAST:event_btnPassportActionPerformed
+
+    private void btncancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncancelActionPerformed
+        // TODO add your handling code here:
+
+        new Home().show();
+        this.dispose();
+
+    }//GEN-LAST:event_btncancelActionPerformed
+
+    private void txtParentIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtParentIDActionPerformed
+
+//        this.addActionListener(txtParentID); 
+    }//GEN-LAST:event_txtParentIDActionPerformed
+
+    private void btnIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIDActionPerformed
+
+        DBHandler handler = new DBHandler();
+        String getParentID = "SELECT ParentID FROM parent_details";
+        try {
+            Statement smt = handler.getdbConnection().createStatement();
+            ResultSet rs = smt.executeQuery(getParentID);
+
+            while (rs.next()) {
+                String id = rs.getString("ParentID");
+                txtParentID.setText(id);
+                System.out.println(id);
+            }
+
+        } catch (ClassNotFoundException | SQLException ex) {
+            Logger.getLogger(StudentSignup.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+    }//GEN-LAST:event_btnIDActionPerformed
+
+    private void txtParentIDMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtParentIDMouseClicked
+        JOptionPane.showMessageDialog(txtParentID, "Sorry, not editable");  
+    }//GEN-LAST:event_txtParentIDMouseClicked
 
     /**
      * @param args the command line arguments
@@ -523,6 +610,7 @@ public class StudentSignup extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> PhysicalDis;
     private com.toedter.calendar.JDateChooser RegDate;
     private com.toedter.calendar.JYearChooser Session;
+    private javax.swing.JButton btnID;
     private javax.swing.JButton btnPassport;
     private javax.swing.JButton btncancel;
     private javax.swing.JButton btnsignup;
@@ -536,6 +624,8 @@ public class StudentSignup extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -552,6 +642,7 @@ public class StudentSignup extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator12;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
+    private javax.swing.JSeparator jSeparator4;
     private javax.swing.JSeparator jSeparator5;
     private javax.swing.JSeparator jSeparator7;
     private javax.swing.JSeparator jSeparator8;
@@ -560,6 +651,12 @@ public class StudentSignup extends javax.swing.JFrame {
     private javax.swing.JTextField txtAdmissionClass;
     private javax.swing.JTextField txtClass;
     private javax.swing.JTextField txtName;
+    private javax.swing.JTextField txtParentID;
+    private javax.swing.JPasswordField txtPassword;
     private javax.swing.JTextField txtPrevSchool;
     // End of variables declaration//GEN-END:variables
+
+    private void addActionListener(JTextField txtParentID) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

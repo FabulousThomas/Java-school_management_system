@@ -381,7 +381,7 @@ public class ResultEntry extends javax.swing.JFrame {
         jLabel148 = new javax.swing.JLabel();
         jsThirdEnglish = new javax.swing.JTextField();
         jsExamPanel = new javax.swing.JPanel();
-        jsThirdPanel2 = new javax.swing.JPanel();
+        jsExamPanel1 = new javax.swing.JPanel();
         jPanel11 = new javax.swing.JPanel();
         jLabel149 = new javax.swing.JLabel();
         jLabel150 = new javax.swing.JLabel();
@@ -2711,7 +2711,7 @@ public class ResultEntry extends javax.swing.JFrame {
 
         LayeredPane.add(jsThirdPanel, "card9");
 
-        jsThirdPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jsExamPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel11.setBackground(new java.awt.Color(0, 153, 204));
 
@@ -2746,152 +2746,157 @@ public class ResultEntry extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jsThirdPanel2.add(jPanel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 980, -1));
+        jsExamPanel1.add(jPanel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 980, -1));
 
         jLabel151.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel151.setText("Student ID");
-        jsThirdPanel2.add(jLabel151, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, -1, 28));
+        jsExamPanel1.add(jLabel151, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, -1, 28));
 
         jsExamID.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        jsThirdPanel2.add(jsExamID, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 90, 102, 31));
+        jsExamPanel1.add(jsExamID, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 90, 102, 31));
 
         jsExamLit.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        jsThirdPanel2.add(jsExamLit, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 230, 102, 31));
+        jsExamPanel1.add(jsExamLit, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 230, 102, 31));
 
         jLabel152.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel152.setText("Literature");
-        jsThirdPanel2.add(jLabel152, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 230, -1, 28));
+        jsExamPanel1.add(jLabel152, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 230, -1, 28));
 
         jsExamMaths.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        jsThirdPanel2.add(jsExamMaths, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 290, 102, 31));
+        jsExamPanel1.add(jsExamMaths, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 290, 102, 31));
 
         jLabel153.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel153.setText("Mathematics");
-        jsThirdPanel2.add(jLabel153, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 290, -1, 28));
+        jsExamPanel1.add(jLabel153, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 290, -1, 28));
 
         jsExamBS.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        jsThirdPanel2.add(jsExamBS, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 350, 102, 31));
+        jsExamPanel1.add(jsExamBS, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 350, 102, 31));
 
         jLabel154.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel154.setText("Basic Science");
-        jsThirdPanel2.add(jLabel154, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 350, -1, 28));
+        jsExamPanel1.add(jLabel154, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 350, -1, 28));
 
         jsExamBT.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        jsThirdPanel2.add(jsExamBT, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 410, 102, 31));
+        jsExamPanel1.add(jsExamBT, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 410, 102, 31));
 
         jLabel155.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel155.setText("Basic Tech");
-        jsThirdPanel2.add(jLabel155, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 410, -1, 28));
+        jsExamPanel1.add(jLabel155, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 410, -1, 28));
 
         jLabel156.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel156.setText("ICT");
-        jsThirdPanel2.add(jLabel156, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 230, -1, 28));
+        jsExamPanel1.add(jLabel156, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 230, -1, 28));
 
         jsExamICT.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        jsThirdPanel2.add(jsExamICT, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 230, 102, 31));
+        jsExamPanel1.add(jsExamICT, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 230, 102, 31));
 
         jLabel157.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel157.setText("PHE");
-        jsThirdPanel2.add(jLabel157, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 170, -1, 28));
+        jsExamPanel1.add(jLabel157, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 170, -1, 28));
 
         jsExamPHE.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        jsThirdPanel2.add(jsExamPHE, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 170, 102, 31));
+        jsExamPanel1.add(jsExamPHE, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 170, 102, 31));
 
         jLabel158.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel158.setText("CRS");
-        jsThirdPanel2.add(jLabel158, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 290, -1, 28));
+        jsExamPanel1.add(jLabel158, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 290, -1, 28));
 
         jsExamCRS.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        jsThirdPanel2.add(jsExamCRS, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 290, 102, 31));
+        jsExamPanel1.add(jsExamCRS, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 290, 102, 31));
 
         jLabel159.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel159.setText("Social Studies");
-        jsThirdPanel2.add(jLabel159, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 350, -1, 28));
+        jsExamPanel1.add(jLabel159, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 350, -1, 28));
 
         jsExamSocial.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        jsThirdPanel2.add(jsExamSocial, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 350, 102, 31));
+        jsExamPanel1.add(jsExamSocial, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 350, 102, 31));
 
         jLabel160.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel160.setText("Civic Education");
-        jsThirdPanel2.add(jLabel160, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 410, -1, 28));
+        jsExamPanel1.add(jLabel160, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 410, -1, 28));
 
         jsExamCivic.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        jsThirdPanel2.add(jsExamCivic, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 410, 102, 31));
+        jsExamPanel1.add(jsExamCivic, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 410, 102, 31));
 
         jLabel161.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel161.setText("Security Education");
-        jsThirdPanel2.add(jLabel161, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 170, -1, 28));
+        jsExamPanel1.add(jLabel161, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 170, -1, 28));
 
         jLabel162.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel162.setText("Home Economics");
-        jsThirdPanel2.add(jLabel162, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 230, -1, 28));
+        jsExamPanel1.add(jLabel162, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 230, -1, 28));
 
         jLabel163.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel163.setText("Agric Science");
-        jsThirdPanel2.add(jLabel163, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 290, -1, 28));
+        jsExamPanel1.add(jLabel163, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 290, -1, 28));
 
         jLabel164.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel164.setText("Music");
-        jsThirdPanel2.add(jLabel164, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 350, -1, 28));
+        jsExamPanel1.add(jLabel164, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 350, -1, 28));
 
         jLabel165.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel165.setText("Drama & Stage");
-        jsThirdPanel2.add(jLabel165, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 410, -1, 28));
+        jsExamPanel1.add(jLabel165, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 410, -1, 28));
 
         jsExamDrama_Stage.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        jsThirdPanel2.add(jsExamDrama_Stage, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 410, 102, 31));
+        jsExamPanel1.add(jsExamDrama_Stage, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 410, 102, 31));
 
         jsExamMusic.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        jsThirdPanel2.add(jsExamMusic, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 350, 102, 31));
+        jsExamPanel1.add(jsExamMusic, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 350, 102, 31));
 
         jsExamAgric.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        jsThirdPanel2.add(jsExamAgric, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 290, 102, 31));
+        jsExamPanel1.add(jsExamAgric, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 290, 102, 31));
 
         jsExamHome.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        jsThirdPanel2.add(jsExamHome, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 230, 102, 31));
+        jsExamPanel1.add(jsExamHome, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 230, 102, 31));
 
         jsExamSecurity.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        jsThirdPanel2.add(jsExamSecurity, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 170, 102, 31));
+        jsExamPanel1.add(jsExamSecurity, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 170, 102, 31));
 
         jLabel166.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel166.setText("Art & Craft");
-        jsThirdPanel2.add(jLabel166, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 470, -1, 28));
+        jsExamPanel1.add(jLabel166, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 470, -1, 28));
 
         jsExamArt_Craft.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        jsThirdPanel2.add(jsExamArt_Craft, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 470, 102, 31));
+        jsExamPanel1.add(jsExamArt_Craft, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 470, 102, 31));
 
         jLabel167.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel167.setText("Business Studies");
-        jsThirdPanel2.add(jLabel167, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 470, -1, 28));
+        jsExamPanel1.add(jLabel167, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 470, -1, 28));
 
         jsExamBusiness.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        jsThirdPanel2.add(jsExamBusiness, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 470, 102, 31));
+        jsExamPanel1.add(jsExamBusiness, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 470, 102, 31));
 
         jLabel168.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel168.setText("French");
-        jsThirdPanel2.add(jLabel168, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 470, -1, 28));
+        jsExamPanel1.add(jLabel168, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 470, -1, 28));
 
         jsExamFrench.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        jsThirdPanel2.add(jsExamFrench, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 470, 102, 31));
+        jsExamPanel1.add(jsExamFrench, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 470, 102, 31));
 
         jLabel169.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel169.setText("Edo Language");
-        jsThirdPanel2.add(jLabel169, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 530, -1, 28));
+        jsExamPanel1.add(jLabel169, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 530, -1, 28));
 
         jsExamEdo.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        jsThirdPanel2.add(jsExamEdo, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 530, 102, 31));
+        jsExamPanel1.add(jsExamEdo, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 530, 102, 31));
 
         jLabel170.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel170.setText("Moral Instruction");
-        jsThirdPanel2.add(jLabel170, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 530, -1, 28));
+        jsExamPanel1.add(jLabel170, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 530, -1, 28));
 
         jsExamMoral.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        jsThirdPanel2.add(jsExamMoral, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 530, 102, 31));
+        jsExamPanel1.add(jsExamMoral, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 530, 102, 31));
 
         btnjsExamInsert.setBackground(new java.awt.Color(0, 153, 204));
         btnjsExamInsert.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         btnjsExamInsert.setText("INSERT");
-        jsThirdPanel2.add(btnjsExamInsert, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 580, 120, 36));
+        btnjsExamInsert.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnjsExamInsertActionPerformed(evt);
+            }
+        });
+        jsExamPanel1.add(btnjsExamInsert, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 580, 120, 36));
 
         btnjsExamCancel.setBackground(new java.awt.Color(255, 0, 0));
         btnjsExamCancel.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
@@ -2901,14 +2906,14 @@ public class ResultEntry extends javax.swing.JFrame {
                 btnjsExamCancelActionPerformed(evt);
             }
         });
-        jsThirdPanel2.add(btnjsExamCancel, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 580, 120, 36));
+        jsExamPanel1.add(btnjsExamCancel, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 580, 120, 36));
 
         jLabel171.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel171.setText("English S.");
-        jsThirdPanel2.add(jLabel171, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 170, -1, 28));
+        jsExamPanel1.add(jLabel171, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 170, -1, 28));
 
         jsExamEnglish.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        jsThirdPanel2.add(jsExamEnglish, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 170, 102, 31));
+        jsExamPanel1.add(jsExamEnglish, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 170, 102, 31));
 
         javax.swing.GroupLayout jsExamPanelLayout = new javax.swing.GroupLayout(jsExamPanel);
         jsExamPanel.setLayout(jsExamPanelLayout);
@@ -2916,13 +2921,13 @@ public class ResultEntry extends javax.swing.JFrame {
             jsExamPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 980, Short.MAX_VALUE)
             .addGroup(jsExamPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jsThirdPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jsExamPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jsExamPanelLayout.setVerticalGroup(
             jsExamPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 630, Short.MAX_VALUE)
             .addGroup(jsExamPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jsThirdPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 630, Short.MAX_VALUE))
+                .addComponent(jsExamPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 630, Short.MAX_VALUE))
         );
 
         LayeredPane.add(jsExamPanel, "card10");
@@ -4273,39 +4278,37 @@ public class ResultEntry extends javax.swing.JFrame {
 
     private void btnInsertFirstTestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInsertFirstTestActionPerformed
 
-        String str = "INSERT INTO sss_one(Maths_Test1, English_Test1, Commerce_Test1,"
-                + " Economics_Test1, Physics_Test1, Biology_Test1, Accounting_Test1, "
-                + "Civic_Test1, FMaths_Test1, Literature_Test1, Geography_Test1, CRS_Test1,"
-                + "Government_Test1, Chemistry_Test1, Agric_Test1,"
-                + "Fine_Arts_Test1, Computer_Test1, French_Test1)"
-                + " VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+        String str = "INSERT INTO sss(English1, Maths1, Commerce1, Economics1, Biology1, Physics1, Account1, Civic1,"
+                + " FMaths1, Literature1, Geography1, CRS1, Government1, Chemistry1, Agric1, Arts1, Computer1, French1)"
+                + " VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 
         DBHandler handler = new DBHandler();
 
         try {
-            PreparedStatement pst = handler.getdbConnection().prepareStatement(str);
-            pst.setString(1, txtFirstMaths.getText());
-            pst.setString(2, txtFirstEnglish.getText());
-            pst.setString(3, txtFirstComm.getText());
-            pst.setString(4, txtFirstEcons.getText());
-            pst.setString(5, txtFirstPhy.getText());
-            pst.setString(6, txtFirstBio.getText());
-            pst.setString(7, txtFirstAccount.getText());
-            pst.setString(8, txtFirstCivic.getText());
-            pst.setString(9, txtFirstFMaths.getText());
-            pst.setString(10, txtFirstLit.getText());
-            pst.setString(11, txtFirstGeo.getText());
-            pst.setString(12, txtFirstCRS.getText());
-            pst.setString(13, txtFirstGov.getText());
-            pst.setString(14, txtFirstChem.getText());
-            pst.setString(15, txtFirstAgric.getText());
-            pst.setString(16, txtFirstFineArts.getText());
-            pst.setString(17, txtFirstComputer.getText());
-            pst.setString(18, txtFirstFrench.getText());
-            pst.executeUpdate();
+            try (PreparedStatement pst = handler.getdbConnection().prepareStatement(str)) {
+                pst.setString(1, txtFirstMaths.getText());
+                pst.setString(2, txtFirstEnglish.getText());
+                pst.setString(3, txtFirstComm.getText());
+                pst.setString(4, txtFirstEcons.getText());
+                pst.setString(5, txtFirstPhy.getText());
+                pst.setString(6, txtFirstBio.getText());
+                pst.setString(7, txtFirstAccount.getText());
+                pst.setString(8, txtFirstCivic.getText());
+                pst.setString(9, txtFirstFMaths.getText());
+                pst.setString(10, txtFirstLit.getText());
+                pst.setString(11, txtFirstGeo.getText());
+                pst.setString(12, txtFirstCRS.getText());
+                pst.setString(13, txtFirstGov.getText());
+                pst.setString(14, txtFirstChem.getText());
+                pst.setString(15, txtFirstAgric.getText());
+                pst.setString(16, txtFirstFineArts.getText());
+                pst.setString(17, txtFirstComputer.getText());
+                pst.setString(18, txtFirstFrench.getText());
+                pst.executeUpdate();
 
-            System.out.println("Inserted");
-            pst.close();
+                JOptionPane.showConfirmDialog(this, "Inserted");
+                System.out.println("Inserted");
+            }
 
         } catch (ClassNotFoundException | SQLException ex) {
             Logger.getLogger(DBHandler.class.getName()).log(Level.SEVERE, null, ex);
@@ -4324,11 +4327,10 @@ public class ResultEntry extends javax.swing.JFrame {
 
     private void btnInsertSecondTestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInsertSecondTestActionPerformed
 
-        String str = "UPDATE sss_one SET Maths_Test2 = ?, English_Test2 = ?, Commerce_Test2 = ?,"
-                + " Economics_Test2 = ?, Physics_Test2 = ?, Biology_Test2 = ?, Accounting_Test2 = ?,"
-                + " Civic_Test2 = ?, FMaths_Test2 = ?, Literature_Test2 = ?, Geography_Test2 = ?,"
-                + " CRS_Test2 = ?, Government_Test2 = ?, Chemistry_Test2 = ?, Agric_Test2 = ?,"
-                + "Fine_Arts_Test2 = ?, Computer_Test2 = ?, French_Test2 = ? WHERE StudentID = ?";
+        String str = "UPDATE sss SET Maths2 = ?, English2 = ?, Commerce2 = ?, Economics2 = ?,"
+                + " Physics2 = ?, Biology2 = ?, Account2 = ?, Civic2 = ?, FMaths2 = ?, Literature2 = ?,"
+                + " Geography2 = ?, CRS2 = ?, Government2 = ?, Chemistry2 = ?, Agric2 = ?, Arts2 = ?, Computer2 = ?,"
+                + " French2 = ? WHERE StudentID = ?";
 
         DBHandler handler = new DBHandler();
 
@@ -4495,40 +4497,38 @@ public class ResultEntry extends javax.swing.JFrame {
 
     private void btnjsFirstInsertActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnjsFirstInsertActionPerformed
 
-        String str = "INSERT INTO jss( English_Test1, Literature_Test1, Maths_Test1,"
-                + " BS_Test1, BT_Test1, PHE_Test1, ICT_Test1, CRS_Test1, Social_Test1,"
-                + " Civic_Test1, Security_Test1, Home_Test1, Agric_Test1, Music_Test1, "
-                + "Drama_Stage_Test1, Art_Craft_Test1, Business_Test1, French_Test1, Edo_Test1, Moral_Test1)"
+        String str = "INSERT INTO jss( english1, literature1, maths1, bs1, bt1, phe1, ict1, crs1, social1,"
+                + " civic1, security1, home1, agric1, music1, drama1, art1, business1, french1, edo1, moral1)"
                 + " VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 
         DBHandler handler = new DBHandler();
 
         try {
-            PreparedStatement pst = handler.getdbConnection().prepareStatement(str);
-            pst.setString(1, jsFirstEnglish.getText());
-            pst.setString(2, jsFirstLit.getText());
-            pst.setString(3, jsFirstMaths.getText());
-            pst.setString(4, jsFirstBS.getText());
-            pst.setString(5, jsFirstBT.getText());
-            pst.setString(6, jsFirstPHE.getText());
-            pst.setString(7, jsFirstICT.getText());
-            pst.setString(8, jsFirstCRS.getText());
-            pst.setString(9, jsFirstSocial.getText());
-            pst.setString(10, jsFirstCivic.getText());
-            pst.setString(11, jsFirstSecurity.getText());
-            pst.setString(12, jsFirstHome.getText());
-            pst.setString(13, jsFirstAgric.getText());
-            pst.setString(14, jsFirstMusic.getText());
-            pst.setString(15, jsFirstDrama_Stage.getText());
-            pst.setString(16, jsFirstArt_Craft.getText());
-            pst.setString(17, jsFirstBusiness.getText());
-            pst.setString(18, jsFirstFrench.getText());
-            pst.setString(19, jsFirstEdo.getText());
-            pst.setString(20, jsFirstMoral.getText());
-            pst.executeUpdate();
+            try (PreparedStatement pst = handler.getdbConnection().prepareStatement(str)) {
+                pst.setString(1, jsFirstEnglish.getText());
+                pst.setString(2, jsFirstLit.getText());
+                pst.setString(3, jsFirstMaths.getText());
+                pst.setString(4, jsFirstBS.getText());
+                pst.setString(5, jsFirstBT.getText());
+                pst.setString(6, jsFirstPHE.getText());
+                pst.setString(7, jsFirstICT.getText());
+                pst.setString(8, jsFirstCRS.getText());
+                pst.setString(9, jsFirstSocial.getText());
+                pst.setString(10, jsFirstCivic.getText());
+                pst.setString(11, jsFirstSecurity.getText());
+                pst.setString(12, jsFirstHome.getText());
+                pst.setString(13, jsFirstAgric.getText());
+                pst.setString(14, jsFirstMusic.getText());
+                pst.setString(15, jsFirstDrama_Stage.getText());
+                pst.setString(16, jsFirstArt_Craft.getText());
+                pst.setString(17, jsFirstBusiness.getText());
+                pst.setString(18, jsFirstFrench.getText());
+                pst.setString(19, jsFirstEdo.getText());
+                pst.setString(20, jsFirstMoral.getText());
+                pst.executeUpdate();
 
-            System.out.println("Inserted");
-            pst.close();
+                System.out.println("Inserted");
+            }
 
         } catch (ClassNotFoundException | SQLException ex) {
             Logger.getLogger(DBHandler.class.getName()).log(Level.SEVERE, null, ex);
@@ -4547,63 +4547,63 @@ public class ResultEntry extends javax.swing.JFrame {
 
     private void btnInsertThirdTestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInsertThirdTestActionPerformed
 
-        String str = "UPDATE sss_one SET Maths_Test3 = ?, English_Test3 = ?, Commerce_Test3 = ?,"
-                + " Economics_Test3 = ?, Physics_Test3 = ?, Biology_Test3 = ?, Accounting_Test3 = ?,"
-                + " Civic_Test3 = ?, FMaths_Test3 = ?, Literature_Test3 = ?, Geography_Test3 = ?,"
-                + " CRS_Test3 = ?, Government_Test3 = ?, Chemistry_Test3 = ?, Agric_Test3 = ?,"
-                + "Fine_Arts_Test3 = ?, Computer_Test3 = ?, French_Test3 = ? WHERE StudentID = ?";
-
-        DBHandler handler = new DBHandler();
-
-        try {
-            PreparedStatement pst = handler.getdbConnection().prepareStatement(str);
-
-            pst.setString(1, txtThirdMaths.getText());
-            pst.setString(2, txtThirdEnglish.getText());
-            pst.setString(3, txtThirdComm.getText());
-            pst.setString(4, txtThirdEcons.getText());
-            pst.setString(5, txtThirdPhy.getText());
-            pst.setString(6, txtThirdBio.getText());
-            pst.setString(7, txtThirdAccount.getText());
-            pst.setString(8, txtThirdCivic.getText());
-            pst.setString(9, txtThirdFMaths.getText());
-            pst.setString(10, txtThirdLit.getText());
-            pst.setString(11, txtThirdGeo.getText());
-            pst.setString(12, txtThirdCRS.getText());
-            pst.setString(13, txtThirdGov.getText());
-            pst.setString(14, txtThirdChem.getText());
-            pst.setString(15, txtThirdAgric.getText());
-            pst.setString(16, txtThirdFineArts.getText());
-            pst.setString(17, txtThirdComputer.getText());
-            pst.setString(18, txtThirdFrench.getText());
-            pst.setString(19, txtThirdID.getText());
-            pst.executeUpdate();
-
-            JOptionPane.showMessageDialog(this, "Added Successfully");
-            System.out.println("Updated");
-
-        } catch (ClassNotFoundException | SQLException ex) {
-            Logger.getLogger(ResultEntry.class.getName()).log(Level.SEVERE, null, ex);
-        }
-
-        JTextField temp = null;
-        for (Component C : thirdPanel.getComponents()) {
-            if (C.getClass().toString().contains("javax.swing.JTextField")) {
-
-                temp = (JTextField) C;
-                temp.setText(null);
-            }
-        }
+//        String str = "UPDATE sss SET Maths3 = ?, English3 = ?, Commerce3 = ?,"
+//                + " Economics3 = ?, Physics3 = ?, Biology3 = ?, Accounting3 = ?,"
+//                + " Civic3 = ?, FMaths3 = ?, Literature3 = ?, Geography3 = ?,"
+//                + " CRS3 = ?, Government3 = ?, Chemistry3 = ?, Agric3 = ?,"
+//                + " Arts3 = ?, Computer3 = ?, French3 = ? WHERE StudentID = ?";
+//
+//        DBHandler handler = new DBHandler();
+//
+//        try {
+//            PreparedStatement pst = handler.getdbConnection().prepareStatement(str);
+//
+//            pst.setString(1, txtThirdMaths.getText());
+//            pst.setString(2, txtThirdEnglish.getText());
+//            pst.setString(3, txtThirdComm.getText());
+//            pst.setString(4, txtThirdEcons.getText());
+//            pst.setString(5, txtThirdPhy.getText());
+//            pst.setString(6, txtThirdBio.getText());
+//            pst.setString(7, txtThirdAccount.getText());
+//            pst.setString(8, txtThirdCivic.getText());
+//            pst.setString(9, txtThirdFMaths.getText());
+//            pst.setString(10, txtThirdLit.getText());
+//            pst.setString(11, txtThirdGeo.getText());
+//            pst.setString(12, txtThirdCRS.getText());
+//            pst.setString(13, txtThirdGov.getText());
+//            pst.setString(14, txtThirdChem.getText());
+//            pst.setString(15, txtThirdAgric.getText());
+//            pst.setString(16, txtThirdFineArts.getText());
+//            pst.setString(17, txtThirdComputer.getText());
+//            pst.setString(18, txtThirdFrench.getText());
+//            pst.setString(19, txtThirdID.getText());
+//            pst.executeUpdate();
+//
+//            JOptionPane.showMessageDialog(this, "Added Successfully");
+//            System.out.println("Updated");
+//
+//        } catch (ClassNotFoundException | SQLException ex) {
+//            Logger.getLogger(ResultEntry.class.getName()).log(Level.SEVERE, null, ex);
+//        }
+//
+//        JTextField temp = null;
+//        for (Component C : thirdPanel.getComponents()) {
+//            if (C.getClass().toString().contains("javax.swing.JTextField")) {
+//
+//                temp = (JTextField) C;
+//                temp.setText(null);
+//            }
+//        }
 
     }//GEN-LAST:event_btnInsertThirdTestActionPerformed
 
     private void btnInsertExamActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInsertExamActionPerformed
 
-        String str = "UPDATE sss_one SET Maths_Exam = ?, English_Exam = ?, Commerce_Exam = ?,"
-                + " Economics_Exam = ?, Physics_Exam = ?, Biology_Exam = ?, Accounting_Exam = ?,"
+        String str = "UPDATE sss SET Maths_Exam = ?, English_Exam = ?, Commerce_Exam = ?,"
+                + " Economics_Exam = ?, Physics_Exam = ?, Biology_Exam = ?, Account_Exam = ?,"
                 + " Civic_Exam = ?, FMaths_Exam = ?, Literature_Exam = ?, Geography_Exam = ?,"
                 + " CRS_Exam = ?, Government_Exam = ?, Chemistry_Exam = ?, Agric_Exam = ?,"
-                + "Fine_Arts_Exam = ?, Computer_Exam = ?, French_Exam = ? WHERE StudentID = ?";
+                + " Arts_Exam = ?, Computer_Exam = ?, French_Exam = ? WHERE StudentID = ?";
 
         DBHandler handler = new DBHandler();
 
@@ -4639,7 +4639,7 @@ public class ResultEntry extends javax.swing.JFrame {
         }
 
         JTextField temp = null;
-        for (Component C : examPanel.getComponents()) {
+        for (Component C : examPanel1.getComponents()) {
             if (C.getClass().toString().contains("javax.swing.JTextField")) {
 
                 temp = (JTextField) C;
@@ -4651,50 +4651,49 @@ public class ResultEntry extends javax.swing.JFrame {
 
     private void btnjsSecondInsertActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnjsSecondInsertActionPerformed
 
-        String str = "UPDATE jss SET English_Test2 = ?, Literature_Test2 = ?, Maths_Test2 = ?,"
-                + " BS_Test2 = ?, BT_Test2 = ?, PHE_Test2 = ?, ICT_Test2 = ?, CRS_Test2 = ?, Social_Test2 = ?,"
-                + " Civic_Test2 = ?, Security_Test2 = ?, Home_Test2 = ?, Agric_Test2 = ?, Music_Test2 = ?, "
-                + "Drama_Stage_Test2 = ?, Art_Craft_Test2 = ?, Business_Test2 = ?, French_Test2 = ?, Edo_Test2 = ?, Moral_Test2 = ?"
+        String str = "UPDATE jss SET english2 = ?, literature2 = ?, maths2 = ?,"
+                + " bs2 = ?, bt2 = ?, phe2 = ?, ict2 = ?, crs2 = ?, social2 = ?,"
+                + " civic2 = ?, security2 = ?, home2 = ?, agric2 = ?, music2 = ?, "
+                + " drama2 = ?, art2 = ?, business2 = ?, french2 = ?, edo2 = ?, moral2 = ?"
                 + " WHERE StudentID = ?";
 
         DBHandler handler = new DBHandler();
 
         try {
-            PreparedStatement pst = handler.getdbConnection().prepareStatement(str);
+            try (PreparedStatement pst = handler.getdbConnection().prepareStatement(str)) {
+                pst.setString(1, jsSecondEnglish.getText());
+                pst.setString(2, jsSecondLit.getText());
+                pst.setString(3, jsSecondMaths.getText());
+                pst.setString(4, jsSecondBS.getText());
+                pst.setString(5, jsSecondBT.getText());
+                pst.setString(6, jsSecondPHE.getText());
+                pst.setString(7, jsSecondICT.getText());
+                pst.setString(8, jsSecondCRS.getText());
+                pst.setString(9, jsSecondSocial.getText());
+                pst.setString(10, jsSecondCivic.getText());
+                pst.setString(11, jsSecondSecurity.getText());
+                pst.setString(12, jsSecondHome.getText());
+                pst.setString(13, jsSecondAgric.getText());
+                pst.setString(14, jsSecondMusic.getText());
+                pst.setString(15, jsSecondDrama_Stage.getText());
+                pst.setString(16, jsSecondArt_Craft.getText());
+                pst.setString(17, jsSecondBusiness.getText());
+                pst.setString(18, jsSecondFrench.getText());
+                pst.setString(19, jsSecondEdo.getText());
+                pst.setString(20, jsSecondMoral.getText());
+                pst.setString(21, jsSecondID.getText());
+                pst.executeUpdate();
 
-            pst.setString(1, jsSecondEnglish.getText());
-            pst.setString(2, jsSecondLit.getText());
-            pst.setString(3, jsSecondMaths.getText());
-            pst.setString(4, jsSecondBS.getText());
-            pst.setString(5, jsSecondBT.getText());
-            pst.setString(6, jsSecondPHE.getText());
-            pst.setString(7, jsSecondICT.getText());
-            pst.setString(8, jsSecondCRS.getText());
-            pst.setString(9, jsSecondSocial.getText());
-            pst.setString(10, jsSecondCivic.getText());
-            pst.setString(11, jsSecondSecurity.getText());
-            pst.setString(12, jsSecondHome.getText());
-            pst.setString(13, jsSecondAgric.getText());
-            pst.setString(14, jsSecondMusic.getText());
-            pst.setString(15, jsSecondDrama_Stage.getText());
-            pst.setString(16, jsSecondArt_Craft.getText());
-            pst.setString(17, jsSecondBusiness.getText());
-            pst.setString(18, jsSecondFrench.getText());
-            pst.setString(19, jsSecondEdo.getText());
-            pst.setString(20, jsSecondMoral.getText());
-            pst.setString(21, jsSecondID.getText());
-            pst.executeUpdate();
-
-            JOptionPane.showMessageDialog(this, "Added Successfully");
-            System.out.println("Updated");
-            pst.close();
+                JOptionPane.showMessageDialog(this, "Added Successfully");
+                System.out.println("Updated");
+            }
 
         } catch (ClassNotFoundException | SQLException ex) {
             Logger.getLogger(DBHandler.class.getName()).log(Level.SEVERE, null, ex);
         }
 
         JTextField temp = null;
-        for (Component C : jsSecondPanel.getComponents()) {
+        for (Component C : jsSecondPanel1.getComponents()) {
             if (C.getClass().toString().contains("javax.swing.JTextField")) {
 
                 temp = (JTextField) C;
@@ -4706,91 +4705,90 @@ public class ResultEntry extends javax.swing.JFrame {
 
     private void btnjsThirdInsertActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnjsThirdInsertActionPerformed
 
-        String str = "UPDATE jss SET English_Test3 = ?, Literature_Test3 = ?, Maths_Test3 = ?,"
-                + " BS_Test3 = ?, BT_Test3 = ?, PHE_Test3 = ?, ICT_Test3 = ?, CRS_Test3 = ?, Social_Test3 = ?,"
-                + " Civic_Test3 = ?, Security_Test3 = ?, Home_Test3 = ?, Agric_Test3 = ?, Music_Test3 = ?, "
-                + "Drama_Stage_Test3 = ?, Art_Craft_Test3 = ?, Business_Test3 = ?, French_Test3 = ?, Edo_Test3 = ?, Moral_Test3 = ?"
-                + " WHERE StudentID = ?";
-
-        DBHandler handler = new DBHandler();
-
-        try {
-            PreparedStatement pst = handler.getdbConnection().prepareStatement(str);
-            pst.setString(1, jsThirdEnglish.getText());
-            pst.setString(2, jsThirdLit.getText());
-            pst.setString(3, jsThirdMaths.getText());
-            pst.setString(4, jsThirdBS.getText());
-            pst.setString(5, jsThirdBT.getText());
-            pst.setString(6, jsThirdPHE.getText());
-            pst.setString(7, jsThirdICT.getText());
-            pst.setString(8, jsThirdCRS.getText());
-            pst.setString(9, jsThirdSocial.getText());
-            pst.setString(10, jsThirdCivic.getText());
-            pst.setString(11, jsThirdSecurity.getText());
-            pst.setString(12, jsThirdHome.getText());
-            pst.setString(13, jsThirdAgric.getText());
-            pst.setString(14, jsThirdMusic.getText());
-            pst.setString(15, jsThirdDrama_Stage.getText());
-            pst.setString(16, jsThirdArt_Craft.getText());
-            pst.setString(17, jsThirdBusiness.getText());
-            pst.setString(18, jsThirdFrench.getText());
-            pst.setString(19, jsThirdEdo.getText());
-            pst.setString(20, jsThirdMoral.getText());
-            pst.setString(21, jsThirdID.getText());
-            pst.executeUpdate();
-
-            JOptionPane.showMessageDialog(this, "Added Successfully");
-            System.out.println("Updated");
-            pst.close();
-
-        } catch (ClassNotFoundException | SQLException ex) {
-            Logger.getLogger(DBHandler.class.getName()).log(Level.SEVERE, null, ex);
-        }
-
-        JTextField temp = null;
-        for (Component C : jsThirdPanel.getComponents()) {
-            if (C.getClass().toString().contains("javax.swing.JTextField")) {
-
-                temp = (JTextField) C;
-                temp.setText(null);
-            }
-        }
+//        String str = "UPDATE jss SET English_Test3 = ?, Literature_Test3 = ?, Maths_Test3 = ?,"
+//                + " BS_Test3 = ?, BT_Test3 = ?, PHE_Test3 = ?, ICT_Test3 = ?, CRS_Test3 = ?, Social_Test3 = ?,"
+//                + " Civic_Test3 = ?, Security_Test3 = ?, Home_Test3 = ?, Agric_Test3 = ?, Music_Test3 = ?, "
+//                + "Drama_Stage_Test3 = ?, Art_Craft_Test3 = ?, Business_Test3 = ?, French_Test3 = ?, Edo_Test3 = ?, Moral_Test3 = ?"
+//                + " WHERE StudentID = ?";
+//
+//        DBHandler handler = new DBHandler();
+//
+//        try {
+//            try (PreparedStatement pst = handler.getdbConnection().prepareStatement(str)) {
+//                pst.setString(1, jsThirdEnglish.getText());
+//                pst.setString(2, jsThirdLit.getText());
+//                pst.setString(3, jsThirdMaths.getText());
+//                pst.setString(4, jsThirdBS.getText());
+//                pst.setString(5, jsThirdBT.getText());
+//                pst.setString(6, jsThirdPHE.getText());
+//                pst.setString(7, jsThirdICT.getText());
+//                pst.setString(8, jsThirdCRS.getText());
+//                pst.setString(9, jsThirdSocial.getText());
+//                pst.setString(10, jsThirdCivic.getText());
+//                pst.setString(11, jsThirdSecurity.getText());
+//                pst.setString(12, jsThirdHome.getText());
+//                pst.setString(13, jsThirdAgric.getText());
+//                pst.setString(14, jsThirdMusic.getText());
+//                pst.setString(15, jsThirdDrama_Stage.getText());
+//                pst.setString(16, jsThirdArt_Craft.getText());
+//                pst.setString(17, jsThirdBusiness.getText());
+//                pst.setString(18, jsThirdFrench.getText());
+//                pst.setString(19, jsThirdEdo.getText());
+//                pst.setString(20, jsThirdMoral.getText());
+//                pst.setString(21, jsThirdID.getText());
+//                pst.executeUpdate();
+//
+//                JOptionPane.showMessageDialog(this, "Added Successfully");
+//                System.out.println("Updated");
+//            }
+//
+//        } catch (ClassNotFoundException | SQLException ex) {
+//            Logger.getLogger(DBHandler.class.getName()).log(Level.SEVERE, null, ex);
+//        }
+//
+//        JTextField temp = null;
+//        for (Component C : jsThirdPanel.getComponents()) {
+//            if (C.getClass().toString().contains("javax.swing.JTextField")) {
+//
+//                temp = (JTextField) C;
+//                temp.setText(null);
+//            }
+//        }
 
     }//GEN-LAST:event_btnjsThirdInsertActionPerformed
 
     private void btnPrimaryFirstInsertActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPrimaryFirstInsertActionPerformed
 
-        String str = "INSERT INTO prime( English_Test1, Maths_Test1, CRS_Test1, Civic_Test1, Social_Test1,"
-                + "Security_Test1, BS_Test1, BT_Test1, PHE_Test1, ICT_Test1, Home_Test1, Agric_Test1,"
-                + "Edo_Test1, Verbal_Test1, Quantitative_Test1)"
+        String str = "INSERT INTO prime( English1, Maths1, CRS1, Civic1, Social1,"
+                + " Security1, BS1, BT1, PHE1, ICT1, Home1, Agric1, Edo1, Verbal1, Quan1)"
                 + " VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 
         DBHandler handler = new DBHandler();
 
         try {
-            PreparedStatement pst = handler.getdbConnection().prepareStatement(str);
+            try (PreparedStatement pst = handler.getdbConnection().prepareStatement(str)) {
+                pst.setString(1, prFirstEnglish.getText());
+                pst.setString(2, prFirstMaths.getText());
+                pst.setString(3, prFirstCRS.getText());
+                pst.setString(4, prFirstCivic.getText());
+                pst.setString(5, prFirstSocial.getText());
+                pst.setString(6, prFirstSecurity.getText());
+                pst.setString(7, prFirstBS.getText());
+                pst.setString(8, prFirstBT.getText());
+                pst.setString(9, prFirstPHE.getText());
+                pst.setString(10, prFirstICT.getText());
+                pst.setString(11, prFirstHome.getText());
+                pst.setString(12, prFirstAgric.getText());
+                pst.setString(13, prFirstEdo.getText());
+                pst.setString(14, prFirstVerbal.getText());
+                pst.setString(15, prFirstQuan.getText());
 
-            pst.setString(1, prFirstEnglish.getText());
-            pst.setString(2, prFirstMaths.getText());
-            pst.setString(3, prFirstCRS.getText());
-            pst.setString(4, prFirstCivic.getText());
-            pst.setString(5, prFirstSocial.getText());
-            pst.setString(6, prFirstSecurity.getText());
-            pst.setString(7, prFirstBS.getText());
-            pst.setString(8, prFirstBT.getText());
-            pst.setString(9, prFirstPHE.getText());
-            pst.setString(10, prFirstICT.getText());
-            pst.setString(11, prFirstHome.getText());
-            pst.setString(12, prFirstAgric.getText());
-            pst.setString(13, prFirstEdo.getText());
-            pst.setString(14, prFirstVerbal.getText());
-            pst.setString(15, prFirstQuan.getText());
+                pst.executeUpdate();
 
-            pst.executeUpdate();
-
-            JOptionPane.showMessageDialog(this, "Inserted");
-            System.out.println("Inserted");
-            pst.close();
+                JOptionPane.showMessageDialog(this, "Inserted");
+                System.out.println("Inserted");
+                pst.close();
+            }
 
         } catch (ClassNotFoundException | SQLException ex) {
             Logger.getLogger(ResultEntry.class.getName()).log(Level.SEVERE, null, ex);
@@ -4830,45 +4828,45 @@ public class ResultEntry extends javax.swing.JFrame {
 
     private void btnPrimarySecondInsertActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPrimarySecondInsertActionPerformed
 
-        String str = "UPDATE prime SET English_Test2 = ?, Maths_Test2 = ?, CRS_Test2 = ?, Civic_Test2 = ?, Social_Test2 = ?,"
-                + "Security_Test2 = ?, BS_Test2 = ?, BT_Test2 = ?, PHE_Test2 = ?, ICT_Test2 = ?, Home_Test2 = ?, Agric_Test2 = ?,"
-                + "Edo_Test2 = ?, Verbal_Test2 = ?, Quantitative_Test2 = ?"
+        String str = "UPDATE prime SET English2 = ?, Maths2 = ?, CRS2 = ?, Civic2 = ?, Social2 = ?,"
+                + " Security2 = ?, BS2 = ?, BT2 = ?, PHE2 = ?, ICT2 = ?, Home2 = ?, Agric2 = ?,"
+                + " Edo2 = ?, Verbal2 = ?, Quan2 = ?"
                 + " WHERE StudentID = ?";
 
         DBHandler handler = new DBHandler();
 
         try {
-            PreparedStatement pst = handler.getdbConnection().prepareStatement(str);
+            try (PreparedStatement pst = handler.getdbConnection().prepareStatement(str)) {
+                pst.setString(1, prSecondEnglish.getText());
+                pst.setString(2, prSecondMaths.getText());
+                pst.setString(3, prSecondCRS.getText());
+                pst.setString(4, prSecondCivic.getText());
+                pst.setString(5, prSecondSocial.getText());
+                pst.setString(6, prSecondSecurity.getText());
+                pst.setString(7, prSecondBS.getText());
+                pst.setString(8, prSecondBT.getText());
+                pst.setString(9, prSecondPHE.getText());
+                pst.setString(10, prSecondICT.getText());
+                pst.setString(11, prSecondHome.getText());
+                pst.setString(12, prSecondAgric.getText());
+                pst.setString(13, prSecondEdo.getText());
+                pst.setString(14, prSecondVerbal.getText());
+                pst.setString(15, prSecondQuan.getText());
+                pst.setString(16, prSecondID.getText());
 
-            pst.setString(1, prSecondEnglish.getText());
-            pst.setString(2, prSecondMaths.getText());
-            pst.setString(3, prSecondCRS.getText());
-            pst.setString(4, prSecondCivic.getText());
-            pst.setString(5, prSecondSocial.getText());
-            pst.setString(6, prSecondSecurity.getText());
-            pst.setString(7, prSecondBS.getText());
-            pst.setString(8, prSecondBT.getText());
-            pst.setString(9, prSecondPHE.getText());
-            pst.setString(10, prSecondICT.getText());
-            pst.setString(11, prSecondHome.getText());
-            pst.setString(12, prSecondAgric.getText());
-            pst.setString(13, prSecondEdo.getText());
-            pst.setString(14, prSecondVerbal.getText());
-            pst.setString(15, prSecondQuan.getText());
-            pst.setString(16, prSecondID.getText());
+                pst.executeUpdate();
 
-            pst.executeUpdate();
-
-            JOptionPane.showMessageDialog(this, "Updated");
-            System.out.println("Updated");
-            pst.close();
+                JOptionPane.showMessageDialog(this, "Added successfully");
+                System.out.println("Updated");
+                pst.close();
+            }
 
         } catch (ClassNotFoundException | SQLException ex) {
             Logger.getLogger(ResultEntry.class.getName()).log(Level.SEVERE, null, ex);
         }
 
         JTextField temp = null;
-        for (Component C : secondPrimary.getComponents()) {
+        for (Component C : secondPrimary1.getComponents()) {
             if (C.getClass().toString().contains("javax.swing.JTextField")) {
 
                 temp = (JTextField) C;
@@ -4890,7 +4888,7 @@ public class ResultEntry extends javax.swing.JFrame {
         selectExamination.setSelectedIndex(0);
 
         JTextField temp = null;
-        for (Component C : secondPrimary.getComponents()) {
+        for (Component C : secondPrimary1.getComponents()) {
             if (C.getClass().toString().contains("javax.swing.JTextField")) {
 
                 temp = (JTextField) C;
@@ -4902,51 +4900,50 @@ public class ResultEntry extends javax.swing.JFrame {
 
     private void btnPrimaryThirdInsertActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPrimaryThirdInsertActionPerformed
 
-        String str = "UPDATE prime SET English_Test3 = ?, Maths_Test3 = ?, CRS_Test3 = ?, Civic_Test3 = ?, Social_Test3 = ?,"
-                + "Security_Test3 = ?, BS_Test3 = ?, BT_Test3 = ?, PHE_Test3 = ?, ICT_Test3 = ?, Home_Test3 = ?, Agric_Test3 = ?,"
-                + "Edo_Test3 = ?, Verbal_Test3 = ?, Quantitative_Test3 = ?"
-                + " WHERE StudentID = ?";
-
-        DBHandler handler = new DBHandler();
-
-        try {
-            PreparedStatement pst = handler.getdbConnection().prepareStatement(str);
-
-            pst.setString(1, prThirdEnglish.getText());
-            pst.setString(2, prThirdMaths.getText());
-            pst.setString(3, prThirdCRS.getText());
-            pst.setString(4, prThirdCivic.getText());
-            pst.setString(5, prThirdSocial.getText());
-            pst.setString(6, prThirdSecurity.getText());
-            pst.setString(7, prThirdBS.getText());
-            pst.setString(8, prThirdBT.getText());
-            pst.setString(9, prThirdPHE.getText());
-            pst.setString(10, prThirdICT.getText());
-            pst.setString(11, prThirdHome.getText());
-            pst.setString(12, prThirdAgric.getText());
-            pst.setString(13, prThirdEdo.getText());
-            pst.setString(14, prThirdVerbal.getText());
-            pst.setString(15, prThirdQuan.getText());
-            pst.setString(16, prThirdID.getText());
-
-            pst.executeUpdate();
-
-            JOptionPane.showMessageDialog(this, "Updated");
-            System.out.println("Updated");
-            pst.close();
-
-        } catch (ClassNotFoundException | SQLException ex) {
-            Logger.getLogger(ResultEntry.class.getName()).log(Level.SEVERE, null, ex);
-        }
-
-        JTextField temp = null;
-        for (Component C : thirdPrimary.getComponents()) {
-            if (C.getClass().toString().contains("javax.swing.JTextField")) {
-
-                temp = (JTextField) C;
-                temp.setText(null);
-            }
-        }
+//        String str = "UPDATE prime SET English_Test3 = ?, Maths_Test3 = ?, CRS_Test3 = ?, Civic_Test3 = ?, Social_Test3 = ?,"
+//                + "Security_Test3 = ?, BS_Test3 = ?, BT_Test3 = ?, PHE_Test3 = ?, ICT_Test3 = ?, Home_Test3 = ?, Agric_Test3 = ?,"
+//                + "Edo_Test3 = ?, Verbal_Test3 = ?, Quantitative_Test3 = ?"
+//                + " WHERE StudentID = ?";
+//
+//        DBHandler handler = new DBHandler();
+//
+//        try {
+//            try (PreparedStatement pst = handler.getdbConnection().prepareStatement(str)) {
+//                pst.setString(1, prThirdEnglish.getText());
+//                pst.setString(2, prThirdMaths.getText());
+//                pst.setString(3, prThirdCRS.getText());
+//                pst.setString(4, prThirdCivic.getText());
+//                pst.setString(5, prThirdSocial.getText());
+//                pst.setString(6, prThirdSecurity.getText());
+//                pst.setString(7, prThirdBS.getText());
+//                pst.setString(8, prThirdBT.getText());
+//                pst.setString(9, prThirdPHE.getText());
+//                pst.setString(10, prThirdICT.getText());
+//                pst.setString(11, prThirdHome.getText());
+//                pst.setString(12, prThirdAgric.getText());
+//                pst.setString(13, prThirdEdo.getText());
+//                pst.setString(14, prThirdVerbal.getText());
+//                pst.setString(15, prThirdQuan.getText());
+//                pst.setString(16, prThirdID.getText());
+//
+//                pst.executeUpdate();
+//
+//                JOptionPane.showMessageDialog(this, "Updated");
+//                System.out.println("Updated");
+//            }
+//
+//        } catch (ClassNotFoundException | SQLException ex) {
+//            Logger.getLogger(ResultEntry.class.getName()).log(Level.SEVERE, null, ex);
+//        }
+//
+//        JTextField temp = null;
+//        for (Component C : thirdPrimary1.getComponents()) {
+//            if (C.getClass().toString().contains("javax.swing.JTextField")) {
+//
+//                temp = (JTextField) C;
+//                temp.setText(null);
+//            }
+//        }
     }//GEN-LAST:event_btnPrimaryThirdInsertActionPerformed
 
     private void btnPrimaryThirdCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPrimaryThirdCancelActionPerformed
@@ -4961,7 +4958,7 @@ public class ResultEntry extends javax.swing.JFrame {
         selectExamination.setSelectedIndex(0);
 
         JTextField temp = null;
-        for (Component C : thirdPrimary.getComponents()) {
+        for (Component C : thirdPrimary1.getComponents()) {
             if (C.getClass().toString().contains("javax.swing.JTextField")) {
 
                 temp = (JTextField) C;
@@ -4975,43 +4972,43 @@ public class ResultEntry extends javax.swing.JFrame {
 
         String str = "UPDATE prime SET English_Exam = ?, Maths_Exam = ?, CRS_Exam = ?, Civic_Exam = ?, Social_Exam = ?,"
                 + "Security_Exam = ?, BS_Exam = ?, BT_Exam = ?, PHE_Exam = ?, ICT_Exam = ?, Home_Exam = ?, Agric_Exam = ?,"
-                + "Edo_Exam = ?, Verbal_Exam = ?, Quantitative_Exam = ?"
+                + "Edo_Exam = ?, Verbal_Exam = ?, Quan_Exam = ?"
                 + " WHERE StudentID = ?";
 
         DBHandler handler = new DBHandler();
 
         try {
-            PreparedStatement pst = handler.getdbConnection().prepareStatement(str);
+            try (PreparedStatement pst = handler.getdbConnection().prepareStatement(str)) {
+                pst.setString(1, prExamEnglish.getText());
+                pst.setString(2, prExamMaths.getText());
+                pst.setString(3, prExamCRS.getText());
+                pst.setString(4, prExamCivic.getText());
+                pst.setString(5, prExamSocial.getText());
+                pst.setString(6, prExamSecurity.getText());
+                pst.setString(7, prExamBS.getText());
+                pst.setString(8, prExamBT.getText());
+                pst.setString(9, prExamPHE.getText());
+                pst.setString(10, prExamICT.getText());
+                pst.setString(11, prExamHome.getText());
+                pst.setString(12, prExamAgric.getText());
+                pst.setString(13, prExamEdo.getText());
+                pst.setString(14, prExamVerbal.getText());
+                pst.setString(15, prExamQuan.getText());
+                pst.setString(16, prExamID.getText());
 
-            pst.setString(1, prExamEnglish.getText());
-            pst.setString(2, prExamMaths.getText());
-            pst.setString(3, prExamCRS.getText());
-            pst.setString(4, prExamCivic.getText());
-            pst.setString(5, prExamSocial.getText());
-            pst.setString(6, prExamSecurity.getText());
-            pst.setString(7, prExamBS.getText());
-            pst.setString(8, prExamBT.getText());
-            pst.setString(9, prExamPHE.getText());
-            pst.setString(10, prExamICT.getText());
-            pst.setString(11, prExamHome.getText());
-            pst.setString(12, prExamAgric.getText());
-            pst.setString(13, prExamEdo.getText());
-            pst.setString(14, prExamVerbal.getText());
-            pst.setString(15, prExamQuan.getText());
-            pst.setString(16, prExamID.getText());
+                pst.executeUpdate();
 
-            pst.executeUpdate();
-
-            JOptionPane.showMessageDialog(this, "Updated");
-            System.out.println("Updated");
-            pst.close();
+                JOptionPane.showMessageDialog(this, "Added successfully");
+                System.out.println("Updated");
+                pst.close();
+            }
 
         } catch (ClassNotFoundException | SQLException ex) {
             Logger.getLogger(ResultEntry.class.getName()).log(Level.SEVERE, null, ex);
         }
 
         JTextField temp = null;
-        for (Component C : examPrimary.getComponents()) {
+        for (Component C : examPrimary1.getComponents()) {
             if (C.getClass().toString().contains("javax.swing.JTextField")) {
 
                 temp = (JTextField) C;
@@ -5033,7 +5030,7 @@ public class ResultEntry extends javax.swing.JFrame {
         selectExamination.setSelectedIndex(0);
 
         JTextField temp = null;
-        for (Component C : examPrimary.getComponents()) {
+        for (Component C : examPrimary1.getComponents()) {
             if (C.getClass().toString().contains("javax.swing.JTextField")) {
 
                 temp = (JTextField) C;
@@ -5096,7 +5093,7 @@ public class ResultEntry extends javax.swing.JFrame {
         selectExamination.setSelectedIndex(0);
 
         JTextField temp = null;
-        for (Component C : jsThirdPanel.getComponents()) {
+        for (Component C : jsThirdPanel1.getComponents()) {
             if (C.getClass().toString().contains("javax.swing.JTextField")) {
 
                 temp = (JTextField) C;
@@ -5116,7 +5113,7 @@ public class ResultEntry extends javax.swing.JFrame {
         selectExamination.setSelectedIndex(0);
 
         JTextField temp = null;
-        for (Component C : jsExamPanel.getComponents()) {
+        for (Component C : jsExamPanel1.getComponents()) {
             if (C.getClass().toString().contains("javax.swing.JTextField")) {
 
                 temp = (JTextField) C;
@@ -5196,7 +5193,7 @@ public class ResultEntry extends javax.swing.JFrame {
         selectExamination.setSelectedIndex(0);
 
         JTextField temp = null;
-        for (Component C : examPanel.getComponents()) {
+        for (Component C : examPanel1.getComponents()) {
             if (C.getClass().toString().contains("javax.swing.JTextField")) {
 
                 temp = (JTextField) C;
@@ -5207,33 +5204,32 @@ public class ResultEntry extends javax.swing.JFrame {
 
     private void btnNurseryFirstInsertActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNurseryFirstInsertActionPerformed
 
-        String str = "INSERT INTO nursery(English_Test1, Sound_Test1, ES_Test1, Social_Test1, Health_Test1,"
-                + "Computer_Test1, CCA_Test1, Writing_Test1, Nursery_Rhymes_Test1, Verbal_Test1,"
-                + "Quantitative_Test1, Moral_Test1) VALUES(?,?,?,?,?,?,?,?,?,?,?,?)";
+        String str = "INSERT INTO nursery(English1, Sound1, ES1, Social1, Health1, Computer1,"
+                + " CCA1, Writing1, Rhymes1, Verbal1, Quan1, Moral1)"
+                + " VALUES(?,?,?,?,?,?,?,?,?,?,?,?)";
 
         DBHandler handler = new DBHandler();
 
         try {
-            PreparedStatement pst = handler.getdbConnection().prepareStatement(str);
+            try (PreparedStatement pst = handler.getdbConnection().prepareStatement(str)) {
+                pst.setString(1, nuFirstEnglish.getText());
+                pst.setString(2, nuFirstSound.getText());
+                pst.setString(3, nuFirstElem.getText());
+                pst.setString(4, nuFirstSocial.getText());
+                pst.setString(5, nuFirstHealth.getText());
+                pst.setString(6, nuFirstComputer.getText());
+                pst.setString(7, nuFirstCultural.getText());
+                pst.setString(8, nuFirstWriting.getText());
+                pst.setString(9, nuFirstRhymes.getText());
+                pst.setString(10, nuFirstVerbal.getText());
+                pst.setString(11, nuFirstQuan.getText());
+                pst.setString(12, nuFirstMoral.getText());
 
-            pst.setString(1, nuFirstEnglish.getText());
-            pst.setString(2, nuFirstSound.getText());
-            pst.setString(3, nuFirstElem.getText());
-            pst.setString(4, nuFirstSocial.getText());
-            pst.setString(5, nuFirstHealth.getText());
-            pst.setString(6, nuFirstComputer.getText());
-            pst.setString(7, nuFirstCultural.getText());
-            pst.setString(8, nuFirstWriting.getText());
-            pst.setString(9, nuFirstRhymes.getText());
-            pst.setString(10, nuFirstVerbal.getText());
-            pst.setString(11, nuFirstQuan.getText());
-            pst.setString(12, nuFirstMoral.getText());
+                pst.executeUpdate();
 
-            pst.executeUpdate();
-
-            JOptionPane.showMessageDialog(this, "Inserted");
-            System.out.println("Inserted");
-            pst.close();
+                JOptionPane.showMessageDialog(this, "Inserted");
+                System.out.println("Inserted");
+            }
 
         } catch (ClassNotFoundException | SQLException ex) {
             Logger.getLogger(ResultEntry.class.getName()).log(Level.SEVERE, null, ex);
@@ -5272,41 +5268,40 @@ public class ResultEntry extends javax.swing.JFrame {
 
     private void btnNurserySecondInsertActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNurserySecondInsertActionPerformed
 
-        String str = "UPDATE nursery SET English_Test2 = ?, Sound_Test2 = ?, ES_Test2 = ?, Social_Test2 = ?, Health_Test2 = ?,"
-                + "Computer_Test2 = ?, CCA_Test2 = ?, Writing_Test2 = ?, Nursery_Rhymes_Test2 = ?, Verbal_Test2 = ?,"
-                + "Quantitative_Test2 = ?, Moral_Test2 = ? WHERE StudentID = ?";
+        String str = "UPDATE nursery SET English2 = ?, Sound2 = ?, ES2 = ?, Social2 = ?, Health2 = ?,"
+                + "Computer2 = ?, CCA2 = ?, Writing2 = ?, Rhymes2 = ?, Verbal2 = ?,"
+                + "Quan2 = ?, Moral2 = ? WHERE StudentID = ?";
 
         DBHandler handler = new DBHandler();
 
         try {
-            PreparedStatement pst = handler.getdbConnection().prepareStatement(str);
+            try (PreparedStatement pst = handler.getdbConnection().prepareStatement(str)) {
+                pst.setString(1, nuSecondEnglish.getText());
+                pst.setString(2, nuSecondSound.getText());
+                pst.setString(3, nuSecondElem.getText());
+                pst.setString(4, nuSecondSocial.getText());
+                pst.setString(5, nuSecondHealth.getText());
+                pst.setString(6, nuSecondComputer.getText());
+                pst.setString(7, nuSecondCultural.getText());
+                pst.setString(8, nuSecondWriting.getText());
+                pst.setString(9, nuSecondRhymes.getText());
+                pst.setString(10, nuSecondVerbal.getText());
+                pst.setString(11, nuSecondQuan.getText());
+                pst.setString(12, nuSecondMoral.getText());
+                pst.setString(13, nuSecondID.getText());
 
-            pst.setString(1, nuSecondEnglish.getText());
-            pst.setString(2, nuSecondSound.getText());
-            pst.setString(3, nuSecondElem.getText());
-            pst.setString(4, nuSecondSocial.getText());
-            pst.setString(5, nuSecondHealth.getText());
-            pst.setString(6, nuSecondComputer.getText());
-            pst.setString(7, nuSecondCultural.getText());
-            pst.setString(8, nuSecondWriting.getText());
-            pst.setString(9, nuSecondRhymes.getText());
-            pst.setString(10, nuSecondVerbal.getText());
-            pst.setString(11, nuSecondQuan.getText());
-            pst.setString(12, nuSecondMoral.getText());
-            pst.setString(13, nuSecondID.getText());
+                pst.executeUpdate();
 
-            pst.executeUpdate();
-
-            JOptionPane.showMessageDialog(this, "Updated");
-            System.out.println("Updated");
-            pst.close();
+                JOptionPane.showMessageDialog(this, "Added successfully");
+                System.out.println("Updated");
+            }
 
         } catch (ClassNotFoundException | SQLException ex) {
             Logger.getLogger(ResultEntry.class.getName()).log(Level.SEVERE, null, ex);
         }
 
         JTextField temp = null;
-        for (Component C : secondNursery.getComponents()) {
+        for (Component C : secondNursery1.getComponents()) {
             if (C.getClass().toString().contains("javax.swing.JTextField")) {
 
                 temp = (JTextField) C;
@@ -5327,7 +5322,7 @@ public class ResultEntry extends javax.swing.JFrame {
         selectExamination.setSelectedIndex(0);
 
         JTextField temp = null;
-        for (Component C : secondNursery.getComponents()) {
+        for (Component C : secondNursery1.getComponents()) {
             if (C.getClass().toString().contains("javax.swing.JTextField")) {
 
                 temp = (JTextField) C;
@@ -5338,47 +5333,46 @@ public class ResultEntry extends javax.swing.JFrame {
 
     private void btnNurseryThirdInsertActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNurseryThirdInsertActionPerformed
 
-        String str = "UPDATE nursery SET English_Test3 = ?, Sound_Test3 = ?, ES_Test3 = ?, Social_Test3 = ?, Health_Test3 = ?,"
-                + "Computer_Test3 = ?, CCA_Test3 = ?, Writing_Test3 = ?, Nursery_Rhymes_Test3 = ?, Verbal_Test3 = ?,"
-                + "Quantitative_Test3 = ?, Moral_Test3 = ? WHERE StudentID = ?";
-
-        DBHandler handler = new DBHandler();
-
-        try {
-            PreparedStatement pst = handler.getdbConnection().prepareStatement(str);
-
-            pst.setString(1, nuThirdEnglish.getText());
-            pst.setString(2, nuThirdSound.getText());
-            pst.setString(3, nuThirdElem.getText());
-            pst.setString(4, nuThirdSocial.getText());
-            pst.setString(5, nuThirdHealth.getText());
-            pst.setString(6, nuThirdComputer.getText());
-            pst.setString(7, nuThirdCultural.getText());
-            pst.setString(8, nuThirdWriting.getText());
-            pst.setString(9, nuThirdRhymes.getText());
-            pst.setString(10, nuThirdVerbal.getText());
-            pst.setString(11, nuThirdQuan.getText());
-            pst.setString(12, nuThirdMoral.getText());
-            pst.setString(13, nuThirdID.getText());
-
-            pst.executeUpdate();
-
-            JOptionPane.showMessageDialog(this, "Updated");
-            System.out.println("Updated");
-            pst.close();
-
-        } catch (ClassNotFoundException | SQLException ex) {
-            Logger.getLogger(ResultEntry.class.getName()).log(Level.SEVERE, null, ex);
-        }
-
-        JTextField temp = null;
-        for (Component C : thirdNursery.getComponents()) {
-            if (C.getClass().toString().contains("javax.swing.JTextField")) {
-
-                temp = (JTextField) C;
-                temp.setText(null);
-            }
-        }
+//        String str = "UPDATE nursery SET English_Test3 = ?, Sound_Test3 = ?, ES_Test3 = ?, Social_Test3 = ?, Health_Test3 = ?,"
+//                + "Computer_Test3 = ?, CCA_Test3 = ?, Writing_Test3 = ?, Nursery_Rhymes_Test3 = ?, Verbal_Test3 = ?,"
+//                + "Quantitative_Test3 = ?, Moral_Test3 = ? WHERE StudentID = ?";
+//
+//        DBHandler handler = new DBHandler();
+//
+//        try {
+//            try (PreparedStatement pst = handler.getdbConnection().prepareStatement(str)) {
+//                pst.setString(1, nuThirdEnglish.getText());
+//                pst.setString(2, nuThirdSound.getText());
+//                pst.setString(3, nuThirdElem.getText());
+//                pst.setString(4, nuThirdSocial.getText());
+//                pst.setString(5, nuThirdHealth.getText());
+//                pst.setString(6, nuThirdComputer.getText());
+//                pst.setString(7, nuThirdCultural.getText());
+//                pst.setString(8, nuThirdWriting.getText());
+//                pst.setString(9, nuThirdRhymes.getText());
+//                pst.setString(10, nuThirdVerbal.getText());
+//                pst.setString(11, nuThirdQuan.getText());
+//                pst.setString(12, nuThirdMoral.getText());
+//                pst.setString(13, nuThirdID.getText());
+//
+//                pst.executeUpdate();
+//
+//                JOptionPane.showMessageDialog(this, "Updated");
+//                System.out.println("Updated");
+//            }
+//
+//        } catch (ClassNotFoundException | SQLException ex) {
+//            Logger.getLogger(ResultEntry.class.getName()).log(Level.SEVERE, null, ex);
+//        }
+//
+//        JTextField temp = null;
+//        for (Component C : thirdNursery1.getComponents()) {
+//            if (C.getClass().toString().contains("javax.swing.JTextField")) {
+//
+//                temp = (JTextField) C;
+//                temp.setText(null);
+//            }
+//        }
 
     }//GEN-LAST:event_btnNurseryThirdInsertActionPerformed
 
@@ -5393,7 +5387,7 @@ public class ResultEntry extends javax.swing.JFrame {
         selectExamination.setSelectedIndex(0);
 
         JTextField temp = null;
-        for (Component C : thirdNursery.getComponents()) {
+        for (Component C : thirdNursery1.getComponents()) {
             if (C.getClass().toString().contains("javax.swing.JTextField")) {
 
                 temp = (JTextField) C;
@@ -5405,36 +5399,35 @@ public class ResultEntry extends javax.swing.JFrame {
     private void btnNurseryExamInsertActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNurseryExamInsertActionPerformed
 
         String str = "UPDATE nursery SET English_Exam = ?, Sound_Exam = ?, ES_Exam = ?, Social_Exam = ?, Health_Exam = ?,"
-                + "Computer_Exam = ?, CCA_Exam = ?, Writing_Exam = ?, Nursery_Rhymes_Exam = ?, Verbal_Exam = ?,"
-                + "Quantitative_Exam = ?, Moral_Exam = ? WHERE StudentID = ?";
+                + "Computer_Exam = ?, CCA_Exam = ?, Writing_Exam = ?, Rhymes_Exam = ?, Verbal_Exam = ?,"
+                + "Quan_Exam = ?, Moral_Exam = ? WHERE StudentID = ?";
 
         DBHandler handler = new DBHandler();
 
         try {
-            PreparedStatement pst = handler.getdbConnection().prepareStatement(str);
+            try (PreparedStatement pst = handler.getdbConnection().prepareStatement(str)) {
+                pst.setString(1, nuExamEnglish.getText());
+                pst.setString(2, nuExamSound.getText());
+                pst.setString(3, nuExamElem.getText());
+                pst.setString(4, nuExamSocial.getText());
+                pst.setString(5, nuExamHealth.getText());
+                pst.setString(6, nuExamComputer.getText());
+                pst.setString(7, nuExamCultural.getText());
+                pst.setString(8, nuExamWriting.getText());
+                pst.setString(9, nuExamRhymes.getText());
+                pst.setString(10, nuExamVerbal.getText());
+                pst.setString(11, nuExamQuan.getText());
+                pst.setString(12, nuExamMoral.getText());
+                pst.setString(13, nuExamID.getText());
 
-            pst.setString(1, nuExamEnglish.getText());
-            pst.setString(2, nuExamSound.getText());
-            pst.setString(3, nuExamElem.getText());
-            pst.setString(4, nuExamSocial.getText());
-            pst.setString(5, nuExamHealth.getText());
-            pst.setString(6, nuExamComputer.getText());
-            pst.setString(7, nuExamCultural.getText());
-            pst.setString(8, nuExamWriting.getText());
-            pst.setString(9, nuExamRhymes.getText());
-            pst.setString(10, nuExamVerbal.getText());
-            pst.setString(11, nuExamQuan.getText());
-            pst.setString(12, nuExamMoral.getText());
-            pst.setString(13, nuExamID.getText());
+                pst.executeUpdate();
 
-            pst.executeUpdate();
-
-            JOptionPane.showMessageDialog(this, "Updated");
-            System.out.println("Updated");
-            pst.close();
+                JOptionPane.showMessageDialog(this, "Added successfully");
+                System.out.println("Updated");
+            }
 
             JTextField temp = null;
-            for (Component C : examNursery.getComponents()) {
+            for (Component C : examNursery1.getComponents()) {
                 if (C.getClass().toString().contains("javax.swing.JTextField")) {
 
                     temp = (JTextField) C;
@@ -5459,7 +5452,7 @@ public class ResultEntry extends javax.swing.JFrame {
         selectExamination.setSelectedIndex(0);
 
         JTextField temp = null;
-        for (Component C : examNursery.getComponents()) {
+        for (Component C : examNursery1.getComponents()) {
             if (C.getClass().toString().contains("javax.swing.JTextField")) {
 
                 temp = (JTextField) C;
@@ -5474,6 +5467,60 @@ public class ResultEntry extends javax.swing.JFrame {
         this.dispose();
 
     }//GEN-LAST:event_jLabel124MouseClicked
+
+    private void btnjsExamInsertActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnjsExamInsertActionPerformed
+
+        String str = "UPDATE jss SET english_exam = ?, literature_exam = ?, maths_exam = ?,"
+                + " bs_exam = ?, bt_exam = ?, phe_exam = ?, ict_exam = ?, crs_exam = ?, social_exam = ?,"
+                + " civic_exam = ?, security_exam = ?, home_exam = ?, agric_exam = ?, music_exam = ?, "
+                + " drama_exam = ?, art_exam = ?, business_exam = ?, french_exam = ?, edo_exam = ?, moral_exam = ?"
+                + " WHERE StudentID = ?";
+
+        DBHandler handler = new DBHandler();
+
+        try {
+            try (PreparedStatement pst = handler.getdbConnection().prepareStatement(str)) {
+                pst.setString(1, jsExamEnglish.getText());
+                pst.setString(2, jsExamLit.getText());
+                pst.setString(3, jsExamMaths.getText());
+                pst.setString(4, jsExamBS.getText());
+                pst.setString(5, jsExamBT.getText());
+                pst.setString(6, jsExamPHE.getText());
+                pst.setString(7, jsExamICT.getText());
+                pst.setString(8, jsExamCRS.getText());
+                pst.setString(9, jsExamSocial.getText());
+                pst.setString(10, jsExamCivic.getText());
+                pst.setString(11, jsExamSecurity.getText());
+                pst.setString(12, jsExamHome.getText());
+                pst.setString(13, jsExamAgric.getText());
+                pst.setString(14, jsExamMusic.getText());
+                pst.setString(15, jsExamDrama_Stage.getText());
+                pst.setString(16, jsExamArt_Craft.getText());
+                pst.setString(17, jsExamBusiness.getText());
+                pst.setString(18, jsExamFrench.getText());
+                pst.setString(19, jsExamEdo.getText());
+                pst.setString(20, jsExamMoral.getText());
+                pst.setString(21, jsExamID.getText());
+                pst.executeUpdate();
+
+                JOptionPane.showMessageDialog(this, "Added Successfully");
+                System.out.println("Updated");
+            }
+
+        } catch (ClassNotFoundException | SQLException ex) {
+            Logger.getLogger(DBHandler.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        JTextField temp = null;
+        for (Component C : jsExamPanel1.getComponents()) {
+            if (C.getClass().toString().contains("javax.swing.JTextField")) {
+
+                temp = (JTextField) C;
+                temp.setText(null);
+            }
+        }
+
+    }//GEN-LAST:event_btnjsExamInsertActionPerformed
 
     /**
      * @param args the command line arguments
@@ -5912,6 +5959,7 @@ public class ResultEntry extends javax.swing.JFrame {
     private javax.swing.JTextField jsExamMusic;
     private javax.swing.JTextField jsExamPHE;
     private javax.swing.JPanel jsExamPanel;
+    private javax.swing.JPanel jsExamPanel1;
     private javax.swing.JTextField jsExamSecurity;
     private javax.swing.JTextField jsExamSocial;
     private javax.swing.JTextField jsFirstAgric;
@@ -5979,7 +6027,6 @@ public class ResultEntry extends javax.swing.JFrame {
     private javax.swing.JTextField jsThirdPHE;
     private javax.swing.JPanel jsThirdPanel;
     private javax.swing.JPanel jsThirdPanel1;
-    private javax.swing.JPanel jsThirdPanel2;
     private javax.swing.JTextField jsThirdSecurity;
     private javax.swing.JTextField jsThirdSocial;
     private javax.swing.JTextField nuExamComputer;
