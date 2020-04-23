@@ -187,68 +187,38 @@ public class Student extends javax.swing.JFrame {
 
     private void btnSignInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSignInActionPerformed
 
-//        handler = new DBHandler();
-//        String getDetails = "SELECT StudentName, Password FROM student_details";
-//
-//        try {
-//            Statement smt = handler.getdbConnection().createStatement();
-//            ResultSet rs = smt.executeQuery(getDetails);
-//            while(rs.next()) {
-//                String name = rs.getString("StudentName");
-//                String pwd = rs.getString("Password");
-//                System.out.println("Student Name -> "+name+", Password ->"+pwd);
-//            }
-//            
-//        } catch (ClassNotFoundException | SQLException ex) {
-//            Logger.getLogger(Student.class.getName()).log(Level.SEVERE, null, ex);
-//        }
-        
-        try {
-            String a = txtFirstName.getText();
-            String b = txtPassword.getText();
-
-            handler = new DBHandler();
-            String str = "SELECT StudentName, Password FROM student_details WHERE Password=?";
-
-            PreparedStatement pst = handler.getdbConnection().prepareStatement(str);
-            pst.setString(1, txtPassword.getText());
-            ResultSet rs = pst.executeQuery();
-
-            if (a.length() == 0) {
-                JOptionPane.showMessageDialog(this, "Sorry!\nName can't be empty");
-            } else if (b.length() == 0) {
-                JOptionPane.showMessageDialog(this, "Sorry!\nPassword can't be empty");
-            }
-
-            if (rs.next()) {
-                if (!a.equals(rs.getString("StudentName"))) {
-                    JOptionPane.showMessageDialog(this, "Incorrect Name\nPlease re-type");
-                } else if (!b.equals(rs.getString("Password"))) {
-                    JOptionPane.showMessageDialog(this, "Incorrect Password\nPlease re-type");
-                } else if (a.equals(rs.getString("StudentName")) && b.equals(rs.getString("Password"))) {
-                    JOptionPane.showMessageDialog(this, "Welcome " + rs.getString("StudentName"));
-                }
-            }
-
-        } catch (ClassNotFoundException | SQLException ex) {
-            Logger.getLogger(Student.class.getName()).log(Level.SEVERE, null, ex);
-        }
-
+        handler = new DBHandler();
+        String name = txtFirstName.getText();
         String pass = txtPassword.getText();
-        String str = "SELECT StudentName, Password FROM student_details WHERE StudentName=?";
-        PreparedStatement pst;
-        try {
-            pst = handler.getdbConnection().prepareStatement(str);
-            pst.setString(1, txtFirstName.getText());
-            ResultSet rs = pst.executeQuery();
-            if (rs.next()) {
-                if (!pass.equals(rs.getString("Password"))) {
-                    JOptionPane.showMessageDialog(this, "Incorrect Password\nPlease re-type");
-                }
-            }
 
-        } catch (ClassNotFoundException | SQLException ex) {
-            Logger.getLogger(Student.class.getName()).log(Level.SEVERE, null, ex);
+        ResultSet result = null;
+        if (!name.equals("") && !pass.equals("")) {
+            String query = "SELECT * FROM student_details WHERE StudentName = ? AND Password = ? ";
+
+            try {
+                PreparedStatement preparedStatement = handler.getdbConnection().prepareStatement(query);
+                preparedStatement.setString(1, name);
+                preparedStatement.setString(2, pass);
+                result = preparedStatement.executeQuery();
+                int counter = 0;
+                while (result.next()) {
+                    counter++;
+                    name = result.getString("StudentName");
+                    pass = result.getString("Password");
+                    System.out.println("Welcome " + name + " " + pass);
+                }
+                if (counter == 1) {
+                    JOptionPane.showMessageDialog(this, "Welcome " + name);
+                } else {
+                    JOptionPane.showMessageDialog(this, "Please re-type\nYour name or password is/are incorrect");
+                }
+
+            } catch (SQLException | ClassNotFoundException e) {
+                e.printStackTrace();
+            }
+        } else {
+            JOptionPane.showMessageDialog(this, "Field can't be empty");
+            System.out.println("Please enter valid details...");
         }
 
     }//GEN-LAST:event_btnSignInActionPerformed
@@ -273,13 +243,13 @@ public class Student extends javax.swing.JFrame {
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
+
                 }
             }
         } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Student.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Student.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-
-        
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> {

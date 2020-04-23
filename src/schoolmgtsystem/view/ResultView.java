@@ -113,7 +113,7 @@ public class ResultView extends javax.swing.JFrame {
 
     private void btnBackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBackMouseClicked
         
-        new PrincipalView().show();
+        new AdminPortal().show();
         this.dispose();
         
     }//GEN-LAST:event_btnBackMouseClicked

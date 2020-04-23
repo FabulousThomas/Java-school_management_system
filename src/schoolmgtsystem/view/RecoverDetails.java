@@ -112,10 +112,9 @@ public class RecoverDetails extends javax.swing.JFrame {
                 if (a.equals(rs.getString("Username"))) {
 
 //txtError.setText("Details are correct");
-                    PrincipalLogIn pl = new PrincipalLogIn();
-                    PrincipalLogIn.txtFirstName.setText(rs.getString("FirstName"));
-                    PrincipalLogIn.txtEmail.setText(rs.getString("EmailAddress"));
-                    PrincipalLogIn.txtPassword.setText(rs.getString("Password"));
+                    AdminLogIn pl = new AdminLogIn();
+                    AdminLogIn.txtEmail.setText(rs.getString("EmailAddress"));
+                    AdminLogIn.txtPassword.setText(rs.getString("Password"));
                     pl.show();
                     JOptionPane.showMessageDialog(this, "Details recovered successfully");
                     this.dispose();
@@ -140,10 +139,10 @@ public class RecoverDetails extends javax.swing.JFrame {
 //                    if (a.equals(rs.getString("Username"))) {
 //
 ////txtError.setText("Details are correct");
-//                        PrincipalLogIn pl = new PrincipalLogIn();
-//                        PrincipalLogIn.txtFirstName.setText(rs.getString("FirstName"));
-//                        PrincipalLogIn.txtEmail.setText(rs.getString("EmailAddress"));
-//                        PrincipalLogIn.txtPassword.setText(rs.getString("Password"));
+//                        AdminLogIn pl = new AdminLogIn();
+//                        AdminLogIn.txtFirstName.setText(rs.getString("FirstName"));
+//                        AdminLogIn.txtEmail.setText(rs.getString("EmailAddress"));
+//                        AdminLogIn.txtPassword.setText(rs.getString("Password"));
 //                        pl.show();
 //                        JOptionPane.showMessageDialog(this, "Details recovered successfully");
 //                        this.dispose();

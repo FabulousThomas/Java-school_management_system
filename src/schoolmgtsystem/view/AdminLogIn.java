@@ -19,23 +19,24 @@ import schoolmgtsystem.dbhelper.DBHandler;
  *
  * @author FabulousTHO
  */
-public class PrincipalLogIn extends javax.swing.JFrame {
+public class AdminLogIn extends javax.swing.JFrame {
+
+    String name;
 
     //String conStr = "jdbc:sqlserver://localhost;instanceName=SQLEXPRESS;databaseName=Home;user=sa;password=123456789";
     /**
      * Creates new form TeacherLogIn
      */
-    public PrincipalLogIn() {
+    public AdminLogIn() {
         initComponents();
         setLocationRelativeTo(null);
     }
     //OverLoading Constructor
 
-    public PrincipalLogIn(String getValue) {
+    public AdminLogIn(String getValue) {
         initComponents();
         RecoverDetails rd = new RecoverDetails();
         RecoverDetails.txtUsername.setText(getValue);
-        txtFirstName.setText(getValue);
         txtEmail.setText(getValue);
         txtPassword.setText(getValue);
 
@@ -64,20 +65,15 @@ public class PrincipalLogIn extends javax.swing.JFrame {
         jSeparator9 = new javax.swing.JSeparator();
         jPanel2 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jSeparator1 = new javax.swing.JSeparator();
         txtEmail = new javax.swing.JTextField();
         jSeparator2 = new javax.swing.JSeparator();
         jSeparator3 = new javax.swing.JSeparator();
         txtPassword = new javax.swing.JPasswordField();
-        btnSignup = new javax.swing.JButton();
-        SignUp = new javax.swing.JLabel();
-        jSeparator10 = new javax.swing.JSeparator();
+        btnSignin = new javax.swing.JButton();
         Recover = new javax.swing.JLabel();
-        jSeparator11 = new javax.swing.JSeparator();
-        txtFirstName = new javax.swing.JTextField();
+        btnSignup = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocationByPlatform(true);
@@ -133,84 +129,59 @@ public class PrincipalLogIn extends javax.swing.JFrame {
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 102, 255), 4));
         jPanel2.setLayout(null);
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 102, 204));
         jLabel3.setText("Sign In ");
         jPanel2.add(jLabel3);
-        jLabel3.setBounds(170, 30, 70, 26);
-
-        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(0, 102, 204));
-        jLabel4.setText("FirstName");
-        jPanel2.add(jLabel4);
-        jLabel4.setBounds(50, 170, 100, 26);
+        jLabel3.setBounds(160, 30, 93, 26);
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(0, 102, 204));
         jLabel5.setText("Email Address");
         jPanel2.add(jLabel5);
-        jLabel5.setBounds(50, 250, 125, 26);
+        jLabel5.setBounds(70, 180, 125, 26);
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(0, 102, 204));
         jLabel6.setText("Password");
         jPanel2.add(jLabel6);
-        jLabel6.setBounds(50, 330, 87, 26);
-
-        jSeparator1.setBackground(new java.awt.Color(0, 51, 255));
-        jSeparator1.setForeground(new java.awt.Color(0, 51, 255));
-        jPanel2.add(jSeparator1);
-        jSeparator1.setBounds(50, 220, 370, 10);
+        jLabel6.setBounds(70, 260, 87, 26);
 
         txtEmail.setBackground(new java.awt.Color(255, 255, 255));
         txtEmail.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         txtEmail.setBorder(null);
         jPanel2.add(txtEmail);
-        txtEmail.setBounds(50, 280, 370, 20);
+        txtEmail.setBounds(70, 210, 330, 20);
 
         jSeparator2.setBackground(new java.awt.Color(0, 51, 255));
         jSeparator2.setForeground(new java.awt.Color(0, 51, 255));
         jPanel2.add(jSeparator2);
-        jSeparator2.setBounds(50, 380, 370, 10);
+        jSeparator2.setBounds(70, 310, 330, 10);
 
         jSeparator3.setBackground(new java.awt.Color(0, 51, 255));
         jSeparator3.setForeground(new java.awt.Color(0, 51, 255));
         jPanel2.add(jSeparator3);
-        jSeparator3.setBounds(50, 300, 370, 10);
+        jSeparator3.setBounds(70, 230, 330, 10);
 
         txtPassword.setBackground(new java.awt.Color(255, 255, 255));
         txtPassword.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         txtPassword.setBorder(null);
         jPanel2.add(txtPassword);
-        txtPassword.setBounds(50, 360, 370, 20);
+        txtPassword.setBounds(70, 290, 330, 20);
 
-        btnSignup.setBackground(new java.awt.Color(0, 102, 204));
-        btnSignup.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        btnSignup.setForeground(new java.awt.Color(255, 255, 255));
-        btnSignup.setText("Sign In");
-        btnSignup.addActionListener(new java.awt.event.ActionListener() {
+        btnSignin.setBackground(new java.awt.Color(255, 255, 255));
+        btnSignin.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        btnSignin.setForeground(new java.awt.Color(255, 255, 255));
+        btnSignin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/schoolmgtsystem/IconImages/icons8_Login.png"))); // NOI18N
+        btnSignin.setBorder(null);
+        btnSignin.setBorderPainted(false);
+        btnSignin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSignupActionPerformed(evt);
+                btnSigninActionPerformed(evt);
             }
         });
-        jPanel2.add(btnSignup);
-        btnSignup.setBounds(170, 430, 100, 30);
-
-        SignUp.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        SignUp.setForeground(new java.awt.Color(0, 102, 204));
-        SignUp.setText("Sign Up instead");
-        SignUp.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                SignUpMouseClicked(evt);
-            }
-        });
-        jPanel2.add(SignUp);
-        SignUp.setBounds(340, 470, 100, 20);
-
-        jSeparator10.setBackground(new java.awt.Color(0, 0, 255));
-        jSeparator10.setForeground(new java.awt.Color(0, 0, 255));
-        jPanel2.add(jSeparator10);
-        jSeparator10.setBounds(30, 500, 90, 2);
+        jPanel2.add(btnSignin);
+        btnSignin.setBounds(110, 350, 40, 40);
 
         Recover.setBackground(new java.awt.Color(255, 255, 255));
         Recover.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -222,18 +193,20 @@ public class PrincipalLogIn extends javax.swing.JFrame {
             }
         });
         jPanel2.add(Recover);
-        Recover.setBounds(30, 480, 100, 20);
+        Recover.setBounds(340, 470, 100, 20);
 
-        jSeparator11.setBackground(new java.awt.Color(0, 0, 255));
-        jSeparator11.setForeground(new java.awt.Color(0, 0, 255));
-        jPanel2.add(jSeparator11);
-        jSeparator11.setBounds(340, 490, 90, 2);
-
-        txtFirstName.setBackground(new java.awt.Color(255, 255, 255));
-        txtFirstName.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        txtFirstName.setBorder(null);
-        jPanel2.add(txtFirstName);
-        txtFirstName.setBounds(50, 200, 370, 20);
+        btnSignup.setBackground(new java.awt.Color(255, 255, 255));
+        btnSignup.setIcon(new javax.swing.ImageIcon(getClass().getResource("/schoolmgtsystem/IconImages/icons8_Add_User.png"))); // NOI18N
+        btnSignup.setToolTipText("Sign Up");
+        btnSignup.setBorder(null);
+        btnSignup.setBorderPainted(false);
+        btnSignup.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSignupActionPerformed(evt);
+            }
+        });
+        jPanel2.add(btnSignup);
+        btnSignup.setBounds(400, 20, 40, 30);
 
         jPanel1.add(jPanel2);
         jPanel2.setBounds(300, 0, 460, 530);
@@ -243,63 +216,50 @@ public class PrincipalLogIn extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnSignupActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSignupActionPerformed
-        String a = txtFirstName.getText();
-        String b = txtEmail.getText();
-        String c = txtPassword.getText();
+    private void btnSigninActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSigninActionPerformed
 
-//        Pattern myPattern1 = Pattern.compile("^[a-z]+[a-z.0-9-]+@[a-z]+(\\.[a-z]+[a-z]+)([/?].*)?$");
-//        Matcher myMatcher1 = myPattern1.matcher(txtEmail.getText());
-//        Boolean myBoolean1 = myMatcher1.matches();
-//
-//        Pattern myPattern2 = Pattern.compile("^(?=.*[0-9])(?=.*[A-Z]).{8,}");
-//        Matcher myMatcher2 = myPattern2.matcher(txtPassword.getText());
-//        Boolean myBoolean2 = myMatcher2.matches();
-//
-//        if ((myBoolean1 == true) && (myBoolean2 == true)) {
-//            //JOptionPane.showMessageDialog(this, "Email and Password are incorrect");
-//        } else {
-//            JOptionPane.showMessageDialog(this, "Email and Password are correct");
-//        }
+        DBHandler handler = new DBHandler();
 
-        try {
+        String email = txtEmail.getText();
+        String pass = txtPassword.getText();
 
-            DBHandler handler = new DBHandler();
-
-            String str = "SELECT FirstName, Email, Password FROM admin WHERE FirstName = ?";
-            PreparedStatement pst = handler.getdbConnection().prepareStatement(str);
-            pst.setString(1, txtFirstName.getText());
-            ResultSet rs = pst.executeQuery();
-            while (rs.next()) {
-                if (a.equals(rs.getString("FirstName")) && (b.equals(rs.getString("Email"))
-                        && (c.equals(rs.getString("Password"))))) {
-                    JOptionPane.showMessageDialog(null, "Details are correct");
-                    new PrincipalView().show();
-                    setVisible(true);
-                    this.dispose();
-                } else {
-                    JOptionPane.showMessageDialog(null, "Invalid Details");
+        ResultSet result = null;
+        if (!email.equals("") && !pass.equals("")) {
+            String query = "SELECT * FROM admin WHERE Email = ? AND Password = ?";
+            try {
+                PreparedStatement preparedStatement = handler.getdbConnection().prepareStatement(query);
+                preparedStatement.setString(1, email);
+                preparedStatement.setString(2, pass);
+                result = preparedStatement.executeQuery();
+                int counter = 0;
+                while (result.next()) {
+                    counter++;
+                    email = result.getString("Email");
+                    pass = result.getString("Password");
+                    name = result.getString("FirstName");
+                    System.out.println("Email-> " + email + ", Password-> " + pass);
                 }
-            }
+                if (counter == 1) {
+                    JOptionPane.showMessageDialog(this, "Welcome Admin " + "(" + name + ")");
+                } else {
+                    JOptionPane.showMessageDialog(this, "Please re-type\nYour name or password is/are incorrect");
+                }
 
-        } catch (SQLException e) {
-            System.out.println(e);
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(PrincipalLogIn.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (ClassNotFoundException | SQLException ex) {
+                Logger.getLogger(AdminLogIn.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        } else {
+            JOptionPane.showMessageDialog(this, "Field can't be empty");
         }
-    }//GEN-LAST:event_btnSignupActionPerformed
+
+
+    }//GEN-LAST:event_btnSigninActionPerformed
 
     private void txtBackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtBackMouseClicked
         new Home().show();
         setVisible(true);
         this.dispose();
     }//GEN-LAST:event_txtBackMouseClicked
-
-    private void SignUpMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SignUpMouseClicked
-        new PrincipalSignUp().show();
-        setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_SignUpMouseClicked
 
     private void SignUp1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SignUp1MouseClicked
 
@@ -314,14 +274,21 @@ public class PrincipalLogIn extends javax.swing.JFrame {
             this.dispose();
         }
         if (sel == 1) {
-            new PrincipalLogIn().show();
+            new AdminLogIn().show();
             this.dispose();
         }
         if (sel == 2) {
-            new PrincipalLogIn().show();
+            new AdminLogIn().show();
             this.dispose();
         }
     }//GEN-LAST:event_RecoverMouseClicked
+
+    private void btnSignupActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSignupActionPerformed
+
+        new AdminSignUp().show();
+        this.dispose();
+
+    }//GEN-LAST:event_btnSignupActionPerformed
 
     /**
      * @param args the command line arguments
@@ -340,14 +307,18 @@ public class PrincipalLogIn extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(PrincipalLogIn.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AdminLogIn.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(PrincipalLogIn.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AdminLogIn.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(PrincipalLogIn.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AdminLogIn.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(PrincipalLogIn.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AdminLogIn.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -355,27 +326,23 @@ public class PrincipalLogIn extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> {
-            new PrincipalLogIn().setVisible(true);
+            new AdminLogIn().setVisible(true);
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Recover;
-    private javax.swing.JLabel SignUp;
     private javax.swing.JLabel SignUp1;
+    private javax.swing.JButton btnSignin;
     private javax.swing.JButton btnSignup;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JSeparator jSeparator10;
-    private javax.swing.JSeparator jSeparator11;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;
@@ -386,7 +353,6 @@ public class PrincipalLogIn extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator9;
     private javax.swing.JLabel txtBack;
     public static javax.swing.JTextField txtEmail;
-    public static javax.swing.JTextField txtFirstName;
     static javax.swing.JPasswordField txtPassword;
     // End of variables declaration//GEN-END:variables
 }

@@ -304,7 +304,7 @@ public class ViewProfileteacher extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jLabel14MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel14MouseClicked
-        new PrincipalView().show();
+        new AdminPortal().show();
         setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jLabel14MouseClicked

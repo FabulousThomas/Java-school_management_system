@@ -18,13 +18,13 @@ import schoolmgtsystem.dbhelper.DBHandler;
  *
  * @author FabulousTHO
  */
-public class PrincipalSignUp extends javax.swing.JFrame {
+public class AdminSignUp extends javax.swing.JFrame {
 
     //String conStr = "jdbc:sqlserver://localhost;instanceName=SQLEXPRESS;databaseName=Home;user=sa;password=123456789";
     /**
      * Creates new form PrincipalSignUp
      */
-    public PrincipalSignUp() {
+    public AdminSignUp() {
         initComponents();
     }
 
@@ -248,21 +248,21 @@ public class PrincipalSignUp extends javax.swing.JFrame {
 //        }
 //        if ((myBoolean1 == true) && (myBoolean2 == true)) {
 //
-//            new PrincipalLogIn().show();
+//            new AdminLogIn().show();
 //            this.dispose();
 //        }
 //        if ((myBoolean1 == false) && (myBoolean2 == false)) {
 //
-////            new PrincipalSignUp().dispose();
+////            new AdminSignUp().dispose();
 //        }
 //        if ((myBoolean1 == true) && (myBoolean2 == false)) {
 //
-////            new PrincipalSignUp().show();
+////            new AdminSignUp().show();
 //            this.dispose();
 //
 //        } else if ((myBoolean1 == false) && (myBoolean2 == true)) {
 //
-////            new PrincipalSignUp().show();
+////            new AdminSignUp().show();
 //            this.dispose();
 //        }
 
@@ -295,11 +295,11 @@ public class PrincipalSignUp extends javax.swing.JFrame {
             txtEmail.setText("");
             txtPassword.setText("");
 
-            new PrincipalLogIn().show();
+            new AdminLogIn().show();
             this.dispose();
 
         } catch (ClassNotFoundException | SQLException ex) {
-            Logger.getLogger(PrincipalSignUp.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(AdminSignUp.class.getName()).log(Level.SEVERE, null, ex);
         }
 
 
@@ -322,19 +322,20 @@ public class PrincipalSignUp extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(PrincipalSignUp.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AdminSignUp.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(PrincipalSignUp.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AdminSignUp.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(PrincipalSignUp.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AdminSignUp.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(PrincipalSignUp.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AdminSignUp.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> {
-            new PrincipalSignUp().setVisible(true);
+            new AdminSignUp().setVisible(true);
         });
     }
 

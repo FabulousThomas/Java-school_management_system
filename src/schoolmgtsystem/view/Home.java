@@ -738,7 +738,7 @@ public class Home extends javax.swing.JFrame {
 
     private void jPanel7MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel7MousePressed
         // TODO add your handling code here:
-        new PrincipalLogIn().show();
+        new AdminLogIn().show();
         setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jPanel7MousePressed
