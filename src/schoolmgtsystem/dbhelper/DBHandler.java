@@ -8,11 +8,12 @@ package schoolmgtsystem.dbhelper;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import schoolmgtsystem.model.UserResult;
-import schoolmgtsystem.view.InsertFirstTest;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -62,11 +63,50 @@ public class DBHandler extends Configs {
 //            Logger.getLogger(DBHandler.class.getName()).log(Level.SEVERE, null, ex);
 //        }
 //    }
-    
 //    public void insertFirstTest() {
 //        
 //        
 //        
 //    }
+    public void fillTable(JTable table, String value) {
+        String str = "SELECT * FROM `student_details` WHERE CONCAT(`StudentID`,`ParentID`,"
+                + "`StudentName`,`Gender`,`PreviousSchool`,`PreviousClass`,`AdmissionClass`,"
+                + "`Session`,`PhysicalDisability`,`DisabilityType`,`MedicalCondition`,"
+                + "`Disability`,`RegDate`,`EndDate`,`Password`)LIKE ?";
+        try {
+            PreparedStatement pst = getdbConnection().prepareStatement(str);
+            pst.setString(1, "%" + value + "%");
+
+            ResultSet rs = pst.executeQuery();
+            DefaultTableModel model = (DefaultTableModel) table.getModel();
+
+            Object[] row;
+
+            while (rs.next()) {
+                row = new Object[15];
+
+                row[0] = rs.getInt(1);
+                row[1] = rs.getInt(2);
+                row[2] = rs.getString(3);
+                row[3] = rs.getString(4);
+                row[4] = rs.getString(5);
+                row[5] = rs.getString(6);
+                row[6] = rs.getString(7);
+                row[7] = rs.getString(8);
+                row[8] = rs.getString(9);
+                row[9] = rs.getString(10);
+                row[10] = rs.getString(11);
+                row[11] = rs.getString(12);
+                row[12] = rs.getString(13);
+                row[13] = rs.getString(14);
+                row[14] = rs.getString(15);
+
+                model.addRow(row);
+            }
+
+        } catch (ClassNotFoundException | SQLException ex) {
+            Logger.getLogger(DBHandler.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
 
 }

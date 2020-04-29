@@ -185,10 +185,13 @@ public class ParentSignUp extends javax.swing.JFrame {
         jLabel10.setText("Gender");
         jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 440, -1, -1));
 
-        btncancel.setBackground(new java.awt.Color(0, 102, 204));
+        btncancel.setBackground(new java.awt.Color(255, 255, 255));
         btncancel.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btncancel.setForeground(new java.awt.Color(255, 255, 255));
-        btncancel.setText("Cancel");
+        btncancel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/schoolmgtsystem/IconImages/icons8_Cancel.png"))); // NOI18N
+        btncancel.setToolTipText("Cancel");
+        btncancel.setBorder(null);
+        btncancel.setBorderPainted(false);
         btncancel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 btncancelMousePressed(evt);
@@ -199,7 +202,7 @@ public class ParentSignUp extends javax.swing.JFrame {
                 btncancelActionPerformed(evt);
             }
         });
-        jPanel1.add(btncancel, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 520, 100, 30));
+        jPanel1.add(btncancel, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 520, 40, 40));
 
         RMale.setBackground(new java.awt.Color(255, 255, 255));
         buttonGroup1.add(RMale);
@@ -215,16 +218,19 @@ public class ParentSignUp extends javax.swing.JFrame {
         RFemale.setText("Female");
         jPanel1.add(RFemale, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 440, 100, -1));
 
-        btnSignup.setBackground(new java.awt.Color(0, 102, 204));
+        btnSignup.setBackground(new java.awt.Color(255, 255, 255));
         btnSignup.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btnSignup.setForeground(new java.awt.Color(255, 255, 255));
-        btnSignup.setText("SignUp");
+        btnSignup.setIcon(new javax.swing.ImageIcon(getClass().getResource("/schoolmgtsystem/IconImages/icons8_Enter.png"))); // NOI18N
+        btnSignup.setToolTipText("Sign Up");
+        btnSignup.setBorder(null);
+        btnSignup.setBorderPainted(false);
         btnSignup.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSignupActionPerformed(evt);
             }
         });
-        jPanel1.add(btnSignup, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 520, 100, 30));
+        jPanel1.add(btnSignup, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 520, 40, 40));
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(0, 102, 204));
@@ -374,43 +380,6 @@ public class ParentSignUp extends javax.swing.JFrame {
     }//GEN-LAST:event_btncancelActionPerformed
 
     private void btnSignupActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSignupActionPerformed
-//         Pattern myPattern1 = Pattern.compile("^[a-z]+[a-z.0-9-]+@[a-z]+(\\.[a-z]+[a-z]+)([/?].*)?$");
-//        Matcher myMatcher1 = myPattern1.matcher(txtEmail.getText());
-//        Boolean myBoolean1 = myMatcher1.matches();
-//
-//        Pattern myPattern2 = Pattern.compile("^(?=.*[0-9])(?=.*[A-Z]).{8,}");
-//        Matcher myMatcher2 = myPattern2.matcher(txtPassword.getText());
-//        Boolean myBoolean2 = myMatcher2.matches();
-//
-//
-//        if((myBoolean1 == true)&&(myBoolean2 == true))
-//        {
-//            //JOptionPane.showMessageDialog(this, "Email and Password are incorrect");
-//        }
-//        else
-//        {
-//            JOptionPane.showMessageDialog(this, "Email and/or Password are incorrect");
-//        }
-//          if((myBoolean1 == true)&&(myBoolean2 == true)){
-//                                new ParentSignIn().show();
-//                                //setVisible(true);
-//                                this.dispose();
-//                            }
-//                            if((myBoolean1 == false)&&(myBoolean2 == false)){
-//                                //new ParentSignUp().show();
-//                                setVisible(true);
-//                                new ParentSignUp().dispose();
-//                                        }
-//                            if((myBoolean1 == true)&&(myBoolean2 == false)){
-//                                new ParentSignUp().show();
-//                                setVisible(true);
-//                                new ParentSignUp().dispose();
-//                                            }
-//                            else if((myBoolean1 == false)&&(myBoolean2 == true)){
-//                                new ParentSignUp().show();
-//                                //setVisible(true);
-//                                new ParentSignUp().dispose();
-//                                        }
 
         try {
 

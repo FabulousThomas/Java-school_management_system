@@ -184,19 +184,19 @@ public class StudentSignup extends javax.swing.JFrame {
 
         jLabel8.setBackground(new java.awt.Color(255, 255, 255));
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(0, 102, 204));
+        jLabel8.setForeground(new java.awt.Color(51, 51, 51));
         jLabel8.setText("Disability Type");
         jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 500, 100, -1));
 
         jLabel9.setBackground(new java.awt.Color(255, 255, 255));
         jLabel9.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(0, 102, 204));
+        jLabel9.setForeground(new java.awt.Color(51, 51, 51));
         jLabel9.setText("Physical Disabilities");
         jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 440, -1, -1));
 
         jLabel7.setBackground(new java.awt.Color(255, 255, 255));
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(0, 102, 204));
+        jLabel7.setForeground(new java.awt.Color(51, 51, 51));
         jLabel7.setText("Session");
         jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 150, -1, -1));
 
@@ -208,7 +208,7 @@ public class StudentSignup extends javax.swing.JFrame {
 
         jLabel6.setBackground(new java.awt.Color(255, 255, 255));
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(0, 102, 204));
+        jLabel6.setForeground(new java.awt.Color(51, 51, 51));
         jLabel6.setText("Admission Class");
         jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 90, 110, -1));
 
@@ -220,7 +220,7 @@ public class StudentSignup extends javax.swing.JFrame {
 
         jLabel5.setBackground(new java.awt.Color(255, 255, 255));
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(0, 102, 204));
+        jLabel5.setForeground(new java.awt.Color(51, 51, 51));
         jLabel5.setText("End Date");
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 270, -1, -1));
 
@@ -232,7 +232,7 @@ public class StudentSignup extends javax.swing.JFrame {
 
         jLabel3.setBackground(new java.awt.Color(255, 255, 255));
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(0, 102, 204));
+        jLabel3.setForeground(new java.awt.Color(51, 51, 51));
         jLabel3.setText("Previous School");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 150, 110, -1));
 
@@ -244,7 +244,7 @@ public class StudentSignup extends javax.swing.JFrame {
 
         jLabel11.setBackground(new java.awt.Color(255, 255, 255));
         jLabel11.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(0, 102, 204));
+        jLabel11.setForeground(new java.awt.Color(51, 51, 51));
         jLabel11.setText("Full Name");
         jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 90, 80, -1));
 
@@ -255,7 +255,7 @@ public class StudentSignup extends javax.swing.JFrame {
 
         jLabel10.setBackground(new java.awt.Color(255, 255, 255));
         jLabel10.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(0, 102, 204));
+        jLabel10.setForeground(new java.awt.Color(51, 51, 51));
         jLabel10.setText("Gender");
         jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 280, -1, -1));
 
@@ -272,27 +272,35 @@ public class StudentSignup extends javax.swing.JFrame {
         CFemale.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jPanel1.add(CFemale, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 280, -1, -1));
 
-        btnsignup.setBackground(new java.awt.Color(0, 102, 204));
+        btnsignup.setBackground(new java.awt.Color(255, 255, 255));
         btnsignup.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btnsignup.setForeground(new java.awt.Color(255, 255, 255));
-        btnsignup.setText("SignUp");
+        btnsignup.setForeground(new java.awt.Color(0, 102, 204));
+        btnsignup.setIcon(new javax.swing.ImageIcon(getClass().getResource("/schoolmgtsystem/IconImages/icons8_Enter.png"))); // NOI18N
+        btnsignup.setText("Sign up");
+        btnsignup.setToolTipText("Sign up");
+        btnsignup.setBorder(null);
+        btnsignup.setBorderPainted(false);
         btnsignup.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnsignupActionPerformed(evt);
             }
         });
-        jPanel1.add(btnsignup, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 570, 120, 36));
+        jPanel1.add(btnsignup, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 570, 100, 40));
 
-        btncancel.setBackground(new java.awt.Color(0, 102, 204));
+        btncancel.setBackground(new java.awt.Color(255, 255, 255));
         btncancel.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btncancel.setForeground(new java.awt.Color(255, 255, 255));
+        btncancel.setForeground(new java.awt.Color(0, 102, 204));
+        btncancel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/schoolmgtsystem/IconImages/icons8_Cancel.png"))); // NOI18N
         btncancel.setText("Cancel");
+        btncancel.setToolTipText("Cancel");
+        btncancel.setBorder(null);
+        btncancel.setBorderPainted(false);
         btncancel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btncancelActionPerformed(evt);
             }
         });
-        jPanel1.add(btncancel, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 570, 120, 36));
+        jPanel1.add(btncancel, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 570, 90, 40));
 
         Session.setBackground(new java.awt.Color(255, 255, 255));
         Session.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -318,13 +326,13 @@ public class StudentSignup extends javax.swing.JFrame {
 
         jLabel14.setBackground(new java.awt.Color(255, 255, 255));
         jLabel14.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel14.setForeground(new java.awt.Color(0, 102, 204));
+        jLabel14.setForeground(new java.awt.Color(51, 51, 51));
         jLabel14.setText("Disability ?");
         jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 450, -1, -1));
 
         jLabel16.setBackground(new java.awt.Color(255, 255, 255));
         jLabel16.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel16.setForeground(new java.awt.Color(0, 102, 204));
+        jLabel16.setForeground(new java.awt.Color(51, 51, 51));
         jLabel16.setText("Registration Date");
         jPanel1.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 210, -1, -1));
 
@@ -340,23 +348,27 @@ public class StudentSignup extends javax.swing.JFrame {
 
         jLabel12.setBackground(new java.awt.Color(255, 255, 255));
         jLabel12.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(0, 102, 204));
+        jLabel12.setForeground(new java.awt.Color(51, 51, 51));
         jLabel12.setText("Medical Condition");
         jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 500, 130, -1));
 
         lblImage.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
         jPanel1.add(lblImage, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 140, 220, 200));
 
-        btnPassport.setBackground(new java.awt.Color(0, 153, 204));
+        btnPassport.setBackground(new java.awt.Color(255, 255, 255));
         btnPassport.setFont(new java.awt.Font("Dialog", 1, 13)); // NOI18N
-        btnPassport.setForeground(new java.awt.Color(255, 255, 255));
+        btnPassport.setForeground(new java.awt.Color(0, 102, 204));
+        btnPassport.setIcon(new javax.swing.ImageIcon(getClass().getResource("/schoolmgtsystem/IconImages/icons8_Add.png"))); // NOI18N
         btnPassport.setText("Add Passport");
+        btnPassport.setToolTipText("Add Passport");
+        btnPassport.setBorder(null);
+        btnPassport.setBorderPainted(false);
         btnPassport.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnPassportActionPerformed(evt);
             }
         });
-        jPanel1.add(btnPassport, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 350, 120, 30));
+        jPanel1.add(btnPassport, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 340, 130, 40));
 
         Medical.setFont(new java.awt.Font("Dialog", 1, 13)); // NOI18N
         Medical.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "None", "Anxiety", "Obesity", "Diabetes", "Back pain", "Allergic rhinitis", "Hypertention", "Reflux esophagitis", "Hyperlipidemia", "Others" }));
@@ -372,7 +384,7 @@ public class StudentSignup extends javax.swing.JFrame {
 
         jLabel17.setBackground(new java.awt.Color(255, 255, 255));
         jLabel17.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel17.setForeground(new java.awt.Color(0, 102, 204));
+        jLabel17.setForeground(new java.awt.Color(51, 51, 51));
         jLabel17.setText("Password");
         jPanel1.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 330, -1, -1));
 
@@ -383,7 +395,7 @@ public class StudentSignup extends javax.swing.JFrame {
 
         jLabel18.setBackground(new java.awt.Color(255, 255, 255));
         jLabel18.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel18.setForeground(new java.awt.Color(0, 102, 204));
+        jLabel18.setForeground(new java.awt.Color(51, 51, 51));
         jLabel18.setText("Previous Class");
         jPanel1.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 210, -1, -1));
 
@@ -472,7 +484,6 @@ public class StudentSignup extends javax.swing.JFrame {
     }//GEN-LAST:event_btnPassportActionPerformed
 
     private void btncancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncancelActionPerformed
-        // TODO add your handling code here:
 
         new Home().show();
         this.dispose();
@@ -481,11 +492,11 @@ public class StudentSignup extends javax.swing.JFrame {
 
     private void txtParentIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtParentIDActionPerformed
 
-//        this.addActionListener(txtParentID); 
     }//GEN-LAST:event_txtParentIDActionPerformed
 
     private void btnIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIDActionPerformed
 
+        //Getting the ParentID
         DBHandler handler = new DBHandler();
         String getParentID = "SELECT ParentID FROM parent_details";
         try {
@@ -505,7 +516,7 @@ public class StudentSignup extends javax.swing.JFrame {
     }//GEN-LAST:event_btnIDActionPerformed
 
     private void txtParentIDMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtParentIDMouseClicked
-        JOptionPane.showMessageDialog(txtParentID, "Sorry, not editable");  
+        JOptionPane.showMessageDialog(txtParentID, "Sorry, not editable");
     }//GEN-LAST:event_txtParentIDMouseClicked
 
     /**
@@ -548,33 +559,7 @@ public class StudentSignup extends javax.swing.JFrame {
         });
     }
 
-//    public void populateListView() {
-//
-//        DBHandler handler = new DBHandler();
-//
-//        String str = "SELECT FirstName, Surname FROM StudentReg WHERE Email = ?";
-//        try {
-//            PreparedStatement pst = handler.getdbConnection().prepareStatement(str);
-//
-//            ListView list = new ListView();
-//
-//            ResultSet rs = pst.executeQuery();
-//            while (rs.next()) {
-//
-//                list.show();
-//
-//            }
-//        } catch (ClassNotFoundException | SQLException ex) {
-//            Logger.getLogger(StudentSignup.class.getName()).log(Level.SEVERE, null, ex);
-//        }
-//
-//    }
-//    public ResultSet getID() {
-//        ResultSet result = null;
-//        if
-//        
-//        return result;
-//    }
+    //Getting image size
     public ImageIcon resizeImage(String imgPath) {
         ImageIcon myImage = new ImageIcon(imgPath);
         Image img = myImage.getImage();
@@ -656,7 +641,4 @@ public class StudentSignup extends javax.swing.JFrame {
     private javax.swing.JTextField txtPrevSchool;
     // End of variables declaration//GEN-END:variables
 
-    private void addActionListener(JTextField txtParentID) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 }

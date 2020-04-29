@@ -5,12 +5,20 @@
  */
 package schoolmgtsystem.view;
 
+import java.awt.Image;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
+import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.imageio.ImageIO;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
+import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import schoolmgtsystem.dbhelper.DBHandler;
 
@@ -21,6 +29,20 @@ import schoolmgtsystem.dbhelper.DBHandler;
 public class Student extends javax.swing.JFrame {
 
     private DBHandler handler;
+    BufferedImage bufferedImage;
+    ImageIcon imageIcon;
+    String dbImage;
+    String date;
+    String preSch;
+    String ID;
+    String disability;
+    String disType;
+    String physDis;
+    String preClass;
+    String admClass;
+    String med;
+    
+//    String image = StudentProfileOnly.lblImage.getText();
 
 //    String conStr = "jdbc:sqlserver://localhost;instanceName=SQLEXPRESS;databaseName=Home;user=sa;password=123456789";
     /**
@@ -187,6 +209,8 @@ public class Student extends javax.swing.JFrame {
 
     private void btnSignInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSignInActionPerformed
 
+        java.util.Date today = new java.util.Date();
+        
         handler = new DBHandler();
         String name = txtFirstName.getText();
         String pass = txtPassword.getText();
@@ -201,20 +225,53 @@ public class Student extends javax.swing.JFrame {
                 preparedStatement.setString(2, pass);
                 result = preparedStatement.executeQuery();
                 int counter = 0;
-                while (result.next()) {
+                if (result.next()) {
                     counter++;
                     name = result.getString("StudentName");
                     pass = result.getString("Password");
+                    date = result.getString("RegDate");
+                    preSch = result.getString("PreviousSchool");
+                    ID = result.getString("StudentID");
+                    disability = result.getString("Disability");
+                    disType = result.getString("DisabilityType");
+                    physDis = result.getString("PhysicalDisability");
+                    preClass = result.getString("PreviousClass");
+                    admClass = result.getString("AdmissionClass");
+                    med = result.getString("MedicalCondition");
+
                     System.out.println("Welcome " + name + " " + pass);
                 }
                 if (counter == 1) {
                     JOptionPane.showMessageDialog(this, "Welcome " + name);
+                    StudentProfileOnly sp = new StudentProfileOnly();
+                    StudentProfileOnly.lblName.setText(name);
+                    StudentProfileOnly.lblDate.setText(date);
+                    StudentProfileOnly.lblPre.setText(preSch);
+                    StudentProfileOnly.lblID.setText(ID);
+                    StudentProfileOnly.lblDis.setText(disability);
+                    StudentProfileOnly.lblDisType.setText(disType);
+                    StudentProfileOnly.lblPhysDis.setText(physDis);
+                    StudentProfileOnly.lblPreClass.setText(preClass);
+                    StudentProfileOnly.lblAdmClass.setText(admClass);
+                    StudentProfileOnly.lblMed.setText(med);
+                    //Alternative: To set image fom the DB to a label without scaled size image
+//                    bufferedImage = ImageIO.read(result.getBinaryStream("Passport"));
+//                    StudentProfileOnly.lblImage.setIcon(new ImageIcon(bufferedImage));
+
+                    //Alternative: To set image fom the DB to a label with scaled size image
+                    bufferedImage = ImageIO.read(result.getBinaryStream("Passport"));
+                    imageIcon = new ImageIcon(new ImageIcon(bufferedImage).getImage().getScaledInstance(StudentProfileOnly.lblImage.getWidth(), StudentProfileOnly.lblImage.getHeight(), Image.SCALE_DEFAULT));
+                    StudentProfileOnly.lblImage.setIcon(imageIcon);
+                    sp.show();
+                    this.dispose();
                 } else {
                     JOptionPane.showMessageDialog(this, "Please re-type\nYour name or password is/are incorrect");
                 }
 
             } catch (SQLException | ClassNotFoundException e) {
                 e.printStackTrace();
+            } catch (IOException ex) {
+                Logger.getLogger(Student.class.getName()).log(Level.SEVERE, null, ex);
             }
         } else {
             JOptionPane.showMessageDialog(this, "Field can't be empty");
@@ -257,6 +314,16 @@ public class Student extends javax.swing.JFrame {
         });
     }
 
+//    public ImageIcon resizeImage(String imgPath) {
+//        ImageIcon myImage = new ImageIcon(imgPath);
+//        Image img = myImage.getImage();
+//        Image newImage = img.getScaledInstance(StudentProfileOnly.lblImage.getWidth(), StudentProfileOnly.lblImage.getHeight(), Image.SCALE_SMOOTH);
+//        ImageIcon image = new ImageIcon(newImage);
+//
+//        return image;
+//
+//    }
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnSignIn;
     private javax.swing.JButton btncancel;
@@ -281,4 +348,5 @@ public class Student extends javax.swing.JFrame {
     static javax.swing.JTextField txtFirstName;
     private javax.swing.JPasswordField txtPassword;
     // End of variables declaration//GEN-END:variables
+
 }

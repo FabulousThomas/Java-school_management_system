@@ -354,14 +354,14 @@ public class StudentOnly extends javax.swing.JFrame {
                 while (rs.next()) {
                     if (j.equals(rs.getString("FirstName"))) {
                         JOptionPane.showMessageDialog(sp, "Access granted \n You are Thomas Eric");
-                        StudentProfileOnly.lblName.setText(rs.getString("FirstName"));
-                        StudentProfileOnly.lblSurname.setText(rs.getString("Surname"));
-                        StudentProfileOnly.lblUser.setText(rs.getString("Username"));
+                        StudentProfileOnly.lblPre.setText(rs.getString("FirstName"));
+                        StudentProfileOnly.lblPhysDis.setText(rs.getString("Surname"));
+                        StudentProfileOnly.lblAdmClass.setText(rs.getString("Username"));
                         StudentProfileOnly.lblID.setText(rs.getString("StudentID"));
-                        StudentProfileOnly.lblCode.setText(rs.getString("CourseCode"));
-                        StudentProfileOnly.lblEmail.setText(rs.getString("Email"));
-                        StudentProfileOnly.lblState.setText(rs.getString("State"));
-                        StudentProfileOnly.lblPhone.setText(rs.getString("Phone"));
+                        StudentProfileOnly.lblPreClass.setText(rs.getString("CourseCode"));
+                        StudentProfileOnly.lblDis.setText(rs.getString("Email"));
+                        StudentProfileOnly.lblDisType.setText(rs.getString("State"));
+                        StudentProfileOnly.lblMed.setText(rs.getString("Phone"));
                         //StudentProfile.lblImage.setText(rs.getString("Photo"));
                         sp.show();
                         this.dispose();
@@ -402,14 +402,14 @@ public class StudentOnly extends javax.swing.JFrame {
                 while (rs.next()) {
                     if (a.equals(rs.getString("FirstName"))) {
                         JOptionPane.showMessageDialog(sp, "Access granted \n You are Fabulous Thomas");
-                        StudentProfileOnly.lblName.setText(rs.getString("FirstName"));
-                        StudentProfileOnly.lblSurname.setText(rs.getString("Surname"));
-                        StudentProfileOnly.lblUser.setText(rs.getString("Username"));
+                        StudentProfileOnly.lblPre.setText(rs.getString("FirstName"));
+                        StudentProfileOnly.lblPhysDis.setText(rs.getString("Surname"));
+                        StudentProfileOnly.lblAdmClass.setText(rs.getString("Username"));
                         StudentProfileOnly.lblID.setText(rs.getString("StudentID"));
-                        StudentProfileOnly.lblCode.setText(rs.getString("CourseCode"));
-                        StudentProfileOnly.lblEmail.setText(rs.getString("Email"));
-                        StudentProfileOnly.lblState.setText(rs.getString("State"));
-                        StudentProfileOnly.lblPhone.setText(rs.getString("Phone"));
+                        StudentProfileOnly.lblPreClass.setText(rs.getString("CourseCode"));
+                        StudentProfileOnly.lblDis.setText(rs.getString("Email"));
+                        StudentProfileOnly.lblDisType.setText(rs.getString("State"));
+                        StudentProfileOnly.lblMed.setText(rs.getString("Phone"));
                         //StudentProfile.lblImage.setText(rs.getString("Photo"));
                         sp.show();
                         this.dispose();
@@ -451,14 +451,14 @@ public class StudentOnly extends javax.swing.JFrame {
                 while (rs.next()) {
                     if (b.equals(rs.getString("FirstName"))) {
                         JOptionPane.showMessageDialog(sp, "Access granted \n You are Daniel Scott");
-                        StudentProfileOnly.lblName.setText(rs.getString("FirstName"));
-                        StudentProfileOnly.lblSurname.setText(rs.getString("Surname"));
-                        StudentProfileOnly.lblUser.setText(rs.getString("Username"));
+                        StudentProfileOnly.lblPre.setText(rs.getString("FirstName"));
+                        StudentProfileOnly.lblPhysDis.setText(rs.getString("Surname"));
+                        StudentProfileOnly.lblAdmClass.setText(rs.getString("Username"));
                         StudentProfileOnly.lblID.setText(rs.getString("StudentID"));
-                        StudentProfileOnly.lblCode.setText(rs.getString("CourseCode"));
-                        StudentProfileOnly.lblEmail.setText(rs.getString("Email"));
-                        StudentProfileOnly.lblState.setText(rs.getString("State"));
-                        StudentProfileOnly.lblPhone.setText(rs.getString("Phone"));
+                        StudentProfileOnly.lblPreClass.setText(rs.getString("CourseCode"));
+                        StudentProfileOnly.lblDis.setText(rs.getString("Email"));
+                        StudentProfileOnly.lblDisType.setText(rs.getString("State"));
+                        StudentProfileOnly.lblMed.setText(rs.getString("Phone"));
                         //StudentProfile.lblImage.setText(rs.getString("Photo"));
                         sp.show();
                         this.dispose();
@@ -500,14 +500,14 @@ public class StudentOnly extends javax.swing.JFrame {
                 while (rs.next()) {
                     if (c.equals(rs.getString("FirstName"))) {
                         JOptionPane.showMessageDialog(sp, "Access granted \n You are Williams Wells");
-                        StudentProfileOnly.lblName.setText(rs.getString("FirstName"));
-                        StudentProfileOnly.lblSurname.setText(rs.getString("Surname"));
-                        StudentProfileOnly.lblUser.setText(rs.getString("Username"));
+                        StudentProfileOnly.lblPre.setText(rs.getString("FirstName"));
+                        StudentProfileOnly.lblPhysDis.setText(rs.getString("Surname"));
+                        StudentProfileOnly.lblAdmClass.setText(rs.getString("Username"));
                         StudentProfileOnly.lblID.setText(rs.getString("StudentID"));
-                        StudentProfileOnly.lblCode.setText(rs.getString("CourseCode"));
-                        StudentProfileOnly.lblEmail.setText(rs.getString("Email"));
-                        StudentProfileOnly.lblState.setText(rs.getString("State"));
-                        StudentProfileOnly.lblPhone.setText(rs.getString("Phone"));
+                        StudentProfileOnly.lblPreClass.setText(rs.getString("CourseCode"));
+                        StudentProfileOnly.lblDis.setText(rs.getString("Email"));
+                        StudentProfileOnly.lblDisType.setText(rs.getString("State"));
+                        StudentProfileOnly.lblMed.setText(rs.getString("Phone"));
                         //StudentProfile.lblImage.setText(rs.getString("Photo"));
                         sp.show();
                         this.dispose();
@@ -549,14 +549,14 @@ public class StudentOnly extends javax.swing.JFrame {
                 while (rs.next()) {
                     if (d.equals(rs.getString("FirstName"))) {
                         JOptionPane.showMessageDialog(sp, "Access granted \n You are Lydia Scott");
-                        StudentProfileOnly.lblName.setText(rs.getString("FirstName"));
-                        StudentProfileOnly.lblSurname.setText(rs.getString("Surname"));
-                        StudentProfileOnly.lblUser.setText(rs.getString("Username"));
+                        StudentProfileOnly.lblPre.setText(rs.getString("FirstName"));
+                        StudentProfileOnly.lblPhysDis.setText(rs.getString("Surname"));
+                        StudentProfileOnly.lblAdmClass.setText(rs.getString("Username"));
                         StudentProfileOnly.lblID.setText(rs.getString("StudentID"));
-                        StudentProfileOnly.lblCode.setText(rs.getString("CourseCode"));
-                        StudentProfileOnly.lblEmail.setText(rs.getString("Email"));
-                        StudentProfileOnly.lblState.setText(rs.getString("State"));
-                        StudentProfileOnly.lblPhone.setText(rs.getString("Phone"));
+                        StudentProfileOnly.lblPreClass.setText(rs.getString("CourseCode"));
+                        StudentProfileOnly.lblDis.setText(rs.getString("Email"));
+                        StudentProfileOnly.lblDisType.setText(rs.getString("State"));
+                        StudentProfileOnly.lblMed.setText(rs.getString("Phone"));
                         //StudentProfile.lblImage.setText(rs.getString("Photo"));
                         sp.show();
                         this.dispose();
@@ -598,14 +598,14 @@ public class StudentOnly extends javax.swing.JFrame {
                 while (rs.next()) {
                     if (f.equals(rs.getString("FirstName"))) {
                         JOptionPane.showMessageDialog(sp, "Access granted \n You are Adams Rechard");
-                        StudentProfileOnly.lblName.setText(rs.getString("FirstName"));
-                        StudentProfileOnly.lblSurname.setText(rs.getString("Surname"));
-                        StudentProfileOnly.lblUser.setText(rs.getString("Username"));
+                        StudentProfileOnly.lblPre.setText(rs.getString("FirstName"));
+                        StudentProfileOnly.lblPhysDis.setText(rs.getString("Surname"));
+                        StudentProfileOnly.lblAdmClass.setText(rs.getString("Username"));
                         StudentProfileOnly.lblID.setText(rs.getString("StudentID"));
-                        StudentProfileOnly.lblCode.setText(rs.getString("CourseCode"));
-                        StudentProfileOnly.lblEmail.setText(rs.getString("Email"));
-                        StudentProfileOnly.lblState.setText(rs.getString("State"));
-                        StudentProfileOnly.lblPhone.setText(rs.getString("Phone"));
+                        StudentProfileOnly.lblPreClass.setText(rs.getString("CourseCode"));
+                        StudentProfileOnly.lblDis.setText(rs.getString("Email"));
+                        StudentProfileOnly.lblDisType.setText(rs.getString("State"));
+                        StudentProfileOnly.lblMed.setText(rs.getString("Phone"));
                         //StudentProfile.lblImage.setText(rs.getString("Photo"));
                         sp.show();
                         this.dispose();
@@ -647,14 +647,14 @@ public class StudentOnly extends javax.swing.JFrame {
                 while (rs.next()) {
                     if (g.equals(rs.getString("FirstName"))) {
                         JOptionPane.showMessageDialog(sp, "Access granted \n You are Vivian Raphael");
-                        StudentProfileOnly.lblName.setText(rs.getString("FirstName"));
-                        StudentProfileOnly.lblSurname.setText(rs.getString("Surname"));
-                        StudentProfileOnly.lblUser.setText(rs.getString("Username"));
+                        StudentProfileOnly.lblPre.setText(rs.getString("FirstName"));
+                        StudentProfileOnly.lblPhysDis.setText(rs.getString("Surname"));
+                        StudentProfileOnly.lblAdmClass.setText(rs.getString("Username"));
                         StudentProfileOnly.lblID.setText(rs.getString("StudentID"));
-                        StudentProfileOnly.lblCode.setText(rs.getString("CourseCode"));
-                        StudentProfileOnly.lblEmail.setText(rs.getString("Email"));
-                        StudentProfileOnly.lblState.setText(rs.getString("State"));
-                        StudentProfileOnly.lblPhone.setText(rs.getString("Phone"));
+                        StudentProfileOnly.lblPreClass.setText(rs.getString("CourseCode"));
+                        StudentProfileOnly.lblDis.setText(rs.getString("Email"));
+                        StudentProfileOnly.lblDisType.setText(rs.getString("State"));
+                        StudentProfileOnly.lblMed.setText(rs.getString("Phone"));
                         //StudentProfile.lblImage.setText(rs.getString("Photo"));
                         sp.show();
                         this.dispose();
@@ -696,14 +696,14 @@ public class StudentOnly extends javax.swing.JFrame {
                 while (rs.next()) {
                     if (h.equals(rs.getString("FirstName"))) {
                         JOptionPane.showMessageDialog(sp, "Access granted \n You are Daphne Felix");
-                        StudentProfileOnly.lblName.setText(rs.getString("FirstName"));
-                        StudentProfileOnly.lblSurname.setText(rs.getString("Surname"));
-                        StudentProfileOnly.lblUser.setText(rs.getString("Username"));
+                        StudentProfileOnly.lblPre.setText(rs.getString("FirstName"));
+                        StudentProfileOnly.lblPhysDis.setText(rs.getString("Surname"));
+                        StudentProfileOnly.lblAdmClass.setText(rs.getString("Username"));
                         StudentProfileOnly.lblID.setText(rs.getString("StudentID"));
-                        StudentProfileOnly.lblCode.setText(rs.getString("CourseCode"));
-                        StudentProfileOnly.lblEmail.setText(rs.getString("Email"));
-                        StudentProfileOnly.lblState.setText(rs.getString("State"));
-                        StudentProfileOnly.lblPhone.setText(rs.getString("Phone"));
+                        StudentProfileOnly.lblPreClass.setText(rs.getString("CourseCode"));
+                        StudentProfileOnly.lblDis.setText(rs.getString("Email"));
+                        StudentProfileOnly.lblDisType.setText(rs.getString("State"));
+                        StudentProfileOnly.lblMed.setText(rs.getString("Phone"));
                         //StudentProfile.lblImage.setText(rs.getString("Photo"));
                         sp.show();
                         this.dispose();
@@ -745,14 +745,14 @@ public class StudentOnly extends javax.swing.JFrame {
                 while (rs.next()) {
                     if (i.equals(rs.getString("FirstName"))) {
                         JOptionPane.showMessageDialog(sp, "Access granted \n You are Kelvin Chris");
-                        StudentProfileOnly.lblName.setText(rs.getString("FirstName"));
-                        StudentProfileOnly.lblSurname.setText(rs.getString("Surname"));
-                        StudentProfileOnly.lblUser.setText(rs.getString("Username"));
+                        StudentProfileOnly.lblPre.setText(rs.getString("FirstName"));
+                        StudentProfileOnly.lblPhysDis.setText(rs.getString("Surname"));
+                        StudentProfileOnly.lblAdmClass.setText(rs.getString("Username"));
                         StudentProfileOnly.lblID.setText(rs.getString("StudentID"));
-                        StudentProfileOnly.lblCode.setText(rs.getString("CourseCode"));
-                        StudentProfileOnly.lblEmail.setText(rs.getString("Email"));
-                        StudentProfileOnly.lblState.setText(rs.getString("State"));
-                        StudentProfileOnly.lblPhone.setText(rs.getString("Phone"));
+                        StudentProfileOnly.lblPreClass.setText(rs.getString("CourseCode"));
+                        StudentProfileOnly.lblDis.setText(rs.getString("Email"));
+                        StudentProfileOnly.lblDisType.setText(rs.getString("State"));
+                        StudentProfileOnly.lblMed.setText(rs.getString("Phone"));
                         //StudentProfile.lblImage.setText(rs.getString("Photo"));
                         sp.show();
                         this.dispose();

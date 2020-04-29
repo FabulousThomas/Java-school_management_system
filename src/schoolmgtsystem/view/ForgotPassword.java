@@ -5,22 +5,25 @@
  */
 package schoolmgtsystem.view;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
+import java.awt.Color;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.JTextField;
+import schoolmgtsystem.dbhelper.DBHandler;
 
 /**
  *
  * @author FabulousTHO
  */
 public class ForgotPassword extends javax.swing.JFrame {
-    
-    String conStr = "jdbc:sqlserver://localhost;instanceName=SQLEXPRESS;databaseName=SchoolManagementSystem;user=sa;password=123456789";
+
+//    String conStr = "jdbc:sqlserver://localhost;instanceName=SQLEXPRESS;databaseName=SchoolManagementSystem;user=sa;password=123456789";
+    String pass;
 
     /**
      * Creates new form ForgotPassword
@@ -43,24 +46,31 @@ public class ForgotPassword extends javax.swing.JFrame {
         txtShowpassword = new javax.swing.JTextField();
         btnRetrieve = new javax.swing.JButton();
         txtEnterEmail = new javax.swing.JTextField();
-        btnOK = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
         jSeparator2 = new javax.swing.JSeparator();
+        errorMessage = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        btnClose = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocationByPlatform(true);
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(null);
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(51, 51, 51));
         jLabel1.setText("Forgot your Password ?");
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(50, 10, 290, 29);
+        jLabel1.setBounds(160, 10, 220, 22);
 
-        txtShowpassword.setBackground(new java.awt.Color(240, 240, 240));
-        txtShowpassword.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        txtShowpassword.setEditable(false);
+        txtShowpassword.setBackground(new java.awt.Color(255, 255, 255));
+        txtShowpassword.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        txtShowpassword.setForeground(new java.awt.Color(51, 51, 51));
+        txtShowpassword.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtShowpassword.setText("Show Password");
         txtShowpassword.setBorder(null);
         txtShowpassword.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -69,20 +79,25 @@ public class ForgotPassword extends javax.swing.JFrame {
             }
         });
         jPanel1.add(txtShowpassword);
-        txtShowpassword.setBounds(50, 200, 310, 30);
+        txtShowpassword.setBounds(50, 210, 310, 30);
 
-        btnRetrieve.setText("Retrieve");
+        btnRetrieve.setBackground(new java.awt.Color(255, 255, 255));
+        btnRetrieve.setIcon(new javax.swing.ImageIcon(getClass().getResource("/schoolmgtsystem/IconImages/icons8_Ok2.png"))); // NOI18N
+        btnRetrieve.setToolTipText("Retrieve");
+        btnRetrieve.setBorder(null);
+        btnRetrieve.setBorderPainted(false);
         btnRetrieve.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRetrieveActionPerformed(evt);
             }
         });
         jPanel1.add(btnRetrieve);
-        btnRetrieve.setBounds(140, 140, 90, 25);
+        btnRetrieve.setBounds(450, 160, 30, 30);
 
-        txtEnterEmail.setBackground(new java.awt.Color(240, 240, 240));
-        txtEnterEmail.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        txtEnterEmail.setText("Enter Email Address Here");
+        txtEnterEmail.setBackground(new java.awt.Color(255, 255, 255));
+        txtEnterEmail.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        txtEnterEmail.setForeground(new java.awt.Color(51, 51, 51));
+        txtEnterEmail.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtEnterEmail.setBorder(null);
         txtEnterEmail.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -90,63 +105,147 @@ public class ForgotPassword extends javax.swing.JFrame {
             }
         });
         jPanel1.add(txtEnterEmail);
-        txtEnterEmail.setBounds(50, 90, 310, 30);
+        txtEnterEmail.setBounds(180, 120, 310, 30);
+        jPanel1.add(jSeparator1);
+        jSeparator1.setBounds(50, 240, 310, 10);
+        jPanel1.add(jSeparator2);
+        jSeparator2.setBounds(180, 150, 310, 10);
 
-        btnOK.setText("OK");
-        btnOK.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnOKActionPerformed(evt);
+        errorMessage.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        errorMessage.setForeground(new java.awt.Color(255, 0, 0));
+        errorMessage.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jPanel1.add(errorMessage);
+        errorMessage.setBounds(150, 60, 240, 20);
+
+        jLabel3.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setText("Email");
+        jPanel1.add(jLabel3);
+        jLabel3.setBounds(60, 130, 100, 20);
+
+        btnClose.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnClose.setIcon(new javax.swing.ImageIcon(getClass().getResource("/schoolmgtsystem/IconImages/icons8_Xbox_X.png"))); // NOI18N
+        btnClose.setToolTipText("close");
+        btnClose.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnCloseMouseClicked(evt);
             }
         });
-        jPanel1.add(btnOK);
-        btnOK.setBounds(160, 250, 60, 25);
-        jPanel1.add(jSeparator1);
-        jSeparator1.setBounds(50, 230, 310, 10);
-        jPanel1.add(jSeparator2);
-        jSeparator2.setBounds(50, 120, 310, 10);
+        jPanel1.add(btnClose);
+        btnClose.setBounds(520, 0, 30, 30);
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 300));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 560, 320));
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtShowpasswordMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtShowpasswordMouseClicked
-        txtShowpassword.setText("");
+
     }//GEN-LAST:event_txtShowpasswordMouseClicked
 
     private void btnRetrieveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRetrieveActionPerformed
-        try{
-            String str = "Select * from Teachers where EmailAddress = ?";
-                Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");            
-            try(Connection con = DriverManager.getConnection(conStr);
-                    PreparedStatement smt = con.prepareStatement(str);)
-            {  
-               //TeacherLogIn tl = new StaffLogIn();
-               smt.setString(1, txtEnterEmail.getText());
-               ResultSet rs = smt.executeQuery();
-               while(rs.next())
-               {
-                   ForgotPassword.txtShowpassword.setText(rs.getString("Password"));  
-               }
-            }
-            catch(Exception e){
-                    System.out.println(e);
-                    }
-            } catch (ClassNotFoundException ex) {
+
+        DBHandler handler = new DBHandler();
+        String email = txtEnterEmail.getText();
+
+        if (!email.isEmpty()) {
+            //Checking from the STAFF_DETAILS
+            String str = "SELECT * FROM staff_details WHERE Email = ?";
+            try {
+                PreparedStatement pst = handler.getdbConnection().prepareStatement(str);
+                pst.setString(1, email);
+                ResultSet rs = pst.executeQuery();
+                int counter = 0;
+                while (rs.next()) {
+                    counter++;
+                    email = rs.getString("Email");
+                    pass = rs.getString("Password");
+                }
+                if (counter == 1) {
+                    errorMessage.setText("Successful");
+                    errorMessage.setForeground(Color.GREEN);
+                    txtShowpassword.setText(pass);
+                } else {
+                    errorMessage.setText("Email does not exist");
+                    errorMessage.setForeground(Color.RED);
+                    txtShowpassword.setText("");
+                }
+
+            } catch (ClassNotFoundException | SQLException ex) {
                 Logger.getLogger(ForgotPassword.class.getName()).log(Level.SEVERE, null, ex);
             }
+
+            //Checking from the PARENT_DETAILS
+            String str1 = "SELECT * FROM parent_details WHERE Email = ?";
+            try {
+                PreparedStatement pst = handler.getdbConnection().prepareStatement(str1);
+                pst.setString(1, email);
+                ResultSet rs = pst.executeQuery();
+                int counter = 0;
+                while (rs.next()) {
+                    counter++;
+                    email = rs.getString("Email");
+                    pass = rs.getString("Password");
+                }
+                if (counter == 1) {
+                    errorMessage.setText("Successful");
+                    errorMessage.setForeground(Color.GREEN);
+                    txtShowpassword.setText(pass);
+                } else {
+                    errorMessage.setText("Email does not exist");
+                    errorMessage.setForeground(Color.RED);
+                    txtShowpassword.setText("");
+                }
+
+            } catch (ClassNotFoundException | SQLException ex) {
+                Logger.getLogger(ForgotPassword.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
+        } else {
+            errorMessage.setText("Field is empty");
+            errorMessage.setForeground(Color.RED);
+            txtShowpassword.setText("");
+        }
+
+//        try{
+//            String str = "Select * from staff_details where Email = ?";
+//                Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");            
+//            try(Connection con = DriverManager.getConnection(conStr);
+//                    PreparedStatement smt = con.prepareStatement(str);)
+//            {  
+//               //TeacherLogIn tl = new StaffLogIn();
+//               smt.setString(1, txtEnterEmail.getText());
+//               ResultSet rs = smt.executeQuery();
+//               while(rs.next())
+//               {
+//                   ForgotPassword.txtShowpassword.setText(rs.getString("Password"));  
+//               }
+//            }
+//            catch(Exception e){
+//                    System.out.println(e);
+//                    }
+//            } catch (ClassNotFoundException ex) {
+//                Logger.getLogger(ForgotPassword.class.getName()).log(Level.SEVERE, null, ex);
+//            }
     }//GEN-LAST:event_btnRetrieveActionPerformed
 
     private void txtEnterEmailMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtEnterEmailMouseClicked
-        txtEnterEmail.setText("");
+
     }//GEN-LAST:event_txtEnterEmailMouseClicked
 
-    private void btnOKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOKActionPerformed
-        new StaffLogIn().show();
-        setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_btnOKActionPerformed
+    private JLabel label;
+
+    private void btnCloseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCloseMouseClicked
+
+        label = new JLabel("btn_exit");
+        if (JOptionPane.showConfirmDialog(label, "Do you want to Exit ?", "Confirm",
+                JOptionPane.YES_NO_OPTION) == JOptionPane.YES_NO_OPTION) {
+            this.dispose();
+        }
+
+    }//GEN-LAST:event_btnCloseMouseClicked
 
     /**
      * @param args the command line arguments
@@ -184,9 +283,11 @@ public class ForgotPassword extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnOK;
+    private javax.swing.JLabel btnClose;
     private javax.swing.JButton btnRetrieve;
+    private javax.swing.JLabel errorMessage;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;

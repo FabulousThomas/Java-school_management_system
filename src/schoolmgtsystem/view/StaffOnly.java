@@ -296,46 +296,46 @@ public class StaffOnly extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel14MouseClicked
 
     private void ThomMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ThomMouseClicked
-  String a = StaffLogIn.txtFirstName.getText();
-        try{
-            String str = "Select FirstName, Surname, State_of_Origin, PhoneNumber, EmailAddress, Password, Subject from Teachers where EmailAddress = 'thomasward@gmail.com'";
-            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-            try(Connection con = DriverManager.getConnection(conStr);
-                PreparedStatement smt = con.prepareStatement(str);)
-
-            {
-                StaffProfileOnly tp = new StaffProfileOnly();
-                //smt.setString(1, StudentProfile.lblUser.getText());
-                ResultSet rs = smt.executeQuery();
-                while(rs.next())
-                {
-                    if (a.equals(rs.getString("FirstName"))) {
-                        JOptionPane.showMessageDialog(tp,"Access granted\nYou are Thomas  Ward");
-                    StaffProfileOnly.lblName.setText(rs.getString("FirstName"));
-                    StaffProfileOnly.lblSurname.setText(rs.getString("Surname"));
-                    StaffProfileOnly.lblState.setText(rs.getString("State_of_Origin"));
-                    StaffProfileOnly.lblPhone.setText(rs.getString("PhoneNumber"));
-                    StaffProfileOnly.lblEmail.setText(rs.getString("EmailAddress"));
-                    StaffProfileOnly.lblPassword.setText(rs.getString("Password"));
-                    StaffProfileOnly.lblSubject.setText(rs.getString("Subject"));
-                    tp.setVisible(true);
-                    tp.show();
-                    }
-                    else{
-                        JOptionPane.showMessageDialog(tp,"Access denied\nYou are not Thomas  Ward");
-                        new StaffOnly().show();
-                        setVisible(true);
-                        this.dispose();
-                    }
-                    
-                }
-            }
-
-        }
-        catch(Exception e) {
-            System.out.println(e);
-        }
-        this.dispose();
+//  String a = StaffLogIn.txtFirstName.getText();
+//        try{
+//            String str = "Select FirstName, Surname, State_of_Origin, PhoneNumber, EmailAddress, Password, Subject from Teachers where EmailAddress = 'thomasward@gmail.com'";
+//            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+//            try(Connection con = DriverManager.getConnection(conStr);
+//                PreparedStatement smt = con.prepareStatement(str);)
+//
+//            {
+//                StaffProfileOnly tp = new StaffProfileOnly();
+//                //smt.setString(1, StudentProfile.lblUser.getText());
+//                ResultSet rs = smt.executeQuery();
+//                while(rs.next())
+//                {
+//                    if (a.equals(rs.getString("FirstName"))) {
+//                        JOptionPane.showMessageDialog(tp,"Access granted\nYou are Thomas  Ward");
+//                    StaffProfileOnly.lblName.setText(rs.getString("FirstName"));
+//                    StaffProfileOnly.lblSurname.setText(rs.getString("Surname"));
+//                    StaffProfileOnly.lblState.setText(rs.getString("State_of_Origin"));
+//                    StaffProfileOnly.lblPhone.setText(rs.getString("PhoneNumber"));
+//                    StaffProfileOnly.lblEmail.setText(rs.getString("EmailAddress"));
+//                    StaffProfileOnly.lblPassword.setText(rs.getString("Password"));
+//                    StaffProfileOnly.lblSubject.setText(rs.getString("Subject"));
+//                    tp.setVisible(true);
+//                    tp.show();
+//                    }
+//                    else{
+//                        JOptionPane.showMessageDialog(tp,"Access denied\nYou are not Thomas  Ward");
+//                        new StaffOnly().show();
+//                        setVisible(true);
+//                        this.dispose();
+//                    }
+//                    
+//                }
+//            }
+//
+//        }
+//        catch(Exception e) {
+//            System.out.println(e);
+//        }
+//        this.dispose();
     }//GEN-LAST:event_ThomMouseClicked
 
     private void ThomMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ThomMouseEntered
@@ -347,45 +347,45 @@ public class StaffOnly extends javax.swing.JFrame {
     }//GEN-LAST:event_ThomMouseExited
 
     private void TonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TonMouseClicked
-     String j = StaffLogIn.txtFirstName.getText();
-        try{
-            String str = "Select FirstName, Surname, State_of_Origin, PhoneNumber, EmailAddress, Password, Subject from Teachers where EmailAddress = 'tonnyscott@gmail.com'";
-            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-            try(Connection con = DriverManager.getConnection(conStr);
-                PreparedStatement smt = con.prepareStatement(str);)
-
-            {
-                StaffProfileOnly tp = new StaffProfileOnly();
-                //smt.setString(1, StudentProfile.lblUser.getText());
-                ResultSet rs = smt.executeQuery();
-                while(rs.next())
-                {
-                    if (j.equals(rs.getString("FirstName"))) {
-                        JOptionPane.showMessageDialog(tp,"Access granted\nYou are Tonny  Scott");
-                    StaffProfileOnly.lblName.setText(rs.getString("FirstName"));
-                    StaffProfileOnly.lblSurname.setText(rs.getString("Surname"));
-                    StaffProfileOnly.lblState.setText(rs.getString("State_of_Origin"));
-                    StaffProfileOnly.lblPhone.setText(rs.getString("PhoneNumber"));
-                    StaffProfileOnly.lblEmail.setText(rs.getString("EmailAddress"));
-                    StaffProfileOnly.lblPassword.setText(rs.getString("Password"));
-                    StaffProfileOnly.lblSubject.setText(rs.getString("Subject"));
-                    tp.setVisible(true);
-                    tp.show();
-                    }
-                    else{
-                        JOptionPane.showMessageDialog(tp,"Access denied\nYou are not Tonny  Scott");
-                        new StaffOnly().show();
-                        setVisible(true);
-                        this.dispose();
-                    }
-                }
-            }
-
-        }
-        catch(Exception e) {
-            System.out.println(e);
-        }
-        this.dispose();
+//     String j = StaffLogIn.txtFirstName.getText();
+//        try{
+//            String str = "Select FirstName, Surname, State_of_Origin, PhoneNumber, EmailAddress, Password, Subject from Teachers where EmailAddress = 'tonnyscott@gmail.com'";
+//            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+//            try(Connection con = DriverManager.getConnection(conStr);
+//                PreparedStatement smt = con.prepareStatement(str);)
+//
+//            {
+//                StaffProfileOnly tp = new StaffProfileOnly();
+//                //smt.setString(1, StudentProfile.lblUser.getText());
+//                ResultSet rs = smt.executeQuery();
+//                while(rs.next())
+//                {
+//                    if (j.equals(rs.getString("FirstName"))) {
+//                        JOptionPane.showMessageDialog(tp,"Access granted\nYou are Tonny  Scott");
+//                    StaffProfileOnly.lblName.setText(rs.getString("FirstName"));
+//                    StaffProfileOnly.lblSurname.setText(rs.getString("Surname"));
+//                    StaffProfileOnly.lblState.setText(rs.getString("State_of_Origin"));
+//                    StaffProfileOnly.lblPhone.setText(rs.getString("PhoneNumber"));
+//                    StaffProfileOnly.lblEmail.setText(rs.getString("EmailAddress"));
+//                    StaffProfileOnly.lblPassword.setText(rs.getString("Password"));
+//                    StaffProfileOnly.lblSubject.setText(rs.getString("Subject"));
+//                    tp.setVisible(true);
+//                    tp.show();
+//                    }
+//                    else{
+//                        JOptionPane.showMessageDialog(tp,"Access denied\nYou are not Tonny  Scott");
+//                        new StaffOnly().show();
+//                        setVisible(true);
+//                        this.dispose();
+//                    }
+//                }
+//            }
+//
+//        }
+//        catch(Exception e) {
+//            System.out.println(e);
+//        }
+//        this.dispose();
     }//GEN-LAST:event_TonMouseClicked
 
     private void TonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TonMouseEntered
@@ -397,45 +397,45 @@ public class StaffOnly extends javax.swing.JFrame {
     }//GEN-LAST:event_TonMouseExited
 
     private void NelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_NelMouseClicked
-    String b = StaffLogIn.txtFirstName.getText();
-        try{
-            String str = "Select FirstName, Surname, State_of_Origin, PhoneNumber, EmailAddress, Password, Subject from Teachers where EmailAddress = 'nelsonmandela@gmail.com'";
-            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-            try(Connection con = DriverManager.getConnection(conStr);
-                PreparedStatement smt = con.prepareStatement(str);)
-
-            {
-                StaffProfileOnly tp = new StaffProfileOnly();
-                //smt.setString(1, StudentProfile.lblUser.getText());
-                ResultSet rs = smt.executeQuery();
-                while(rs.next())
-                {
-                   if (b.equals(rs.getString("FirstName"))) {
-                        JOptionPane.showMessageDialog(tp,"Access granted\nYou are Nelson  Mandela");
-                    StaffProfileOnly.lblName.setText(rs.getString("FirstName"));
-                    StaffProfileOnly.lblSurname.setText(rs.getString("Surname"));
-                    StaffProfileOnly.lblState.setText(rs.getString("State_of_Origin"));
-                    StaffProfileOnly.lblPhone.setText(rs.getString("PhoneNumber"));
-                    StaffProfileOnly.lblEmail.setText(rs.getString("EmailAddress"));
-                    StaffProfileOnly.lblPassword.setText(rs.getString("Password"));
-                    StaffProfileOnly.lblSubject.setText(rs.getString("Subject"));
-                    tp.setVisible(true);
-                    tp.show();
-                    }
-                    else{
-                        JOptionPane.showMessageDialog(tp,"Access denied\nYou are not Nelson  Mandela");
-                        new StaffOnly().show();
-                        setVisible(true);
-                        this.dispose();
-                    }
-                }
-            }
-
-        }
-        catch(Exception e) {
-            System.out.println(e);
-        }
-        this.dispose();
+//    String b = StaffLogIn.txtFirstName.getText();
+//        try{
+//            String str = "Select FirstName, Surname, State_of_Origin, PhoneNumber, EmailAddress, Password, Subject from Teachers where EmailAddress = 'nelsonmandela@gmail.com'";
+//            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+//            try(Connection con = DriverManager.getConnection(conStr);
+//                PreparedStatement smt = con.prepareStatement(str);)
+//
+//            {
+//                StaffProfileOnly tp = new StaffProfileOnly();
+//                //smt.setString(1, StudentProfile.lblUser.getText());
+//                ResultSet rs = smt.executeQuery();
+//                while(rs.next())
+//                {
+//                   if (b.equals(rs.getString("FirstName"))) {
+//                        JOptionPane.showMessageDialog(tp,"Access granted\nYou are Nelson  Mandela");
+//                    StaffProfileOnly.lblName.setText(rs.getString("FirstName"));
+//                    StaffProfileOnly.lblSurname.setText(rs.getString("Surname"));
+//                    StaffProfileOnly.lblState.setText(rs.getString("State_of_Origin"));
+//                    StaffProfileOnly.lblPhone.setText(rs.getString("PhoneNumber"));
+//                    StaffProfileOnly.lblEmail.setText(rs.getString("EmailAddress"));
+//                    StaffProfileOnly.lblPassword.setText(rs.getString("Password"));
+//                    StaffProfileOnly.lblSubject.setText(rs.getString("Subject"));
+//                    tp.setVisible(true);
+//                    tp.show();
+//                    }
+//                    else{
+//                        JOptionPane.showMessageDialog(tp,"Access denied\nYou are not Nelson  Mandela");
+//                        new StaffOnly().show();
+//                        setVisible(true);
+//                        this.dispose();
+//                    }
+//                }
+//            }
+//
+//        }
+//        catch(Exception e) {
+//            System.out.println(e);
+//        }
+//        this.dispose();
     }//GEN-LAST:event_NelMouseClicked
 
     private void NelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_NelMouseEntered
@@ -447,45 +447,45 @@ public class StaffOnly extends javax.swing.JFrame {
     }//GEN-LAST:event_NelMouseExited
 
     private void EmmaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_EmmaMouseClicked
-    String c = StaffLogIn.txtFirstName.getText();
-        try{
-            String str = "Select FirstName, Surname, State_of_Origin, PhoneNumber, EmailAddress, Password, Subject from Teachers where EmailAddress = 'emmanuellee@gmail.com'";
-            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-            try(Connection con = DriverManager.getConnection(conStr);
-                PreparedStatement smt = con.prepareStatement(str);)
-
-            {
-                StaffProfileOnly tp = new StaffProfileOnly();
-                //smt.setString(1, StudentProfile.lblUser.getText());
-                ResultSet rs = smt.executeQuery();
-                while(rs.next())
-                {
-                    if (c.equals(rs.getString("FirstName"))) {
-                        JOptionPane.showMessageDialog(tp,"Access granted\nYou are Emmanuel  Lee");
-                    StaffProfileOnly.lblName.setText(rs.getString("FirstName"));
-                    StaffProfileOnly.lblSurname.setText(rs.getString("Surname"));
-                    StaffProfileOnly.lblState.setText(rs.getString("State_of_Origin"));
-                    StaffProfileOnly.lblPhone.setText(rs.getString("PhoneNumber"));
-                    StaffProfileOnly.lblEmail.setText(rs.getString("EmailAddress"));
-                    StaffProfileOnly.lblPassword.setText(rs.getString("Password"));
-                    StaffProfileOnly.lblSubject.setText(rs.getString("Subject"));
-                    tp.setVisible(true);
-                    tp.show();
-                    }
-                    else{
-                        JOptionPane.showMessageDialog(tp,"Access denied\nYou are not Emmanuel  Lee");
-                        new StaffOnly().show();
-                        setVisible(true);
-                        this.dispose();
-                    }
-                }
-            }
-
-        }
-        catch(Exception e) {
-            System.out.println(e);
-        }
-        this.dispose();
+//    String c = StaffLogIn.txtFirstName.getText();
+//        try{
+//            String str = "Select FirstName, Surname, State_of_Origin, PhoneNumber, EmailAddress, Password, Subject from Teachers where EmailAddress = 'emmanuellee@gmail.com'";
+//            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+//            try(Connection con = DriverManager.getConnection(conStr);
+//                PreparedStatement smt = con.prepareStatement(str);)
+//
+//            {
+//                StaffProfileOnly tp = new StaffProfileOnly();
+//                //smt.setString(1, StudentProfile.lblUser.getText());
+//                ResultSet rs = smt.executeQuery();
+//                while(rs.next())
+//                {
+//                    if (c.equals(rs.getString("FirstName"))) {
+//                        JOptionPane.showMessageDialog(tp,"Access granted\nYou are Emmanuel  Lee");
+//                    StaffProfileOnly.lblName.setText(rs.getString("FirstName"));
+//                    StaffProfileOnly.lblSurname.setText(rs.getString("Surname"));
+//                    StaffProfileOnly.lblState.setText(rs.getString("State_of_Origin"));
+//                    StaffProfileOnly.lblPhone.setText(rs.getString("PhoneNumber"));
+//                    StaffProfileOnly.lblEmail.setText(rs.getString("EmailAddress"));
+//                    StaffProfileOnly.lblPassword.setText(rs.getString("Password"));
+//                    StaffProfileOnly.lblSubject.setText(rs.getString("Subject"));
+//                    tp.setVisible(true);
+//                    tp.show();
+//                    }
+//                    else{
+//                        JOptionPane.showMessageDialog(tp,"Access denied\nYou are not Emmanuel  Lee");
+//                        new StaffOnly().show();
+//                        setVisible(true);
+//                        this.dispose();
+//                    }
+//                }
+//            }
+//
+//        }
+//        catch(Exception e) {
+//            System.out.println(e);
+//        }
+//        this.dispose();
     }//GEN-LAST:event_EmmaMouseClicked
 
     private void EmmaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_EmmaMouseEntered
@@ -497,45 +497,45 @@ public class StaffOnly extends javax.swing.JFrame {
     }//GEN-LAST:event_EmmaMouseExited
 
     private void GraceMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_GraceMouseClicked
-    String d = StaffLogIn.txtFirstName.getText();
-        try{
-            String str = "Select FirstName, Surname, State_of_Origin, PhoneNumber, EmailAddress, Password, Subject from Teachers where EmailAddress = 'gracewilliams@gmail.com'";
-            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-            try(Connection con = DriverManager.getConnection(conStr);
-                PreparedStatement smt = con.prepareStatement(str);)
-
-            {
-                StaffProfileOnly tp = new StaffProfileOnly();
-                //smt.setString(1, StudentProfile.lblUser.getText());
-                ResultSet rs = smt.executeQuery();
-                while(rs.next())
-                {
-                    if (d.equals(rs.getString("FirstName"))) {
-                        JOptionPane.showMessageDialog(tp,"Access granted\nYou are Grace  Williams");
-                    StaffProfileOnly.lblName.setText(rs.getString("FirstName"));
-                    StaffProfileOnly.lblSurname.setText(rs.getString("Surname"));
-                    StaffProfileOnly.lblState.setText(rs.getString("State_of_Origin"));
-                    StaffProfileOnly.lblPhone.setText(rs.getString("PhoneNumber"));
-                    StaffProfileOnly.lblEmail.setText(rs.getString("EmailAddress"));
-                    StaffProfileOnly.lblPassword.setText(rs.getString("Password"));
-                    StaffProfileOnly.lblSubject.setText(rs.getString("Subject"));
-                    tp.setVisible(true);
-                    tp.show();
-                    }
-                    else{
-                        JOptionPane.showMessageDialog(tp,"Access denied\nYou are not Grace  Williams");
-                        new StaffOnly().show();
-                        setVisible(true);
-                        this.dispose();
-                    }
-                }
-            }
-
-        }
-        catch(Exception e) {
-            System.out.println(e);
-        }
-        this.dispose();
+//    String d = StaffLogIn.txtFirstName.getText();
+//        try{
+//            String str = "Select FirstName, Surname, State_of_Origin, PhoneNumber, EmailAddress, Password, Subject from Teachers where EmailAddress = 'gracewilliams@gmail.com'";
+//            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+//            try(Connection con = DriverManager.getConnection(conStr);
+//                PreparedStatement smt = con.prepareStatement(str);)
+//
+//            {
+//                StaffProfileOnly tp = new StaffProfileOnly();
+//                //smt.setString(1, StudentProfile.lblUser.getText());
+//                ResultSet rs = smt.executeQuery();
+//                while(rs.next())
+//                {
+//                    if (d.equals(rs.getString("FirstName"))) {
+//                        JOptionPane.showMessageDialog(tp,"Access granted\nYou are Grace  Williams");
+//                    StaffProfileOnly.lblName.setText(rs.getString("FirstName"));
+//                    StaffProfileOnly.lblSurname.setText(rs.getString("Surname"));
+//                    StaffProfileOnly.lblState.setText(rs.getString("State_of_Origin"));
+//                    StaffProfileOnly.lblPhone.setText(rs.getString("PhoneNumber"));
+//                    StaffProfileOnly.lblEmail.setText(rs.getString("EmailAddress"));
+//                    StaffProfileOnly.lblPassword.setText(rs.getString("Password"));
+//                    StaffProfileOnly.lblSubject.setText(rs.getString("Subject"));
+//                    tp.setVisible(true);
+//                    tp.show();
+//                    }
+//                    else{
+//                        JOptionPane.showMessageDialog(tp,"Access denied\nYou are not Grace  Williams");
+//                        new StaffOnly().show();
+//                        setVisible(true);
+//                        this.dispose();
+//                    }
+//                }
+//            }
+//
+//        }
+//        catch(Exception e) {
+//            System.out.println(e);
+//        }
+//        this.dispose();
     }//GEN-LAST:event_GraceMouseClicked
 
     private void GraceMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_GraceMouseEntered
@@ -547,45 +547,45 @@ public class StaffOnly extends javax.swing.JFrame {
     }//GEN-LAST:event_GraceMouseExited
 
     private void LucyMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LucyMouseClicked
-    String f = StaffLogIn.txtFirstName.getText();
-        try{
-            String str = "Select FirstName, Surname, State_of_Origin, PhoneNumber, EmailAddress, Password, Subject from Teachers where EmailAddress = 'lucyscott@gmail.com'";
-            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-            try(Connection con = DriverManager.getConnection(conStr);
-                PreparedStatement smt = con.prepareStatement(str);)
-
-            {
-                StaffProfileOnly tp = new StaffProfileOnly();
-                //smt.setString(1, StudentProfile.lblUser.getText());
-                ResultSet rs = smt.executeQuery();
-                while(rs.next())
-                {
-                    if (f.equals(rs.getString("FirstName"))) {
-                        JOptionPane.showMessageDialog(tp,"Access granted\nYou are Lucy  Scott");
-                    StaffProfileOnly.lblName.setText(rs.getString("FirstName"));
-                    StaffProfileOnly.lblSurname.setText(rs.getString("Surname"));
-                    StaffProfileOnly.lblState.setText(rs.getString("State_of_Origin"));
-                    StaffProfileOnly.lblPhone.setText(rs.getString("PhoneNumber"));
-                    StaffProfileOnly.lblEmail.setText(rs.getString("EmailAddress"));
-                    StaffProfileOnly.lblPassword.setText(rs.getString("Password"));
-                    StaffProfileOnly.lblSubject.setText(rs.getString("Subject"));
-                    tp.setVisible(true);
-                    tp.show();
-                    }
-                    else{
-                        JOptionPane.showMessageDialog(tp,"Access denied\nYou are not Lucy  Scott");
-                        new StaffOnly().show();
-                        setVisible(true);
-                        this.dispose();
-                    }
-                }
-            }
-
-        }
-        catch(Exception e) {
-            System.out.println(e);
-        }
-        this.dispose();
+//    String f = StaffLogIn.txtFirstName.getText();
+//        try{
+//            String str = "Select FirstName, Surname, State_of_Origin, PhoneNumber, EmailAddress, Password, Subject from Teachers where EmailAddress = 'lucyscott@gmail.com'";
+//            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+//            try(Connection con = DriverManager.getConnection(conStr);
+//                PreparedStatement smt = con.prepareStatement(str);)
+//
+//            {
+//                StaffProfileOnly tp = new StaffProfileOnly();
+//                //smt.setString(1, StudentProfile.lblUser.getText());
+//                ResultSet rs = smt.executeQuery();
+//                while(rs.next())
+//                {
+//                    if (f.equals(rs.getString("FirstName"))) {
+//                        JOptionPane.showMessageDialog(tp,"Access granted\nYou are Lucy  Scott");
+//                    StaffProfileOnly.lblName.setText(rs.getString("FirstName"));
+//                    StaffProfileOnly.lblSurname.setText(rs.getString("Surname"));
+//                    StaffProfileOnly.lblState.setText(rs.getString("State_of_Origin"));
+//                    StaffProfileOnly.lblPhone.setText(rs.getString("PhoneNumber"));
+//                    StaffProfileOnly.lblEmail.setText(rs.getString("EmailAddress"));
+//                    StaffProfileOnly.lblPassword.setText(rs.getString("Password"));
+//                    StaffProfileOnly.lblSubject.setText(rs.getString("Subject"));
+//                    tp.setVisible(true);
+//                    tp.show();
+//                    }
+//                    else{
+//                        JOptionPane.showMessageDialog(tp,"Access denied\nYou are not Lucy  Scott");
+//                        new StaffOnly().show();
+//                        setVisible(true);
+//                        this.dispose();
+//                    }
+//                }
+//            }
+//
+//        }
+//        catch(Exception e) {
+//            System.out.println(e);
+//        }
+//        this.dispose();
     }//GEN-LAST:event_LucyMouseClicked
 
     private void LucyMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LucyMouseEntered
@@ -597,45 +597,45 @@ public class StaffOnly extends javax.swing.JFrame {
     }//GEN-LAST:event_LucyMouseExited
 
     private void RoseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RoseMouseClicked
-     String g = StaffLogIn.txtFirstName.getText();
-        try{
-            String str = "Select FirstName, Surname, State_of_Origin, PhoneNumber, EmailAddress, Password, Subject from Teachers where EmailAddress = 'rosemaryeric@gmail.com'";
-            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-            try(Connection con = DriverManager.getConnection(conStr);
-                PreparedStatement smt = con.prepareStatement(str);)
-
-            {
-                StaffProfileOnly tp = new StaffProfileOnly();
-                //smt.setString(1, StudentProfile.lblUser.getText());
-                ResultSet rs = smt.executeQuery();
-                while(rs.next())
-                {
-                     if (g.equals(rs.getString("FirstName"))) {
-                        JOptionPane.showMessageDialog(tp,"Access granted\nYou are RoseMary  Eric");
-                    StaffProfileOnly.lblName.setText(rs.getString("FirstName"));
-                    StaffProfileOnly.lblSurname.setText(rs.getString("Surname"));
-                    StaffProfileOnly.lblState.setText(rs.getString("State_of_Origin"));
-                    StaffProfileOnly.lblPhone.setText(rs.getString("PhoneNumber"));
-                    StaffProfileOnly.lblEmail.setText(rs.getString("EmailAddress"));
-                    StaffProfileOnly.lblPassword.setText(rs.getString("Password"));
-                    StaffProfileOnly.lblSubject.setText(rs.getString("Subject"));
-                    tp.setVisible(true);
-                    tp.show();
-                    }
-                    else{
-                        JOptionPane.showMessageDialog(tp,"Access denied\nYou are not RoseMary Eric");
-                        new StaffOnly().show();
-                        setVisible(true);
-                        this.dispose();
-                    }
-                }
-            }
-
-        }
-        catch(Exception e) {
-            System.out.println(e);
-        }
-        this.dispose();
+//     String g = StaffLogIn.txtFirstName.getText();
+//        try{
+//            String str = "Select FirstName, Surname, State_of_Origin, PhoneNumber, EmailAddress, Password, Subject from Teachers where EmailAddress = 'rosemaryeric@gmail.com'";
+//            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+//            try(Connection con = DriverManager.getConnection(conStr);
+//                PreparedStatement smt = con.prepareStatement(str);)
+//
+//            {
+//                StaffProfileOnly tp = new StaffProfileOnly();
+//                //smt.setString(1, StudentProfile.lblUser.getText());
+//                ResultSet rs = smt.executeQuery();
+//                while(rs.next())
+//                {
+//                     if (g.equals(rs.getString("FirstName"))) {
+//                        JOptionPane.showMessageDialog(tp,"Access granted\nYou are RoseMary  Eric");
+//                    StaffProfileOnly.lblName.setText(rs.getString("FirstName"));
+//                    StaffProfileOnly.lblSurname.setText(rs.getString("Surname"));
+//                    StaffProfileOnly.lblState.setText(rs.getString("State_of_Origin"));
+//                    StaffProfileOnly.lblPhone.setText(rs.getString("PhoneNumber"));
+//                    StaffProfileOnly.lblEmail.setText(rs.getString("EmailAddress"));
+//                    StaffProfileOnly.lblPassword.setText(rs.getString("Password"));
+//                    StaffProfileOnly.lblSubject.setText(rs.getString("Subject"));
+//                    tp.setVisible(true);
+//                    tp.show();
+//                    }
+//                    else{
+//                        JOptionPane.showMessageDialog(tp,"Access denied\nYou are not RoseMary Eric");
+//                        new StaffOnly().show();
+//                        setVisible(true);
+//                        this.dispose();
+//                    }
+//                }
+//            }
+//
+//        }
+//        catch(Exception e) {
+//            System.out.println(e);
+//        }
+//        this.dispose();
     }//GEN-LAST:event_RoseMouseClicked
 
     private void RoseMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RoseMouseEntered
@@ -647,45 +647,45 @@ public class StaffOnly extends javax.swing.JFrame {
     }//GEN-LAST:event_RoseMouseExited
 
     private void EricMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_EricMouseClicked
-     String h = StaffLogIn.txtFirstName.getText();
-        try{
-            String str = "Select FirstName, Surname, State_of_Origin, PhoneNumber, EmailAddress, Password, Subject from Teachers where EmailAddress = 'ericscott@gmail.com'";
-            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-            try(Connection con = DriverManager.getConnection(conStr);
-                PreparedStatement smt = con.prepareStatement(str);)
-
-            {
-                StaffProfileOnly tp = new StaffProfileOnly();
-                //smt.setString(1, StudentProfile.lblUser.getText());
-                ResultSet rs = smt.executeQuery();
-                while(rs.next())
-                {
-                    if (h.equals(rs.getString("FirstName"))) {
-                        JOptionPane.showMessageDialog(tp,"Access granted\nYou are Eric  Scott");
-                    StaffProfileOnly.lblName.setText(rs.getString("FirstName"));
-                    StaffProfileOnly.lblSurname.setText(rs.getString("Surname"));
-                    StaffProfileOnly.lblState.setText(rs.getString("State_of_Origin"));
-                    StaffProfileOnly.lblPhone.setText(rs.getString("PhoneNumber"));
-                    StaffProfileOnly.lblEmail.setText(rs.getString("EmailAddress"));
-                    StaffProfileOnly.lblPassword.setText(rs.getString("Password"));
-                    StaffProfileOnly.lblSubject.setText(rs.getString("Subject"));
-                    tp.setVisible(true);
-                    tp.show();
-                    }
-                    else{
-                        JOptionPane.showMessageDialog(tp,"Access denied\nYou are not Eric  Scott");
-                        new StaffOnly().show();
-                        setVisible(true);
-                        this.dispose();
-                    }
-                }
-            }
-
-        }
-        catch(Exception e) {
-            System.out.println(e);
-        }
-        this.dispose();
+//     String h = StaffLogIn.txtFirstName.getText();
+//        try{
+//            String str = "Select FirstName, Surname, State_of_Origin, PhoneNumber, EmailAddress, Password, Subject from Teachers where EmailAddress = 'ericscott@gmail.com'";
+//            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+//            try(Connection con = DriverManager.getConnection(conStr);
+//                PreparedStatement smt = con.prepareStatement(str);)
+//
+//            {
+//                StaffProfileOnly tp = new StaffProfileOnly();
+//                //smt.setString(1, StudentProfile.lblUser.getText());
+//                ResultSet rs = smt.executeQuery();
+//                while(rs.next())
+//                {
+//                    if (h.equals(rs.getString("FirstName"))) {
+//                        JOptionPane.showMessageDialog(tp,"Access granted\nYou are Eric  Scott");
+//                    StaffProfileOnly.lblName.setText(rs.getString("FirstName"));
+//                    StaffProfileOnly.lblSurname.setText(rs.getString("Surname"));
+//                    StaffProfileOnly.lblState.setText(rs.getString("State_of_Origin"));
+//                    StaffProfileOnly.lblPhone.setText(rs.getString("PhoneNumber"));
+//                    StaffProfileOnly.lblEmail.setText(rs.getString("EmailAddress"));
+//                    StaffProfileOnly.lblPassword.setText(rs.getString("Password"));
+//                    StaffProfileOnly.lblSubject.setText(rs.getString("Subject"));
+//                    tp.setVisible(true);
+//                    tp.show();
+//                    }
+//                    else{
+//                        JOptionPane.showMessageDialog(tp,"Access denied\nYou are not Eric  Scott");
+//                        new StaffOnly().show();
+//                        setVisible(true);
+//                        this.dispose();
+//                    }
+//                }
+//            }
+//
+//        }
+//        catch(Exception e) {
+//            System.out.println(e);
+//        }
+//        this.dispose();
     }//GEN-LAST:event_EricMouseClicked
 
     private void EricMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_EricMouseEntered
@@ -697,45 +697,45 @@ public class StaffOnly extends javax.swing.JFrame {
     }//GEN-LAST:event_EricMouseExited
 
     private void VicMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_VicMouseClicked
-       String i = StaffLogIn.txtFirstName.getText();
-        try{
-            String str = "Select FirstName, Surname, State_of_Origin, PhoneNumber, EmailAddress, Password, Subject from Teachers where EmailAddress = 'victoriapaul@gmail.com'";
-            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-            try(Connection con = DriverManager.getConnection(conStr);
-                PreparedStatement smt = con.prepareStatement(str);)
-
-            {
-                StaffProfileOnly tp = new StaffProfileOnly();
-                //smt.setString(1, StudentProfile.lblUser.getText());
-                ResultSet rs = smt.executeQuery();
-                while(rs.next())
-                {
-                    if (i.equals(rs.getString("FirstName"))) {
-                        JOptionPane.showMessageDialog(tp,"Access granted\nYou are Victoria Paul");
-                    StaffProfileOnly.lblName.setText(rs.getString("FirstName"));
-                    StaffProfileOnly.lblSurname.setText(rs.getString("Surname"));
-                    StaffProfileOnly.lblState.setText(rs.getString("State_of_Origin"));
-                    StaffProfileOnly.lblPhone.setText(rs.getString("PhoneNumber"));
-                    StaffProfileOnly.lblEmail.setText(rs.getString("EmailAddress"));
-                    StaffProfileOnly.lblPassword.setText(rs.getString("Password"));
-                    StaffProfileOnly.lblSubject.setText(rs.getString("Subject"));
-                    tp.setVisible(true);
-                    tp.show();
-                    }
-                    else{
-                        JOptionPane.showMessageDialog(tp,"Access denied\nYou are not Victoria Paul");
-                        new StaffOnly().show();
-                        setVisible(true);
-                        this.dispose();
-                    }
-                }
-            }
-
-        }
-        catch(Exception e) {
-            System.out.println(e);
-        }
-        this.dispose();
+//       String i = StaffLogIn.txtFirstName.getText();
+//        try{
+//            String str = "Select FirstName, Surname, State_of_Origin, PhoneNumber, EmailAddress, Password, Subject from Teachers where EmailAddress = 'victoriapaul@gmail.com'";
+//            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+//            try(Connection con = DriverManager.getConnection(conStr);
+//                PreparedStatement smt = con.prepareStatement(str);)
+//
+//            {
+//                StaffProfileOnly tp = new StaffProfileOnly();
+//                //smt.setString(1, StudentProfile.lblUser.getText());
+//                ResultSet rs = smt.executeQuery();
+//                while(rs.next())
+//                {
+//                    if (i.equals(rs.getString("FirstName"))) {
+//                        JOptionPane.showMessageDialog(tp,"Access granted\nYou are Victoria Paul");
+//                    StaffProfileOnly.lblName.setText(rs.getString("FirstName"));
+//                    StaffProfileOnly.lblSurname.setText(rs.getString("Surname"));
+//                    StaffProfileOnly.lblState.setText(rs.getString("State_of_Origin"));
+//                    StaffProfileOnly.lblPhone.setText(rs.getString("PhoneNumber"));
+//                    StaffProfileOnly.lblEmail.setText(rs.getString("EmailAddress"));
+//                    StaffProfileOnly.lblPassword.setText(rs.getString("Password"));
+//                    StaffProfileOnly.lblSubject.setText(rs.getString("Subject"));
+//                    tp.setVisible(true);
+//                    tp.show();
+//                    }
+//                    else{
+//                        JOptionPane.showMessageDialog(tp,"Access denied\nYou are not Victoria Paul");
+//                        new StaffOnly().show();
+//                        setVisible(true);
+//                        this.dispose();
+//                    }
+//                }
+//            }
+//
+//        }
+//        catch(Exception e) {
+//            System.out.println(e);
+//        }
+//        this.dispose();
     }//GEN-LAST:event_VicMouseClicked
 
     private void VicMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_VicMouseEntered

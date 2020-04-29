@@ -5,6 +5,7 @@
  */
 package schoolmgtsystem.view;
 
+import schoolmgtsystem.model.CountFunction;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -21,7 +22,10 @@ import schoolmgtsystem.dbhelper.DBHandler;
  */
 public class AdminLogIn extends javax.swing.JFrame {
 
-    String name;
+    public static String email;
+    public static String pass;
+    public static String name;
+    StudentInformation si = new StudentInformation();
 
     //String conStr = "jdbc:sqlserver://localhost;instanceName=SQLEXPRESS;databaseName=Home;user=sa;password=123456789";
     /**
@@ -36,7 +40,7 @@ public class AdminLogIn extends javax.swing.JFrame {
     public AdminLogIn(String getValue) {
         initComponents();
         RecoverDetails rd = new RecoverDetails();
-        RecoverDetails.txtUsername.setText(getValue);
+        RecoverDetails.txtEmail.setText(getValue);
         txtEmail.setText(getValue);
         txtPassword.setText(getValue);
 
@@ -220,8 +224,8 @@ public class AdminLogIn extends javax.swing.JFrame {
 
         DBHandler handler = new DBHandler();
 
-        String email = txtEmail.getText();
-        String pass = txtPassword.getText();
+        email = txtEmail.getText();
+        pass = txtPassword.getText();
 
         ResultSet result = null;
         if (!email.equals("") && !pass.equals("")) {
@@ -241,8 +245,12 @@ public class AdminLogIn extends javax.swing.JFrame {
                 }
                 if (counter == 1) {
                     JOptionPane.showMessageDialog(this, "Welcome Admin " + "(" + name + ")");
+                    StudentInformation.lblName.setText("Welcome  < " + name + " >");
+                    StudentInformation.studentCount.setText("Student Count = " + Integer.toString(CountFunction.CountData("student_details")));
+                    si.show();
+                    this.dispose();
                 } else {
-                    JOptionPane.showMessageDialog(this, "Please re-type\nYour name or password is/are incorrect");
+                    JOptionPane.showMessageDialog(this, "Please re-type\nYour email or password is/are incorrect");
                 }
 
             } catch (ClassNotFoundException | SQLException ex) {
@@ -270,16 +278,13 @@ public class AdminLogIn extends javax.swing.JFrame {
         int sel = JOptionPane.showConfirmDialog(this, "Do you want to recover your details ?");
         if (sel == 0) {
             new RecoverDetails().show();
-            //setVisible(true);
             this.dispose();
         }
         if (sel == 1) {
-            new AdminLogIn().show();
-            this.dispose();
+            this.show();
         }
         if (sel == 2) {
-            new AdminLogIn().show();
-            this.dispose();
+            this.show();
         }
     }//GEN-LAST:event_RecoverMouseClicked
 

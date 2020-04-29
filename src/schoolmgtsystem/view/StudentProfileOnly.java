@@ -5,11 +5,30 @@
  */
 package schoolmgtsystem.view;
 
+import java.awt.Image;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.InputStream;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.ImageIcon;
+import javax.swing.JFileChooser;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.filechooser.FileNameExtensionFilter;
+import schoolmgtsystem.dbhelper.DBHandler;
+
 /**
  *
  * @author FabulousTHO
  */
 public class StudentProfileOnly extends javax.swing.JFrame {
+
+    String s;
 
     /**
      * Creates new form StudentProfileOnly
@@ -28,184 +47,151 @@ public class StudentProfileOnly extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jSeparator1 = new javax.swing.JSeparator();
         jPanel2 = new javax.swing.JPanel();
         lblImage = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        lblName = new javax.swing.JLabel();
-        jSeparator2 = new javax.swing.JSeparator();
-        lblSurname = new javax.swing.JLabel();
-        jSeparator3 = new javax.swing.JSeparator();
+        lblPre = new javax.swing.JLabel();
+        lblPhysDis = new javax.swing.JLabel();
         lblID = new javax.swing.JLabel();
-        jSeparator4 = new javax.swing.JSeparator();
-        lblCode = new javax.swing.JLabel();
-        jSeparator5 = new javax.swing.JSeparator();
-        lblEmail = new javax.swing.JLabel();
-        jSeparator6 = new javax.swing.JSeparator();
-        lblState = new javax.swing.JLabel();
-        jSeparator7 = new javax.swing.JSeparator();
-        lblPhone = new javax.swing.JLabel();
-        jSeparator8 = new javax.swing.JSeparator();
-        jLabel10 = new javax.swing.JLabel();
-        lblUser = new javax.swing.JLabel();
+        lblPreClass = new javax.swing.JLabel();
+        lblDis = new javax.swing.JLabel();
+        lblDisType = new javax.swing.JLabel();
+        lblMed = new javax.swing.JLabel();
+        lblAdmClass = new javax.swing.JLabel();
         jSeparator9 = new javax.swing.JSeparator();
-        jLabel3 = new javax.swing.JLabel();
         lblClick = new javax.swing.JLabel();
-        jSeparator10 = new javax.swing.JSeparator();
+        jPanel3 = new javax.swing.JPanel();
+        btnEditProfile = new javax.swing.JButton();
+        btnChangePic = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        lblDate = new javax.swing.JLabel();
+        btnClose = new javax.swing.JLabel();
+        lblName = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocationByPlatform(true);
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(0, 153, 153));
-        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 102, 255), 4));
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel1.setText("Student Profile");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 10, -1, 23));
-
-        jSeparator1.setBackground(new java.awt.Color(51, 102, 255));
-        jSeparator1.setForeground(new java.awt.Color(51, 102, 255));
-        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 650, 10));
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
 
-        lblImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/schoolmgtsystem/IconImages/icons8_User_96px_1.png"))); // NOI18N
+        lblImage.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addComponent(lblImage)
-                .addContainerGap(16, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lblImage, javax.swing.GroupLayout.DEFAULT_SIZE, 186, Short.MAX_VALUE)
+                .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(lblImage, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(14, Short.MAX_VALUE))
+                .addComponent(lblImage, javax.swing.GroupLayout.DEFAULT_SIZE, 186, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, 130, 150));
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 90, 210, 210));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("PhoneNumber");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 530, 120, 20));
-
-        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("FirstName");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 80, 90, 20));
+        jLabel2.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel2.setText("Medical Condition:");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 450, 160, 20));
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText("Surname");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 140, 90, 20));
+        jLabel5.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel5.setText("Physical Disability:");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 410, 160, 20));
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setForeground(new java.awt.Color(51, 51, 51));
         jLabel6.setText("Student ID");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 290, 90, 20));
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 320, 90, 20));
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel7.setText("CourseCode");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 350, 100, 20));
+        jLabel7.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel7.setText("Previous Class:");
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 450, 130, 20));
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel8.setText("EmailAddress");
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 410, 110, 20));
+        jLabel8.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel8.setText("Disability");
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 360, 90, 20));
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel9.setText("State");
-        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 470, 90, 20));
+        jLabel9.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel9.setText("Disability Type:");
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 410, 130, 20));
 
-        lblName.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        lblName.setText("Name");
-        jPanel1.add(lblName, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 80, 170, 20));
+        lblPre.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
+        lblPre.setForeground(new java.awt.Color(51, 51, 51));
+        lblPre.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblPre.setText("Name");
+        jPanel1.add(lblPre, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 260, 310, 50));
 
-        jSeparator2.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel1.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 100, 170, 10));
-
-        lblSurname.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        lblSurname.setText("Surname");
-        jPanel1.add(lblSurname, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 140, 170, 20));
-
-        jSeparator3.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel1.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 160, 170, 10));
+        lblPhysDis.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        lblPhysDis.setForeground(new java.awt.Color(51, 51, 51));
+        lblPhysDis.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblPhysDis.setText("Physical Dis");
+        jPanel1.add(lblPhysDis, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 410, 140, 20));
 
         lblID.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        lblID.setForeground(new java.awt.Color(51, 51, 51));
+        lblID.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblID.setText("ID");
-        jPanel1.add(lblID, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 280, 170, 20));
+        jPanel1.add(lblID, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 320, 110, 20));
 
-        jSeparator4.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel1.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 300, 170, 10));
+        lblPreClass.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        lblPreClass.setForeground(new java.awt.Color(51, 51, 51));
+        lblPreClass.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblPreClass.setText("Class");
+        jPanel1.add(lblPreClass, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 450, 100, 20));
 
-        lblCode.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        lblCode.setText("Code");
-        jPanel1.add(lblCode, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 340, 170, 20));
+        lblDis.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        lblDis.setForeground(new java.awt.Color(51, 51, 51));
+        lblDis.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblDis.setText("Disability");
+        jPanel1.add(lblDis, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 360, 130, 20));
 
-        jSeparator5.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel1.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 360, 170, 10));
+        lblDisType.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        lblDisType.setForeground(new java.awt.Color(51, 51, 51));
+        lblDisType.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblDisType.setText("Type");
+        jPanel1.add(lblDisType, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 410, 100, 20));
 
-        lblEmail.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        lblEmail.setText("Email");
-        jPanel1.add(lblEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 410, 170, 20));
+        lblMed.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        lblMed.setForeground(new java.awt.Color(51, 51, 51));
+        lblMed.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblMed.setText("Medical");
+        jPanel1.add(lblMed, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 450, 110, 20));
 
-        jSeparator6.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel1.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 430, 170, 10));
-
-        lblState.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        lblState.setText("State");
-        jPanel1.add(lblState, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 460, 170, 20));
-
-        jSeparator7.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel1.add(jSeparator7, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 480, 170, 10));
-
-        lblPhone.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        lblPhone.setText("Number");
-        jPanel1.add(lblPhone, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 520, 170, 20));
-
-        jSeparator8.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel1.add(jSeparator8, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 540, 170, 10));
-
-        jLabel10.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel10.setText("UserName");
-        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 200, 90, 20));
-
-        lblUser.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        lblUser.setText("UserName");
-        jPanel1.add(lblUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 200, 170, 20));
+        lblAdmClass.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        lblAdmClass.setForeground(new java.awt.Color(51, 51, 51));
+        lblAdmClass.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblAdmClass.setText("Class");
+        jPanel1.add(lblAdmClass, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 200, 90, 20));
 
         jSeparator9.setForeground(new java.awt.Color(255, 255, 255));
         jPanel1.add(jSeparator9, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 590, 170, 10));
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/schoolmgtsystem/IconImages/icons8_Left_30px_1.png"))); // NOI18N
-        jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel3MouseClicked(evt);
-            }
-        });
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 4, 40, 30));
-
         lblClick.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        lblClick.setForeground(new java.awt.Color(255, 255, 255));
+        lblClick.setForeground(new java.awt.Color(51, 51, 51));
         lblClick.setText("CLICK HERE FOR MORE");
         lblClick.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -214,8 +200,88 @@ public class StudentProfileOnly extends javax.swing.JFrame {
         });
         jPanel1.add(lblClick, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 570, -1, 20));
 
-        jSeparator10.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel1.add(jSeparator10, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 220, 170, 10));
+        jPanel3.setBackground(new java.awt.Color(0, 160, 249));
+        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        btnEditProfile.setBackground(new java.awt.Color(0, 160, 249));
+        btnEditProfile.setIcon(new javax.swing.ImageIcon(getClass().getResource("/schoolmgtsystem/IconImages/icons8_Change_User.png"))); // NOI18N
+        btnEditProfile.setToolTipText("Edit Profile");
+        btnEditProfile.setBorder(null);
+        btnEditProfile.setBorderPainted(false);
+        jPanel3.add(btnEditProfile, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 0, 35, 30));
+
+        btnChangePic.setBackground(new java.awt.Color(0, 160, 249));
+        btnChangePic.setIcon(new javax.swing.ImageIcon(getClass().getResource("/schoolmgtsystem/IconImages/icons8_Pictures_Folder.png"))); // NOI18N
+        btnChangePic.setToolTipText("Change Picture");
+        btnChangePic.setBorder(null);
+        btnChangePic.setBorderPainted(false);
+        btnChangePic.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnChangePicActionPerformed(evt);
+            }
+        });
+        jPanel3.add(btnChangePic, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 0, 35, 30));
+
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/schoolmgtsystem/IconImages/icons8_Left_30px_1.png"))); // NOI18N
+        jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel3MouseClicked(evt);
+            }
+        });
+        jPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 40, -1));
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel1.setText("Student Profile");
+        jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, -1, 23));
+
+        jLabel4.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel4.setText("Reg Date:");
+        jPanel3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 50, -1, 20));
+
+        lblDate.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        lblDate.setForeground(new java.awt.Color(51, 51, 51));
+        lblDate.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblDate.setText("Date");
+        jPanel3.add(lblDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 50, 90, 20));
+
+        btnClose.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnClose.setIcon(new javax.swing.ImageIcon(getClass().getResource("/schoolmgtsystem/IconImages/icons8_Xbox_X.png"))); // NOI18N
+        btnClose.setToolTipText("close");
+        btnClose.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnCloseMouseClicked(evt);
+            }
+        });
+        jPanel3.add(btnClose, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 0, -1, -1));
+
+        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 680, 80));
+
+        lblName.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        lblName.setForeground(new java.awt.Color(51, 51, 51));
+        lblName.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblName.setText("Name");
+        jPanel1.add(lblName, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 110, 320, 30));
+
+        jLabel11.setFont(new java.awt.Font("Gabriola", 1, 16)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel11.setText("Knowledge for Excellence");
+        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 180, 200, 20));
+
+        jLabel12.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel12.setText("BRIGHT STARS SCHOOL");
+        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 150, 290, 30));
+
+        jLabel13.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel13.setText("Previous School");
+        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 240, -1, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 680, 610));
 
@@ -234,6 +300,51 @@ public class StudentProfileOnly extends javax.swing.JFrame {
         setVisible(true);
         this.dispose();
     }//GEN-LAST:event_lblClickMouseClicked
+
+    private JLabel label;
+    private void btnCloseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCloseMouseClicked
+
+        label = new JLabel("btn_exit");
+        if (JOptionPane.showConfirmDialog(label, "Do you want to Exit ?", "Confirm",
+                JOptionPane.YES_NO_OPTION) == JOptionPane.YES_NO_OPTION) {
+            this.dispose();
+        }
+    }//GEN-LAST:event_btnCloseMouseClicked
+
+    private void btnChangePicActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnChangePicActionPerformed
+
+        JFileChooser chooser = new JFileChooser();
+        chooser.setCurrentDirectory(new File(System.getProperty("user.home")));
+        FileNameExtensionFilter extensionFilter = new FileNameExtensionFilter("*.image", "jpg", "gif", "png");
+        chooser.addChoosableFileFilter(extensionFilter);
+        int result = chooser.showSaveDialog(null);
+        if (result == JFileChooser.APPROVE_OPTION) {
+            File selectedFile = chooser.getSelectedFile();
+            String path = selectedFile.getAbsolutePath();
+            lblImage.setIcon(resizeImage(path));
+            s = path;
+        } else if (result == JFileChooser.CANCEL_OPTION) {
+            System.out.println("No Data");
+        }
+
+        DBHandler handler = new DBHandler();
+//        String update = "UPDATE student_details SET Passport = ? WHERE StudentID = ?";
+        String update = "UPDATE `student_details` SET `Passport`= '?' WHERE StudentID = ?";
+        try {
+            PreparedStatement pst = handler.getdbConnection().prepareStatement(update);
+//            pst.setString(1, lblID.getText());
+            InputStream input = new FileInputStream(new File(s));
+            pst.setBlob(1, input,(int)s.length());
+
+            pst.executeUpdate();
+            JOptionPane.showMessageDialog(this, "Picture updated");
+
+        } catch (ClassNotFoundException | SQLException | FileNotFoundException ex) {
+            Logger.getLogger(StudentProfileOnly.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+
+    }//GEN-LAST:event_btnChangePicActionPerformed
 
     /**
      * @param args the command line arguments
@@ -270,9 +381,25 @@ public class StudentProfileOnly extends javax.swing.JFrame {
         });
     }
 
+    //Getting image size
+    public ImageIcon resizeImage(String imgPath) {
+        ImageIcon myImage = new ImageIcon(imgPath);
+        Image img = myImage.getImage();
+        Image newImage = img.getScaledInstance(lblImage.getWidth(), lblImage.getHeight(), Image.SCALE_SMOOTH);
+        ImageIcon image = new ImageIcon(newImage);
+
+        return image;
+
+    }
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnChangePic;
+    private javax.swing.JLabel btnClose;
+    private javax.swing.JButton btnEditProfile;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -283,25 +410,19 @@ public class StudentProfileOnly extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JSeparator jSeparator10;
-    private javax.swing.JSeparator jSeparator2;
-    private javax.swing.JSeparator jSeparator3;
-    private javax.swing.JSeparator jSeparator4;
-    private javax.swing.JSeparator jSeparator5;
-    private javax.swing.JSeparator jSeparator6;
-    private javax.swing.JSeparator jSeparator7;
-    private javax.swing.JSeparator jSeparator8;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JSeparator jSeparator9;
+    static javax.swing.JLabel lblAdmClass;
     private javax.swing.JLabel lblClick;
-    static javax.swing.JLabel lblCode;
-    static javax.swing.JLabel lblEmail;
+    static javax.swing.JLabel lblDate;
+    static javax.swing.JLabel lblDis;
+    static javax.swing.JLabel lblDisType;
     static javax.swing.JLabel lblID;
     public static javax.swing.JLabel lblImage;
+    static javax.swing.JLabel lblMed;
     static javax.swing.JLabel lblName;
-    static javax.swing.JLabel lblPhone;
-    static javax.swing.JLabel lblState;
-    static javax.swing.JLabel lblSurname;
-    static javax.swing.JLabel lblUser;
+    static javax.swing.JLabel lblPhysDis;
+    static javax.swing.JLabel lblPre;
+    static javax.swing.JLabel lblPreClass;
     // End of variables declaration//GEN-END:variables
 }

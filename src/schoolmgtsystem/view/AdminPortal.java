@@ -42,9 +42,9 @@ public class AdminPortal extends javax.swing.JFrame {
         jSeparator6 = new javax.swing.JSeparator();
         jSeparator7 = new javax.swing.JSeparator();
         jSeparator8 = new javax.swing.JSeparator();
-        txtBack = new javax.swing.JLabel();
         SignUp1 = new javax.swing.JLabel();
         jSeparator9 = new javax.swing.JSeparator();
+        btnClose = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocationByPlatform(true);
@@ -63,7 +63,7 @@ public class AdminPortal extends javax.swing.JFrame {
                 btnTeachersProActionPerformed(evt);
             }
         });
-        jPanel1.add(btnTeachersPro, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 140, 400, 109));
+        jPanel1.add(btnTeachersPro, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 150, 400, 109));
 
         btnParentprofile.setBackground(new java.awt.Color(255, 255, 255));
         btnParentprofile.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
@@ -73,7 +73,7 @@ public class AdminPortal extends javax.swing.JFrame {
                 btnParentprofileActionPerformed(evt);
             }
         });
-        jPanel1.add(btnParentprofile, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 280, 400, 109));
+        jPanel1.add(btnParentprofile, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 290, 400, 109));
 
         btnStudentPro.setBackground(new java.awt.Color(255, 255, 255));
         btnStudentPro.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
@@ -83,7 +83,7 @@ public class AdminPortal extends javax.swing.JFrame {
                 btnStudentProActionPerformed(evt);
             }
         });
-        jPanel1.add(btnStudentPro, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 10, 400, 109));
+        jPanel1.add(btnStudentPro, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 20, 400, 109));
 
         btnResult.setBackground(new java.awt.Color(255, 255, 255));
         btnResult.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
@@ -93,7 +93,7 @@ public class AdminPortal extends javax.swing.JFrame {
                 btnResultActionPerformed(evt);
             }
         });
-        jPanel1.add(btnResult, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 410, 400, 109));
+        jPanel1.add(btnResult, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 420, 400, 109));
 
         jPanel3.setBackground(new java.awt.Color(51, 102, 255));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -101,25 +101,17 @@ public class AdminPortal extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/schoolmgtsystem/IconImages/icons8_Administrator_Male_96px_1.png"))); // NOI18N
-        jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 210, -1, -1));
+        jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 210, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Principal Portal");
-        jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 130, -1, -1));
-        jPanel3.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 350, 256, 10));
-        jPanel3.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 370, 232, 10));
-        jPanel3.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 390, 184, 10));
-        jPanel3.add(jSeparator7, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 410, 142, 10));
-        jPanel3.add(jSeparator8, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 430, 116, 10));
-
-        txtBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/schoolmgtsystem/IconImages/icons8_Left_30px_1.png"))); // NOI18N
-        txtBack.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                txtBackMouseClicked(evt);
-            }
-        });
-        jPanel3.add(txtBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, 20));
+        jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 130, -1, -1));
+        jPanel3.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 350, 256, 10));
+        jPanel3.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 370, 232, 10));
+        jPanel3.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 390, 184, 10));
+        jPanel3.add(jSeparator7, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 410, 142, 10));
+        jPanel3.add(jSeparator8, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 430, 116, 10));
 
         SignUp1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         SignUp1.setForeground(new java.awt.Color(255, 255, 255));
@@ -135,9 +127,19 @@ public class AdminPortal extends javax.swing.JFrame {
         jSeparator9.setForeground(new java.awt.Color(0, 0, 255));
         jPanel3.add(jSeparator9, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 490, 100, -1));
 
-        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 346, 530));
+        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 300, 560));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 780, 530));
+        btnClose.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnClose.setIcon(new javax.swing.ImageIcon(getClass().getResource("/schoolmgtsystem/IconImages/icons8_Xbox_X.png"))); // NOI18N
+        btnClose.setToolTipText("close");
+        btnClose.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnCloseMouseClicked(evt);
+            }
+        });
+        jPanel1.add(btnClose, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 10, -1, -1));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 880, 560));
 
         pack();
         setLocationRelativeTo(null);
@@ -145,18 +147,11 @@ public class AdminPortal extends javax.swing.JFrame {
 
     private void btnStudentProActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStudentProActionPerformed
 
-        JOptionPane.showMessageDialog(this, "Still under construction.\nComing soon!");
+//        JOptionPane.showMessageDialog(this, "Still under construction.\nComing soon!");
         
-//        new ViewProfile().show();
-//        setVisible(true);
-//        this.dispose();
+//        new StudentInformation().show();
+        
     }//GEN-LAST:event_btnStudentProActionPerformed
-
-    private void txtBackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtBackMouseClicked
-        new Home().show();
-        setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_txtBackMouseClicked
 
     private void SignUp1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SignUp1MouseClicked
 
@@ -185,6 +180,12 @@ public class AdminPortal extends javax.swing.JFrame {
 //        setVisible(true);
 //        this.dispose();
     }//GEN-LAST:event_btnParentprofileActionPerformed
+
+    private void btnCloseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCloseMouseClicked
+
+        this.dispose();
+        
+    }//GEN-LAST:event_btnCloseMouseClicked
 
     /**
      * @param args the command line arguments
@@ -230,6 +231,7 @@ public class AdminPortal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel SignUp1;
+    private javax.swing.JLabel btnClose;
     private javax.swing.JButton btnParentprofile;
     private javax.swing.JButton btnResult;
     private javax.swing.JButton btnStudentPro;
@@ -244,6 +246,5 @@ public class AdminPortal extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator7;
     private javax.swing.JSeparator jSeparator8;
     private javax.swing.JSeparator jSeparator9;
-    private javax.swing.JLabel txtBack;
     // End of variables declaration//GEN-END:variables
 }

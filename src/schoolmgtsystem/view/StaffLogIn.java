@@ -22,6 +22,8 @@ import schoolmgtsystem.dbhelper.DBHandler;
  */
 public class StaffLogIn extends javax.swing.JFrame implements EventListener {
 
+    String name;
+
     /**
      * Creates new form TeacherLogIn
      */
@@ -36,7 +38,6 @@ public class StaffLogIn extends javax.swing.JFrame implements EventListener {
         initComponents();
         ForgotPassword fd = new ForgotPassword();
         ForgotPassword.txtEnterEmail.setText(getPassword);
-        txtFirstName.setText(getPassword);
         txtEmail.setText(getPassword);
         txtPassword.setText(getPassword);
     }
@@ -64,9 +65,6 @@ public class StaffLogIn extends javax.swing.JFrame implements EventListener {
         jSeparator10 = new javax.swing.JSeparator();
         jLabel4 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        txtFirstName = new javax.swing.JTextField();
-        jSeparator1 = new javax.swing.JSeparator();
         txtEmail = new javax.swing.JTextField();
         jSeparator5 = new javax.swing.JSeparator();
         jLabel9 = new javax.swing.JLabel();
@@ -75,8 +73,8 @@ public class StaffLogIn extends javax.swing.JFrame implements EventListener {
         jSeparator3 = new javax.swing.JSeparator();
         btnLogIn = new javax.swing.JButton();
         btnCancel = new javax.swing.JButton();
-        SignUp = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
+        btnSignup = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -120,130 +118,117 @@ public class StaffLogIn extends javax.swing.JFrame implements EventListener {
         jLabel6.setText("Please enter your LogIn details....");
         jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 60, 200, -1));
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(0, 153, 204));
-        jLabel3.setText("First Name");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 120, -1, -1));
-
-        txtFirstName.setBackground(new java.awt.Color(255, 255, 255));
-        txtFirstName.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        txtFirstName.setBorder(null);
-        jPanel1.add(txtFirstName, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 140, 320, 20));
-
-        jSeparator1.setBackground(new java.awt.Color(0, 153, 204));
-        jSeparator1.setForeground(new java.awt.Color(0, 153, 204));
-        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 160, 320, -1));
-
         txtEmail.setBackground(new java.awt.Color(255, 255, 255));
         txtEmail.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         txtEmail.setBorder(null);
-        jPanel1.add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 240, 320, 20));
+        jPanel1.add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 180, 320, 20));
 
         jSeparator5.setBackground(new java.awt.Color(0, 153, 204));
         jSeparator5.setForeground(new java.awt.Color(0, 153, 204));
-        jPanel1.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 260, 320, -1));
+        jPanel1.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 200, 320, -1));
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(0, 153, 204));
         jLabel9.setText("Email Address");
-        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 220, -1, -1));
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 160, -1, -1));
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(0, 153, 204));
         jLabel8.setText("Password");
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 310, -1, -1));
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 250, -1, -1));
 
         txtPassword.setBackground(new java.awt.Color(255, 255, 255));
         txtPassword.setBorder(null);
-        jPanel1.add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 330, 320, 20));
+        jPanel1.add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 270, 320, 20));
 
         jSeparator3.setBackground(new java.awt.Color(0, 153, 204));
         jSeparator3.setForeground(new java.awt.Color(0, 153, 204));
-        jPanel1.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 350, 320, 10));
+        jPanel1.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 290, 320, 10));
 
-        btnLogIn.setBackground(new java.awt.Color(0, 153, 204));
+        btnLogIn.setBackground(new java.awt.Color(255, 255, 255));
         btnLogIn.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btnLogIn.setForeground(new java.awt.Color(255, 255, 255));
-        btnLogIn.setText("Sign In");
+        btnLogIn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/schoolmgtsystem/IconImages/icons8_Login.png"))); // NOI18N
+        btnLogIn.setToolTipText("Login");
+        btnLogIn.setBorder(null);
+        btnLogIn.setBorderPainted(false);
         btnLogIn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnLogInActionPerformed(evt);
             }
         });
-        jPanel1.add(btnLogIn, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 380, 110, 36));
+        jPanel1.add(btnLogIn, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 350, 40, 40));
 
-        btnCancel.setBackground(new java.awt.Color(0, 153, 204));
+        btnCancel.setBackground(new java.awt.Color(255, 255, 255));
         btnCancel.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btnCancel.setForeground(new java.awt.Color(255, 255, 255));
-        btnCancel.setText("Cancel");
+        btnCancel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/schoolmgtsystem/IconImages/icons8_Cancel.png"))); // NOI18N
+        btnCancel.setToolTipText("Cancel");
+        btnCancel.setBorder(null);
+        btnCancel.setBorderPainted(false);
         btnCancel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCancelActionPerformed(evt);
             }
         });
-        jPanel1.add(btnCancel, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 380, 110, 36));
-
-        SignUp.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
-        SignUp.setForeground(new java.awt.Color(0, 153, 204));
-        SignUp.setText("Sign Up instead");
-        SignUp.setAlignmentX(0.5F);
-        SignUp.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                SignUpMouseClicked(evt);
-            }
-        });
-        jPanel1.add(SignUp, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 460, -1, 20));
+        jPanel1.add(btnCancel, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 350, 40, 40));
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(0, 153, 204));
         jLabel5.setText("Forgot Password ?");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 480, 120, -1));
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 480, 110, -1));
+
+        btnSignup.setBackground(new java.awt.Color(255, 255, 255));
+        btnSignup.setIcon(new javax.swing.ImageIcon(getClass().getResource("/schoolmgtsystem/IconImages/icons8_Add_User.png"))); // NOI18N
+        btnSignup.setToolTipText("Sign Up");
+        btnSignup.setBorder(null);
+        btnSignup.setBorderPainted(false);
+        btnSignup.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSignupActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnSignup, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 20, -1, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 740, 520));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void SignUpMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SignUpMouseClicked
-        // TODO add your handling code here:
-
-        new StaffSignUp().show();
-        this.dispose();
-
-    }//GEN-LAST:event_SignUpMouseClicked
-
     private void btnLogInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogInActionPerformed
-        try {
-            String a = txtFirstName.getText();
-            String b = txtEmail.getText();
-            String c = txtPassword.getText();
+        DBHandler handler = new DBHandler();
 
-            DBHandler handler = new DBHandler();
-            String check = "SELECT StaffName, Email, Password FROM staff_details WHERE Email = ?";
+        String email = txtEmail.getText();
+        String pass = txtPassword.getText();
 
-            PreparedStatement pst = handler.getdbConnection().prepareStatement(check);
-            pst.setString(1, txtEmail.getText());
-            ResultSet rs = pst.executeQuery();
-
-            while (rs.next()) {
-                if (a.equals(rs.getString("StaffName")) && b.equals(rs.getString("Email"))
-                        && c.equals(rs.getString("Password"))) {
-                    JOptionPane.showMessageDialog(this, "Details are correct");
+        ResultSet result = null;
+        if (!email.equals("") && !pass.equals("")) {
+            String query = "SELECT * FROM staff_details WHERE Email = ? AND Password = ?";
+            try {
+                PreparedStatement preparedStatement = handler.getdbConnection().prepareStatement(query);
+                preparedStatement.setString(1, email);
+                preparedStatement.setString(2, pass);
+                result = preparedStatement.executeQuery();
+                int counter = 0;
+                while (result.next()) {
+                    counter++;
+                    email = result.getString("Email");
+                    pass = result.getString("Password");
+                    name = result.getString("StaffName");
+                    System.out.println(email + " " + pass + " " + name);
+                }
+                if (counter == 1) {
+                    JOptionPane.showMessageDialog(this, "Welcome " + name);
                     new ResultEntry().show();
                     this.dispose();
+                } else {
+                    JOptionPane.showMessageDialog(this, "Please re-type\nYour email or password is/are incorrect");
                 }
-                if (!a.equals(rs.getString("StaffName")) || !b.equals(rs.getString("Email"))
-                        || !c.equals(rs.getString("Password"))) {
-                    JOptionPane.showMessageDialog(this, "Invalid Details\nPlease check and try again");
-
-                }
+            } catch (ClassNotFoundException | SQLException ex) {
+                Logger.getLogger(StaffLogIn.class.getName()).log(Level.SEVERE, null, ex);
             }
-            if (a.isEmpty() || b.isEmpty() || c.isEmpty()) {
-                JOptionPane.showMessageDialog(this, "Field can't be empty");
-            }
-
-        } catch (ClassNotFoundException | SQLException ex) {
-            Logger.getLogger(StaffLogIn.class.getName()).log(Level.SEVERE, null, ex);
+        } else {
+            JOptionPane.showMessageDialog(this, "Field can't be empty");
         }
 
     }//GEN-LAST:event_btnLogInActionPerformed
@@ -255,6 +240,13 @@ public class StaffLogIn extends javax.swing.JFrame implements EventListener {
         this.dispose();
 
     }//GEN-LAST:event_btnCancelActionPerformed
+
+    private void btnSignupActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSignupActionPerformed
+
+        new StaffSignUp().show();
+        this.dispose();
+
+    }//GEN-LAST:event_btnSignupActionPerformed
 
     /**
      * @param args the command line arguments
@@ -309,14 +301,13 @@ public class StaffLogIn extends javax.swing.JFrame implements EventListener {
 //    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel SignUp;
     private javax.swing.JButton btnCancel;
     private javax.swing.JButton btnLogIn;
+    private javax.swing.JButton btnSignup;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -324,7 +315,6 @@ public class StaffLogIn extends javax.swing.JFrame implements EventListener {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator10;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
@@ -334,7 +324,6 @@ public class StaffLogIn extends javax.swing.JFrame implements EventListener {
     private javax.swing.JSeparator jSeparator8;
     private javax.swing.JSeparator jSeparator9;
     public static javax.swing.JTextField txtEmail;
-    public static javax.swing.JTextField txtFirstName;
     public static javax.swing.JPasswordField txtPassword;
     // End of variables declaration//GEN-END:variables
 }
