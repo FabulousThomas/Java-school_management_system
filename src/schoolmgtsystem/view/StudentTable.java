@@ -6,6 +6,7 @@
 package schoolmgtsystem.view;
 
 import schoolmgtsystem.dbhelper.DBHandler;
+import schoolmgtsystem.model.CountFunction;
 
 /**
  *
@@ -17,10 +18,13 @@ public class StudentTable extends javax.swing.JFrame {
      * Creates new form StudentTable
      */
     DBHandler handler = new DBHandler();
+    CountFunction cf = new CountFunction();
+
     public StudentTable() {
         initComponents();
         setLocationRelativeTo(null);
         handler.fillTable(jTable1, "");
+
     }
 
     /**
@@ -33,39 +37,16 @@ public class StudentTable extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
         btnClose = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jTable1.setBackground(new java.awt.Color(255, 255, 255));
-        jTable1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jTable1.setForeground(new java.awt.Color(51, 51, 51));
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "StudentID", "ParentID", "Name", "Gender", "Pre-School", "Pre-Class", "Adm-Class", "Session", "Phy-Disability", "Disability Type", "Medical-Con", "Disability", "RegDate", "EndDate", "Password"
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                true, true, true, true, true, true, true, true, true, true, true, false, true, true, true
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        jScrollPane1.setViewportView(jTable1);
-
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 1060, 480));
 
         jLabel1.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(51, 51, 51));
@@ -82,6 +63,34 @@ public class StudentTable extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnClose, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 0, -1, -1));
+
+        jTable1.setBackground(new java.awt.Color(255, 255, 255));
+        jTable1.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        jTable1.setForeground(new java.awt.Color(51, 51, 51));
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "SID", "PID", "Names", "Gender", "Pre-School", "Pre-Class", "Adm-Class", "Session", "Phy-Dis", "Dis-Type", "Med-Cond", "Disability", "RegDate", "EndDate", "Password"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false, false, false, false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jTable1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jTable1.setEditingRow(3);
+        jTable1.setFillsViewportHeight(true);
+        jTable1.setInheritsPopupMenu(true);
+        jTable1.setIntercellSpacing(new java.awt.Dimension(1, 5));
+        jScrollPane1.setViewportView(jTable1);
+
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 1060, 460));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -100,7 +109,7 @@ public class StudentTable extends javax.swing.JFrame {
     private void btnCloseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCloseMouseClicked
 
         this.dispose();
-        
+
     }//GEN-LAST:event_btnCloseMouseClicked
 
     /**
@@ -131,10 +140,8 @@ public class StudentTable extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new StudentTable().setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            new StudentTable().setVisible(true);
         });
     }
 
@@ -143,6 +150,6 @@ public class StudentTable extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    public static javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
 }

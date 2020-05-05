@@ -15,6 +15,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import schoolmgtsystem.dbhelper.DBHandler;
+import schoolmgtsystem.model.CountFunction;
 
 /**
  *
@@ -219,7 +220,11 @@ public class StaffLogIn extends javax.swing.JFrame implements EventListener {
                 }
                 if (counter == 1) {
                     JOptionPane.showMessageDialog(this, "Welcome " + name);
-                    new ResultEntry().show();
+                    StudentInformation1 si = new StudentInformation1();
+                    StudentInformation1.lblName.setText("Welcome  < " + " " + name + " >");
+                    StudentInformation1.studentCount.setText("Student Count = " + Integer.toString(CountFunction.CountData("student_details")));
+                    StudentInformation1.staffCount.setText("Staff Count = " + Integer.toString(CountFunction.CountData("staff_details")));
+                    si.show();
                     this.dispose();
                 } else {
                     JOptionPane.showMessageDialog(this, "Please re-type\nYour email or password is/are incorrect");

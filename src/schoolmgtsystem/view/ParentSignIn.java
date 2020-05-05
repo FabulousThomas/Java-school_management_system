@@ -8,6 +8,7 @@ package schoolmgtsystem.view;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFrame;
@@ -22,6 +23,16 @@ public class ParentSignIn extends javax.swing.JFrame {
 
 //    String conStr = "jdbc:sqlserver://localhost;instanceName=SQLEXPRESS;databaseName=SchoolManagementSystem;user=sa;password=123456789";
     String name;
+    String state;
+    String nation;
+    String ID;
+    String home;
+    String office;
+    String tel1;
+    String tel2;
+    String occupation;
+    String rel;
+    String id;
 
     /**
      * Creates new form TeacherLogIn
@@ -245,11 +256,36 @@ public class ParentSignIn extends javax.swing.JFrame {
                     counter++;
                     email = result.getString("Email");
                     pass = result.getString("Password");
+                    id = result.getString("ParentID");
                     name = result.getString("ParentName");
+                    state = result.getString("State");
+                    home = result.getString("HomeAddress");
+                    office = result.getString("OfficeAddress");
+                    nation = result.getString("Nationality");
+                    tel1 = result.getString("Tel1");
+                    tel2 = result.getString("Tel2");
+                    occupation = result.getString("Occupation");
+                    rel = result.getString("Religion");
                     System.out.println(email + " " + pass + " " + name);
                 }
                 if (counter == 1) {
                     JOptionPane.showMessageDialog(this, "Welcome " + name);
+                    ParentProfile ps = new ParentProfile();
+                    ParentProfile.txtID.setText(id);
+                    ParentProfile.lblName.setText(name);
+                    ParentProfile.txtName.setText(name);
+                    ParentProfile.txtEmail.setText(email);
+                    ParentProfile.txtPassword.setText(pass);
+                    ParentProfile.txtState.setText(state);
+                    ParentProfile.txtHome.setText(home);
+                    ParentProfile.txtOffice.setText(office);
+                    ParentProfile.txtNation.setText(nation);
+                    ParentProfile.txtTel1.setText(tel1);
+                    ParentProfile.txtTel2.setText(tel2);
+                    ParentProfile.txtOccupation.setText(occupation);
+                    ParentProfile.txtReligion.setText(rel);
+                    ps.show();
+                    this.dispose();
                 } else {
                     JOptionPane.showMessageDialog(this, "Please re-type\nYour email or password is/are incorrect");
                 }
@@ -287,7 +323,7 @@ public class ParentSignIn extends javax.swing.JFrame {
     private void forgotPasswordMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_forgotPasswordMouseClicked
 
         new ForgotPassword().show();
-        
+
     }//GEN-LAST:event_forgotPasswordMouseClicked
 
     /**
@@ -321,10 +357,8 @@ public class ParentSignIn extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new ParentSignIn().setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            new ParentSignIn().setVisible(true);
         });
     }
 

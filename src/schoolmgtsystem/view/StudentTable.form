@@ -45,54 +45,6 @@
         <Property name="useNullLayout" type="boolean" value="false"/>
       </Layout>
       <SubComponents>
-        <Container class="javax.swing.JScrollPane" name="jScrollPane1">
-          <AuxValues>
-            <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
-          </AuxValues>
-          <Constraints>
-            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="0" y="70" width="1060" height="480"/>
-            </Constraint>
-          </Constraints>
-
-          <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
-          <SubComponents>
-            <Component class="javax.swing.JTable" name="jTable1">
-              <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                </Property>
-                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                  <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                    <LineBorder/>
-                  </Border>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="33" green="33" red="33" type="rgb"/>
-                </Property>
-                <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                  <Table columnCount="15" rowCount="0">
-                    <Column editable="true" title="StudentID" type="java.lang.Object"/>
-                    <Column editable="true" title="ParentID" type="java.lang.Object"/>
-                    <Column editable="true" title="Name" type="java.lang.Object"/>
-                    <Column editable="true" title="Gender" type="java.lang.Object"/>
-                    <Column editable="true" title="Pre-School" type="java.lang.Object"/>
-                    <Column editable="true" title="Pre-Class" type="java.lang.Object"/>
-                    <Column editable="true" title="Adm-Class" type="java.lang.Object"/>
-                    <Column editable="true" title="Session" type="java.lang.Object"/>
-                    <Column editable="true" title="Phy-Disability" type="java.lang.Object"/>
-                    <Column editable="true" title="Disability Type" type="java.lang.Object"/>
-                    <Column editable="true" title="Medical-Con" type="java.lang.Object"/>
-                    <Column editable="false" title="Disability" type="java.lang.Object"/>
-                    <Column editable="true" title="RegDate" type="java.lang.Object"/>
-                    <Column editable="true" title="EndDate" type="java.lang.Object"/>
-                    <Column editable="true" title="Password" type="java.lang.Object"/>
-                  </Table>
-                </Property>
-              </Properties>
-            </Component>
-          </SubComponents>
-        </Container>
         <Component class="javax.swing.JLabel" name="jLabel1">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -127,6 +79,64 @@
             </Constraint>
           </Constraints>
         </Component>
+        <Container class="javax.swing.JScrollPane" name="jScrollPane1">
+          <AuxValues>
+            <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+          </AuxValues>
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+              <AbsoluteConstraints x="0" y="90" width="1060" height="460"/>
+            </Constraint>
+          </Constraints>
+
+          <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+          <SubComponents>
+            <Component class="javax.swing.JTable" name="jTable1">
+              <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                </Property>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Dialog" size="12" style="1"/>
+                </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="33" green="33" red="33" type="rgb"/>
+                </Property>
+                <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
+                  <Table columnCount="15" rowCount="0">
+                    <Column editable="false" title="SID" type="java.lang.Object"/>
+                    <Column editable="false" title="PID" type="java.lang.Object"/>
+                    <Column editable="false" title="Names" type="java.lang.Object"/>
+                    <Column editable="false" title="Gender" type="java.lang.Object"/>
+                    <Column editable="false" title="Pre-School" type="java.lang.Object"/>
+                    <Column editable="false" title="Pre-Class" type="java.lang.Object"/>
+                    <Column editable="false" title="Adm-Class" type="java.lang.Object"/>
+                    <Column editable="false" title="Session" type="java.lang.Object"/>
+                    <Column editable="false" title="Phy-Dis" type="java.lang.Object"/>
+                    <Column editable="false" title="Dis-Type" type="java.lang.Object"/>
+                    <Column editable="false" title="Med-Cond" type="java.lang.Object"/>
+                    <Column editable="false" title="Disability" type="java.lang.Object"/>
+                    <Column editable="false" title="RegDate" type="java.lang.Object"/>
+                    <Column editable="false" title="EndDate" type="java.lang.Object"/>
+                    <Column editable="false" title="Password" type="java.lang.Object"/>
+                  </Table>
+                </Property>
+                <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                  <Color id="Default Cursor"/>
+                </Property>
+                <Property name="editingRow" type="int" value="3"/>
+                <Property name="fillsViewportHeight" type="boolean" value="true"/>
+                <Property name="inheritsPopupMenu" type="boolean" value="true"/>
+                <Property name="intercellSpacing" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                  <Dimension value="[1, 5]"/>
+                </Property>
+              </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+              </AuxValues>
+            </Component>
+          </SubComponents>
+        </Container>
       </SubComponents>
     </Container>
   </SubComponents>

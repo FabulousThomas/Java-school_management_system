@@ -5,7 +5,6 @@
  */
 package schoolmgtsystem.view;
 
-import com.itextpdf.text.BaseColor;
 import com.itextpdf.text.Document;
 import com.itextpdf.text.DocumentException;
 import com.itextpdf.text.Element;
@@ -16,7 +15,6 @@ import com.itextpdf.text.pdf.PdfPCell;
 import com.itextpdf.text.pdf.PdfPTable;
 import com.itextpdf.text.pdf.PdfWriter;
 import java.awt.Component;
-import java.awt.ComponentOrientation;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -30,9 +28,7 @@ import java.util.logging.Logger;
 import javax.swing.JFileChooser;
 import javax.swing.JTextField;
 import javax.swing.JOptionPane;
-import javax.swing.table.DefaultTableModel;
 import schoolmgtsystem.dbhelper.DBHandler;
-import schoolmgtsystem.model.UserResult;
 
 /**
  *
@@ -516,7 +512,7 @@ public class StudentResult extends javax.swing.JFrame {
 
     private void btnGenerateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerateActionPerformed
 
-        String str = "select * from sss_one where StudentID = ?";
+        String str = "select * from sss where StudentID = ?";
 
         try {
             handler = new DBHandler();
@@ -707,17 +703,15 @@ public class StudentResult extends javax.swing.JFrame {
         //UIManager.setLookAndFeel("com.jtattoo.plaf.aluminium.AluminiumLookAndFeel");
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new StudentResult().setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            new StudentResult().setVisible(true);
         });
     }
 
     public void printResult() throws IOException {
 
         //PreparedStatement to get the 1st and 2nd Test score
-        String str = "select * from sss_one where StudentID = ?";
+        String str = "select * from sss where StudentID = ?";
 
         handler = new DBHandler();
 

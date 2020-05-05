@@ -50,6 +50,7 @@ public class ResultEntry extends javax.swing.JFrame {
         PanelWelcome = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel63 = new javax.swing.JLabel();
+        btnClose = new javax.swing.JLabel();
         firstPanel = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         txtFirstMaths = new javax.swing.JTextField();
@@ -805,36 +806,26 @@ public class ResultEntry extends javax.swing.JFrame {
         LayeredPane.setLayout(new java.awt.CardLayout());
 
         PanelWelcome.setBackground(new java.awt.Color(255, 255, 255));
+        PanelWelcome.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 102, 153));
         jLabel1.setText("WELCOME  TO  BRIGHT STARS SCHOOLS");
+        PanelWelcome.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(107, 43, -1, 45));
 
         jLabel63.setIcon(new javax.swing.ImageIcon(getClass().getResource("/schoolmgtsystem/IconImages/Bright_Stars.png"))); // NOI18N
         jLabel63.setText("Image");
+        PanelWelcome.add(jLabel63, new org.netbeans.lib.awtextra.AbsoluteConstraints(353, 142, 226, 167));
 
-        javax.swing.GroupLayout PanelWelcomeLayout = new javax.swing.GroupLayout(PanelWelcome);
-        PanelWelcome.setLayout(PanelWelcomeLayout);
-        PanelWelcomeLayout.setHorizontalGroup(
-            PanelWelcomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelWelcomeLayout.createSequentialGroup()
-                .addContainerGap(107, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(102, 102, 102))
-            .addGroup(PanelWelcomeLayout.createSequentialGroup()
-                .addGap(353, 353, 353)
-                .addComponent(jLabel63, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        PanelWelcomeLayout.setVerticalGroup(
-            PanelWelcomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PanelWelcomeLayout.createSequentialGroup()
-                .addGap(43, 43, 43)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(54, 54, 54)
-                .addComponent(jLabel63, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(321, Short.MAX_VALUE))
-        );
+        btnClose.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnClose.setIcon(new javax.swing.ImageIcon(getClass().getResource("/schoolmgtsystem/IconImages/icons8_Xbox_X.png"))); // NOI18N
+        btnClose.setToolTipText("close");
+        btnClose.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnCloseMouseClicked(evt);
+            }
+        });
+        PanelWelcome.add(btnClose, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 0, -1, -1));
 
         LayeredPane.add(PanelWelcome, "card2");
 
@@ -5522,6 +5513,12 @@ public class ResultEntry extends javax.swing.JFrame {
 
     }//GEN-LAST:event_btnjsExamInsertActionPerformed
 
+    private void btnCloseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCloseMouseClicked
+
+        this.dispose();
+        
+    }//GEN-LAST:event_btnCloseMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -5568,6 +5565,7 @@ public class ResultEntry extends javax.swing.JFrame {
     private javax.swing.JButton btnCancelExam;
     private javax.swing.JButton btnCancelSecond;
     private javax.swing.JButton btnCancelThird;
+    private javax.swing.JLabel btnClose;
     private javax.swing.JButton btnInsertExam;
     private javax.swing.JButton btnInsertFirstTest;
     private javax.swing.JButton btnInsertSecondTest;

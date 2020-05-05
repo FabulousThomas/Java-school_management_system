@@ -5,6 +5,16 @@
  */
 package schoolmgtsystem.view;
 
+import java.awt.Component;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+import javax.swing.JTextField;
+import schoolmgtsystem.dbhelper.DBHandler;
+
 /**
  *
  * @author FabulousTHO
@@ -28,28 +38,42 @@ public class ParentProfile extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jSeparator1 = new javax.swing.JSeparator();
-        jPanel2 = new javax.swing.JPanel();
-        lblImage = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
+        btnSave = new javax.swing.JButton();
+        RFemale = new javax.swing.JRadioButton();
+        RMale = new javax.swing.JRadioButton();
+        jLabel10 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        txtOffice = new javax.swing.JTextArea();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        txtHome = new javax.swing.JTextArea();
         jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        txtNation = new javax.swing.JTextField();
+        jLabel13 = new javax.swing.JLabel();
+        txtState = new javax.swing.JTextField();
+        jLabel15 = new javax.swing.JLabel();
+        txtReligion = new javax.swing.JTextField();
+        jLabel12 = new javax.swing.JLabel();
+        txtPassword = new javax.swing.JPasswordField();
         jLabel8 = new javax.swing.JLabel();
+        txtOccupation = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        txtTel2 = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
+        txtEmail = new javax.swing.JTextField();
+        jLabel9 = new javax.swing.JLabel();
+        txtName = new javax.swing.JTextField();
+        jLabel11 = new javax.swing.JLabel();
+        txtTel1 = new javax.swing.JTextField();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        txtID = new javax.swing.JTextField();
+        lblError = new javax.swing.JLabel();
+        btnEdit = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
         lblName = new javax.swing.JLabel();
-        jSeparator2 = new javax.swing.JSeparator();
-        lblSurname = new javax.swing.JLabel();
-        jSeparator3 = new javax.swing.JSeparator();
-        lblPassword = new javax.swing.JLabel();
-        jSeparator4 = new javax.swing.JSeparator();
-        lblChild = new javax.swing.JLabel();
-        jSeparator5 = new javax.swing.JSeparator();
-        lblEmail = new javax.swing.JLabel();
-        jSeparator6 = new javax.swing.JSeparator();
-        lblPhone = new javax.swing.JLabel();
-        jSeparator8 = new javax.swing.JSeparator();
         jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -57,114 +81,270 @@ public class ParentProfile extends javax.swing.JFrame {
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(0, 153, 153));
-        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 102, 255), 4));
+        jPanel1.setBackground(new java.awt.Color(0, 153, 204));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel1.setText("Parent Profile");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 10, 200, 23));
+        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2), "Personal Details", javax.swing.border.TitledBorder.LEADING, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Dialog", 1, 24), new java.awt.Color(51, 51, 51))); // NOI18N
+        jPanel3.setForeground(new java.awt.Color(51, 51, 51));
+        jPanel3.setPreferredSize(new java.awt.Dimension(1060, 570));
+        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jSeparator1.setBackground(new java.awt.Color(51, 102, 255));
-        jSeparator1.setForeground(new java.awt.Color(51, 102, 255));
-        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 650, 10));
+        btnSave.setBackground(new java.awt.Color(255, 255, 255));
+        btnSave.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnSave.setForeground(new java.awt.Color(0, 102, 204));
+        btnSave.setIcon(new javax.swing.ImageIcon(getClass().getResource("/schoolmgtsystem/IconImages/icons8_Save.png"))); // NOI18N
+        btnSave.setText("Save");
+        btnSave.setToolTipText("Sign Up");
+        btnSave.setBorder(null);
+        btnSave.setBorderPainted(false);
+        btnSave.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSaveActionPerformed(evt);
+            }
+        });
+        jPanel3.add(btnSave, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 500, 80, 40));
 
-        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        RFemale.setBackground(new java.awt.Color(255, 255, 255));
+        RFemale.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        RFemale.setForeground(new java.awt.Color(51, 51, 51));
+        RFemale.setText("Female");
+        jPanel3.add(RFemale, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 430, 100, -1));
 
-        lblImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/schoolmgtsystem/view/IconImages/icons8_School_Director_96px.png"))); // NOI18N
+        RMale.setBackground(new java.awt.Color(255, 255, 255));
+        RMale.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        RMale.setForeground(new java.awt.Color(51, 51, 51));
+        RMale.setText("Male");
+        jPanel3.add(RMale, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 430, 80, -1));
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addComponent(lblImage)
-                .addContainerGap(16, Short.MAX_VALUE))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lblImage, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(14, Short.MAX_VALUE))
-        );
+        jLabel10.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel10.setText("Gender");
+        jPanel3.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 430, -1, -1));
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, 130, 150));
+        txtOffice.setEditable(false);
+        txtOffice.setBackground(new java.awt.Color(255, 255, 255));
+        txtOffice.setColumns(20);
+        txtOffice.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        txtOffice.setForeground(new java.awt.Color(51, 51, 51));
+        txtOffice.setRows(5);
+        jScrollPane2.setViewportView(txtOffice);
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("PhoneNumber");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 250, 120, 20));
+        jPanel3.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 480, 330, 80));
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("FirstName");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 80, 90, 20));
+        txtHome.setEditable(false);
+        txtHome.setBackground(new java.awt.Color(255, 255, 255));
+        txtHome.setColumns(20);
+        txtHome.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        txtHome.setForeground(new java.awt.Color(51, 51, 51));
+        txtHome.setRows(5);
+        jScrollPane1.setViewportView(txtHome);
 
-        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText("Surname");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 140, 90, 20));
+        jPanel3.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 370, 330, 80));
 
-        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setText("Password");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 370, 90, 20));
+        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel6.setText("Home Address ");
+        jPanel3.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 350, 120, -1));
 
-        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel7.setText("Childs_Name");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 440, 110, 20));
+        jLabel14.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel14.setText("Office Address");
+        jPanel3.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 460, 110, -1));
 
-        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel8.setText("EmailAddress");
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 300, 110, 20));
+        txtNation.setEditable(false);
+        txtNation.setBackground(new java.awt.Color(255, 255, 255));
+        txtNation.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        txtNation.setForeground(new java.awt.Color(51, 51, 51));
+        txtNation.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNationActionPerformed(evt);
+            }
+        });
+        jPanel3.add(txtNation, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 310, 330, 30));
 
-        lblName.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        lblName.setText("Name");
-        jPanel1.add(lblName, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 80, 170, 20));
+        jLabel13.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel13.setText("Nationality");
+        jPanel3.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 290, -1, -1));
 
-        jSeparator2.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel1.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 100, 170, 10));
+        txtState.setEditable(false);
+        txtState.setBackground(new java.awt.Color(255, 255, 255));
+        txtState.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        txtState.setForeground(new java.awt.Color(51, 51, 51));
+        txtState.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtStateActionPerformed(evt);
+            }
+        });
+        jPanel3.add(txtState, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 370, 330, 30));
 
-        lblSurname.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        lblSurname.setText("Surname");
-        jPanel1.add(lblSurname, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 140, 170, 20));
+        jLabel15.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel15.setText("State of origin");
+        jPanel3.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 350, -1, -1));
 
-        jSeparator3.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel1.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 160, 170, 10));
+        txtReligion.setEditable(false);
+        txtReligion.setBackground(new java.awt.Color(255, 255, 255));
+        txtReligion.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        txtReligion.setForeground(new java.awt.Color(51, 51, 51));
+        txtReligion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtReligionActionPerformed(evt);
+            }
+        });
+        jPanel3.add(txtReligion, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 310, 330, 30));
 
-        lblPassword.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        lblPassword.setText("Password");
-        jPanel1.add(lblPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 360, 260, 20));
+        jLabel12.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel12.setText("Religion ");
+        jPanel3.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 290, -1, -1));
 
-        jSeparator4.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel1.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 380, 260, 10));
+        txtPassword.setEditable(false);
+        txtPassword.setBackground(new java.awt.Color(255, 255, 255));
+        txtPassword.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        txtPassword.setForeground(new java.awt.Color(51, 51, 51));
+        txtPassword.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtPasswordActionPerformed(evt);
+            }
+        });
+        jPanel3.add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 250, 330, 30));
 
-        lblChild.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        lblChild.setText("Childs_Name");
-        jPanel1.add(lblChild, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 430, 260, 20));
+        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel8.setText("Password ");
+        jPanel3.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 230, -1, -1));
 
-        jSeparator5.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel1.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 450, 260, 10));
+        txtOccupation.setEditable(false);
+        txtOccupation.setBackground(new java.awt.Color(255, 255, 255));
+        txtOccupation.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        txtOccupation.setForeground(new java.awt.Color(51, 51, 51));
+        txtOccupation.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtOccupationActionPerformed(evt);
+            }
+        });
+        jPanel3.add(txtOccupation, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 250, 330, 30));
 
-        lblEmail.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        lblEmail.setText("Email");
-        jPanel1.add(lblEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 300, 260, 20));
+        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel5.setText("Occupation");
+        jPanel3.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 230, -1, -1));
 
-        jSeparator6.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel1.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 320, 260, 10));
+        txtTel2.setEditable(false);
+        txtTel2.setBackground(new java.awt.Color(255, 255, 255));
+        txtTel2.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        txtTel2.setForeground(new java.awt.Color(51, 51, 51));
+        txtTel2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtTel2ActionPerformed(evt);
+            }
+        });
+        jPanel3.add(txtTel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 190, 330, 30));
 
-        lblPhone.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        lblPhone.setText("Number");
-        jPanel1.add(lblPhone, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 240, 260, 20));
+        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel7.setText("Mobile Number");
+        jPanel3.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 170, -1, -1));
 
-        jSeparator8.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel1.add(jSeparator8, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 260, 260, 10));
+        txtEmail.setEditable(false);
+        txtEmail.setBackground(new java.awt.Color(255, 255, 255));
+        txtEmail.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        txtEmail.setForeground(new java.awt.Color(51, 51, 51));
+        txtEmail.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtEmailActionPerformed(evt);
+            }
+        });
+        jPanel3.add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 190, 330, 30));
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/schoolmgtsystem/view/IconImages/icons8_Left_30px_1.png"))); // NOI18N
+        jLabel9.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel9.setText("Email Address");
+        jPanel3.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 170, -1, -1));
+
+        txtName.setEditable(false);
+        txtName.setBackground(new java.awt.Color(255, 255, 255));
+        txtName.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        txtName.setForeground(new java.awt.Color(51, 51, 51));
+        txtName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNameActionPerformed(evt);
+            }
+        });
+        jPanel3.add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 130, 330, 30));
+
+        jLabel11.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel11.setText("Full Name ");
+        jPanel3.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 110, -1, -1));
+
+        txtTel1.setEditable(false);
+        txtTel1.setBackground(new java.awt.Color(255, 255, 255));
+        txtTel1.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        txtTel1.setForeground(new java.awt.Color(51, 51, 51));
+        txtTel1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtTel1ActionPerformed(evt);
+            }
+        });
+        jPanel3.add(txtTel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 130, 330, 30));
+
+        jLabel16.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel16.setText("Phone Number ");
+        jPanel3.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 110, -1, -1));
+
+        jLabel17.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel17.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel17.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel17.setText("Parent ID");
+        jPanel3.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 70, -1, -1));
+
+        txtID.setEditable(false);
+        txtID.setBackground(new java.awt.Color(255, 255, 255));
+        txtID.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jPanel3.add(txtID, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 60, 100, 30));
+
+        lblError.setForeground(new java.awt.Color(255, 0, 0));
+        jPanel3.add(lblError, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 100, 130, 20));
+
+        btnEdit.setBackground(new java.awt.Color(255, 255, 255));
+        btnEdit.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnEdit.setForeground(new java.awt.Color(0, 102, 204));
+        btnEdit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/schoolmgtsystem/IconImages/icons8_Edit1.png"))); // NOI18N
+        btnEdit.setText("Edit");
+        btnEdit.setToolTipText("Edit");
+        btnEdit.setBorder(null);
+        btnEdit.setBorderPainted(false);
+        btnEdit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEditActionPerformed(evt);
+            }
+        });
+        jPanel3.add(btnEdit, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 500, 100, 40));
+
+        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 810, 620));
+
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel4.setText("PARENT INFORMATION");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 10, -1, 26));
+
+        jLabel18.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        jLabel18.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel18.setText("Logged in as:");
+        jPanel1.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 10, 80, -1));
+
+        lblName.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        lblName.setForeground(new java.awt.Color(255, 255, 255));
+        lblName.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblName.setText("Logged in as");
+        jPanel1.add(lblName, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 30, 200, -1));
+
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/schoolmgtsystem/IconImages/icons8_Left_30px_1.png"))); // NOI18N
         jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel3MouseClicked(evt);
@@ -172,16 +352,145 @@ public class ParentProfile extends javax.swing.JFrame {
         });
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 4, 40, 30));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 560));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 810, 680));
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
+
+        if (txtName.getText().equals("") || txtNation.getText().equals("") || txtOccupation.getText().equals("")
+                || txtHome.getText().equals("") || txtEmail.getText().equals("")
+                || txtPassword.getText().equals("") || txtTel1.getText().equals("")
+                || txtTel2.getText().equals("") || txtOffice.getText().equals("")
+                || txtReligion.getText().equals("") || txtState.getText().equals("")
+                || RMale.getText().equals("") || RFemale.getText().equals("")) {
+
+            JOptionPane.showMessageDialog(this, "No data received");
+        } else {
+
+            try {
+                DBHandler handler = new DBHandler();
+                String str = "UPDATE parent_details SET ParentName=?,HomeAddress=?,OfficeAddress=?,"
+                        + "Tel1=?,Tel2=?,Email=?,Occupation=?,Nationality=?,Religion=?,State=?,Gender=?,Password=?"
+                        + " WHERE ParentID=?";
+                String gender;
+
+                try (PreparedStatement pst = handler.getdbConnection().prepareStatement(str)) {
+                    pst.setString(1, txtName.getText());
+                    pst.setString(2, txtHome.getText());
+                    pst.setString(3, txtOffice.getText());
+                    pst.setString(4, txtTel1.getText());
+                    pst.setString(5, txtTel2.getText());
+                    pst.setString(6, txtEmail.getText());
+                    pst.setString(7, txtOccupation.getText());
+                    pst.setString(8, txtNation.getText());
+                    pst.setString(9, txtReligion.getText());
+                    pst.setString(10, txtState.getText());
+
+                    if (RMale.isSelected()) {
+                        gender = "Male";
+                    } else {
+                        gender = "Female";
+                    }
+                    pst.setString(11, gender);
+                    pst.setString(12, txtPassword.getText());
+                    pst.setString(13, txtID.getText());
+
+                    pst.executeUpdate();
+                    JOptionPane.showMessageDialog(this, "Successful");
+                    pst.close();
+                }
+                txtName.setText("");
+                txtOccupation.setText("");
+                txtHome.setText("");
+                txtEmail.setText("");
+                txtPassword.setText("");
+                txtTel1.setText("");
+                txtTel2.setText("");
+                txtOffice.setText("");
+                txtNation.setText("");
+                txtReligion.setText("");
+                txtState.setText("");
+
+            } catch (ClassNotFoundException | SQLException ex) {
+                Logger.getLogger(ParentSignUp.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
+        }
+
+    }//GEN-LAST:event_btnSaveActionPerformed
+
+    private void txtNationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNationActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNationActionPerformed
+
+    private void txtStateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtStateActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtStateActionPerformed
+
+    private void txtReligionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtReligionActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtReligionActionPerformed
+
+    private void txtPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPasswordActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtPasswordActionPerformed
+
+    private void txtOccupationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtOccupationActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtOccupationActionPerformed
+
+    private void txtTel2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTel2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtTel2ActionPerformed
+
+    private void txtEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEmailActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtEmailActionPerformed
+
+    private void txtNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNameActionPerformed
+
+    private void txtTel1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTel1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtTel1ActionPerformed
+
+    private void btnEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditActionPerformed
+
+//        txtName.setText(name);
+//        txtEmail.setText(email);
+//        txtPassword.setText(pass);
+//        txtHome.setText(home);
+//        txtOffice.setText(office);
+//        txtOccupation.setText(occupation);
+//        txtNation.setText(nation);
+//        txtState.setText(state);
+//        txtTel1.setText(tel1);
+//        txtTel2.setText(tel2);
+//        txtReligion.setText(rel);
+
+        txtName.setEditable(true);
+        txtOccupation.setEditable(true);
+        txtHome.setEditable(true);
+        txtEmail.setEditable(true);
+        txtPassword.setEditable(true);
+        txtTel1.setEditable(true);
+        txtTel2.setEditable(true);
+        txtOffice.setEditable(true);
+        txtNation.setEditable(true);
+        txtReligion.setEditable(true);
+        txtState.setEditable(true);
+
+    }//GEN-LAST:event_btnEditActionPerformed
+
     private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
-        new Profileparent().show();
-        setVisible(true);
+        
+        new Home().show();
         this.dispose();
+        
     }//GEN-LAST:event_jLabel3MouseClicked
 
     /**
@@ -220,29 +529,43 @@ public class ParentProfile extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JRadioButton RFemale;
+    private javax.swing.JRadioButton RMale;
+    private javax.swing.JButton btnEdit;
+    private javax.swing.JButton btnSave;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JSeparator jSeparator2;
-    private javax.swing.JSeparator jSeparator3;
-    private javax.swing.JSeparator jSeparator4;
-    private javax.swing.JSeparator jSeparator5;
-    private javax.swing.JSeparator jSeparator6;
-    private javax.swing.JSeparator jSeparator8;
-    static javax.swing.JLabel lblChild;
-    static javax.swing.JLabel lblEmail;
-    public static javax.swing.JLabel lblImage;
-    static javax.swing.JLabel lblName;
-    static javax.swing.JLabel lblPassword;
-    static javax.swing.JLabel lblPhone;
-    static javax.swing.JLabel lblSurname;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JLabel lblError;
+    public static javax.swing.JLabel lblName;
+    public static javax.swing.JTextField txtEmail;
+    public static javax.swing.JTextArea txtHome;
+    public static javax.swing.JTextField txtID;
+    public static javax.swing.JTextField txtName;
+    public static javax.swing.JTextField txtNation;
+    public static javax.swing.JTextField txtOccupation;
+    public static javax.swing.JTextArea txtOffice;
+    public static javax.swing.JPasswordField txtPassword;
+    public static javax.swing.JTextField txtReligion;
+    public static javax.swing.JTextField txtState;
+    public static javax.swing.JTextField txtTel1;
+    public static javax.swing.JTextField txtTel2;
     // End of variables declaration//GEN-END:variables
 }

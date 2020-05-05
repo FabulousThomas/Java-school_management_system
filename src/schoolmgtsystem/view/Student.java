@@ -28,11 +28,13 @@ import schoolmgtsystem.dbhelper.DBHandler;
  */
 public class Student extends javax.swing.JFrame {
 
-    private DBHandler handler;
+    DBHandler handler;
     BufferedImage bufferedImage;
     ImageIcon imageIcon;
     String dbImage;
-    String date;
+    Date regdate;
+    Date enddate;
+    int session;
     String preSch;
     String ID;
     String disability;
@@ -41,9 +43,8 @@ public class Student extends javax.swing.JFrame {
     String preClass;
     String admClass;
     String med;
-    
-//    String image = StudentProfileOnly.lblImage.getText();
 
+//    String image = StudentProfileOnly.lblImage.getText();
 //    String conStr = "jdbc:sqlserver://localhost;instanceName=SQLEXPRESS;databaseName=Home;user=sa;password=123456789";
     /**
      * Creates new form TeacherLogIn
@@ -209,8 +210,6 @@ public class Student extends javax.swing.JFrame {
 
     private void btnSignInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSignInActionPerformed
 
-        java.util.Date today = new java.util.Date();
-        
         handler = new DBHandler();
         String name = txtFirstName.getText();
         String pass = txtPassword.getText();
@@ -229,7 +228,9 @@ public class Student extends javax.swing.JFrame {
                     counter++;
                     name = result.getString("StudentName");
                     pass = result.getString("Password");
-                    date = result.getString("RegDate");
+                    regdate = result.getDate("RegDate");
+                    enddate = result.getDate("EndDate");
+                    session = result.getInt("Session");
                     preSch = result.getString("PreviousSchool");
                     ID = result.getString("StudentID");
                     disability = result.getString("Disability");
@@ -239,29 +240,31 @@ public class Student extends javax.swing.JFrame {
                     admClass = result.getString("AdmissionClass");
                     med = result.getString("MedicalCondition");
 
-                    System.out.println("Welcome " + name + " " + pass);
+                    System.out.println("Welcome " + name + " " + pass + regdate + enddate);
                 }
                 if (counter == 1) {
-                    JOptionPane.showMessageDialog(this, "Welcome " + name);
-                    StudentProfileOnly sp = new StudentProfileOnly();
-                    StudentProfileOnly.lblName.setText(name);
-                    StudentProfileOnly.lblDate.setText(date);
-                    StudentProfileOnly.lblPre.setText(preSch);
-                    StudentProfileOnly.lblID.setText(ID);
-                    StudentProfileOnly.lblDis.setText(disability);
-                    StudentProfileOnly.lblDisType.setText(disType);
-                    StudentProfileOnly.lblPhysDis.setText(physDis);
-                    StudentProfileOnly.lblPreClass.setText(preClass);
-                    StudentProfileOnly.lblAdmClass.setText(admClass);
-                    StudentProfileOnly.lblMed.setText(med);
+//                    JOptionPane.showMessageDialog(this, "Welcome " + name);
+                    StudentProfile sp = new StudentProfile();
+                    StudentProfile.name.setText(name);
+                    StudentProfile.Session.setYear(session);
+                    StudentProfile.RegDate.setDate(regdate);
+                    StudentProfile.EndDate.setDate(enddate);
+                    StudentProfile.preSchool.setText(preSch);
+                    StudentProfile.lblID.setText(ID);
+                    StudentProfile.lblName.setText(name);
+                    StudentProfile.DisabilityType.setSelectedItem(disType);
+                    StudentProfile.PhysicalDis.setSelectedItem(physDis);
+                    StudentProfile.preClass.setText(preClass);
+                    StudentProfile.admClass.setText(admClass);
+                    StudentProfile.Medical.setSelectedItem(med);
                     //Alternative: To set image fom the DB to a label without scaled size image
 //                    bufferedImage = ImageIO.read(result.getBinaryStream("Passport"));
 //                    StudentProfileOnly.lblImage.setIcon(new ImageIcon(bufferedImage));
 
                     //Alternative: To set image fom the DB to a label with scaled size image
                     bufferedImage = ImageIO.read(result.getBinaryStream("Passport"));
-                    imageIcon = new ImageIcon(new ImageIcon(bufferedImage).getImage().getScaledInstance(StudentProfileOnly.lblImage.getWidth(), StudentProfileOnly.lblImage.getHeight(), Image.SCALE_DEFAULT));
-                    StudentProfileOnly.lblImage.setIcon(imageIcon);
+                    imageIcon = new ImageIcon(new ImageIcon(bufferedImage).getImage().getScaledInstance(StudentProfile.lblImage.getWidth(), StudentProfile.lblImage.getHeight(), Image.SCALE_DEFAULT));
+                    StudentProfile.lblImage.setIcon(imageIcon);
                     sp.show();
                     this.dispose();
                 } else {
@@ -323,6 +326,14 @@ public class Student extends javax.swing.JFrame {
 //        return image;
 //
 //    }
+    public static java.sql.Date convertUtilDateToSqlDate(java.util.Date date) {
+        if (date != null) {
+            java.sql.Date sqlDate = new java.sql.Date(date.getTime());
+            return sqlDate;
+        }
+
+        return null;
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnSignIn;

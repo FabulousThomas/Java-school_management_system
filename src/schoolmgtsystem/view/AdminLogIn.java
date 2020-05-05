@@ -22,9 +22,8 @@ import schoolmgtsystem.dbhelper.DBHandler;
  */
 public class AdminLogIn extends javax.swing.JFrame {
 
-    public static String email;
-    public static String pass;
-    public static String name;
+    String name;
+    String sName;
     StudentInformation si = new StudentInformation();
 
     //String conStr = "jdbc:sqlserver://localhost;instanceName=SQLEXPRESS;databaseName=Home;user=sa;password=123456789";
@@ -222,10 +221,9 @@ public class AdminLogIn extends javax.swing.JFrame {
 
     private void btnSigninActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSigninActionPerformed
 
+        String email = txtEmail.getText();
+        String pass = txtPassword.getText();
         DBHandler handler = new DBHandler();
-
-        email = txtEmail.getText();
-        pass = txtPassword.getText();
 
         ResultSet result = null;
         if (!email.equals("") && !pass.equals("")) {
@@ -236,17 +234,21 @@ public class AdminLogIn extends javax.swing.JFrame {
                 preparedStatement.setString(2, pass);
                 result = preparedStatement.executeQuery();
                 int counter = 0;
+
                 while (result.next()) {
                     counter++;
                     email = result.getString("Email");
                     pass = result.getString("Password");
                     name = result.getString("FirstName");
+                    sName = result.getString("Surname");
                     System.out.println("Email-> " + email + ", Password-> " + pass);
                 }
+
                 if (counter == 1) {
                     JOptionPane.showMessageDialog(this, "Welcome Admin " + "(" + name + ")");
-                    StudentInformation.lblName.setText("Welcome  < " + name + " >");
+                    StudentInformation.lblName.setText("Welcome  < " + sName + " " + name + " >");
                     StudentInformation.studentCount.setText("Student Count = " + Integer.toString(CountFunction.CountData("student_details")));
+                    StudentInformation.teacherCount.setText("Staff Count = " + Integer.toString(CountFunction.CountData("staff_details")));
                     si.show();
                     this.dispose();
                 } else {

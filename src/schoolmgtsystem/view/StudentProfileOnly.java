@@ -420,7 +420,7 @@ public class StudentProfileOnly extends javax.swing.JFrame {
     static javax.swing.JLabel lblID;
     public static javax.swing.JLabel lblImage;
     static javax.swing.JLabel lblMed;
-    static javax.swing.JLabel lblName;
+    public static javax.swing.JLabel lblName;
     static javax.swing.JLabel lblPhysDis;
     static javax.swing.JLabel lblPre;
     static javax.swing.JLabel lblPreClass;

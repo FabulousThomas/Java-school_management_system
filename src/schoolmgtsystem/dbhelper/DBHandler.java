@@ -10,10 +10,16 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.DefaultListModel;
+import javax.swing.JList;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
+import static schoolmgtsystem.view.ListView.studentList;
+import schoolmgtsystem.view.StudentProfileOnly;
+import schoolmgtsystem.view.StudentTable;
 
 /**
  *
@@ -22,6 +28,9 @@ import javax.swing.table.DefaultTableModel;
 public class DBHandler extends Configs {
 
     Connection dbConnection;
+    DefaultListModel listModel;
+    JList list;
+    String name;
 
     public Connection getdbConnection() throws ClassNotFoundException, SQLException {
 
@@ -78,7 +87,7 @@ public class DBHandler extends Configs {
             pst.setString(1, "%" + value + "%");
 
             ResultSet rs = pst.executeQuery();
-            DefaultTableModel model = (DefaultTableModel) table.getModel();
+            DefaultTableModel tableModel = (DefaultTableModel) table.getModel();
 
             Object[] row;
 
@@ -101,11 +110,58 @@ public class DBHandler extends Configs {
                 row[13] = rs.getString(14);
                 row[14] = rs.getString(15);
 
-                model.addRow(row);
+                tableModel.addRow(row);
             }
 
         } catch (ClassNotFoundException | SQLException ex) {
             Logger.getLogger(DBHandler.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    public void fillStdList() {
+        try {
+            String str = "SELECT * FROM student_details";
+//            model.clear();
+            Statement smt = getdbConnection().createStatement();
+            ResultSet rs = smt.executeQuery(str);
+            int counter = 0;
+
+            while (rs.next()) {
+//                counter++;
+                name = rs.getString("StudentName");
+                System.out.println(name);
+            }
+            if (counter == 1) {
+                listModel.addElement(studentList);
+                studentList.add(null, name);
+                list = new JList(listModel);
+            }
+
+        } catch (SQLException | ClassNotFoundException ex) {
+            Logger.getLogger(DBHandler.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    public void tableFunction() {
+        DBHandler handler = new DBHandler();
+        StudentTable st = new StudentTable();
+
+        if (StudentTable.jTable1.isRowSelected(0)) {
+            String query = "SELECT * FROM student_details WHERE StudentID = ?";
+            try {
+                PreparedStatement pst = handler.getdbConnection().prepareStatement(query);
+                pst.setString(1, StudentTable.jTable1.getColumnName(3));
+                ResultSet rs = pst.executeQuery();
+                while (rs.next()) {
+                    StudentProfileOnly sp = new StudentProfileOnly();
+                    StudentProfileOnly.lblName.setText(rs.getString("StudentName"));
+                    sp.show();
+                }
+
+            } catch (ClassNotFoundException | SQLException ex) {
+                Logger.getLogger(DBHandler.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
         }
     }
 

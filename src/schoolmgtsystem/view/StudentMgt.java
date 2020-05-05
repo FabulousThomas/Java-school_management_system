@@ -16,6 +16,7 @@ import java.io.InputStream;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.imageio.ImageIO;
@@ -59,263 +60,273 @@ public class StudentMgt extends javax.swing.JFrame {
         buttonGroup1 = new javax.swing.ButtonGroup();
         buttonGroup2 = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
-        jLabel11 = new javax.swing.JLabel();
-        txtName = new javax.swing.JTextField();
-        txtAdmissionClass = new javax.swing.JTextField();
-        jLabel6 = new javax.swing.JLabel();
-        jSeparator12 = new javax.swing.JSeparator();
-        jSeparator3 = new javax.swing.JSeparator();
-        txtPrevSchool = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
-        jSeparator1 = new javax.swing.JSeparator();
-        jLabel7 = new javax.swing.JLabel();
-        Session = new com.toedter.calendar.JYearChooser();
-        lblImage = new javax.swing.JLabel();
-        btnPassport = new javax.swing.JButton();
-        RegDate = new com.toedter.calendar.JDateChooser();
-        jLabel16 = new javax.swing.JLabel();
-        EndDate = new com.toedter.calendar.JDateChooser();
-        jLabel5 = new javax.swing.JLabel();
-        jSeparator4 = new javax.swing.JSeparator();
-        txtClass = new javax.swing.JTextField();
-        jLabel18 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        CMale = new javax.swing.JCheckBox();
-        CFemale = new javax.swing.JCheckBox();
-        jLabel17 = new javax.swing.JLabel();
-        txtPassword = new javax.swing.JPasswordField();
-        jSeparator2 = new javax.swing.JSeparator();
         jLabel4 = new javax.swing.JLabel();
+        lblError = new javax.swing.JLabel();
+        btnClose = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        jSeparator2 = new javax.swing.JSeparator();
+        jLabel7 = new javax.swing.JLabel();
         jSeparator5 = new javax.swing.JSeparator();
+        jLabel8 = new javax.swing.JLabel();
+        jSeparator6 = new javax.swing.JSeparator();
+        jLabel5 = new javax.swing.JLabel();
+        jSeparator3 = new javax.swing.JSeparator();
         jLabel14 = new javax.swing.JLabel();
         CYes = new javax.swing.JCheckBox();
         CNo = new javax.swing.JCheckBox();
-        PhysicalDis = new javax.swing.JComboBox<>();
-        jLabel9 = new javax.swing.JLabel();
-        Medical = new javax.swing.JComboBox<>();
         jLabel12 = new javax.swing.JLabel();
+        Medical = new javax.swing.JComboBox<>();
         DisabilityType = new javax.swing.JComboBox<>();
-        jLabel8 = new javax.swing.JLabel();
-        btnSave = new javax.swing.JButton();
-        btncancel = new javax.swing.JButton();
-        txtID = new javax.swing.JTextField();
+        jLabel20 = new javax.swing.JLabel();
+        PhysicalDis = new javax.swing.JComboBox<>();
         jLabel13 = new javax.swing.JLabel();
-        lblError = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        CMale = new javax.swing.JCheckBox();
+        CFemale = new javax.swing.JCheckBox();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        RegDate = new com.toedter.calendar.JDateChooser();
+        EndDate = new com.toedter.calendar.JDateChooser();
+        jLabel18 = new javax.swing.JLabel();
+        jSeparator7 = new javax.swing.JSeparator();
+        lblImage = new javax.swing.JLabel();
+        btnPassport = new javax.swing.JButton();
+        AdmClass = new javax.swing.JTextField();
+        Name = new javax.swing.JTextField();
+        password = new javax.swing.JTextField();
+        PreSchool = new javax.swing.JTextField();
+        PreClass = new javax.swing.JTextField();
+        Session = new com.toedter.calendar.JYearChooser();
+        txtID = new javax.swing.JTextField();
+        btnSave = new javax.swing.JButton();
         btnRetrieve = new javax.swing.JButton();
+        btncancel = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocationByPlatform(true);
         setUndecorated(true);
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBackground(new java.awt.Color(0, 153, 204));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel11.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel11.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel11.setText("Student ID");
-        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 110, 80, -1));
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel4.setText("STUDENT MANAGEMENT(Update)");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 10, -1, 26));
 
-        txtName.setBackground(new java.awt.Color(255, 255, 255));
-        txtName.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        txtName.setForeground(new java.awt.Color(51, 51, 51));
-        txtName.setBorder(null);
-        jPanel1.add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 160, 310, 20));
+        lblError.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        lblError.setForeground(new java.awt.Color(255, 0, 0));
+        jPanel1.add(lblError, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 110, 110, 20));
 
-        txtAdmissionClass.setBackground(new java.awt.Color(255, 255, 255));
-        txtAdmissionClass.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        txtAdmissionClass.setForeground(new java.awt.Color(51, 51, 51));
-        txtAdmissionClass.setBorder(null);
-        jPanel1.add(txtAdmissionClass, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 160, 140, 20));
+        btnClose.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnClose.setIcon(new javax.swing.ImageIcon(getClass().getResource("/schoolmgtsystem/IconImages/icons8_Xbox_X.png"))); // NOI18N
+        btnClose.setToolTipText("close");
+        btnClose.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnCloseMouseClicked(evt);
+            }
+        });
+        jPanel1.add(btnClose, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 0, -1, -1));
 
-        jLabel6.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2), "Personal Details", javax.swing.border.TitledBorder.LEADING, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Dialog", 1, 24), new java.awt.Color(51, 51, 51))); // NOI18N
+        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel6.setText("Admission Class");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 140, 110, -1));
+        jLabel6.setText("Student ID");
+        jPanel3.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, 90, -1));
 
-        jSeparator12.setBackground(new java.awt.Color(0, 102, 204));
-        jSeparator12.setForeground(new java.awt.Color(0, 51, 255));
-        jPanel1.add(jSeparator12, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 180, 310, -1));
+        jLabel19.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel19.setText("Full Name");
+        jPanel3.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, 90, -1));
 
-        jSeparator3.setBackground(new java.awt.Color(0, 102, 204));
-        jSeparator3.setForeground(new java.awt.Color(0, 51, 255));
-        jPanel1.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 180, 140, -1));
+        jSeparator2.setBackground(new java.awt.Color(51, 51, 51));
+        jSeparator2.setForeground(new java.awt.Color(51, 51, 51));
+        jPanel3.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 130, 250, 10));
 
-        txtPrevSchool.setBackground(new java.awt.Color(255, 255, 255));
-        txtPrevSchool.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        txtPrevSchool.setForeground(new java.awt.Color(51, 51, 51));
-        txtPrevSchool.setBorder(null);
-        jPanel1.add(txtPrevSchool, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 220, 310, 20));
-
-        jLabel3.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel3.setText("Previous School");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 200, 110, -1));
-
-        jSeparator1.setBackground(new java.awt.Color(0, 102, 204));
-        jSeparator1.setForeground(new java.awt.Color(0, 51, 255));
-        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 240, 310, -1));
-
-        jLabel7.setBackground(new java.awt.Color(255, 255, 255));
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel7.setText("Session");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 200, -1, -1));
+        jLabel7.setText("Password");
+        jPanel3.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 160, 100, -1));
 
-        Session.setBackground(new java.awt.Color(255, 255, 255));
-        Session.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel1.add(Session, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 220, 140, 30));
+        jSeparator5.setBackground(new java.awt.Color(51, 51, 51));
+        jSeparator5.setForeground(new java.awt.Color(51, 51, 51));
+        jPanel3.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 180, 250, 10));
+
+        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel8.setText("previous School");
+        jPanel3.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 210, -1, -1));
+
+        jSeparator6.setBackground(new java.awt.Color(51, 51, 51));
+        jSeparator6.setForeground(new java.awt.Color(51, 51, 51));
+        jPanel3.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 230, 250, 10));
+
+        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel5.setText("Previous Class");
+        jPanel3.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, 120, -1));
+
+        jSeparator3.setBackground(new java.awt.Color(51, 51, 51));
+        jSeparator3.setForeground(new java.awt.Color(51, 51, 51));
+        jPanel3.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 280, 250, 10));
+
+        jLabel14.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel14.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel14.setText("Disability ?");
+        jPanel3.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 360, -1, -1));
+
+        CYes.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        CYes.setText("Yes");
+        CYes.setBorderPainted(true);
+        jPanel3.add(CYes, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 360, -1, -1));
+
+        CNo.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        CNo.setSelected(true);
+        CNo.setText("No");
+        CNo.setBorderPainted(true);
+        CNo.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jPanel3.add(CNo, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 360, -1, -1));
+
+        jLabel12.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel12.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel12.setText("Medical Condition");
+        jPanel3.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 410, 130, -1));
+
+        Medical.setFont(new java.awt.Font("Dialog", 1, 13)); // NOI18N
+        Medical.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "None", "Anxiety", "Obesity", "Diabetes", "Back pain", "Allergic rhinitis", "Hypertention", "Reflux esophagitis", "Hyperlipidemia", "Others" }));
+        jPanel3.add(Medical, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 430, 230, 30));
+
+        DisabilityType.setFont(new java.awt.Font("Dialog", 1, 13)); // NOI18N
+        DisabilityType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "None", "Vision", "Hearing", "Thinking", "Learning", "Movement", "Mental health", "Communicating", "Social relationships", "Others" }));
+        jPanel3.add(DisabilityType, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 440, 230, 30));
+
+        jLabel20.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel20.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel20.setText("Disability Type");
+        jPanel3.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 420, 100, -1));
+
+        PhysicalDis.setFont(new java.awt.Font("Dialog", 1, 13)); // NOI18N
+        PhysicalDis.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "None", "Arthritis", "Back injury", "Amputation", "Spina bifida", "Cerebral palsy", "Multiple sclerosis", "Spinal cord injury", "Muscular dystrophy", "Others" }));
+        jPanel3.add(PhysicalDis, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 380, 230, 30));
+
+        jLabel13.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel13.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel13.setText("Physical Disabilities");
+        jPanel3.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 360, -1, -1));
+
+        jLabel10.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel10.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel10.setText("Gender");
+        jPanel3.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 310, -1, -1));
+
+        CMale.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        CMale.setSelected(true);
+        CMale.setText("Male");
+        CMale.setBorderPainted(true);
+        jPanel3.add(CMale, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 310, -1, -1));
+
+        CFemale.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        CFemale.setText("Female");
+        CFemale.setBorderPainted(true);
+        CFemale.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jPanel3.add(CFemale, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 310, -1, -1));
+
+        jLabel9.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel9.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel9.setText("Admission Class");
+        jPanel3.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 60, 110, -1));
+
+        jLabel16.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel16.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel16.setText("Session");
+        jPanel3.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 110, -1, -1));
+
+        jLabel17.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel17.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel17.setText("Registration Date");
+        jPanel3.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 170, -1, -1));
+
+        RegDate.setBackground(new java.awt.Color(255, 255, 255));
+        RegDate.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        RegDate.setForeground(new java.awt.Color(51, 51, 51));
+        RegDate.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        jPanel3.add(RegDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 190, 140, 30));
+
+        EndDate.setBackground(new java.awt.Color(255, 255, 255));
+        EndDate.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        EndDate.setForeground(new java.awt.Color(51, 51, 51));
+        EndDate.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        jPanel3.add(EndDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 250, 140, 30));
+
+        jLabel18.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel18.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel18.setText("End Date");
+        jPanel3.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 230, -1, -1));
+
+        jSeparator7.setBackground(new java.awt.Color(51, 51, 51));
+        jSeparator7.setForeground(new java.awt.Color(51, 51, 51));
+        jPanel3.add(jSeparator7, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 80, 140, 10));
 
         lblImage.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
-        jPanel1.add(lblImage, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 140, 220, 200));
+        jPanel3.add(lblImage, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 60, 220, 200));
 
-        btnPassport.setBackground(new java.awt.Color(255, 255, 255));
         btnPassport.setFont(new java.awt.Font("Dialog", 1, 13)); // NOI18N
         btnPassport.setForeground(new java.awt.Color(0, 102, 204));
         btnPassport.setIcon(new javax.swing.ImageIcon(getClass().getResource("/schoolmgtsystem/IconImages/icons8_Add.png"))); // NOI18N
-        btnPassport.setText("Add Passport");
-        btnPassport.setToolTipText("Add Passport");
+        btnPassport.setText("Edit Passport");
+        btnPassport.setToolTipText("Edit Passport");
         btnPassport.setBorder(null);
-        btnPassport.setBorderPainted(false);
         btnPassport.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnPassportActionPerformed(evt);
             }
         });
-        jPanel1.add(btnPassport, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 340, 130, 40));
+        jPanel3.add(btnPassport, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 260, 130, 36));
 
-        RegDate.setBackground(new java.awt.Color(255, 255, 255));
-        RegDate.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        RegDate.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
-        jPanel1.add(RegDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 280, 140, 30));
+        AdmClass.setBackground(new java.awt.Color(255, 255, 255));
+        AdmClass.setFont(new java.awt.Font("Dialog", 1, 15)); // NOI18N
+        AdmClass.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        AdmClass.setText("Admission Class");
+        AdmClass.setBorder(null);
+        jPanel3.add(AdmClass, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 60, 140, 20));
 
-        jLabel16.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel16.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel16.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel16.setText("Registration Date");
-        jPanel1.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 260, -1, -1));
+        Name.setBackground(new java.awt.Color(255, 255, 255));
+        Name.setFont(new java.awt.Font("Dialog", 1, 15)); // NOI18N
+        Name.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        Name.setText("Full Name");
+        Name.setBorder(null);
+        jPanel3.add(Name, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 110, 250, 20));
 
-        EndDate.setBackground(new java.awt.Color(255, 255, 255));
-        EndDate.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        EndDate.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
-        jPanel1.add(EndDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 340, 140, 30));
+        password.setBackground(new java.awt.Color(255, 255, 255));
+        password.setFont(new java.awt.Font("Dialog", 1, 15)); // NOI18N
+        password.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        password.setText("Password");
+        password.setBorder(null);
+        jPanel3.add(password, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 160, 250, 20));
 
-        jLabel5.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel5.setText("End Date");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 320, -1, -1));
+        PreSchool.setBackground(new java.awt.Color(255, 255, 255));
+        PreSchool.setFont(new java.awt.Font("Dialog", 1, 15)); // NOI18N
+        PreSchool.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        PreSchool.setText("Previous School");
+        PreSchool.setBorder(null);
+        jPanel3.add(PreSchool, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 210, 250, 20));
 
-        jSeparator4.setBackground(new java.awt.Color(0, 102, 204));
-        jSeparator4.setForeground(new java.awt.Color(0, 51, 255));
-        jPanel1.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 300, 310, -1));
+        PreClass.setBackground(new java.awt.Color(255, 255, 255));
+        PreClass.setFont(new java.awt.Font("Dialog", 1, 15)); // NOI18N
+        PreClass.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        PreClass.setText("Previous Class");
+        PreClass.setBorder(null);
+        jPanel3.add(PreClass, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 260, 250, 20));
 
-        txtClass.setBackground(new java.awt.Color(255, 255, 255));
-        txtClass.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        txtClass.setForeground(new java.awt.Color(51, 51, 51));
-        txtClass.setBorder(null);
-        jPanel1.add(txtClass, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 280, 310, 20));
+        Session.setBackground(new java.awt.Color(255, 255, 255));
+        Session.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel3.add(Session, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 130, 140, 30));
 
-        jLabel18.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel18.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel18.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel18.setText("Previous Class");
-        jPanel1.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 260, -1, -1));
-
-        jLabel10.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel10.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel10.setText("Gender");
-        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 330, -1, -1));
-
-        buttonGroup1.add(CMale);
-        CMale.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        CMale.setText("Male");
-        CMale.setBorderPainted(true);
-        jPanel1.add(CMale, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 330, -1, -1));
-
-        buttonGroup1.add(CFemale);
-        CFemale.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        CFemale.setText("Female");
-        CFemale.setBorderPainted(true);
-        CFemale.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jPanel1.add(CFemale, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 330, -1, -1));
-
-        jLabel17.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel17.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel17.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel17.setText("Password");
-        jPanel1.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 380, -1, -1));
-
-        txtPassword.setBackground(new java.awt.Color(255, 255, 255));
-        txtPassword.setForeground(new java.awt.Color(51, 51, 51));
-        txtPassword.setBorder(null);
-        jPanel1.add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 370, 230, 30));
-
-        jSeparator2.setBackground(new java.awt.Color(0, 102, 204));
-        jSeparator2.setForeground(new java.awt.Color(0, 51, 255));
-        jPanel1.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 400, 230, -1));
-
-        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(0, 102, 204));
-        jLabel4.setText("STUDENT MANAGEMENT(Update)");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 10, -1, 26));
-
-        jSeparator5.setBackground(new java.awt.Color(0, 102, 204));
-        jSeparator5.setForeground(new java.awt.Color(0, 51, 255));
-        jPanel1.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 420, 970, 10));
-
-        jLabel14.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel14.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel14.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel14.setText("Disability ?");
-        jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 490, -1, -1));
-
-        buttonGroup2.add(CYes);
-        CYes.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        CYes.setText("Yes");
-        CYes.setBorderPainted(true);
-        jPanel1.add(CYes, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 490, -1, -1));
-
-        buttonGroup2.add(CNo);
-        CNo.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        CNo.setText("No");
-        CNo.setBorderPainted(true);
-        CNo.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jPanel1.add(CNo, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 490, -1, -1));
-
-        PhysicalDis.setFont(new java.awt.Font("Dialog", 1, 13)); // NOI18N
-        PhysicalDis.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "None", "Arthritis", "Back injury", "Amputation", "Spina bifida", "Cerebral palsy", "Multiple sclerosis", "Spinal cord injury", "Muscular dystrophy", "Others" }));
-        jPanel1.add(PhysicalDis, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 500, 310, 30));
-
-        jLabel9.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel9.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel9.setText("Physical Disabilities");
-        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 480, -1, -1));
-
-        Medical.setFont(new java.awt.Font("Dialog", 1, 13)); // NOI18N
-        Medical.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "None", "Anxiety", "Obesity", "Diabetes", "Back pain", "Allergic rhinitis", "Hypertention", "Reflux esophagitis", "Hyperlipidemia", "Others" }));
-        jPanel1.add(Medical, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 560, 310, 30));
-
-        jLabel12.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel12.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel12.setText("Medical Condition");
-        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 540, 130, -1));
-
-        DisabilityType.setFont(new java.awt.Font("Dialog", 1, 13)); // NOI18N
-        DisabilityType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "None", "Vision", "Hearing", "Thinking", "Learning", "Movement", "Mental health", "Communicating", "Social relationships", "Others" }));
-        jPanel1.add(DisabilityType, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 560, 310, 30));
-
-        jLabel8.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel8.setText("Disability Type");
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 540, 100, -1));
+        txtID.setBackground(new java.awt.Color(255, 255, 255));
+        txtID.setForeground(new java.awt.Color(51, 51, 51));
+        txtID.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jPanel3.add(txtID, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 50, 100, 30));
 
         btnSave.setBackground(new java.awt.Color(255, 255, 255));
         btnSave.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -329,41 +340,7 @@ public class StudentMgt extends javax.swing.JFrame {
                 btnSaveActionPerformed(evt);
             }
         });
-        jPanel1.add(btnSave, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 620, 80, 40));
-
-        btncancel.setBackground(new java.awt.Color(255, 255, 255));
-        btncancel.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btncancel.setForeground(new java.awt.Color(0, 102, 204));
-        btncancel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/schoolmgtsystem/IconImages/icons8_Cancel.png"))); // NOI18N
-        btncancel.setText("Cancel");
-        btncancel.setToolTipText("Cancel");
-        btncancel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        btncancel.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btncancelActionPerformed(evt);
-            }
-        });
-        jPanel1.add(btncancel, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 620, 90, 40));
-
-        txtID.setBackground(new java.awt.Color(255, 255, 255));
-        txtID.setForeground(new java.awt.Color(51, 51, 51));
-        txtID.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jPanel1.add(txtID, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 100, 100, 30));
-
-        jLabel13.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel13.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel13.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel13.setText("Full Name");
-        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 140, 80, -1));
-
-        lblError.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
-        lblError.setForeground(new java.awt.Color(255, 0, 0));
-        jPanel1.add(lblError, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 60, 110, 20));
-
-        jLabel15.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel15.setForeground(new java.awt.Color(0, 102, 204));
-        jLabel15.setText("Health Condition");
-        jPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 430, -1, 26));
+        jPanel3.add(btnSave, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 510, 80, 40));
 
         btnRetrieve.setBackground(new java.awt.Color(255, 255, 255));
         btnRetrieve.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -377,115 +354,54 @@ public class StudentMgt extends javax.swing.JFrame {
                 btnRetrieveActionPerformed(evt);
             }
         });
-        jPanel1.add(btnRetrieve, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 620, 100, 40));
+        jPanel3.add(btnRetrieve, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 510, 100, 40));
+
+        btncancel.setBackground(new java.awt.Color(255, 255, 255));
+        btncancel.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btncancel.setForeground(new java.awt.Color(0, 102, 204));
+        btncancel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/schoolmgtsystem/IconImages/icons8_Cancel.png"))); // NOI18N
+        btncancel.setText("Cancel");
+        btncancel.setToolTipText("Cancel");
+        btncancel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btncancel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btncancelActionPerformed(evt);
+            }
+        });
+        jPanel3.add(btncancel, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 510, 90, 40));
+
+        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 910, 590));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 696, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnPassportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPassportActionPerformed
-        // TODO add your handling code here:
-
-        JFileChooser chooser = new JFileChooser();
-        chooser.setCurrentDirectory(new File(System.getProperty("user.home")));
-        FileNameExtensionFilter extensionFilter = new FileNameExtensionFilter("*.image", "jpg", "gif", "png");
-        chooser.addChoosableFileFilter(extensionFilter);
-        int result = chooser.showSaveDialog(null);
-        if (result == JFileChooser.APPROVE_OPTION) {
-            File selectedFile = chooser.getSelectedFile();
-            String path = selectedFile.getAbsolutePath();
-            lblImage.setIcon(resizeImage(path));
-            s = path;
-        } else if (result == JFileChooser.CANCEL_OPTION) {
-            System.out.println("No Data");
-        }
-
-    }//GEN-LAST:event_btnPassportActionPerformed
-
-    private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
-
-        handler = new DBHandler();
-        String update = "UPDATE student_details SET StudentName=?,Gender=?,PreviousSchool=?,PreviousClass=?,AdmissionClass=?,"
-                + "Session=?,PhysicalDisability=?,DisabilityType=?,MedicalCondition=?,Passport=?,Disability=?,RegDate=?,EndDate=?,Password=?"
-                + "WHERE StudentID=?";
-
-        try {
-            try (PreparedStatement pst = handler.getdbConnection().prepareStatement(update)) {
-
-                pst.setString(1, txtName.getText());
-
-                String gender;
-                if (CMale.isSelected()) {
-                    gender = "Male";
-                } else {
-                    gender = "Female";
-                }
-                pst.setString(2, gender);
-                pst.setString(3, txtPrevSchool.getText());
-                pst.setString(4, txtClass.getText());
-                pst.setString(5, txtAdmissionClass.getText());
-                pst.setInt(6, Session.getYear());
-                pst.setString(7, (String) PhysicalDis.getSelectedItem());
-                pst.setString(8, (String) DisabilityType.getSelectedItem());
-                pst.setString(9, (String) Medical.getSelectedItem());
-
-                input = new FileInputStream(new File(s));
-                pst.setBlob(10, input);
-
-                String disability;
-                if (CYes.isSelected()) {
-                    disability = "Yes";
-                } else {
-                    disability = "No";
-                }
-
-                pst.setString(11, disability);
-                pst.setDate(12, convertUtilDateToSqlDate(RegDate.getDate()));
-                pst.setDate(13, convertUtilDateToSqlDate(EndDate.getDate()));
-                pst.setString(14, txtPassword.getText());
-                pst.setString(15, txtID.getText());
-
-                pst.executeUpdate();
-                JOptionPane.showMessageDialog(this, "Saved");
-                pst.close();
-
-            } catch (FileNotFoundException ex) {
-                Logger.getLogger(StudentSignup.class.getName()).log(Level.SEVERE, null, ex);
-            }
-
-        } catch (ClassNotFoundException | SQLException ex) {
-            Logger.getLogger(StudentSignup.class.getName()).log(Level.SEVERE, null, ex);
-        }
-
-    }//GEN-LAST:event_btnSaveActionPerformed
-
-    private void btncancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncancelActionPerformed
+    private void btnCloseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCloseMouseClicked
 
         this.dispose();
-
-    }//GEN-LAST:event_btncancelActionPerformed
+    }//GEN-LAST:event_btnCloseMouseClicked
 
     private void btnRetrieveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRetrieveActionPerformed
 
         String id = txtID.getText();
-        String name = txtName.getText();
-        String preSchool = txtPrevSchool.getText();
-        String preClass = txtClass.getText();
-        String admClass = txtAdmissionClass.getText();
+        String name = Name.getText();
+        String preSchool = PreSchool.getText();
+        String preClass = PreClass.getText();
+        String admClass = AdmClass.getText();
         int session = Session.getYear();
-        String regDate = RegDate.getDateFormatString();
-        String endDate = EndDate.getDateFormatString();
-        String pass = txtPassword.getText();
+        Date regDate = RegDate.getDate();
+        Date endDate = EndDate.getDate();
+        String pass = password.getText();
         String medical = (String) Medical.getSelectedItem();
         String phyDis = (String) PhysicalDis.getSelectedItem();
         String disType = (String) DisabilityType.getSelectedItem();
@@ -510,8 +426,8 @@ public class StudentMgt extends javax.swing.JFrame {
                     preClass = rs.getString("PreviousClass");
                     admClass = rs.getString("AdmissionClass");
                     session = rs.getInt("Session");
-                    regDate = rs.getString("RegDate");
-                    endDate = rs.getString("EndDate");
+                    regDate = rs.getDate("RegDate");
+                    endDate = rs.getDate("EndDate");
                     pass = rs.getString("Password");
                     medical = rs.getString("MedicalCondition");
                     phyDis = rs.getString("PhysicalDisability");
@@ -537,7 +453,7 @@ public class StudentMgt extends javax.swing.JFrame {
                             temp.setText(null);
                         }
                     }
-                    txtPassword.setText("");
+                    password.setText("");
                     Session.setName("0");
                     RegDate.setDateFormatString("");
                     EndDate.setDateFormatString("");
@@ -546,16 +462,16 @@ public class StudentMgt extends javax.swing.JFrame {
                 }
 
                 if (counter == 1) {
-                    txtName.setText(name);
-                    txtPrevSchool.setText(preSchool);
-                    txtClass.setText(preClass);
-                    txtAdmissionClass.setText(admClass);
+                    Name.setText(name);
+                    PreSchool.setText(preSchool);
+                    PreClass.setText(preClass);
+                    AdmClass.setText(admClass);
                     Session.setYear(session);
-//                    convertUtilDateToSqlDate(RegDate.getDate());
-//                    convertUtilDateToSqlDate(EndDate.getDate());
-                    RegDate.setDateFormatString(regDate);
-                    EndDate.setDateFormatString(endDate);
-                    txtPassword.setText(pass);
+                    //                    convertUtilDateToSqlDate(RegDate.getDate());
+                    //                    convertUtilDateToSqlDate(EndDate.getDate());
+                    RegDate.setDate(regDate);
+                    EndDate.setDate(endDate);
+                    password.setText(pass);
                     Medical.setSelectedItem(medical);
                     PhysicalDis.setSelectedItem(phyDis);
                     DisabilityType.setSelectedItem(disType);
@@ -587,15 +503,93 @@ public class StudentMgt extends javax.swing.JFrame {
                     temp.setText(null);
                 }
             }
-            txtPassword.setText("");
+            password.setText("");
             Session.setName("0");
             RegDate.setDateFormatString("");
             EndDate.setDateFormatString("");
             lblImage.setIcon(null);
         }
 
-
     }//GEN-LAST:event_btnRetrieveActionPerformed
+
+    private void btncancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncancelActionPerformed
+
+        this.dispose();
+    }//GEN-LAST:event_btncancelActionPerformed
+
+    private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
+
+        handler = new DBHandler();
+        String update = "UPDATE student_details SET StudentName=?,Gender=?,PreviousSchool=?,PreviousClass=?,AdmissionClass=?,"
+                + "Session=?,PhysicalDisability=?,DisabilityType=?,MedicalCondition=?,Passport=?,Disability=?,RegDate=?,EndDate=?,Password=?"
+                + "WHERE StudentID=?";
+
+        try {
+            try (PreparedStatement pst = handler.getdbConnection().prepareStatement(update)) {
+
+                pst.setString(1, Name.getText());
+
+                String gender;
+                if (CMale.isSelected()) {
+                    gender = "Male";
+                } else {
+                    gender = "Female";
+                }
+                pst.setString(2, gender);
+                pst.setString(3, PreSchool.getText());
+                pst.setString(4, PreClass.getText());
+                pst.setString(5, AdmClass.getText());
+                pst.setInt(6, Session.getYear());
+                pst.setString(7, (String) PhysicalDis.getSelectedItem());
+                pst.setString(8, (String) DisabilityType.getSelectedItem());
+                pst.setString(9, (String) Medical.getSelectedItem());
+
+                input = new FileInputStream(new File(s));
+                pst.setBlob(10, input);
+
+                String disability;
+                if (CYes.isSelected()) {
+                    disability = "Yes";
+                } else {
+                    disability = "No";
+                }
+
+                pst.setString(11, disability);
+                pst.setDate(12, convertUtilDateToSqlDate(RegDate.getDate()));
+                pst.setDate(13, convertUtilDateToSqlDate(EndDate.getDate()));
+                pst.setString(14, password.getText());
+                pst.setString(15, txtID.getText());
+
+                pst.executeUpdate();
+                JOptionPane.showMessageDialog(this, "Saved");
+                pst.close();
+
+            } catch (FileNotFoundException ex) {
+                Logger.getLogger(StudentSignup.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
+        } catch (ClassNotFoundException | SQLException ex) {
+            Logger.getLogger(StudentSignup.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_btnSaveActionPerformed
+
+    private void btnPassportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPassportActionPerformed
+        // TODO add your handling code here:
+
+        JFileChooser chooser = new JFileChooser();
+        chooser.setCurrentDirectory(new File(System.getProperty("user.home")));
+        FileNameExtensionFilter extensionFilter = new FileNameExtensionFilter("*.image", "jpg", "gif", "png");
+        chooser.addChoosableFileFilter(extensionFilter);
+        int result = chooser.showSaveDialog(null);
+        if (result == JFileChooser.APPROVE_OPTION) {
+            File selectedFile = chooser.getSelectedFile();
+            String path = selectedFile.getAbsolutePath();
+            lblImage.setIcon(resizeImage(path));
+            s = path;
+        } else if (result == JFileChooser.CANCEL_OPTION) {
+            System.out.println("No Data");
+        }
+    }//GEN-LAST:event_btnPassportActionPerformed
 
     /**
      * @param args the command line arguments
@@ -652,16 +646,21 @@ public class StudentMgt extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public static javax.swing.JTextField AdmClass;
     private javax.swing.JCheckBox CFemale;
     private javax.swing.JCheckBox CMale;
     private javax.swing.JCheckBox CNo;
     private javax.swing.JCheckBox CYes;
-    private javax.swing.JComboBox<String> DisabilityType;
-    private com.toedter.calendar.JDateChooser EndDate;
-    private javax.swing.JComboBox<String> Medical;
-    private javax.swing.JComboBox<String> PhysicalDis;
-    private com.toedter.calendar.JDateChooser RegDate;
-    private com.toedter.calendar.JYearChooser Session;
+    public static javax.swing.JComboBox<String> DisabilityType;
+    public static com.toedter.calendar.JDateChooser EndDate;
+    public static javax.swing.JComboBox<String> Medical;
+    public static javax.swing.JTextField Name;
+    public static javax.swing.JComboBox<String> PhysicalDis;
+    public static javax.swing.JTextField PreClass;
+    public static javax.swing.JTextField PreSchool;
+    public static com.toedter.calendar.JDateChooser RegDate;
+    public static com.toedter.calendar.JYearChooser Session;
+    private javax.swing.JLabel btnClose;
     private javax.swing.JButton btnPassport;
     private javax.swing.JButton btnRetrieve;
     private javax.swing.JButton btnSave;
@@ -669,15 +668,14 @@ public class StudentMgt extends javax.swing.JFrame {
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel19;
+    private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -685,19 +683,15 @@ public class StudentMgt extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JSeparator jSeparator12;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
-    private javax.swing.JSeparator jSeparator4;
     private javax.swing.JSeparator jSeparator5;
+    private javax.swing.JSeparator jSeparator6;
+    private javax.swing.JSeparator jSeparator7;
     private javax.swing.JLabel lblError;
-    private javax.swing.JLabel lblImage;
-    private javax.swing.JTextField txtAdmissionClass;
-    private javax.swing.JTextField txtClass;
+    public static javax.swing.JLabel lblImage;
+    public static javax.swing.JTextField password;
     private javax.swing.JTextField txtID;
-    private javax.swing.JTextField txtName;
-    private javax.swing.JPasswordField txtPassword;
-    private javax.swing.JTextField txtPrevSchool;
     // End of variables declaration//GEN-END:variables
 }

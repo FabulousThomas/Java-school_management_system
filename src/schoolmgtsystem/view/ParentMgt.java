@@ -39,6 +39,7 @@ public class ParentMgt extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel2 = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
         btnSave = new javax.swing.JButton();
         btncancel = new javax.swing.JButton();
@@ -69,17 +70,21 @@ public class ParentMgt extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         txtTel1 = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         txtID = new javax.swing.JTextField();
         lblError = new javax.swing.JLabel();
         btnRetrieve = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
+        btnClose = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
-        setPreferredSize(new java.awt.Dimension(959, 628));
+
+        jPanel2.setBackground(new java.awt.Color(0, 153, 204));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2), "Personal Details", javax.swing.border.TitledBorder.LEADING, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Dialog", 1, 24), new java.awt.Color(51, 51, 51))); // NOI18N
         jPanel1.setPreferredSize(new java.awt.Dimension(1060, 570));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -89,14 +94,13 @@ public class ParentMgt extends javax.swing.JFrame {
         btnSave.setIcon(new javax.swing.ImageIcon(getClass().getResource("/schoolmgtsystem/IconImages/icons8_Enter.png"))); // NOI18N
         btnSave.setText("Save");
         btnSave.setToolTipText("Sign Up");
-        btnSave.setBorder(null);
-        btnSave.setBorderPainted(false);
+        btnSave.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         btnSave.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSaveActionPerformed(evt);
             }
         });
-        jPanel1.add(btnSave, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 540, 80, 40));
+        jPanel1.add(btnSave, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 500, 80, 40));
 
         btncancel.setBackground(new java.awt.Color(255, 255, 255));
         btncancel.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -104,8 +108,7 @@ public class ParentMgt extends javax.swing.JFrame {
         btncancel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/schoolmgtsystem/IconImages/icons8_Cancel.png"))); // NOI18N
         btncancel.setText("Cancel");
         btncancel.setToolTipText("Cancel");
-        btncancel.setBorder(null);
-        btncancel.setBorderPainted(false);
+        btncancel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         btncancel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 btncancelMousePressed(evt);
@@ -116,24 +119,24 @@ public class ParentMgt extends javax.swing.JFrame {
                 btncancelActionPerformed(evt);
             }
         });
-        jPanel1.add(btncancel, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 540, 90, 40));
+        jPanel1.add(btncancel, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 500, 90, 40));
 
         RFemale.setBackground(new java.awt.Color(255, 255, 255));
         RFemale.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        RFemale.setForeground(new java.awt.Color(0, 102, 204));
+        RFemale.setForeground(new java.awt.Color(51, 51, 51));
         RFemale.setText("Female");
-        jPanel1.add(RFemale, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 460, 100, -1));
+        jPanel1.add(RFemale, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 430, 100, -1));
 
         RMale.setBackground(new java.awt.Color(255, 255, 255));
         RMale.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        RMale.setForeground(new java.awt.Color(0, 102, 204));
+        RMale.setForeground(new java.awt.Color(51, 51, 51));
         RMale.setText("Male");
-        jPanel1.add(RMale, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 460, 80, -1));
+        jPanel1.add(RMale, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 430, 80, -1));
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(0, 102, 204));
+        jLabel10.setForeground(new java.awt.Color(51, 51, 51));
         jLabel10.setText("Gender");
-        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 460, -1, -1));
+        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 430, -1, -1));
 
         txtOffice.setBackground(new java.awt.Color(255, 255, 255));
         txtOffice.setColumns(20);
@@ -142,7 +145,7 @@ public class ParentMgt extends javax.swing.JFrame {
         txtOffice.setRows(5);
         jScrollPane2.setViewportView(txtOffice);
 
-        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 510, 330, 80));
+        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 480, 330, 80));
 
         txtHome.setBackground(new java.awt.Color(255, 255, 255));
         txtHome.setColumns(20);
@@ -151,170 +154,174 @@ public class ParentMgt extends javax.swing.JFrame {
         txtHome.setRows(5);
         jScrollPane1.setViewportView(txtHome);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 400, 330, 80));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 370, 330, 80));
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(0, 102, 204));
-        jLabel6.setText("Home Address *");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 380, 120, -1));
+        jLabel6.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel6.setText("Home Address ");
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 350, 110, -1));
 
         jLabel14.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel14.setForeground(new java.awt.Color(0, 102, 204));
+        jLabel14.setForeground(new java.awt.Color(51, 51, 51));
         jLabel14.setText("Office Address");
-        jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 490, 110, -1));
+        jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 460, 110, -1));
 
         txtNation.setBackground(new java.awt.Color(255, 255, 255));
         txtNation.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         txtNation.setForeground(new java.awt.Color(51, 51, 51));
+        txtNation.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         txtNation.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtNationActionPerformed(evt);
             }
         });
-        jPanel1.add(txtNation, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 340, 330, 30));
+        jPanel1.add(txtNation, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 310, 330, 30));
 
         jLabel13.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel13.setForeground(new java.awt.Color(0, 102, 204));
+        jLabel13.setForeground(new java.awt.Color(51, 51, 51));
         jLabel13.setText("Nationality");
-        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 320, -1, -1));
+        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 290, -1, -1));
 
         txtState.setBackground(new java.awt.Color(255, 255, 255));
         txtState.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         txtState.setForeground(new java.awt.Color(51, 51, 51));
+        txtState.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         txtState.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtStateActionPerformed(evt);
             }
         });
-        jPanel1.add(txtState, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 400, 330, 30));
+        jPanel1.add(txtState, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 370, 330, 30));
 
         jLabel15.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel15.setForeground(new java.awt.Color(0, 102, 204));
+        jLabel15.setForeground(new java.awt.Color(51, 51, 51));
         jLabel15.setText("State of origin");
-        jPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 380, -1, -1));
+        jPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 350, -1, -1));
 
         txtReligion.setBackground(new java.awt.Color(255, 255, 255));
         txtReligion.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         txtReligion.setForeground(new java.awt.Color(51, 51, 51));
+        txtReligion.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         txtReligion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtReligionActionPerformed(evt);
             }
         });
-        jPanel1.add(txtReligion, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 340, 330, 30));
+        jPanel1.add(txtReligion, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 310, 330, 30));
 
         jLabel12.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(0, 102, 204));
-        jLabel12.setText("Religion *");
-        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 320, -1, -1));
+        jLabel12.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel12.setText("Religion");
+        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 290, -1, -1));
 
         txtPassword.setBackground(new java.awt.Color(255, 255, 255));
         txtPassword.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         txtPassword.setForeground(new java.awt.Color(51, 51, 51));
+        txtPassword.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         txtPassword.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtPasswordActionPerformed(evt);
             }
         });
-        jPanel1.add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 280, 330, 30));
+        jPanel1.add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 250, 330, 30));
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(0, 102, 204));
-        jLabel8.setText("Password *");
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 260, -1, -1));
+        jLabel8.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel8.setText("Password");
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 230, -1, -1));
 
         txtOccupation.setBackground(new java.awt.Color(255, 255, 255));
         txtOccupation.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         txtOccupation.setForeground(new java.awt.Color(51, 51, 51));
+        txtOccupation.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         txtOccupation.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtOccupationActionPerformed(evt);
             }
         });
-        jPanel1.add(txtOccupation, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 280, 330, 30));
+        jPanel1.add(txtOccupation, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 250, 330, 30));
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(0, 102, 204));
+        jLabel5.setForeground(new java.awt.Color(51, 51, 51));
         jLabel5.setText("Occupation");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 260, -1, -1));
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 230, -1, -1));
 
         txtTel2.setBackground(new java.awt.Color(255, 255, 255));
         txtTel2.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         txtTel2.setForeground(new java.awt.Color(51, 51, 51));
+        txtTel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         txtTel2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtTel2ActionPerformed(evt);
             }
         });
-        jPanel1.add(txtTel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 220, 330, 30));
+        jPanel1.add(txtTel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 190, 330, 30));
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(0, 102, 204));
+        jLabel7.setForeground(new java.awt.Color(51, 51, 51));
         jLabel7.setText("Mobile Number");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 200, -1, -1));
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 170, -1, -1));
 
         txtEmail.setBackground(new java.awt.Color(255, 255, 255));
         txtEmail.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         txtEmail.setForeground(new java.awt.Color(51, 51, 51));
+        txtEmail.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         txtEmail.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtEmailActionPerformed(evt);
             }
         });
-        jPanel1.add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 220, 330, 30));
+        jPanel1.add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 190, 330, 30));
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(0, 102, 204));
+        jLabel9.setForeground(new java.awt.Color(51, 51, 51));
         jLabel9.setText("Email Address");
-        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 200, -1, -1));
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 170, -1, -1));
 
         txtName.setBackground(new java.awt.Color(255, 255, 255));
         txtName.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         txtName.setForeground(new java.awt.Color(51, 51, 51));
+        txtName.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         txtName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtNameActionPerformed(evt);
             }
         });
-        jPanel1.add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 160, 330, 30));
+        jPanel1.add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 130, 330, 30));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(0, 102, 204));
-        jLabel3.setText("Full Name *");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 140, -1, -1));
+        jLabel3.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel3.setText("Full Name ");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 110, -1, -1));
 
         txtTel1.setBackground(new java.awt.Color(255, 255, 255));
         txtTel1.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         txtTel1.setForeground(new java.awt.Color(51, 51, 51));
+        txtTel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         txtTel1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtTel1ActionPerformed(evt);
             }
         });
-        jPanel1.add(txtTel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 160, 330, 30));
+        jPanel1.add(txtTel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 130, 330, 30));
 
         jLabel11.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(0, 102, 204));
-        jLabel11.setText("Phone Number *");
-        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 140, -1, -1));
-
-        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(0, 102, 204));
-        jLabel4.setText("PARENT MANAGEMENT(Update)");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 10, -1, 26));
+        jLabel11.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel11.setText("Phone Number ");
+        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 110, -1, -1));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 102, 204));
+        jLabel1.setForeground(new java.awt.Color(51, 51, 51));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setLabelFor(txtID);
         jLabel1.setText("Parent ID");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 100, -1, -1));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 70, -1, -1));
 
         txtID.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.add(txtID, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 90, 100, 30));
+        txtID.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jPanel1.add(txtID, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 60, 100, 30));
 
         lblError.setForeground(new java.awt.Color(255, 0, 0));
-        lblError.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jPanel1.add(lblError, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 100, 130, 20));
 
         btnRetrieve.setBackground(new java.awt.Color(255, 255, 255));
@@ -323,24 +330,40 @@ public class ParentMgt extends javax.swing.JFrame {
         btnRetrieve.setIcon(new javax.swing.ImageIcon(getClass().getResource("/schoolmgtsystem/IconImages/icons8_Enter.png"))); // NOI18N
         btnRetrieve.setText("Retrieve");
         btnRetrieve.setToolTipText("Retrieve");
-        btnRetrieve.setBorder(null);
-        btnRetrieve.setBorderPainted(false);
+        btnRetrieve.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         btnRetrieve.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRetrieveActionPerformed(evt);
             }
         });
-        jPanel1.add(btnRetrieve, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 540, 100, 40));
+        jPanel1.add(btnRetrieve, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 500, 100, 40));
+
+        jPanel2.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 810, 620));
+
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel4.setText("PARENT MANAGEMENT(Update)");
+        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 10, -1, 26));
+
+        btnClose.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnClose.setIcon(new javax.swing.ImageIcon(getClass().getResource("/schoolmgtsystem/IconImages/icons8_Xbox_X.png"))); // NOI18N
+        btnClose.setToolTipText("close");
+        btnClose.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnCloseMouseClicked(evt);
+            }
+        });
+        jPanel2.add(btnClose, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 0, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 959, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 628, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -386,8 +409,8 @@ public class ParentMgt extends javax.swing.JFrame {
                     pst.setString(12, txtPassword.getText());
                     pst.setString(13, txtID.getText());
 
-                    int count = pst.executeUpdate();
-                    JOptionPane.showMessageDialog(this, count + "Successful");
+                    pst.executeUpdate();
+                    JOptionPane.showMessageDialog(this, "Successful");
                     pst.close();
                 }
                 txtName.setText("");
@@ -412,9 +435,7 @@ public class ParentMgt extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSaveActionPerformed
 
     private void btncancelMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btncancelMousePressed
-        new Home().show();
-        setVisible(true);
-        this.dispose();
+
     }//GEN-LAST:event_btncancelMousePressed
 
     private void btncancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncancelActionPerformed
@@ -521,7 +542,6 @@ public class ParentMgt extends javax.swing.JFrame {
                     txtReligion.setText(rel);
 
                     lblError.setText("");
-                    txtID.setBackground(Color.WHITE);
                 } else {
                     JOptionPane.showMessageDialog(this, "Can't retrieve data !");
                 }
@@ -532,7 +552,6 @@ public class ParentMgt extends javax.swing.JFrame {
 
         } else {
             lblError.setText("ID is needed !");
-            txtID.setBackground(Color.red);
             txtName.setText("");
             txtOccupation.setText("");
             txtHome.setText("");
@@ -547,6 +566,12 @@ public class ParentMgt extends javax.swing.JFrame {
         }
 
     }//GEN-LAST:event_btnRetrieveActionPerformed
+
+    private void btnCloseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCloseMouseClicked
+
+        this.dispose();
+
+    }//GEN-LAST:event_btnCloseMouseClicked
 
     /**
      * @param args the command line arguments
@@ -586,6 +611,7 @@ public class ParentMgt extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JRadioButton RFemale;
     private javax.swing.JRadioButton RMale;
+    private javax.swing.JLabel btnClose;
     private javax.swing.JButton btnRetrieve;
     private javax.swing.JButton btnSave;
     private javax.swing.JButton btncancel;
@@ -604,6 +630,7 @@ public class ParentMgt extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel lblError;

@@ -5,18 +5,25 @@
  */
 package schoolmgtsystem.view;
 
+import java.awt.Component;
 import java.awt.Image;
+import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.io.InputStream;
+import java.sql.Blob;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
+import javax.swing.JTextField;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import schoolmgtsystem.dbhelper.DBHandler;
 
@@ -27,6 +34,9 @@ import schoolmgtsystem.dbhelper.DBHandler;
 public class StaffMgt extends javax.swing.JFrame {
 
     String s;
+    InputStream input;
+    BufferedImage bufferedImage;
+    ImageIcon imageIcon;
 
     /**
      * Creates new form StaffMgt
@@ -88,11 +98,13 @@ public class StaffMgt extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         txtID = new javax.swing.JTextField();
         lblError = new javax.swing.JLabel();
+        btnClose = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setPreferredSize(new java.awt.Dimension(970, 627));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         txtName.setBackground(new java.awt.Color(255, 255, 255));
@@ -109,7 +121,7 @@ public class StaffMgt extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(0, 153, 204));
         jLabel4.setText("STAFF MANAGEMENT(Update)");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 10, -1, 30));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 10, -1, 30));
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(0, 153, 204));
@@ -261,7 +273,7 @@ public class StaffMgt extends javax.swing.JFrame {
                 btnPassportActionPerformed(evt);
             }
         });
-        jPanel1.add(btnPassport, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 430, 120, 30));
+        jPanel1.add(btnPassport, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 410, 120, 30));
 
         RFemale.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         RFemale.setText("Female");
@@ -351,6 +363,16 @@ public class StaffMgt extends javax.swing.JFrame {
         lblError.setForeground(new java.awt.Color(255, 0, 0));
         jPanel1.add(lblError, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 100, 110, 20));
 
+        btnClose.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnClose.setIcon(new javax.swing.ImageIcon(getClass().getResource("/schoolmgtsystem/IconImages/icons8_Xbox_X.png"))); // NOI18N
+        btnClose.setToolTipText("close");
+        btnClose.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnCloseMouseClicked(evt);
+            }
+        });
+        jPanel1.add(btnClose, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 0, -1, -1));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -359,7 +381,7 @@ public class StaffMgt extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 627, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -397,12 +419,12 @@ public class StaffMgt extends javax.swing.JFrame {
         String str = "UPDATE staff_details SET StaffName=?,Passport=?,Email=?,Tel1=?,Tel2=?,"
                 + "JobDescription=?,Position=?,HomeAddress=?,StartDate=?,EndDate=?,Gender=?,Password=?,State=? "
                 + "WHERE StaffID=?";
-
         try {
-            InputStream input = new FileInputStream(new File(s));
+
             try (PreparedStatement pst = handler.getdbConnection().prepareStatement(str)) {
                 pst.setString(1, txtName.getText());
-                pst.setBlob(2, input);
+//                input = new FileInputStream(new File(s));
+                pst.setBlob(2, (Blob) bufferedImage);
                 pst.setString(3, txtEmail.getText());
                 pst.setString(4, txtTel1.getText());
                 pst.setString(5, txtTel2.getText());
@@ -440,10 +462,7 @@ public class StaffMgt extends javax.swing.JFrame {
             txtPassword.setText("");
             Position.setSelectedIndex(0);
 
-            new StaffLogIn().show();
-            this.dispose();
-
-        } catch (ClassNotFoundException | SQLException | FileNotFoundException ex) {
+        } catch (ClassNotFoundException | SQLException ex) {
             Logger.getLogger(StaffSignUp.class.getName()).log(Level.SEVERE, null, ex);
         }
 
@@ -465,8 +484,98 @@ public class StaffMgt extends javax.swing.JFrame {
 
     private void btnRetrieveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRetrieveActionPerformed
 
+        String id = txtID.getText();
+        String name = txtName.getText();
+        String email = txtEmail.getText();
+        String tel1 = txtTel1.getText();
+        String tel2 = txtTel2.getText();
+        String home = txtHome.getText();
+        String pass = txtPassword.getText();
+        String state = txtState.getText();
+        String position = (String) Position.getSelectedItem();
+        String job = txtJobDes.getText();
+        String start = StartDate.getDateFormatString();
+        String end = EndDate.getDateFormatString();
+
+        DBHandler handler = new DBHandler();
+        ResultSet rs = null;
+
+        if (!id.isEmpty()) {
+            String str = "SELECT * FROM staff_details WHERE StaffID=?";
+            try {
+                PreparedStatement pst = handler.getdbConnection().prepareStatement(str);
+                pst.setString(1, id);
+                rs = pst.executeQuery();
+                int counter = 0;
+                if (rs.next()) {
+                    counter++;
+                    name = rs.getString("StaffName");
+                    email = rs.getString("Email");
+                    tel1 = rs.getString("Tel1");
+                    tel2 = rs.getString("Tel2");
+                    home = rs.getString("HomeAddress");
+                    pass = rs.getString("Password");
+                    state = rs.getString("State");
+                    position = rs.getString("Position");
+                    job = rs.getString("JobDescription");
+                    start = rs.getString("StartDate");
+                    end = rs.getString("EndDate");
+                    bufferedImage = ImageIO.read(rs.getBinaryStream("Passport"));
+
+                } else {
+                    JOptionPane.showMessageDialog(this, "No Staff ID as " + id);
+                    JTextField temp = null;
+                    for (Component C : jPanel1.getComponents()) {
+                        if (C.getClass().toString().contains("javax.swing.JTextField")) {
+
+                            temp = (JTextField) C;
+                            temp.setText(null);
+                        }
+                    }
+                    Position.setSelectedIndex(0);
+                }
+                if (counter == 1) {
+                    txtName.setText(name);
+                    txtEmail.setText(email);
+                    txtTel1.setText(tel1);
+                    txtTel2.setText(tel2);
+                    txtHome.setText(home);
+                    txtPassword.setText(pass);
+                    txtState.setText(state);
+                    Position.setSelectedItem(position);
+                    txtJobDes.setText(job);
+                    StartDate.setDateFormatString(start);
+                    EndDate.setDateFormatString(end);
+                    imageIcon = new ImageIcon(new ImageIcon(bufferedImage).getImage().getScaledInstance(lblImage.getWidth(),
+                            lblImage.getHeight(), Image.SCALE_DEFAULT));
+                    lblImage.setIcon(imageIcon);
+                    lblError.setText("");
+                } else {
+                    JOptionPane.showMessageDialog(this, "Can't retrieve data !");
+                }
+
+            } catch (ClassNotFoundException | SQLException | IOException ex) {
+                Logger.getLogger(StaffMgt.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        } else {
+            lblError.setText("ID is needed !");
+            JTextField temp = null;
+            for (Component C : jPanel1.getComponents()) {
+                if (C.getClass().toString().contains("javax.swing.JTextField")) {
+                    temp = (JTextField) C;
+                    temp.setText(null);
+                }
+            }
+            Position.setSelectedIndex(0);
+        }
 
     }//GEN-LAST:event_btnRetrieveActionPerformed
+
+    private void btnCloseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCloseMouseClicked
+
+        this.dispose();
+
+    }//GEN-LAST:event_btnCloseMouseClicked
 
     /**
      * @param args the command line arguments
@@ -532,6 +641,7 @@ public class StaffMgt extends javax.swing.JFrame {
     private javax.swing.JRadioButton RFemale;
     private javax.swing.JRadioButton RMale;
     private com.toedter.calendar.JDateChooser StartDate;
+    private javax.swing.JLabel btnClose;
     private javax.swing.JButton btnPassport;
     private javax.swing.JButton btnRetrieve;
     private javax.swing.JButton btncancel;
