@@ -34,15 +34,18 @@ public class StudentInformation extends javax.swing.JFrame {
         jMenu1 = new javax.swing.JMenu();
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
+        teacherCount = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         studentCount = new javax.swing.JLabel();
         lblName = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
-        jMenuFileStdList = new javax.swing.JMenu();
+        jMenuFileRecord = new javax.swing.JMenu();
+        jMenuItemHome = new javax.swing.JMenuItem();
         jMenuItemViewProfile = new javax.swing.JMenuItem();
         jMenuItemStdList = new javax.swing.JMenuItem();
+        jMenuItemStdList1 = new javax.swing.JMenuItem();
         jMenuItemClose = new javax.swing.JMenuItem();
         jMenuEdit = new javax.swing.JMenu();
         jMenuItemUpStudent = new javax.swing.JMenuItem();
@@ -62,9 +65,10 @@ public class StudentInformation extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(0, 102, 153));
 
-        jLabel3.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("jLabel2");
+        teacherCount.setFont(new java.awt.Font("Dialog", 3, 18)); // NOI18N
+        teacherCount.setForeground(new java.awt.Color(255, 255, 255));
+        teacherCount.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        teacherCount.setText("Teacher Count =");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -72,14 +76,14 @@ public class StudentInformation extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(34, 34, 34)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(teacherCount, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(39, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap(49, Short.MAX_VALUE)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(teacherCount, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(43, 43, 43))
         );
 
@@ -87,7 +91,8 @@ public class StudentInformation extends javax.swing.JFrame {
 
         jPanel3.setBackground(new java.awt.Color(0, 102, 153));
 
-        studentCount.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        studentCount.setFont(new java.awt.Font("Dialog", 3, 18)); // NOI18N
+        studentCount.setForeground(new java.awt.Color(255, 255, 255));
         studentCount.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         studentCount.setText("Student Count =");
 
@@ -114,19 +119,36 @@ public class StudentInformation extends javax.swing.JFrame {
         lblName.setForeground(new java.awt.Color(51, 51, 51));
         lblName.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblName.setText("Name");
-        jPanel1.add(lblName, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 20, 310, -1));
+        jPanel1.add(lblName, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 110, 310, -1));
+
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/schoolmgtsystem/IconImages/icons8_School_House.png"))); // NOI18N
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 10, 120, 100));
 
         jLabel1.setText("jLabel1");
 
         jMenuBar1.setBackground(new java.awt.Color(255, 255, 255));
         jMenuBar1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51)));
 
-        jMenuFileStdList.setBackground(new java.awt.Color(255, 255, 255));
-        jMenuFileStdList.setForeground(new java.awt.Color(51, 51, 51));
-        jMenuFileStdList.setIcon(new javax.swing.ImageIcon(getClass().getResource("/schoolmgtsystem/IconImages/icons8_Folder.png"))); // NOI18N
-        jMenuFileStdList.setText("File");
+        jMenuFileRecord.setBackground(new java.awt.Color(255, 255, 255));
+        jMenuFileRecord.setForeground(new java.awt.Color(51, 51, 51));
+        jMenuFileRecord.setIcon(new javax.swing.ImageIcon(getClass().getResource("/schoolmgtsystem/IconImages/icons8_Folder.png"))); // NOI18N
+        jMenuFileRecord.setText("File");
 
-        jMenuItemViewProfile.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.CTRL_MASK));
+        jMenuItemHome.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_H, java.awt.event.InputEvent.CTRL_MASK));
+        jMenuItemHome.setBackground(new java.awt.Color(255, 255, 255));
+        jMenuItemHome.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        jMenuItemHome.setForeground(new java.awt.Color(51, 51, 51));
+        jMenuItemHome.setIcon(new javax.swing.ImageIcon(getClass().getResource("/schoolmgtsystem/IconImages/icons8_Home.png"))); // NOI18N
+        jMenuItemHome.setText("Home");
+        jMenuItemHome.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemHomeActionPerformed(evt);
+            }
+        });
+        jMenuFileRecord.add(jMenuItemHome);
+
+        jMenuItemViewProfile.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_V, java.awt.event.InputEvent.CTRL_MASK));
         jMenuItemViewProfile.setBackground(new java.awt.Color(255, 255, 255));
         jMenuItemViewProfile.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         jMenuItemViewProfile.setForeground(new java.awt.Color(51, 51, 51));
@@ -137,7 +159,7 @@ public class StudentInformation extends javax.swing.JFrame {
                 jMenuItemViewProfileActionPerformed(evt);
             }
         });
-        jMenuFileStdList.add(jMenuItemViewProfile);
+        jMenuFileRecord.add(jMenuItemViewProfile);
 
         jMenuItemStdList.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_L, java.awt.event.InputEvent.CTRL_MASK));
         jMenuItemStdList.setBackground(new java.awt.Color(255, 255, 255));
@@ -150,7 +172,20 @@ public class StudentInformation extends javax.swing.JFrame {
                 jMenuItemStdListActionPerformed(evt);
             }
         });
-        jMenuFileStdList.add(jMenuItemStdList);
+        jMenuFileRecord.add(jMenuItemStdList);
+
+        jMenuItemStdList1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_R, java.awt.event.InputEvent.CTRL_MASK));
+        jMenuItemStdList1.setBackground(new java.awt.Color(255, 255, 255));
+        jMenuItemStdList1.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        jMenuItemStdList1.setForeground(new java.awt.Color(51, 51, 51));
+        jMenuItemStdList1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/schoolmgtsystem/IconImages/icons8_Test_Results.png"))); // NOI18N
+        jMenuItemStdList1.setText("Enter Records");
+        jMenuItemStdList1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemStdList1ActionPerformed(evt);
+            }
+        });
+        jMenuFileRecord.add(jMenuItemStdList1);
 
         jMenuItemClose.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F4, java.awt.event.InputEvent.ALT_MASK));
         jMenuItemClose.setBackground(new java.awt.Color(255, 255, 255));
@@ -163,37 +198,52 @@ public class StudentInformation extends javax.swing.JFrame {
                 jMenuItemCloseActionPerformed(evt);
             }
         });
-        jMenuFileStdList.add(jMenuItemClose);
+        jMenuFileRecord.add(jMenuItemClose);
 
-        jMenuBar1.add(jMenuFileStdList);
+        jMenuBar1.add(jMenuFileRecord);
 
         jMenuEdit.setBackground(new java.awt.Color(255, 255, 255));
         jMenuEdit.setForeground(new java.awt.Color(51, 51, 51));
         jMenuEdit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/schoolmgtsystem/IconImages/icons8_Edit_File_1.png"))); // NOI18N
         jMenuEdit.setText("Edit");
 
-        jMenuItemUpStudent.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_U, java.awt.event.InputEvent.CTRL_MASK));
+        jMenuItemUpStudent.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.CTRL_MASK));
         jMenuItemUpStudent.setBackground(new java.awt.Color(255, 255, 255));
         jMenuItemUpStudent.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         jMenuItemUpStudent.setForeground(new java.awt.Color(51, 51, 51));
         jMenuItemUpStudent.setIcon(new javax.swing.ImageIcon(getClass().getResource("/schoolmgtsystem/IconImages/icons8_Student_Male.png"))); // NOI18N
         jMenuItemUpStudent.setText("Update Students");
+        jMenuItemUpStudent.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemUpStudentActionPerformed(evt);
+            }
+        });
         jMenuEdit.add(jMenuItemUpStudent);
 
-        jMenuItemUpTeacher.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_U, java.awt.event.InputEvent.CTRL_MASK));
+        jMenuItemUpTeacher.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_T, java.awt.event.InputEvent.CTRL_MASK));
         jMenuItemUpTeacher.setBackground(new java.awt.Color(255, 255, 255));
         jMenuItemUpTeacher.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         jMenuItemUpTeacher.setForeground(new java.awt.Color(51, 51, 51));
         jMenuItemUpTeacher.setIcon(new javax.swing.ImageIcon(getClass().getResource("/schoolmgtsystem/IconImages/icons8_Classroom.png"))); // NOI18N
         jMenuItemUpTeacher.setText("Update Teachers");
+        jMenuItemUpTeacher.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemUpTeacherActionPerformed(evt);
+            }
+        });
         jMenuEdit.add(jMenuItemUpTeacher);
 
-        jMenuItemUpParent.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_U, java.awt.event.InputEvent.CTRL_MASK));
+        jMenuItemUpParent.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.CTRL_MASK));
         jMenuItemUpParent.setBackground(new java.awt.Color(255, 255, 255));
         jMenuItemUpParent.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         jMenuItemUpParent.setForeground(new java.awt.Color(51, 51, 51));
         jMenuItemUpParent.setIcon(new javax.swing.ImageIcon(getClass().getResource("/schoolmgtsystem/IconImages/icons8_Family.png"))); // NOI18N
         jMenuItemUpParent.setText("Update Parents");
+        jMenuItemUpParent.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemUpParentActionPerformed(evt);
+            }
+        });
         jMenuEdit.add(jMenuItemUpParent);
 
         jMenuBar1.add(jMenuEdit);
@@ -226,16 +276,48 @@ public class StudentInformation extends javax.swing.JFrame {
         label = new JLabel("btn_exit");
         if (JOptionPane.showConfirmDialog(label, "Do you want to Exit ?", "Confirm",
                 JOptionPane.YES_NO_OPTION) == JOptionPane.YES_NO_OPTION) {
+            new Home().show();
             this.dispose();
         }
 
     }//GEN-LAST:event_jMenuItemCloseActionPerformed
 
     private void jMenuItemStdListActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemStdListActionPerformed
-        
+
         new StudentTable().show();
-        
+
     }//GEN-LAST:event_jMenuItemStdListActionPerformed
+
+    private void jMenuItemUpStudentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemUpStudentActionPerformed
+
+        new StudentMgt().show();
+
+    }//GEN-LAST:event_jMenuItemUpStudentActionPerformed
+
+    private void jMenuItemUpTeacherActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemUpTeacherActionPerformed
+
+        new StaffMgt().show();
+
+    }//GEN-LAST:event_jMenuItemUpTeacherActionPerformed
+
+    private void jMenuItemUpParentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemUpParentActionPerformed
+
+        new ParentMgt().show();
+
+    }//GEN-LAST:event_jMenuItemUpParentActionPerformed
+
+    private void jMenuItemHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemHomeActionPerformed
+
+        new Home().show();
+        this.dispose();
+
+    }//GEN-LAST:event_jMenuItemHomeActionPerformed
+
+    private void jMenuItemStdList1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemStdList1ActionPerformed
+       
+        new ResultEntry().show();
+        
+    }//GEN-LAST:event_jMenuItemStdList1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -272,13 +354,15 @@ public class StudentInformation extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenu jMenuEdit;
-    private javax.swing.JMenu jMenuFileStdList;
+    private javax.swing.JMenu jMenuFileRecord;
     private javax.swing.JMenuItem jMenuItemClose;
+    private javax.swing.JMenuItem jMenuItemHome;
     private javax.swing.JMenuItem jMenuItemStdList;
+    private javax.swing.JMenuItem jMenuItemStdList1;
     private javax.swing.JMenuItem jMenuItemUpParent;
     private javax.swing.JMenuItem jMenuItemUpStudent;
     private javax.swing.JMenuItem jMenuItemUpTeacher;
@@ -288,5 +372,6 @@ public class StudentInformation extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     public static javax.swing.JLabel lblName;
     public static javax.swing.JLabel studentCount;
+    public static javax.swing.JLabel teacherCount;
     // End of variables declaration//GEN-END:variables
 }
