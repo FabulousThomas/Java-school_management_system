@@ -32,7 +32,7 @@ public class ResultView extends javax.swing.JFrame {
         btnCheckSSS = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        btnBack = new javax.swing.JLabel();
+        btnClose = new javax.swing.JLabel();
         btnCheckNursery = new javax.swing.JButton();
         btnCheckPrimary = new javax.swing.JButton();
         btnCheckJSS = new javax.swing.JButton();
@@ -50,7 +50,7 @@ public class ResultView extends javax.swing.JFrame {
                 btnCheckSSSActionPerformed(evt);
             }
         });
-        jPanel1.add(btnCheckSSS, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 280, 140, 40));
+        jPanel1.add(btnCheckSSS, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 250, -1, 50));
 
         jPanel2.setBackground(new java.awt.Color(0, 102, 204));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -58,17 +58,19 @@ public class ResultView extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("CHECK RESULT");
-        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 30, -1, 26));
+        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 10, -1, 30));
 
-        btnBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/schoolmgtsystem/IconImages/icons8_Left_30px_1.png"))); // NOI18N
-        btnBack.addMouseListener(new java.awt.event.MouseAdapter() {
+        btnClose.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnClose.setIcon(new javax.swing.ImageIcon(getClass().getResource("/schoolmgtsystem/IconImages/icons8_Xbox_X.png"))); // NOI18N
+        btnClose.setToolTipText("close");
+        btnClose.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnBackMouseClicked(evt);
+                btnCloseMouseClicked(evt);
             }
         });
-        jPanel2.add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, 20));
+        jPanel2.add(btnClose, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 0, 40, -1));
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 710, 90));
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 710, 70));
 
         btnCheckNursery.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         btnCheckNursery.setText("NURSERY");
@@ -77,7 +79,7 @@ public class ResultView extends javax.swing.JFrame {
                 btnCheckNurseryActionPerformed(evt);
             }
         });
-        jPanel1.add(btnCheckNursery, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 150, 140, 40));
+        jPanel1.add(btnCheckNursery, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 150, 140, 50));
 
         btnCheckPrimary.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         btnCheckPrimary.setText("PRIMARY");
@@ -86,7 +88,7 @@ public class ResultView extends javax.swing.JFrame {
                 btnCheckPrimaryActionPerformed(evt);
             }
         });
-        jPanel1.add(btnCheckPrimary, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 150, 140, 40));
+        jPanel1.add(btnCheckPrimary, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 150, 140, 50));
 
         btnCheckJSS.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         btnCheckJSS.setText("JUNIOR SECONDARY");
@@ -95,7 +97,7 @@ public class ResultView extends javax.swing.JFrame {
                 btnCheckJSSActionPerformed(evt);
             }
         });
-        jPanel1.add(btnCheckJSS, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 280, 140, 40));
+        jPanel1.add(btnCheckJSS, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 250, 230, 50));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -110,13 +112,6 @@ public class ResultView extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void btnBackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBackMouseClicked
-        
-        new AdminPortal().show();
-        this.dispose();
-        
-    }//GEN-LAST:event_btnBackMouseClicked
 
     private void btnCheckNurseryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCheckNurseryActionPerformed
         
@@ -145,6 +140,11 @@ public class ResultView extends javax.swing.JFrame {
         this.dispose();
         
     }//GEN-LAST:event_btnCheckSSSActionPerformed
+
+    private void btnCloseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCloseMouseClicked
+
+        this.dispose();
+    }//GEN-LAST:event_btnCloseMouseClicked
 
     /**
      * @param args the command line arguments
@@ -180,11 +180,11 @@ public class ResultView extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel btnBack;
     private javax.swing.JButton btnCheckJSS;
     private javax.swing.JButton btnCheckNursery;
     private javax.swing.JButton btnCheckPrimary;
     private javax.swing.JButton btnCheckSSS;
+    private javax.swing.JLabel btnClose;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;

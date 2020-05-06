@@ -81,17 +81,17 @@ public class AdminSignUp extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/schoolmgtsystem/IconImages/icons8_Administrator_Male_96px_1.png"))); // NOI18N
-        jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 160, -1, -1));
+        jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 160, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Principal SignUp");
-        jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 80, -1, -1));
-        jPanel3.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, 256, 10));
-        jPanel3.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 320, 232, 10));
-        jPanel3.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 340, 184, 10));
-        jPanel3.add(jSeparator7, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 360, 142, 10));
-        jPanel3.add(jSeparator8, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 380, 116, 10));
+        jLabel2.setText("Admin SignUp");
+        jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 90, -1, -1));
+        jPanel3.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 300, 256, 10));
+        jPanel3.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 320, 232, 10));
+        jPanel3.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 340, 184, 10));
+        jPanel3.add(jSeparator7, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 360, 142, 10));
+        jPanel3.add(jSeparator8, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 380, 116, 10));
 
         txtBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/schoolmgtsystem/IconImages/icons8_Left_30px_1.png"))); // NOI18N
         txtBack.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -101,73 +101,72 @@ public class AdminSignUp extends javax.swing.JFrame {
         });
         jPanel3.add(txtBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, 20));
 
-        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 330, 540));
+        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 300, 540));
 
-        jPanel1.setBackground(new java.awt.Color(0, 204, 204));
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setForeground(new java.awt.Color(51, 51, 51));
         jLabel4.setText("Surname");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 210, -1, 20));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 210, -1, 20));
 
-        txtSurname.setBackground(new java.awt.Color(0, 204, 204));
+        txtSurname.setBackground(new java.awt.Color(255, 255, 255));
         txtSurname.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         txtSurname.setBorder(null);
-        jPanel1.add(txtSurname, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 230, 330, 20));
+        jPanel1.add(txtSurname, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 230, 330, 20));
 
         jSeparator1.setBackground(new java.awt.Color(0, 51, 255));
         jSeparator1.setForeground(new java.awt.Color(0, 51, 255));
-        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 250, 330, 10));
+        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 250, 330, 10));
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText("Email Address");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 290, 130, 20));
+        jLabel5.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel5.setText("Email");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 290, 60, 20));
 
-        txtEmail.setBackground(new java.awt.Color(0, 204, 204));
+        txtEmail.setBackground(new java.awt.Color(255, 255, 255));
         txtEmail.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         txtEmail.setBorder(null);
-        jPanel1.add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 310, 330, 20));
+        jPanel1.add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 310, 330, 20));
 
         jSeparator3.setBackground(new java.awt.Color(0, 51, 255));
         jSeparator3.setForeground(new java.awt.Color(0, 51, 255));
-        jPanel1.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 330, 330, 10));
+        jPanel1.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 330, 330, 10));
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setForeground(new java.awt.Color(51, 51, 51));
         jLabel6.setText("Password");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 370, 90, 20));
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 370, 90, 20));
 
-        txtPassword.setBackground(new java.awt.Color(0, 204, 204));
+        txtPassword.setBackground(new java.awt.Color(255, 255, 255));
         txtPassword.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         txtPassword.setBorder(null);
-        jPanel1.add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 390, 330, 20));
+        jPanel1.add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 390, 330, 20));
 
         jSeparator2.setBackground(new java.awt.Color(0, 51, 255));
         jSeparator2.setForeground(new java.awt.Color(0, 51, 255));
-        jPanel1.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 410, 330, 10));
+        jPanel1.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 410, 330, 10));
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel7.setForeground(new java.awt.Color(51, 51, 51));
         jLabel7.setText("Gender");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 440, 80, 20));
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 440, 80, 20));
 
-        txtFirstName.setBackground(new java.awt.Color(0, 204, 204));
+        txtFirstName.setBackground(new java.awt.Color(255, 255, 255));
         txtFirstName.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         txtFirstName.setBorder(null);
-        jPanel1.add(txtFirstName, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 160, 330, 20));
+        jPanel1.add(txtFirstName, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 160, 330, 20));
 
         jSeparator9.setBackground(new java.awt.Color(0, 51, 255));
         jSeparator9.setForeground(new java.awt.Color(0, 51, 255));
-        jPanel1.add(jSeparator9, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 180, 330, 10));
+        jPanel1.add(jSeparator9, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 180, 330, 10));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setForeground(new java.awt.Color(51, 51, 51));
         jLabel3.setText("Sign Up ");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 10, -1, 26));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 10, -1, 26));
 
-        btnSignUp.setBackground(new java.awt.Color(0, 153, 153));
         btnSignUp.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         btnSignUp.setForeground(new java.awt.Color(255, 255, 255));
         btnSignUp.setText("SignUp");
@@ -176,40 +175,42 @@ public class AdminSignUp extends javax.swing.JFrame {
                 btnSignUpActionPerformed(evt);
             }
         });
-        jPanel1.add(btnSignUp, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 500, -1, -1));
+        jPanel1.add(btnSignUp, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 500, -1, -1));
 
+        male.setBackground(new java.awt.Color(255, 255, 255));
         buttonGroup1.add(male);
         male.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        male.setForeground(new java.awt.Color(0, 102, 255));
+        male.setForeground(new java.awt.Color(51, 51, 51));
         male.setText("Male");
-        jPanel1.add(male, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 440, 70, -1));
+        jPanel1.add(male, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 440, 70, -1));
 
+        female.setBackground(new java.awt.Color(255, 255, 255));
         buttonGroup1.add(female);
         female.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        female.setForeground(new java.awt.Color(0, 102, 255));
+        female.setForeground(new java.awt.Color(51, 51, 51));
         female.setText("Female");
-        jPanel1.add(female, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 440, 80, -1));
+        jPanel1.add(female, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 440, 80, -1));
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel8.setForeground(new java.awt.Color(51, 51, 51));
         jLabel8.setText("FirstName");
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 130, -1, 20));
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 130, -1, 20));
 
-        txtUsername.setBackground(new java.awt.Color(0, 204, 204));
+        txtUsername.setBackground(new java.awt.Color(255, 255, 255));
         txtUsername.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         txtUsername.setBorder(null);
-        jPanel1.add(txtUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 90, 330, 20));
+        jPanel1.add(txtUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 90, 330, 20));
 
         jSeparator10.setBackground(new java.awt.Color(0, 51, 255));
         jSeparator10.setForeground(new java.awt.Color(0, 51, 255));
-        jPanel1.add(jSeparator10, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 110, 330, 10));
+        jPanel1.add(jSeparator10, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 110, 330, 10));
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel9.setForeground(new java.awt.Color(51, 51, 51));
         jLabel9.setText("Username");
-        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 60, -1, 20));
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 60, -1, 20));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 0, 420, 540));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 0, 450, 540));
 
         pack();
         setLocationRelativeTo(null);

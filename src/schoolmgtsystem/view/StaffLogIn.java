@@ -24,6 +24,7 @@ import schoolmgtsystem.model.CountFunction;
 public class StaffLogIn extends javax.swing.JFrame implements EventListener {
 
     String name;
+    String id;
 
     /**
      * Creates new form TeacherLogIn
@@ -216,11 +217,13 @@ public class StaffLogIn extends javax.swing.JFrame implements EventListener {
                     email = result.getString("Email");
                     pass = result.getString("Password");
                     name = result.getString("StaffName");
+                    id = result.getString("StaffID");
                     System.out.println(email + " " + pass + " " + name);
                 }
                 if (counter == 1) {
                     JOptionPane.showMessageDialog(this, "Welcome " + name);
                     StudentInformation1 si = new StudentInformation1();
+                    StudentInformation1.lblID.setText(id);
                     StudentInformation1.lblName.setText("Welcome  < " + " " + name + " >");
                     StudentInformation1.studentCount.setText("Student Count = " + Integer.toString(CountFunction.CountData("student_details")));
                     StudentInformation1.staffCount.setText("Staff Count = " + Integer.toString(CountFunction.CountData("staff_details")));

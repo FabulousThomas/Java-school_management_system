@@ -5,6 +5,9 @@
  */
 package schoolmgtsystem.dbhelper;
 
+import java.awt.Image;
+import java.awt.image.BufferedImage;
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -13,13 +16,18 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.imageio.ImageIO;
 import javax.swing.DefaultListModel;
+import javax.swing.ImageIcon;
 import javax.swing.JList;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
+import schoolmgtsystem.view.AdminMgt;
 import static schoolmgtsystem.view.ListView.studentList;
-import schoolmgtsystem.view.StudentProfileOnly;
-import schoolmgtsystem.view.StudentTable;
+import schoolmgtsystem.view.StaffProfile;
+import static schoolmgtsystem.view.StaffProfile.lblImage;
+import schoolmgtsystem.view.StudentInformation;
+import schoolmgtsystem.view.StudentInformation1;
 
 /**
  *
@@ -29,6 +37,8 @@ public class DBHandler extends Configs {
 
     Connection dbConnection;
     DefaultListModel listModel;
+    BufferedImage bufferedImage;
+    ImageIcon imageIcon;
     JList list;
     String name;
 
@@ -142,27 +152,76 @@ public class DBHandler extends Configs {
         }
     }
 
-    public void tableFunction() {
-        DBHandler handler = new DBHandler();
-        StudentTable st = new StudentTable();
+    public void staffProfile() {
+//        DBHandler handler = new DBHandler();
+//        StudentInformation1 st = new StudentInformation1();
 
-        if (StudentTable.jTable1.isRowSelected(0)) {
-            String query = "SELECT * FROM student_details WHERE StudentID = ?";
-            try {
-                PreparedStatement pst = handler.getdbConnection().prepareStatement(query);
-                pst.setString(1, StudentTable.jTable1.getColumnName(3));
-                ResultSet rs = pst.executeQuery();
-                while (rs.next()) {
-                    StudentProfileOnly sp = new StudentProfileOnly();
-                    StudentProfileOnly.lblName.setText(rs.getString("StudentName"));
-                    sp.show();
-                }
-
-            } catch (ClassNotFoundException | SQLException ex) {
-                Logger.getLogger(DBHandler.class.getName()).log(Level.SEVERE, null, ex);
+        String query = "SELECT * FROM staff_details WHERE StaffID = ?";
+        try {
+            PreparedStatement pst = getdbConnection().prepareStatement(query);
+            pst.setString(1, StudentInformation1.lblID.getText());
+            ResultSet rs = pst.executeQuery();
+            while (rs.next()) {
+                StaffProfile sp = new StaffProfile();
+                StaffProfile.txtID.setText(rs.getString("StaffID"));
+                StaffProfile.txtName.setText(rs.getString("StaffName"));
+                StaffProfile.txtEmail.setText(rs.getString("Email"));
+                StaffProfile.txtHome.setText(rs.getString("HomeAddress"));
+                StaffProfile.txtTel1.setText(rs.getString("Tel1"));
+                StaffProfile.txtTel2.setText(rs.getString("Tel2"));
+                StaffProfile.txtState.setText(rs.getString("State"));
+                StaffProfile.txtJobDes.setText(rs.getString("JobDescription"));
+                StaffProfile.txtPassword.setText(rs.getString("Password"));
+                StaffProfile.Position.setSelectedItem(rs.getString("Position"));
+                bufferedImage = ImageIO.read(rs.getBinaryStream("Passport"));
+                imageIcon = new ImageIcon(new ImageIcon(bufferedImage).getImage().getScaledInstance(StaffProfile.lblImage.getWidth(),
+                        StaffProfile.lblImage.getHeight(), Image.SCALE_DEFAULT));
+                StaffProfile.lblImage.setIcon(imageIcon);
+                StaffProfile.StartDate.setDate(rs.getDate("StartDate"));
+                StaffProfile.EndDate.setDate(rs.getDate("EndDate"));
+                sp.show();
             }
 
+        } catch (ClassNotFoundException | SQLException | IOException ex) {
+            Logger.getLogger(DBHandler.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }
+
+    public void adminProfile() {
+//        DBHandler handler = new DBHandler();
+//        StudentInformation1 st = new StudentInformation1();
+
+        String query = "SELECT * FROM admin WHERE AdminID = ?";
+        try {
+            PreparedStatement pst = getdbConnection().prepareStatement(query);
+            pst.setString(1, StudentInformation.lblID.getText());
+            ResultSet rs = pst.executeQuery();
+            while (rs.next()) {
+                AdminMgt am = new AdminMgt();
+                AdminMgt.lblID.setText(rs.getString("AdminID"));
+                AdminMgt.txtFirstName.setText(rs.getString("FirstName"));
+                AdminMgt.txtEmail.setText(rs.getString("Email"));
+                AdminMgt.txtUsername.setText(rs.getString("username"));
+                AdminMgt.txtSurname.setText(rs.getString("Surname"));
+//                AdminMgt.txtTel2.setText(rs.getString("Tel2"));
+
+                AdminMgt.txtPassword.setText(rs.getString("Password"));
+                am.show();
+            }
+
+        } catch (ClassNotFoundException | SQLException ex) {
+            Logger.getLogger(DBHandler.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    public ImageIcon resizeImage(String imgPath) {
+        ImageIcon myImage = new ImageIcon(imgPath);
+        Image img = myImage.getImage();
+        Image newImage = img.getScaledInstance(lblImage.getWidth(), lblImage.getHeight(), Image.SCALE_SMOOTH);
+        ImageIcon image = new ImageIcon(newImage);
+
+        return image;
+
     }
 
 }

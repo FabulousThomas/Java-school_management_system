@@ -24,6 +24,7 @@ public class AdminLogIn extends javax.swing.JFrame {
 
     String name;
     String sName;
+    String id;
     StudentInformation si = new StudentInformation();
 
     //String conStr = "jdbc:sqlserver://localhost;instanceName=SQLEXPRESS;databaseName=Home;user=sa;password=123456789";
@@ -95,8 +96,8 @@ public class AdminLogIn extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Principal SignIn");
-        jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 130, -1, -1));
+        jLabel2.setText("Admin SignIn");
+        jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 130, -1, -1));
         jPanel3.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 350, 256, 10));
         jPanel3.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 370, 232, 10));
         jPanel3.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 390, 184, 10));
@@ -136,7 +137,7 @@ public class AdminLogIn extends javax.swing.JFrame {
         jLabel3.setForeground(new java.awt.Color(0, 102, 204));
         jLabel3.setText("Sign In ");
         jPanel2.add(jLabel3);
-        jLabel3.setBounds(160, 30, 93, 26);
+        jLabel3.setBounds(160, 20, 93, 40);
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(0, 102, 204));
@@ -241,12 +242,14 @@ public class AdminLogIn extends javax.swing.JFrame {
                     pass = result.getString("Password");
                     name = result.getString("FirstName");
                     sName = result.getString("Surname");
+                    id = result.getString("AdminID");
                     System.out.println("Email-> " + email + ", Password-> " + pass);
                 }
 
                 if (counter == 1) {
                     JOptionPane.showMessageDialog(this, "Welcome Admin " + "(" + name + ")");
                     StudentInformation.lblName.setText("Welcome  < " + sName + " " + name + " >");
+                    StudentInformation.lblID.setText(id);
                     StudentInformation.studentCount.setText("Student Count = " + Integer.toString(CountFunction.CountData("student_details")));
                     StudentInformation.teacherCount.setText("Staff Count = " + Integer.toString(CountFunction.CountData("staff_details")));
                     si.show();

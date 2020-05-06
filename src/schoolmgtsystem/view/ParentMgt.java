@@ -322,7 +322,7 @@ public class ParentMgt extends javax.swing.JFrame {
         jPanel1.add(txtID, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 60, 100, 30));
 
         lblError.setForeground(new java.awt.Color(255, 0, 0));
-        jPanel1.add(lblError, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 100, 130, 20));
+        jPanel1.add(lblError, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 70, 130, 20));
 
         btnRetrieve.setBackground(new java.awt.Color(255, 255, 255));
         btnRetrieve.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -424,6 +424,7 @@ public class ParentMgt extends javax.swing.JFrame {
                 txtNation.setText("");
                 txtReligion.setText("");
                 txtState.setText("");
+                txtPassword.setText("");
 
             } catch (ClassNotFoundException | SQLException ex) {
                 Logger.getLogger(ParentSignUp.class.getName()).log(Level.SEVERE, null, ex);
@@ -527,6 +528,17 @@ public class ParentMgt extends javax.swing.JFrame {
                             temp.setText(null);
                         }
                     }
+                    txtName.setText("");
+                    txtOccupation.setText("");
+                    txtHome.setText("");
+                    txtEmail.setText("");
+                    txtPassword.setText("");
+                    txtTel1.setText("");
+                    txtTel2.setText("");
+                    txtOffice.setText("");
+                    txtNation.setText("");
+                    txtReligion.setText("");
+                    txtState.setText("");
                 }
                 if (counter == 1) {
                     txtName.setText(name);

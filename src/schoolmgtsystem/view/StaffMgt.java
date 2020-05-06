@@ -9,14 +9,13 @@ import java.awt.Component;
 import java.awt.Image;
 import java.awt.image.BufferedImage;
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.sql.Blob;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.imageio.ImageIO;
@@ -32,7 +31,7 @@ import schoolmgtsystem.dbhelper.DBHandler;
  * @author Thomas
  */
 public class StaffMgt extends javax.swing.JFrame {
-
+    
     String s;
     InputStream input;
     BufferedImage bufferedImage;
@@ -414,13 +413,13 @@ public class StaffMgt extends javax.swing.JFrame {
     }//GEN-LAST:event_btnsaveMousePressed
 
     private void btnsaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsaveActionPerformed
-
+        
         DBHandler handler = new DBHandler();
         String str = "UPDATE staff_details SET StaffName=?,Passport=?,Email=?,Tel1=?,Tel2=?,"
                 + "JobDescription=?,Position=?,HomeAddress=?,StartDate=?,EndDate=?,Gender=?,Password=?,State=? "
                 + "WHERE StaffID=?";
         try {
-
+            
             try (PreparedStatement pst = handler.getdbConnection().prepareStatement(str)) {
                 pst.setString(1, txtName.getText());
 //                input = new FileInputStream(new File(s));
@@ -433,7 +432,7 @@ public class StaffMgt extends javax.swing.JFrame {
                 pst.setString(8, txtHome.getText());
                 pst.setDate(9, convertUtilDateToSqlDate(StartDate.getDate()));
                 pst.setDate(10, convertUtilDateToSqlDate(EndDate.getDate()));
-
+                
                 String gender;
                 if (RMale.isSelected()) {
                     gender = "Male";
@@ -444,11 +443,11 @@ public class StaffMgt extends javax.swing.JFrame {
                 pst.setString(12, txtPassword.getText());
                 pst.setString(13, txtState.getText());
                 pst.setString(14, txtID.getText());
-
+                
                 int count = pst.executeUpdate();
                 JOptionPane.showMessageDialog(this, count + " Successful");
             }
-
+            
             txtName.setText("");
             lblImage.setText("");
             txtState.setText("");
@@ -461,7 +460,7 @@ public class StaffMgt extends javax.swing.JFrame {
             txtJobDes.setText("");
             txtPassword.setText("");
             Position.setSelectedIndex(0);
-
+            
         } catch (ClassNotFoundException | SQLException ex) {
             Logger.getLogger(StaffSignUp.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -473,7 +472,7 @@ public class StaffMgt extends javax.swing.JFrame {
     }//GEN-LAST:event_btncancelMousePressed
 
     private void btncancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncancelActionPerformed
-
+        
         this.dispose();
 
     }//GEN-LAST:event_btncancelActionPerformed
@@ -483,7 +482,7 @@ public class StaffMgt extends javax.swing.JFrame {
     }//GEN-LAST:event_btnRetrieveMousePressed
 
     private void btnRetrieveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRetrieveActionPerformed
-
+        
         String id = txtID.getText();
         String name = txtName.getText();
         String email = txtEmail.getText();
@@ -494,12 +493,12 @@ public class StaffMgt extends javax.swing.JFrame {
         String state = txtState.getText();
         String position = (String) Position.getSelectedItem();
         String job = txtJobDes.getText();
-        String start = StartDate.getDateFormatString();
-        String end = EndDate.getDateFormatString();
-
+        Date start = StartDate.getDate();
+        Date end = EndDate.getDate();
+        
         DBHandler handler = new DBHandler();
         ResultSet rs = null;
-
+        
         if (!id.isEmpty()) {
             String str = "SELECT * FROM staff_details WHERE StaffID=?";
             try {
@@ -518,21 +517,26 @@ public class StaffMgt extends javax.swing.JFrame {
                     state = rs.getString("State");
                     position = rs.getString("Position");
                     job = rs.getString("JobDescription");
-                    start = rs.getString("StartDate");
-                    end = rs.getString("EndDate");
+                    start = rs.getDate("StartDate");
+                    end = rs.getDate("EndDate");
                     bufferedImage = ImageIO.read(rs.getBinaryStream("Passport"));
-
+                    
                 } else {
                     JOptionPane.showMessageDialog(this, "No Staff ID as " + id);
                     JTextField temp = null;
                     for (Component C : jPanel1.getComponents()) {
                         if (C.getClass().toString().contains("javax.swing.JTextField")) {
-
                             temp = (JTextField) C;
                             temp.setText(null);
                         }
                     }
                     Position.setSelectedIndex(0);
+                    txtHome.setText(null);
+                    txtJobDes.setText(null);
+                    StartDate.setDate(null);
+                    EndDate.setDate(null);
+                    lblImage.setText("");
+                    lblImage.setIcon(null);
                 }
                 if (counter == 1) {
                     txtName.setText(name);
@@ -544,8 +548,8 @@ public class StaffMgt extends javax.swing.JFrame {
                     txtState.setText(state);
                     Position.setSelectedItem(position);
                     txtJobDes.setText(job);
-                    StartDate.setDateFormatString(start);
-                    EndDate.setDateFormatString(end);
+                    StartDate.setDate(start);
+                    EndDate.setDate(end);
                     imageIcon = new ImageIcon(new ImageIcon(bufferedImage).getImage().getScaledInstance(lblImage.getWidth(),
                             lblImage.getHeight(), Image.SCALE_DEFAULT));
                     lblImage.setIcon(imageIcon);
@@ -553,7 +557,7 @@ public class StaffMgt extends javax.swing.JFrame {
                 } else {
                     JOptionPane.showMessageDialog(this, "Can't retrieve data !");
                 }
-
+                
             } catch (ClassNotFoundException | SQLException | IOException ex) {
                 Logger.getLogger(StaffMgt.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -567,12 +571,18 @@ public class StaffMgt extends javax.swing.JFrame {
                 }
             }
             Position.setSelectedIndex(0);
+            txtHome.setText(null);
+            txtJobDes.setText(null);
+            StartDate.setDate(null);
+            EndDate.setDate(null);
+            lblImage.setText("");
+            lblImage.setIcon(null);
         }
 
     }//GEN-LAST:event_btnRetrieveActionPerformed
 
     private void btnCloseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCloseMouseClicked
-
+        
         this.dispose();
 
     }//GEN-LAST:event_btnCloseMouseClicked
@@ -593,15 +603,11 @@ public class StaffMgt extends javax.swing.JFrame {
                     break;
                 }
             }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(StaffMgt.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(StaffMgt.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(StaffMgt.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(StaffMgt.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        
         //</editor-fold>
 
         /* Create and display the form */
@@ -616,22 +622,22 @@ public class StaffMgt extends javax.swing.JFrame {
         Image img = myImage.getImage();
         Image newImage = img.getScaledInstance(lblImage.getWidth(), lblImage.getHeight(), Image.SCALE_SMOOTH);
         ImageIcon image = new ImageIcon(newImage);
-
+        
         return image;
-
+        
     }
-
+    
     private java.sql.Date getCurrentDate() {
         java.util.Date today = new java.util.Date();
         return new java.sql.Date(today.getYear());
     }
-
+    
     private java.sql.Date convertUtilDateToSqlDate(java.util.Date date) {
         if (date != null) {
             java.sql.Date sqlDate = new java.sql.Date(date.getTime());
             return sqlDate;
         }
-
+        
         return null;
     }
 

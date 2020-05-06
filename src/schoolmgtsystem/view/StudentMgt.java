@@ -61,7 +61,6 @@ public class StudentMgt extends javax.swing.JFrame {
         buttonGroup2 = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
-        lblError = new javax.swing.JLabel();
         btnClose = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
@@ -104,6 +103,7 @@ public class StudentMgt extends javax.swing.JFrame {
         btnSave = new javax.swing.JButton();
         btnRetrieve = new javax.swing.JButton();
         btncancel = new javax.swing.JButton();
+        lblError = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocationByPlatform(true);
@@ -116,10 +116,6 @@ public class StudentMgt extends javax.swing.JFrame {
         jLabel4.setForeground(new java.awt.Color(51, 51, 51));
         jLabel4.setText("STUDENT MANAGEMENT(Update)");
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 10, -1, 26));
-
-        lblError.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
-        lblError.setForeground(new java.awt.Color(255, 0, 0));
-        jPanel1.add(lblError, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 110, 110, 20));
 
         btnClose.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         btnClose.setIcon(new javax.swing.ImageIcon(getClass().getResource("/schoolmgtsystem/IconImages/icons8_Xbox_X.png"))); // NOI18N
@@ -176,11 +172,13 @@ public class StudentMgt extends javax.swing.JFrame {
         jLabel14.setText("Disability ?");
         jPanel3.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 360, -1, -1));
 
+        buttonGroup2.add(CYes);
         CYes.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         CYes.setText("Yes");
         CYes.setBorderPainted(true);
         jPanel3.add(CYes, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 360, -1, -1));
 
+        buttonGroup2.add(CNo);
         CNo.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         CNo.setSelected(true);
         CNo.setText("No");
@@ -220,12 +218,14 @@ public class StudentMgt extends javax.swing.JFrame {
         jLabel10.setText("Gender");
         jPanel3.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 310, -1, -1));
 
+        buttonGroup1.add(CMale);
         CMale.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         CMale.setSelected(true);
         CMale.setText("Male");
         CMale.setBorderPainted(true);
         jPanel3.add(CMale, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 310, -1, -1));
 
+        buttonGroup1.add(CFemale);
         CFemale.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         CFemale.setText("Female");
         CFemale.setBorderPainted(true);
@@ -370,6 +370,10 @@ public class StudentMgt extends javax.swing.JFrame {
         });
         jPanel3.add(btncancel, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 510, 90, 40));
 
+        lblError.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        lblError.setForeground(new java.awt.Color(255, 0, 0));
+        jPanel3.add(lblError, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 80, 80, 10));
+
         jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 910, 590));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -453,11 +457,15 @@ public class StudentMgt extends javax.swing.JFrame {
                             temp.setText(null);
                         }
                     }
-                    password.setText("");
-                    Session.setName("0");
-                    RegDate.setDateFormatString("");
-                    EndDate.setDateFormatString("");
-                    lblImage.setText("");
+                    password.setText(null);
+                    Name.setText(null);
+                    AdmClass.setText(null);
+                    PreClass.setText(null);
+                    Session.setYear(0);
+                    PreSchool.setText(null);
+                    RegDate.setDate(null);
+                    EndDate.setDate(null);
+                    lblImage.setText(null);
                     lblImage.setIcon(null);
                 }
 
@@ -467,8 +475,6 @@ public class StudentMgt extends javax.swing.JFrame {
                     PreClass.setText(preClass);
                     AdmClass.setText(admClass);
                     Session.setYear(session);
-                    //                    convertUtilDateToSqlDate(RegDate.getDate());
-                    //                    convertUtilDateToSqlDate(EndDate.getDate());
                     RegDate.setDate(regDate);
                     EndDate.setDate(endDate);
                     password.setText(pass);
@@ -503,10 +509,15 @@ public class StudentMgt extends javax.swing.JFrame {
                     temp.setText(null);
                 }
             }
-            password.setText("");
-            Session.setName("0");
-            RegDate.setDateFormatString("");
-            EndDate.setDateFormatString("");
+            password.setText(null);
+            Name.setText(null);
+            AdmClass.setText(null);
+            PreClass.setText(null);
+            Session.setYear(0);
+            PreSchool.setText(null);
+            RegDate.setDate(null);
+            EndDate.setDate(null);
+            lblImage.setText(null);
             lblImage.setIcon(null);
         }
 

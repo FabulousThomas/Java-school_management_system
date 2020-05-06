@@ -7,6 +7,7 @@ package schoolmgtsystem.view;
 
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import schoolmgtsystem.dbhelper.DBHandler;
 
 /**
  *
@@ -17,9 +18,11 @@ public class StudentInformation1 extends javax.swing.JFrame {
     /**
      * Creates new form StudentInformation
      */
+    DBHandler handler = new DBHandler();
     public StudentInformation1() {
         initComponents();
         setLocationRelativeTo(null);
+        
     }
 
     /**
@@ -39,12 +42,15 @@ public class StudentInformation1 extends javax.swing.JFrame {
         studentCount = new javax.swing.JLabel();
         lblName = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        lblID = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenuFileRecord = new javax.swing.JMenu();
         jMenuItemHome = new javax.swing.JMenuItem();
         jMenuItemStdList = new javax.swing.JMenuItem();
         jMenuItemStdList1 = new javax.swing.JMenuItem();
+        jMenuItemProfile = new javax.swing.JMenuItem();
         jMenuItemClose = new javax.swing.JMenuItem();
         jMenuEdit = new javax.swing.JMenu();
         jMenuItemUpStudent = new javax.swing.JMenuItem();
@@ -122,6 +128,17 @@ public class StudentInformation1 extends javax.swing.JFrame {
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/schoolmgtsystem/IconImages/icons8_School_House.png"))); // NOI18N
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 10, 120, 100));
 
+        lblID.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        lblID.setForeground(new java.awt.Color(51, 51, 51));
+        lblID.setText("ID");
+        jPanel1.add(lblID, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 0, 40, -1));
+
+        jLabel4.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel4.setText("Your ID:");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 0, 60, -1));
+
         jLabel1.setText("jLabel1");
 
         jMenuBar1.setBackground(new java.awt.Color(255, 255, 255));
@@ -171,6 +188,19 @@ public class StudentInformation1 extends javax.swing.JFrame {
         });
         jMenuFileRecord.add(jMenuItemStdList1);
 
+        jMenuItemProfile.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.ALT_MASK | java.awt.event.InputEvent.CTRL_MASK));
+        jMenuItemProfile.setBackground(new java.awt.Color(255, 255, 255));
+        jMenuItemProfile.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        jMenuItemProfile.setForeground(new java.awt.Color(51, 51, 51));
+        jMenuItemProfile.setIcon(new javax.swing.ImageIcon(getClass().getResource("/schoolmgtsystem/IconImages/icons8_Profile.png"))); // NOI18N
+        jMenuItemProfile.setText("View Profile");
+        jMenuItemProfile.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemProfileActionPerformed(evt);
+            }
+        });
+        jMenuFileRecord.add(jMenuItemProfile);
+
         jMenuItemClose.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F4, java.awt.event.InputEvent.ALT_MASK));
         jMenuItemClose.setBackground(new java.awt.Color(255, 255, 255));
         jMenuItemClose.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
@@ -196,7 +226,7 @@ public class StudentInformation1 extends javax.swing.JFrame {
         jMenuItemUpStudent.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         jMenuItemUpStudent.setForeground(new java.awt.Color(51, 51, 51));
         jMenuItemUpStudent.setIcon(new javax.swing.ImageIcon(getClass().getResource("/schoolmgtsystem/IconImages/icons8_Student_Male.png"))); // NOI18N
-        jMenuItemUpStudent.setText("Update Students");
+        jMenuItemUpStudent.setText("Manage Students");
         jMenuItemUpStudent.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItemUpStudentActionPerformed(evt);
@@ -209,7 +239,7 @@ public class StudentInformation1 extends javax.swing.JFrame {
         jMenuItemUpParent.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         jMenuItemUpParent.setForeground(new java.awt.Color(51, 51, 51));
         jMenuItemUpParent.setIcon(new javax.swing.ImageIcon(getClass().getResource("/schoolmgtsystem/IconImages/icons8_Family.png"))); // NOI18N
-        jMenuItemUpParent.setText("Update Parents");
+        jMenuItemUpParent.setText("Manage Parents");
         jMenuItemUpParent.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItemUpParentActionPerformed(evt);
@@ -278,6 +308,10 @@ public class StudentInformation1 extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jMenuItemStdList1ActionPerformed
 
+    private void jMenuItemProfileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemProfileActionPerformed
+      handler.staffProfile();
+    }//GEN-LAST:event_jMenuItemProfileActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -315,12 +349,14 @@ public class StudentInformation1 extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenu jMenuEdit;
     private javax.swing.JMenu jMenuFileRecord;
     private javax.swing.JMenuItem jMenuItemClose;
     private javax.swing.JMenuItem jMenuItemHome;
+    private javax.swing.JMenuItem jMenuItemProfile;
     private javax.swing.JMenuItem jMenuItemStdList;
     private javax.swing.JMenuItem jMenuItemStdList1;
     private javax.swing.JMenuItem jMenuItemUpParent;
@@ -328,6 +364,7 @@ public class StudentInformation1 extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    public static javax.swing.JLabel lblID;
     public static javax.swing.JLabel lblName;
     public static javax.swing.JLabel staffCount;
     public static javax.swing.JLabel studentCount;

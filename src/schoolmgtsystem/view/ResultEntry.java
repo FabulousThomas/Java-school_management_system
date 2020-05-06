@@ -811,11 +811,10 @@ public class ResultEntry extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 102, 153));
         jLabel1.setText("WELCOME  TO  BRIGHT STARS SCHOOLS");
-        PanelWelcome.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(107, 43, -1, 45));
+        PanelWelcome.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 20, -1, 45));
 
         jLabel63.setIcon(new javax.swing.ImageIcon(getClass().getResource("/schoolmgtsystem/IconImages/Bright_Stars.png"))); // NOI18N
-        jLabel63.setText("Image");
-        PanelWelcome.add(jLabel63, new org.netbeans.lib.awtextra.AbsoluteConstraints(353, 142, 226, 167));
+        PanelWelcome.add(jLabel63, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 180, 226, 167));
 
         btnClose.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         btnClose.setIcon(new javax.swing.ImageIcon(getClass().getResource("/schoolmgtsystem/IconImages/icons8_Xbox_X.png"))); // NOI18N

@@ -55,7 +55,7 @@
           </Events>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="420" y="280" width="140" height="40"/>
+              <AbsoluteConstraints x="370" y="250" width="-1" height="50"/>
             </Constraint>
           </Constraints>
         </Component>
@@ -67,7 +67,7 @@
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="0" y="0" width="710" height="90"/>
+              <AbsoluteConstraints x="0" y="0" width="710" height="70"/>
             </Constraint>
           </Constraints>
 
@@ -87,22 +87,24 @@
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="270" y="30" width="-1" height="26"/>
+                  <AbsoluteConstraints x="250" y="10" width="-1" height="30"/>
                 </Constraint>
               </Constraints>
             </Component>
-            <Component class="javax.swing.JLabel" name="btnBack">
+            <Component class="javax.swing.JLabel" name="btnClose">
               <Properties>
+                <Property name="horizontalAlignment" type="int" value="0"/>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/schoolmgtsystem/IconImages/icons8_Left_30px_1.png"/>
+                  <Image iconType="3" name="/schoolmgtsystem/IconImages/icons8_Xbox_X.png"/>
                 </Property>
+                <Property name="toolTipText" type="java.lang.String" value="close"/>
               </Properties>
               <Events>
-                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btnBackMouseClicked"/>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btnCloseMouseClicked"/>
               </Events>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="10" y="10" width="-1" height="20"/>
+                  <AbsoluteConstraints x="660" y="0" width="40" height="-1"/>
                 </Constraint>
               </Constraints>
             </Component>
@@ -120,7 +122,7 @@
           </Events>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="160" y="150" width="140" height="40"/>
+              <AbsoluteConstraints x="160" y="150" width="140" height="50"/>
             </Constraint>
           </Constraints>
         </Component>
@@ -136,7 +138,7 @@
           </Events>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="420" y="150" width="140" height="40"/>
+              <AbsoluteConstraints x="400" y="150" width="140" height="50"/>
             </Constraint>
           </Constraints>
         </Component>
@@ -152,7 +154,7 @@
           </Events>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="160" y="280" width="140" height="40"/>
+              <AbsoluteConstraints x="110" y="250" width="230" height="50"/>
             </Constraint>
           </Constraints>
         </Component>
