@@ -639,8 +639,6 @@ public class StudentResult_Primary extends javax.swing.JFrame {
     }//GEN-LAST:event_btnExitActionPerformed
 
     private void jLabel18MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel18MouseClicked
-        new ResultView().show();
-        setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jLabel18MouseClicked
 

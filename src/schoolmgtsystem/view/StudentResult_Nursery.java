@@ -579,7 +579,6 @@ public class StudentResult_Nursery extends javax.swing.JFrame {
     }//GEN-LAST:event_btnResetActionPerformed
 
     private void jLabel18MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel18MouseClicked
-        new ResultView().show();
         this.dispose();
     }//GEN-LAST:event_jLabel18MouseClicked
 
@@ -763,7 +762,7 @@ public class StudentResult_Nursery extends javax.swing.JFrame {
             Paragraph sti = new Paragraph();
             sti.add(address);
             sti.setAlignment(Element.ALIGN_CENTER);
-            
+
             Paragraph tele = new Paragraph();
             tele.add("Tel: " + tel);
             tele.setAlignment(Element.ALIGN_CENTER);
@@ -771,7 +770,6 @@ public class StudentResult_Nursery extends javax.swing.JFrame {
 //            Paragraph img = new Paragraph();
 //            img.add(Image.getInstance("C:\\Users\\Thomas\\Documents\\NetBeansProjects\\SchoolMgtSystem\\Bright_Stars.png"));
 //            img.setAlignment(Element.ALIGN_CENTER);
-            
             Image image = Image.getInstance("C:\\Users\\Thomas\\Documents\\NetBeansProjects\\SchoolMgtSystem\\Bright_Stars.png");
             image.setAbsolutePosition(70, 743);
 
@@ -907,7 +905,7 @@ public class StudentResult_Nursery extends javax.swing.JFrame {
             PdfPCell nr8 = new PdfPCell(new Paragraph(""));
             PdfPCell nr9 = new PdfPCell(new Paragraph(""));
             PdfPCell nr10 = new PdfPCell(new Paragraph(""));
-            
+
             PdfPCell v1 = new PdfPCell(new Paragraph("10"));
             PdfPCell v2 = new PdfPCell(new Paragraph("VERBAL REASONING"));
             PdfPCell v3 = new PdfPCell(new Paragraph("100"));
@@ -929,7 +927,7 @@ public class StudentResult_Nursery extends javax.swing.JFrame {
             PdfPCell q8 = new PdfPCell(new Paragraph(""));
             PdfPCell q9 = new PdfPCell(new Paragraph(""));
             PdfPCell q10 = new PdfPCell(new Paragraph(""));
-            
+
             PdfPCell m1 = new PdfPCell(new Paragraph("12"));
             PdfPCell m2 = new PdfPCell(new Paragraph("MORAL INSTRUCTION"));
             PdfPCell m3 = new PdfPCell(new Paragraph("100"));
@@ -940,7 +938,7 @@ public class StudentResult_Nursery extends javax.swing.JFrame {
             PdfPCell m8 = new PdfPCell(new Paragraph(""));
             PdfPCell m9 = new PdfPCell(new Paragraph(""));
             PdfPCell m10 = new PdfPCell(new Paragraph(""));
-            
+
             PdfPCell t1 = new PdfPCell(new Paragraph(""));
             PdfPCell t2 = new PdfPCell(new Paragraph("TOTAL\t\t\t\t" + score_total));
             PdfPCell t3 = new PdfPCell(new Paragraph(""));
@@ -996,7 +994,7 @@ public class StudentResult_Nursery extends javax.swing.JFrame {
             table.addCell(e8);
             table.addCell(e9);
             table.addCell(e10);
-            
+
             table.addCell(sh1);
             table.addCell(sh2);
             table.addCell(sh3);
@@ -1007,7 +1005,7 @@ public class StudentResult_Nursery extends javax.swing.JFrame {
             table.addCell(sh8);
             table.addCell(sh9);
             table.addCell(sh10);
-            
+
             table.addCell(hh1);
             table.addCell(hh2);
             table.addCell(hh3);
@@ -1018,7 +1016,7 @@ public class StudentResult_Nursery extends javax.swing.JFrame {
             table.addCell(hh8);
             table.addCell(hh9);
             table.addCell(hh10);
-            
+
             table.addCell(co1);
             table.addCell(co2);
             table.addCell(co3);
@@ -1029,7 +1027,7 @@ public class StudentResult_Nursery extends javax.swing.JFrame {
             table.addCell(co8);
             table.addCell(co9);
             table.addCell(co10);
-            
+
             table.addCell(ca1);
             table.addCell(ca2);
             table.addCell(ca3);
@@ -1040,7 +1038,7 @@ public class StudentResult_Nursery extends javax.swing.JFrame {
             table.addCell(ca8);
             table.addCell(ca9);
             table.addCell(ca10);
-            
+
             table.addCell(wr1);
             table.addCell(wr2);
             table.addCell(wr3);
@@ -1051,7 +1049,7 @@ public class StudentResult_Nursery extends javax.swing.JFrame {
             table.addCell(wr8);
             table.addCell(wr9);
             table.addCell(wr10);
-            
+
             table.addCell(nr1);
             table.addCell(nr2);
             table.addCell(nr3);
@@ -1062,7 +1060,7 @@ public class StudentResult_Nursery extends javax.swing.JFrame {
             table.addCell(nr8);
             table.addCell(nr9);
             table.addCell(nr10);
-            
+
             table.addCell(v1);
             table.addCell(v2);
             table.addCell(v3);
@@ -1073,7 +1071,7 @@ public class StudentResult_Nursery extends javax.swing.JFrame {
             table.addCell(v8);
             table.addCell(v9);
             table.addCell(v10);
-            
+
             table.addCell(q1);
             table.addCell(q2);
             table.addCell(q3);
@@ -1084,7 +1082,7 @@ public class StudentResult_Nursery extends javax.swing.JFrame {
             table.addCell(q8);
             table.addCell(q9);
             table.addCell(q10);
-            
+
             table.addCell(m1);
             table.addCell(m2);
             table.addCell(m3);
@@ -1095,7 +1093,7 @@ public class StudentResult_Nursery extends javax.swing.JFrame {
             table.addCell(m8);
             table.addCell(m9);
             table.addCell(m10);
-            
+
             table.addCell(t1);
             table.addCell(t2);
             table.addCell(t3);
@@ -1106,7 +1104,7 @@ public class StudentResult_Nursery extends javax.swing.JFrame {
             table.addCell(t8);
             table.addCell(t9);
             table.addCell(t10);
-            
+
             document.add(table);
             JOptionPane.showMessageDialog(this, "Result saved");
             document.close();
