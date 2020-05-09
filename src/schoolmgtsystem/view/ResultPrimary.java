@@ -59,7 +59,7 @@ public class ResultPrimary extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        txtFirstName = new javax.swing.JTextField();
+        txtFullName = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         txtSurname = new javax.swing.JTextField();
         txtTotalScore = new javax.swing.JTextField();
@@ -129,8 +129,8 @@ public class ResultPrimary extends javax.swing.JFrame {
         jLabel2.setText("First Name");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 100, 107, -1));
 
-        txtFirstName.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jPanel1.add(txtFirstName, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 100, 167, -1));
+        txtFullName.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jPanel1.add(txtFullName, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 100, 167, -1));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel3.setText("Surname");
@@ -853,7 +853,7 @@ public class ResultPrimary extends javax.swing.JFrame {
 
 //            document.add(new Paragraph(subTitle));
             document.add(new Paragraph("Student ID: " + txtStudentID.getText()));
-            document.add(new Paragraph("First Name: " + txtFirstName.getText()));
+            document.add(new Paragraph("First Name: " + txtFullName.getText()));
             document.add(new Paragraph("Surname: " + txtSurname.getText()));
 //            document.add(new Paragraph("Course Code: " + txtCourseCode.getSelectedItem()));
 
@@ -1295,7 +1295,7 @@ public class ResultPrimary extends javax.swing.JFrame {
     private javax.swing.JTextField txtCivic;
     private javax.swing.JTextField txtEdo;
     private javax.swing.JTextField txtEnglish;
-    private javax.swing.JTextField txtFirstName;
+    public static javax.swing.JTextField txtFullName;
     private javax.swing.JTextField txtHome;
     private javax.swing.JTextField txtICT;
     private javax.swing.JTextField txtMaths;
@@ -1304,7 +1304,7 @@ public class ResultPrimary extends javax.swing.JFrame {
     private javax.swing.JTextField txtQuan;
     private javax.swing.JTextField txtSecurity;
     private javax.swing.JTextField txtSocial;
-    private javax.swing.JTextField txtStudentID;
+    public static javax.swing.JTextField txtStudentID;
     private javax.swing.JTextField txtSurname;
     private javax.swing.JTextField txtTotalScore;
     private javax.swing.JTextArea txtTranscript;

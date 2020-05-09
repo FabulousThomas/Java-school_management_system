@@ -6,7 +6,9 @@
 package schoolmgtsystem.view;
 
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -21,6 +23,7 @@ public class AdminMgt extends javax.swing.JFrame {
     /**
      * Creates new form AdminMgt
      */
+//    String showpass;
     public AdminMgt() {
         initComponents();
         setLocationRelativeTo(null);
@@ -59,7 +62,6 @@ public class AdminMgt extends javax.swing.JFrame {
         btnEdit = new javax.swing.JButton();
         lblID = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        lblPassword = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         btnClose = new javax.swing.JLabel();
@@ -141,7 +143,7 @@ public class AdminMgt extends javax.swing.JFrame {
         txtPassword.setBackground(new java.awt.Color(255, 255, 255));
         txtPassword.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         txtPassword.setBorder(null);
-        jPanel1.add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 190, 260, 20));
+        jPanel1.add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 190, 280, 20));
 
         jSeparator2.setBackground(new java.awt.Color(0, 153, 204));
         jSeparator2.setForeground(new java.awt.Color(0, 153, 204));
@@ -198,15 +200,6 @@ public class AdminMgt extends javax.swing.JFrame {
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Your ID:");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 0, 60, -1));
-
-        lblPassword.setIcon(new javax.swing.ImageIcon(getClass().getResource("/schoolmgtsystem/IconImages/icons8_Show_Password.png"))); // NOI18N
-        lblPassword.setToolTipText("show password");
-        lblPassword.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                lblPasswordMouseClicked(evt);
-            }
-        });
-        jPanel1.add(lblPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 190, 20, 20));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 810, 450));
 
@@ -309,26 +302,20 @@ public class AdminMgt extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSaveActionPerformed
 
     private void btnEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditActionPerformed
-        
+
         txtUsername.setEditable(true);
         txtFirstName.setEditable(true);
         txtSurname.setEditable(true);
         txtEmail.setEditable(true);
         txtPassword.setEditable(true);
-       
-        
+
+
     }//GEN-LAST:event_btnEditActionPerformed
 
     private void btnCloseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCloseMouseClicked
 
         this.dispose();
     }//GEN-LAST:event_btnCloseMouseClicked
-
-    private void lblPasswordMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPasswordMouseClicked
-        
-        
-        
-    }//GEN-LAST:event_lblPasswordMouseClicked
 
     /**
      * @param args the command line arguments
@@ -344,16 +331,24 @@ public class AdminMgt extends javax.swing.JFrame {
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
+
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(AdminMgt.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AdminMgt.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(AdminMgt.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AdminMgt.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(AdminMgt.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AdminMgt.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(AdminMgt.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AdminMgt.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
@@ -387,7 +382,6 @@ public class AdminMgt extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator9;
     public static javax.swing.JLabel lblID;
-    private javax.swing.JLabel lblPassword;
     public static javax.swing.JRadioButton male;
     public static javax.swing.JTextField txtEmail;
     public static javax.swing.JTextField txtFirstName;

@@ -77,7 +77,7 @@ public class ExamResult extends javax.swing.JFrame {
         btnRecord = new javax.swing.JButton();
         btnGenerate = new javax.swing.JButton();
         btnReset = new javax.swing.JButton();
-        btnExit = new javax.swing.JButton();
+        btnPrint = new javax.swing.JButton();
         jLabel18 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -222,14 +222,14 @@ public class ExamResult extends javax.swing.JFrame {
         });
         jPanel4.add(btnReset, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 610, -1, -1));
 
-        btnExit.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        btnExit.setText("Print");
-        btnExit.addActionListener(new java.awt.event.ActionListener() {
+        btnPrint.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        btnPrint.setText("Print");
+        btnPrint.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnExitActionPerformed(evt);
+                btnPrintActionPerformed(evt);
             }
         });
-        jPanel4.add(btnExit, new org.netbeans.lib.awtextra.AbsoluteConstraints(1160, 610, -1, -1));
+        jPanel4.add(btnPrint, new org.netbeans.lib.awtextra.AbsoluteConstraints(1160, 610, -1, -1));
 
         jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/schoolmgtsystem/IconImages/icons8_Left_30px_1.png"))); // NOI18N
         jLabel18.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -680,7 +680,7 @@ public class ExamResult extends javax.swing.JFrame {
 
     }//GEN-LAST:event_btnResetActionPerformed
 
-    private void btnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitActionPerformed
+    private void btnPrintActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPrintActionPerformed
 
         int sel = JOptionPane.showConfirmDialog(this, "Do you want to print Result?");
         if (sel == 0) {
@@ -697,7 +697,7 @@ public class ExamResult extends javax.swing.JFrame {
             this.show();
         }
 
-    }//GEN-LAST:event_btnExitActionPerformed
+    }//GEN-LAST:event_btnPrintActionPerformed
 
     private void jLabel18MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel18MouseClicked
         new ResultView().show();
@@ -1350,8 +1350,8 @@ public class ExamResult extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnExit;
     private javax.swing.JButton btnGenerate;
+    private javax.swing.JButton btnPrint;
     private javax.swing.JButton btnRanking;
     private javax.swing.JButton btnRecord;
     private javax.swing.JButton btnReset;

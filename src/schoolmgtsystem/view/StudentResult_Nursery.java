@@ -35,14 +35,14 @@ import schoolmgtsystem.dbhelper.DBHandler;
  *
  * @author Thomas
  */
-public class ResultNursery extends javax.swing.JFrame {
+public class StudentResult_Nursery extends javax.swing.JFrame {
 
     DBHandler handler;
 
     /**
      * Creates new form ResultNursery
      */
-    public ResultNursery() {
+    public StudentResult_Nursery() {
         initComponents();
         setLocationRelativeTo(null);
     }
@@ -100,7 +100,6 @@ public class ResultNursery extends javax.swing.JFrame {
         txtTranscript = new javax.swing.JTextArea();
         btnRanking = new javax.swing.JButton();
         btnTranscript = new javax.swing.JButton();
-        btnRecord = new javax.swing.JButton();
         btnGenerate = new javax.swing.JButton();
         btnReset = new javax.swing.JButton();
         jLabel18 = new javax.swing.JLabel();
@@ -307,7 +306,7 @@ public class ResultNursery extends javax.swing.JFrame {
                 btnRankingActionPerformed(evt);
             }
         });
-        jPanel4.add(btnRanking, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 610, -1, -1));
+        jPanel4.add(btnRanking, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 610, -1, -1));
 
         btnTranscript.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         btnTranscript.setText("Transcript");
@@ -316,16 +315,7 @@ public class ResultNursery extends javax.swing.JFrame {
                 btnTranscriptActionPerformed(evt);
             }
         });
-        jPanel4.add(btnTranscript, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 610, -1, -1));
-
-        btnRecord.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
-        btnRecord.setText("Add Record");
-        btnRecord.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnRecordActionPerformed(evt);
-            }
-        });
-        jPanel4.add(btnRecord, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 610, 130, 30));
+        jPanel4.add(btnTranscript, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 610, -1, -1));
 
         btnGenerate.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         btnGenerate.setText("Generate");
@@ -334,7 +324,7 @@ public class ResultNursery extends javax.swing.JFrame {
                 btnGenerateActionPerformed(evt);
             }
         });
-        jPanel4.add(btnGenerate, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 610, -1, -1));
+        jPanel4.add(btnGenerate, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 610, -1, -1));
 
         btnReset.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         btnReset.setText("Reset");
@@ -343,7 +333,7 @@ public class ResultNursery extends javax.swing.JFrame {
                 btnResetActionPerformed(evt);
             }
         });
-        jPanel4.add(btnReset, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 610, -1, -1));
+        jPanel4.add(btnReset, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 610, -1, -1));
 
         jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/schoolmgtsystem/IconImages/icons8_Left_30px_1.png"))); // NOI18N
         jLabel18.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -360,7 +350,7 @@ public class ResultNursery extends javax.swing.JFrame {
                 btnExitActionPerformed(evt);
             }
         });
-        jPanel4.add(btnExit, new org.netbeans.lib.awtextra.AbsoluteConstraints(1170, 610, -1, 30));
+        jPanel4.add(btnExit, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 610, -1, 30));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -513,27 +503,19 @@ public class ResultNursery extends javax.swing.JFrame {
             try {
                 printResult();
             } catch (IOException ex) {
-                Logger.getLogger(ResultNursery.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(StudentResult_Nursery.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
         if (sel == 1) {
-            new ResultNursery().show();
+            new StudentResult_Nursery().show();
             this.dispose();
         }
         if (sel == 2) {
-            new ResultNursery().show();
+            new StudentResult_Nursery().show();
             this.dispose();
         }
 
     }//GEN-LAST:event_btnTranscriptActionPerformed
-
-    private void btnRecordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRecordActionPerformed
-
-        new ResultEntry().show();
-        this.dispose();
-        
-        //        insertDB();
-    }//GEN-LAST:event_btnRecordActionPerformed
 
     private void btnGenerateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerateActionPerformed
         // TODO add your handling code here:
@@ -609,11 +591,11 @@ public class ResultNursery extends javax.swing.JFrame {
             this.dispose();
         }
         if (sel == 1) {
-            new ResultNursery().show();
+            new StudentResult_Nursery().show();
             this.dispose();
         }
         if (sel == 2) {
-            new ResultNursery().show();
+            new StudentResult_Nursery().show();
             this.dispose();
         }
 
@@ -636,19 +618,20 @@ public class ResultNursery extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ResultNursery.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(StudentResult_Nursery.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ResultNursery.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(StudentResult_Nursery.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ResultNursery.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(StudentResult_Nursery.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ResultNursery.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(StudentResult_Nursery.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> {
-            new ResultNursery().setVisible(true);
+            new StudentResult_Nursery().setVisible(true);
         });
     }
 
@@ -720,7 +703,7 @@ public class ResultNursery extends javax.swing.JFrame {
             System.out.println("Exam " + englishE);
 
         } catch (ClassNotFoundException | SQLException ex) {
-            Logger.getLogger(ResultNursery.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(StudentResult_Nursery.class.getName()).log(Level.SEVERE, null, ex);
         }
 
         //Creating a file dialog with file chooser
@@ -1139,7 +1122,6 @@ public class ResultNursery extends javax.swing.JFrame {
     private javax.swing.JButton btnExit;
     private javax.swing.JButton btnGenerate;
     private javax.swing.JButton btnRanking;
-    private javax.swing.JButton btnRecord;
     private javax.swing.JButton btnReset;
     private javax.swing.JButton btnTranscript;
     private javax.swing.JLabel jLabel1;

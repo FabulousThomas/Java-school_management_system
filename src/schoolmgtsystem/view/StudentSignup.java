@@ -70,9 +70,7 @@ public class StudentSignup extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        txtAdmissionClass = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
-        txtClass = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         txtPrevSchool = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
@@ -102,6 +100,8 @@ public class StudentSignup extends javax.swing.JFrame {
         txtPassword = new javax.swing.JPasswordField();
         jLabel18 = new javax.swing.JLabel();
         jSeparator4 = new javax.swing.JSeparator();
+        txtAdmissionClass = new javax.swing.JComboBox<>();
+        txtClass = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocationByPlatform(true);
@@ -200,23 +200,11 @@ public class StudentSignup extends javax.swing.JFrame {
         jLabel7.setText("Session");
         jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 150, -1, -1));
 
-        txtAdmissionClass.setBackground(new java.awt.Color(255, 255, 255));
-        txtAdmissionClass.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        txtAdmissionClass.setForeground(new java.awt.Color(51, 51, 51));
-        txtAdmissionClass.setBorder(null);
-        jPanel1.add(txtAdmissionClass, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 110, 310, 20));
-
         jLabel6.setBackground(new java.awt.Color(255, 255, 255));
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(51, 51, 51));
         jLabel6.setText("Admission Class");
         jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 90, 110, -1));
-
-        txtClass.setBackground(new java.awt.Color(255, 255, 255));
-        txtClass.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        txtClass.setForeground(new java.awt.Color(51, 51, 51));
-        txtClass.setBorder(null);
-        jPanel1.add(txtClass, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 230, 310, 20));
 
         jLabel5.setBackground(new java.awt.Color(255, 255, 255));
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -403,6 +391,14 @@ public class StudentSignup extends javax.swing.JFrame {
         jSeparator4.setForeground(new java.awt.Color(0, 51, 255));
         jPanel1.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 250, 310, -1));
 
+        txtAdmissionClass.setFont(new java.awt.Font("Dialog", 1, 13)); // NOI18N
+        txtAdmissionClass.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECT", "SS1", "SS2", "SS3", "JSS1", "JSS2", "JSS3", "PRIMARY1", "PRIMARY2", "PRIMARY3", "PRIMARY4", "PRIMARY5", "NURSERY1", "NURSERY2" }));
+        jPanel1.add(txtAdmissionClass, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 110, 310, 20));
+
+        txtClass.setFont(new java.awt.Font("Dialog", 1, 13)); // NOI18N
+        txtClass.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECT", "SS1", "SS2", "SS3", "JSS1", "JSS2", "JSS3", "PRIMARY1", "PRIMARY2", "PRIMARY3", "PRIMARY4", "PRIMARY5", "NURSERY1", "NURSERY2" }));
+        jPanel1.add(txtClass, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 230, 310, 20));
+
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1130, 630));
 
         pack();
@@ -429,8 +425,8 @@ public class StudentSignup extends javax.swing.JFrame {
                 }
                 pst.setString(3, gender);
                 pst.setString(4, txtPrevSchool.getText());
-                pst.setString(5, txtClass.getText());
-                pst.setString(6, txtAdmissionClass.getText());
+                pst.setString(5, (String) txtClass.getSelectedItem());
+                pst.setString(6, (String) txtAdmissionClass.getSelectedItem());
                 pst.setInt(7, Session.getYear());
                 pst.setString(8, (String) PhysicalDis.getSelectedItem());
                 pst.setString(9, (String) DisabilityType.getSelectedItem());
@@ -633,8 +629,8 @@ public class StudentSignup extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator8;
     private javax.swing.JSeparator jSeparator9;
     private javax.swing.JLabel lblImage;
-    private javax.swing.JTextField txtAdmissionClass;
-    private javax.swing.JTextField txtClass;
+    private javax.swing.JComboBox<String> txtAdmissionClass;
+    private javax.swing.JComboBox<String> txtClass;
     private javax.swing.JTextField txtName;
     private javax.swing.JTextField txtParentID;
     private javax.swing.JPasswordField txtPassword;

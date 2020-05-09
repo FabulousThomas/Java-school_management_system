@@ -11,7 +11,9 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.ImageIcon;
@@ -96,6 +98,7 @@ public class StudentProfile extends javax.swing.JFrame {
         preSchool = new javax.swing.JTextField();
         preClass = new javax.swing.JTextField();
         Session = new com.toedter.calendar.JYearChooser();
+        btnResult = new javax.swing.JButton();
         lblName = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
 
@@ -306,7 +309,7 @@ public class StudentProfile extends javax.swing.JFrame {
                 btnEditActionPerformed(evt);
             }
         });
-        jPanel3.add(btnEdit, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 430, 110, 36));
+        jPanel3.add(btnEdit, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 380, 110, 36));
 
         btnSave.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         btnSave.setForeground(new java.awt.Color(0, 102, 204));
@@ -320,7 +323,7 @@ public class StudentProfile extends javax.swing.JFrame {
                 btnSaveActionPerformed(evt);
             }
         });
-        jPanel3.add(btnSave, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 430, 110, 36));
+        jPanel3.add(btnSave, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 380, 110, 36));
 
         admClass.setEditable(false);
         admClass.setBackground(new java.awt.Color(255, 255, 255));
@@ -365,6 +368,20 @@ public class StudentProfile extends javax.swing.JFrame {
         Session.setBackground(new java.awt.Color(255, 255, 255));
         Session.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel3.add(Session, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 130, 140, 30));
+
+        btnResult.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        btnResult.setForeground(new java.awt.Color(0, 102, 204));
+        btnResult.setIcon(new javax.swing.ImageIcon(getClass().getResource("/schoolmgtsystem/IconImages/icons8_Report_Card.png"))); // NOI18N
+        btnResult.setText("Result");
+        btnResult.setToolTipText("Check Result");
+        btnResult.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnResult.setBorderPainted(false);
+        btnResult.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnResultActionPerformed(evt);
+            }
+        });
+        jPanel3.add(btnResult, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 440, 110, 36));
 
         jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 910, 530));
 
@@ -479,6 +496,61 @@ public class StudentProfile extends javax.swing.JFrame {
 
     }//GEN-LAST:event_btnSaveActionPerformed
 
+    private void btnResultActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResultActionPerformed
+
+        handler = new DBHandler();
+        StudentResult sr = new StudentResult();
+        StudentResult_JSS rj = new StudentResult_JSS();
+        StudentResult_Nursery rn = new StudentResult_Nursery();
+        StudentResult_Primary rp = new StudentResult_Primary();
+        String sname = name.getText();
+        String sid = lblID.getText();
+        String adm = admClass.getText();
+
+        try {
+            String query = "SELECT * FROM student_details WHERE StudentID=?";
+            PreparedStatement pst = handler.getdbConnection().prepareStatement(query);
+            pst.setString(1, sid);
+            ResultSet rs = pst.executeQuery();
+            int counter = 0;
+            while (rs.next()) {
+                counter++;
+                sid = rs.getString("StudentID");
+                sname = rs.getString("StudentName");
+                adm = rs.getString("AdmissionClass");
+                System.out.println(sid);
+            }
+            if (counter == 1) {
+                if (adm.startsWith("S")) {
+                    StudentResult.txtStudentID.setText(sid);
+                    StudentResult.txtFullName.setText(sname);
+                    StudentResult.txtStudentID.setEditable(false);
+                    sr.show();
+                } else if (adm.startsWith("J")) {
+                    StudentResult_JSS.txtStudentID.setText(sid);
+                    StudentResult_JSS.txtFullName.setText(sname);
+                    StudentResult_JSS.txtStudentID.setEditable(false);
+                    rj.show();
+                } else if (adm.startsWith("P")) {
+                    StudentResult_Primary.txtStudentID.setText(sid);
+                    StudentResult_Primary.txtFullName.setText(sname);
+                    StudentResult_Primary.txtStudentID.setEditable(false);
+                    rp.show();
+                } else if (adm.startsWith("N")) {
+                    ResultNursery.txtStudentID.setText(sid);
+                    ResultNursery.txtFullName.setText(sname);
+                    ResultNursery.txtStudentID.setEditable(false);
+                    rn.show();
+                }
+            }
+
+        } catch (ClassNotFoundException | SQLException ex) {
+            Logger.getLogger(StudentProfile.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+
+    }//GEN-LAST:event_btnResultActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -507,10 +579,8 @@ public class StudentProfile extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new StudentProfile().setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            new StudentProfile().setVisible(true);
         });
     }
 
@@ -549,6 +619,7 @@ public class StudentProfile extends javax.swing.JFrame {
     public static javax.swing.JTextField admClass;
     private javax.swing.JButton btnEdit;
     private javax.swing.JButton btnPassport;
+    private javax.swing.JButton btnResult;
     private javax.swing.JButton btnSave;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;

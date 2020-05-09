@@ -34,14 +34,14 @@ import schoolmgtsystem.dbhelper.DBHandler;
  *
  * @author Thomas
  */
-public class ResultJSS extends javax.swing.JFrame {
+public class StudentResult_JSS extends javax.swing.JFrame {
 
     DBHandler handler;
 
     /**
      * Creates new form ResultJSS
      */
-    public ResultJSS() {
+    public StudentResult_JSS() {
         initComponents();
         setLocationRelativeTo(null);
     }
@@ -60,8 +60,6 @@ public class ResultJSS extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         txtFullName = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
-        txtSurname = new javax.swing.JTextField();
         txtTotalScore = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         txtAverage = new javax.swing.JTextField();
@@ -115,7 +113,6 @@ public class ResultJSS extends javax.swing.JFrame {
         txtTranscript = new javax.swing.JTextArea();
         btnRanking = new javax.swing.JButton();
         btnTranscript = new javax.swing.JButton();
-        btnRecord = new javax.swing.JButton();
         btnGenerate = new javax.swing.JButton();
         btnReset = new javax.swing.JButton();
         btnExit = new javax.swing.JButton();
@@ -140,35 +137,30 @@ public class ResultJSS extends javax.swing.JFrame {
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 107, -1));
 
         txtFullName.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jPanel1.add(txtFullName, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 90, 167, -1));
-
-        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel3.setText("Surname");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 107, -1));
-
-        txtSurname.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jPanel1.add(txtSurname, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 130, 167, -1));
+        jPanel1.add(txtFullName, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 90, 280, -1));
 
         txtTotalScore.setEditable(false);
         txtTotalScore.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        txtTotalScore.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtTotalScore.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtTotalScoreActionPerformed(evt);
             }
         });
-        jPanel1.add(txtTotalScore, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 440, 90, -1));
+        jPanel1.add(txtTotalScore, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 470, 90, -1));
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel5.setText("Total Score");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 440, 107, -1));
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 470, 107, -1));
 
         txtAverage.setEditable(false);
         txtAverage.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jPanel1.add(txtAverage, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 480, 90, -1));
+        txtAverage.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jPanel1.add(txtAverage, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 510, 90, -1));
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel6.setText("Average");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 480, 107, -1));
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 510, 107, -1));
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel7.setText("Basic Technology");
@@ -180,14 +172,17 @@ public class ResultJSS extends javax.swing.JFrame {
 
         txtPHE.setEditable(false);
         txtPHE.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        txtPHE.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jPanel1.add(txtPHE, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 240, 90, -1));
 
         txtBT.setEditable(false);
         txtBT.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        txtBT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jPanel1.add(txtBT, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 200, 90, -1));
 
         txtBS.setEditable(false);
         txtBS.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        txtBS.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jPanel1.add(txtBS, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 160, 90, -1));
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -200,14 +195,17 @@ public class ResultJSS extends javax.swing.JFrame {
 
         txtLit.setEditable(false);
         txtLit.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        txtLit.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jPanel1.add(txtLit, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 120, 90, -1));
 
         txtEnglish.setEditable(false);
         txtEnglish.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        txtEnglish.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jPanel1.add(txtEnglish, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 80, 90, -1));
 
         txtMaths.setEditable(false);
         txtMaths.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        txtMaths.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jPanel1.add(txtMaths, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 40, 90, -1));
 
         jLabel11.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -224,11 +222,12 @@ public class ResultJSS extends javax.swing.JFrame {
 
         jLabel13.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel13.setText("Position");
-        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 520, 107, -1));
+        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 550, 107, -1));
 
         txtPosition.setEditable(false);
         txtPosition.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jPanel1.add(txtPosition, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 520, 90, -1));
+        txtPosition.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jPanel1.add(txtPosition, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 550, 90, -1));
 
         jLabel14.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel14.setText("Information & Communication");
@@ -236,10 +235,12 @@ public class ResultJSS extends javax.swing.JFrame {
 
         txtICT.setEditable(false);
         txtICT.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        txtICT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jPanel1.add(txtICT, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 280, 90, -1));
 
         txtCRS.setEditable(false);
         txtCRS.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        txtCRS.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtCRS.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtCRSActionPerformed(evt);
@@ -253,6 +254,7 @@ public class ResultJSS extends javax.swing.JFrame {
 
         txtSocial.setEditable(false);
         txtSocial.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        txtSocial.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jPanel1.add(txtSocial, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 360, 90, -1));
 
         jLabel16.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -260,7 +262,8 @@ public class ResultJSS extends javax.swing.JFrame {
         jPanel1.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 360, 110, -1));
 
         txtStudentID.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jPanel1.add(txtStudentID, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 50, 167, -1));
+        txtStudentID.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jPanel1.add(txtStudentID, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 50, 80, -1));
 
         jLabel19.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel19.setText("Civic Education");
@@ -268,6 +271,7 @@ public class ResultJSS extends javax.swing.JFrame {
 
         txtCivic.setEditable(false);
         txtCivic.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        txtCivic.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jPanel1.add(txtCivic, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 400, 90, -1));
 
         jLabel20.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -276,6 +280,7 @@ public class ResultJSS extends javax.swing.JFrame {
 
         txtSecurity.setEditable(false);
         txtSecurity.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        txtSecurity.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jPanel1.add(txtSecurity, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 440, 90, -1));
 
         jLabel21.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -284,6 +289,7 @@ public class ResultJSS extends javax.swing.JFrame {
 
         txtAgric.setEditable(false);
         txtAgric.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        txtAgric.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jPanel1.add(txtAgric, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 180, 90, -1));
 
         jLabel22.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -292,23 +298,26 @@ public class ResultJSS extends javax.swing.JFrame {
 
         txtHome.setEditable(false);
         txtHome.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        txtHome.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jPanel1.add(txtHome, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 220, 90, -1));
 
         jLabel23.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel23.setText("Music");
-        jPanel1.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 290, -1, -1));
+        jPanel1.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, -1, -1));
 
         txtMusic.setEditable(false);
         txtMusic.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jPanel1.add(txtMusic, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 290, 90, -1));
+        txtMusic.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jPanel1.add(txtMusic, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 280, 90, -1));
 
         txtDrama.setEditable(false);
         txtDrama.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jPanel1.add(txtDrama, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 330, 90, -1));
+        txtDrama.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jPanel1.add(txtDrama, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 320, 90, -1));
 
         jLabel24.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel24.setText("Drama & Stage");
-        jPanel1.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 330, 130, -1));
+        jPanel1.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 320, 130, -1));
 
         jLabel25.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel25.setText("Arts & Craft");
@@ -316,10 +325,12 @@ public class ResultJSS extends javax.swing.JFrame {
 
         txtArts.setEditable(false);
         txtArts.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        txtArts.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jPanel1.add(txtArts, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 490, 90, -1));
 
         txtBusiness.setEditable(false);
         txtBusiness.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        txtBusiness.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jPanel1.add(txtBusiness, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 530, 90, -1));
 
         jLabel26.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -328,27 +339,30 @@ public class ResultJSS extends javax.swing.JFrame {
 
         jLabel27.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel27.setText("French");
-        jPanel1.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 370, 80, -1));
+        jPanel1.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 360, 80, -1));
 
         txtFrench.setEditable(false);
         txtFrench.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jPanel1.add(txtFrench, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 370, 90, -1));
+        txtFrench.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jPanel1.add(txtFrench, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 360, 90, -1));
 
         jLabel17.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel17.setText("Edo Language");
-        jPanel1.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 330, 100, -1));
+        jPanel1.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, 100, -1));
 
         jLabel28.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel28.setText("Moral Instruction");
-        jPanel1.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 370, 110, -1));
+        jPanel1.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 400, 110, -1));
 
         txtEdo.setEditable(false);
         txtEdo.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jPanel1.add(txtEdo, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 330, 90, -1));
+        txtEdo.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jPanel1.add(txtEdo, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 140, 90, -1));
 
         txtMoral.setEditable(false);
         txtMoral.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jPanel1.add(txtMoral, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 370, 90, -1));
+        txtMoral.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jPanel1.add(txtMoral, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 400, 90, -1));
 
         jPanel4.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 0, 810, 590));
 
@@ -386,7 +400,7 @@ public class ResultJSS extends javax.swing.JFrame {
                 btnRankingActionPerformed(evt);
             }
         });
-        jPanel4.add(btnRanking, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 610, -1, 40));
+        jPanel4.add(btnRanking, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 610, -1, 40));
 
         btnTranscript.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         btnTranscript.setText("Transcript");
@@ -395,16 +409,7 @@ public class ResultJSS extends javax.swing.JFrame {
                 btnTranscriptActionPerformed(evt);
             }
         });
-        jPanel4.add(btnTranscript, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 610, -1, 40));
-
-        btnRecord.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
-        btnRecord.setText("Add Record");
-        btnRecord.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnRecordActionPerformed(evt);
-            }
-        });
-        jPanel4.add(btnRecord, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 610, 130, 40));
+        jPanel4.add(btnTranscript, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 610, -1, 40));
 
         btnGenerate.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         btnGenerate.setText("Generate");
@@ -413,7 +418,7 @@ public class ResultJSS extends javax.swing.JFrame {
                 btnGenerateActionPerformed(evt);
             }
         });
-        jPanel4.add(btnGenerate, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 610, -1, 40));
+        jPanel4.add(btnGenerate, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 610, -1, 40));
 
         btnReset.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         btnReset.setText("Reset");
@@ -422,7 +427,7 @@ public class ResultJSS extends javax.swing.JFrame {
                 btnResetActionPerformed(evt);
             }
         });
-        jPanel4.add(btnReset, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 610, -1, 40));
+        jPanel4.add(btnReset, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 610, -1, 40));
 
         btnExit.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         btnExit.setText("Print");
@@ -431,7 +436,7 @@ public class ResultJSS extends javax.swing.JFrame {
                 btnExitActionPerformed(evt);
             }
         });
-        jPanel4.add(btnExit, new org.netbeans.lib.awtextra.AbsoluteConstraints(1160, 610, 80, 40));
+        jPanel4.add(btnExit, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 610, 80, 40));
 
         jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/schoolmgtsystem/IconImages/icons8_Left_30px_1.png"))); // NOI18N
         jLabel18.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -617,14 +622,6 @@ public class ResultJSS extends javax.swing.JFrame {
 
     }//GEN-LAST:event_btnTranscriptActionPerformed
 
-    private void btnRecordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRecordActionPerformed
-
-        new ResultEntry().show();
-        this.dispose();
-//        insertDB();
-
-    }//GEN-LAST:event_btnRecordActionPerformed
-
     private void btnGenerateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerateActionPerformed
         // TODO add your handling code here:
         try {
@@ -737,20 +734,21 @@ public class ResultJSS extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ResultJSS.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(StudentResult_JSS.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ResultJSS.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(StudentResult_JSS.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ResultJSS.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(StudentResult_JSS.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ResultJSS.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(StudentResult_JSS.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ResultJSS().setVisible(true);
+                new StudentResult_JSS().setVisible(true);
             }
         });
     }
@@ -1720,7 +1718,6 @@ public class ResultJSS extends javax.swing.JFrame {
     private javax.swing.JButton btnExit;
     private javax.swing.JButton btnGenerate;
     private javax.swing.JButton btnRanking;
-    private javax.swing.JButton btnRecord;
     private javax.swing.JButton btnReset;
     private javax.swing.JButton btnTranscript;
     private javax.swing.JLabel jLabel1;
@@ -1744,7 +1741,6 @@ public class ResultJSS extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -1779,7 +1775,6 @@ public class ResultJSS extends javax.swing.JFrame {
     private javax.swing.JTextField txtSecurity;
     private javax.swing.JTextField txtSocial;
     public static javax.swing.JTextField txtStudentID;
-    private javax.swing.JTextField txtSurname;
     private javax.swing.JTextField txtTotalScore;
     private javax.swing.JTextArea txtTranscript;
     // End of variables declaration//GEN-END:variables

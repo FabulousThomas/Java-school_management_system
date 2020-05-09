@@ -5,8 +5,10 @@
  */
 package schoolmgtsystem.view;
 
+import java.awt.Color;
 import java.awt.Component;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -93,8 +95,12 @@ public class ResultEntry extends javax.swing.JFrame {
         txtFirstComputer = new javax.swing.JTextField();
         txtFirstFrench = new javax.swing.JTextField();
         jLabel305 = new javax.swing.JLabel();
+        btnEditSeniorFirstTest = new javax.swing.JButton();
+        jLabel318 = new javax.swing.JLabel();
+        txtSeniorFirstID = new javax.swing.JTextField();
+        btnUpdate = new javax.swing.JButton();
         secondPanel = new javax.swing.JPanel();
-        jPanel4 = new javax.swing.JPanel();
+        secondPanel1 = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
         jLabel17 = new javax.swing.JLabel();
         jLabel67 = new javax.swing.JLabel();
@@ -148,6 +154,7 @@ public class ResultEntry extends javax.swing.JFrame {
         txtSecondAgric = new javax.swing.JTextField();
         jLabel309 = new javax.swing.JLabel();
         txtSecondFineArts = new javax.swing.JTextField();
+        btnEditSeniorSecondTest = new javax.swing.JButton();
         thirdPanel = new javax.swing.JPanel();
         jPanel6 = new javax.swing.JPanel();
         jLabel32 = new javax.swing.JLabel();
@@ -192,11 +199,9 @@ public class ResultEntry extends javax.swing.JFrame {
         txtThirdComputer = new javax.swing.JTextField();
         jLabel313 = new javax.swing.JLabel();
         txtThirdFrench = new javax.swing.JTextField();
+        btnSeniorThirdTest = new javax.swing.JButton();
         examPanel = new javax.swing.JPanel();
         examPanel1 = new javax.swing.JPanel();
-        jPanel7 = new javax.swing.JPanel();
-        jLabel47 = new javax.swing.JLabel();
-        jLabel69 = new javax.swing.JLabel();
         jLabel48 = new javax.swing.JLabel();
         txtExamMaths = new javax.swing.JTextField();
         jLabel49 = new javax.swing.JLabel();
@@ -237,6 +242,10 @@ public class ResultEntry extends javax.swing.JFrame {
         txtExamComputer = new javax.swing.JTextField();
         jLabel317 = new javax.swing.JLabel();
         txtExamFrench = new javax.swing.JTextField();
+        btnSeniorExamTest = new javax.swing.JButton();
+        jPanel7 = new javax.swing.JPanel();
+        jLabel47 = new javax.swing.JLabel();
+        jLabel69 = new javax.swing.JLabel();
         jsFirstPanel = new javax.swing.JPanel();
         jPanel8 = new javax.swing.JPanel();
         jLabel70 = new javax.swing.JLabel();
@@ -283,6 +292,10 @@ public class ResultEntry extends javax.swing.JFrame {
         jsFirstMoral = new javax.swing.JTextField();
         btnjsFirstInsert = new javax.swing.JButton();
         btnjsFirstCancel = new javax.swing.JButton();
+        jLabel319 = new javax.swing.JLabel();
+        txtFirstID = new javax.swing.JTextField();
+        btnJsEditFirst = new javax.swing.JButton();
+        btnjsUpdate = new javax.swing.JButton();
         jsSecondPanel = new javax.swing.JPanel();
         jsSecondPanel1 = new javax.swing.JPanel();
         jPanel9 = new javax.swing.JPanel();
@@ -332,6 +345,7 @@ public class ResultEntry extends javax.swing.JFrame {
         btnjsCancelCancel = new javax.swing.JButton();
         jLabel125 = new javax.swing.JLabel();
         jsSecondEnglish = new javax.swing.JTextField();
+        btnjsEditSecond = new javax.swing.JButton();
         jsThirdPanel = new javax.swing.JPanel();
         jsThirdPanel1 = new javax.swing.JPanel();
         jPanel10 = new javax.swing.JPanel();
@@ -430,6 +444,7 @@ public class ResultEntry extends javax.swing.JFrame {
         btnjsExamCancel = new javax.swing.JButton();
         jLabel171 = new javax.swing.JLabel();
         jsExamEnglish = new javax.swing.JTextField();
+        btnjsEditExam = new javax.swing.JButton();
         firstPrimary = new javax.swing.JPanel();
         jPanel12 = new javax.swing.JPanel();
         jLabel172 = new javax.swing.JLabel();
@@ -466,6 +481,10 @@ public class ResultEntry extends javax.swing.JFrame {
         jLabel188 = new javax.swing.JLabel();
         btnPrimaryFirstInsert = new javax.swing.JButton();
         btnPrimaryFirstCancel = new javax.swing.JButton();
+        jLabel320 = new javax.swing.JLabel();
+        prFirstID = new javax.swing.JTextField();
+        btnprFirstTest = new javax.swing.JButton();
+        btnprUpdate = new javax.swing.JButton();
         secondPrimary = new javax.swing.JPanel();
         secondPrimary1 = new javax.swing.JPanel();
         jPanel13 = new javax.swing.JPanel();
@@ -505,6 +524,7 @@ public class ResultEntry extends javax.swing.JFrame {
         btnPrimarySecondCancel = new javax.swing.JButton();
         prSecondID = new javax.swing.JTextField();
         jLabel206 = new javax.swing.JLabel();
+        btnprSecondTest = new javax.swing.JButton();
         thirdPrimary = new javax.swing.JPanel();
         thirdPrimary1 = new javax.swing.JPanel();
         jPanel14 = new javax.swing.JPanel();
@@ -583,6 +603,7 @@ public class ResultEntry extends javax.swing.JFrame {
         btnPrimaryExamCancel = new javax.swing.JButton();
         prExamID = new javax.swing.JTextField();
         jLabel242 = new javax.swing.JLabel();
+        btnprExamTest = new javax.swing.JButton();
         firstNursery = new javax.swing.JPanel();
         jPanel16 = new javax.swing.JPanel();
         jLabel243 = new javax.swing.JLabel();
@@ -613,6 +634,10 @@ public class ResultEntry extends javax.swing.JFrame {
         nuFirstMoral = new javax.swing.JTextField();
         btnNurseryFirstInsert = new javax.swing.JButton();
         btnNurseryFirstCancel = new javax.swing.JButton();
+        btnNrEditFirst = new javax.swing.JButton();
+        jLabel321 = new javax.swing.JLabel();
+        nuFirstID = new javax.swing.JTextField();
+        btnNuUpdate = new javax.swing.JButton();
         secondNursery = new javax.swing.JPanel();
         secondNursery1 = new javax.swing.JPanel();
         jPanel17 = new javax.swing.JPanel();
@@ -646,6 +671,7 @@ public class ResultEntry extends javax.swing.JFrame {
         btnNurserySecondCancel = new javax.swing.JButton();
         jLabel271 = new javax.swing.JLabel();
         nuSecondID = new javax.swing.JTextField();
+        btnNuSecond = new javax.swing.JButton();
         thirdNursery = new javax.swing.JPanel();
         thirdNursery1 = new javax.swing.JPanel();
         jPanel18 = new javax.swing.JPanel();
@@ -712,6 +738,7 @@ public class ResultEntry extends javax.swing.JFrame {
         btnNurseryExamCancel = new javax.swing.JButton();
         jLabel301 = new javax.swing.JLabel();
         nuExamID = new javax.swing.JTextField();
+        btnNuExam = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocationByPlatform(true);
@@ -828,45 +855,62 @@ public class ResultEntry extends javax.swing.JFrame {
 
         LayeredPane.add(PanelWelcome, "card2");
 
+        firstPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
         jLabel2.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        jLabel2.setText("Mathematics");
+        jLabel2.setText("Student ID");
+        firstPanel.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 110, 80, 30));
 
         txtFirstMaths.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        firstPanel.add(txtFirstMaths, new org.netbeans.lib.awtextra.AbsoluteConstraints(212, 174, 100, 30));
 
         jLabel3.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel3.setText("English L.");
+        firstPanel.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(72, 242, 100, 30));
 
         txtFirstEnglish.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        firstPanel.add(txtFirstEnglish, new org.netbeans.lib.awtextra.AbsoluteConstraints(212, 242, 100, 30));
 
         jLabel4.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel4.setText("Commerce");
+        firstPanel.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(72, 320, 100, 30));
 
         txtFirstComm.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        firstPanel.add(txtFirstComm, new org.netbeans.lib.awtextra.AbsoluteConstraints(212, 320, 100, 30));
 
         txtFirstEcons.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        firstPanel.add(txtFirstEcons, new org.netbeans.lib.awtextra.AbsoluteConstraints(212, 393, 100, 30));
 
         jLabel5.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel5.setText("Economics");
+        firstPanel.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(72, 393, 100, 30));
 
         jLabel6.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel6.setText("Physics");
+        firstPanel.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(352, 460, 100, 30));
 
         txtFirstPhy.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        firstPanel.add(txtFirstPhy, new org.netbeans.lib.awtextra.AbsoluteConstraints(492, 460, 100, 30));
 
         jLabel9.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel9.setText("Civic Edu.");
+        firstPanel.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(352, 174, 100, 30));
 
         jLabel10.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel10.setText("F. Maths");
+        firstPanel.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(352, 242, 100, 30));
 
         jLabel11.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel11.setText("Literature");
+        firstPanel.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(352, 320, 100, 30));
 
         jLabel12.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel12.setText("Geography");
+        firstPanel.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(352, 393, 100, 30));
 
         jLabel13.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel13.setText("C.R.S");
+        firstPanel.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(632, 460, 100, 30));
 
         jPanel2.setBackground(new java.awt.Color(0, 153, 204));
 
@@ -900,35 +944,50 @@ public class ResultEntry extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        firstPanel.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 950, -1));
+
         txtFirstCivic.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        firstPanel.add(txtFirstCivic, new org.netbeans.lib.awtextra.AbsoluteConstraints(492, 174, 100, 30));
 
         txtFirstFMaths.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        firstPanel.add(txtFirstFMaths, new org.netbeans.lib.awtextra.AbsoluteConstraints(492, 242, 100, 30));
 
         txtFirstLit.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        firstPanel.add(txtFirstLit, new org.netbeans.lib.awtextra.AbsoluteConstraints(492, 320, 100, 30));
 
         txtFirstGeo.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        firstPanel.add(txtFirstGeo, new org.netbeans.lib.awtextra.AbsoluteConstraints(492, 393, 100, 30));
 
         txtFirstCRS.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        firstPanel.add(txtFirstCRS, new org.netbeans.lib.awtextra.AbsoluteConstraints(772, 460, 100, 30));
 
         jLabel8.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel8.setText("Accounting");
+        firstPanel.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(632, 393, 100, 30));
 
         jLabel14.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel14.setText("Biology");
+        firstPanel.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(632, 320, 100, 30));
 
         jLabel15.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel15.setText("Chemistry");
+        firstPanel.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(632, 242, 100, 30));
 
         jLabel16.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel16.setText("Government");
+        firstPanel.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(632, 174, 100, 30));
 
         txtFirstGov.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        firstPanel.add(txtFirstGov, new org.netbeans.lib.awtextra.AbsoluteConstraints(772, 174, 100, 30));
 
         txtFirstChem.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        firstPanel.add(txtFirstChem, new org.netbeans.lib.awtextra.AbsoluteConstraints(772, 242, 100, 30));
 
         txtFirstBio.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        firstPanel.add(txtFirstBio, new org.netbeans.lib.awtextra.AbsoluteConstraints(772, 320, 100, 30));
 
         txtFirstAccount.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        firstPanel.add(txtFirstAccount, new org.netbeans.lib.awtextra.AbsoluteConstraints(772, 393, 100, 30));
 
         btnCancel.setBackground(new java.awt.Color(255, 0, 0));
         btnCancel.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
@@ -939,6 +998,7 @@ public class ResultEntry extends javax.swing.JFrame {
                 btnCancelActionPerformed(evt);
             }
         });
+        firstPanel.add(btnCancel, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 580, 120, 36));
 
         btnInsertFirstTest.setBackground(new java.awt.Color(0, 153, 204));
         btnInsertFirstTest.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
@@ -949,185 +1009,69 @@ public class ResultEntry extends javax.swing.JFrame {
                 btnInsertFirstTestActionPerformed(evt);
             }
         });
+        firstPanel.add(btnInsertFirstTest, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 520, 120, 36));
 
         jLabel302.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel302.setText("Agriculture");
+        firstPanel.add(jLabel302, new org.netbeans.lib.awtextra.AbsoluteConstraints(72, 460, 100, 30));
 
         txtFirstAgric.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        firstPanel.add(txtFirstAgric, new org.netbeans.lib.awtextra.AbsoluteConstraints(212, 460, 100, 30));
 
         jLabel303.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel303.setText("Fine Arts");
+        firstPanel.add(jLabel303, new org.netbeans.lib.awtextra.AbsoluteConstraints(72, 520, 100, 30));
 
         txtFirstFineArts.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        firstPanel.add(txtFirstFineArts, new org.netbeans.lib.awtextra.AbsoluteConstraints(212, 520, 100, 30));
 
         jLabel304.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel304.setText("Computer");
+        firstPanel.add(jLabel304, new org.netbeans.lib.awtextra.AbsoluteConstraints(352, 108, 100, 30));
 
         txtFirstComputer.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        firstPanel.add(txtFirstComputer, new org.netbeans.lib.awtextra.AbsoluteConstraints(492, 108, 100, 30));
 
         txtFirstFrench.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        firstPanel.add(txtFirstFrench, new org.netbeans.lib.awtextra.AbsoluteConstraints(772, 108, 100, 30));
 
         jLabel305.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel305.setText("French");
+        firstPanel.add(jLabel305, new org.netbeans.lib.awtextra.AbsoluteConstraints(632, 108, 100, 30));
 
-        javax.swing.GroupLayout firstPanelLayout = new javax.swing.GroupLayout(firstPanel);
-        firstPanel.setLayout(firstPanelLayout);
-        firstPanelLayout.setHorizontalGroup(
-            firstPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(firstPanelLayout.createSequentialGroup()
-                .addGap(72, 72, 72)
-                .addGroup(firstPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(firstPanelLayout.createSequentialGroup()
-                        .addComponent(jLabel304, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(40, 40, 40)
-                        .addComponent(txtFirstComputer, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(40, 40, 40)
-                        .addComponent(jLabel305, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(40, 40, 40)
-                        .addComponent(txtFirstFrench, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(firstPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addGroup(firstPanelLayout.createSequentialGroup()
-                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(40, 40, 40)
-                            .addComponent(txtFirstComm, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(40, 40, 40)
-                            .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(40, 40, 40)
-                            .addComponent(txtFirstLit, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(40, 40, 40)
-                            .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(40, 40, 40)
-                            .addComponent(txtFirstBio, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(firstPanelLayout.createSequentialGroup()
-                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(40, 40, 40)
-                            .addComponent(txtFirstEnglish, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(40, 40, 40)
-                            .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(40, 40, 40)
-                            .addComponent(txtFirstFMaths, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(40, 40, 40)
-                            .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(40, 40, 40)
-                            .addComponent(txtFirstChem, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(firstPanelLayout.createSequentialGroup()
-                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(40, 40, 40)
-                            .addComponent(txtFirstMaths, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(40, 40, 40)
-                            .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(40, 40, 40)
-                            .addComponent(txtFirstCivic, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(40, 40, 40)
-                            .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(40, 40, 40)
-                            .addComponent(txtFirstGov, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(firstPanelLayout.createSequentialGroup()
-                            .addGroup(firstPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addGroup(firstPanelLayout.createSequentialGroup()
-                                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(40, 40, 40)
-                                    .addComponent(txtFirstEcons, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(firstPanelLayout.createSequentialGroup()
-                                    .addComponent(jLabel302, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(40, 40, 40)
-                                    .addComponent(txtFirstAgric, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGap(40, 40, 40)
-                            .addGroup(firstPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(firstPanelLayout.createSequentialGroup()
-                                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(40, 40, 40)
-                                    .addComponent(txtFirstPhy, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(40, 40, 40)
-                                    .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(40, 40, 40)
-                                    .addComponent(txtFirstCRS, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(firstPanelLayout.createSequentialGroup()
-                                    .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(40, 40, 40)
-                                    .addComponent(txtFirstGeo, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(40, 40, 40)
-                                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(40, 40, 40)
-                                    .addComponent(txtFirstAccount, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, firstPanelLayout.createSequentialGroup()
-                            .addComponent(jLabel303, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(40, 40, 40)
-                            .addComponent(txtFirstFineArts, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnCancel, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(66, 66, 66)
-                            .addComponent(btnInsertFirstTest, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(78, Short.MAX_VALUE))
-        );
-        firstPanelLayout.setVerticalGroup(
-            firstPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(firstPanelLayout.createSequentialGroup()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26)
-                .addGroup(firstPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel304, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtFirstComputer, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel305, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtFirstFrench, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
-                .addGroup(firstPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtFirstMaths, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtFirstCivic, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtFirstGov, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(38, 38, 38)
-                .addGroup(firstPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtFirstEnglish, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtFirstFMaths, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtFirstChem, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(48, 48, 48)
-                .addGroup(firstPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtFirstComm, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtFirstLit, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtFirstBio, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(43, 43, 43)
-                .addGroup(firstPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtFirstEcons, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtFirstGeo, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtFirstAccount, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(37, 37, 37)
-                .addGroup(firstPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtFirstPhy, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtFirstCRS, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel302, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtFirstAgric, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGroup(firstPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(firstPanelLayout.createSequentialGroup()
-                        .addGap(40, 40, 40)
-                        .addGroup(firstPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btnInsertFirstTest, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnCancel, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(firstPanelLayout.createSequentialGroup()
-                        .addGap(30, 30, 30)
-                        .addGroup(firstPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel303, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtFirstFineArts, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(64, 64, 64))
-        );
+        btnEditSeniorFirstTest.setBackground(new java.awt.Color(0, 153, 204));
+        btnEditSeniorFirstTest.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        btnEditSeniorFirstTest.setForeground(new java.awt.Color(255, 255, 255));
+        btnEditSeniorFirstTest.setText("EDIT");
+        btnEditSeniorFirstTest.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEditSeniorFirstTestActionPerformed(evt);
+            }
+        });
+        firstPanel.add(btnEditSeniorFirstTest, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 520, 120, 36));
+
+        jLabel318.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        jLabel318.setText("Mathematics");
+        firstPanel.add(jLabel318, new org.netbeans.lib.awtextra.AbsoluteConstraints(72, 174, 100, 30));
+
+        txtSeniorFirstID.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        firstPanel.add(txtSeniorFirstID, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 110, 100, 30));
+
+        btnUpdate.setBackground(new java.awt.Color(0, 153, 204));
+        btnUpdate.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        btnUpdate.setForeground(new java.awt.Color(255, 255, 255));
+        btnUpdate.setText("UPDATE");
+        btnUpdate.setToolTipText("UPDATE TABLE");
+        btnUpdate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnUpdateActionPerformed(evt);
+            }
+        });
+        firstPanel.add(btnUpdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 580, 120, 36));
 
         LayeredPane.add(firstPanel, "card3");
 
-        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        secondPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel5.setBackground(new java.awt.Color(0, 153, 204));
 
@@ -1252,105 +1196,105 @@ public class ResultEntry extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jPanel4.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 950, 80));
+        secondPanel1.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 950, 80));
 
         jLabel18.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel18.setText("Mathematics");
-        jPanel4.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 170, 100, 30));
+        secondPanel1.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 170, 100, 30));
 
         txtSecondMaths.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        jPanel4.add(txtSecondMaths, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 170, 100, 30));
+        secondPanel1.add(txtSecondMaths, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 170, 100, 30));
 
         jLabel19.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel19.setText("English L.");
-        jPanel4.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 240, 100, 30));
+        secondPanel1.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 240, 100, 30));
 
         txtSecondEnglish.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        jPanel4.add(txtSecondEnglish, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 240, 100, 30));
+        secondPanel1.add(txtSecondEnglish, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 240, 100, 30));
 
         jLabel20.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel20.setText("Commerce");
-        jPanel4.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 310, 100, 30));
+        secondPanel1.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 310, 100, 30));
 
         txtSecondComm.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        jPanel4.add(txtSecondComm, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 310, 100, 30));
+        secondPanel1.add(txtSecondComm, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 310, 100, 30));
 
         jLabel21.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel21.setText("Economics");
-        jPanel4.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 380, 100, 30));
+        secondPanel1.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 380, 100, 30));
 
         txtSecondEcons.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        jPanel4.add(txtSecondEcons, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 380, 100, 30));
+        secondPanel1.add(txtSecondEcons, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 380, 100, 30));
 
         jLabel22.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel22.setText("Physics");
-        jPanel4.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 450, 100, 30));
+        secondPanel1.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 450, 100, 30));
 
         txtSecondPhy.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        jPanel4.add(txtSecondPhy, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 450, 100, 30));
+        secondPanel1.add(txtSecondPhy, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 450, 100, 30));
 
         jLabel23.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel23.setText("Biology");
-        jPanel4.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 310, 100, 30));
+        secondPanel1.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 310, 100, 30));
 
         txtSecondBio.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        jPanel4.add(txtSecondBio, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 310, 100, 30));
+        secondPanel1.add(txtSecondBio, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 310, 100, 30));
 
         jLabel24.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel24.setText("Accounting");
-        jPanel4.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 380, 100, 30));
+        secondPanel1.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 380, 100, 30));
 
         txtSecondAccount.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        jPanel4.add(txtSecondAccount, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 380, 100, 30));
+        secondPanel1.add(txtSecondAccount, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 380, 100, 30));
 
         jLabel25.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel25.setText("Civic Edu.");
-        jPanel4.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 170, 100, 30));
+        secondPanel1.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 170, 100, 30));
 
         txtSecondCivic.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        jPanel4.add(txtSecondCivic, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 170, 100, 30));
+        secondPanel1.add(txtSecondCivic, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 170, 100, 30));
 
         jLabel26.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel26.setText("F. Maths");
-        jPanel4.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 240, 100, 30));
+        secondPanel1.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 240, 100, 30));
 
         txtSecondFMaths.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        jPanel4.add(txtSecondFMaths, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 240, 100, 30));
+        secondPanel1.add(txtSecondFMaths, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 240, 100, 30));
 
         jLabel27.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel27.setText("Literature");
-        jPanel4.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 310, 100, 30));
+        secondPanel1.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 310, 100, 30));
 
         txtSecondLit.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        jPanel4.add(txtSecondLit, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 310, 100, 30));
+        secondPanel1.add(txtSecondLit, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 310, 100, 30));
 
         jLabel28.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel28.setText("Geography");
-        jPanel4.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 380, 100, 30));
+        secondPanel1.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 380, 100, 30));
 
         txtSecondGeo.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        jPanel4.add(txtSecondGeo, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 380, 100, 30));
+        secondPanel1.add(txtSecondGeo, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 380, 100, 30));
 
         jLabel29.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel29.setText("C.R.S");
-        jPanel4.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 450, 100, 30));
+        secondPanel1.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 450, 100, 30));
 
         txtSecondCRS.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        jPanel4.add(txtSecondCRS, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 450, 100, 30));
+        secondPanel1.add(txtSecondCRS, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 450, 100, 30));
 
         jLabel30.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel30.setText("Government");
-        jPanel4.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 170, 100, 30));
+        secondPanel1.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 170, 100, 30));
 
         txtSecondGov.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        jPanel4.add(txtSecondGov, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 170, 100, 30));
+        secondPanel1.add(txtSecondGov, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 170, 100, 30));
 
         jLabel31.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel31.setText("Chemistry");
-        jPanel4.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 240, 100, 30));
+        secondPanel1.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 240, 100, 30));
 
         txtSecondChem.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        jPanel4.add(txtSecondChem, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 240, 100, 30));
+        secondPanel1.add(txtSecondChem, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 240, 100, 30));
 
         btnCancelSecond.setBackground(new java.awt.Color(255, 0, 0));
         btnCancelSecond.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
@@ -1361,66 +1305,80 @@ public class ResultEntry extends javax.swing.JFrame {
                 btnCancelSecondActionPerformed(evt);
             }
         });
-        jPanel4.add(btnCancelSecond, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 530, 120, 36));
+        secondPanel1.add(btnCancelSecond, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 550, 120, 36));
 
         btnInsertSecondTest.setBackground(new java.awt.Color(0, 153, 204));
         btnInsertSecondTest.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         btnInsertSecondTest.setForeground(new java.awt.Color(255, 255, 255));
-        btnInsertSecondTest.setText("INSERT");
+        btnInsertSecondTest.setText("UPDATE");
         btnInsertSecondTest.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnInsertSecondTestActionPerformed(evt);
             }
         });
-        jPanel4.add(btnInsertSecondTest, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 530, 120, 36));
+        secondPanel1.add(btnInsertSecondTest, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 550, 120, 36));
 
         jLabel62.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel62.setText("Student ID");
-        jPanel4.add(jLabel62, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, 80, 20));
+        secondPanel1.add(jLabel62, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 110, 80, 20));
 
         txtSecondID.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        jPanel4.add(txtSecondID, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 100, 100, 30));
+        secondPanel1.add(txtSecondID, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 100, 100, 30));
 
         jLabel306.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel306.setText("Computer");
-        jPanel4.add(jLabel306, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 100, 100, 30));
+        secondPanel1.add(jLabel306, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 100, 100, 30));
 
         txtSecondComputer.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        jPanel4.add(txtSecondComputer, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 100, 100, 30));
+        secondPanel1.add(txtSecondComputer, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 100, 100, 30));
 
         jLabel307.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel307.setText("French");
-        jPanel4.add(jLabel307, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 100, 100, 30));
+        secondPanel1.add(jLabel307, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 100, 100, 30));
 
         txtSecondFrench.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        jPanel4.add(txtSecondFrench, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 100, 100, 30));
+        secondPanel1.add(txtSecondFrench, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 100, 100, 30));
 
         jLabel308.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel308.setText("Agriculture");
-        jPanel4.add(jLabel308, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 450, 100, 30));
+        secondPanel1.add(jLabel308, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 450, 100, 30));
 
         txtSecondAgric.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        jPanel4.add(txtSecondAgric, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 450, 100, 30));
+        secondPanel1.add(txtSecondAgric, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 450, 100, 30));
 
         jLabel309.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel309.setText("Fine Arts");
-        jPanel4.add(jLabel309, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 530, 100, 30));
+        secondPanel1.add(jLabel309, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 530, 100, 30));
 
         txtSecondFineArts.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        jPanel4.add(txtSecondFineArts, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 530, 100, 30));
+        secondPanel1.add(txtSecondFineArts, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 530, 100, 30));
+
+        btnEditSeniorSecondTest.setBackground(new java.awt.Color(0, 153, 204));
+        btnEditSeniorSecondTest.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        btnEditSeniorSecondTest.setForeground(new java.awt.Color(255, 255, 255));
+        btnEditSeniorSecondTest.setText("EDIT");
+        btnEditSeniorSecondTest.setToolTipText("EDIT");
+        btnEditSeniorSecondTest.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEditSeniorSecondTestActionPerformed(evt);
+            }
+        });
+        secondPanel1.add(btnEditSeniorSecondTest, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 550, 120, 36));
 
         javax.swing.GroupLayout secondPanelLayout = new javax.swing.GroupLayout(secondPanel);
         secondPanel.setLayout(secondPanelLayout);
         secondPanelLayout.setHorizontalGroup(
             secondPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(secondPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         secondPanelLayout.setVerticalGroup(
             secondPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, 630, Short.MAX_VALUE)
+            .addComponent(secondPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 630, Short.MAX_VALUE)
         );
 
         LayeredPane.add(secondPanel, "card4");
+
+        thirdPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel6.setBackground(new java.awt.Color(0, 153, 204));
 
@@ -1454,75 +1412,105 @@ public class ResultEntry extends javax.swing.JFrame {
                 .addGap(23, 23, 23))
         );
 
+        thirdPanel.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 950, 82));
+
         jLabel33.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel33.setText("Mathematics");
+        thirdPanel.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(73, 187, 100, 30));
 
         txtThirdMaths.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        thirdPanel.add(txtThirdMaths, new org.netbeans.lib.awtextra.AbsoluteConstraints(213, 187, 100, 30));
 
         jLabel34.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel34.setText("English L.");
+        thirdPanel.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(73, 257, 100, 30));
 
         txtThirdEnglish.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        thirdPanel.add(txtThirdEnglish, new org.netbeans.lib.awtextra.AbsoluteConstraints(213, 257, 100, 30));
 
         jLabel35.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel35.setText("F. Maths");
+        thirdPanel.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(353, 257, 100, 30));
 
         jLabel36.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel36.setText("Civic Edu.");
+        thirdPanel.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(353, 187, 100, 30));
 
         txtThirdCivic.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        thirdPanel.add(txtThirdCivic, new org.netbeans.lib.awtextra.AbsoluteConstraints(493, 187, 100, 30));
 
         txtThirdFMaths.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        thirdPanel.add(txtThirdFMaths, new org.netbeans.lib.awtextra.AbsoluteConstraints(493, 257, 100, 30));
 
         jLabel37.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel37.setText("Chemistry");
+        thirdPanel.add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(633, 257, 100, 30));
 
         jLabel38.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel38.setText("Government");
+        thirdPanel.add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(633, 187, 100, 30));
 
         txtThirdGov.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        thirdPanel.add(txtThirdGov, new org.netbeans.lib.awtextra.AbsoluteConstraints(773, 187, 100, 30));
 
         txtThirdChem.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        thirdPanel.add(txtThirdChem, new org.netbeans.lib.awtextra.AbsoluteConstraints(773, 257, 100, 30));
 
         txtThirdBio.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        thirdPanel.add(txtThirdBio, new org.netbeans.lib.awtextra.AbsoluteConstraints(773, 327, 100, 30));
 
         txtThirdAccount.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        thirdPanel.add(txtThirdAccount, new org.netbeans.lib.awtextra.AbsoluteConstraints(773, 401, 100, 30));
 
         txtThirdCRS.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        thirdPanel.add(txtThirdCRS, new org.netbeans.lib.awtextra.AbsoluteConstraints(773, 472, 100, 30));
 
         jLabel39.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel39.setText("C.R.S");
+        thirdPanel.add(jLabel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(633, 472, 100, 30));
 
         jLabel40.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel40.setText("Accounting");
+        thirdPanel.add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(633, 401, 100, 30));
 
         jLabel41.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel41.setText("Biology");
+        thirdPanel.add(jLabel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(633, 327, 100, 30));
 
         txtThirdLit.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        thirdPanel.add(txtThirdLit, new org.netbeans.lib.awtextra.AbsoluteConstraints(493, 327, 100, 30));
 
         txtThirdGeo.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        thirdPanel.add(txtThirdGeo, new org.netbeans.lib.awtextra.AbsoluteConstraints(493, 401, 100, 30));
 
         txtThirdPhy.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        thirdPanel.add(txtThirdPhy, new org.netbeans.lib.awtextra.AbsoluteConstraints(493, 472, 100, 30));
 
         jLabel42.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel42.setText("Physics");
+        thirdPanel.add(jLabel42, new org.netbeans.lib.awtextra.AbsoluteConstraints(353, 472, 100, 30));
 
         jLabel43.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel43.setText("Geography");
+        thirdPanel.add(jLabel43, new org.netbeans.lib.awtextra.AbsoluteConstraints(353, 401, 100, 30));
 
         jLabel44.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel44.setText("Literature");
+        thirdPanel.add(jLabel44, new org.netbeans.lib.awtextra.AbsoluteConstraints(353, 327, 100, 30));
 
         txtThirdComm.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        thirdPanel.add(txtThirdComm, new org.netbeans.lib.awtextra.AbsoluteConstraints(213, 327, 100, 30));
 
         txtThirdEcons.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        thirdPanel.add(txtThirdEcons, new org.netbeans.lib.awtextra.AbsoluteConstraints(213, 401, 100, 30));
 
         jLabel45.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel45.setText("Economics");
+        thirdPanel.add(jLabel45, new org.netbeans.lib.awtextra.AbsoluteConstraints(73, 401, 100, 30));
 
         jLabel46.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel46.setText("Commerce");
+        thirdPanel.add(jLabel46, new org.netbeans.lib.awtextra.AbsoluteConstraints(73, 327, 100, 30));
 
         btnCancelThird.setBackground(new java.awt.Color(255, 0, 0));
         btnCancelThird.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
@@ -1533,6 +1521,7 @@ public class ResultEntry extends javax.swing.JFrame {
                 btnCancelThirdActionPerformed(evt);
             }
         });
+        thirdPanel.add(btnCancelThird, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 570, 120, 36));
 
         btnInsertThirdTest.setBackground(new java.awt.Color(0, 153, 204));
         btnInsertThirdTest.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
@@ -1543,293 +1532,155 @@ public class ResultEntry extends javax.swing.JFrame {
                 btnInsertThirdTestActionPerformed(evt);
             }
         });
+        thirdPanel.add(btnInsertThirdTest, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 570, 120, 36));
 
         jLabel64.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel64.setText("Student ID");
+        thirdPanel.add(jLabel64, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 130, -1, 20));
 
         txtThirdID.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        thirdPanel.add(txtThirdID, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 120, 100, 30));
 
         jLabel310.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel310.setText("Agriculture");
+        thirdPanel.add(jLabel310, new org.netbeans.lib.awtextra.AbsoluteConstraints(73, 472, 100, 30));
 
         txtThirdAgric.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        thirdPanel.add(txtThirdAgric, new org.netbeans.lib.awtextra.AbsoluteConstraints(213, 472, 100, 30));
 
         jLabel311.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel311.setText("Fine Arts");
+        thirdPanel.add(jLabel311, new org.netbeans.lib.awtextra.AbsoluteConstraints(73, 548, 100, 30));
 
         txtThirdFineArts.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        thirdPanel.add(txtThirdFineArts, new org.netbeans.lib.awtextra.AbsoluteConstraints(213, 548, 100, 30));
 
         jLabel312.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel312.setText("Computer");
+        thirdPanel.add(jLabel312, new org.netbeans.lib.awtextra.AbsoluteConstraints(353, 120, 100, 30));
 
         txtThirdComputer.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        thirdPanel.add(txtThirdComputer, new org.netbeans.lib.awtextra.AbsoluteConstraints(493, 120, 100, 30));
 
         jLabel313.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel313.setText("French");
+        thirdPanel.add(jLabel313, new org.netbeans.lib.awtextra.AbsoluteConstraints(633, 120, 100, 30));
 
         txtThirdFrench.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        thirdPanel.add(txtThirdFrench, new org.netbeans.lib.awtextra.AbsoluteConstraints(773, 120, 100, 30));
 
-        javax.swing.GroupLayout thirdPanelLayout = new javax.swing.GroupLayout(thirdPanel);
-        thirdPanel.setLayout(thirdPanelLayout);
-        thirdPanelLayout.setHorizontalGroup(
-            thirdPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(thirdPanelLayout.createSequentialGroup()
-                .addGroup(thirdPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(thirdPanelLayout.createSequentialGroup()
-                        .addGap(24, 24, 24)
-                        .addComponent(jLabel64)
-                        .addGap(30, 30, 30)
-                        .addComponent(txtThirdID, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(thirdPanelLayout.createSequentialGroup()
-                        .addGap(73, 73, 73)
-                        .addGroup(thirdPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addGroup(thirdPanelLayout.createSequentialGroup()
-                                .addComponent(jLabel311, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(40, 40, 40)
-                                .addComponent(txtThirdFineArts, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(btnCancelThird, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(85, 85, 85)
-                                .addComponent(btnInsertThirdTest, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(thirdPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(thirdPanelLayout.createSequentialGroup()
-                                    .addComponent(jLabel34, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(40, 40, 40)
-                                    .addComponent(txtThirdEnglish, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(40, 40, 40)
-                                    .addComponent(jLabel35, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(40, 40, 40)
-                                    .addComponent(txtThirdFMaths, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(40, 40, 40)
-                                    .addComponent(jLabel37, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(40, 40, 40)
-                                    .addComponent(txtThirdChem, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(thirdPanelLayout.createSequentialGroup()
-                                    .addComponent(jLabel46, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(40, 40, 40)
-                                    .addComponent(txtThirdComm, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(40, 40, 40)
-                                    .addComponent(jLabel44, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(40, 40, 40)
-                                    .addComponent(txtThirdLit, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(40, 40, 40)
-                                    .addComponent(jLabel41, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(40, 40, 40)
-                                    .addComponent(txtThirdBio, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(thirdPanelLayout.createSequentialGroup()
-                                    .addComponent(jLabel45, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(40, 40, 40)
-                                    .addComponent(txtThirdEcons, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(40, 40, 40)
-                                    .addComponent(jLabel43, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(40, 40, 40)
-                                    .addComponent(txtThirdGeo, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(40, 40, 40)
-                                    .addComponent(jLabel40, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(40, 40, 40)
-                                    .addComponent(txtThirdAccount, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(thirdPanelLayout.createSequentialGroup()
-                                    .addComponent(jLabel310, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(40, 40, 40)
-                                    .addComponent(txtThirdAgric, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(40, 40, 40)
-                                    .addComponent(jLabel42, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(40, 40, 40)
-                                    .addComponent(txtThirdPhy, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(40, 40, 40)
-                                    .addComponent(jLabel39, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(40, 40, 40)
-                                    .addComponent(txtThirdCRS, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(thirdPanelLayout.createSequentialGroup()
-                                    .addComponent(jLabel33, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(40, 40, 40)
-                                    .addComponent(txtThirdMaths, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(40, 40, 40)
-                                    .addGroup(thirdPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(thirdPanelLayout.createSequentialGroup()
-                                            .addComponent(jLabel312, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addGap(40, 40, 40)
-                                            .addComponent(txtThirdComputer, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addGap(40, 40, 40)
-                                            .addComponent(jLabel313, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addGap(40, 40, 40)
-                                            .addComponent(txtThirdFrench, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGroup(thirdPanelLayout.createSequentialGroup()
-                                            .addComponent(jLabel36, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addGap(40, 40, 40)
-                                            .addComponent(txtThirdCivic, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addGap(40, 40, 40)
-                                            .addComponent(jLabel38, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addGap(40, 40, 40)
-                                            .addComponent(txtThirdGov, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))))))))
-                .addContainerGap(77, Short.MAX_VALUE))
-        );
-        thirdPanelLayout.setVerticalGroup(
-            thirdPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(thirdPanelLayout.createSequentialGroup()
-                .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(38, 38, 38)
-                .addGroup(thirdPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel64, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtThirdID, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel312, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtThirdComputer, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel313, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtThirdFrench, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(37, 37, 37)
-                .addGroup(thirdPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel33, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtThirdMaths, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel36, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtThirdCivic, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel38, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtThirdGov, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(40, 40, 40)
-                .addGroup(thirdPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel34, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtThirdEnglish, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel35, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtThirdFMaths, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel37, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtThirdChem, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(40, 40, 40)
-                .addGroup(thirdPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel46, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtThirdComm, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel44, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtThirdLit, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel41, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtThirdBio, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(44, 44, 44)
-                .addGroup(thirdPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel45, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtThirdEcons, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel43, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtThirdGeo, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel40, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtThirdAccount, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(41, 41, 41)
-                .addGroup(thirdPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel42, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtThirdPhy, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel39, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtThirdCRS, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel310, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtThirdAgric, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(46, 46, 46)
-                .addGroup(thirdPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(thirdPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(btnInsertThirdTest, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(btnCancelThird, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jLabel311, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtThirdFineArts, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(46, Short.MAX_VALUE))
-        );
+        btnSeniorThirdTest.setBackground(new java.awt.Color(0, 153, 204));
+        btnSeniorThirdTest.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        btnSeniorThirdTest.setText("EDIT");
+        btnSeniorThirdTest.setToolTipText("EDIT");
+        btnSeniorThirdTest.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSeniorThirdTestActionPerformed(evt);
+            }
+        });
+        thirdPanel.add(btnSeniorThirdTest, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 570, 120, 36));
 
         LayeredPane.add(thirdPanel, "card5");
 
-        jPanel7.setBackground(new java.awt.Color(0, 153, 204));
-
-        jLabel47.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
-        jLabel47.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel47.setText("EXAMINATION");
-
-        jLabel69.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
-        jLabel69.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel69.setText("SENIOR SECONDARY");
-
-        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
-        jPanel7.setLayout(jPanel7Layout);
-        jPanel7Layout.setHorizontalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel7Layout.createSequentialGroup()
-                .addGap(327, 327, 327)
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addGap(44, 44, 44)
-                        .addComponent(jLabel47))
-                    .addComponent(jLabel69))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel7Layout.setVerticalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
-                .addComponent(jLabel69)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel47)
-                .addContainerGap())
-        );
+        examPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel48.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel48.setText("Mathematics");
+        examPanel1.add(jLabel48, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 120, 100, 30));
 
         txtExamMaths.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        examPanel1.add(txtExamMaths, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 120, 100, 30));
 
         jLabel49.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel49.setText("English L.");
+        examPanel1.add(jLabel49, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 190, 100, 30));
 
         txtExamEnglish.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        examPanel1.add(txtExamEnglish, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 190, 100, 30));
 
         jLabel50.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel50.setText("F. Maths");
+        examPanel1.add(jLabel50, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 190, 100, 30));
 
         jLabel51.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel51.setText("Civic Edu.");
+        examPanel1.add(jLabel51, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 120, 100, 30));
 
         txtExamCivic.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        examPanel1.add(txtExamCivic, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 120, 100, 30));
 
         txtExamFMaths.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        examPanel1.add(txtExamFMaths, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 190, 100, 30));
 
         jLabel52.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel52.setText("Chemistry");
+        examPanel1.add(jLabel52, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 190, 100, 30));
 
         jLabel53.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel53.setText("Government");
+        examPanel1.add(jLabel53, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 120, 100, 30));
 
         txtExamGov.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        examPanel1.add(txtExamGov, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 120, 100, 30));
 
         txtExamChem.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        examPanel1.add(txtExamChem, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 190, 100, 30));
 
         txtExamBio.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        examPanel1.add(txtExamBio, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 260, 100, 30));
 
         txtExamAccount.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        examPanel1.add(txtExamAccount, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 330, 100, 30));
 
         txtExamCRS.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        examPanel1.add(txtExamCRS, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 400, 100, 30));
 
         jLabel54.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel54.setText("C.R.S");
+        examPanel1.add(jLabel54, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 400, 100, 30));
 
         jLabel55.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel55.setText("Accounting");
+        examPanel1.add(jLabel55, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 330, 100, 30));
 
         jLabel56.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel56.setText("Biology");
+        examPanel1.add(jLabel56, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 260, 100, 30));
 
         txtExamLit.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        examPanel1.add(txtExamLit, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 260, 100, 30));
 
         txtExamGeo.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        examPanel1.add(txtExamGeo, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 330, 100, 30));
 
         txtExamPhy.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        examPanel1.add(txtExamPhy, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 400, 100, 30));
 
         jLabel57.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel57.setText("Physics");
+        examPanel1.add(jLabel57, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 400, 100, 30));
 
         jLabel58.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel58.setText("Geography");
+        examPanel1.add(jLabel58, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 330, 100, 30));
 
         jLabel59.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel59.setText("Literature");
+        examPanel1.add(jLabel59, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 260, 100, 30));
 
         txtExamComm.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        examPanel1.add(txtExamComm, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 260, 100, 30));
 
         txtExamEcons.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        examPanel1.add(txtExamEcons, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 330, 100, 30));
 
         jLabel60.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel60.setText("Economics");
+        examPanel1.add(jLabel60, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 330, 100, 30));
 
         jLabel61.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel61.setText("Commerce");
+        examPanel1.add(jLabel61, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 260, 100, 30));
 
         btnCancelExam.setBackground(new java.awt.Color(255, 0, 0));
         btnCancelExam.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
@@ -1840,223 +1691,98 @@ public class ResultEntry extends javax.swing.JFrame {
                 btnCancelExamActionPerformed(evt);
             }
         });
+        examPanel1.add(btnCancelExam, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 490, 120, 36));
 
         btnInsertExam.setBackground(new java.awt.Color(0, 153, 204));
         btnInsertExam.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         btnInsertExam.setForeground(new java.awt.Color(255, 255, 255));
-        btnInsertExam.setText("INSERT");
+        btnInsertExam.setText("UPDATE");
         btnInsertExam.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnInsertExamActionPerformed(evt);
             }
         });
+        examPanel1.add(btnInsertExam, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 490, 120, 36));
 
         jLabel65.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel65.setText("Student ID");
+        examPanel1.add(jLabel65, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 60, -1, 20));
 
         txtExamID.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        examPanel1.add(txtExamID, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 50, 100, 30));
 
         jLabel314.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel314.setText("Agriculture");
+        examPanel1.add(jLabel314, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 400, 100, 30));
 
         txtExamAgric.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        examPanel1.add(txtExamAgric, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 400, 100, 30));
 
         jLabel315.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel315.setText("Fine Arts");
+        examPanel1.add(jLabel315, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 470, 100, 30));
 
         txtExamFineArts.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        examPanel1.add(txtExamFineArts, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 470, 100, 30));
 
         jLabel316.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel316.setText("Computer");
+        examPanel1.add(jLabel316, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 50, 100, 30));
 
         txtExamComputer.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        examPanel1.add(txtExamComputer, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 50, 100, 30));
 
         jLabel317.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel317.setText("French");
+        examPanel1.add(jLabel317, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 50, 100, 30));
 
         txtExamFrench.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        examPanel1.add(txtExamFrench, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 50, 100, 30));
 
-        javax.swing.GroupLayout examPanel1Layout = new javax.swing.GroupLayout(examPanel1);
-        examPanel1.setLayout(examPanel1Layout);
-        examPanel1Layout.setHorizontalGroup(
-            examPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(examPanel1Layout.createSequentialGroup()
-                .addGroup(examPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(examPanel1Layout.createSequentialGroup()
-                        .addGap(22, 22, 22)
-                        .addComponent(jLabel65)
-                        .addGap(30, 30, 30)
-                        .addComponent(txtExamID, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(examPanel1Layout.createSequentialGroup()
-                        .addGap(75, 75, 75)
-                        .addGroup(examPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(examPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel49, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(40, 40, 40)
-                                .addComponent(txtExamEnglish, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(40, 40, 40)
-                                .addComponent(jLabel50, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(40, 40, 40)
-                                .addComponent(txtExamFMaths, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(40, 40, 40)
-                                .addComponent(jLabel52, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(40, 40, 40)
-                                .addComponent(txtExamChem, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(examPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel61, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(40, 40, 40)
-                                .addComponent(txtExamComm, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(40, 40, 40)
-                                .addComponent(jLabel59, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(40, 40, 40)
-                                .addComponent(txtExamLit, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(40, 40, 40)
-                                .addComponent(jLabel56, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(40, 40, 40)
-                                .addComponent(txtExamBio, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(examPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel60, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(40, 40, 40)
-                                .addComponent(txtExamEcons, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(40, 40, 40)
-                                .addComponent(jLabel58, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(40, 40, 40)
-                                .addComponent(txtExamGeo, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(40, 40, 40)
-                                .addComponent(jLabel55, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(40, 40, 40)
-                                .addComponent(txtExamAccount, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(examPanel1Layout.createSequentialGroup()
-                                .addGroup(examPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(examPanel1Layout.createSequentialGroup()
-                                        .addComponent(jLabel315, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(40, 40, 40)
-                                        .addComponent(txtExamFineArts, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(examPanel1Layout.createSequentialGroup()
-                                        .addComponent(jLabel314, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(40, 40, 40)
-                                        .addComponent(txtExamAgric, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGroup(examPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(examPanel1Layout.createSequentialGroup()
-                                        .addGap(40, 40, 40)
-                                        .addComponent(jLabel57, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(40, 40, 40)
-                                        .addComponent(txtExamPhy, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(40, 40, 40)
-                                        .addComponent(jLabel54, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(40, 40, 40)
-                                        .addComponent(txtExamCRS, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, examPanel1Layout.createSequentialGroup()
-                                        .addGap(236, 236, 236)
-                                        .addComponent(btnCancelExam, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(84, 84, 84)
-                                        .addComponent(btnInsertExam, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                            .addGroup(examPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel48, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(40, 40, 40)
-                                .addComponent(txtExamMaths, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(40, 40, 40)
-                                .addGroup(examPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(examPanel1Layout.createSequentialGroup()
-                                        .addComponent(jLabel316, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(40, 40, 40)
-                                        .addComponent(txtExamComputer, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(40, 40, 40)
-                                        .addComponent(jLabel317, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(40, 40, 40)
-                                        .addComponent(txtExamFrench, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(examPanel1Layout.createSequentialGroup()
-                                        .addComponent(jLabel51, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(40, 40, 40)
-                                        .addComponent(txtExamCivic, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(40, 40, 40)
-                                        .addComponent(jLabel53, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(40, 40, 40)
-                                        .addComponent(txtExamGov, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
-                .addContainerGap(75, Short.MAX_VALUE))
-        );
-        examPanel1Layout.setVerticalGroup(
-            examPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(examPanel1Layout.createSequentialGroup()
-                .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27)
-                .addGroup(examPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel65, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtExamID, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel316, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtExamComputer, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel317, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtExamFrench, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(40, 40, 40)
-                .addGroup(examPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel48, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtExamMaths, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel51, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtExamCivic, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel53, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtExamGov, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(40, 40, 40)
-                .addGroup(examPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel49, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtExamEnglish, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel50, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtExamFMaths, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel52, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtExamChem, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(40, 40, 40)
-                .addGroup(examPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel61, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtExamComm, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel59, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtExamLit, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel56, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtExamBio, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(44, 44, 44)
-                .addGroup(examPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel60, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtExamEcons, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel58, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtExamGeo, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel55, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtExamAccount, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(38, 38, 38)
-                .addGroup(examPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel57, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtExamPhy, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel54, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtExamCRS, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel314, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtExamAgric, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(41, 41, 41)
-                .addGroup(examPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(examPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(btnInsertExam, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(btnCancelExam, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jLabel315, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtExamFineArts, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(64, Short.MAX_VALUE))
-        );
+        btnSeniorExamTest.setBackground(new java.awt.Color(0, 153, 204));
+        btnSeniorExamTest.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        btnSeniorExamTest.setForeground(new java.awt.Color(255, 255, 255));
+        btnSeniorExamTest.setText("EDIT");
+        btnSeniorExamTest.setToolTipText("EDIT");
+        btnSeniorExamTest.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSeniorExamTestActionPerformed(evt);
+            }
+        });
+        examPanel1.add(btnSeniorExamTest, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 490, 120, 36));
+
+        jPanel7.setBackground(new java.awt.Color(0, 153, 204));
+        jPanel7.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel47.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        jLabel47.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel47.setText("EXAMINATION");
+        jPanel7.add(jLabel47, new org.netbeans.lib.awtextra.AbsoluteConstraints(371, 38, -1, -1));
+
+        jLabel69.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        jLabel69.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel69.setText("SENIOR SECONDARY");
+        jPanel7.add(jLabel69, new org.netbeans.lib.awtextra.AbsoluteConstraints(327, 0, -1, -1));
 
         javax.swing.GroupLayout examPanelLayout = new javax.swing.GroupLayout(examPanel);
         examPanel.setLayout(examPanelLayout);
         examPanelLayout.setHorizontalGroup(
             examPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 950, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, examPanelLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, 950, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(examPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(examPanelLayout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(examPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+                .addComponent(examPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 950, Short.MAX_VALUE))
         );
         examPanelLayout.setVerticalGroup(
             examPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 632, Short.MAX_VALUE)
+            .addGroup(examPanelLayout.createSequentialGroup()
+                .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 560, Short.MAX_VALUE))
             .addGroup(examPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(examPanelLayout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(examPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, examPanelLayout.createSequentialGroup()
+                    .addGap(0, 67, Short.MAX_VALUE)
+                    .addComponent(examPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 563, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
 
         LayeredPane.add(examPanel, "card6");
@@ -2064,179 +1790,179 @@ public class ResultEntry extends javax.swing.JFrame {
         jsFirstPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel8.setBackground(new java.awt.Color(0, 153, 204));
+        jPanel8.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel70.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         jLabel70.setForeground(new java.awt.Color(255, 255, 255));
         jLabel70.setText("FIRST TEST");
+        jPanel8.add(jLabel70, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 38, -1, -1));
 
         jLabel71.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         jLabel71.setForeground(new java.awt.Color(255, 255, 255));
         jLabel71.setText("JUNIOR SECONDARY");
-
-        javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
-        jPanel8.setLayout(jPanel8Layout);
-        jPanel8Layout.setHorizontalGroup(
-            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel8Layout.createSequentialGroup()
-                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel8Layout.createSequentialGroup()
-                        .addGap(333, 333, 333)
-                        .addComponent(jLabel71))
-                    .addGroup(jPanel8Layout.createSequentialGroup()
-                        .addGap(380, 380, 380)
-                        .addComponent(jLabel70)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel8Layout.setVerticalGroup(
-            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
-                .addComponent(jLabel71)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel70)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        jPanel8.add(jLabel71, new org.netbeans.lib.awtextra.AbsoluteConstraints(333, 0, -1, -1));
 
         jsFirstPanel.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 950, -1));
 
         jLabel82.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        jLabel82.setText("English S.");
-        jsFirstPanel.add(jLabel82, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 120, -1, 28));
+        jLabel82.setText("Student ID");
+        jsFirstPanel.add(jLabel82, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 100, -1, 28));
 
         jsFirstEnglish.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        jsFirstPanel.add(jsFirstEnglish, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 120, 102, 31));
+        jsFirstEnglish.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jsFirstPanel.add(jsFirstEnglish, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 160, 102, 31));
 
         jsFirstLit.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        jsFirstPanel.add(jsFirstLit, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 180, 102, 31));
+        jsFirstLit.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jsFirstPanel.add(jsFirstLit, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 220, 102, 31));
 
         jLabel83.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel83.setText("Literature");
-        jsFirstPanel.add(jLabel83, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 180, -1, 28));
+        jsFirstPanel.add(jLabel83, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 220, -1, 28));
 
         jsFirstMaths.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        jsFirstPanel.add(jsFirstMaths, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 240, 102, 31));
+        jsFirstMaths.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jsFirstPanel.add(jsFirstMaths, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 280, 102, 31));
 
         jLabel84.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel84.setText("Mathematics");
-        jsFirstPanel.add(jLabel84, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 240, -1, 28));
+        jsFirstPanel.add(jLabel84, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 280, -1, 28));
 
         jsFirstBS.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        jsFirstPanel.add(jsFirstBS, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 300, 102, 31));
+        jsFirstBS.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jsFirstPanel.add(jsFirstBS, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 340, 102, 31));
 
         jLabel85.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel85.setText("Basic Science");
-        jsFirstPanel.add(jLabel85, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 300, -1, 28));
+        jsFirstPanel.add(jLabel85, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 340, -1, 28));
 
         jsFirstBT.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        jsFirstPanel.add(jsFirstBT, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 360, 102, 31));
+        jsFirstBT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jsFirstPanel.add(jsFirstBT, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 400, 102, 31));
 
         jLabel86.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel86.setText("Basic Tech");
-        jsFirstPanel.add(jLabel86, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 360, -1, 28));
+        jsFirstPanel.add(jLabel86, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 400, -1, 28));
 
         jLabel87.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel87.setText("ICT");
-        jsFirstPanel.add(jLabel87, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 180, -1, 28));
+        jsFirstPanel.add(jLabel87, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 160, -1, 28));
 
         jsFirstICT.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        jsFirstPanel.add(jsFirstICT, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 180, 102, 31));
+        jsFirstICT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jsFirstPanel.add(jsFirstICT, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 160, 102, 31));
 
         jLabel88.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel88.setText("PHE");
-        jsFirstPanel.add(jLabel88, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 120, -1, 28));
+        jsFirstPanel.add(jLabel88, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 100, -1, 28));
 
         jsFirstPHE.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        jsFirstPanel.add(jsFirstPHE, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 120, 102, 31));
+        jsFirstPHE.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jsFirstPanel.add(jsFirstPHE, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 100, 102, 31));
 
         jLabel89.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel89.setText("CRS");
-        jsFirstPanel.add(jLabel89, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 240, -1, 28));
+        jsFirstPanel.add(jLabel89, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 220, -1, 28));
 
         jsFirstCRS.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        jsFirstPanel.add(jsFirstCRS, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 240, 102, 31));
+        jsFirstCRS.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jsFirstPanel.add(jsFirstCRS, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 220, 102, 31));
 
         jLabel90.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel90.setText("Social Studies");
-        jsFirstPanel.add(jLabel90, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 300, -1, 28));
+        jsFirstPanel.add(jLabel90, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 280, -1, 28));
 
         jsFirstSocial.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        jsFirstPanel.add(jsFirstSocial, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 300, 102, 31));
+        jsFirstSocial.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jsFirstPanel.add(jsFirstSocial, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 280, 102, 31));
 
         jLabel91.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel91.setText("Civic Education");
-        jsFirstPanel.add(jLabel91, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 360, -1, 28));
+        jsFirstPanel.add(jLabel91, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 340, -1, 28));
 
         jsFirstCivic.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        jsFirstPanel.add(jsFirstCivic, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 360, 102, 31));
+        jsFirstCivic.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jsFirstPanel.add(jsFirstCivic, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 340, 102, 31));
 
         jLabel92.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel92.setText("Security Education");
-        jsFirstPanel.add(jLabel92, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 120, -1, 28));
+        jsFirstPanel.add(jLabel92, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 100, -1, 28));
 
         jLabel93.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel93.setText("Home Economics");
-        jsFirstPanel.add(jLabel93, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 180, -1, 28));
+        jsFirstPanel.add(jLabel93, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 160, -1, 28));
 
         jLabel94.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel94.setText("Agric Science");
-        jsFirstPanel.add(jLabel94, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 240, -1, 28));
+        jsFirstPanel.add(jLabel94, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 220, -1, 28));
 
         jLabel95.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel95.setText("Music");
-        jsFirstPanel.add(jLabel95, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 300, -1, 28));
+        jsFirstPanel.add(jLabel95, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 280, -1, 28));
 
         jLabel96.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel96.setText("Drama & Stage");
-        jsFirstPanel.add(jLabel96, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 360, -1, 28));
+        jsFirstPanel.add(jLabel96, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 340, -1, 28));
 
         jsFirstDrama_Stage.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        jsFirstPanel.add(jsFirstDrama_Stage, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 360, 102, 31));
+        jsFirstDrama_Stage.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jsFirstPanel.add(jsFirstDrama_Stage, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 340, 102, 31));
 
         jsFirstMusic.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        jsFirstPanel.add(jsFirstMusic, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 300, 102, 31));
+        jsFirstMusic.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jsFirstPanel.add(jsFirstMusic, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 280, 102, 31));
 
         jsFirstAgric.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        jsFirstPanel.add(jsFirstAgric, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 240, 102, 31));
+        jsFirstAgric.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jsFirstPanel.add(jsFirstAgric, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 220, 102, 31));
 
         jsFirstHome.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        jsFirstPanel.add(jsFirstHome, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 180, 102, 31));
+        jsFirstHome.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jsFirstPanel.add(jsFirstHome, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 160, 102, 31));
 
         jsFirstSecurity.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        jsFirstPanel.add(jsFirstSecurity, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 120, 102, 31));
+        jsFirstSecurity.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jsFirstPanel.add(jsFirstSecurity, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 100, 102, 31));
 
         jLabel97.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel97.setText("Art & Craft");
-        jsFirstPanel.add(jLabel97, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 420, -1, 28));
+        jsFirstPanel.add(jLabel97, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 460, -1, 28));
 
         jsFirstArt_Craft.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        jsFirstPanel.add(jsFirstArt_Craft, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 420, 102, 31));
+        jsFirstArt_Craft.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jsFirstPanel.add(jsFirstArt_Craft, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 460, 102, 31));
 
         jLabel98.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel98.setText("Business Studies");
-        jsFirstPanel.add(jLabel98, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 420, -1, 28));
+        jsFirstPanel.add(jLabel98, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 400, -1, 28));
 
         jsFirstBusiness.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        jsFirstPanel.add(jsFirstBusiness, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 420, 102, 31));
+        jsFirstBusiness.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jsFirstPanel.add(jsFirstBusiness, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 400, 102, 31));
 
         jLabel99.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel99.setText("French");
-        jsFirstPanel.add(jLabel99, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 420, -1, 28));
+        jsFirstPanel.add(jLabel99, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 400, -1, 28));
 
         jsFirstFrench.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        jsFirstPanel.add(jsFirstFrench, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 420, 102, 31));
+        jsFirstFrench.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jsFirstPanel.add(jsFirstFrench, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 400, 102, 31));
 
         jLabel100.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel100.setText("Edo Language");
-        jsFirstPanel.add(jLabel100, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 480, -1, 28));
+        jsFirstPanel.add(jLabel100, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 460, -1, 28));
 
         jsFirstEdo.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        jsFirstPanel.add(jsFirstEdo, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 480, 102, 31));
+        jsFirstEdo.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jsFirstPanel.add(jsFirstEdo, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 460, 102, 31));
 
         jLabel101.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel101.setText("Moral Instruction");
-        jsFirstPanel.add(jLabel101, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 480, -1, 28));
+        jsFirstPanel.add(jLabel101, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 460, -1, 28));
 
         jsFirstMoral.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        jsFirstPanel.add(jsFirstMoral, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 480, 102, 31));
+        jsFirstMoral.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jsFirstPanel.add(jsFirstMoral, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 460, 102, 31));
 
         btnjsFirstInsert.setBackground(new java.awt.Color(0, 153, 204));
         btnjsFirstInsert.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
@@ -2246,7 +1972,7 @@ public class ResultEntry extends javax.swing.JFrame {
                 btnjsFirstInsertActionPerformed(evt);
             }
         });
-        jsFirstPanel.add(btnjsFirstInsert, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 550, 120, 36));
+        jsFirstPanel.add(btnjsFirstInsert, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 530, 120, 36));
 
         btnjsFirstCancel.setBackground(new java.awt.Color(255, 0, 0));
         btnjsFirstCancel.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
@@ -2256,7 +1982,37 @@ public class ResultEntry extends javax.swing.JFrame {
                 btnjsFirstCancelActionPerformed(evt);
             }
         });
-        jsFirstPanel.add(btnjsFirstCancel, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 550, 120, 36));
+        jsFirstPanel.add(btnjsFirstCancel, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 580, 120, 36));
+
+        jLabel319.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        jLabel319.setText("English S.");
+        jsFirstPanel.add(jLabel319, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 160, -1, 28));
+
+        txtFirstID.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        txtFirstID.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jsFirstPanel.add(txtFirstID, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 100, 100, 30));
+
+        btnJsEditFirst.setBackground(new java.awt.Color(0, 153, 204));
+        btnJsEditFirst.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        btnJsEditFirst.setText("EDIT");
+        btnJsEditFirst.setToolTipText("EDIT");
+        btnJsEditFirst.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnJsEditFirstActionPerformed(evt);
+            }
+        });
+        jsFirstPanel.add(btnJsEditFirst, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 530, 120, 36));
+
+        btnjsUpdate.setBackground(new java.awt.Color(0, 153, 204));
+        btnjsUpdate.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        btnjsUpdate.setText("UPDATE");
+        btnjsUpdate.setToolTipText("UPDATE TABLE");
+        btnjsUpdate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnjsUpdateActionPerformed(evt);
+            }
+        });
+        jsFirstPanel.add(btnjsUpdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 580, 120, 36));
 
         LayeredPane.add(jsFirstPanel, "card7");
 
@@ -2298,10 +2054,10 @@ public class ResultEntry extends javax.swing.JFrame {
 
         jLabel104.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel104.setText("Student ID");
-        jsSecondPanel1.add(jLabel104, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, -1, 28));
+        jsSecondPanel1.add(jLabel104, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 110, -1, 28));
 
         jsSecondID.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        jsSecondPanel1.add(jsSecondID, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 90, 102, 31));
+        jsSecondPanel1.add(jsSecondID, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 110, 102, 31));
 
         jsSecondLit.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jsSecondPanel1.add(jsSecondLit, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 230, 102, 31));
@@ -2333,73 +2089,73 @@ public class ResultEntry extends javax.swing.JFrame {
 
         jLabel109.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel109.setText("ICT");
-        jsSecondPanel1.add(jLabel109, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 230, -1, 28));
+        jsSecondPanel1.add(jLabel109, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 170, -1, 28));
 
         jsSecondICT.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        jsSecondPanel1.add(jsSecondICT, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 230, 102, 31));
+        jsSecondPanel1.add(jsSecondICT, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 170, 102, 31));
 
         jLabel110.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel110.setText("PHE");
-        jsSecondPanel1.add(jLabel110, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 170, -1, 28));
+        jsSecondPanel1.add(jLabel110, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 110, -1, 28));
 
         jsSecondPHE.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        jsSecondPanel1.add(jsSecondPHE, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 170, 102, 31));
+        jsSecondPanel1.add(jsSecondPHE, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 110, 102, 31));
 
         jLabel111.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel111.setText("CRS");
-        jsSecondPanel1.add(jLabel111, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 290, -1, 28));
+        jsSecondPanel1.add(jLabel111, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 230, -1, 28));
 
         jsSecondCRS.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        jsSecondPanel1.add(jsSecondCRS, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 290, 102, 31));
+        jsSecondPanel1.add(jsSecondCRS, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 230, 102, 31));
 
         jLabel112.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel112.setText("Social Studies");
-        jsSecondPanel1.add(jLabel112, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 350, -1, 28));
+        jsSecondPanel1.add(jLabel112, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 290, -1, 28));
 
         jsSecondSocial.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        jsSecondPanel1.add(jsSecondSocial, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 350, 102, 31));
+        jsSecondPanel1.add(jsSecondSocial, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 290, 102, 31));
 
         jLabel113.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel113.setText("Civic Education");
-        jsSecondPanel1.add(jLabel113, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 410, -1, 28));
+        jsSecondPanel1.add(jLabel113, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 350, -1, 28));
 
         jsSecondCivic.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        jsSecondPanel1.add(jsSecondCivic, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 410, 102, 31));
+        jsSecondPanel1.add(jsSecondCivic, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 350, 102, 31));
 
         jLabel114.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel114.setText("Security Education");
-        jsSecondPanel1.add(jLabel114, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 170, -1, 28));
+        jsSecondPanel1.add(jLabel114, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 110, -1, 28));
 
         jLabel115.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel115.setText("Home Economics");
-        jsSecondPanel1.add(jLabel115, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 230, -1, 28));
+        jsSecondPanel1.add(jLabel115, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 170, -1, 28));
 
         jLabel116.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel116.setText("Agric Science");
-        jsSecondPanel1.add(jLabel116, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 290, -1, 28));
+        jsSecondPanel1.add(jLabel116, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 230, -1, 28));
 
         jLabel117.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel117.setText("Music");
-        jsSecondPanel1.add(jLabel117, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 350, -1, 28));
+        jsSecondPanel1.add(jLabel117, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 290, -1, 28));
 
         jLabel118.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel118.setText("Drama & Stage");
-        jsSecondPanel1.add(jLabel118, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 410, -1, 28));
+        jsSecondPanel1.add(jLabel118, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 350, -1, 28));
 
         jsSecondDrama_Stage.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        jsSecondPanel1.add(jsSecondDrama_Stage, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 410, 102, 31));
+        jsSecondPanel1.add(jsSecondDrama_Stage, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 350, 102, 31));
 
         jsSecondMusic.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        jsSecondPanel1.add(jsSecondMusic, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 350, 102, 31));
+        jsSecondPanel1.add(jsSecondMusic, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 290, 102, 31));
 
         jsSecondAgric.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        jsSecondPanel1.add(jsSecondAgric, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 290, 102, 31));
+        jsSecondPanel1.add(jsSecondAgric, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 230, 102, 31));
 
         jsSecondHome.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        jsSecondPanel1.add(jsSecondHome, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 230, 102, 31));
+        jsSecondPanel1.add(jsSecondHome, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 170, 102, 31));
 
         jsSecondSecurity.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        jsSecondPanel1.add(jsSecondSecurity, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 170, 102, 31));
+        jsSecondPanel1.add(jsSecondSecurity, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 110, 102, 31));
 
         jLabel119.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel119.setText("Art & Craft");
@@ -2410,41 +2166,41 @@ public class ResultEntry extends javax.swing.JFrame {
 
         jLabel120.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel120.setText("Business Studies");
-        jsSecondPanel1.add(jLabel120, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 470, -1, 28));
+        jsSecondPanel1.add(jLabel120, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 410, -1, 28));
 
         jsSecondBusiness.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        jsSecondPanel1.add(jsSecondBusiness, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 470, 102, 31));
+        jsSecondPanel1.add(jsSecondBusiness, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 410, 102, 31));
 
         jLabel121.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel121.setText("French");
-        jsSecondPanel1.add(jLabel121, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 470, -1, 28));
+        jsSecondPanel1.add(jLabel121, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 410, -1, 28));
 
         jsSecondFrench.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        jsSecondPanel1.add(jsSecondFrench, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 470, 102, 31));
+        jsSecondPanel1.add(jsSecondFrench, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 410, 102, 31));
 
         jLabel122.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel122.setText("Edo Language");
-        jsSecondPanel1.add(jLabel122, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 530, -1, 28));
+        jsSecondPanel1.add(jLabel122, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 470, -1, 28));
 
         jsSecondEdo.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        jsSecondPanel1.add(jsSecondEdo, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 530, 102, 31));
+        jsSecondPanel1.add(jsSecondEdo, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 470, 102, 31));
 
         jLabel123.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel123.setText("Moral Instruction");
-        jsSecondPanel1.add(jLabel123, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 530, -1, 28));
+        jsSecondPanel1.add(jLabel123, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 470, -1, 28));
 
         jsSecondMoral.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        jsSecondPanel1.add(jsSecondMoral, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 530, 102, 31));
+        jsSecondPanel1.add(jsSecondMoral, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 470, 102, 31));
 
         btnjsSecondInsert.setBackground(new java.awt.Color(0, 153, 204));
         btnjsSecondInsert.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        btnjsSecondInsert.setText("INSERT");
+        btnjsSecondInsert.setText("UPDATE");
         btnjsSecondInsert.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnjsSecondInsertActionPerformed(evt);
             }
         });
-        jsSecondPanel1.add(btnjsSecondInsert, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 580, 120, 36));
+        jsSecondPanel1.add(btnjsSecondInsert, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 580, 120, 36));
 
         btnjsCancelCancel.setBackground(new java.awt.Color(255, 0, 0));
         btnjsCancelCancel.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
@@ -2454,7 +2210,7 @@ public class ResultEntry extends javax.swing.JFrame {
                 btnjsCancelCancelActionPerformed(evt);
             }
         });
-        jsSecondPanel1.add(btnjsCancelCancel, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 580, 120, 36));
+        jsSecondPanel1.add(btnjsCancelCancel, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 580, 120, 36));
 
         jLabel125.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel125.setText("English S.");
@@ -2462,6 +2218,18 @@ public class ResultEntry extends javax.swing.JFrame {
 
         jsSecondEnglish.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jsSecondPanel1.add(jsSecondEnglish, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 170, 102, 31));
+
+        btnjsEditSecond.setBackground(new java.awt.Color(0, 153, 204));
+        btnjsEditSecond.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        btnjsEditSecond.setForeground(new java.awt.Color(255, 255, 255));
+        btnjsEditSecond.setText("EDIT");
+        btnjsEditSecond.setToolTipText("EDIT");
+        btnjsEditSecond.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnjsEditSecondActionPerformed(evt);
+            }
+        });
+        jsSecondPanel1.add(btnjsEditSecond, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 580, 120, 36));
 
         javax.swing.GroupLayout jsSecondPanelLayout = new javax.swing.GroupLayout(jsSecondPanel);
         jsSecondPanel.setLayout(jsSecondPanelLayout);
@@ -2519,170 +2287,172 @@ public class ResultEntry extends javax.swing.JFrame {
 
         jLabel128.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel128.setText("Student ID");
-        jsThirdPanel1.add(jLabel128, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, -1, 28));
+        jsThirdPanel1.add(jLabel128, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 130, -1, 28));
 
         jsThirdID.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        jsThirdPanel1.add(jsThirdID, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 90, 102, 31));
+        jsThirdPanel1.add(jsThirdID, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 130, 102, 31));
 
         jsThirdLit.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        jsThirdPanel1.add(jsThirdLit, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 230, 102, 31));
+        jsThirdPanel1.add(jsThirdLit, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 250, 102, 31));
 
         jLabel129.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel129.setText("Literature");
-        jsThirdPanel1.add(jLabel129, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 230, -1, 28));
+        jsThirdPanel1.add(jLabel129, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 250, -1, 28));
 
         jsThirdMaths.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        jsThirdPanel1.add(jsThirdMaths, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 290, 102, 31));
+        jsThirdPanel1.add(jsThirdMaths, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 310, 102, 31));
 
         jLabel130.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel130.setText("Mathematics");
-        jsThirdPanel1.add(jLabel130, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 290, -1, 28));
+        jsThirdPanel1.add(jLabel130, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 310, -1, 28));
 
         jsThirdBS.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        jsThirdPanel1.add(jsThirdBS, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 350, 102, 31));
+        jsThirdPanel1.add(jsThirdBS, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 370, 102, 31));
 
         jLabel131.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel131.setText("Basic Science");
-        jsThirdPanel1.add(jLabel131, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 350, -1, 28));
+        jsThirdPanel1.add(jLabel131, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 370, -1, 28));
 
         jsThirdBT.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        jsThirdPanel1.add(jsThirdBT, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 410, 102, 31));
+        jsThirdPanel1.add(jsThirdBT, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 430, 102, 31));
 
         jLabel132.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel132.setText("Basic Tech");
-        jsThirdPanel1.add(jLabel132, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 410, -1, 28));
+        jsThirdPanel1.add(jLabel132, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 430, -1, 28));
 
         jLabel133.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel133.setText("ICT");
-        jsThirdPanel1.add(jLabel133, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 230, -1, 28));
+        jsThirdPanel1.add(jLabel133, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 190, -1, 28));
 
         jsThirdICT.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        jsThirdPanel1.add(jsThirdICT, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 230, 102, 31));
+        jsThirdPanel1.add(jsThirdICT, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 190, 102, 31));
 
         jLabel134.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel134.setText("PHE");
-        jsThirdPanel1.add(jLabel134, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 170, -1, 28));
+        jsThirdPanel1.add(jLabel134, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 130, -1, 28));
 
         jsThirdPHE.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        jsThirdPanel1.add(jsThirdPHE, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 170, 102, 31));
+        jsThirdPanel1.add(jsThirdPHE, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 130, 102, 31));
 
         jLabel135.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel135.setText("CRS");
-        jsThirdPanel1.add(jLabel135, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 290, -1, 28));
+        jsThirdPanel1.add(jLabel135, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 250, -1, 28));
 
         jsThirdCRS.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        jsThirdPanel1.add(jsThirdCRS, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 290, 102, 31));
+        jsThirdPanel1.add(jsThirdCRS, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 250, 102, 31));
 
         jLabel136.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel136.setText("Social Studies");
-        jsThirdPanel1.add(jLabel136, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 350, -1, 28));
+        jsThirdPanel1.add(jLabel136, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 310, -1, 28));
 
         jsThirdSocial.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        jsThirdPanel1.add(jsThirdSocial, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 350, 102, 31));
+        jsThirdPanel1.add(jsThirdSocial, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 310, 102, 31));
 
         jLabel137.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel137.setText("Civic Education");
-        jsThirdPanel1.add(jLabel137, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 410, -1, 28));
+        jsThirdPanel1.add(jLabel137, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 370, -1, 28));
 
         jsThirdCivic.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        jsThirdPanel1.add(jsThirdCivic, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 410, 102, 31));
+        jsThirdPanel1.add(jsThirdCivic, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 370, 102, 31));
 
         jLabel138.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel138.setText("Security Education");
-        jsThirdPanel1.add(jLabel138, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 170, -1, 28));
+        jsThirdPanel1.add(jLabel138, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 130, -1, 28));
 
         jLabel139.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel139.setText("Home Economics");
-        jsThirdPanel1.add(jLabel139, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 230, -1, 28));
+        jsThirdPanel1.add(jLabel139, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 190, -1, 28));
 
         jLabel140.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel140.setText("Agric Science");
-        jsThirdPanel1.add(jLabel140, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 290, -1, 28));
+        jsThirdPanel1.add(jLabel140, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 250, -1, 28));
 
         jLabel141.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel141.setText("Music");
-        jsThirdPanel1.add(jLabel141, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 350, -1, 28));
+        jsThirdPanel1.add(jLabel141, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 310, -1, 28));
 
         jLabel142.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel142.setText("Drama & Stage");
-        jsThirdPanel1.add(jLabel142, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 410, -1, 28));
+        jsThirdPanel1.add(jLabel142, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 370, -1, 28));
 
         jsThirdDrama_Stage.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        jsThirdPanel1.add(jsThirdDrama_Stage, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 410, 102, 31));
+        jsThirdPanel1.add(jsThirdDrama_Stage, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 370, 102, 31));
 
         jsThirdMusic.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        jsThirdPanel1.add(jsThirdMusic, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 350, 102, 31));
+        jsThirdPanel1.add(jsThirdMusic, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 310, 102, 31));
 
         jsThirdAgric.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        jsThirdPanel1.add(jsThirdAgric, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 290, 102, 31));
+        jsThirdPanel1.add(jsThirdAgric, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 250, 102, 31));
 
         jsThirdHome.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        jsThirdPanel1.add(jsThirdHome, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 230, 102, 31));
+        jsThirdPanel1.add(jsThirdHome, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 190, 102, 31));
 
         jsThirdSecurity.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        jsThirdPanel1.add(jsThirdSecurity, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 170, 102, 31));
+        jsThirdPanel1.add(jsThirdSecurity, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 130, 102, 31));
 
         jLabel143.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel143.setText("Art & Craft");
-        jsThirdPanel1.add(jLabel143, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 470, -1, 28));
+        jsThirdPanel1.add(jLabel143, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 490, -1, 28));
 
         jsThirdArt_Craft.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        jsThirdPanel1.add(jsThirdArt_Craft, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 470, 102, 31));
+        jsThirdPanel1.add(jsThirdArt_Craft, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 490, 102, 31));
 
         jLabel144.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel144.setText("Business Studies");
-        jsThirdPanel1.add(jLabel144, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 470, -1, 28));
+        jsThirdPanel1.add(jLabel144, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 430, -1, 28));
 
         jsThirdBusiness.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        jsThirdPanel1.add(jsThirdBusiness, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 470, 102, 31));
+        jsThirdPanel1.add(jsThirdBusiness, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 430, 102, 31));
 
         jLabel145.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel145.setText("French");
-        jsThirdPanel1.add(jLabel145, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 470, -1, 28));
+        jsThirdPanel1.add(jLabel145, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 430, -1, 28));
 
         jsThirdFrench.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        jsThirdPanel1.add(jsThirdFrench, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 470, 102, 31));
+        jsThirdPanel1.add(jsThirdFrench, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 430, 102, 31));
 
         jLabel146.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel146.setText("Edo Language");
-        jsThirdPanel1.add(jLabel146, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 530, -1, 28));
+        jsThirdPanel1.add(jLabel146, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 490, -1, 28));
 
         jsThirdEdo.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        jsThirdPanel1.add(jsThirdEdo, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 530, 102, 31));
+        jsThirdPanel1.add(jsThirdEdo, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 490, 102, 31));
 
         jLabel147.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel147.setText("Moral Instruction");
-        jsThirdPanel1.add(jLabel147, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 530, -1, 28));
+        jsThirdPanel1.add(jLabel147, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 490, -1, 28));
 
         jsThirdMoral.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        jsThirdPanel1.add(jsThirdMoral, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 530, 102, 31));
+        jsThirdPanel1.add(jsThirdMoral, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 490, 102, 31));
 
         btnjsThirdInsert.setBackground(new java.awt.Color(0, 153, 204));
         btnjsThirdInsert.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        btnjsThirdInsert.setForeground(new java.awt.Color(255, 255, 255));
         btnjsThirdInsert.setText("INSERT");
         btnjsThirdInsert.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnjsThirdInsertActionPerformed(evt);
             }
         });
-        jsThirdPanel1.add(btnjsThirdInsert, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 580, 120, 36));
+        jsThirdPanel1.add(btnjsThirdInsert, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 580, 120, 36));
 
         btnjsThirdCancel.setBackground(new java.awt.Color(255, 0, 0));
         btnjsThirdCancel.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        btnjsThirdCancel.setForeground(new java.awt.Color(255, 255, 255));
         btnjsThirdCancel.setText("CANCEL");
         btnjsThirdCancel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnjsThirdCancelActionPerformed(evt);
             }
         });
-        jsThirdPanel1.add(btnjsThirdCancel, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 580, 120, 36));
+        jsThirdPanel1.add(btnjsThirdCancel, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 580, 120, 36));
 
         jLabel148.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel148.setText("English S.");
-        jsThirdPanel1.add(jLabel148, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 170, -1, 28));
+        jsThirdPanel1.add(jLabel148, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 190, -1, 28));
 
         jsThirdEnglish.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        jsThirdPanel1.add(jsThirdEnglish, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 170, 102, 31));
+        jsThirdPanel1.add(jsThirdEnglish, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 190, 102, 31));
 
         javax.swing.GroupLayout jsThirdPanelLayout = new javax.swing.GroupLayout(jsThirdPanel);
         jsThirdPanel.setLayout(jsThirdPanelLayout);
@@ -2740,153 +2510,153 @@ public class ResultEntry extends javax.swing.JFrame {
 
         jLabel151.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel151.setText("Student ID");
-        jsExamPanel1.add(jLabel151, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, -1, 28));
+        jsExamPanel1.add(jLabel151, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 120, -1, 28));
 
         jsExamID.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        jsExamPanel1.add(jsExamID, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 90, 102, 31));
+        jsExamPanel1.add(jsExamID, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 120, 102, 31));
 
         jsExamLit.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        jsExamPanel1.add(jsExamLit, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 230, 102, 31));
+        jsExamPanel1.add(jsExamLit, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 240, 102, 31));
 
         jLabel152.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel152.setText("Literature");
-        jsExamPanel1.add(jLabel152, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 230, -1, 28));
+        jsExamPanel1.add(jLabel152, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 240, -1, 28));
 
         jsExamMaths.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        jsExamPanel1.add(jsExamMaths, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 290, 102, 31));
+        jsExamPanel1.add(jsExamMaths, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 300, 102, 31));
 
         jLabel153.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel153.setText("Mathematics");
-        jsExamPanel1.add(jLabel153, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 290, -1, 28));
+        jsExamPanel1.add(jLabel153, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 300, -1, 28));
 
         jsExamBS.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        jsExamPanel1.add(jsExamBS, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 350, 102, 31));
+        jsExamPanel1.add(jsExamBS, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 360, 102, 31));
 
         jLabel154.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel154.setText("Basic Science");
-        jsExamPanel1.add(jLabel154, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 350, -1, 28));
+        jsExamPanel1.add(jLabel154, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 360, -1, 28));
 
         jsExamBT.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        jsExamPanel1.add(jsExamBT, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 410, 102, 31));
+        jsExamPanel1.add(jsExamBT, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 420, 102, 31));
 
         jLabel155.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel155.setText("Basic Tech");
-        jsExamPanel1.add(jLabel155, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 410, -1, 28));
+        jsExamPanel1.add(jLabel155, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 420, -1, 28));
 
         jLabel156.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel156.setText("ICT");
-        jsExamPanel1.add(jLabel156, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 230, -1, 28));
+        jsExamPanel1.add(jLabel156, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 180, -1, 28));
 
         jsExamICT.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        jsExamPanel1.add(jsExamICT, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 230, 102, 31));
+        jsExamPanel1.add(jsExamICT, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 180, 102, 31));
 
         jLabel157.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel157.setText("PHE");
-        jsExamPanel1.add(jLabel157, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 170, -1, 28));
+        jsExamPanel1.add(jLabel157, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 120, -1, 28));
 
         jsExamPHE.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        jsExamPanel1.add(jsExamPHE, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 170, 102, 31));
+        jsExamPanel1.add(jsExamPHE, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 120, 102, 31));
 
         jLabel158.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel158.setText("CRS");
-        jsExamPanel1.add(jLabel158, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 290, -1, 28));
+        jsExamPanel1.add(jLabel158, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 240, -1, 28));
 
         jsExamCRS.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        jsExamPanel1.add(jsExamCRS, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 290, 102, 31));
+        jsExamPanel1.add(jsExamCRS, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 240, 102, 31));
 
         jLabel159.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel159.setText("Social Studies");
-        jsExamPanel1.add(jLabel159, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 350, -1, 28));
+        jsExamPanel1.add(jLabel159, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 300, -1, 28));
 
         jsExamSocial.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        jsExamPanel1.add(jsExamSocial, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 350, 102, 31));
+        jsExamPanel1.add(jsExamSocial, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 300, 102, 31));
 
         jLabel160.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel160.setText("Civic Education");
-        jsExamPanel1.add(jLabel160, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 410, -1, 28));
+        jsExamPanel1.add(jLabel160, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 360, -1, 28));
 
         jsExamCivic.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        jsExamPanel1.add(jsExamCivic, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 410, 102, 31));
+        jsExamPanel1.add(jsExamCivic, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 360, 102, 31));
 
         jLabel161.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel161.setText("Security Education");
-        jsExamPanel1.add(jLabel161, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 170, -1, 28));
+        jsExamPanel1.add(jLabel161, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 120, -1, 28));
 
         jLabel162.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel162.setText("Home Economics");
-        jsExamPanel1.add(jLabel162, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 230, -1, 28));
+        jsExamPanel1.add(jLabel162, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 180, -1, 28));
 
         jLabel163.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel163.setText("Agric Science");
-        jsExamPanel1.add(jLabel163, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 290, -1, 28));
+        jsExamPanel1.add(jLabel163, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 240, -1, 28));
 
         jLabel164.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel164.setText("Music");
-        jsExamPanel1.add(jLabel164, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 350, -1, 28));
+        jsExamPanel1.add(jLabel164, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 300, -1, 28));
 
         jLabel165.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel165.setText("Drama & Stage");
-        jsExamPanel1.add(jLabel165, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 410, -1, 28));
+        jsExamPanel1.add(jLabel165, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 360, -1, 28));
 
         jsExamDrama_Stage.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        jsExamPanel1.add(jsExamDrama_Stage, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 410, 102, 31));
+        jsExamPanel1.add(jsExamDrama_Stage, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 360, 102, 31));
 
         jsExamMusic.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        jsExamPanel1.add(jsExamMusic, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 350, 102, 31));
+        jsExamPanel1.add(jsExamMusic, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 300, 102, 31));
 
         jsExamAgric.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        jsExamPanel1.add(jsExamAgric, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 290, 102, 31));
+        jsExamPanel1.add(jsExamAgric, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 240, 102, 31));
 
         jsExamHome.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        jsExamPanel1.add(jsExamHome, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 230, 102, 31));
+        jsExamPanel1.add(jsExamHome, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 180, 102, 31));
 
         jsExamSecurity.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        jsExamPanel1.add(jsExamSecurity, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 170, 102, 31));
+        jsExamPanel1.add(jsExamSecurity, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 120, 102, 31));
 
         jLabel166.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel166.setText("Art & Craft");
-        jsExamPanel1.add(jLabel166, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 470, -1, 28));
+        jsExamPanel1.add(jLabel166, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 480, -1, 28));
 
         jsExamArt_Craft.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        jsExamPanel1.add(jsExamArt_Craft, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 470, 102, 31));
+        jsExamPanel1.add(jsExamArt_Craft, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 480, 102, 31));
 
         jLabel167.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel167.setText("Business Studies");
-        jsExamPanel1.add(jLabel167, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 470, -1, 28));
+        jsExamPanel1.add(jLabel167, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 420, -1, 28));
 
         jsExamBusiness.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        jsExamPanel1.add(jsExamBusiness, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 470, 102, 31));
+        jsExamPanel1.add(jsExamBusiness, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 420, 102, 31));
 
         jLabel168.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel168.setText("French");
-        jsExamPanel1.add(jLabel168, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 470, -1, 28));
+        jsExamPanel1.add(jLabel168, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 420, -1, 28));
 
         jsExamFrench.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        jsExamPanel1.add(jsExamFrench, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 470, 102, 31));
+        jsExamPanel1.add(jsExamFrench, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 420, 102, 31));
 
         jLabel169.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel169.setText("Edo Language");
-        jsExamPanel1.add(jLabel169, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 530, -1, 28));
+        jsExamPanel1.add(jLabel169, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 480, -1, 28));
 
         jsExamEdo.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        jsExamPanel1.add(jsExamEdo, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 530, 102, 31));
+        jsExamPanel1.add(jsExamEdo, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 480, 102, 31));
 
         jLabel170.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel170.setText("Moral Instruction");
-        jsExamPanel1.add(jLabel170, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 530, -1, 28));
+        jsExamPanel1.add(jLabel170, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 480, -1, 28));
 
         jsExamMoral.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        jsExamPanel1.add(jsExamMoral, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 530, 102, 31));
+        jsExamPanel1.add(jsExamMoral, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 480, 102, 31));
 
         btnjsExamInsert.setBackground(new java.awt.Color(0, 153, 204));
         btnjsExamInsert.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        btnjsExamInsert.setText("INSERT");
+        btnjsExamInsert.setText("UPDATE");
         btnjsExamInsert.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnjsExamInsertActionPerformed(evt);
             }
         });
-        jsExamPanel1.add(btnjsExamInsert, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 580, 120, 36));
+        jsExamPanel1.add(btnjsExamInsert, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 560, 120, 36));
 
         btnjsExamCancel.setBackground(new java.awt.Color(255, 0, 0));
         btnjsExamCancel.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
@@ -2896,14 +2666,26 @@ public class ResultEntry extends javax.swing.JFrame {
                 btnjsExamCancelActionPerformed(evt);
             }
         });
-        jsExamPanel1.add(btnjsExamCancel, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 580, 120, 36));
+        jsExamPanel1.add(btnjsExamCancel, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 560, 120, 36));
 
         jLabel171.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel171.setText("English S.");
-        jsExamPanel1.add(jLabel171, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 170, -1, 28));
+        jsExamPanel1.add(jLabel171, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 180, -1, 28));
 
         jsExamEnglish.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        jsExamPanel1.add(jsExamEnglish, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 170, 102, 31));
+        jsExamPanel1.add(jsExamEnglish, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 180, 102, 31));
+
+        btnjsEditExam.setBackground(new java.awt.Color(0, 153, 204));
+        btnjsEditExam.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        btnjsEditExam.setForeground(new java.awt.Color(255, 255, 255));
+        btnjsEditExam.setText("EDIT");
+        btnjsEditExam.setToolTipText("EDIT");
+        btnjsEditExam.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnjsEditExamActionPerformed(evt);
+            }
+        });
+        jsExamPanel1.add(btnjsEditExam, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 560, 120, 36));
 
         javax.swing.GroupLayout jsExamPanelLayout = new javax.swing.GroupLayout(jsExamPanel);
         jsExamPanel.setLayout(jsExamPanelLayout);
@@ -2957,8 +2739,8 @@ public class ResultEntry extends javax.swing.JFrame {
         firstPrimary.add(jPanel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 980, -1));
 
         jLabel174.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        jLabel174.setText("English S.");
-        firstPrimary.add(jLabel174, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 220, -1, 30));
+        jLabel174.setText("Student ID");
+        firstPrimary.add(jLabel174, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 160, -1, 30));
 
         prFirstEnglish.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         firstPrimary.add(prFirstEnglish, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 220, 90, 30));
@@ -3062,24 +2844,53 @@ public class ResultEntry extends javax.swing.JFrame {
         firstPrimary.add(jLabel188, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 420, -1, 30));
 
         btnPrimaryFirstInsert.setBackground(new java.awt.Color(0, 153, 204));
-        btnPrimaryFirstInsert.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        btnPrimaryFirstInsert.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         btnPrimaryFirstInsert.setText("INSERT");
         btnPrimaryFirstInsert.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnPrimaryFirstInsertActionPerformed(evt);
             }
         });
-        firstPrimary.add(btnPrimaryFirstInsert, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 520, 120, 36));
+        firstPrimary.add(btnPrimaryFirstInsert, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 510, 120, 36));
 
         btnPrimaryFirstCancel.setBackground(new java.awt.Color(204, 0, 0));
-        btnPrimaryFirstCancel.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        btnPrimaryFirstCancel.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         btnPrimaryFirstCancel.setText("CANCEL");
         btnPrimaryFirstCancel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnPrimaryFirstCancelActionPerformed(evt);
             }
         });
-        firstPrimary.add(btnPrimaryFirstCancel, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 520, 120, 36));
+        firstPrimary.add(btnPrimaryFirstCancel, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 570, 120, 36));
+
+        jLabel320.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        jLabel320.setText("English S.");
+        firstPrimary.add(jLabel320, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 220, -1, 30));
+
+        prFirstID.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        firstPrimary.add(prFirstID, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 160, 90, 30));
+
+        btnprFirstTest.setBackground(new java.awt.Color(0, 153, 204));
+        btnprFirstTest.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        btnprFirstTest.setText("EDIT");
+        btnprFirstTest.setToolTipText("EDIT");
+        btnprFirstTest.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnprFirstTestActionPerformed(evt);
+            }
+        });
+        firstPrimary.add(btnprFirstTest, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 510, 120, 36));
+
+        btnprUpdate.setBackground(new java.awt.Color(0, 153, 204));
+        btnprUpdate.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        btnprUpdate.setText("UPDATE");
+        btnprUpdate.setToolTipText("UPDATE TABLE");
+        btnprUpdate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnprUpdateActionPerformed(evt);
+            }
+        });
+        firstPrimary.add(btnprUpdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 570, 120, 36));
 
         LayeredPane.add(firstPrimary, "card11");
 
@@ -3223,31 +3034,42 @@ public class ResultEntry extends javax.swing.JFrame {
         secondPrimary1.add(jLabel205, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 420, -1, 30));
 
         btnPrimarySecondInsert.setBackground(new java.awt.Color(0, 153, 204));
-        btnPrimarySecondInsert.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        btnPrimarySecondInsert.setText("INSERT");
+        btnPrimarySecondInsert.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        btnPrimarySecondInsert.setText("UPDATE");
         btnPrimarySecondInsert.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnPrimarySecondInsertActionPerformed(evt);
             }
         });
-        secondPrimary1.add(btnPrimarySecondInsert, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 520, 120, 36));
+        secondPrimary1.add(btnPrimarySecondInsert, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 520, 120, 36));
 
         btnPrimarySecondCancel.setBackground(new java.awt.Color(204, 0, 0));
-        btnPrimarySecondCancel.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        btnPrimarySecondCancel.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         btnPrimarySecondCancel.setText("CANCEL");
         btnPrimarySecondCancel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnPrimarySecondCancelActionPerformed(evt);
             }
         });
-        secondPrimary1.add(btnPrimarySecondCancel, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 520, 120, 36));
+        secondPrimary1.add(btnPrimarySecondCancel, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 520, 120, 36));
 
         prSecondID.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        secondPrimary1.add(prSecondID, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 120, 90, 30));
+        secondPrimary1.add(prSecondID, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 160, 90, 30));
 
         jLabel206.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        jLabel206.setText("English S.");
-        secondPrimary1.add(jLabel206, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, -1, 30));
+        jLabel206.setText("Student ID");
+        secondPrimary1.add(jLabel206, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 160, -1, 30));
+
+        btnprSecondTest.setBackground(new java.awt.Color(0, 153, 204));
+        btnprSecondTest.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        btnprSecondTest.setText("EDIT");
+        btnprSecondTest.setToolTipText("EDIT");
+        btnprSecondTest.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnprSecondTestActionPerformed(evt);
+            }
+        });
+        secondPrimary1.add(btnprSecondTest, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 520, 120, 36));
 
         javax.swing.GroupLayout secondPrimaryLayout = new javax.swing.GroupLayout(secondPrimary);
         secondPrimary.setLayout(secondPrimaryLayout);
@@ -3592,31 +3414,42 @@ public class ResultEntry extends javax.swing.JFrame {
         examPrimary1.add(jLabel241, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 420, -1, 30));
 
         btnPrimaryExamInsert.setBackground(new java.awt.Color(0, 153, 204));
-        btnPrimaryExamInsert.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        btnPrimaryExamInsert.setText("INSERT");
+        btnPrimaryExamInsert.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        btnPrimaryExamInsert.setText("UPDATE");
         btnPrimaryExamInsert.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnPrimaryExamInsertActionPerformed(evt);
             }
         });
-        examPrimary1.add(btnPrimaryExamInsert, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 520, 120, 36));
+        examPrimary1.add(btnPrimaryExamInsert, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 530, 120, 36));
 
         btnPrimaryExamCancel.setBackground(new java.awt.Color(204, 0, 0));
-        btnPrimaryExamCancel.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        btnPrimaryExamCancel.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         btnPrimaryExamCancel.setText("CANCEL");
         btnPrimaryExamCancel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnPrimaryExamCancelActionPerformed(evt);
             }
         });
-        examPrimary1.add(btnPrimaryExamCancel, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 520, 120, 36));
+        examPrimary1.add(btnPrimaryExamCancel, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 530, 120, 36));
 
         prExamID.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        examPrimary1.add(prExamID, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 120, 90, 30));
+        examPrimary1.add(prExamID, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 150, 90, 30));
 
         jLabel242.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel242.setText("Student ID");
-        examPrimary1.add(jLabel242, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, -1, 30));
+        examPrimary1.add(jLabel242, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 150, -1, 30));
+
+        btnprExamTest.setBackground(new java.awt.Color(0, 153, 204));
+        btnprExamTest.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        btnprExamTest.setText("EDIT");
+        btnprExamTest.setToolTipText("EDIT");
+        btnprExamTest.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnprExamTestActionPerformed(evt);
+            }
+        });
+        examPrimary1.add(btnprExamTest, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 530, 120, 36));
 
         javax.swing.GroupLayout examPrimaryLayout = new javax.swing.GroupLayout(examPrimary);
         examPrimary.setLayout(examPrimaryLayout);
@@ -3638,59 +3471,46 @@ public class ResultEntry extends javax.swing.JFrame {
         firstNursery.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel16.setBackground(new java.awt.Color(0, 153, 204));
+        jPanel16.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel243.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         jLabel243.setForeground(new java.awt.Color(255, 255, 255));
         jLabel243.setText("FIRST TEST");
+        jPanel16.add(jLabel243, new org.netbeans.lib.awtextra.AbsoluteConstraints(413, 38, -1, -1));
 
         jLabel244.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         jLabel244.setForeground(new java.awt.Color(255, 255, 255));
         jLabel244.setText("NURSERY");
+        jPanel16.add(jLabel244, new org.netbeans.lib.awtextra.AbsoluteConstraints(425, 0, -1, -1));
 
-        javax.swing.GroupLayout jPanel16Layout = new javax.swing.GroupLayout(jPanel16);
-        jPanel16.setLayout(jPanel16Layout);
-        jPanel16Layout.setHorizontalGroup(
-            jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel16Layout.createSequentialGroup()
-                .addGap(413, 413, 413)
-                .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                    .addComponent(jLabel244)
-                    .addComponent(jLabel243))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel16Layout.setVerticalGroup(
-            jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel16Layout.createSequentialGroup()
-                .addComponent(jLabel244)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel243)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        firstNursery.add(jPanel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 980, -1));
+        firstNursery.add(jPanel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 950, -1));
 
         jLabel245.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        jLabel245.setText("English S.");
-        firstNursery.add(jLabel245, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 240, -1, -1));
+        jLabel245.setText("Student ID");
+        firstNursery.add(jLabel245, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 180, -1, -1));
 
         nuFirstEnglish.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        nuFirstEnglish.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         firstNursery.add(nuFirstEnglish, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 240, 90, 27));
 
         nuFirstSound.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        firstNursery.add(nuFirstSound, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 300, 90, 27));
+        nuFirstSound.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        firstNursery.add(nuFirstSound, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 310, 90, 27));
 
         jLabel246.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel246.setText("Sound and Read");
         firstNursery.add(jLabel246, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 310, -1, -1));
 
         nuFirstElem.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        nuFirstElem.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         firstNursery.add(nuFirstElem, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 370, 90, 27));
 
         jLabel247.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel247.setText("Elementary Science");
-        firstNursery.add(jLabel247, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 380, -1, -1));
+        firstNursery.add(jLabel247, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 370, -1, -1));
 
         nuFirstSocial.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        nuFirstSocial.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         firstNursery.add(nuFirstSocial, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 440, 90, 27));
 
         jLabel248.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
@@ -3706,12 +3526,15 @@ public class ResultEntry extends javax.swing.JFrame {
         firstNursery.add(jLabel250, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 310, -1, -1));
 
         nuFirstComputer.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        nuFirstComputer.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         firstNursery.add(nuFirstComputer, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 300, 90, 27));
 
         nuFirstHealth.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        nuFirstHealth.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         firstNursery.add(nuFirstHealth, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 240, 90, 27));
 
         nuFirstCultural.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        nuFirstCultural.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         firstNursery.add(nuFirstCultural, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 370, 90, 27));
 
         jLabel251.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
@@ -3723,6 +3546,7 @@ public class ResultEntry extends javax.swing.JFrame {
         firstNursery.add(jLabel252, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 440, -1, -1));
 
         nuFirstWriting.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        nuFirstWriting.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         firstNursery.add(nuFirstWriting, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 440, 90, 27));
 
         jLabel253.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
@@ -3734,12 +3558,15 @@ public class ResultEntry extends javax.swing.JFrame {
         firstNursery.add(jLabel254, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 310, -1, -1));
 
         nuFirstVerbal.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        nuFirstVerbal.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         firstNursery.add(nuFirstVerbal, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 300, 90, 27));
 
         nuFirstRhymes.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        nuFirstRhymes.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         firstNursery.add(nuFirstRhymes, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 240, 90, 27));
 
         nuFirstQuan.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        nuFirstQuan.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         firstNursery.add(nuFirstQuan, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 370, 90, 27));
 
         jLabel255.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
@@ -3751,27 +3578,58 @@ public class ResultEntry extends javax.swing.JFrame {
         firstNursery.add(jLabel256, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 440, -1, -1));
 
         nuFirstMoral.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        nuFirstMoral.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         firstNursery.add(nuFirstMoral, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 440, 90, 27));
 
         btnNurseryFirstInsert.setBackground(new java.awt.Color(0, 153, 204));
-        btnNurseryFirstInsert.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        btnNurseryFirstInsert.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         btnNurseryFirstInsert.setText("INSERT");
         btnNurseryFirstInsert.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnNurseryFirstInsertActionPerformed(evt);
             }
         });
-        firstNursery.add(btnNurseryFirstInsert, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 520, 120, 36));
+        firstNursery.add(btnNurseryFirstInsert, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 520, 120, 36));
 
         btnNurseryFirstCancel.setBackground(new java.awt.Color(204, 0, 0));
-        btnNurseryFirstCancel.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        btnNurseryFirstCancel.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         btnNurseryFirstCancel.setText("CANCEL");
         btnNurseryFirstCancel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnNurseryFirstCancelActionPerformed(evt);
             }
         });
-        firstNursery.add(btnNurseryFirstCancel, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 520, 120, 36));
+        firstNursery.add(btnNurseryFirstCancel, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 570, 120, 36));
+
+        btnNrEditFirst.setBackground(new java.awt.Color(0, 153, 204));
+        btnNrEditFirst.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        btnNrEditFirst.setText("EDIT");
+        btnNrEditFirst.setToolTipText("EDIT");
+        btnNrEditFirst.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNrEditFirstActionPerformed(evt);
+            }
+        });
+        firstNursery.add(btnNrEditFirst, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 520, 120, 36));
+
+        jLabel321.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        jLabel321.setText("English S.");
+        firstNursery.add(jLabel321, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 240, -1, -1));
+
+        nuFirstID.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        nuFirstID.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        firstNursery.add(nuFirstID, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 180, 90, 30));
+
+        btnNuUpdate.setBackground(new java.awt.Color(0, 153, 204));
+        btnNuUpdate.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        btnNuUpdate.setText("UPDATE");
+        btnNuUpdate.setToolTipText("UPDATE TABLE");
+        btnNuUpdate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNuUpdateActionPerformed(evt);
+            }
+        });
+        firstNursery.add(btnNuUpdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 570, 120, 36));
 
         LayeredPane.add(firstNursery, "card15");
 
@@ -3814,9 +3672,11 @@ public class ResultEntry extends javax.swing.JFrame {
         secondNursery1.add(jLabel259, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 240, -1, -1));
 
         nuSecondEnglish.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        nuSecondEnglish.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         secondNursery1.add(nuSecondEnglish, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 240, 90, 27));
 
         nuSecondSound.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        nuSecondSound.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         secondNursery1.add(nuSecondSound, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 300, 90, 27));
 
         jLabel260.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
@@ -3824,6 +3684,7 @@ public class ResultEntry extends javax.swing.JFrame {
         secondNursery1.add(jLabel260, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 310, -1, -1));
 
         nuSecondElem.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        nuSecondElem.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         secondNursery1.add(nuSecondElem, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 370, 90, 27));
 
         jLabel261.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
@@ -3831,6 +3692,7 @@ public class ResultEntry extends javax.swing.JFrame {
         secondNursery1.add(jLabel261, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 380, -1, -1));
 
         nuSecondSocial.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        nuSecondSocial.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         secondNursery1.add(nuSecondSocial, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 440, 90, 27));
 
         jLabel262.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
@@ -3846,12 +3708,15 @@ public class ResultEntry extends javax.swing.JFrame {
         secondNursery1.add(jLabel264, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 310, -1, -1));
 
         nuSecondComputer.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        nuSecondComputer.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         secondNursery1.add(nuSecondComputer, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 300, 90, 27));
 
         nuSecondHealth.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        nuSecondHealth.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         secondNursery1.add(nuSecondHealth, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 240, 90, 27));
 
         nuSecondCultural.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        nuSecondCultural.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         secondNursery1.add(nuSecondCultural, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 370, 90, 27));
 
         jLabel265.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
@@ -3863,6 +3728,7 @@ public class ResultEntry extends javax.swing.JFrame {
         secondNursery1.add(jLabel266, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 440, -1, -1));
 
         nuSecondWriting.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        nuSecondWriting.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         secondNursery1.add(nuSecondWriting, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 440, 90, 27));
 
         jLabel267.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
@@ -3874,12 +3740,15 @@ public class ResultEntry extends javax.swing.JFrame {
         secondNursery1.add(jLabel268, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 310, -1, -1));
 
         nuSecondVerbal.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        nuSecondVerbal.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         secondNursery1.add(nuSecondVerbal, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 300, 90, 27));
 
         nuSecondRhymes.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        nuSecondRhymes.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         secondNursery1.add(nuSecondRhymes, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 240, 90, 27));
 
         nuSecondQuan.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        nuSecondQuan.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         secondNursery1.add(nuSecondQuan, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 370, 90, 27));
 
         jLabel269.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
@@ -3891,34 +3760,47 @@ public class ResultEntry extends javax.swing.JFrame {
         secondNursery1.add(jLabel270, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 440, -1, -1));
 
         nuSecondMoral.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        nuSecondMoral.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         secondNursery1.add(nuSecondMoral, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 440, 90, 27));
 
         btnNurserySecondInsert.setBackground(new java.awt.Color(0, 153, 204));
-        btnNurserySecondInsert.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        btnNurserySecondInsert.setText("INSERT");
+        btnNurserySecondInsert.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        btnNurserySecondInsert.setText("UPDATE");
         btnNurserySecondInsert.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnNurserySecondInsertActionPerformed(evt);
             }
         });
-        secondNursery1.add(btnNurserySecondInsert, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 520, 120, 36));
+        secondNursery1.add(btnNurserySecondInsert, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 550, 120, 36));
 
         btnNurserySecondCancel.setBackground(new java.awt.Color(204, 0, 0));
-        btnNurserySecondCancel.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        btnNurserySecondCancel.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         btnNurserySecondCancel.setText("CANCEL");
         btnNurserySecondCancel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnNurserySecondCancelActionPerformed(evt);
             }
         });
-        secondNursery1.add(btnNurserySecondCancel, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 520, 120, 36));
+        secondNursery1.add(btnNurserySecondCancel, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 550, 120, 36));
 
         jLabel271.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel271.setText("Student ID");
-        secondNursery1.add(jLabel271, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, -1, -1));
+        secondNursery1.add(jLabel271, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 170, -1, -1));
 
         nuSecondID.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        secondNursery1.add(nuSecondID, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 130, 90, 27));
+        nuSecondID.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        secondNursery1.add(nuSecondID, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 170, 90, 27));
+
+        btnNuSecond.setBackground(new java.awt.Color(0, 153, 204));
+        btnNuSecond.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        btnNuSecond.setText("EDIT");
+        btnNuSecond.setToolTipText("EDIT");
+        btnNuSecond.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNuSecondActionPerformed(evt);
+            }
+        });
+        secondNursery1.add(btnNuSecond, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 550, 120, 36));
 
         javax.swing.GroupLayout secondNurseryLayout = new javax.swing.GroupLayout(secondNursery);
         secondNursery.setLayout(secondNurseryLayout);
@@ -4138,9 +4020,11 @@ public class ResultEntry extends javax.swing.JFrame {
         examNursery1.add(jLabel289, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 240, -1, -1));
 
         nuExamEnglish.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        nuExamEnglish.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         examNursery1.add(nuExamEnglish, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 240, 90, 27));
 
         nuExamSound.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        nuExamSound.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         examNursery1.add(nuExamSound, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 300, 90, 27));
 
         jLabel290.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
@@ -4148,6 +4032,7 @@ public class ResultEntry extends javax.swing.JFrame {
         examNursery1.add(jLabel290, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 310, -1, -1));
 
         nuExamElem.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        nuExamElem.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         examNursery1.add(nuExamElem, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 370, 90, 27));
 
         jLabel291.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
@@ -4155,6 +4040,7 @@ public class ResultEntry extends javax.swing.JFrame {
         examNursery1.add(jLabel291, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 380, -1, -1));
 
         nuExamSocial.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        nuExamSocial.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         examNursery1.add(nuExamSocial, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 440, 90, 27));
 
         jLabel292.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
@@ -4170,12 +4056,15 @@ public class ResultEntry extends javax.swing.JFrame {
         examNursery1.add(jLabel294, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 310, -1, -1));
 
         nuExamComputer.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        nuExamComputer.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         examNursery1.add(nuExamComputer, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 300, 90, 27));
 
         nuExamHealth.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        nuExamHealth.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         examNursery1.add(nuExamHealth, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 240, 90, 27));
 
         nuExamCultural.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        nuExamCultural.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         examNursery1.add(nuExamCultural, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 370, 90, 27));
 
         jLabel295.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
@@ -4187,6 +4076,7 @@ public class ResultEntry extends javax.swing.JFrame {
         examNursery1.add(jLabel296, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 440, -1, -1));
 
         nuExamWriting.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        nuExamWriting.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         examNursery1.add(nuExamWriting, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 440, 90, 27));
 
         jLabel297.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
@@ -4198,12 +4088,15 @@ public class ResultEntry extends javax.swing.JFrame {
         examNursery1.add(jLabel298, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 310, -1, -1));
 
         nuExamVerbal.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        nuExamVerbal.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         examNursery1.add(nuExamVerbal, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 300, 90, 27));
 
         nuExamRhymes.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        nuExamRhymes.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         examNursery1.add(nuExamRhymes, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 240, 90, 27));
 
         nuExamQuan.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        nuExamQuan.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         examNursery1.add(nuExamQuan, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 370, 90, 27));
 
         jLabel299.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
@@ -4215,34 +4108,52 @@ public class ResultEntry extends javax.swing.JFrame {
         examNursery1.add(jLabel300, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 440, -1, -1));
 
         nuExamMoral.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        nuExamMoral.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         examNursery1.add(nuExamMoral, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 440, 90, 27));
 
         btnNurseryExamInsert.setBackground(new java.awt.Color(0, 153, 204));
-        btnNurseryExamInsert.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        btnNurseryExamInsert.setText("INSERT");
+        btnNurseryExamInsert.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        btnNurseryExamInsert.setText("UPDATE");
         btnNurseryExamInsert.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnNurseryExamInsertActionPerformed(evt);
             }
         });
-        examNursery1.add(btnNurseryExamInsert, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 520, 120, 36));
+        examNursery1.add(btnNurseryExamInsert, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 540, 120, 36));
 
         btnNurseryExamCancel.setBackground(new java.awt.Color(204, 0, 0));
-        btnNurseryExamCancel.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        btnNurseryExamCancel.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         btnNurseryExamCancel.setText("CANCEL");
         btnNurseryExamCancel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnNurseryExamCancelActionPerformed(evt);
             }
         });
-        examNursery1.add(btnNurseryExamCancel, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 520, 120, 36));
+        examNursery1.add(btnNurseryExamCancel, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 540, 120, 36));
 
         jLabel301.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel301.setText("Student ID");
-        examNursery1.add(jLabel301, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, -1, -1));
+        examNursery1.add(jLabel301, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 170, -1, -1));
 
         nuExamID.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        examNursery1.add(nuExamID, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 130, 90, 27));
+        nuExamID.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        nuExamID.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nuExamIDActionPerformed(evt);
+            }
+        });
+        examNursery1.add(nuExamID, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 170, 90, 27));
+
+        btnNuExam.setBackground(new java.awt.Color(0, 153, 204));
+        btnNuExam.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        btnNuExam.setText("EDIT");
+        btnNuExam.setToolTipText("EDIT");
+        btnNuExam.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNuExamActionPerformed(evt);
+            }
+        });
+        examNursery1.add(btnNuExam, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 540, 120, 36));
 
         javax.swing.GroupLayout examNurseryLayout = new javax.swing.GroupLayout(examNursery);
         examNursery.setLayout(examNurseryLayout);
@@ -4356,7 +4267,7 @@ public class ResultEntry extends javax.swing.JFrame {
         }
 
         JTextField temp = null;
-        for (Component C : secondPanel.getComponents()) {
+        for (Component C : secondPanel1.getComponents()) {
             if (C.getClass().toString().contains("javax.swing.JTextField")) {
 
                 temp = (JTextField) C;
@@ -5453,7 +5364,6 @@ public class ResultEntry extends javax.swing.JFrame {
 
     private void jLabel124MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel124MouseClicked
 
-        new ResultView().show();
         this.dispose();
 
     }//GEN-LAST:event_jLabel124MouseClicked
@@ -5515,8 +5425,1299 @@ public class ResultEntry extends javax.swing.JFrame {
     private void btnCloseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCloseMouseClicked
 
         this.dispose();
-        
+
     }//GEN-LAST:event_btnCloseMouseClicked
+
+    private void btnEditSeniorFirstTestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditSeniorFirstTestActionPerformed
+
+        String id = txtSeniorFirstID.getText();
+
+        DBHandler handler = new DBHandler();
+        if (!id.isEmpty()) {
+            String query = "SELECT * FROM sss WHERE StudentID=?";
+            try {
+                PreparedStatement pst = handler.getdbConnection().prepareStatement(query);
+                pst.setString(1, id);
+                ResultSet rs = pst.executeQuery();
+                int counter = 0;
+                if (rs.next()) {
+                    counter++;
+                    String english = rs.getString("English1");
+                    txtFirstEnglish.setText(english);
+                    String maths = rs.getString("Maths1");
+                    txtFirstMaths.setText(maths);
+                    String comm = rs.getString("Commerce1");
+                    txtFirstComm.setText(comm);
+                    String econs = rs.getString("Economics1");
+                    txtFirstEcons.setText(econs);
+                    String bio = rs.getString("Biology1");
+                    txtFirstBio.setText(bio);
+                    String phy = rs.getString("Physics1");
+                    txtFirstPhy.setText(phy);
+                    String acc = rs.getString("Account1");
+                    txtFirstAccount.setText(acc);
+                    String civic = rs.getString("Civic1");
+                    txtFirstCivic.setText(civic);
+                    String lit = rs.getString("Literature1");
+                    txtFirstLit.setText(lit);
+                    String geo = rs.getString("Geography1");
+                    txtFirstGeo.setText(geo);
+                    String crs = rs.getString("CRS1");
+                    txtFirstCRS.setText(crs);
+                    String gov = rs.getString("Government1");
+                    txtFirstGov.setText(gov);
+                    String chem = rs.getString("Chemistry1");
+                    txtFirstChem.setText(chem);
+                    String agric = rs.getString("Agric1");
+                    txtFirstAgric.setText(agric);
+                    String art = rs.getString("Arts1");
+                    txtFirstFineArts.setText(art);
+                    String fmaths = rs.getString("FMaths1");
+                    txtFirstFMaths.setText(fmaths);
+                    String computer = rs.getString("Computer1");
+                    txtFirstComputer.setText(computer);
+                    String french = rs.getString("French1");
+                    txtFirstFrench.setText(french);
+
+                    txtSeniorFirstID.setBackground(Color.white);
+                } else {
+                    JOptionPane.showMessageDialog(this, "No Student ID as " + id);
+                }
+                if (counter != 1) {
+                    JOptionPane.showMessageDialog(this, "Can't retrieve data !");
+                    JTextField temp = null;
+                    for (Component C : secondPanel1.getComponents()) {
+                        if (C.getClass().toString().contains("javax.swing.JTextField")) {
+
+                            temp = (JTextField) C;
+                            temp.setText(null);
+                        }
+                    }
+                }
+
+            } catch (ClassNotFoundException | SQLException ex) {
+                Logger.getLogger(ResultEntry.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
+        } else {
+            JOptionPane.showMessageDialog(this, "Requires Student ID !");
+            txtSeniorFirstID.setBackground(Color.red);
+
+            JTextField temp = null;
+            for (Component C : firstPanel.getComponents()) {
+                if (C.getClass().toString().contains("javax.swing.JTextField")) {
+
+                    temp = (JTextField) C;
+                    temp.setText(null);
+                }
+            }
+        }
+
+    }//GEN-LAST:event_btnEditSeniorFirstTestActionPerformed
+
+    private void btnEditSeniorSecondTestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditSeniorSecondTestActionPerformed
+
+        String id = txtSecondID.getText();
+
+        DBHandler handler = new DBHandler();
+        if (!id.isEmpty()) {
+            String query = "SELECT * FROM sss WHERE StudentID=?";
+            try {
+                PreparedStatement pst = handler.getdbConnection().prepareStatement(query);
+                pst.setString(1, id);
+                ResultSet rs = pst.executeQuery();
+                int counter = 0;
+                if (rs.next()) {
+                    counter++;
+                    String english = rs.getString("English2");
+                    txtSecondEnglish.setText(english);
+                    String maths = rs.getString("Maths2");
+                    txtSecondMaths.setText(maths);
+                    String comm = rs.getString("Commerce2");
+                    txtSecondComm.setText(comm);
+                    String econs = rs.getString("Economics2");
+                    txtSecondEcons.setText(econs);
+                    String bio = rs.getString("Biology2");
+                    txtSecondBio.setText(bio);
+                    String phy = rs.getString("Physics2");
+                    txtSecondPhy.setText(phy);
+                    String acc = rs.getString("Account2");
+                    txtSecondAccount.setText(acc);
+                    String civic = rs.getString("Civic2");
+                    txtSecondCivic.setText(civic);
+                    String lit = rs.getString("Literature2");
+                    txtSecondLit.setText(lit);
+                    String geo = rs.getString("Geography2");
+                    txtSecondGeo.setText(geo);
+                    String crs = rs.getString("CRS2");
+                    txtSecondCRS.setText(crs);
+                    String gov = rs.getString("Government2");
+                    txtSecondGov.setText(gov);
+                    String chem = rs.getString("Chemistry2");
+                    txtSecondChem.setText(chem);
+                    String agric = rs.getString("Agric2");
+                    txtSecondAgric.setText(agric);
+                    String art = rs.getString("Arts2");
+                    txtSecondFineArts.setText(art);
+                    String fmaths = rs.getString("FMaths2");
+                    txtSecondFMaths.setText(fmaths);
+                    String computer = rs.getString("Computer2");
+                    txtSecondComputer.setText(computer);
+                    String french = rs.getString("French2");
+                    txtSecondFrench.setText(french);
+
+                    txtSecondID.setBackground(Color.white);
+                } else {
+                    JOptionPane.showMessageDialog(this, "No Student ID as " + id);
+                }
+                if (counter != 1) {
+                    JOptionPane.showMessageDialog(this, "Can't retrieve data !");
+                    JTextField temp = null;
+                    for (Component C : secondPanel1.getComponents()) {
+                        if (C.getClass().toString().contains("javax.swing.JTextField")) {
+
+                            temp = (JTextField) C;
+                            temp.setText(null);
+                        }
+                    }
+                }
+
+            } catch (ClassNotFoundException | SQLException ex) {
+                Logger.getLogger(ResultEntry.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
+        } else {
+            JOptionPane.showMessageDialog(this, "Requires Student ID !");
+            txtSecondID.setBackground(Color.red);
+
+            JTextField temp = null;
+            for (Component C : secondPanel1.getComponents()) {
+                if (C.getClass().toString().contains("javax.swing.JTextField")) {
+
+                    temp = (JTextField) C;
+                    temp.setText(null);
+                }
+            }
+        }
+
+    }//GEN-LAST:event_btnEditSeniorSecondTestActionPerformed
+
+    private void btnSeniorThirdTestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSeniorThirdTestActionPerformed
+
+        String id = txtThirdID.getText();
+
+        DBHandler handler = new DBHandler();
+        if (!id.isEmpty()) {
+            String query = "SELECT * FROM sss WHERE StudentID=?";
+            try {
+                PreparedStatement pst = handler.getdbConnection().prepareStatement(query);
+                pst.setString(1, id);
+                ResultSet rs = pst.executeQuery();
+                int counter = 0;
+                if (rs.next()) {
+                    counter++;
+                    String english = rs.getString("English3");
+                    txtThirdEnglish.setText(english);
+                    String maths = rs.getString("Maths3");
+                    txtThirdMaths.setText(maths);
+                    String comm = rs.getString("Commerce3");
+                    txtThirdComm.setText(comm);
+                    String econs = rs.getString("Economics3");
+                    txtThirdEcons.setText(econs);
+                    String bio = rs.getString("Biology3");
+                    txtThirdBio.setText(bio);
+                    String phy = rs.getString("Physics3");
+                    txtThirdPhy.setText(phy);
+                    String acc = rs.getString("Account3");
+                    txtThirdAccount.setText(acc);
+                    String civic = rs.getString("Civic3");
+                    txtThirdCivic.setText(civic);
+                    String lit = rs.getString("Literature3");
+                    txtThirdLit.setText(lit);
+                    String geo = rs.getString("Geography3");
+                    txtThirdGeo.setText(geo);
+                    String crs = rs.getString("CRS3");
+                    txtThirdCRS.setText(crs);
+                    String gov = rs.getString("Government3");
+                    txtThirdGov.setText(gov);
+                    String chem = rs.getString("Chemistry3");
+                    txtThirdChem.setText(chem);
+                    String agric = rs.getString("Agric3");
+                    txtThirdAgric.setText(agric);
+                    String art = rs.getString("Arts3");
+                    txtThirdFineArts.setText(art);
+                    String fmaths = rs.getString("FMaths3");
+                    txtThirdFMaths.setText(fmaths);
+                    String computer = rs.getString("Computer3");
+                    txtThirdComputer.setText(computer);
+                    String french = rs.getString("French3");
+                    txtThirdFrench.setText(french);
+
+                    txtThirdID.setBackground(Color.white);
+                } else {
+                    JOptionPane.showMessageDialog(this, "No Student ID as " + id);
+                }
+                if (counter != 1) {
+                    JOptionPane.showMessageDialog(this, "Can't retrieve data !");
+                    JTextField temp = null;
+                    for (Component C : thirdPanel.getComponents()) {
+                        if (C.getClass().toString().contains("javax.swing.JTextField")) {
+
+                            temp = (JTextField) C;
+                            temp.setText(null);
+                        }
+                    }
+                }
+
+            } catch (ClassNotFoundException | SQLException ex) {
+                Logger.getLogger(ResultEntry.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
+        } else {
+            JOptionPane.showMessageDialog(this, "Requires Student ID !");
+            txtThirdID.setBackground(Color.red);
+
+            JTextField temp = null;
+            for (Component C : thirdPanel.getComponents()) {
+                if (C.getClass().toString().contains("javax.swing.JTextField")) {
+
+                    temp = (JTextField) C;
+                    temp.setText(null);
+                }
+            }
+        }
+
+    }//GEN-LAST:event_btnSeniorThirdTestActionPerformed
+
+    private void btnSeniorExamTestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSeniorExamTestActionPerformed
+
+        String id = txtExamID.getText();
+
+        DBHandler handler = new DBHandler();
+        if (!id.isEmpty()) {
+            String query = "SELECT * FROM sss WHERE StudentID=?";
+            try {
+                PreparedStatement pst = handler.getdbConnection().prepareStatement(query);
+                pst.setString(1, id);
+                ResultSet rs = pst.executeQuery();
+                int counter = 0;
+                if (rs.next()) {
+                    counter++;
+                    String english = rs.getString("English_Exam");
+                    txtExamEnglish.setText(english);
+                    String maths = rs.getString("Maths_Exam");
+                    txtExamMaths.setText(maths);
+                    String comm = rs.getString("Commerce_Exam");
+                    txtExamComm.setText(comm);
+                    String econs = rs.getString("Economics_Exam");
+                    txtExamEcons.setText(econs);
+                    String bio = rs.getString("Biology_Exam");
+                    txtExamBio.setText(bio);
+                    String phy = rs.getString("Physics_Exam");
+                    txtExamPhy.setText(phy);
+                    String acc = rs.getString("Account_Exam");
+                    txtExamAccount.setText(acc);
+                    String civic = rs.getString("Civic_Exam");
+                    txtExamCivic.setText(civic);
+                    String lit = rs.getString("Literature_Exam");
+                    txtExamLit.setText(lit);
+                    String geo = rs.getString("Geography_Exam");
+                    txtExamGeo.setText(geo);
+                    String crs = rs.getString("CRS_Exam");
+                    txtExamCRS.setText(crs);
+                    String gov = rs.getString("Government_Exam");
+                    txtExamGov.setText(gov);
+                    String chem = rs.getString("Chemistry_Exam");
+                    txtExamChem.setText(chem);
+                    String agric = rs.getString("Agric_Exam");
+                    txtExamAgric.setText(agric);
+                    String art = rs.getString("Arts_Exam");
+                    txtExamFineArts.setText(art);
+                    String fmaths = rs.getString("FMaths_Exam");
+                    txtExamFMaths.setText(fmaths);
+                    String computer = rs.getString("Computer_Exam");
+                    txtExamComputer.setText(computer);
+                    String french = rs.getString("French_Exam");
+                    txtExamFrench.setText(french);
+
+                    txtExamID.setBackground(Color.white);
+                } else {
+                    JOptionPane.showMessageDialog(this, "No Student ID as " + id);
+                }
+                if (counter != 1) {
+                    JOptionPane.showMessageDialog(this, "Can't retrieve data !");
+                    JTextField temp = null;
+                    for (Component C : examPanel1.getComponents()) {
+                        if (C.getClass().toString().contains("javax.swing.JTextField")) {
+
+                            temp = (JTextField) C;
+                            temp.setText(null);
+                        }
+                    }
+                }
+
+            } catch (ClassNotFoundException | SQLException ex) {
+                Logger.getLogger(ResultEntry.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
+        } else {
+            JOptionPane.showMessageDialog(this, "Requires Student ID !");
+            txtExamID.setBackground(Color.red);
+
+            JTextField temp = null;
+            for (Component C : examPanel1.getComponents()) {
+                if (C.getClass().toString().contains("javax.swing.JTextField")) {
+
+                    temp = (JTextField) C;
+                    temp.setText(null);
+                }
+            }
+        }
+
+    }//GEN-LAST:event_btnSeniorExamTestActionPerformed
+
+    private void btnJsEditFirstActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnJsEditFirstActionPerformed
+
+        String id = txtFirstID.getText();
+
+        DBHandler handler = new DBHandler();
+        if (!id.isEmpty()) {
+            String query = "SELECT * FROM jss WHERE StudentID=?";
+            try {
+                PreparedStatement pst = handler.getdbConnection().prepareStatement(query);
+                pst.setString(1, id);
+                ResultSet rs = pst.executeQuery();
+                int counter = 0;
+                if (rs.next()) {
+                    counter++;
+                    String english = rs.getString("english1");
+                    jsFirstEnglish.setText(english);
+                    String maths = rs.getString("maths1");
+                    jsFirstMaths.setText(maths);
+                    String bs = rs.getString("bs1");
+                    jsFirstBS.setText(bs);
+                    String bt = rs.getString("bt1");
+                    jsFirstBT.setText(bt);
+                    String phe = rs.getString("phe1");
+                    jsFirstPHE.setText(phe);
+                    String social = rs.getString("social1");
+                    jsFirstSocial.setText(social);
+                    String security = rs.getString("security1");
+                    jsFirstSecurity.setText(security);
+                    String civic = rs.getString("civic1");
+                    jsFirstCivic.setText(civic);
+                    String lit = rs.getString("literature1");
+                    jsFirstLit.setText(lit);
+                    String home = rs.getString("home1");
+                    jsFirstHome.setText(home);
+                    String crs = rs.getString("crs1");
+                    jsFirstCRS.setText(crs);
+                    String music = rs.getString("music1");
+                    jsFirstMusic.setText(music);
+                    String bus = rs.getString("business1");
+                    jsFirstBusiness.setText(bus);
+                    String agric = rs.getString("agric1");
+                    jsFirstAgric.setText(agric);
+                    String art = rs.getString("art1");
+                    jsFirstArt_Craft.setText(art);
+                    String drama = rs.getString("drama1");
+                    jsFirstDrama_Stage.setText(drama);
+                    String ict = rs.getString("ict1");
+                    jsFirstICT.setText(ict);
+                    String french = rs.getString("french1");
+                    jsFirstFrench.setText(french);
+                    String moral = rs.getString("moral1");
+                    jsFirstMoral.setText(moral);
+                    String edo = rs.getString("edo1");
+                    jsFirstEdo.setText(edo);
+
+                    txtFirstID.setBackground(Color.white);
+                } else {
+                    JOptionPane.showMessageDialog(this, "No Student ID as " + id);
+                }
+                if (counter != 1) {
+                    JOptionPane.showMessageDialog(this, "Can't retrieve data !");
+                    JTextField temp = null;
+                    for (Component C : jsFirstPanel.getComponents()) {
+                        if (C.getClass().toString().contains("javax.swing.JTextField")) {
+
+                            temp = (JTextField) C;
+                            temp.setText(null);
+                        }
+                    }
+                }
+
+            } catch (ClassNotFoundException | SQLException ex) {
+                Logger.getLogger(ResultEntry.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
+        } else {
+            JOptionPane.showMessageDialog(this, "Requires Student ID !");
+            txtFirstID.setBackground(Color.red);
+
+            JTextField temp = null;
+            for (Component C : jsFirstPanel.getComponents()) {
+                if (C.getClass().toString().contains("javax.swing.JTextField")) {
+
+                    temp = (JTextField) C;
+                    temp.setText(null);
+                }
+            }
+        }
+
+    }//GEN-LAST:event_btnJsEditFirstActionPerformed
+
+    private void btnjsEditSecondActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnjsEditSecondActionPerformed
+
+        String id = jsSecondID.getText();
+
+        DBHandler handler = new DBHandler();
+        if (!id.isEmpty()) {
+            String query = "SELECT * FROM jss WHERE StudentID=?";
+            try {
+                PreparedStatement pst = handler.getdbConnection().prepareStatement(query);
+                pst.setString(1, id);
+                ResultSet rs = pst.executeQuery();
+                int counter = 0;
+                if (rs.next()) {
+                    counter++;
+                    String english = rs.getString("english2");
+                    jsSecondEnglish.setText(english);
+                    String maths = rs.getString("maths2");
+                    jsSecondMaths.setText(maths);
+                    String bs = rs.getString("bs2");
+                    jsSecondBS.setText(bs);
+                    String bt = rs.getString("bt2");
+                    jsSecondBT.setText(bt);
+                    String phe = rs.getString("phe2");
+                    jsSecondPHE.setText(phe);
+                    String social = rs.getString("social2");
+                    jsSecondSocial.setText(social);
+                    String security = rs.getString("security2");
+                    jsSecondSecurity.setText(security);
+                    String civic = rs.getString("civic2");
+                    jsSecondCivic.setText(civic);
+                    String lit = rs.getString("literature2");
+                    jsSecondLit.setText(lit);
+                    String home = rs.getString("home2");
+                    jsSecondHome.setText(home);
+                    String crs = rs.getString("crs2");
+                    jsSecondCRS.setText(crs);
+                    String music = rs.getString("music2");
+                    jsSecondMusic.setText(music);
+                    String bus = rs.getString("business2");
+                    jsSecondBusiness.setText(bus);
+                    String agric = rs.getString("agric2");
+                    jsSecondAgric.setText(agric);
+                    String art = rs.getString("art2");
+                    jsSecondArt_Craft.setText(art);
+                    String drama = rs.getString("drama2");
+                    jsSecondDrama_Stage.setText(drama);
+                    String ict = rs.getString("ict2");
+                    jsSecondICT.setText(ict);
+                    String french = rs.getString("french2");
+                    jsSecondFrench.setText(french);
+                    String moral = rs.getString("moral2");
+                    jsSecondMoral.setText(moral);
+                    String edo = rs.getString("edo2");
+                    jsSecondEdo.setText(edo);
+
+                    jsSecondID.setBackground(Color.white);
+                } else {
+                    JOptionPane.showMessageDialog(this, "No Student ID as " + id);
+                }
+                if (counter != 1) {
+                    JOptionPane.showMessageDialog(this, "Can't retrieve data !");
+                    JTextField temp = null;
+                    for (Component C : jsSecondPanel1.getComponents()) {
+                        if (C.getClass().toString().contains("javax.swing.JTextField")) {
+
+                            temp = (JTextField) C;
+                            temp.setText(null);
+                        }
+                    }
+                }
+
+            } catch (ClassNotFoundException | SQLException ex) {
+                Logger.getLogger(ResultEntry.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
+        } else {
+            JOptionPane.showMessageDialog(this, "Requires Student ID !");
+            jsSecondID.setBackground(Color.red);
+
+            JTextField temp = null;
+            for (Component C : jsSecondPanel1.getComponents()) {
+                if (C.getClass().toString().contains("javax.swing.JTextField")) {
+
+                    temp = (JTextField) C;
+                    temp.setText(null);
+                }
+            }
+        }
+
+    }//GEN-LAST:event_btnjsEditSecondActionPerformed
+
+    private void btnjsEditExamActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnjsEditExamActionPerformed
+
+        String id = jsExamID.getText();
+
+        DBHandler handler = new DBHandler();
+        if (!id.isEmpty()) {
+            String query = "SELECT * FROM jss WHERE StudentID=?";
+            try {
+                PreparedStatement pst = handler.getdbConnection().prepareStatement(query);
+                pst.setString(1, id);
+                ResultSet rs = pst.executeQuery();
+                int counter = 0;
+                if (rs.next()) {
+                    counter++;
+                    String english = rs.getString("english_exam");
+                    jsExamEnglish.setText(english);
+                    String maths = rs.getString("maths_exam");
+                    jsExamMaths.setText(maths);
+                    String bs = rs.getString("bs_exam");
+                    jsExamBS.setText(bs);
+                    String bt = rs.getString("bt_exam");
+                    jsExamBT.setText(bt);
+                    String phe = rs.getString("phe_exam");
+                    jsExamPHE.setText(phe);
+                    String social = rs.getString("social_exam");
+                    jsExamSocial.setText(social);
+                    String security = rs.getString("security_exam");
+                    jsExamSecurity.setText(security);
+                    String civic = rs.getString("civic_exam");
+                    jsExamCivic.setText(civic);
+                    String lit = rs.getString("literature_exam");
+                    jsExamLit.setText(lit);
+                    String home = rs.getString("home_exam");
+                    jsExamHome.setText(home);
+                    String crs = rs.getString("crs_exam");
+                    jsExamCRS.setText(crs);
+                    String music = rs.getString("music_exam");
+                    jsExamMusic.setText(music);
+                    String bus = rs.getString("business_exam");
+                    jsExamBusiness.setText(bus);
+                    String agric = rs.getString("agric_exam");
+                    jsExamAgric.setText(agric);
+                    String art = rs.getString("art_exam");
+                    jsExamArt_Craft.setText(art);
+                    String drama = rs.getString("drama_exam");
+                    jsExamDrama_Stage.setText(drama);
+                    String ict = rs.getString("ict_exam");
+                    jsExamICT.setText(ict);
+                    String french = rs.getString("french_exam");
+                    jsExamFrench.setText(french);
+                    String moral = rs.getString("moral_exam");
+                    jsExamMoral.setText(moral);
+                    String edo = rs.getString("edo_exam");
+                    jsExamEdo.setText(edo);
+
+                    jsExamID.setBackground(Color.white);
+                } else {
+                    JOptionPane.showMessageDialog(this, "No Student ID as " + id);
+                }
+                if (counter != 1) {
+                    JOptionPane.showMessageDialog(this, "Can't retrieve data !");
+                    JTextField temp = null;
+                    for (Component C : jsExamPanel1.getComponents()) {
+                        if (C.getClass().toString().contains("javax.swing.JTextField")) {
+
+                            temp = (JTextField) C;
+                            temp.setText(null);
+                        }
+                    }
+                }
+
+            } catch (ClassNotFoundException | SQLException ex) {
+                Logger.getLogger(ResultEntry.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
+        } else {
+            JOptionPane.showMessageDialog(this, "Requires Student ID !");
+            jsExamID.setBackground(Color.red);
+
+            JTextField temp = null;
+            for (Component C : jsExamPanel1.getComponents()) {
+                if (C.getClass().toString().contains("javax.swing.JTextField")) {
+
+                    temp = (JTextField) C;
+                    temp.setText(null);
+                }
+            }
+        }
+
+    }//GEN-LAST:event_btnjsEditExamActionPerformed
+
+    private void btnprFirstTestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnprFirstTestActionPerformed
+
+        String id = prFirstID.getText();
+
+        DBHandler handler = new DBHandler();
+        if (!id.isEmpty()) {
+            String query = "SELECT * FROM prime WHERE StudentID=?";
+            try {
+                PreparedStatement pst = handler.getdbConnection().prepareStatement(query);
+                pst.setString(1, id);
+                ResultSet rs = pst.executeQuery();
+                int counter = 0;
+                if (rs.next()) {
+                    counter++;
+                    String english = rs.getString("English1");
+                    prFirstEnglish.setText(english);
+                    String maths = rs.getString("Maths1");
+                    prFirstMaths.setText(maths);
+                    String bs = rs.getString("BS1");
+                    prFirstBS.setText(bs);
+                    String bt = rs.getString("BT1");
+                    prFirstBT.setText(bt);
+                    String phe = rs.getString("PHE1");
+                    prFirstPHE.setText(phe);
+                    String social = rs.getString("Social1");
+                    prFirstSocial.setText(social);
+                    String security = rs.getString("Security1");
+                    prFirstSecurity.setText(security);
+                    String civic = rs.getString("Civic1");
+                    prFirstCivic.setText(civic);
+                    String home = rs.getString("Home1");
+                    prFirstHome.setText(home);
+                    String crs = rs.getString("CRS1");
+                    prFirstCRS.setText(crs);
+                    String agric = rs.getString("Agric1");
+                    prFirstAgric.setText(agric);
+                    String ict = rs.getString("ICT1");
+                    prFirstICT.setText(ict);
+                    String quan = rs.getString("Quan1");
+                    prFirstQuan.setText(quan);
+                    String verbal = rs.getString("Verbal1");
+                    prFirstVerbal.setText(verbal);
+                    String edo = rs.getString("Edo1");
+                    prFirstEdo.setText(edo);
+
+                    prFirstID.setBackground(Color.white);
+                } else {
+                    JOptionPane.showMessageDialog(this, "No Student ID as " + id);
+                }
+                if (counter != 1) {
+                    JOptionPane.showMessageDialog(this, "Can't retrieve data !");
+                    JTextField temp = null;
+                    for (Component C : firstPrimary.getComponents()) {
+                        if (C.getClass().toString().contains("javax.swing.JTextField")) {
+
+                            temp = (JTextField) C;
+                            temp.setText(null);
+                        }
+                    }
+                }
+
+            } catch (ClassNotFoundException | SQLException ex) {
+                Logger.getLogger(ResultEntry.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
+        } else {
+            JOptionPane.showMessageDialog(this, "Requires Student ID !");
+            prFirstID.setBackground(Color.red);
+
+            JTextField temp = null;
+            for (Component C : firstPrimary.getComponents()) {
+                if (C.getClass().toString().contains("javax.swing.JTextField")) {
+
+                    temp = (JTextField) C;
+                    temp.setText(null);
+                }
+            }
+        }
+
+    }//GEN-LAST:event_btnprFirstTestActionPerformed
+
+    private void btnprSecondTestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnprSecondTestActionPerformed
+
+        String id = prSecondID.getText();
+
+        DBHandler handler = new DBHandler();
+        if (!id.isEmpty()) {
+            String query = "SELECT * FROM prime WHERE StudentID=?";
+            try {
+                PreparedStatement pst = handler.getdbConnection().prepareStatement(query);
+                pst.setString(1, id);
+                ResultSet rs = pst.executeQuery();
+                int counter = 0;
+                if (rs.next()) {
+                    counter++;
+                    String english = rs.getString("English2");
+                    prSecondEnglish.setText(english);
+                    String maths = rs.getString("Maths2");
+                    prSecondMaths.setText(maths);
+                    String bs = rs.getString("BS2");
+                    prSecondBS.setText(bs);
+                    String bt = rs.getString("BT2");
+                    prSecondBT.setText(bt);
+                    String phe = rs.getString("PHE2");
+                    prSecondPHE.setText(phe);
+                    String social = rs.getString("Social2");
+                    prSecondSocial.setText(social);
+                    String security = rs.getString("Security2");
+                    prSecondSecurity.setText(security);
+                    String civic = rs.getString("Civic2");
+                    prSecondCivic.setText(civic);
+                    String home = rs.getString("Home2");
+                    prSecondHome.setText(home);
+                    String crs = rs.getString("CRS2");
+                    prSecondCRS.setText(crs);
+                    String agric = rs.getString("Agric2");
+                    prSecondAgric.setText(agric);
+                    String ict = rs.getString("ICT2");
+                    prSecondICT.setText(ict);
+                    String quan = rs.getString("Quan2");
+                    prSecondQuan.setText(quan);
+                    String verbal = rs.getString("Verbal2");
+                    prSecondVerbal.setText(verbal);
+                    String edo = rs.getString("Edo2");
+                    prSecondEdo.setText(edo);
+
+                    prSecondID.setBackground(Color.white);
+                } else {
+                    JOptionPane.showMessageDialog(this, "No Student ID as " + id);
+                }
+                if (counter != 1) {
+                    JOptionPane.showMessageDialog(this, "Can't retrieve data !");
+                    JTextField temp = null;
+                    for (Component C : secondPrimary1.getComponents()) {
+                        if (C.getClass().toString().contains("javax.swing.JTextField")) {
+
+                            temp = (JTextField) C;
+                            temp.setText(null);
+                        }
+                    }
+                }
+
+            } catch (ClassNotFoundException | SQLException ex) {
+                Logger.getLogger(ResultEntry.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
+        } else {
+            JOptionPane.showMessageDialog(this, "Requires Student ID !");
+            prSecondID.setBackground(Color.red);
+
+            JTextField temp = null;
+            for (Component C : secondPrimary1.getComponents()) {
+                if (C.getClass().toString().contains("javax.swing.JTextField")) {
+
+                    temp = (JTextField) C;
+                    temp.setText(null);
+                }
+            }
+        }
+
+    }//GEN-LAST:event_btnprSecondTestActionPerformed
+
+    private void btnprExamTestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnprExamTestActionPerformed
+
+        String id = prExamID.getText();
+
+        DBHandler handler = new DBHandler();
+        if (!id.isEmpty()) {
+            String query = "SELECT * FROM prime WHERE StudentID=?";
+            try {
+                PreparedStatement pst = handler.getdbConnection().prepareStatement(query);
+                pst.setString(1, id);
+                ResultSet rs = pst.executeQuery();
+                int counter = 0;
+                if (rs.next()) {
+                    counter++;
+                    String english = rs.getString("English_Exam");
+                    prExamEnglish.setText(english);
+                    String maths = rs.getString("Maths_Exam");
+                    prExamMaths.setText(maths);
+                    String bs = rs.getString("BS_Exam");
+                    prExamBS.setText(bs);
+                    String bt = rs.getString("BT_Exam");
+                    prExamBT.setText(bt);
+                    String phe = rs.getString("PHE_Exam");
+                    prExamPHE.setText(phe);
+                    String social = rs.getString("Social_Exam");
+                    prExamSocial.setText(social);
+                    String security = rs.getString("Security_Exam");
+                    prExamSecurity.setText(security);
+                    String civic = rs.getString("Civic_Exam");
+                    prExamCivic.setText(civic);
+                    String home = rs.getString("Home_Exam");
+                    prExamHome.setText(home);
+                    String crs = rs.getString("CRS_Exam");
+                    prExamCRS.setText(crs);
+                    String agric = rs.getString("Agric_Exam");
+                    prExamAgric.setText(agric);
+                    String ict = rs.getString("ICT_Exam");
+                    prExamICT.setText(ict);
+                    String quan = rs.getString("Quan_Exam");
+                    prExamQuan.setText(quan);
+                    String verbal = rs.getString("Verbal_Exam");
+                    prExamVerbal.setText(verbal);
+                    String edo = rs.getString("Edo_Exam");
+                    prExamEdo.setText(edo);
+
+                    prExamID.setBackground(Color.white);
+                } else {
+                    JOptionPane.showMessageDialog(this, "No Student ID as " + id);
+                }
+                if (counter != 1) {
+                    JOptionPane.showMessageDialog(this, "Can't retrieve data !");
+                    JTextField temp = null;
+                    for (Component C : examPrimary1.getComponents()) {
+                        if (C.getClass().toString().contains("javax.swing.JTextField")) {
+
+                            temp = (JTextField) C;
+                            temp.setText(null);
+                        }
+                    }
+                }
+
+            } catch (ClassNotFoundException | SQLException ex) {
+                Logger.getLogger(ResultEntry.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
+        } else {
+            JOptionPane.showMessageDialog(this, "Requires Student ID !");
+            prExamID.setBackground(Color.red);
+
+            JTextField temp = null;
+            for (Component C : examPrimary1.getComponents()) {
+                if (C.getClass().toString().contains("javax.swing.JTextField")) {
+
+                    temp = (JTextField) C;
+                    temp.setText(null);
+                }
+            }
+        }
+
+    }//GEN-LAST:event_btnprExamTestActionPerformed
+
+    private void btnNrEditFirstActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNrEditFirstActionPerformed
+
+        String id = nuFirstID.getText();
+
+        DBHandler handler = new DBHandler();
+        if (!id.isEmpty()) {
+            String query = "SELECT * FROM nursery WHERE StudentID=?";
+            try {
+                PreparedStatement pst = handler.getdbConnection().prepareStatement(query);
+                pst.setString(1, id);
+                ResultSet rs = pst.executeQuery();
+                int counter = 0;
+                if (rs.next()) {
+                    counter++;
+                    String english = rs.getString("English1");
+                    nuFirstEnglish.setText(english);
+                    String sound = rs.getString("Sound1");
+                    nuFirstSound.setText(sound);
+                    String es = rs.getString("ES1");
+                    nuFirstElem.setText(es);
+                    String social = rs.getString("Social1");
+                    nuFirstSocial.setText(social);
+                    String health = rs.getString("Health1");
+                    nuFirstHealth.setText(health);
+                    String com = rs.getString("Computer1");
+                    nuFirstComputer.setText(com);
+                    String cca = rs.getString("CCA1");
+                    nuFirstCultural.setText(cca);
+                    String writing = rs.getString("Writing1");
+                    nuFirstWriting.setText(writing);
+                    String rhyme = rs.getString("Rhymes1");
+                    nuFirstRhymes.setText(rhyme);
+                    String moral = rs.getString("Moral1");
+                    nuFirstMoral.setText(moral);
+                    String quan = rs.getString("Quan1");
+                    nuFirstQuan.setText(quan);
+                    String verbal = rs.getString("Verbal1");
+                    nuFirstVerbal.setText(verbal);
+
+                    nuFirstID.setBackground(Color.white);
+                } else {
+                    JOptionPane.showMessageDialog(this, "No Student ID as " + id);
+                }
+                if (counter != 1) {
+                    JOptionPane.showMessageDialog(this, "Can't retrieve data !");
+                    JTextField temp = null;
+                    for (Component C : firstNursery.getComponents()) {
+                        if (C.getClass().toString().contains("javax.swing.JTextField")) {
+
+                            temp = (JTextField) C;
+                            temp.setText(null);
+                        }
+                    }
+                }
+
+            } catch (ClassNotFoundException | SQLException ex) {
+                Logger.getLogger(ResultEntry.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
+        } else {
+            JOptionPane.showMessageDialog(this, "Requires Student ID !");
+            nuFirstID.setBackground(Color.red);
+
+            JTextField temp = null;
+            for (Component C : firstNursery.getComponents()) {
+                if (C.getClass().toString().contains("javax.swing.JTextField")) {
+
+                    temp = (JTextField) C;
+                    temp.setText(null);
+                }
+            }
+        }
+
+    }//GEN-LAST:event_btnNrEditFirstActionPerformed
+
+    private void btnNuSecondActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuSecondActionPerformed
+
+        String id = nuSecondID.getText();
+
+        DBHandler handler = new DBHandler();
+        if (!id.isEmpty()) {
+            String query = "SELECT * FROM nursery WHERE StudentID=?";
+            try {
+                PreparedStatement pst = handler.getdbConnection().prepareStatement(query);
+                pst.setString(1, id);
+                ResultSet rs = pst.executeQuery();
+                int counter = 0;
+                if (rs.next()) {
+                    counter++;
+                    String english = rs.getString("English2");
+                    nuSecondEnglish.setText(english);
+                    String sound = rs.getString("Sound2");
+                    nuSecondSound.setText(sound);
+                    String es = rs.getString("ES2");
+                    nuSecondElem.setText(es);
+                    String social = rs.getString("Social2");
+                    nuSecondSocial.setText(social);
+                    String health = rs.getString("Health2");
+                    nuSecondHealth.setText(health);
+                    String com = rs.getString("Computer2");
+                    nuSecondComputer.setText(com);
+                    String cca = rs.getString("CCA2");
+                    nuSecondCultural.setText(cca);
+                    String writing = rs.getString("Writing2");
+                    nuSecondWriting.setText(writing);
+                    String rhyme = rs.getString("Rhymes2");
+                    nuSecondRhymes.setText(rhyme);
+                    String moral = rs.getString("Moral2");
+                    nuSecondMoral.setText(moral);
+                    String quan = rs.getString("Quan2");
+                    nuSecondQuan.setText(quan);
+                    String verbal = rs.getString("Verbal2");
+                    nuSecondVerbal.setText(verbal);
+
+                    nuSecondID.setBackground(Color.white);
+                } else {
+                    JOptionPane.showMessageDialog(this, "No Student ID as " + id);
+                }
+                if (counter != 1) {
+                    JOptionPane.showMessageDialog(this, "Can't retrieve data !");
+                    JTextField temp = null;
+                    for (Component C : secondNursery1.getComponents()) {
+                        if (C.getClass().toString().contains("javax.swing.JTextField")) {
+
+                            temp = (JTextField) C;
+                            temp.setText(null);
+                        }
+                    }
+                }
+
+            } catch (ClassNotFoundException | SQLException ex) {
+                Logger.getLogger(ResultEntry.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
+        } else {
+            JOptionPane.showMessageDialog(this, "Requires Student ID !");
+            nuSecondID.setBackground(Color.red);
+
+            JTextField temp = null;
+            for (Component C : secondNursery1.getComponents()) {
+                if (C.getClass().toString().contains("javax.swing.JTextField")) {
+
+                    temp = (JTextField) C;
+                    temp.setText(null);
+                }
+            }
+        }
+
+    }//GEN-LAST:event_btnNuSecondActionPerformed
+
+    private void nuExamIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nuExamIDActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_nuExamIDActionPerformed
+
+    private void btnNuExamActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuExamActionPerformed
+
+        String id = nuExamID.getText();
+
+        DBHandler handler = new DBHandler();
+        if (!id.isEmpty()) {
+            String query = "SELECT * FROM nursery WHERE StudentID=?";
+            try {
+                PreparedStatement pst = handler.getdbConnection().prepareStatement(query);
+                pst.setString(1, id);
+                ResultSet rs = pst.executeQuery();
+                int counter = 0;
+                if (rs.next()) {
+                    counter++;
+                    String english = rs.getString("English_Exam");
+                    nuExamEnglish.setText(english);
+                    String sound = rs.getString("Sound_Exam");
+                    nuExamSound.setText(sound);
+                    String es = rs.getString("ES_Exam");
+                    nuExamElem.setText(es);
+                    String social = rs.getString("Social_Exam");
+                    nuExamSocial.setText(social);
+                    String health = rs.getString("Health_Exam");
+                    nuExamHealth.setText(health);
+                    String com = rs.getString("Computer_Exam");
+                    nuExamComputer.setText(com);
+                    String cca = rs.getString("CCA_Exam");
+                    nuExamCultural.setText(cca);
+                    String writing = rs.getString("Writing_Exam");
+                    nuExamWriting.setText(writing);
+                    String rhyme = rs.getString("Rhymes_Exam");
+                    nuExamRhymes.setText(rhyme);
+                    String moral = rs.getString("Moral_Exam");
+                    nuExamMoral.setText(moral);
+                    String quan = rs.getString("Quan_Exam");
+                    nuExamQuan.setText(quan);
+                    String verbal = rs.getString("Verbal_Exam");
+                    nuExamVerbal.setText(verbal);
+
+                    nuExamID.setBackground(Color.white);
+                } else {
+                    JOptionPane.showMessageDialog(this, "No Student ID as " + id);
+                }
+                if (counter != 1) {
+                    JOptionPane.showMessageDialog(this, "Can't retrieve data !");
+                    JTextField temp = null;
+                    for (Component C : examNursery1.getComponents()) {
+                        if (C.getClass().toString().contains("javax.swing.JTextField")) {
+
+                            temp = (JTextField) C;
+                            temp.setText(null);
+                        }
+                    }
+                }
+
+            } catch (ClassNotFoundException | SQLException ex) {
+                Logger.getLogger(ResultEntry.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
+        } else {
+            JOptionPane.showMessageDialog(this, "Requires Student ID !");
+            nuExamID.setBackground(Color.red);
+
+            JTextField temp = null;
+            for (Component C : examNursery1.getComponents()) {
+                if (C.getClass().toString().contains("javax.swing.JTextField")) {
+
+                    temp = (JTextField) C;
+                    temp.setText(null);
+                }
+            }
+        }
+
+    }//GEN-LAST:event_btnNuExamActionPerformed
+
+    private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
+
+        String str = "UPDATE sss SET Maths1 = ?, English1 = ?, Commerce1 = ?, Economics1 = ?,"
+                + " Physics1 = ?, Biology1 = ?, Account1 = ?, Civic1 = ?, FMaths1 = ?, Literature1 = ?,"
+                + " Geography1 = ?, CRS1 = ?, Government1 = ?, Chemistry1 = ?, Agric1 = ?, Arts1 = ?, Computer1 = ?,"
+                + " French1 = ? WHERE StudentID = ?";
+
+        DBHandler handler = new DBHandler();
+
+        try {
+            PreparedStatement pst = handler.getdbConnection().prepareStatement(str);
+
+            pst.setString(1, txtFirstMaths.getText());
+            pst.setString(2, txtFirstEnglish.getText());
+            pst.setString(3, txtFirstComm.getText());
+            pst.setString(4, txtFirstEcons.getText());
+            pst.setString(5, txtFirstPhy.getText());
+            pst.setString(6, txtFirstBio.getText());
+            pst.setString(7, txtFirstAccount.getText());
+            pst.setString(8, txtFirstCivic.getText());
+            pst.setString(9, txtFirstFMaths.getText());
+            pst.setString(10, txtFirstLit.getText());
+            pst.setString(11, txtFirstGeo.getText());
+            pst.setString(12, txtFirstCRS.getText());
+            pst.setString(13, txtFirstGov.getText());
+            pst.setString(14, txtFirstChem.getText());
+            pst.setString(15, txtFirstAgric.getText());
+            pst.setString(16, txtFirstFineArts.getText());
+            pst.setString(17, txtFirstComputer.getText());
+            pst.setString(18, txtFirstFrench.getText());
+            pst.setString(19, txtSeniorFirstID.getText());
+            pst.executeUpdate();
+
+            JOptionPane.showMessageDialog(this, "Updated");
+            System.out.println("Updated");
+
+        } catch (ClassNotFoundException | SQLException ex) {
+            Logger.getLogger(ResultEntry.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        JTextField temp = null;
+        for (Component C : firstPanel.getComponents()) {
+            if (C.getClass().toString().contains("javax.swing.JTextField")) {
+
+                temp = (JTextField) C;
+                temp.setText(null);
+            }
+        }
+
+    }//GEN-LAST:event_btnUpdateActionPerformed
+
+    private void btnjsUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnjsUpdateActionPerformed
+
+        String str = "UPDATE jss SET english1 = ?, literature1 = ?, maths1 = ?,"
+                + " bs1 = ?, bt1 = ?, phe1 = ?, ict1 = ?, crs1 = ?, social1 = ?,"
+                + " civic1 = ?, security1 = ?, home1 = ?, agric1 = ?, music1 = ?, "
+                + " drama1 = ?, art1 = ?, business1 = ?, french1 = ?, edo1 = ?, moral1 = ?"
+                + " WHERE StudentID = ?";
+
+        DBHandler handler = new DBHandler();
+
+        try {
+            try (PreparedStatement pst = handler.getdbConnection().prepareStatement(str)) {
+                pst.setString(1, jsFirstEnglish.getText());
+                pst.setString(2, jsFirstLit.getText());
+                pst.setString(3, jsFirstMaths.getText());
+                pst.setString(4, jsFirstBS.getText());
+                pst.setString(5, jsFirstBT.getText());
+                pst.setString(6, jsFirstPHE.getText());
+                pst.setString(7, jsFirstICT.getText());
+                pst.setString(8, jsFirstCRS.getText());
+                pst.setString(9, jsFirstSocial.getText());
+                pst.setString(10, jsFirstCivic.getText());
+                pst.setString(11, jsFirstSecurity.getText());
+                pst.setString(12, jsFirstHome.getText());
+                pst.setString(13, jsFirstAgric.getText());
+                pst.setString(14, jsFirstMusic.getText());
+                pst.setString(15, jsFirstDrama_Stage.getText());
+                pst.setString(16, jsFirstArt_Craft.getText());
+                pst.setString(17, jsFirstBusiness.getText());
+                pst.setString(18, jsFirstFrench.getText());
+                pst.setString(19, jsFirstEdo.getText());
+                pst.setString(20, jsFirstMoral.getText());
+                pst.setString(21, txtFirstID.getText());
+                pst.executeUpdate();
+
+                JOptionPane.showMessageDialog(this, "Updated");
+                System.out.println("Updated");
+            }
+
+        } catch (ClassNotFoundException | SQLException ex) {
+            Logger.getLogger(DBHandler.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        JTextField temp = null;
+        for (Component C : jsFirstPanel.getComponents()) {
+            if (C.getClass().toString().contains("javax.swing.JTextField")) {
+
+                temp = (JTextField) C;
+                temp.setText(null);
+            }
+        }
+
+    }//GEN-LAST:event_btnjsUpdateActionPerformed
+
+    private void btnprUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnprUpdateActionPerformed
+        String str = "UPDATE prime SET English1 = ?, Maths1 = ?, CRS1 = ?, Civic1 = ?, Social1 = ?,"
+                + " Security1 = ?, BS1 = ?, BT1 = ?, PHE1 = ?, ICT1 = ?, Home1 = ?, Agric1 = ?,"
+                + " Edo1 = ?, Verbal1 = ?, Quan1 = ?"
+                + " WHERE StudentID = ?";
+
+        DBHandler handler = new DBHandler();
+
+        try {
+            try (PreparedStatement pst = handler.getdbConnection().prepareStatement(str)) {
+                pst.setString(1, prFirstEnglish.getText());
+                pst.setString(2, prFirstMaths.getText());
+                pst.setString(3, prFirstCRS.getText());
+                pst.setString(4, prFirstCivic.getText());
+                pst.setString(5, prFirstSocial.getText());
+                pst.setString(6, prFirstSecurity.getText());
+                pst.setString(7, prFirstBS.getText());
+                pst.setString(8, prFirstBT.getText());
+                pst.setString(9, prFirstPHE.getText());
+                pst.setString(10, prFirstICT.getText());
+                pst.setString(11, prFirstHome.getText());
+                pst.setString(12, prFirstAgric.getText());
+                pst.setString(13, prFirstEdo.getText());
+                pst.setString(14, prFirstVerbal.getText());
+                pst.setString(15, prFirstQuan.getText());
+                pst.setString(16, prFirstID.getText());
+
+                pst.executeUpdate();
+
+                JOptionPane.showMessageDialog(this, "Updated");
+                System.out.println("Updated");
+                pst.close();
+            }
+
+        } catch (ClassNotFoundException | SQLException ex) {
+            Logger.getLogger(ResultEntry.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        JTextField temp = null;
+        for (Component C : firstPrimary.getComponents()) {
+            if (C.getClass().toString().contains("javax.swing.JTextField")) {
+
+                temp = (JTextField) C;
+                temp.setText(null);
+            }
+        }
+    }//GEN-LAST:event_btnprUpdateActionPerformed
+
+    private void btnNuUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuUpdateActionPerformed
+        
+        String str = "UPDATE nursery SET English1 = ?, Sound1 = ?, ES1 = ?, Social1 = ?, Health1 = ?,"
+                + "Computer1 = ?, CCA1 = ?, Writing1 = ?, Rhymes1 = ?, Verbal1 = ?,"
+                + "Quan1 = ?, Moral1 = ? WHERE StudentID = ?";
+
+        DBHandler handler = new DBHandler();
+
+        try {
+            try (PreparedStatement pst = handler.getdbConnection().prepareStatement(str)) {
+                pst.setString(1, nuFirstEnglish.getText());
+                pst.setString(2, nuFirstSound.getText());
+                pst.setString(3, nuFirstElem.getText());
+                pst.setString(4, nuFirstSocial.getText());
+                pst.setString(5, nuFirstHealth.getText());
+                pst.setString(6, nuFirstComputer.getText());
+                pst.setString(7, nuFirstCultural.getText());
+                pst.setString(8, nuFirstWriting.getText());
+                pst.setString(9, nuFirstRhymes.getText());
+                pst.setString(10, nuFirstVerbal.getText());
+                pst.setString(11, nuFirstQuan.getText());
+                pst.setString(12, nuFirstMoral.getText());
+                pst.setString(13, nuFirstID.getText());
+
+                pst.executeUpdate();
+
+                JOptionPane.showMessageDialog(this, "Added successfully");
+                System.out.println("Updated");
+            }
+
+        } catch (ClassNotFoundException | SQLException ex) {
+            Logger.getLogger(ResultEntry.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        JTextField temp = null;
+        for (Component C : firstNursery.getComponents()) {
+            if (C.getClass().toString().contains("javax.swing.JTextField")) {
+
+                temp = (JTextField) C;
+                temp.setText(null);
+            }
+        }
+        
+    }//GEN-LAST:event_btnNuUpdateActionPerformed
 
     /**
      * @param args the command line arguments
@@ -5565,10 +6766,17 @@ public class ResultEntry extends javax.swing.JFrame {
     private javax.swing.JButton btnCancelSecond;
     private javax.swing.JButton btnCancelThird;
     private javax.swing.JLabel btnClose;
+    private javax.swing.JButton btnEditSeniorFirstTest;
+    private javax.swing.JButton btnEditSeniorSecondTest;
     private javax.swing.JButton btnInsertExam;
     private javax.swing.JButton btnInsertFirstTest;
     private javax.swing.JButton btnInsertSecondTest;
     private javax.swing.JButton btnInsertThirdTest;
+    private javax.swing.JButton btnJsEditFirst;
+    private javax.swing.JButton btnNrEditFirst;
+    private javax.swing.JButton btnNuExam;
+    private javax.swing.JButton btnNuSecond;
+    private javax.swing.JButton btnNuUpdate;
     private javax.swing.JButton btnNurseryExamCancel;
     private javax.swing.JButton btnNurseryExamInsert;
     private javax.swing.JButton btnNurseryFirstCancel;
@@ -5585,7 +6793,12 @@ public class ResultEntry extends javax.swing.JFrame {
     private javax.swing.JButton btnPrimarySecondInsert;
     private javax.swing.JButton btnPrimaryThirdCancel;
     private javax.swing.JButton btnPrimaryThirdInsert;
+    private javax.swing.JButton btnSeniorExamTest;
+    private javax.swing.JButton btnSeniorThirdTest;
+    private javax.swing.JButton btnUpdate;
     private javax.swing.JButton btnjsCancelCancel;
+    private javax.swing.JButton btnjsEditExam;
+    private javax.swing.JButton btnjsEditSecond;
     private javax.swing.JButton btnjsExamCancel;
     private javax.swing.JButton btnjsExamInsert;
     private javax.swing.JButton btnjsFirstCancel;
@@ -5593,6 +6806,11 @@ public class ResultEntry extends javax.swing.JFrame {
     private javax.swing.JButton btnjsSecondInsert;
     private javax.swing.JButton btnjsThirdCancel;
     private javax.swing.JButton btnjsThirdInsert;
+    private javax.swing.JButton btnjsUpdate;
+    private javax.swing.JButton btnprExamTest;
+    private javax.swing.JButton btnprFirstTest;
+    private javax.swing.JButton btnprSecondTest;
+    private javax.swing.JButton btnprUpdate;
     private javax.swing.JPanel examNursery;
     private javax.swing.JPanel examNursery1;
     private javax.swing.JPanel examPanel;
@@ -5845,7 +7063,11 @@ public class ResultEntry extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel315;
     private javax.swing.JLabel jLabel316;
     private javax.swing.JLabel jLabel317;
+    private javax.swing.JLabel jLabel318;
+    private javax.swing.JLabel jLabel319;
     private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel320;
+    private javax.swing.JLabel jLabel321;
     private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel35;
@@ -5930,7 +7152,6 @@ public class ResultEntry extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel18;
     private javax.swing.JPanel jPanel19;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
@@ -6044,6 +7265,7 @@ public class ResultEntry extends javax.swing.JFrame {
     private javax.swing.JTextField nuFirstElem;
     private javax.swing.JTextField nuFirstEnglish;
     private javax.swing.JTextField nuFirstHealth;
+    private javax.swing.JTextField nuFirstID;
     private javax.swing.JTextField nuFirstMoral;
     private javax.swing.JTextField nuFirstQuan;
     private javax.swing.JTextField nuFirstRhymes;
@@ -6102,6 +7324,7 @@ public class ResultEntry extends javax.swing.JFrame {
     private javax.swing.JTextField prFirstEnglish;
     private javax.swing.JTextField prFirstHome;
     private javax.swing.JTextField prFirstICT;
+    private javax.swing.JTextField prFirstID;
     private javax.swing.JTextField prFirstMaths;
     private javax.swing.JTextField prFirstPHE;
     private javax.swing.JTextField prFirstQuan;
@@ -6143,6 +7366,7 @@ public class ResultEntry extends javax.swing.JFrame {
     private javax.swing.JPanel secondNursery;
     private javax.swing.JPanel secondNursery1;
     private javax.swing.JPanel secondPanel;
+    private javax.swing.JPanel secondPanel1;
     private javax.swing.JPanel secondPrimary;
     private javax.swing.JPanel secondPrimary1;
     private javax.swing.JComboBox<String> selectExamination;
@@ -6188,6 +7412,7 @@ public class ResultEntry extends javax.swing.JFrame {
     private javax.swing.JTextField txtFirstFrench;
     private javax.swing.JTextField txtFirstGeo;
     private javax.swing.JTextField txtFirstGov;
+    private javax.swing.JTextField txtFirstID;
     private javax.swing.JTextField txtFirstLit;
     private javax.swing.JTextField txtFirstMaths;
     private javax.swing.JTextField txtFirstPhy;
@@ -6210,6 +7435,7 @@ public class ResultEntry extends javax.swing.JFrame {
     private javax.swing.JTextField txtSecondLit;
     private javax.swing.JTextField txtSecondMaths;
     private javax.swing.JTextField txtSecondPhy;
+    private javax.swing.JTextField txtSeniorFirstID;
     private javax.swing.JTextField txtThirdAccount;
     private javax.swing.JTextField txtThirdAgric;
     private javax.swing.JTextField txtThirdBio;

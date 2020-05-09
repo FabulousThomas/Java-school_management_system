@@ -64,9 +64,7 @@ public class StudentResult extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         txtStudentID = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        txtFirstName = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
-        txtSurname = new javax.swing.JTextField();
+        txtFullName = new javax.swing.JTextField();
         txtTotalScore = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         txtAverage = new javax.swing.JTextField();
@@ -115,10 +113,10 @@ public class StudentResult extends javax.swing.JFrame {
         txtTranscript = new javax.swing.JTextArea();
         btnTranscript = new javax.swing.JButton();
         btnGenerate = new javax.swing.JButton();
-        btnID = new javax.swing.JButton();
         btnReset = new javax.swing.JButton();
-        btnExit = new javax.swing.JButton();
         btnRanking = new javax.swing.JButton();
+        btnPrint = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocationByPlatform(true);
@@ -149,23 +147,15 @@ public class StudentResult extends javax.swing.JFrame {
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(18, 51, 107, -1));
 
         txtStudentID.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jPanel1.add(txtStudentID, new org.netbeans.lib.awtextra.AbsoluteConstraints(172, 48, 187, -1));
+        jPanel1.add(txtStudentID, new org.netbeans.lib.awtextra.AbsoluteConstraints(172, 48, 80, -1));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel2.setText("First Name");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 107, -1));
 
-        txtFirstName.setBackground(new java.awt.Color(255, 255, 255));
-        txtFirstName.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jPanel1.add(txtFirstName, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 90, 187, -1));
-
-        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel3.setText("Surname");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 107, -1));
-
-        txtSurname.setBackground(new java.awt.Color(255, 255, 255));
-        txtSurname.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jPanel1.add(txtSurname, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 130, 187, -1));
+        txtFullName.setBackground(new java.awt.Color(255, 255, 255));
+        txtFullName.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jPanel1.add(txtFullName, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 90, 240, -1));
 
         txtTotalScore.setEditable(false);
         txtTotalScore.setBackground(new java.awt.Color(255, 255, 255));
@@ -362,14 +352,14 @@ public class StudentResult extends javax.swing.JFrame {
 
         jLabel25.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel25.setText("Economics");
-        jPanel1.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 310, 110, -1));
+        jPanel1.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, 110, -1));
 
         txtEcons.setEditable(false);
         txtEcons.setBackground(new java.awt.Color(255, 255, 255));
         txtEcons.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jPanel1.add(txtEcons, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 310, 90, -1));
+        jPanel1.add(txtEcons, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 140, 90, -1));
 
-        jPanel4.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 810, 490));
+        jPanel4.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 0, 810, 490));
 
         jPanel2.setBackground(new java.awt.Color(204, 204, 255));
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 255), 4), "Grades", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Tahoma", 1, 24))); // NOI18N
@@ -380,9 +370,9 @@ public class StudentResult extends javax.swing.JFrame {
         txtTranscript.setRows(5);
         jScrollPane1.setViewportView(txtTranscript);
 
-        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(18, 42, 374, 429));
+        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 350, 429));
 
-        jPanel4.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 0, 410, 490));
+        jPanel4.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 0, 370, 490));
 
         btnTranscript.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         btnTranscript.setText("Transcript");
@@ -391,7 +381,7 @@ public class StudentResult extends javax.swing.JFrame {
                 btnTranscriptActionPerformed(evt);
             }
         });
-        jPanel4.add(btnTranscript, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 610, -1, -1));
+        jPanel4.add(btnTranscript, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 610, -1, -1));
 
         btnGenerate.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         btnGenerate.setText("Generate");
@@ -400,16 +390,7 @@ public class StudentResult extends javax.swing.JFrame {
                 btnGenerateActionPerformed(evt);
             }
         });
-        jPanel4.add(btnGenerate, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 610, -1, -1));
-
-        btnID.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        btnID.setText("GetID");
-        btnID.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnIDActionPerformed(evt);
-            }
-        });
-        jPanel4.add(btnID, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 610, 90, 30));
+        jPanel4.add(btnGenerate, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 610, -1, -1));
 
         btnReset.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         btnReset.setText("Reset");
@@ -418,16 +399,7 @@ public class StudentResult extends javax.swing.JFrame {
                 btnResetActionPerformed(evt);
             }
         });
-        jPanel4.add(btnReset, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 610, -1, -1));
-
-        btnExit.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        btnExit.setText("Exit");
-        btnExit.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnExitActionPerformed(evt);
-            }
-        });
-        jPanel4.add(btnExit, new org.netbeans.lib.awtextra.AbsoluteConstraints(1170, 610, -1, -1));
+        jPanel4.add(btnReset, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 610, -1, -1));
 
         btnRanking.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         btnRanking.setText("Ranking");
@@ -436,7 +408,26 @@ public class StudentResult extends javax.swing.JFrame {
                 btnRankingActionPerformed(evt);
             }
         });
-        jPanel4.add(btnRanking, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 610, -1, -1));
+        jPanel4.add(btnRanking, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 610, -1, -1));
+
+        btnPrint.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        btnPrint.setText("Print");
+        btnPrint.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPrintActionPerformed(evt);
+            }
+        });
+        jPanel4.add(btnPrint, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 610, -1, -1));
+
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/schoolmgtsystem/IconImages/icons8_Left_30px_1.png"))); // NOI18N
+        jLabel3.setToolTipText("Go back");
+        jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel3MouseClicked(evt);
+            }
+        });
+        jPanel4.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 40, 20));
 
         getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1300, 680));
 
@@ -459,10 +450,10 @@ public class StudentResult extends javax.swing.JFrame {
                 + "\n_____________________________________"
                 + "\nStudent ID:\t\t" + txtStudentID.getText()
                 + "\n_____________________________________"
-                + "\nFirst Name:\t\t" + txtFirstName.getText()
+                + "\nFirst Name:\t\t" + txtFullName.getText()
                 + "\n_____________________________________"
-                + "\nSurname:\t\t" + txtSurname.getText()
-                + "\n_____________________________________"
+                //                + "\nSurname:\t\t" + txtSurname.getText()
+                //                + "\n_____________________________________"
                 //                + "\nCourse Code:\t\t" + txtCourseCode.getSelectedItem()
                 //                + "\n_____________________________________"
                 + "\nMaths:\t\t" + txtMaths.getText()
@@ -491,22 +482,22 @@ public class StudentResult extends javax.swing.JFrame {
                 + "\n_____________________________________"
         );
 
-        int sel = JOptionPane.showConfirmDialog(this, "Do you want to print Result?");
-        if (sel == 0) {
-            try {
-                printResult();
-            } catch (IOException ex) {
-                Logger.getLogger(ResultNursery.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }
-        if (sel == 1) {
-            new StudentResult().show();
-            this.dispose();
-        }
-        if (sel == 2) {
-            new StudentResult().show();
-            this.dispose();
-        }
+//        int sel = JOptionPane.showConfirmDialog(this, "Do you want to print Result?");
+//        if (sel == 0) {
+//            try {
+//                printResult();
+//            } catch (IOException ex) {
+//                Logger.getLogger(ResultNursery.class.getName()).log(Level.SEVERE, null, ex);
+//            }
+//        }
+//        if (sel == 1) {
+//            new StudentResult().show();
+//            this.dispose();
+//        }
+//        if (sel == 2) {
+//            new StudentResult().show();
+//            this.dispose();
+//        }
 
     }//GEN-LAST:event_btnTranscriptActionPerformed
 
@@ -533,14 +524,14 @@ public class StudentResult extends javax.swing.JFrame {
                 txtPhysics.setText(rs.getString("Physics_Total"));
                 txtBiology.setText(rs.getString("Biology_Total"));
                 txtCRS.setText(rs.getString("CRS_Total"));
-                txtAccounting.setText(rs.getString("Accounting_Total"));
-//                txtCivic.setText(rs.getString("Civic_Total"));
+                txtAccounting.setText(rs.getString("Account_Total"));
+                txtCivic.setText(rs.getString("Civic_Total"));
                 txtFMaths.setText(rs.getString("FMaths_Total"));
                 txtGeography.setText(rs.getString("Geography_Total"));
                 txtAgric.setText(rs.getString("Agric_Total"));
                 txtGovernment.setText(rs.getString("Government_Total"));
                 txtChemistry.setText(rs.getString("Chemistry_Total"));
-                txtArts.setText(rs.getString("Fine_Arts_Total"));
+                txtArts.setText(rs.getString("Arts_Total"));
                 txtComputer.setText(rs.getString("Computer_Total"));
                 txtFrench.setText(rs.getString("French_Total"));
 
@@ -551,12 +542,6 @@ public class StudentResult extends javax.swing.JFrame {
 
 
     }//GEN-LAST:event_btnGenerateActionPerformed
-
-    private void btnIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIDActionPerformed
-        new ShowStudentID().show();
-        setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_btnIDActionPerformed
 
     private void btnResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResetActionPerformed
         // TODO add your handling code here:
@@ -571,33 +556,10 @@ public class StudentResult extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnResetActionPerformed
 
-    private void btnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitActionPerformed
-        // TODO add your handling code here:
-        //new Form().show();
-//        setVisible(true);
-//        this.dispose();
-
-        //
-        int sel = JOptionPane.showConfirmDialog(this, "Do you want to Exit?");
-        if (sel == 0) {
-            new ResultView().show();
-            this.dispose();
-        }
-        if (sel == 1) {
-            new StudentResult().show();
-            this.dispose();
-        }
-        if (sel == 2) {
-            new StudentResult().show();
-            this.dispose();
-        }
-    }//GEN-LAST:event_btnExitActionPerformed
-
     private void btnRankingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRankingActionPerformed
         // TODO add your handling code here:
-        double[] R = new double[19];
+        double[] R = new double[20];
 
-//        double a = R.length;
         R[0] = Double.parseDouble(txtEnglish.getText());
         R[1] = Double.parseDouble(txtMaths.getText());
         R[2] = Double.parseDouble(txtCommerce.getText());
@@ -615,33 +577,31 @@ public class StudentResult extends javax.swing.JFrame {
         R[14] = Double.parseDouble(txtArts.getText());
         R[15] = Double.parseDouble(txtComputer.getText());
         R[16] = Double.parseDouble(txtFrench.getText());
+        R[17] = Double.parseDouble(txtCivic.getText());
 
-//        if(a == 12) {
-//        
-//    }
-        R[17] = (R[0] + R[1] + R[2] + R[3] + R[4] + R[5] + R[6] + R[7] + R[8] + R[9] + R[10] + R[11] + R[12] + R[13] + R[14]
-                + R[15] + R[16]) / 17;
+        R[18] = (R[0] + R[1] + R[2] + R[3] + R[4] + R[5] + R[6] + R[7] + R[8] + R[9] + R[10] + R[11] + R[12] + R[13] + R[14]
+                + R[15] + R[16] + R[17]) / 18;
         //R[9] = (R[0] + R[1] + R[2] + R[3] + R[5] + R[6] + R[7])/7;
-        R[18] = R[0] + R[1] + R[2] + R[3] + R[4] + R[5] + R[6] + R[7] + R[8] + R[9] + R[10] + R[11] + R[12] + R[13] + R[14]
-                + R[15] + R[16];
+        R[19] = R[0] + R[1] + R[2] + R[3] + R[4] + R[5] + R[6] + R[7] + R[8] + R[9] + R[10] + R[11] + R[12] + R[13] + R[14]
+                + R[15] + R[16] + R[17];
 
-        String Average = String.format("%.0f", R[17]);
+        String Average = String.format("%.0f", R[18]);
         txtAverage.setText(Average);
 
-        String TotalScore = String.format("%.0f", R[18]);
+        String TotalScore = String.format("%.0f", R[19]);
         txtTotalScore.setText(TotalScore);
 
-        if (R[18] >= 700) {
+        if (R[19] >= 700) {
             txtPosition.setText("1st");
-        } else if (R[18] >= 600) {
+        } else if (R[19] >= 600) {
             txtPosition.setText("2nd");
-        } else if (R[18] >= 500) {
+        } else if (R[19] >= 500) {
             txtPosition.setText("3rd");
-        } else if (R[18] >= 400) {
+        } else if (R[19] >= 400) {
             txtPosition.setText("4th");
-        } else if (R[18] >= 300) {
+        } else if (R[19] >= 300) {
             txtPosition.setText("Average");
-        } else if (R[18] >= 200) {
+        } else if (R[19] >= 200) {
             txtPosition.setText("Fail");
         }
         //else if (R[10] >= 100){
@@ -671,6 +631,28 @@ public class StudentResult extends javax.swing.JFrame {
 //            txtPosition.getText()
 //        });
     }//GEN-LAST:event_btnRankingActionPerformed
+
+    private void btnPrintActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPrintActionPerformed
+
+        int sel = JOptionPane.showConfirmDialog(this, "Do you want to print Result?");
+        if (sel == 0) {
+            try {
+                printResult();
+            } catch (IOException ex) {
+                Logger.getLogger(ResultNursery.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        if (sel == 1) {
+            this.show();
+        }
+        if (sel == 2) {
+            this.show();
+        }
+    }//GEN-LAST:event_btnPrintActionPerformed
+
+    private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
+        this.dispose();
+    }//GEN-LAST:event_jLabel3MouseClicked
 
     /**
      * @param args the command line arguments
@@ -874,8 +856,8 @@ public class StudentResult extends javax.swing.JFrame {
 
 //            document.add(new Paragraph(subTitle));
             document.add(new Paragraph("Student ID: " + txtStudentID.getText()));
-            document.add(new Paragraph("First Name: " + txtFirstName.getText()));
-            document.add(new Paragraph("Surname: " + txtSurname.getText()));
+            document.add(new Paragraph("First Name: " + txtFullName.getText()));
+//            document.add(new Paragraph("Surname: " + txtSurname.getText()));
 //            document.add(new Paragraph("Course Code: " + txtCourseCode.getSelectedItem()));
 
             document.add(new Paragraph("DETAILED RESULT"));
@@ -1226,9 +1208,8 @@ public class StudentResult extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnExit;
     private javax.swing.JButton btnGenerate;
-    private javax.swing.JButton btnID;
+    private javax.swing.JButton btnPrint;
     private javax.swing.JButton btnRanking;
     private javax.swing.JButton btnReset;
     private javax.swing.JButton btnTranscript;
@@ -1276,16 +1257,15 @@ public class StudentResult extends javax.swing.JFrame {
     private javax.swing.JTextField txtEcons;
     private javax.swing.JTextField txtEnglish;
     private javax.swing.JTextField txtFMaths;
-    private javax.swing.JTextField txtFirstName;
     private javax.swing.JTextField txtFrench;
+    public static javax.swing.JTextField txtFullName;
     private javax.swing.JTextField txtGeography;
     private javax.swing.JTextField txtGovernment;
     private javax.swing.JTextField txtLit;
     private javax.swing.JTextField txtMaths;
     private javax.swing.JTextField txtPhysics;
     private javax.swing.JTextField txtPosition;
-    private javax.swing.JTextField txtStudentID;
-    private javax.swing.JTextField txtSurname;
+    public static javax.swing.JTextField txtStudentID;
     private javax.swing.JTextField txtTotalScore;
     private javax.swing.JTextArea txtTranscript;
     // End of variables declaration//GEN-END:variables

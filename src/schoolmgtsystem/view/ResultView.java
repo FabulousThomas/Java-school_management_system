@@ -39,8 +39,9 @@ public class ResultView extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
-        setPreferredSize(new java.awt.Dimension(703, 437));
+        setPreferredSize(new java.awt.Dimension(800, 437));
 
+        jPanel1.setPreferredSize(new java.awt.Dimension(800, 437));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btnCheckSSS.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
@@ -50,7 +51,7 @@ public class ResultView extends javax.swing.JFrame {
                 btnCheckSSSActionPerformed(evt);
             }
         });
-        jPanel1.add(btnCheckSSS, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 250, -1, 50));
+        jPanel1.add(btnCheckSSS, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 330, -1, 50));
 
         jPanel2.setBackground(new java.awt.Color(0, 102, 204));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -58,7 +59,7 @@ public class ResultView extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("CHECK RESULT");
-        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 10, -1, 30));
+        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 10, -1, 30));
 
         btnClose.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         btnClose.setIcon(new javax.swing.ImageIcon(getClass().getResource("/schoolmgtsystem/IconImages/icons8_Xbox_X.png"))); // NOI18N
@@ -68,9 +69,9 @@ public class ResultView extends javax.swing.JFrame {
                 btnCloseMouseClicked(evt);
             }
         });
-        jPanel2.add(btnClose, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 0, 40, -1));
+        jPanel2.add(btnClose, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 0, 40, -1));
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 710, 70));
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 70));
 
         btnCheckNursery.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         btnCheckNursery.setText("NURSERY");
@@ -79,7 +80,7 @@ public class ResultView extends javax.swing.JFrame {
                 btnCheckNurseryActionPerformed(evt);
             }
         });
-        jPanel1.add(btnCheckNursery, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 150, 140, 50));
+        jPanel1.add(btnCheckNursery, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 200, 140, 50));
 
         btnCheckPrimary.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         btnCheckPrimary.setText("PRIMARY");
@@ -88,7 +89,7 @@ public class ResultView extends javax.swing.JFrame {
                 btnCheckPrimaryActionPerformed(evt);
             }
         });
-        jPanel1.add(btnCheckPrimary, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 150, 140, 50));
+        jPanel1.add(btnCheckPrimary, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 200, 140, 50));
 
         btnCheckJSS.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         btnCheckJSS.setText("JUNIOR SECONDARY");
@@ -97,7 +98,7 @@ public class ResultView extends javax.swing.JFrame {
                 btnCheckJSSActionPerformed(evt);
             }
         });
-        jPanel1.add(btnCheckJSS, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 250, 230, 50));
+        jPanel1.add(btnCheckJSS, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 330, 230, 50));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -107,7 +108,7 @@ public class ResultView extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 394, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 514, Short.MAX_VALUE)
         );
 
         pack();

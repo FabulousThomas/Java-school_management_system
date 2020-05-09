@@ -34,14 +34,14 @@ import schoolmgtsystem.dbhelper.DBHandler;
  *
  * @author Thomas
  */
-public class ResultJSS extends javax.swing.JFrame {
+public class StudentResult_Primary extends javax.swing.JFrame {
 
     DBHandler handler;
 
     /**
-     * Creates new form ResultJSS
+     * Creates new form ResultPrimary
      */
-    public ResultJSS() {
+    public StudentResult_Primary() {
         initComponents();
         setLocationRelativeTo(null);
     }
@@ -73,7 +73,7 @@ public class ResultJSS extends javax.swing.JFrame {
         txtBS = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        txtLit = new javax.swing.JTextField();
+        txtCRS = new javax.swing.JTextField();
         txtEnglish = new javax.swing.JTextField();
         txtMaths = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
@@ -83,7 +83,7 @@ public class ResultJSS extends javax.swing.JFrame {
         txtPosition = new javax.swing.JTextField();
         jLabel14 = new javax.swing.JLabel();
         txtICT = new javax.swing.JTextField();
-        txtCRS = new javax.swing.JTextField();
+        txtVerbal = new javax.swing.JTextField();
         jLabel15 = new javax.swing.JLabel();
         txtSocial = new javax.swing.JTextField();
         jLabel16 = new javax.swing.JLabel();
@@ -96,26 +96,15 @@ public class ResultJSS extends javax.swing.JFrame {
         txtAgric = new javax.swing.JTextField();
         jLabel22 = new javax.swing.JLabel();
         txtHome = new javax.swing.JTextField();
-        jLabel23 = new javax.swing.JLabel();
-        txtMusic = new javax.swing.JTextField();
-        txtDrama = new javax.swing.JTextField();
-        jLabel24 = new javax.swing.JLabel();
-        jLabel25 = new javax.swing.JLabel();
-        txtArts = new javax.swing.JTextField();
-        txtBusiness = new javax.swing.JTextField();
-        jLabel26 = new javax.swing.JLabel();
-        jLabel27 = new javax.swing.JLabel();
-        txtFrench = new javax.swing.JTextField();
         jLabel17 = new javax.swing.JLabel();
         jLabel28 = new javax.swing.JLabel();
         txtEdo = new javax.swing.JTextField();
-        txtMoral = new javax.swing.JTextField();
+        txtQuan = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         txtTranscript = new javax.swing.JTextArea();
         btnRanking = new javax.swing.JButton();
         btnTranscript = new javax.swing.JButton();
-        btnRecord = new javax.swing.JButton();
         btnGenerate = new javax.swing.JButton();
         btnReset = new javax.swing.JButton();
         btnExit = new javax.swing.JButton();
@@ -128,26 +117,26 @@ public class ResultJSS extends javax.swing.JFrame {
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(204, 204, 255));
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 255), 4), "JUNIOR SECONDARY SCHOOL \nRESULT RECORDS", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Tahoma", 1, 24))); // NOI18N
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 255), 4), "PRIMARY SCHOOL RESULT RECORDS", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Tahoma", 1, 24))); // NOI18N
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel1.setText("Student ID");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 107, -1));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 60, 107, -1));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel2.setText("Full Name");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 107, -1));
+        jLabel2.setText("First Name");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 100, 107, -1));
 
         txtFullName.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jPanel1.add(txtFullName, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 90, 167, -1));
+        jPanel1.add(txtFullName, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 100, 167, -1));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel3.setText("Surname");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 107, -1));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 140, 107, -1));
 
         txtSurname.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jPanel1.add(txtSurname, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 130, 167, -1));
+        jPanel1.add(txtSurname, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 140, 167, -1));
 
         txtTotalScore.setEditable(false);
         txtTotalScore.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -156,67 +145,67 @@ public class ResultJSS extends javax.swing.JFrame {
                 txtTotalScoreActionPerformed(evt);
             }
         });
-        jPanel1.add(txtTotalScore, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 440, 90, -1));
+        jPanel1.add(txtTotalScore, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 450, 90, -1));
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel5.setText("Total Score");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 440, 107, -1));
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 450, 107, -1));
 
         txtAverage.setEditable(false);
         txtAverage.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jPanel1.add(txtAverage, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 480, 90, -1));
+        jPanel1.add(txtAverage, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 490, 90, -1));
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel6.setText("Average");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 480, 107, -1));
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 490, 107, -1));
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel7.setText("Basic Technology");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 200, 107, -1));
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 210, 160, -1));
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel8.setText("Physical Health");
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 240, 120, -1));
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 250, 150, -1));
 
         txtPHE.setEditable(false);
         txtPHE.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jPanel1.add(txtPHE, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 240, 90, -1));
+        jPanel1.add(txtPHE, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 250, 90, -1));
 
         txtBT.setEditable(false);
         txtBT.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jPanel1.add(txtBT, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 200, 90, -1));
+        jPanel1.add(txtBT, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 210, 90, -1));
 
         txtBS.setEditable(false);
         txtBS.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jPanel1.add(txtBS, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 160, 90, -1));
+        jPanel1.add(txtBS, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 170, 90, -1));
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel9.setText("Basic Science");
-        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 160, 107, -1));
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 170, 130, -1));
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel10.setText("Literature");
-        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 120, 107, -1));
+        jLabel10.setText("C R S");
+        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 130, 107, -1));
 
-        txtLit.setEditable(false);
-        txtLit.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jPanel1.add(txtLit, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 120, 90, -1));
+        txtCRS.setEditable(false);
+        txtCRS.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jPanel1.add(txtCRS, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 130, 90, -1));
 
         txtEnglish.setEditable(false);
         txtEnglish.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jPanel1.add(txtEnglish, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 80, 90, -1));
+        jPanel1.add(txtEnglish, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 90, 90, -1));
 
         txtMaths.setEditable(false);
         txtMaths.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jPanel1.add(txtMaths, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 40, 90, -1));
+        jPanel1.add(txtMaths, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 50, 90, -1));
 
         jLabel11.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel11.setText("Maths");
-        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 40, 66, -1));
+        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 50, 66, -1));
 
         jLabel12.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel12.setText("English");
-        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 80, 107, -1));
+        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 90, 107, -1));
 
         jSeparator1.setBackground(new java.awt.Color(0, 0, 255));
         jSeparator1.setForeground(new java.awt.Color(0, 0, 255));
@@ -224,131 +213,91 @@ public class ResultJSS extends javax.swing.JFrame {
 
         jLabel13.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel13.setText("Position");
-        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 520, 107, -1));
+        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 530, 107, -1));
 
         txtPosition.setEditable(false);
         txtPosition.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jPanel1.add(txtPosition, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 520, 90, -1));
+        jPanel1.add(txtPosition, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 530, 90, -1));
 
         jLabel14.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel14.setText("Information & Communication");
-        jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 280, 120, -1));
+        jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 290, 180, -1));
 
         txtICT.setEditable(false);
         txtICT.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jPanel1.add(txtICT, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 280, 90, -1));
+        jPanel1.add(txtICT, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 290, 90, -1));
 
-        txtCRS.setEditable(false);
-        txtCRS.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        txtCRS.addActionListener(new java.awt.event.ActionListener() {
+        txtVerbal.setEditable(false);
+        txtVerbal.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        txtVerbal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtCRSActionPerformed(evt);
+                txtVerbalActionPerformed(evt);
             }
         });
-        jPanel1.add(txtCRS, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 320, 90, -1));
+        jPanel1.add(txtVerbal, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 330, 90, -1));
 
         jLabel15.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel15.setText("C R S");
-        jPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 320, -1, -1));
+        jLabel15.setText("Verbal Reasoning");
+        jPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 330, 170, -1));
 
         txtSocial.setEditable(false);
         txtSocial.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jPanel1.add(txtSocial, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 360, 90, -1));
+        jPanel1.add(txtSocial, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 370, 90, -1));
 
         jLabel16.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel16.setText("Social Studies");
-        jPanel1.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 360, 110, -1));
+        jPanel1.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 370, 170, -1));
 
         txtStudentID.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jPanel1.add(txtStudentID, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 50, 167, -1));
+        jPanel1.add(txtStudentID, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 60, 167, -1));
 
         jLabel19.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel19.setText("Civic Education");
-        jPanel1.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 400, 120, -1));
+        jPanel1.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 410, 150, -1));
 
         txtCivic.setEditable(false);
         txtCivic.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jPanel1.add(txtCivic, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 400, 90, -1));
+        jPanel1.add(txtCivic, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 410, 90, -1));
 
         jLabel20.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel20.setText("Security Education");
-        jPanel1.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 440, 120, -1));
+        jPanel1.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 450, 180, -1));
 
         txtSecurity.setEditable(false);
         txtSecurity.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jPanel1.add(txtSecurity, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 440, 90, -1));
+        jPanel1.add(txtSecurity, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 450, 90, -1));
 
         jLabel21.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel21.setText("Agriculture");
-        jPanel1.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, -1, -1));
+        jPanel1.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 380, -1, -1));
 
         txtAgric.setEditable(false);
         txtAgric.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jPanel1.add(txtAgric, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 180, 90, -1));
+        jPanel1.add(txtAgric, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 380, 90, -1));
 
         jLabel22.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel22.setText("Home Economics");
-        jPanel1.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, 110, -1));
+        jPanel1.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 490, 160, -1));
 
         txtHome.setEditable(false);
         txtHome.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jPanel1.add(txtHome, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 220, 90, -1));
-
-        jLabel23.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel23.setText("Music");
-        jPanel1.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 290, -1, -1));
-
-        txtMusic.setEditable(false);
-        txtMusic.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jPanel1.add(txtMusic, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 290, 90, -1));
-
-        txtDrama.setEditable(false);
-        txtDrama.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jPanel1.add(txtDrama, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 330, 90, -1));
-
-        jLabel24.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel24.setText("Drama & Stage");
-        jPanel1.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 330, 130, -1));
-
-        jLabel25.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel25.setText("Arts & Craft");
-        jPanel1.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 490, -1, -1));
-
-        txtArts.setEditable(false);
-        txtArts.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jPanel1.add(txtArts, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 490, 90, -1));
-
-        txtBusiness.setEditable(false);
-        txtBusiness.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jPanel1.add(txtBusiness, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 530, 90, -1));
-
-        jLabel26.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel26.setText("Business Studies");
-        jPanel1.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 530, 110, -1));
-
-        jLabel27.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel27.setText("French");
-        jPanel1.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 370, 80, -1));
-
-        txtFrench.setEditable(false);
-        txtFrench.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jPanel1.add(txtFrench, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 370, 90, -1));
+        jPanel1.add(txtHome, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 490, 90, -1));
 
         jLabel17.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel17.setText("Edo Language");
-        jPanel1.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 330, 100, -1));
+        jPanel1.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 300, 130, -1));
 
         jLabel28.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel28.setText("Moral Instruction");
-        jPanel1.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 370, 110, -1));
+        jLabel28.setText("Quantitative R.");
+        jPanel1.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 340, 140, -1));
 
         txtEdo.setEditable(false);
         txtEdo.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jPanel1.add(txtEdo, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 330, 90, -1));
+        jPanel1.add(txtEdo, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 300, 90, -1));
 
-        txtMoral.setEditable(false);
-        txtMoral.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jPanel1.add(txtMoral, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 370, 90, -1));
+        txtQuan.setEditable(false);
+        txtQuan.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jPanel1.add(txtQuan, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 340, 90, -1));
 
         jPanel4.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 0, 810, 590));
 
@@ -386,7 +335,7 @@ public class ResultJSS extends javax.swing.JFrame {
                 btnRankingActionPerformed(evt);
             }
         });
-        jPanel4.add(btnRanking, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 610, -1, 40));
+        jPanel4.add(btnRanking, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 610, -1, -1));
 
         btnTranscript.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         btnTranscript.setText("Transcript");
@@ -395,16 +344,7 @@ public class ResultJSS extends javax.swing.JFrame {
                 btnTranscriptActionPerformed(evt);
             }
         });
-        jPanel4.add(btnTranscript, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 610, -1, 40));
-
-        btnRecord.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
-        btnRecord.setText("Add Record");
-        btnRecord.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnRecordActionPerformed(evt);
-            }
-        });
-        jPanel4.add(btnRecord, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 610, 130, 40));
+        jPanel4.add(btnTranscript, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 610, -1, -1));
 
         btnGenerate.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         btnGenerate.setText("Generate");
@@ -413,7 +353,7 @@ public class ResultJSS extends javax.swing.JFrame {
                 btnGenerateActionPerformed(evt);
             }
         });
-        jPanel4.add(btnGenerate, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 610, -1, 40));
+        jPanel4.add(btnGenerate, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 610, -1, -1));
 
         btnReset.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         btnReset.setText("Reset");
@@ -422,16 +362,16 @@ public class ResultJSS extends javax.swing.JFrame {
                 btnResetActionPerformed(evt);
             }
         });
-        jPanel4.add(btnReset, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 610, -1, 40));
+        jPanel4.add(btnReset, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 610, -1, -1));
 
         btnExit.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        btnExit.setText("Print");
+        btnExit.setText("Exit");
         btnExit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnExitActionPerformed(evt);
             }
         });
-        jPanel4.add(btnExit, new org.netbeans.lib.awtextra.AbsoluteConstraints(1160, 610, 80, 40));
+        jPanel4.add(btnExit, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 610, -1, -1));
 
         jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/schoolmgtsystem/IconImages/icons8_Left_30px_1.png"))); // NOI18N
         jLabel18.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -469,60 +409,53 @@ public class ResultJSS extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtTotalScoreActionPerformed
 
-    private void txtCRSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCRSActionPerformed
+    private void txtVerbalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtVerbalActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtCRSActionPerformed
+    }//GEN-LAST:event_txtVerbalActionPerformed
 
     private void btnRankingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRankingActionPerformed
         // TODO add your handling code here:
-        double[] R = new double[24];
+        double[] R = new double[18];
 
         R[0] = Double.parseDouble(txtMaths.getText());
         R[1] = Double.parseDouble(txtEnglish.getText());
-        R[2] = Double.parseDouble(txtLit.getText());
+        R[2] = Double.parseDouble(txtCRS.getText());
         R[3] = Double.parseDouble(txtBS.getText());
         R[4] = Double.parseDouble(txtBT.getText());
         R[5] = Double.parseDouble(txtPHE.getText());
         R[6] = Double.parseDouble(txtICT.getText());
-        R[7] = Double.parseDouble(txtCRS.getText());
+        R[7] = Double.parseDouble(txtVerbal.getText());
         R[8] = Double.parseDouble(txtSocial.getText());
         R[9] = Double.parseDouble(txtCivic.getText());
         R[10] = Double.parseDouble(txtSecurity.getText());
         R[11] = Double.parseDouble(txtHome.getText());
         R[12] = Double.parseDouble(txtAgric.getText());
-        R[13] = Double.parseDouble(txtMusic.getText());
-        R[14] = Double.parseDouble(txtDrama.getText());
-        R[15] = Double.parseDouble(txtArts.getText());
-        R[16] = Double.parseDouble(txtBusiness.getText());
-        R[17] = Double.parseDouble(txtFrench.getText());
-        R[18] = Double.parseDouble(txtEdo.getText());
-        R[19] = Double.parseDouble(txtMoral.getText());
+        R[13] = Double.parseDouble(txtEdo.getText());
+        R[14] = Double.parseDouble(txtQuan.getText());
 
-        R[20] = (R[0] + R[1] + R[2] + R[3] + R[4] + R[5] + R[6] + R[7] + R[8] + R[9] + R[10] + R[11] + R[12] + R[13] + R[14]
-                + R[15] + R[16] + R[17] + R[18] + R[19]) / 20;
+        R[15] = (R[0] + R[1] + R[2] + R[3] + R[4] + R[5] + R[6] + R[7] + R[8] + R[9] + R[10] + R[11] + R[12] + R[13] + R[14]) / 15;
         //R[9] = (R[0] + R[1] + R[2] + R[3] + R[5] + R[6] + R[7])/7;
-        R[21] = R[0] + R[1] + R[2] + R[3] + R[4] + R[5] + R[6] + R[7] + R[8] + R[9] + R[10] + R[11] + R[12] + R[13] + R[14]
-                + R[15] + R[16] + R[17] + R[18] + R[19];
+        R[16] = R[0] + R[1] + R[2] + R[3] + R[4] + R[5] + R[6] + R[7] + R[8] + R[9] + R[10] + R[11] + R[12] + R[13] + R[14];
 
-        String Average = String.format("%.0f", R[20]);
+        String Average = String.format("%.0f", R[15]);
         txtAverage.setText(Average);
 
-        String TotalScore = String.format("%.0f", R[21]);
+        String TotalScore = String.format("%.0f", R[16]);
         txtTotalScore.setText(TotalScore);
 
-        if (R[21] >= 100) {
+        if (R[16] >= 100) {
             txtPosition.setText("1st");
-        } else if (R[21] >= 90) {
+        } else if (R[16] >= 90) {
             txtPosition.setText("2nd");
-        } else if (R[21] >= 80) {
+        } else if (R[16] >= 80) {
             txtPosition.setText("3rd");
-        } else if (R[21] >= 70) {
+        } else if (R[16] >= 70) {
             txtPosition.setText("4th");
-        } else if (R[21] >= 60) {
+        } else if (R[16] >= 60) {
             txtPosition.setText("5th");
-        } else if (R[21] >= 50) {
+        } else if (R[16] >= 50) {
             txtPosition.setText("Average");
-        } else if (R[21] >= 40) {
+        } else if (R[16] >= 40) {
             txtPosition.setText("Fail");
         }
         //else if (R[10] >= 100){
@@ -532,30 +465,30 @@ public class ResultJSS extends javax.swing.JFrame {
         // txtRanking.setText("Fail");
         //}
 
-//        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
-//        model.addRow(new Object[]{
-//            txtStudentID.getText(),
-//            txtFirstName.getText(),
-//            txtSurname.getText(),
-//            txtCourseCode.getSelectedItem(),
-//            txtMaths.getText(),
-//            txtEnglish.getText(),
-//            txtLit.getText(),
-//            txtBS.getText(),
-//            txtBT.getText(),
-//            txtPHE.getText(),
-//            txtICT.getText(),
-//            txtCRS.getText(),
-//            txtSocial.getText(),
-//            txtTotalScore.getText(),
-//            txtAverage.getText(),
-//            txtPosition.getText()
-//        });
+        //        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+        //        model.addRow(new Object[]{
+        //            txtStudentID.getText(),
+        //            txtFirstName.getText(),
+        //            txtSurname.getText(),
+        //            txtCourseCode.getSelectedItem(),
+        //            txtMaths.getText(),
+        //            txtEnglish.getText(),
+        //            txtLit.getText(),
+        //            txtBS.getText(),
+        //            txtBT.getText(),
+        //            txtPHE.getText(),
+        //            txtICT.getText(),
+        //            txtCRS.getText(),
+        //            txtSocial.getText(),
+        //            txtTotalScore.getText(),
+        //            txtAverage.getText(),
+        //            txtPosition.getText()
+        //        });
     }//GEN-LAST:event_btnRankingActionPerformed
 
     private void btnTranscriptActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTranscriptActionPerformed
         // TODO add your handling code here:
-        txtTranscript.append("\t   BRIGHT STARS SCHOOL"
+        txtTranscript.append("BRIGHT STARS SCHOOL"
                 + "\n\tStudent Result"
                 + "\n_____________________________________"
                 + "\nStudent ID:\t\t" + txtStudentID.getText()
@@ -570,7 +503,7 @@ public class ResultJSS extends javax.swing.JFrame {
                 + "\n_____________________________________"
                 + "\nEnglish:\t\t" + txtEnglish.getText()
                 + "\n_____________________________________"
-                + "\nLiterature:\t\t" + txtLit.getText()
+                + "\nC R S:\t\t" + txtCRS.getText()
                 + "\n_____________________________________"
                 + "\nBasic Science:\t\t" + txtBS.getText()
                 + "\n_____________________________________"
@@ -580,7 +513,7 @@ public class ResultJSS extends javax.swing.JFrame {
                 + "\n_____________________________________"
                 + "\nInformation Tech.:\t" + txtICT.getText()
                 + "\n_____________________________________"
-                + "\nC R S:\t\t" + txtCRS.getText()
+                + "\nVerbal:\t\t" + txtVerbal.getText()
                 + "\n_____________________________________"
                 + "\nSocial Studies:\t\t" + txtSocial.getText()
                 + "\n_____________________________________"
@@ -592,19 +525,9 @@ public class ResultJSS extends javax.swing.JFrame {
                 + "\n_____________________________________"
                 + "\nAgriculture:\t\t" + txtAgric.getText()
                 + "\n_____________________________________"
-                + "\nMusic:\t\t" + txtMusic.getText()
-                + "\n_____________________________________"
-                + "\nDrama & Stage:\t\t" + txtDrama.getText()
-                + "\n_____________________________________"
-                + "\nArts & Craft:\t\t" + txtArts.getText()
-                + "\n_____________________________________"
-                + "\nBusiness Studies:\t" + txtBusiness.getText()
-                + "\n_____________________________________"
-                + "\nFrench:\t\t" + txtFrench.getText()
-                + "\n_____________________________________"
                 + "\nEdo Language:\t\t" + txtEdo.getText()
                 + "\n_____________________________________"
-                + "\nMoral Instruction:\t" + txtMoral.getText()
+                + "\nQuantitative R..:\t" + txtQuan.getText()
                 + "\n_____________________________________"
                 + "\nTotal Score:\t\t" + txtTotalScore.getText()
                 + "\n_____________________________________"
@@ -614,16 +537,24 @@ public class ResultJSS extends javax.swing.JFrame {
                 + "\n_____________________________________"
         );
 
+        int sel = JOptionPane.showConfirmDialog(this, "Do you want to print Result?");
+        if (sel == 0) {
+            try {
+                printResult();
+            } catch (IOException ex) {
+                Logger.getLogger(ResultNursery.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        if (sel == 1) {
+            new StudentResult_Primary().show();
+            this.dispose();
+        }
+        if (sel == 2) {
+            new StudentResult_Primary().show();
+            this.dispose();
+        }
 
     }//GEN-LAST:event_btnTranscriptActionPerformed
-
-    private void btnRecordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRecordActionPerformed
-
-        new ResultEntry().show();
-        this.dispose();
-//        insertDB();
-
-    }//GEN-LAST:event_btnRecordActionPerformed
 
     private void btnGenerateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerateActionPerformed
         // TODO add your handling code here:
@@ -631,7 +562,7 @@ public class ResultJSS extends javax.swing.JFrame {
 
             handler = new DBHandler();
 
-            String str = "select * from jss where StudentID = ?";
+            String str = "select * from prime where StudentID = ?";
             try {
                 PreparedStatement preparedStatement = handler.getdbConnection().prepareStatement(str);
                 preparedStatement.setString(1, txtStudentID.getText());
@@ -643,24 +574,19 @@ public class ResultJSS extends javax.swing.JFrame {
                     txtStudentID.setText(rs.getString("StudentID"));
                     txtMaths.setText(rs.getString("Maths_Total"));
                     txtEnglish.setText(rs.getString("English_Total"));
-                    txtLit.setText(rs.getString("Literature_Total"));
+                    txtCRS.setText(rs.getString("CRS_Total"));
                     txtBS.setText(rs.getString("BS_Total"));
                     txtBT.setText(rs.getString("BT_Total"));
                     txtPHE.setText(rs.getString("PHE_Total"));
                     txtICT.setText(rs.getString("ICT_Total"));
-                    txtCRS.setText(rs.getString("CRS_Total"));
+                    txtVerbal.setText(rs.getString("Verbal_Total"));
                     txtSocial.setText(rs.getString("Social_Total"));
                     txtCivic.setText(rs.getString("Civic_Total"));
                     txtSecurity.setText(rs.getString("Security_Total"));
                     txtHome.setText(rs.getString("Home_Total"));
                     txtAgric.setText(rs.getString("Agric_Total"));
-                    txtMusic.setText(rs.getString("Music_Total"));
-                    txtDrama.setText(rs.getString("Drama_Stage_Total"));
-                    txtArts.setText(rs.getString("Art_Craft_Total"));
-                    txtBusiness.setText(rs.getString("Business_Total"));
-                    txtFrench.setText(rs.getString("French_Total"));
                     txtEdo.setText(rs.getString("Edo_Total"));
-                    txtMoral.setText(rs.getString("Moral_Total"));
+                    txtQuan.setText(rs.getString("Quantitative_Total"));
 
                 }
             } catch (ClassNotFoundException ex) {
@@ -695,28 +621,26 @@ public class ResultJSS extends javax.swing.JFrame {
     }//GEN-LAST:event_btnResetActionPerformed
 
     private void btnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitActionPerformed
+        // TODO add your handling code here:
 
-        int sel = JOptionPane.showConfirmDialog(this, "Do you want to print Result?");
+        int sel = JOptionPane.showConfirmDialog(this, "Do you want to Exit?");
         if (sel == 0) {
-            try {
-                printResult();
-            } catch (IOException ex) {
-                Logger.getLogger(ResultNursery.class.getName()).log(Level.SEVERE, null, ex);
-            }
+            new Home().show();
+            this.dispose();
         }
         if (sel == 1) {
-            this.show();
-//            this.dispose();
+            new StudentResult_Primary().show();
+            this.dispose();
         }
         if (sel == 2) {
-            this.show();
-//            this.dispose();
+            new StudentResult_Primary().show();
+            this.dispose();
         }
-
     }//GEN-LAST:event_btnExitActionPerformed
 
     private void jLabel18MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel18MouseClicked
         new ResultView().show();
+        setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jLabel18MouseClicked
 
@@ -737,20 +661,21 @@ public class ResultJSS extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ResultJSS.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(StudentResult_Primary.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ResultJSS.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(StudentResult_Primary.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ResultJSS.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(StudentResult_Primary.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ResultJSS.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(StudentResult_Primary.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ResultJSS().setVisible(true);
+                new StudentResult_Primary().setVisible(true);
             }
         });
     }
@@ -758,7 +683,7 @@ public class ResultJSS extends javax.swing.JFrame {
     public void printResult() throws IOException {
 
         //PreparedStatement to get the 1st and 2nd Test score
-        String str = "select * from jss where StudentID = ?";
+        String str = "select * from prime where StudentID = ?";
 
         handler = new DBHandler();
 
@@ -766,10 +691,8 @@ public class ResultJSS extends javax.swing.JFrame {
                 crs2 = null, crsE = null, civic1 = null, civic2 = null, civicE = null, social1 = null, social2 = null, socialE = null,
                 security1 = null, security2 = null, securityE = null, bs1 = null, bs2 = null, bsE = null, bt1 = null, bt2 = null, btE = null,
                 phe1 = null, phe2 = null, pheE = null, ict1 = null, ict2 = null, ictE = null, home1 = null, home2 = null,
-                homeE = null, agric1 = null, agric2 = null, agricE = null, edo1 = null, edo2 = null, edoE = null, lit1 = null,
-                lit2 = null, litE = null, music1 = null, music2 = null, musicE = null, art1 = null, art2 = null, artE = null,
-                bus1 = null, bus2 = null, busE = null, drama1 = null, drama2 = null, dramaE = null, fre1 = null, fre2 = null,
-                freE = null, moral1 = null, moral2 = null, moralE = null;
+                homeE = null, agric1 = null, agric2 = null, agricE = null, edo1 = null, edo2 = null, edoE = null, verbal1 = null,
+                verbal2 = null, verbalE = null, quan1 = null, quan2 = null, quanE = null;
 
         try {
             PreparedStatement pst = handler.getdbConnection().prepareStatement(str);
@@ -821,27 +744,12 @@ public class ResultJSS extends javax.swing.JFrame {
                 edo1 = rs.getString("Edo_Test1");
                 edo2 = rs.getString("Edo_Test2");
                 edoE = rs.getString("Edo_Exam");
-                lit1 = rs.getString("Literature_Test1");
-                lit2 = rs.getString("Literature_Test2");
-                litE = rs.getString("Literature_Exam");
-                music1 = rs.getString("Music_Test1");
-                music2 = rs.getString("Music_Test2");
-                musicE = rs.getString("Music_Exam");
-                art1 = rs.getString("Art_Craft_Test1");
-                art2 = rs.getString("Art_Craft_Test2");
-                artE = rs.getString("Art_Craft_Exam");
-                bus1 = rs.getString("Business_Test1");
-                bus2 = rs.getString("Business_Test2");
-                busE = rs.getString("Business_Exam");
-                drama1 = rs.getString("Drama_Stage_Test1");
-                drama2 = rs.getString("Drama_Stage_Test2");
-                dramaE = rs.getString("Drama_Stage_Exam");
-                fre1 = rs.getString("French_Test1");
-                fre2 = rs.getString("French_Test2");
-                freE = rs.getString("French_Exam");
-                moral1 = rs.getString("Moral_Test1");
-                moral2 = rs.getString("Moral_Test2");
-                moralE = rs.getString("Moral_Exam");
+                verbal1 = rs.getString("Verbal_Test1");
+                verbal2 = rs.getString("Verbal_Test2");
+                verbalE = rs.getString("Verbal_Exam");
+                quan1 = rs.getString("Quantitative_Test1");
+                quan2 = rs.getString("Quantitative_Test2");
+                quanE = rs.getString("Quantitative_Exam");
 
             }
 
@@ -866,6 +774,12 @@ public class ResultJSS extends javax.swing.JFrame {
 
         try {
 
+            String school = "BRIGHT STARS SCHOOL";
+            String slogan = "(NURSERY, PRIMARY & SECONDARY)";
+            String address = "Omorodion Osaretin Str, Off Okuwague\nEvbabogun Road, Off Sapele Road, Benin City";
+            String tel = "07067183000";
+            String motto = "Knowledge for Excellence";
+
             String english_total = txtEnglish.getText();
             String maths_total = txtMaths.getText();
             String crs_total = txtCRS.getText();
@@ -879,121 +793,73 @@ public class ResultJSS extends javax.swing.JFrame {
             String home_total = txtHome.getText();
             String agric_total = txtAgric.getText();
             String edo_total = txtEdo.getText();
-            String lit_total = txtLit.getText();
-            String music_total = txtMusic.getText();
-            String arts_total = txtArts.getText();
-            String bus_total = txtBusiness.getText();
-            String fre_total = txtFrench.getText();
-            String moral_total = txtMoral.getText();
-            String drama_total = txtDrama.getText();
+            String verbal_total = txtVerbal.getText();
+            String quan_total = txtQuan.getText();
             String score_total = txtTotalScore.getText();
             String average_total = txtAverage.getText();
             String position_total = txtPosition.getText();
 
             System.out.println("English Total " + english_total);
 
-            FileOutputStream outputStream = new FileOutputStream(file);
-
-            PdfWriter pdfWriter = PdfWriter.getInstance(document, outputStream);
+            PdfWriter pdfWriter = PdfWriter.getInstance(document, new FileOutputStream(file));
             document.open();
 
-//            String school = "BRIGHT STARS SCHOOL";
-//            String slogan = "(NURSERY, PRIMARY & SECONDARY)";
-//            String address = "Omorodion Osaretin Str, Off Okuwague\nEvbabogun Road, Off Sapele Road, Benin City";
-//            String tel = "07067183000";
-//            String motto = "Knowledge for Excellence";
-//            String email = "informbrightstars@yahoo.com";
-            Image image = Image.getInstance("C:\\Users\\Thomas\\Documents\\NetBeansProjects\\SchoolMgtSystem\\Bright_Stars.png");
-            image.setAbsolutePosition(70, 743);
-
+//            document.add(new Paragraph(content));
+//            document.add(new Paragraph(title));
             Paragraph ti = new Paragraph();
-            ti.add("BRIGHT STARS SCHOOL");
+            ti.add(school);
             ti.setAlignment(Element.ALIGN_CENTER);
             font = ti.getFont();
-            ti.setSpacingBefore(0);
-            font.setSize(20);
 
             Paragraph sl = new Paragraph();
-            sl.add("(NURSERY, PRIMARY & SECONDARY)");
+            sl.add(slogan);
             sl.setAlignment(Element.ALIGN_CENTER);
             font = sl.getFont();
             sl.setSpacingBefore(0);
-            font.setSize(11);
+            font.setSize(8);
 
             Paragraph sti = new Paragraph();
-            sti.add("Omorodion Osaretin Str, Off Okuwague\nEvbabogun Road, Off Sapele Road, Benin City");
+            sti.add(address);
             sti.setAlignment(Element.ALIGN_CENTER);
 
-            Paragraph tele = new Paragraph();
-            tele.add("Tel: 07067183000" + " \tEmail: informbrightstars@yahoo.com");
-            tele.setAlignment(Element.ALIGN_CENTER);
-            font = tele.getFont();
-
-            Paragraph mot = new Paragraph();
-            mot.add("MOTTO: Knowledge for Excellence");
-            mot.setAlignment(Element.ALIGN_CENTER);
-
-            Paragraph name = new Paragraph();
-            name.setAlignment(Element.ALIGN_CENTER);
-            name.add("Name of pupil: " + txtFullName.getText()
-                    + "   Sex: M" + "   Age: 3YRS" + "   Adm NO: " + txtStudentID.getText());
-            name.setSpacingBefore(10f);
-
-            Paragraph house = new Paragraph();
-            house.setAlignment(Element.ALIGN_CENTER);
-            house.add("Assessment for: __________"
-                    + " Term: ________" + " Class: __________" + " NO In class: ______" /*+ " Position: _______"*/);
-            house.setSpacingBefore(7f);
-//            house.setSpacingAfter(10f);
-
-            Paragraph pos = new Paragraph();
-            pos.setAlignment(Element.ALIGN_CENTER);
-            pos.add("Position: _____" + " School House: ________" + " 20___ / 20___ session  Attendance ____ Out of ____");
-            pos.setSpacingBefore(7f);
-//            pos.setSpacingAfter(10f);
-
-            Paragraph res = new Paragraph();
-            res.setAlignment(Element.ALIGN_CENTER);
-            res.add("Resumption: _________________");
-            res.setSpacingBefore(7f);
-            res.setSpacingAfter(10f);
+//            Paragraph img = new Paragraph();
+//            img.add(Image.getInstance("C:\\Users\\Thomas\\Documents\\NetBeansProjects\\SchoolMgtSystem\\Bright_Stars.png"));
+//            img.setAlignment(Element.ALIGN_CENTER);
+            Image image = Image.getInstance("C:\\Users\\Thomas\\Documents\\NetBeansProjects\\SchoolMgtSystem\\Bright_Stars.png");
+            image.setAbsolutePosition(70, 743);
 
             //Adding to the Document
             document.add(image);
             document.add(ti);
             document.add(sl);
             document.add(sti);
-            document.add(tele);
-            document.add(mot);
-            document.add(name);
-            document.add(house);
-            document.add(pos);
-            document.add(res);
-//            document.add(new Paragraph("Name: " + txtFirstName.getText() + "    " +"  Admission Number: " + txtStudentID.getText()));
-//            document.add(new Paragraph("First Name: " + txtFirstName.getText()));
-//            document.add(new Paragraph("Surname: " + txtSurname.getText()));
 
-            //Setting the width and spacing of the table
+//            document.add(new Paragraph(subTitle));
+            document.add(new Paragraph("Student ID: " + txtStudentID.getText()));
+            document.add(new Paragraph("First Name: " + txtFullName.getText()));
+            document.add(new Paragraph("Surname: " + txtSurname.getText()));
+//            document.add(new Paragraph("Course Code: " + txtCourseCode.getSelectedItem()));
+
+            document.add(new Paragraph("DETAILED RESULT"));
+
             PdfPTable table = new PdfPTable(10);
             table.setWidthPercentage(105);
             table.setSpacingBefore(11f);
             table.setSpacingAfter(11f);
 
-            //Setting the number of columns
-            float[] colWidth = {0.3f, 3f, 0.5f, 0.5f, 0.5f, 0.6f, 0.6f, 0.5f, 0.6f, 0.5f};
+            float[] colWidth = {0.3f, 2f, 0.5f, 0.5f, 0.5f, 0.5f, 0.5f, 0.5f, 0.5f, 0.5f};
             table.setWidths(colWidth);
 
-            //adding values to the cells
             PdfPCell c1 = new PdfPCell(new Paragraph(""));
             PdfPCell c2 = new PdfPCell(new Paragraph(""));
-            PdfPCell c3 = new PdfPCell(new Paragraph("MAX\n100"));
-            PdfPCell c4 = new PdfPCell(new Paragraph("1ST TEST\n20"));
-            PdfPCell c5 = new PdfPCell(new Paragraph("2ND TEST\n20"));
-            PdfPCell c6 = new PdfPCell(new Paragraph("EXAM\n60"));
-            PdfPCell c7 = new PdfPCell(new Paragraph("TOTAL\n100"));
-            PdfPCell c8 = new PdfPCell(new Paragraph("POSITION"));
+            PdfPCell c3 = new PdfPCell(new Paragraph("MAX MARKS 100"));
+            PdfPCell c4 = new PdfPCell(new Paragraph("1ST TEST 20"));
+            PdfPCell c5 = new PdfPCell(new Paragraph("2ND TEST 20"));
+            PdfPCell c6 = new PdfPCell(new Paragraph("EXAM MARK 60"));
+            PdfPCell c7 = new PdfPCell(new Paragraph("TOTAL SCORE 100"));
+            PdfPCell c8 = new PdfPCell(new Paragraph("POSITOIN"));
             PdfPCell c9 = new PdfPCell(new Paragraph("REMARKS"));
-            PdfPCell c10 = new PdfPCell(new Paragraph("SIGN"));
+            PdfPCell c10 = new PdfPCell(new Paragraph("SIGNATURE"));
 
             PdfPCell en1 = new PdfPCell(new Paragraph("1"));
             PdfPCell en2 = new PdfPCell(new Paragraph("ENGLISH STUDIES"));
@@ -1007,106 +873,51 @@ public class ResultJSS extends javax.swing.JFrame {
             PdfPCell en10 = new PdfPCell(new Paragraph(""));
 
             PdfPCell s1 = new PdfPCell(new Paragraph("2"));
-            PdfPCell s2 = new PdfPCell(new Paragraph("LITERATURE"));
+            PdfPCell s2 = new PdfPCell(new Paragraph("MATHEMATICS"));
             PdfPCell s3 = new PdfPCell(new Paragraph("100"));
-            PdfPCell s4 = new PdfPCell(new Paragraph(lit1));
-            PdfPCell s5 = new PdfPCell(new Paragraph(lit2));
-            PdfPCell s6 = new PdfPCell(new Paragraph(litE));
-            PdfPCell s7 = new PdfPCell(new Paragraph(lit_total));
+            PdfPCell s4 = new PdfPCell(new Paragraph(maths1));
+            PdfPCell s5 = new PdfPCell(new Paragraph(maths2));
+            PdfPCell s6 = new PdfPCell(new Paragraph(mathsE));
+            PdfPCell s7 = new PdfPCell(new Paragraph(maths_total));
             PdfPCell s8 = new PdfPCell(new Paragraph(""));
             PdfPCell s9 = new PdfPCell(new Paragraph(""));
             PdfPCell s10 = new PdfPCell(new Paragraph(""));
 
             PdfPCell e1 = new PdfPCell(new Paragraph("3"));
-            PdfPCell e2 = new PdfPCell(new Paragraph("MATHEMATICS"));
+            PdfPCell e2 = new PdfPCell(new Paragraph("C R S"));
             PdfPCell e3 = new PdfPCell(new Paragraph("100"));
-            PdfPCell e4 = new PdfPCell(new Paragraph(maths1));
-            PdfPCell e5 = new PdfPCell(new Paragraph(maths2));
-            PdfPCell e6 = new PdfPCell(new Paragraph(mathsE));
-            PdfPCell e7 = new PdfPCell(new Paragraph(maths_total));
+            PdfPCell e4 = new PdfPCell(new Paragraph(crs1));
+            PdfPCell e5 = new PdfPCell(new Paragraph(crs2));
+            PdfPCell e6 = new PdfPCell(new Paragraph(crsE));
+            PdfPCell e7 = new PdfPCell(new Paragraph(crs_total));
             PdfPCell e8 = new PdfPCell(new Paragraph(""));
             PdfPCell e9 = new PdfPCell(new Paragraph(""));
             PdfPCell e10 = new PdfPCell(new Paragraph(""));
 
             PdfPCell sh1 = new PdfPCell(new Paragraph("4"));
-            PdfPCell sh2 = new PdfPCell(new Paragraph("BASIC SCIENCE AND TECHNOLOGY\nTheme 1:Basic Science"));
+            PdfPCell sh2 = new PdfPCell(new Paragraph("CIVIC EDUCATION"));
             PdfPCell sh3 = new PdfPCell(new Paragraph("100"));
-            PdfPCell sh4 = new PdfPCell(new Paragraph(bs1));
-            PdfPCell sh5 = new PdfPCell(new Paragraph(bs2));
-            PdfPCell sh6 = new PdfPCell(new Paragraph(bsE));
-            PdfPCell sh7 = new PdfPCell(new Paragraph(bs_total));
+            PdfPCell sh4 = new PdfPCell(new Paragraph(civic1));
+            PdfPCell sh5 = new PdfPCell(new Paragraph(civic2));
+            PdfPCell sh6 = new PdfPCell(new Paragraph(civicE));
+            PdfPCell sh7 = new PdfPCell(new Paragraph(civic_total));
             PdfPCell sh8 = new PdfPCell(new Paragraph(""));
             PdfPCell sh9 = new PdfPCell(new Paragraph(""));
             PdfPCell sh10 = new PdfPCell(new Paragraph(""));
-
-            PdfPCell bat1 = new PdfPCell(new Paragraph(""));
-            PdfPCell bat2 = new PdfPCell(new Paragraph("Theme 2:Basic Technology"));
-            PdfPCell bat3 = new PdfPCell(new Paragraph("100"));
-            PdfPCell bat4 = new PdfPCell(new Paragraph(bt1));
-            PdfPCell bat5 = new PdfPCell(new Paragraph(bt2));
-            PdfPCell bat6 = new PdfPCell(new Paragraph(btE));
-            PdfPCell bat7 = new PdfPCell(new Paragraph(bt_total));
-            PdfPCell bat8 = new PdfPCell(new Paragraph(""));
-            PdfPCell bat9 = new PdfPCell(new Paragraph(""));
-            PdfPCell bat10 = new PdfPCell(new Paragraph(""));
-
-            PdfPCell ph1 = new PdfPCell(new Paragraph(""));
-            PdfPCell ph2 = new PdfPCell(new Paragraph("Theme 3:Physical & Health Education"));
-            PdfPCell ph3 = new PdfPCell(new Paragraph("100"));
-            PdfPCell ph4 = new PdfPCell(new Paragraph(phe1));
-            PdfPCell ph5 = new PdfPCell(new Paragraph(phe2));
-            PdfPCell ph6 = new PdfPCell(new Paragraph(pheE));
-            PdfPCell ph7 = new PdfPCell(new Paragraph(phe_total));
-            PdfPCell ph8 = new PdfPCell(new Paragraph(""));
-            PdfPCell ph9 = new PdfPCell(new Paragraph(""));
-            PdfPCell ph10 = new PdfPCell(new Paragraph(""));
-
-            PdfPCell ic1 = new PdfPCell(new Paragraph(""));
-            PdfPCell ic2 = new PdfPCell(new Paragraph("Theme 4:Information Technology"));
-            PdfPCell ic3 = new PdfPCell(new Paragraph("100"));
-            PdfPCell ic4 = new PdfPCell(new Paragraph(ict1));
-            PdfPCell ic5 = new PdfPCell(new Paragraph(ict2));
-            PdfPCell ic6 = new PdfPCell(new Paragraph(ictE));
-            PdfPCell ic7 = new PdfPCell(new Paragraph(ict_total));
-            PdfPCell ic8 = new PdfPCell(new Paragraph(""));
-            PdfPCell ic9 = new PdfPCell(new Paragraph(""));
-            PdfPCell ic10 = new PdfPCell(new Paragraph(""));
 //
             PdfPCell hh1 = new PdfPCell(new Paragraph("5"));
-            PdfPCell hh2 = new PdfPCell(new Paragraph("RELIGION AND NATIONAL VALUES\nTheme 1:Christian Religious Studies"));
+            PdfPCell hh2 = new PdfPCell(new Paragraph("SOCIAL STUDIES"));
             PdfPCell hh3 = new PdfPCell(new Paragraph("100"));
-            PdfPCell hh4 = new PdfPCell(new Paragraph(crs1));
-            PdfPCell hh5 = new PdfPCell(new Paragraph(crs2));
-            PdfPCell hh6 = new PdfPCell(new Paragraph(crsE));
-            PdfPCell hh7 = new PdfPCell(new Paragraph(crs_total));
+            PdfPCell hh4 = new PdfPCell(new Paragraph(social1));
+            PdfPCell hh5 = new PdfPCell(new Paragraph(social2));
+            PdfPCell hh6 = new PdfPCell(new Paragraph(socialE));
+            PdfPCell hh7 = new PdfPCell(new Paragraph(social_total));
             PdfPCell hh8 = new PdfPCell(new Paragraph(""));
             PdfPCell hh9 = new PdfPCell(new Paragraph(""));
             PdfPCell hh10 = new PdfPCell(new Paragraph(""));
 
-            PdfPCell so1 = new PdfPCell(new Paragraph(""));
-            PdfPCell so2 = new PdfPCell(new Paragraph("Theme 2:Social Studies"));
-            PdfPCell so3 = new PdfPCell(new Paragraph("100"));
-            PdfPCell so4 = new PdfPCell(new Paragraph(social1));
-            PdfPCell so5 = new PdfPCell(new Paragraph(social2));
-            PdfPCell so6 = new PdfPCell(new Paragraph(socialE));
-            PdfPCell so7 = new PdfPCell(new Paragraph(social_total));
-            PdfPCell so8 = new PdfPCell(new Paragraph(""));
-            PdfPCell so9 = new PdfPCell(new Paragraph(""));
-            PdfPCell so10 = new PdfPCell(new Paragraph(""));
-
-            PdfPCell ci1 = new PdfPCell(new Paragraph(""));
-            PdfPCell ci2 = new PdfPCell(new Paragraph("Theme 3:Civic Education"));
-            PdfPCell ci3 = new PdfPCell(new Paragraph("100"));
-            PdfPCell ci4 = new PdfPCell(new Paragraph(civic1));
-            PdfPCell ci5 = new PdfPCell(new Paragraph(civic2));
-            PdfPCell ci6 = new PdfPCell(new Paragraph(civicE));
-            PdfPCell ci7 = new PdfPCell(new Paragraph(civic_total));
-            PdfPCell ci8 = new PdfPCell(new Paragraph(""));
-            PdfPCell ci9 = new PdfPCell(new Paragraph(""));
-            PdfPCell ci10 = new PdfPCell(new Paragraph(""));
-
-            PdfPCell co1 = new PdfPCell(new Paragraph(""));
-            PdfPCell co2 = new PdfPCell(new Paragraph("Theme 4:Security Education"));
+            PdfPCell co1 = new PdfPCell(new Paragraph("6"));
+            PdfPCell co2 = new PdfPCell(new Paragraph("SECURITY EDUCATION"));
             PdfPCell co3 = new PdfPCell(new Paragraph("100"));
             PdfPCell co4 = new PdfPCell(new Paragraph(security1));
             PdfPCell co5 = new PdfPCell(new Paragraph(security2));
@@ -1116,84 +927,73 @@ public class ResultJSS extends javax.swing.JFrame {
             PdfPCell co9 = new PdfPCell(new Paragraph(""));
             PdfPCell co10 = new PdfPCell(new Paragraph(""));
 //
-            PdfPCell ca1 = new PdfPCell(new Paragraph("6"));
-            PdfPCell ca2 = new PdfPCell(new Paragraph("PRE-VOCATIONAL STUDIES\nTheme 1:Home Economics"));
+            PdfPCell ca1 = new PdfPCell(new Paragraph("7"));
+            PdfPCell ca2 = new PdfPCell(new Paragraph("BASIC SCIENCE"));
             PdfPCell ca3 = new PdfPCell(new Paragraph("100"));
-            PdfPCell ca4 = new PdfPCell(new Paragraph(home1));
-            PdfPCell ca5 = new PdfPCell(new Paragraph(home2));
-            PdfPCell ca6 = new PdfPCell(new Paragraph(homeE));
-            PdfPCell ca7 = new PdfPCell(new Paragraph(home_total));
+            PdfPCell ca4 = new PdfPCell(new Paragraph(bs1));
+            PdfPCell ca5 = new PdfPCell(new Paragraph(bs2));
+            PdfPCell ca6 = new PdfPCell(new Paragraph(bsE));
+            PdfPCell ca7 = new PdfPCell(new Paragraph(bs_total));
             PdfPCell ca8 = new PdfPCell(new Paragraph(""));
             PdfPCell ca9 = new PdfPCell(new Paragraph(""));
             PdfPCell ca10 = new PdfPCell(new Paragraph(""));
-
-            PdfPCell ag1 = new PdfPCell(new Paragraph(""));
-            PdfPCell ag2 = new PdfPCell(new Paragraph("Theme 2:Agricultural Science"));
-            PdfPCell ag3 = new PdfPCell(new Paragraph("100"));
-            PdfPCell ag4 = new PdfPCell(new Paragraph(agric1));
-            PdfPCell ag5 = new PdfPCell(new Paragraph(agric2));
-            PdfPCell ag6 = new PdfPCell(new Paragraph(agricE));
-            PdfPCell ag7 = new PdfPCell(new Paragraph(agric_total));
-            PdfPCell ag8 = new PdfPCell(new Paragraph(""));
-            PdfPCell ag9 = new PdfPCell(new Paragraph(""));
-            PdfPCell ag10 = new PdfPCell(new Paragraph(""));
 //
-            PdfPCell wr1 = new PdfPCell(new Paragraph("7"));
-            PdfPCell wr2 = new PdfPCell(new Paragraph("CULTURAL AND CREATIVE ARTS\nTheme 1:Music"));
+            PdfPCell wr1 = new PdfPCell(new Paragraph("8"));
+            PdfPCell wr2 = new PdfPCell(new Paragraph("BASIC TECHNOLOGY"));
             PdfPCell wr3 = new PdfPCell(new Paragraph("100"));
-            PdfPCell wr4 = new PdfPCell(new Paragraph(music1));
-            PdfPCell wr5 = new PdfPCell(new Paragraph(music2));
-            PdfPCell wr6 = new PdfPCell(new Paragraph(musicE));
-            PdfPCell wr7 = new PdfPCell(new Paragraph(music_total));
+            PdfPCell wr4 = new PdfPCell(new Paragraph(bt1));
+            PdfPCell wr5 = new PdfPCell(new Paragraph(bt2));
+            PdfPCell wr6 = new PdfPCell(new Paragraph(btE));
+            PdfPCell wr7 = new PdfPCell(new Paragraph(bt_total));
             PdfPCell wr8 = new PdfPCell(new Paragraph(""));
             PdfPCell wr9 = new PdfPCell(new Paragraph(""));
             PdfPCell wr10 = new PdfPCell(new Paragraph(""));
 //
-            PdfPCell nr1 = new PdfPCell(new Paragraph(""));
-            PdfPCell nr2 = new PdfPCell(new Paragraph("Theme 2:Drama/Stage Performance"));
+            PdfPCell nr1 = new PdfPCell(new Paragraph("9"));
+            PdfPCell nr2 = new PdfPCell(new Paragraph("PHYSICAL & HEALTH EDUCATION"));
             PdfPCell nr3 = new PdfPCell(new Paragraph("100"));
-            PdfPCell nr4 = new PdfPCell(new Paragraph(drama1));
-            PdfPCell nr5 = new PdfPCell(new Paragraph(drama2));
-            PdfPCell nr6 = new PdfPCell(new Paragraph(dramaE));
-            PdfPCell nr7 = new PdfPCell(new Paragraph(drama_total));
+            PdfPCell nr4 = new PdfPCell(new Paragraph(phe1));
+            PdfPCell nr5 = new PdfPCell(new Paragraph(phe2));
+            PdfPCell nr6 = new PdfPCell(new Paragraph(pheE));
+            PdfPCell nr7 = new PdfPCell(new Paragraph(phe_total));
             PdfPCell nr8 = new PdfPCell(new Paragraph(""));
             PdfPCell nr9 = new PdfPCell(new Paragraph(""));
             PdfPCell nr10 = new PdfPCell(new Paragraph(""));
 
-            PdfPCell v1 = new PdfPCell(new Paragraph(""));
-            PdfPCell v2 = new PdfPCell(new Paragraph("Theme 3:Art & Craft"));
+            PdfPCell v1 = new PdfPCell(new Paragraph("10"));
+            PdfPCell v2 = new PdfPCell(new Paragraph("INFORMATION TECHNOLOGY"));
             PdfPCell v3 = new PdfPCell(new Paragraph("100"));
-            PdfPCell v4 = new PdfPCell(new Paragraph(art1));
-            PdfPCell v5 = new PdfPCell(new Paragraph(art2));
-            PdfPCell v6 = new PdfPCell(new Paragraph(artE));
-            PdfPCell v7 = new PdfPCell(new Paragraph(arts_total));
+            PdfPCell v4 = new PdfPCell(new Paragraph(ict1));
+            PdfPCell v5 = new PdfPCell(new Paragraph(ict2));
+            PdfPCell v6 = new PdfPCell(new Paragraph(ictE));
+            PdfPCell v7 = new PdfPCell(new Paragraph(ict_total));
             PdfPCell v8 = new PdfPCell(new Paragraph(""));
             PdfPCell v9 = new PdfPCell(new Paragraph(""));
             PdfPCell v10 = new PdfPCell(new Paragraph(""));
 //
-            PdfPCell q1 = new PdfPCell(new Paragraph("8"));
-            PdfPCell q2 = new PdfPCell(new Paragraph("BUSINESS STUDIES"));
+            PdfPCell q1 = new PdfPCell(new Paragraph("11"));
+            PdfPCell q2 = new PdfPCell(new Paragraph("HOME ECONOMICS"));
             PdfPCell q3 = new PdfPCell(new Paragraph("100"));
-            PdfPCell q4 = new PdfPCell(new Paragraph(bus1));
-            PdfPCell q5 = new PdfPCell(new Paragraph(bus2));
-            PdfPCell q6 = new PdfPCell(new Paragraph(busE));
-            PdfPCell q7 = new PdfPCell(new Paragraph(bus_total));
+            PdfPCell q4 = new PdfPCell(new Paragraph(home1));
+            PdfPCell q5 = new PdfPCell(new Paragraph(home2));
+            PdfPCell q6 = new PdfPCell(new Paragraph(homeE));
+            PdfPCell q7 = new PdfPCell(new Paragraph(home_total));
             PdfPCell q8 = new PdfPCell(new Paragraph(""));
             PdfPCell q9 = new PdfPCell(new Paragraph(""));
             PdfPCell q10 = new PdfPCell(new Paragraph(""));
 
-            PdfPCell m1 = new PdfPCell(new Paragraph("9"));
-            PdfPCell m2 = new PdfPCell(new Paragraph("FRENCH"));
+            PdfPCell m1 = new PdfPCell(new Paragraph("12"));
+            PdfPCell m2 = new PdfPCell(new Paragraph("AGRICULTURAL SCIENCE"));
             PdfPCell m3 = new PdfPCell(new Paragraph("100"));
-            PdfPCell m4 = new PdfPCell(new Paragraph(fre1));
-            PdfPCell m5 = new PdfPCell(new Paragraph(fre2));
-            PdfPCell m6 = new PdfPCell(new Paragraph(freE));
-            PdfPCell m7 = new PdfPCell(new Paragraph(fre_total));
+            PdfPCell m4 = new PdfPCell(new Paragraph(agric1));
+            PdfPCell m5 = new PdfPCell(new Paragraph(agric2));
+            PdfPCell m6 = new PdfPCell(new Paragraph(agricE));
+            PdfPCell m7 = new PdfPCell(new Paragraph(agric_total));
             PdfPCell m8 = new PdfPCell(new Paragraph(""));
             PdfPCell m9 = new PdfPCell(new Paragraph(""));
             PdfPCell m10 = new PdfPCell(new Paragraph(""));
 
-            PdfPCell ed1 = new PdfPCell(new Paragraph("10"));
+            PdfPCell ed1 = new PdfPCell(new Paragraph("13"));
             PdfPCell ed2 = new PdfPCell(new Paragraph("EDO LANGUAGE"));
             PdfPCell ed3 = new PdfPCell(new Paragraph("100"));
             PdfPCell ed4 = new PdfPCell(new Paragraph(edo1));
@@ -1204,16 +1004,27 @@ public class ResultJSS extends javax.swing.JFrame {
             PdfPCell ed9 = new PdfPCell(new Paragraph(""));
             PdfPCell ed10 = new PdfPCell(new Paragraph(""));
 
-            PdfPCell ve1 = new PdfPCell(new Paragraph("11"));
-            PdfPCell ve2 = new PdfPCell(new Paragraph("MORAL INSTRUCTION"));
+            PdfPCell ve1 = new PdfPCell(new Paragraph("14"));
+            PdfPCell ve2 = new PdfPCell(new Paragraph("VERBAL REASONING"));
             PdfPCell ve3 = new PdfPCell(new Paragraph("100"));
-            PdfPCell ve4 = new PdfPCell(new Paragraph(moral1));
-            PdfPCell ve5 = new PdfPCell(new Paragraph(moral2));
-            PdfPCell ve6 = new PdfPCell(new Paragraph(moralE));
-            PdfPCell ve7 = new PdfPCell(new Paragraph(moral_total));
+            PdfPCell ve4 = new PdfPCell(new Paragraph(verbal1));
+            PdfPCell ve5 = new PdfPCell(new Paragraph(verbal2));
+            PdfPCell ve6 = new PdfPCell(new Paragraph(verbalE));
+            PdfPCell ve7 = new PdfPCell(new Paragraph(verbal_total));
             PdfPCell ve8 = new PdfPCell(new Paragraph(""));
             PdfPCell ve9 = new PdfPCell(new Paragraph(""));
             PdfPCell ve10 = new PdfPCell(new Paragraph(""));
+
+            PdfPCell qu1 = new PdfPCell(new Paragraph("15"));
+            PdfPCell qu2 = new PdfPCell(new Paragraph("QUANTITATIVE REASONING"));
+            PdfPCell qu3 = new PdfPCell(new Paragraph("100"));
+            PdfPCell qu4 = new PdfPCell(new Paragraph(quan1));
+            PdfPCell qu5 = new PdfPCell(new Paragraph(quan2));
+            PdfPCell qu6 = new PdfPCell(new Paragraph(quanE));
+            PdfPCell qu7 = new PdfPCell(new Paragraph(quan_total));
+            PdfPCell qu8 = new PdfPCell(new Paragraph(""));
+            PdfPCell qu9 = new PdfPCell(new Paragraph(""));
+            PdfPCell qu10 = new PdfPCell(new Paragraph(""));
 
             PdfPCell t1 = new PdfPCell(new Paragraph(""));
             PdfPCell t2 = new PdfPCell(new Paragraph("TOTAL\t\t\t\t" + score_total));
@@ -1282,39 +1093,6 @@ public class ResultJSS extends javax.swing.JFrame {
             table.addCell(sh9);
             table.addCell(sh10);
 
-            table.addCell(bat1);
-            table.addCell(bat2);
-            table.addCell(bat3);
-            table.addCell(bat4);
-            table.addCell(bat5);
-            table.addCell(bat6);
-            table.addCell(bat7);
-            table.addCell(bat8);
-            table.addCell(bat9);
-            table.addCell(bat10);
-
-            table.addCell(ph1);
-            table.addCell(ph2);
-            table.addCell(ph3);
-            table.addCell(ph4);
-            table.addCell(ph5);
-            table.addCell(ph6);
-            table.addCell(ph7);
-            table.addCell(ph8);
-            table.addCell(ph9);
-            table.addCell(ph10);
-
-            table.addCell(ic1);
-            table.addCell(ic2);
-            table.addCell(ic3);
-            table.addCell(ic4);
-            table.addCell(ic5);
-            table.addCell(ic6);
-            table.addCell(ic7);
-            table.addCell(ic8);
-            table.addCell(ic9);
-            table.addCell(ic10);
-
             table.addCell(hh1);
             table.addCell(hh2);
             table.addCell(hh3);
@@ -1325,28 +1103,6 @@ public class ResultJSS extends javax.swing.JFrame {
             table.addCell(hh8);
             table.addCell(hh9);
             table.addCell(hh10);
-
-            table.addCell(so1);
-            table.addCell(so2);
-            table.addCell(so3);
-            table.addCell(so4);
-            table.addCell(so5);
-            table.addCell(so6);
-            table.addCell(so7);
-            table.addCell(so8);
-            table.addCell(so9);
-            table.addCell(so10);
-
-            table.addCell(ci1);
-            table.addCell(ci2);
-            table.addCell(ci3);
-            table.addCell(ci4);
-            table.addCell(ci5);
-            table.addCell(ci6);
-            table.addCell(ci7);
-            table.addCell(ci8);
-            table.addCell(ci9);
-            table.addCell(ci10);
 
             table.addCell(co1);
             table.addCell(co2);
@@ -1369,17 +1125,6 @@ public class ResultJSS extends javax.swing.JFrame {
             table.addCell(ca8);
             table.addCell(ca9);
             table.addCell(ca10);
-
-            table.addCell(ag1);
-            table.addCell(ag2);
-            table.addCell(ag3);
-            table.addCell(ag4);
-            table.addCell(ag5);
-            table.addCell(ag6);
-            table.addCell(ag7);
-            table.addCell(ag8);
-            table.addCell(ag9);
-            table.addCell(ag10);
 
             table.addCell(wr1);
             table.addCell(wr2);
@@ -1458,6 +1203,17 @@ public class ResultJSS extends javax.swing.JFrame {
             table.addCell(ve9);
             table.addCell(ve10);
 
+            table.addCell(qu1);
+            table.addCell(qu2);
+            table.addCell(qu3);
+            table.addCell(qu4);
+            table.addCell(qu5);
+            table.addCell(qu6);
+            table.addCell(qu7);
+            table.addCell(qu8);
+            table.addCell(qu9);
+            table.addCell(qu10);
+
             table.addCell(t1);
             table.addCell(t2);
             table.addCell(t3);
@@ -1469,242 +1225,7 @@ public class ResultJSS extends javax.swing.JFrame {
             table.addCell(t9);
             table.addCell(t10);
 
-            //adding table to the document
             document.add(table);
-
-            Paragraph rating = new Paragraph("KEY TO RATING: 5=EXCELLENT   4=GOOD   3=AVERAGE   2=BELLOW AVERAGE   1=POOR");
-            rating.setAlignment(Element.ALIGN_CENTER);
-            document.add(rating);
-
-            //Setting the width and spacing of the table
-            PdfPTable table1 = new PdfPTable(12);
-            table1.setWidthPercentage(105);
-            table1.setSpacingBefore(11f);
-            table1.setSpacingAfter(11f);
-
-            //Setting the number of columns
-            float[] colWidth1 = {4f, 0.3f, 0.3f, 0.3f, 0.3f, 0.3f, 4f, 0.3f, 0.3f, 0.3f, 0.3f, 0.3f};
-            table1.setWidths(colWidth1);
-
-            PdfPCell cell1 = new PdfPCell(new Paragraph("CHARACTER DEVELOPMENT"));
-            PdfPCell cell2 = new PdfPCell(new Paragraph("5"));
-            PdfPCell cell3 = new PdfPCell(new Paragraph("4"));
-            PdfPCell cell4 = new PdfPCell(new Paragraph("3"));
-            PdfPCell cell5 = new PdfPCell(new Paragraph("2"));
-            PdfPCell cell6 = new PdfPCell(new Paragraph("1"));
-            PdfPCell cell7 = new PdfPCell(new Paragraph("   PRACTICAL SKILL"));
-            PdfPCell cell8 = new PdfPCell(new Paragraph("5"));
-            PdfPCell cell9 = new PdfPCell(new Paragraph("4"));
-            PdfPCell cell10 = new PdfPCell(new Paragraph("3"));
-            PdfPCell cell11 = new PdfPCell(new Paragraph("2"));
-            PdfPCell cell12 = new PdfPCell(new Paragraph("1"));
-
-            PdfPCell row1 = new PdfPCell(new Paragraph("Appearance"));
-            PdfPCell row2 = new PdfPCell(new Paragraph(""));
-            PdfPCell row3 = new PdfPCell(new Paragraph(""));
-            PdfPCell row4 = new PdfPCell(new Paragraph(""));
-            PdfPCell row5 = new PdfPCell(new Paragraph(""));
-            PdfPCell row6 = new PdfPCell(new Paragraph(""));
-            PdfPCell row7 = new PdfPCell(new Paragraph("   Education Drama"));
-            PdfPCell row8 = new PdfPCell(new Paragraph(""));
-            PdfPCell row9 = new PdfPCell(new Paragraph(""));
-            PdfPCell row10 = new PdfPCell(new Paragraph(""));
-            PdfPCell row11 = new PdfPCell(new Paragraph(""));
-            PdfPCell row12 = new PdfPCell(new Paragraph(""));
-
-            PdfPCell row13 = new PdfPCell(new Paragraph("Appearance"));
-            PdfPCell row14 = new PdfPCell(new Paragraph(""));
-            PdfPCell row15 = new PdfPCell(new Paragraph(""));
-            PdfPCell row16 = new PdfPCell(new Paragraph(""));
-            PdfPCell row17 = new PdfPCell(new Paragraph(""));
-            PdfPCell row18 = new PdfPCell(new Paragraph(""));
-            PdfPCell row19 = new PdfPCell(new Paragraph("   Needle Work"));
-            PdfPCell row20 = new PdfPCell(new Paragraph(""));
-            PdfPCell row21 = new PdfPCell(new Paragraph(""));
-            PdfPCell row22 = new PdfPCell(new Paragraph(""));
-            PdfPCell row23 = new PdfPCell(new Paragraph(""));
-            PdfPCell row24 = new PdfPCell(new Paragraph(""));
-
-            PdfPCell row25 = new PdfPCell(new Paragraph("Appearance"));
-            PdfPCell row26 = new PdfPCell(new Paragraph(""));
-            PdfPCell row27 = new PdfPCell(new Paragraph(""));
-            PdfPCell row28 = new PdfPCell(new Paragraph(""));
-            PdfPCell row29 = new PdfPCell(new Paragraph(""));
-            PdfPCell row30 = new PdfPCell(new Paragraph(""));
-            PdfPCell row31 = new PdfPCell(new Paragraph("   Cookery"));
-            PdfPCell row32 = new PdfPCell(new Paragraph(""));
-            PdfPCell row33 = new PdfPCell(new Paragraph(""));
-            PdfPCell row34 = new PdfPCell(new Paragraph(""));
-            PdfPCell row35 = new PdfPCell(new Paragraph(""));
-            PdfPCell row36 = new PdfPCell(new Paragraph(""));
-
-            PdfPCell row37 = new PdfPCell(new Paragraph("Appearance"));
-            PdfPCell row38 = new PdfPCell(new Paragraph(""));
-            PdfPCell row39 = new PdfPCell(new Paragraph(""));
-            PdfPCell row40 = new PdfPCell(new Paragraph(""));
-            PdfPCell row41 = new PdfPCell(new Paragraph(""));
-            PdfPCell row42 = new PdfPCell(new Paragraph(""));
-            PdfPCell row43 = new PdfPCell(new Paragraph("   Public Speech"));
-            PdfPCell row44 = new PdfPCell(new Paragraph(""));
-            PdfPCell row45 = new PdfPCell(new Paragraph(""));
-            PdfPCell row46 = new PdfPCell(new Paragraph(""));
-            PdfPCell row47 = new PdfPCell(new Paragraph(""));
-            PdfPCell row48 = new PdfPCell(new Paragraph(""));
-
-            PdfPCell row49 = new PdfPCell(new Paragraph("Appearance"));
-            PdfPCell row50 = new PdfPCell(new Paragraph(""));
-            PdfPCell row51 = new PdfPCell(new Paragraph(""));
-            PdfPCell row52 = new PdfPCell(new Paragraph(""));
-            PdfPCell row53 = new PdfPCell(new Paragraph(""));
-            PdfPCell row54 = new PdfPCell(new Paragraph(""));
-            PdfPCell row55 = new PdfPCell(new Paragraph("   Sports"));
-            PdfPCell row56 = new PdfPCell(new Paragraph(""));
-            PdfPCell row57 = new PdfPCell(new Paragraph(""));
-            PdfPCell row58 = new PdfPCell(new Paragraph(""));
-            PdfPCell row59 = new PdfPCell(new Paragraph(""));
-            PdfPCell row60 = new PdfPCell(new Paragraph(""));
-
-            PdfPCell row61 = new PdfPCell(new Paragraph("Appearance"));
-            PdfPCell row62 = new PdfPCell(new Paragraph(""));
-            PdfPCell row63 = new PdfPCell(new Paragraph(""));
-            PdfPCell row64 = new PdfPCell(new Paragraph(""));
-            PdfPCell row65 = new PdfPCell(new Paragraph(""));
-            PdfPCell row66 = new PdfPCell(new Paragraph(""));
-            PdfPCell row67 = new PdfPCell(new Paragraph("   Musical memes"));
-            PdfPCell row68 = new PdfPCell(new Paragraph(""));
-            PdfPCell row69 = new PdfPCell(new Paragraph(""));
-            PdfPCell row70 = new PdfPCell(new Paragraph(""));
-            PdfPCell row71 = new PdfPCell(new Paragraph(""));
-            PdfPCell row72 = new PdfPCell(new Paragraph(""));
-
-            PdfPCell row73 = new PdfPCell(new Paragraph("Appearance"));
-            PdfPCell row74 = new PdfPCell(new Paragraph(""));
-            PdfPCell row75 = new PdfPCell(new Paragraph(""));
-            PdfPCell row76 = new PdfPCell(new Paragraph(""));
-            PdfPCell row77 = new PdfPCell(new Paragraph(""));
-            PdfPCell row78 = new PdfPCell(new Paragraph(""));
-            PdfPCell row79 = new PdfPCell(new Paragraph("   Oral English"));
-            PdfPCell row80 = new PdfPCell(new Paragraph(""));
-            PdfPCell row81 = new PdfPCell(new Paragraph(""));
-            PdfPCell row82 = new PdfPCell(new Paragraph(""));
-            PdfPCell row83 = new PdfPCell(new Paragraph(""));
-            PdfPCell row84 = new PdfPCell(new Paragraph(""));
-
-            table1.addCell(cell1);
-            table1.addCell(cell2);
-            table1.addCell(cell3);
-            table1.addCell(cell4);
-            table1.addCell(cell5);
-            table1.addCell(cell6);
-            table1.addCell(cell7);
-            table1.addCell(cell8);
-            table1.addCell(cell9);
-            table1.addCell(cell10);
-            table1.addCell(cell11);
-            table1.addCell(cell12);
-
-            table1.addCell(row1);
-            table1.addCell(row2);
-            table1.addCell(row3);
-            table1.addCell(row4);
-            table1.addCell(row5);
-            table1.addCell(row6);
-            table1.addCell(row7);
-            table1.addCell(row8);
-            table1.addCell(row9);
-            table1.addCell(row10);
-            table1.addCell(row11);
-            table1.addCell(row12);
-
-            table1.addCell(row13);
-            table1.addCell(row14);
-            table1.addCell(row15);
-            table1.addCell(row16);
-            table1.addCell(row17);
-            table1.addCell(row18);
-            table1.addCell(row19);
-            table1.addCell(row20);
-            table1.addCell(row21);
-            table1.addCell(row22);
-            table1.addCell(row23);
-            table1.addCell(row24);
-
-            table1.addCell(row25);
-            table1.addCell(row26);
-            table1.addCell(row27);
-            table1.addCell(row28);
-            table1.addCell(row29);
-            table1.addCell(row30);
-            table1.addCell(row31);
-            table1.addCell(row32);
-            table1.addCell(row33);
-            table1.addCell(row34);
-            table1.addCell(row35);
-            table1.addCell(row36);
-
-            table1.addCell(row37);
-            table1.addCell(row38);
-            table1.addCell(row39);
-            table1.addCell(row40);
-            table1.addCell(row41);
-            table1.addCell(row42);
-            table1.addCell(row43);
-            table1.addCell(row44);
-            table1.addCell(row45);
-            table1.addCell(row46);
-            table1.addCell(row47);
-            table1.addCell(row48);
-
-            table1.addCell(row49);
-            table1.addCell(row50);
-            table1.addCell(row51);
-            table1.addCell(row52);
-            table1.addCell(row53);
-            table1.addCell(row54);
-            table1.addCell(row55);
-            table1.addCell(row56);
-            table1.addCell(row57);
-            table1.addCell(row58);
-            table1.addCell(row59);
-            table1.addCell(row60);
-
-            table1.addCell(row61);
-            table1.addCell(row62);
-            table1.addCell(row63);
-            table1.addCell(row64);
-            table1.addCell(row65);
-            table1.addCell(row66);
-            table1.addCell(row67);
-            table1.addCell(row68);
-            table1.addCell(row69);
-            table1.addCell(row70);
-            table1.addCell(row71);
-            table1.addCell(row72);
-
-            table1.addCell(row73);
-            table1.addCell(row74);
-            table1.addCell(row75);
-            table1.addCell(row76);
-            table1.addCell(row77);
-            table1.addCell(row78);
-            table1.addCell(row79);
-            table1.addCell(row80);
-            table1.addCell(row81);
-            table1.addCell(row82);
-            table1.addCell(row83);
-            table1.addCell(row84);
-
-            document.add(table1);
-            /* OSAIGBOVOMWAN VICTORY OSASOGIE */
-
-            Paragraph credit = new Paragraph();
-            credit.add("Number of credit(s) ____ Student Average marks " + average_total);
-
-            Paragraph remark = new Paragraph();
-            remark.add("Class Teacher Remarks ______________________________");
-
-            document.add(credit);
-            document.add(remark);
             JOptionPane.showMessageDialog(this, "Result saved");
             document.close();
             pdfWriter.close();
@@ -1715,12 +1236,10 @@ public class ResultJSS extends javax.swing.JFrame {
 
     }
 
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnExit;
     private javax.swing.JButton btnGenerate;
     private javax.swing.JButton btnRanking;
-    private javax.swing.JButton btnRecord;
     private javax.swing.JButton btnReset;
     private javax.swing.JButton btnTranscript;
     private javax.swing.JLabel jLabel1;
@@ -1738,11 +1257,6 @@ public class ResultJSS extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
-    private javax.swing.JLabel jLabel23;
-    private javax.swing.JLabel jLabel24;
-    private javax.swing.JLabel jLabel25;
-    private javax.swing.JLabel jLabel26;
-    private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
@@ -1756,31 +1270,26 @@ public class ResultJSS extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTextField txtAgric;
-    private javax.swing.JTextField txtArts;
     private javax.swing.JTextField txtAverage;
     private javax.swing.JTextField txtBS;
     private javax.swing.JTextField txtBT;
-    private javax.swing.JTextField txtBusiness;
     private javax.swing.JTextField txtCRS;
     private javax.swing.JTextField txtCivic;
-    private javax.swing.JTextField txtDrama;
     private javax.swing.JTextField txtEdo;
     private javax.swing.JTextField txtEnglish;
-    private javax.swing.JTextField txtFrench;
     public static javax.swing.JTextField txtFullName;
     private javax.swing.JTextField txtHome;
     private javax.swing.JTextField txtICT;
-    private javax.swing.JTextField txtLit;
     private javax.swing.JTextField txtMaths;
-    private javax.swing.JTextField txtMoral;
-    private javax.swing.JTextField txtMusic;
     private javax.swing.JTextField txtPHE;
     private javax.swing.JTextField txtPosition;
+    private javax.swing.JTextField txtQuan;
     private javax.swing.JTextField txtSecurity;
     private javax.swing.JTextField txtSocial;
     public static javax.swing.JTextField txtStudentID;
     private javax.swing.JTextField txtSurname;
     private javax.swing.JTextField txtTotalScore;
     private javax.swing.JTextArea txtTranscript;
+    private javax.swing.JTextField txtVerbal;
     // End of variables declaration//GEN-END:variables
 }
