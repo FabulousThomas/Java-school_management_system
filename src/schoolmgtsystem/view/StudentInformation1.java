@@ -48,9 +48,11 @@ public class StudentInformation1 extends javax.swing.JFrame {
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenuFileRecord = new javax.swing.JMenu();
         jMenuItemHome = new javax.swing.JMenuItem();
+        jMenuItemProfile = new javax.swing.JMenuItem();
         jMenuItemStdList = new javax.swing.JMenuItem();
         jMenuItemStdList1 = new javax.swing.JMenuItem();
-        jMenuItemProfile = new javax.swing.JMenuItem();
+        jMenuItemcheckResult = new javax.swing.JMenuItem();
+        jMenuItemPayment = new javax.swing.JMenuItem();
         jMenuItemClose = new javax.swing.JMenuItem();
         jMenuEdit = new javax.swing.JMenu();
         jMenuItemUpStudent = new javax.swing.JMenuItem();
@@ -162,6 +164,19 @@ public class StudentInformation1 extends javax.swing.JFrame {
         });
         jMenuFileRecord.add(jMenuItemHome);
 
+        jMenuItemProfile.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.ALT_MASK | java.awt.event.InputEvent.CTRL_MASK));
+        jMenuItemProfile.setBackground(new java.awt.Color(255, 255, 255));
+        jMenuItemProfile.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        jMenuItemProfile.setForeground(new java.awt.Color(51, 51, 51));
+        jMenuItemProfile.setIcon(new javax.swing.ImageIcon(getClass().getResource("/schoolmgtsystem/IconImages/icons8_Profile.png"))); // NOI18N
+        jMenuItemProfile.setText("View Profile");
+        jMenuItemProfile.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemProfileActionPerformed(evt);
+            }
+        });
+        jMenuFileRecord.add(jMenuItemProfile);
+
         jMenuItemStdList.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_L, java.awt.event.InputEvent.CTRL_MASK));
         jMenuItemStdList.setBackground(new java.awt.Color(255, 255, 255));
         jMenuItemStdList.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
@@ -188,18 +203,31 @@ public class StudentInformation1 extends javax.swing.JFrame {
         });
         jMenuFileRecord.add(jMenuItemStdList1);
 
-        jMenuItemProfile.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.ALT_MASK | java.awt.event.InputEvent.CTRL_MASK));
-        jMenuItemProfile.setBackground(new java.awt.Color(255, 255, 255));
-        jMenuItemProfile.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
-        jMenuItemProfile.setForeground(new java.awt.Color(51, 51, 51));
-        jMenuItemProfile.setIcon(new javax.swing.ImageIcon(getClass().getResource("/schoolmgtsystem/IconImages/icons8_Profile.png"))); // NOI18N
-        jMenuItemProfile.setText("View Profile");
-        jMenuItemProfile.addActionListener(new java.awt.event.ActionListener() {
+        jMenuItemcheckResult.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.CTRL_MASK));
+        jMenuItemcheckResult.setBackground(new java.awt.Color(255, 255, 255));
+        jMenuItemcheckResult.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        jMenuItemcheckResult.setForeground(new java.awt.Color(51, 51, 51));
+        jMenuItemcheckResult.setIcon(new javax.swing.ImageIcon(getClass().getResource("/schoolmgtsystem/IconImages/icons8_Test_Results.png"))); // NOI18N
+        jMenuItemcheckResult.setText("Check Result");
+        jMenuItemcheckResult.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItemProfileActionPerformed(evt);
+                jMenuItemcheckResultActionPerformed(evt);
             }
         });
-        jMenuFileRecord.add(jMenuItemProfile);
+        jMenuFileRecord.add(jMenuItemcheckResult);
+
+        jMenuItemPayment.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.ALT_MASK));
+        jMenuItemPayment.setBackground(new java.awt.Color(255, 255, 255));
+        jMenuItemPayment.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        jMenuItemPayment.setForeground(new java.awt.Color(51, 51, 51));
+        jMenuItemPayment.setIcon(new javax.swing.ImageIcon(getClass().getResource("/schoolmgtsystem/IconImages/icons8_Money.png"))); // NOI18N
+        jMenuItemPayment.setText("Payment System");
+        jMenuItemPayment.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemPaymentActionPerformed(evt);
+            }
+        });
+        jMenuFileRecord.add(jMenuItemPayment);
 
         jMenuItemClose.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F4, java.awt.event.InputEvent.ALT_MASK));
         jMenuItemClose.setBackground(new java.awt.Color(255, 255, 255));
@@ -312,6 +340,16 @@ public class StudentInformation1 extends javax.swing.JFrame {
       handler.staffProfile();
     }//GEN-LAST:event_jMenuItemProfileActionPerformed
 
+    private void jMenuItemPaymentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemPaymentActionPerformed
+        new PaymentDetails().show();
+    }//GEN-LAST:event_jMenuItemPaymentActionPerformed
+
+    private void jMenuItemcheckResultActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemcheckResultActionPerformed
+
+        new ResultView().show();
+
+    }//GEN-LAST:event_jMenuItemcheckResultActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -356,11 +394,13 @@ public class StudentInformation1 extends javax.swing.JFrame {
     private javax.swing.JMenu jMenuFileRecord;
     private javax.swing.JMenuItem jMenuItemClose;
     private javax.swing.JMenuItem jMenuItemHome;
+    private javax.swing.JMenuItem jMenuItemPayment;
     private javax.swing.JMenuItem jMenuItemProfile;
     private javax.swing.JMenuItem jMenuItemStdList;
     private javax.swing.JMenuItem jMenuItemStdList1;
     private javax.swing.JMenuItem jMenuItemUpParent;
     private javax.swing.JMenuItem jMenuItemUpStudent;
+    private javax.swing.JMenuItem jMenuItemcheckResult;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;

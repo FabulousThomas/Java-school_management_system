@@ -61,8 +61,6 @@ public class StudentResult_Nursery extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         txtFullName = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
-        txtSurname = new javax.swing.JTextField();
         txtTotalScore = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         txtAverage = new javax.swing.JTextField();
@@ -117,158 +115,167 @@ public class StudentResult_Nursery extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel1.setText("Student ID");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 60, 107, -1));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, 107, -1));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel2.setText("First Name");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 100, 107, -1));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, 107, -1));
 
         txtFullName.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jPanel1.add(txtFullName, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 100, 167, -1));
-
-        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel3.setText("Surname");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 140, 107, -1));
-
-        txtSurname.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jPanel1.add(txtSurname, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 140, 167, -1));
+        jPanel1.add(txtFullName, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 140, 290, -1));
 
         txtTotalScore.setEditable(false);
         txtTotalScore.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        txtTotalScore.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtTotalScore.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtTotalScoreActionPerformed(evt);
             }
         });
-        jPanel1.add(txtTotalScore, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 450, 90, -1));
+        jPanel1.add(txtTotalScore, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 410, 90, -1));
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel5.setText("Total Score");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 450, 107, -1));
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 410, 107, -1));
 
         txtAverage.setEditable(false);
         txtAverage.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jPanel1.add(txtAverage, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 490, 90, -1));
+        txtAverage.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jPanel1.add(txtAverage, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 450, 90, -1));
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel6.setText("Average");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 490, 107, -1));
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 450, 107, -1));
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel7.setText("Social Habits");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 170, 130, -1));
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 260, 130, -1));
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel8.setText("Health Habits");
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 210, 130, -1));
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 300, 130, -1));
 
         txtHealth.setEditable(false);
         txtHealth.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jPanel1.add(txtHealth, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 210, 90, -1));
+        txtHealth.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jPanel1.add(txtHealth, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 300, 90, -1));
 
         txtSocial.setEditable(false);
         txtSocial.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jPanel1.add(txtSocial, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 170, 90, -1));
+        txtSocial.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jPanel1.add(txtSocial, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 260, 90, -1));
 
         txtElem.setEditable(false);
         txtElem.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jPanel1.add(txtElem, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 130, 90, -1));
+        txtElem.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jPanel1.add(txtElem, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 220, 90, -1));
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel9.setText("Elementary Science");
-        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 130, 160, -1));
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 220, 160, -1));
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel10.setText("Sound & Read");
-        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(517, 90, 130, -1));
+        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 180, 130, -1));
 
         txtSound.setEditable(false);
         txtSound.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jPanel1.add(txtSound, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 90, 90, -1));
+        txtSound.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jPanel1.add(txtSound, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 180, 90, -1));
 
         txtEnglish.setEditable(false);
         txtEnglish.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jPanel1.add(txtEnglish, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 50, 90, -1));
+        txtEnglish.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jPanel1.add(txtEnglish, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 140, 90, -1));
 
         jLabel12.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel12.setText("English");
-        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 50, 107, -1));
+        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 140, 107, -1));
 
         jSeparator1.setBackground(new java.awt.Color(0, 0, 255));
         jSeparator1.setForeground(new java.awt.Color(0, 0, 255));
-        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 270, 326, -1));
+        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 370, 326, -1));
 
         jLabel13.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel13.setText("Position");
-        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 530, 107, -1));
+        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 490, 107, -1));
 
         txtPosition.setEditable(false);
         txtPosition.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jPanel1.add(txtPosition, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 530, 90, -1));
+        txtPosition.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jPanel1.add(txtPosition, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 490, 90, -1));
 
         jLabel14.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel14.setText("Computer");
-        jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 250, 100, -1));
+        jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 340, 100, -1));
 
         txtComputer.setEditable(false);
         txtComputer.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jPanel1.add(txtComputer, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 250, 90, -1));
+        txtComputer.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jPanel1.add(txtComputer, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 340, 90, -1));
 
         txtVerbal.setEditable(false);
         txtVerbal.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        txtVerbal.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtVerbal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtVerbalActionPerformed(evt);
             }
         });
-        jPanel1.add(txtVerbal, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 410, 90, -1));
+        jPanel1.add(txtVerbal, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 500, 90, -1));
 
         jLabel15.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel15.setText("Verbal Reasoning");
-        jPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 410, 170, -1));
+        jPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 500, 170, -1));
 
         txtWriting.setEditable(false);
         txtWriting.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jPanel1.add(txtWriting, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 330, 90, -1));
+        txtWriting.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jPanel1.add(txtWriting, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 420, 90, -1));
 
         jLabel16.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel16.setText("Writing");
-        jPanel1.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 330, 80, -1));
+        jPanel1.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 420, 80, -1));
 
         txtStudentID.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jPanel1.add(txtStudentID, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 60, 167, -1));
+        txtStudentID.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jPanel1.add(txtStudentID, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 100, 90, -1));
 
         jLabel19.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel19.setText("Nursery Rhymes");
-        jPanel1.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 370, 150, -1));
+        jPanel1.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 460, 150, -1));
 
         txtRhymes.setEditable(false);
         txtRhymes.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jPanel1.add(txtRhymes, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 370, 90, -1));
+        txtRhymes.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jPanel1.add(txtRhymes, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 460, 90, -1));
 
         jLabel20.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel20.setText("Cultural Arts");
-        jPanel1.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 290, 120, -1));
+        jPanel1.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 380, 120, -1));
 
         txtArts.setEditable(false);
         txtArts.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jPanel1.add(txtArts, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 290, 90, -1));
+        txtArts.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jPanel1.add(txtArts, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 380, 90, -1));
 
         jLabel22.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel22.setText("Moral Instruction");
-        jPanel1.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 490, 160, -1));
+        jPanel1.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, 160, -1));
 
         txtMoral.setEditable(false);
         txtMoral.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jPanel1.add(txtMoral, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 490, 90, -1));
+        txtMoral.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jPanel1.add(txtMoral, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 300, 90, -1));
 
         jLabel28.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel28.setText("Quantitative R.");
-        jPanel1.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 450, 140, -1));
+        jPanel1.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 260, 140, -1));
 
         txtQuan.setEditable(false);
         txtQuan.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jPanel1.add(txtQuan, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 450, 90, -1));
+        txtQuan.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jPanel1.add(txtQuan, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 260, 90, -1));
 
         jPanel4.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 0, 810, 590));
 
@@ -783,7 +790,7 @@ public class StudentResult_Nursery extends javax.swing.JFrame {
 //            document.add(new Paragraph(subTitle));
             document.add(new Paragraph("Student ID: " + txtStudentID.getText()));
             document.add(new Paragraph("First Name: " + txtFullName.getText()));
-            document.add(new Paragraph("Surname: " + txtSurname.getText()));
+//            document.add(new Paragraph("Surname: " + txtSurname.getText()));
 //            document.add(new Paragraph("Course Code: " + txtCourseCode.getSelectedItem()));
 
             document.add(new Paragraph("DETAILED RESULT"));
@@ -1135,7 +1142,6 @@ public class StudentResult_Nursery extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel28;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -1160,7 +1166,6 @@ public class StudentResult_Nursery extends javax.swing.JFrame {
     private javax.swing.JTextField txtSocial;
     private javax.swing.JTextField txtSound;
     public static javax.swing.JTextField txtStudentID;
-    private javax.swing.JTextField txtSurname;
     private javax.swing.JTextField txtTotalScore;
     private javax.swing.JTextArea txtTranscript;
     private javax.swing.JTextField txtVerbal;

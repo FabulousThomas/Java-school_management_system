@@ -449,7 +449,8 @@ public class StudentSignup extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(this, count + "Successful");
 
             } catch (FileNotFoundException ex) {
-                Logger.getLogger(StudentSignup.class.getName()).log(Level.SEVERE, null, ex);
+                JOptionPane.showMessageDialog(this, "Requires Parent ID !");
+//                Logger.getLogger(StudentSignup.class.getName()).log(Level.SEVERE, null, ex);
             }
 
         } catch (ClassNotFoundException | SQLException ex) {
