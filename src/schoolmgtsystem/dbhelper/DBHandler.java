@@ -24,6 +24,7 @@ import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import schoolmgtsystem.view.AdminMgt;
 import static schoolmgtsystem.view.ListView.studentList;
+import schoolmgtsystem.view.PaymentDetails;
 import schoolmgtsystem.view.StaffProfile;
 import static schoolmgtsystem.view.StaffProfile.lblImage;
 import schoolmgtsystem.view.StudentInformation;
@@ -41,6 +42,7 @@ public class DBHandler extends Configs {
     ImageIcon imageIcon;
     JList list;
     String name;
+    String ID;
 
     public Connection getdbConnection() throws ClassNotFoundException, SQLException {
 
@@ -222,6 +224,30 @@ public class DBHandler extends Configs {
 
         return image;
 
+    }
+
+    public void getUserID() {
+
+        try {
+            String query = "SELECT StudentID FROM student_details";
+            PreparedStatement pst = getdbConnection().prepareStatement(query);
+            ResultSet rs = pst.executeQuery();
+            int counter = 0;
+            if (rs.next()) {
+                counter++;
+                ID = rs.getString("StudentID");
+                System.out.println(ID);
+                PaymentDetails pd = new PaymentDetails();
+                PaymentDetails.StudentID.setText(ID);
+                pd.show();
+            }
+            if (counter == 1) {
+
+            }
+
+        } catch (ClassNotFoundException | SQLException ex) {
+            Logger.getLogger(DBHandler.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
 }

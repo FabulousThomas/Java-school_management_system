@@ -5,11 +5,19 @@
  */
 package schoolmgtsystem.view;
 
+import java.awt.Color;
+import java.awt.Component;
 import java.awt.print.PrinterException;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+import schoolmgtsystem.dbhelper.DBHandler;
 
 /**
  *
@@ -20,6 +28,9 @@ public class PaymentDetails extends javax.swing.JFrame {
     /**
      * Creates new form PaymentDetails
      */
+    DBHandler handler = new DBHandler();
+//    int ID;
+
     public PaymentDetails() {
         initComponents();
         setLocationRelativeTo(null);
@@ -35,46 +46,51 @@ public class PaymentDetails extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        Area = new javax.swing.JTextArea();
+        btnClose = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        PaymentID = new javax.swing.JTextField();
+        jLabel14 = new javax.swing.JLabel();
+        StudentID = new javax.swing.JTextField();
+        jLabel15 = new javax.swing.JLabel();
+        Name = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         RegFee = new javax.swing.JTextField();
-        btnPrint = new javax.swing.JButton();
-        btnSubmit = new javax.swing.JButton();
-        btnPreview = new javax.swing.JButton();
+        jLabel8 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         TuitionFee = new javax.swing.JTextField();
-        jLabel8 = new javax.swing.JLabel();
-        ExtensionClass = new javax.swing.JTextField();
-        jLabel9 = new javax.swing.JLabel();
-        Books = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
         Uniform = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
         Cadigan = new javax.swing.JTextField();
-        jLabel12 = new javax.swing.JLabel();
-        Sports = new javax.swing.JTextField();
         jLabel13 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        Books = new javax.swing.JTextField();
         Shoe = new javax.swing.JTextField();
+        Sports = new javax.swing.JTextField();
+        jLabel12 = new javax.swing.JLabel();
+        btnSubmit = new javax.swing.JButton();
+        btnPreview = new javax.swing.JButton();
+        btEdit = new javax.swing.JButton();
+        btnPrint = new javax.swing.JButton();
+        btnUpdate = new javax.swing.JButton();
         btnReset = new javax.swing.JButton();
+        ExtensionClass = new javax.swing.JComboBox<>();
+        jPanel3 = new javax.swing.JPanel();
         jLabel22 = new javax.swing.JLabel();
         FirstAid = new javax.swing.JTextField();
-        PTA = new javax.swing.JTextField();
-        jLabel16 = new javax.swing.JLabel();
         jLabel23 = new javax.swing.JLabel();
+        ExamFee = new javax.swing.JTextField();
         jLabel24 = new javax.swing.JLabel();
         ResultBooklet = new javax.swing.JTextField();
-        ExamFee = new javax.swing.JTextField();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        Area = new javax.swing.JTextArea();
+        jLabel16 = new javax.swing.JLabel();
+        PTA = new javax.swing.JTextField();
         jLabel17 = new javax.swing.JLabel();
         Total = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
-        StudentID = new javax.swing.JTextField();
-        PaymentID = new javax.swing.JTextField();
-        Name = new javax.swing.JTextField();
-        jLabel15 = new javax.swing.JLabel();
-        btnClose = new javax.swing.JLabel();
+        btEdit1 = new javax.swing.JButton();
+        btnUpdate1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -84,199 +100,6 @@ public class PaymentDetails extends javax.swing.JFrame {
         jPanel1.setPreferredSize(new java.awt.Dimension(1253, 593));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 26)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 153, 204));
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("PAYMENT DETAILS");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 0, 300, 30));
-
-        jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 20)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel2.setText("Registration Fee:");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, 150, 30));
-
-        RegFee.setBackground(new java.awt.Color(255, 255, 255));
-        RegFee.setFont(new java.awt.Font("Times New Roman", 1, 20)); // NOI18N
-        RegFee.setForeground(new java.awt.Color(51, 51, 51));
-        RegFee.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        RegFee.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel1.add(RegFee, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 230, 180, 30));
-
-        btnPrint.setBackground(new java.awt.Color(0, 153, 204));
-        btnPrint.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        btnPrint.setForeground(new java.awt.Color(255, 255, 255));
-        btnPrint.setText("PRINT");
-        btnPrint.setBorderPainted(false);
-        btnPrint.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnPrintActionPerformed(evt);
-            }
-        });
-        jPanel1.add(btnPrint, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 530, 140, 36));
-
-        btnSubmit.setBackground(new java.awt.Color(0, 153, 204));
-        btnSubmit.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        btnSubmit.setForeground(new java.awt.Color(255, 255, 255));
-        btnSubmit.setText("SUBMIT");
-        btnSubmit.setBorderPainted(false);
-        jPanel1.add(btnSubmit, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 530, 140, 36));
-
-        btnPreview.setBackground(new java.awt.Color(0, 153, 204));
-        btnPreview.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        btnPreview.setForeground(new java.awt.Color(255, 255, 255));
-        btnPreview.setText("PREVIEW");
-        btnPreview.setBorderPainted(false);
-        btnPreview.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnPreviewActionPerformed(evt);
-            }
-        });
-        jPanel1.add(btnPreview, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 530, 140, 36));
-
-        jLabel7.setFont(new java.awt.Font("Times New Roman", 1, 20)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel7.setText("Tuition Fee:");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, 150, 30));
-
-        TuitionFee.setBackground(new java.awt.Color(255, 255, 255));
-        TuitionFee.setFont(new java.awt.Font("Times New Roman", 1, 20)); // NOI18N
-        TuitionFee.setForeground(new java.awt.Color(51, 51, 51));
-        TuitionFee.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        TuitionFee.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel1.add(TuitionFee, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 280, 180, 30));
-
-        jLabel8.setFont(new java.awt.Font("Times New Roman", 1, 20)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel8.setText("Extension Class:");
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 330, 150, 30));
-
-        ExtensionClass.setBackground(new java.awt.Color(255, 255, 255));
-        ExtensionClass.setFont(new java.awt.Font("Times New Roman", 1, 20)); // NOI18N
-        ExtensionClass.setForeground(new java.awt.Color(51, 51, 51));
-        ExtensionClass.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        ExtensionClass.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel1.add(ExtensionClass, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 330, 180, 30));
-
-        jLabel9.setFont(new java.awt.Font("Times New Roman", 1, 20)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel9.setText("Books:");
-        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 280, 140, 30));
-
-        Books.setBackground(new java.awt.Color(255, 255, 255));
-        Books.setFont(new java.awt.Font("Times New Roman", 1, 20)); // NOI18N
-        Books.setForeground(new java.awt.Color(51, 51, 51));
-        Books.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        Books.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel1.add(Books, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 280, 180, 30));
-
-        jLabel10.setFont(new java.awt.Font("Times New Roman", 1, 20)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel10.setText("Uniform:");
-        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 380, 150, 30));
-
-        Uniform.setBackground(new java.awt.Color(255, 255, 255));
-        Uniform.setFont(new java.awt.Font("Times New Roman", 1, 20)); // NOI18N
-        Uniform.setForeground(new java.awt.Color(51, 51, 51));
-        Uniform.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        Uniform.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel1.add(Uniform, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 380, 180, 30));
-
-        jLabel11.setFont(new java.awt.Font("Times New Roman", 1, 20)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel11.setText("Cadigan:");
-        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 430, 150, 30));
-
-        Cadigan.setBackground(new java.awt.Color(255, 255, 255));
-        Cadigan.setFont(new java.awt.Font("Times New Roman", 1, 20)); // NOI18N
-        Cadigan.setForeground(new java.awt.Color(51, 51, 51));
-        Cadigan.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        Cadigan.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel1.add(Cadigan, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 430, 180, 30));
-
-        jLabel12.setFont(new java.awt.Font("Times New Roman", 1, 20)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel12.setText("Sports Wear:");
-        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 330, 140, 30));
-
-        Sports.setBackground(new java.awt.Color(255, 255, 255));
-        Sports.setFont(new java.awt.Font("Times New Roman", 1, 20)); // NOI18N
-        Sports.setForeground(new java.awt.Color(51, 51, 51));
-        Sports.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        Sports.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel1.add(Sports, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 330, 180, 30));
-
-        jLabel13.setFont(new java.awt.Font("Times New Roman", 1, 20)); // NOI18N
-        jLabel13.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel13.setText("Shoe:");
-        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 230, 140, 30));
-
-        Shoe.setBackground(new java.awt.Color(255, 255, 255));
-        Shoe.setFont(new java.awt.Font("Times New Roman", 1, 20)); // NOI18N
-        Shoe.setForeground(new java.awt.Color(51, 51, 51));
-        Shoe.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        Shoe.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel1.add(Shoe, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 230, 180, 30));
-
-        btnReset.setBackground(new java.awt.Color(0, 153, 204));
-        btnReset.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        btnReset.setForeground(new java.awt.Color(255, 255, 255));
-        btnReset.setText("RESET");
-        btnReset.setBorderPainted(false);
-        btnReset.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnResetActionPerformed(evt);
-            }
-        });
-        jPanel1.add(btnReset, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 530, 140, 36));
-
-        jLabel22.setFont(new java.awt.Font("Times New Roman", 1, 20)); // NOI18N
-        jLabel22.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel22.setText("First Aid:");
-        jPanel1.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 180, 140, 30));
-
-        FirstAid.setBackground(new java.awt.Color(255, 255, 255));
-        FirstAid.setFont(new java.awt.Font("Times New Roman", 1, 20)); // NOI18N
-        FirstAid.setForeground(new java.awt.Color(51, 51, 51));
-        FirstAid.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        FirstAid.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel1.add(FirstAid, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 180, 180, 30));
-
-        PTA.setBackground(new java.awt.Color(255, 255, 255));
-        PTA.setFont(new java.awt.Font("Times New Roman", 1, 20)); // NOI18N
-        PTA.setForeground(new java.awt.Color(51, 51, 51));
-        PTA.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        PTA.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel1.add(PTA, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 380, 180, 30));
-
-        jLabel16.setFont(new java.awt.Font("Times New Roman", 1, 20)); // NOI18N
-        jLabel16.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel16.setText("PTA:");
-        jPanel1.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 380, 140, 30));
-
-        jLabel23.setFont(new java.awt.Font("Times New Roman", 1, 20)); // NOI18N
-        jLabel23.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel23.setText("Exam Fee:");
-        jPanel1.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 80, 140, 30));
-
-        jLabel24.setFont(new java.awt.Font("Times New Roman", 1, 20)); // NOI18N
-        jLabel24.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel24.setText("Result Booklet:");
-        jPanel1.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 130, 140, 30));
-
-        ResultBooklet.setBackground(new java.awt.Color(255, 255, 255));
-        ResultBooklet.setFont(new java.awt.Font("Times New Roman", 1, 20)); // NOI18N
-        ResultBooklet.setForeground(new java.awt.Color(51, 51, 51));
-        ResultBooklet.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        ResultBooklet.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel1.add(ResultBooklet, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 130, 180, 30));
-
-        ExamFee.setBackground(new java.awt.Color(255, 255, 255));
-        ExamFee.setFont(new java.awt.Font("Times New Roman", 1, 20)); // NOI18N
-        ExamFee.setForeground(new java.awt.Color(51, 51, 51));
-        ExamFee.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        ExamFee.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel1.add(ExamFee, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 80, 180, 30));
-
         Area.setEditable(false);
         Area.setColumns(20);
         Area.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
@@ -284,54 +107,7 @@ public class PaymentDetails extends javax.swing.JFrame {
         Area.setRows(5);
         jScrollPane1.setViewportView(Area);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 60, 380, 500));
-
-        jLabel17.setFont(new java.awt.Font("Times New Roman", 1, 20)); // NOI18N
-        jLabel17.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel17.setText("TOTAL:");
-        jPanel1.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 430, 140, 30));
-
-        Total.setEditable(false);
-        Total.setBackground(new java.awt.Color(255, 255, 255));
-        Total.setFont(new java.awt.Font("Times New Roman", 1, 20)); // NOI18N
-        Total.setForeground(new java.awt.Color(51, 51, 51));
-        Total.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel1.add(Total, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 430, 180, 30));
-
-        jLabel3.setFont(new java.awt.Font("Times New Roman", 1, 20)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel3.setText("Payment ID:");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 150, 30));
-
-        jLabel14.setFont(new java.awt.Font("Times New Roman", 1, 20)); // NOI18N
-        jLabel14.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel14.setText("Student ID:");
-        jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 150, 30));
-
-        StudentID.setBackground(new java.awt.Color(255, 255, 255));
-        StudentID.setFont(new java.awt.Font("Times New Roman", 1, 20)); // NOI18N
-        StudentID.setForeground(new java.awt.Color(51, 51, 51));
-        StudentID.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        StudentID.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel1.add(StudentID, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 130, 80, 30));
-
-        PaymentID.setBackground(new java.awt.Color(255, 255, 255));
-        PaymentID.setFont(new java.awt.Font("Times New Roman", 1, 20)); // NOI18N
-        PaymentID.setForeground(new java.awt.Color(51, 51, 51));
-        PaymentID.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        PaymentID.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel1.add(PaymentID, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 80, 80, 30));
-
-        Name.setBackground(new java.awt.Color(255, 255, 255));
-        Name.setFont(new java.awt.Font("Times New Roman", 1, 20)); // NOI18N
-        Name.setForeground(new java.awt.Color(51, 51, 51));
-        Name.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel1.add(Name, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 180, 300, 30));
-
-        jLabel15.setFont(new java.awt.Font("Times New Roman", 1, 20)); // NOI18N
-        jLabel15.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel15.setText("Student Name:");
-        jPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, 150, 30));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 50, 380, 520));
 
         btnClose.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         btnClose.setIcon(new javax.swing.ImageIcon(getClass().getResource("/schoolmgtsystem/IconImages/icons8_Xbox_X.png"))); // NOI18N
@@ -342,6 +118,303 @@ public class PaymentDetails extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnClose, new org.netbeans.lib.awtextra.AbsoluteConstraints(1220, 0, 30, -1));
+
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "PAYMENT DETAILS", javax.swing.border.TitledBorder.LEADING, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Times New Roman", 1, 24), new java.awt.Color(51, 51, 51))); // NOI18N
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel3.setFont(new java.awt.Font("Times New Roman", 1, 17)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel3.setText("Payment ID:");
+        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 50, 130, -1));
+
+        PaymentID.setEditable(false);
+        PaymentID.setBackground(new java.awt.Color(255, 255, 255));
+        PaymentID.setFont(new java.awt.Font("Times New Roman", 1, 20)); // NOI18N
+        PaymentID.setForeground(new java.awt.Color(51, 51, 51));
+        PaymentID.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        PaymentID.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel2.add(PaymentID, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 50, 80, 25));
+
+        jLabel14.setFont(new java.awt.Font("Times New Roman", 1, 17)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel14.setText("Student ID:");
+        jPanel2.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 90, 130, -1));
+
+        StudentID.setBackground(new java.awt.Color(255, 255, 255));
+        StudentID.setFont(new java.awt.Font("Times New Roman", 1, 20)); // NOI18N
+        StudentID.setForeground(new java.awt.Color(51, 51, 51));
+        StudentID.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        StudentID.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel2.add(StudentID, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 90, 80, 25));
+
+        jLabel15.setFont(new java.awt.Font("Times New Roman", 1, 17)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel15.setText("Student Name:");
+        jPanel2.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 130, 130, -1));
+
+        Name.setBackground(new java.awt.Color(255, 255, 255));
+        Name.setFont(new java.awt.Font("Times New Roman", 1, 20)); // NOI18N
+        Name.setForeground(new java.awt.Color(51, 51, 51));
+        Name.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel2.add(Name, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 130, 320, 25));
+
+        jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 17)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel2.setText("Registration Fee:");
+        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 170, 130, -1));
+
+        RegFee.setBackground(new java.awt.Color(255, 255, 255));
+        RegFee.setFont(new java.awt.Font("Times New Roman", 1, 20)); // NOI18N
+        RegFee.setForeground(new java.awt.Color(51, 51, 51));
+        RegFee.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        RegFee.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel2.add(RegFee, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 170, 90, 25));
+
+        jLabel8.setFont(new java.awt.Font("Times New Roman", 1, 17)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel8.setText("Extension Class:");
+        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 130, 130, -1));
+
+        jLabel7.setFont(new java.awt.Font("Times New Roman", 1, 17)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel7.setText("Tuition Fee:");
+        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 170, 130, -1));
+
+        TuitionFee.setBackground(new java.awt.Color(255, 255, 255));
+        TuitionFee.setFont(new java.awt.Font("Times New Roman", 1, 20)); // NOI18N
+        TuitionFee.setForeground(new java.awt.Color(51, 51, 51));
+        TuitionFee.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        TuitionFee.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel2.add(TuitionFee, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 170, 90, 25));
+
+        jLabel10.setFont(new java.awt.Font("Times New Roman", 1, 17)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel10.setText("Uniform:");
+        jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 170, 130, -1));
+
+        Uniform.setBackground(new java.awt.Color(255, 255, 255));
+        Uniform.setFont(new java.awt.Font("Times New Roman", 1, 20)); // NOI18N
+        Uniform.setForeground(new java.awt.Color(51, 51, 51));
+        Uniform.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        Uniform.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel2.add(Uniform, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 170, 90, 25));
+
+        jLabel11.setFont(new java.awt.Font("Times New Roman", 1, 17)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel11.setText("Cadigan:");
+        jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 50, 130, -1));
+
+        Cadigan.setBackground(new java.awt.Color(255, 255, 255));
+        Cadigan.setFont(new java.awt.Font("Times New Roman", 1, 20)); // NOI18N
+        Cadigan.setForeground(new java.awt.Color(51, 51, 51));
+        Cadigan.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        Cadigan.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel2.add(Cadigan, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 50, 90, 25));
+
+        jLabel13.setFont(new java.awt.Font("Times New Roman", 1, 17)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel13.setText("Shoe:");
+        jPanel2.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 90, 120, -1));
+
+        jLabel9.setFont(new java.awt.Font("Times New Roman", 1, 17)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel9.setText("Books:");
+        jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 50, 120, -1));
+
+        Books.setBackground(new java.awt.Color(255, 255, 255));
+        Books.setFont(new java.awt.Font("Times New Roman", 1, 20)); // NOI18N
+        Books.setForeground(new java.awt.Color(51, 51, 51));
+        Books.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        Books.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel2.add(Books, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 50, 90, 25));
+
+        Shoe.setBackground(new java.awt.Color(255, 255, 255));
+        Shoe.setFont(new java.awt.Font("Times New Roman", 1, 20)); // NOI18N
+        Shoe.setForeground(new java.awt.Color(51, 51, 51));
+        Shoe.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        Shoe.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel2.add(Shoe, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 90, 90, 25));
+
+        Sports.setBackground(new java.awt.Color(255, 255, 255));
+        Sports.setFont(new java.awt.Font("Times New Roman", 1, 20)); // NOI18N
+        Sports.setForeground(new java.awt.Color(51, 51, 51));
+        Sports.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        Sports.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel2.add(Sports, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 90, 90, 25));
+
+        jLabel12.setFont(new java.awt.Font("Times New Roman", 1, 17)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel12.setText("Sports Wear:");
+        jPanel2.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 90, 120, -1));
+
+        btnSubmit.setBackground(new java.awt.Color(0, 153, 204));
+        btnSubmit.setFont(new java.awt.Font("Times New Roman", 1, 13)); // NOI18N
+        btnSubmit.setForeground(new java.awt.Color(255, 255, 255));
+        btnSubmit.setText("SUBMIT");
+        btnSubmit.setBorderPainted(false);
+        btnSubmit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSubmitActionPerformed(evt);
+            }
+        });
+        jPanel2.add(btnSubmit, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 230, -1, 30));
+
+        btnPreview.setBackground(new java.awt.Color(0, 153, 204));
+        btnPreview.setFont(new java.awt.Font("Times New Roman", 1, 13)); // NOI18N
+        btnPreview.setForeground(new java.awt.Color(255, 255, 255));
+        btnPreview.setText("PREVIEW");
+        btnPreview.setBorderPainted(false);
+        btnPreview.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPreviewActionPerformed(evt);
+            }
+        });
+        jPanel2.add(btnPreview, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 230, 100, 30));
+
+        btEdit.setBackground(new java.awt.Color(0, 153, 204));
+        btEdit.setFont(new java.awt.Font("Times New Roman", 1, 13)); // NOI18N
+        btEdit.setForeground(new java.awt.Color(255, 255, 255));
+        btEdit.setText("EDIT");
+        btEdit.setBorderPainted(false);
+        btEdit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btEditActionPerformed(evt);
+            }
+        });
+        jPanel2.add(btEdit, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 230, 70, 30));
+
+        btnPrint.setBackground(new java.awt.Color(0, 153, 204));
+        btnPrint.setFont(new java.awt.Font("Times New Roman", 1, 13)); // NOI18N
+        btnPrint.setForeground(new java.awt.Color(255, 255, 255));
+        btnPrint.setText("PRINT");
+        btnPrint.setBorderPainted(false);
+        btnPrint.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPrintActionPerformed(evt);
+            }
+        });
+        jPanel2.add(btnPrint, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 230, -1, 30));
+
+        btnUpdate.setBackground(new java.awt.Color(0, 153, 204));
+        btnUpdate.setFont(new java.awt.Font("Times New Roman", 1, 13)); // NOI18N
+        btnUpdate.setForeground(new java.awt.Color(255, 255, 255));
+        btnUpdate.setText("UPDATE");
+        btnUpdate.setBorderPainted(false);
+        btnUpdate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnUpdateActionPerformed(evt);
+            }
+        });
+        jPanel2.add(btnUpdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 230, 90, 30));
+
+        btnReset.setBackground(new java.awt.Color(0, 153, 204));
+        btnReset.setFont(new java.awt.Font("Times New Roman", 1, 13)); // NOI18N
+        btnReset.setForeground(new java.awt.Color(255, 255, 255));
+        btnReset.setText("RESET");
+        btnReset.setBorderPainted(false);
+        btnReset.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnResetActionPerformed(evt);
+            }
+        });
+        jPanel2.add(btnReset, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 230, 80, 30));
+
+        ExtensionClass.setFont(new java.awt.Font("Times New Roman", 1, 20)); // NOI18N
+        ExtensionClass.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECT", "SS1", "SS2", "SS3", "JSS1", "JSS2", "JSS3", "PRIMARY1", "PRIMARY2", "PRIMARY3", "PRIMARY4", "PRIMARY5", "PRIMARY6", "NURSERY1", "NURSERY2" }));
+        jPanel2.add(ExtensionClass, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 130, 120, 25));
+
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 850, 290));
+
+        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "ADDITIONAL", javax.swing.border.TitledBorder.LEADING, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Times New Roman", 1, 24), new java.awt.Color(51, 51, 51))); // NOI18N
+        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel22.setFont(new java.awt.Font("Times New Roman", 1, 17)); // NOI18N
+        jLabel22.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel22.setText("First Aid:");
+        jPanel3.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 60, 120, -1));
+
+        FirstAid.setBackground(new java.awt.Color(255, 255, 255));
+        FirstAid.setFont(new java.awt.Font("Times New Roman", 1, 20)); // NOI18N
+        FirstAid.setForeground(new java.awt.Color(51, 51, 51));
+        FirstAid.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        FirstAid.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel3.add(FirstAid, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 60, 90, 25));
+
+        jLabel23.setFont(new java.awt.Font("Times New Roman", 1, 17)); // NOI18N
+        jLabel23.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel23.setText("Exam Fee:");
+        jPanel3.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 60, 120, -1));
+
+        ExamFee.setBackground(new java.awt.Color(255, 255, 255));
+        ExamFee.setFont(new java.awt.Font("Times New Roman", 1, 20)); // NOI18N
+        ExamFee.setForeground(new java.awt.Color(51, 51, 51));
+        ExamFee.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        ExamFee.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel3.add(ExamFee, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 60, 90, 25));
+
+        jLabel24.setFont(new java.awt.Font("Times New Roman", 1, 17)); // NOI18N
+        jLabel24.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel24.setText("Result Booklet:");
+        jPanel3.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 110, 120, -1));
+
+        ResultBooklet.setBackground(new java.awt.Color(255, 255, 255));
+        ResultBooklet.setFont(new java.awt.Font("Times New Roman", 1, 20)); // NOI18N
+        ResultBooklet.setForeground(new java.awt.Color(51, 51, 51));
+        ResultBooklet.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        ResultBooklet.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel3.add(ResultBooklet, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 110, 90, 25));
+
+        jLabel16.setFont(new java.awt.Font("Times New Roman", 1, 17)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel16.setText("PTA:");
+        jPanel3.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 110, 120, -1));
+
+        PTA.setBackground(new java.awt.Color(255, 255, 255));
+        PTA.setFont(new java.awt.Font("Times New Roman", 1, 20)); // NOI18N
+        PTA.setForeground(new java.awt.Color(51, 51, 51));
+        PTA.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        PTA.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel3.add(PTA, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 110, 90, 25));
+
+        jLabel17.setFont(new java.awt.Font("Times New Roman", 1, 17)); // NOI18N
+        jLabel17.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel17.setText("TOTAL:");
+        jPanel3.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 60, 120, -1));
+
+        Total.setEditable(false);
+        Total.setBackground(new java.awt.Color(255, 255, 255));
+        Total.setFont(new java.awt.Font("Times New Roman", 1, 20)); // NOI18N
+        Total.setForeground(new java.awt.Color(51, 51, 51));
+        Total.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel3.add(Total, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 60, 90, 25));
+
+        btEdit1.setBackground(new java.awt.Color(0, 153, 204));
+        btEdit1.setFont(new java.awt.Font("Times New Roman", 1, 13)); // NOI18N
+        btEdit1.setForeground(new java.awt.Color(255, 255, 255));
+        btEdit1.setText("EDIT");
+        btEdit1.setBorderPainted(false);
+        btEdit1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btEdit1ActionPerformed(evt);
+            }
+        });
+        jPanel3.add(btEdit1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 170, 70, 30));
+
+        btnUpdate1.setBackground(new java.awt.Color(0, 153, 204));
+        btnUpdate1.setFont(new java.awt.Font("Times New Roman", 1, 13)); // NOI18N
+        btnUpdate1.setForeground(new java.awt.Color(255, 255, 255));
+        btnUpdate1.setText("UPDATE");
+        btnUpdate1.setBorderPainted(false);
+        btnUpdate1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnUpdate1ActionPerformed(evt);
+            }
+        });
+        jPanel3.add(btnUpdate1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 170, 90, 30));
+
+        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 330, 850, 240));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -373,30 +446,22 @@ public class PaymentDetails extends javax.swing.JFrame {
 //
 //        int sum = regfee + tuition + uniform + cadigan + exam + result + first + shoe + book + sport + pta;
 //        Total.setText(Integer.toString(sum));
-        double[] R = new double[14];
-
-        R[0] = Double.parseDouble(RegFee.getText());
-        R[1] = Double.parseDouble(TuitionFee.getText());
-        R[2] = Double.parseDouble(Uniform.getText());
-        R[3] = Double.parseDouble(Cadigan.getText());
-        R[4] = Double.parseDouble(ExamFee.getText());
-        R[5] = Double.parseDouble(ResultBooklet.getText());
-        R[6] = Double.parseDouble(FirstAid.getText());
-        R[7] = Double.parseDouble(Shoe.getText());
-        R[8] = Double.parseDouble(Books.getText());
-        R[9] = Double.parseDouble(Sports.getText());
-        R[10] = Double.parseDouble(PTA.getText());
-
-//        R[20] = (R[0] + R[1] + R[2] + R[3] + R[4] + R[5] + R[6] + R[7] + R[8] + R[9] + R[10] + R[11] + R[12] + R[13] + R[14]
-//                + R[15] + R[16] + R[17] + R[18] + R[19]) / 20;
-        //R[9] = (R[0] + R[1] + R[2] + R[3] + R[5] + R[6] + R[7])/7;
-        R[12] = R[0] + R[1] + R[2] + R[3] + R[4] + R[5] + R[6] + R[7] + R[8] + R[9] + R[10];
-
-//        String Average = String.format("%.0f", R[10]);
-//        txtAverage.setText(Average);
-        String total = String.format("%.0f", R[12]);
-        Total.setText(total);
-
+//        double[] R = new double[14];
+//
+//        R[0] = Double.parseDouble(RegFee.getText());
+//        R[1] = Double.parseDouble(TuitionFee.getText());
+//        R[2] = Double.parseDouble(Uniform.getText());
+//        R[3] = Double.parseDouble(Cadigan.getText());
+//        R[4] = Double.parseDouble(ExamFee.getText());
+//        R[5] = Double.parseDouble(ResultBooklet.getText());
+//        R[6] = Double.parseDouble(FirstAid.getText());
+//        R[7] = Double.parseDouble(Shoe.getText());
+//        R[8] = Double.parseDouble(Books.getText());
+//        R[9] = Double.parseDouble(Sports.getText());
+//        R[10] = Double.parseDouble(PTA.getText());
+//        R[12] = R[0] + R[1] + R[2] + R[3] + R[4] + R[5] + R[6] + R[7] + R[8] + R[9] + R[10];
+//        String total = String.format("%.0f", R[12]);
+//        Total.setText(total);
         Date obj = new Date();
         String date = obj.toLocaleString();
 
@@ -408,7 +473,7 @@ public class PaymentDetails extends javax.swing.JFrame {
         Area.setText(Area.getText() + "Student Name:                " + Name.getText() + "\n");
         Area.setText(Area.getText() + "Registration Fee:  \t" + RegFee.getText() + "\n");
         Area.setText(Area.getText() + "Tuition Fee:       \t" + TuitionFee.getText() + "\n");
-        Area.setText(Area.getText() + "Extension Class:   \t" + ExtensionClass.getText() + "\n");
+        Area.setText(Area.getText() + "Extension Class:   \t" + ExtensionClass.getSelectedItem() + "\n");
         Area.setText(Area.getText() + "Uniform:           \t" + Uniform.getText() + "\n");
         Area.setText(Area.getText() + "Cadigan:           \t" + Cadigan.getText() + "\n");
         Area.setText(Area.getText() + "Exam Fee:          \t" + ExamFee.getText() + "\n");
@@ -437,8 +502,9 @@ public class PaymentDetails extends javax.swing.JFrame {
         Area.setText("");
         PaymentID.setText("");
         StudentID.setText("");
+//        StudentID1.setSelectedItem("");
         RegFee.setText("");
-        ExtensionClass.setText("");
+        ExtensionClass.setSelectedItem("");
         Name.setText("");
         TuitionFee.setText("");
         ExamFee.setText("");
@@ -459,6 +525,230 @@ public class PaymentDetails extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_btnCloseMouseClicked
 
+    private void btnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitActionPerformed
+
+        handler = new DBHandler();
+        String ID = StudentID.getText();
+        String total = Total.getText();
+        ResultSet rs = null;
+
+        String insert = "INSERT INTO payment_details(StudentID,StudentName,RegistrationFee,TuitionFee,ExtensionClass,"
+                + "Uniform,Cadigan,SportsWear,Shoe,Books) VALUES(?,?,?,?,?,?,?,?,?,?)";
+        try {
+            try (PreparedStatement pst = handler.getdbConnection().prepareStatement(insert)) {
+                pst.setString(1, StudentID.getText());
+                pst.setString(2, Name.getText());
+                pst.setString(3, RegFee.getText());
+                pst.setString(4, TuitionFee.getText());
+                pst.setString(5, (String) ExtensionClass.getSelectedItem());
+                pst.setString(6, Uniform.getText());
+                pst.setString(7, Cadigan.getText());
+                pst.setString(8, Sports.getText());
+                pst.setString(9, Shoe.getText());
+                pst.setString(10, Books.getText());
+                pst.executeUpdate();
+                JOptionPane.showMessageDialog(this, "Inserted !");
+            }
+
+        } catch (ClassNotFoundException | SQLException ex) {
+            Logger.getLogger(PaymentDetails.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        String select = "SELECT * FROM payment_details WHERE StudentID=?";
+        PreparedStatement pst;
+        try {
+            pst = handler.getdbConnection().prepareStatement(select);
+            pst.setString(1, StudentID.getText());
+            rs = pst.executeQuery();
+            while (rs.next()) {
+                ID = rs.getString("PaymentID");
+                total = rs.getString("Total");
+                System.out.println(ID);
+                System.out.println(total);
+                PaymentID.setText(ID);
+                Total.setText(total);
+            }
+
+        } catch (ClassNotFoundException | SQLException ex) {
+            Logger.getLogger(PaymentDetails.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+
+    }//GEN-LAST:event_btnSubmitActionPerformed
+
+    private void btEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btEditActionPerformed
+        String uID = StudentID.getText();
+        if (!StudentID.getText().isEmpty()) {
+            String select = "SELECT * FROM payment_details WHERE StudentID=?";
+            PreparedStatement pst;
+            try {
+                pst = handler.getdbConnection().prepareStatement(select);
+                pst.setString(1, StudentID.getText());
+                ResultSet rs;
+                rs = pst.executeQuery();
+                if (rs.next()) {
+                    String PID = rs.getString("PaymentID");
+                    PaymentID.setText(PID);
+                    PaymentID.setEditable(false);
+                    String SID = rs.getString("StudentID");
+                    StudentID.setText(SID);
+                    String name = rs.getString("StudentName");
+                    Name.setText(name);
+                    String regfee = rs.getString("RegistrationFee");
+                    RegFee.setText(regfee);
+                    String tuition = rs.getString("TuitionFee");
+                    TuitionFee.setText(tuition);
+                    String extension = rs.getString("ExtensionClass");
+                    ExtensionClass.setSelectedItem(extension);
+                    String exam = rs.getString("ExamFee");
+                    ExamFee.setText(exam);
+                    String result = rs.getString("ResultBooklet");
+                    ResultBooklet.setText(result);
+                    String first = rs.getString("FirstAid");
+                    FirstAid.setText(first);
+                    String pta = rs.getString("PTA");
+                    PTA.setText(pta);
+                    String uniform = rs.getString("Uniform");
+                    Uniform.setText(uniform);
+                    String cadigan = rs.getString("Cadigan");
+                    Cadigan.setText(cadigan);
+                    String sport = rs.getString("SportsWear");
+                    Sports.setText(sport);
+                    String shoe = rs.getString("Shoe");
+                    Shoe.setText(shoe);
+                    String book = rs.getString("Books");
+                    Books.setText(book);
+                    pst.close();
+                    rs.close();
+                    StudentID.setBackground(Color.white);
+                } else {
+                    JOptionPane.showMessageDialog(this, "No Student ID as " + uID);
+                    JTextField temp = null;
+                    for (Component C : jPanel1.getComponents()) {
+                        if (C.getClass().toString().contains("javax.swing.JTextField")) {
+                            temp = (JTextField) C;
+                            temp.setText(null);
+                        }
+                    }
+                }
+
+            } catch (ClassNotFoundException | SQLException ex) {
+                Logger.getLogger(PaymentDetails.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        } else {
+            JOptionPane.showMessageDialog(this, "Requires Student ID !");
+            StudentID.setBackground(Color.red);
+        }
+
+    }//GEN-LAST:event_btEditActionPerformed
+
+    private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
+
+        String insert = "UPDATE payment_details SET StudentName=?,RegistrationFee=?,TuitionFee=?,"
+                + "ExtensionClass=?,ExamFee=?,ResultBooklet=?,FirstAid=?,PTA=?,Uniform=?,"
+                + "Cadigan=?,SportsWear=?,Shoe=?,Books=? WHERE StudentID=?";
+        try {
+            try (PreparedStatement pst = handler.getdbConnection().prepareStatement(insert)) {
+
+                pst.setString(1, Name.getText());
+                pst.setString(2, RegFee.getText());
+                pst.setString(3, TuitionFee.getText());
+                pst.setString(4, (String) ExtensionClass.getSelectedItem());
+                pst.setString(5, ExamFee.getText());
+                pst.setString(6, ResultBooklet.getText());
+                pst.setString(7, FirstAid.getText());
+                pst.setString(8, PTA.getText());
+                pst.setString(9, Uniform.getText());
+                pst.setString(10, Cadigan.getText());
+                pst.setString(11, Sports.getText());
+                pst.setString(12, Shoe.getText());
+                pst.setString(13, Books.getText());
+                pst.setString(14, StudentID.getText());
+                pst.executeUpdate();
+                JOptionPane.showMessageDialog(this, "Updated !");
+            }
+
+        } catch (ClassNotFoundException | SQLException ex) {
+            Logger.getLogger(PaymentDetails.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+    }//GEN-LAST:event_btnUpdateActionPerformed
+
+    private void btEdit1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btEdit1ActionPerformed
+        String uID = StudentID.getText();
+        if (!StudentID.getText().isEmpty()) {
+            String select = "SELECT * FROM payment_details WHERE StudentID=?";
+            PreparedStatement pst;
+            try {
+                pst = handler.getdbConnection().prepareStatement(select);
+                pst.setString(1, StudentID.getText());
+                ResultSet rs;
+                rs = pst.executeQuery();
+                if (rs.next()) {
+                    String PID = rs.getString("PaymentID");
+                    PaymentID.setText(PID);
+                    PaymentID.setEditable(false);
+                    String SID = rs.getString("StudentID");
+                    StudentID.setText(SID);
+                    String name = rs.getString("StudentName");
+                    Name.setText(name);
+                    String exam = rs.getString("ExamFee");
+                    ExamFee.setText(exam);
+                    String result = rs.getString("ResultBooklet");
+                    ResultBooklet.setText(result);
+                    String first = rs.getString("FirstAid");
+                    FirstAid.setText(first);
+                    String pta = rs.getString("PTA");
+                    PTA.setText(pta);
+                    pst.close();
+                    rs.close();
+                    StudentID.setBackground(Color.white);
+                } else {
+                    JOptionPane.showMessageDialog(this, "No Student ID as " + uID);
+                    JTextField temp = null;
+                    for (Component C : jPanel2.getComponents()) {
+                        if (C.getClass().toString().contains("javax.swing.JTextField")) {
+                            temp = (JTextField) C;
+                            temp.setText(null);
+                        }
+                    }
+                    JTextField temp1 = null;
+                    for (Component C : jPanel3.getComponents()) {
+                        if (C.getClass().toString().contains("javax.swing.JTextField")) {
+                            temp1 = (JTextField) C;
+                            temp1.setText(null);
+                        }
+                    }
+                }
+
+            } catch (ClassNotFoundException | SQLException ex) {
+                Logger.getLogger(PaymentDetails.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        } else {
+            JOptionPane.showMessageDialog(this, "Requires Student ID !");
+            StudentID.setBackground(Color.red);
+        }
+    }//GEN-LAST:event_btEdit1ActionPerformed
+
+    private void btnUpdate1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdate1ActionPerformed
+        String insert = "UPDATE payment_details SET ExamFee=?,ResultBooklet=?,FirstAid=?,PTA=? WHERE StudentID=?";
+        try {
+            try (PreparedStatement pst = handler.getdbConnection().prepareStatement(insert)) {
+
+                pst.setString(1, ExamFee.getText());
+                pst.setString(2, ResultBooklet.getText());
+                pst.setString(3, FirstAid.getText());
+                pst.setString(4, PTA.getText());
+                pst.setString(5, StudentID.getText());
+                pst.executeUpdate();
+                JOptionPane.showMessageDialog(this, "Updated !");
+            }
+
+        } catch (ClassNotFoundException | SQLException ex) {
+            Logger.getLogger(PaymentDetails.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_btnUpdate1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -475,49 +765,46 @@ public class PaymentDetails extends javax.swing.JFrame {
                     break;
                 }
             }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(PaymentDetails.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(PaymentDetails.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(PaymentDetails.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(PaymentDetails.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
+        //</editor-fold>
+
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new PaymentDetails().setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            new PaymentDetails().setVisible(true);
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextArea Area;
+    public static javax.swing.JTextArea Area;
     private javax.swing.JTextField Books;
     private javax.swing.JTextField Cadigan;
     private javax.swing.JTextField ExamFee;
-    private javax.swing.JTextField ExtensionClass;
+    private javax.swing.JComboBox<String> ExtensionClass;
     private javax.swing.JTextField FirstAid;
     private javax.swing.JTextField Name;
     private javax.swing.JTextField PTA;
-    private javax.swing.JTextField PaymentID;
+    public static javax.swing.JTextField PaymentID;
     private javax.swing.JTextField RegFee;
     private javax.swing.JTextField ResultBooklet;
     private javax.swing.JTextField Shoe;
     private javax.swing.JTextField Sports;
-    private javax.swing.JTextField StudentID;
+    public static javax.swing.JTextField StudentID;
     private javax.swing.JTextField Total;
     private javax.swing.JTextField TuitionFee;
     private javax.swing.JTextField Uniform;
+    private javax.swing.JButton btEdit;
+    private javax.swing.JButton btEdit1;
     private javax.swing.JLabel btnClose;
     private javax.swing.JButton btnPreview;
     private javax.swing.JButton btnPrint;
     private javax.swing.JButton btnReset;
     private javax.swing.JButton btnSubmit;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton btnUpdate;
+    private javax.swing.JButton btnUpdate1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
@@ -535,6 +822,8 @@ public class PaymentDetails extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }
