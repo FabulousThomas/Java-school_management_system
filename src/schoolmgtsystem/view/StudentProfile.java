@@ -13,14 +13,13 @@ import java.io.InputStream;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileNameExtensionFilter;
-import schoolmgtsystem.dbhelper.DBHandler;
+import schoolmgtsystem.model.dbhelper.DBHandler;
 
 /**
  *
@@ -537,9 +536,9 @@ public class StudentProfile extends javax.swing.JFrame {
                     StudentResult_Primary.txtStudentID.setEditable(false);
                     rp.show();
                 } else if (adm.startsWith("N")) {
-                    ResultNursery.txtStudentID.setText(sid);
-                    ResultNursery.txtFullName.setText(sname);
-                    ResultNursery.txtStudentID.setEditable(false);
+                    StudentResult_Nursery.txtStudentID.setText(sid);
+                    StudentResult_Nursery.txtFullName.setText(sname);
+                    StudentResult_Nursery.txtStudentID.setEditable(false);
                     rn.show();
                 }
             }
@@ -567,15 +566,11 @@ public class StudentProfile extends javax.swing.JFrame {
                     break;
                 }
             }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(StudentProfile.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(StudentProfile.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(StudentProfile.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(StudentProfile.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+
         //</editor-fold>
 
         /* Create and display the form */

@@ -30,8 +30,8 @@ import javax.swing.JOptionPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
-import schoolmgtsystem.dbhelper.DBHandler;
-import schoolmgtsystem.model.UserResult;
+import schoolmgtsystem.model.dbhelper.DBHandler;
+import schoolmgtsystem.controller.UserResult;
 
 /**
  *
@@ -83,7 +83,7 @@ public class ExamResult extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         txtStudentID = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        txtFirstName = new javax.swing.JTextField();
+        txtFullName = new javax.swing.JTextField();
         txtTotalScore = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         txtAverage = new javax.swing.JTextField();
@@ -168,7 +168,7 @@ public class ExamResult extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Student ID", "First Name", "Surname", "Course Code", "Maths", "English", "Accounting", "Commerce", "Chemistry", "Government", "Biology", "Geography", "Physics", "Total Score", "Average", "Ranking"
+                "Student ID", "Full Name", "Maths", "English", "Accounting", "Commerce", "Chemistry", "Government", "Biology", "Geography", "Physics", "Total Score", "Average", "Ranking"
             }
         ));
         jScrollPane2.setViewportView(jTable1);
@@ -253,9 +253,9 @@ public class ExamResult extends javax.swing.JFrame {
         jLabel2.setText("Full Name");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 107, -1));
 
-        txtFirstName.setBackground(new java.awt.Color(255, 255, 255));
-        txtFirstName.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jPanel1.add(txtFirstName, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 90, 270, -1));
+        txtFullName.setBackground(new java.awt.Color(255, 255, 255));
+        txtFullName.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jPanel1.add(txtFullName, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 90, 270, -1));
 
         txtTotalScore.setEditable(false);
         txtTotalScore.setBackground(new java.awt.Color(255, 255, 255));
@@ -508,46 +508,40 @@ public class ExamResult extends javax.swing.JFrame {
         R[13] = Double.parseDouble(txtAgric.getText());
         R[14] = Double.parseDouble(txtArts.getText());
         R[15] = Double.parseDouble(txtComputer.getText());
-        R[16] = Double.parseDouble(txtFrench.getText());
-        R[17] = Double.parseDouble(txtCivic.getText());
+//        R[16] = Double.parseDouble(txtFrench.getText());
+//        R[17] = Double.parseDouble(txtCivic.getText());
 
-        R[18] = (R[0] + R[1] + R[2] + R[3] + R[4] + R[5] + R[6] + R[7] + R[8] + R[9] + R[10] + R[11] + R[12] + R[13] + R[14]
-                + R[15] + R[16] + R[17]) / 18;
+        R[16] = (R[0] + R[1] + R[2] + R[3] + R[4] + R[5] + R[6] + R[7] + R[8] + R[9] + R[10] + R[11] + R[12] + R[13] + R[14]
+                + R[15] /*+ R[16] + R[17]*/) / 16;
         //R[9] = (R[0] + R[1] + R[2] + R[3] + R[5] + R[6] + R[7])/7;
-        R[19] = R[0] + R[1] + R[2] + R[3] + R[4] + R[5] + R[6] + R[7] + R[8] + R[9] + R[10] + R[11] + R[12] + R[13] + R[14]
-                + R[15] + R[16] + R[17];
+        R[17] = R[0] + R[1] + R[2] + R[3] + R[4] + R[5] + R[6] + R[7] + R[8] + R[9] + R[10] + R[11] + R[12] + R[13] + R[14]
+                + R[15] /*+ R[16] + R[17]*/;
 
-        String Average = String.format("%.0f", R[18]);
+        String Average = String.format("%.0f", R[16]);
         txtAverage.setText(Average);
 
-        String TotalScore = String.format("%.0f", R[19]);
+        String TotalScore = String.format("%.0f", R[17]);
         txtTotalScore.setText(TotalScore);
 
-        if (R[19] >= 700) {
+        if (R[17] >= 700) {
             txtPosition.setText("1st");
-        } else if (R[19] >= 600) {
+        } else if (R[17] >= 600) {
             txtPosition.setText("2nd");
-        } else if (R[19] >= 500) {
+        } else if (R[17] >= 500) {
             txtPosition.setText("3rd");
-        } else if (R[19] >= 400) {
+        } else if (R[17] >= 400) {
             txtPosition.setText("4th");
-        } else if (R[19] >= 300) {
+        } else if (R[17] >= 300) {
             txtPosition.setText("Average");
-        } else if (R[19] >= 200) {
+        } else if (R[17] >= 200) {
             txtPosition.setText("Fail");
         }
-        //else if (R[10] >= 100){
-        //txtRanking.setText("Poor");
-        //}
-        //else if (R[10] >= 50){
-        // txtRanking.setText("Fail");
-        //}
 
         DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
         model.addRow(new Object[]{
             txtStudentID.getText(),
-            txtFirstName.getText(),
-//            txtSurname.getText(),
+            txtFullName.getText(),
+            //            txtSurname.getText(),
             //            txtCourseCode.getSelectedItem(),
             txtMaths.getText(),
             txtEnglish.getText(),
@@ -571,10 +565,10 @@ public class ExamResult extends javax.swing.JFrame {
                 + "\n_____________________________________"
                 + "\nStudent ID:\t\t" + txtStudentID.getText()
                 + "\n_____________________________________"
-                + "\nFirst Name:\t\t" + txtFirstName.getText()
-//                + "\n_____________________________________"
-//                + "\nSurname:\t\t" + txtSurname.getText()
-//                + "\n_____________________________________"
+                + "\nFirst Name:\t\t" + txtFullName.getText()
+                //                + "\n_____________________________________"
+                //                + "\nSurname:\t\t" + txtSurname.getText()
+                //                + "\n_____________________________________"
                 //                + "\nCourse Code:\t\t" + txtCourseCode.getSelectedItem()
                 + "\n_____________________________________"
                 + "\nMaths:\t\t" + txtMaths.getText()
@@ -614,7 +608,7 @@ public class ExamResult extends javax.swing.JFrame {
 
     private void btnGenerateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerateActionPerformed
         // TODO add your handling code here:
-        String str = "select * from sss where StudentID = ?";
+        String str = "SELECT * FROM sss WHERE StudentID = ?";
 
         try {
             handler = new DBHandler();
@@ -634,9 +628,9 @@ public class ExamResult extends javax.swing.JFrame {
                 txtEcons.setText(rs.getString("Economics_Total"));
                 txtPhysics.setText(rs.getString("Physics_Total"));
                 txtBiology.setText(rs.getString("Biology_Total"));
-                txtCivic.setText(rs.getString("Civic_Total"));
                 txtCRS.setText(rs.getString("CRS_Total"));
                 txtAccounting.setText(rs.getString("Account_Total"));
+//                txtCivic.setText(rs.getString("Civic_Total"));
                 txtFMaths.setText(rs.getString("FMaths_Total"));
                 txtGeography.setText(rs.getString("Geography_Total"));
                 txtAgric.setText(rs.getString("Agric_Total"));
@@ -644,25 +638,8 @@ public class ExamResult extends javax.swing.JFrame {
                 txtChemistry.setText(rs.getString("Chemistry_Total"));
                 txtArts.setText(rs.getString("Arts_Total"));
                 txtComputer.setText(rs.getString("Computer_Total"));
-                txtFrench.setText(rs.getString("French_Total"));
+//                txtFrench.setText(rs.getString("French_Total"));
 
-//                //txtEmail.setText(rs.getString("EmailAddress"));
-//                txtStudentID.setText(rs.getString("StudentID"));
-////                txtFirstName.setText(rs.getString("FirstName"));
-////                txtSurname.setText(rs.getString("Surname"));
-////                txtCourseCode.setSelectedItem(rs.getString("CourseCode"));
-//                txtMaths.setText(rs.getString("Maths"));
-//                txtEnglish.setText(rs.getString("English"));
-//                txtAccounting.setText(rs.getString("Accounting"));
-//                txtCommerce.setText(rs.getString("Commerce"));
-//                txtChemistry.setText(rs.getString("Chemistry"));
-//                txtGovernment.setText(rs.getString("Government"));
-//                txtBiology.setText(rs.getString("Biology"));
-//                txtGeography.setText(rs.getString("Geography"));
-//                txtPhysics.setText(rs.getString("Physics"));
-//                //txtTotalScore.setText(rs.getString("TotalScore"));
-//                //txtAverage.setText(rs.getString("Average"));
-//                //txtPosition.setText(rs.getString("Position"));
             }
         } catch (ClassNotFoundException | SQLException ex) {
             Logger.getLogger(StudentResult.class.getName()).log(Level.SEVERE, null, ex);
@@ -952,7 +929,7 @@ public class ExamResult extends javax.swing.JFrame {
 //            sti.add(address);
 //            sti.setAlignment(Element.ALIGN_CENTER);
             Image image = Image.getInstance("C:\\Users\\Thomas\\Documents\\NetBeansProjects\\SchoolMgtSystem\\Bright_Stars.png");
-            image.setAbsolutePosition(70, 720);
+            image.setAbsolutePosition(70, 742);
 
             Font tiFont = new Font(Font.FontFamily.TIMES_ROMAN, 20, 20);
             Paragraph ti = new Paragraph();
@@ -961,7 +938,7 @@ public class ExamResult extends javax.swing.JFrame {
             ti.trimToSize();
             ti.setFont(tiFont);
             font = ti.getFont();
-            ti.setSpacingAfter(20f);
+//            ti.setSpacingAfter(20f);
             font.setColor(135, 198, 240);
 //            font.setSize(30);
 
@@ -969,9 +946,9 @@ public class ExamResult extends javax.swing.JFrame {
             sl.add("(NURSERY, PRIMARY & SECONDARY)");
             sl.setAlignment(Element.ALIGN_CENTER);
             font = sl.getFont();
-            sl.setSpacingAfter(20f);
+//            sl.setSpacingAfter(20f);
             font.setColor(135, 198, 240);
-            font.setSize(11);
+            font.setSize(9);
 
             Paragraph sti = new Paragraph();
             sti.add("Omorodion Osaretin Str, Off Okuwague\nEvbabogun Road, Off Sapele Road, Benin City");
@@ -993,7 +970,7 @@ public class ExamResult extends javax.swing.JFrame {
 
             Paragraph name = new Paragraph();
             name.setAlignment(Element.ALIGN_CENTER);
-            name.add("Full Name: ___________________________________" + txtFirstName.getText()
+            name.add("Full Name: " + txtFullName.getText()
                     + "   Class: ________" + "   Term: ________");
             name.setSpacingBefore(7f);
             name.setSpacingAfter(10f);
@@ -1012,7 +989,7 @@ public class ExamResult extends javax.swing.JFrame {
 
 //            document.add(new Paragraph(subTitle));
 //            document.add(new Paragraph("Student ID: " + txtStudentID.getText()));
-//            document.add(new Paragraph("First Name: " + txtFirstName.getText()));
+//            document.add(new Paragraph("First Name: " + txtFullName.getText()));
 //            document.add(new Paragraph("Surname: " + txtSurname.getText()));
 //            document.add(new Paragraph("Course Code: " + txtCourseCode.getSelectedItem()));
 //            document.add(new Paragraph("DETAILED RESULT"));
@@ -1024,7 +1001,7 @@ public class ExamResult extends javax.swing.JFrame {
             float[] colWidth = {2f, 0.5f, 0.5f, 0.5f, 0.5f, 0.5f, 0.5f, 0.5f};
             table.setWidths(colWidth);
 
-            PdfPCell c1 = new PdfPCell(new Paragraph(""));
+            PdfPCell c1 = new PdfPCell(new Paragraph("SUBJECTS"));
             PdfPCell c2 = new PdfPCell(new Paragraph("1ST\nTEST"));
             PdfPCell c3 = new PdfPCell(new Paragraph("2ND\nTEST"));
             PdfPCell c4 = new PdfPCell(new Paragraph("EXAM"));
@@ -1069,15 +1046,14 @@ public class ExamResult extends javax.swing.JFrame {
             PdfPCell sh7 = new PdfPCell(new Paragraph(""));
             PdfPCell sh8 = new PdfPCell(new Paragraph(""));
 
-            PdfPCell bat1 = new PdfPCell(new Paragraph("FRENCH"));
-            PdfPCell bat2 = new PdfPCell(new Paragraph(fre1));
-            PdfPCell bat3 = new PdfPCell(new Paragraph(fre2));
-            PdfPCell bat4 = new PdfPCell(new Paragraph(freE));
-            PdfPCell bat5 = new PdfPCell(new Paragraph(fre_total));
-            PdfPCell bat6 = new PdfPCell(new Paragraph(""));
-            PdfPCell bat7 = new PdfPCell(new Paragraph(""));
-            PdfPCell bat8 = new PdfPCell(new Paragraph(""));
-
+//            PdfPCell bat1 = new PdfPCell(new Paragraph("FRENCH"));
+//            PdfPCell bat2 = new PdfPCell(new Paragraph(fre1));
+//            PdfPCell bat3 = new PdfPCell(new Paragraph(fre2));
+//            PdfPCell bat4 = new PdfPCell(new Paragraph(freE));
+//            PdfPCell bat5 = new PdfPCell(new Paragraph(fre_total));
+//            PdfPCell bat6 = new PdfPCell(new Paragraph(""));
+//            PdfPCell bat7 = new PdfPCell(new Paragraph(""));
+//            PdfPCell bat8 = new PdfPCell(new Paragraph(""));
             PdfPCell ph1 = new PdfPCell(new Paragraph("CHEMISTRY"));
             PdfPCell ph2 = new PdfPCell(new Paragraph(chem1));
             PdfPCell ph3 = new PdfPCell(new Paragraph(chem2));
@@ -1177,11 +1153,11 @@ public class ExamResult extends javax.swing.JFrame {
             PdfPCell v7 = new PdfPCell(new Paragraph(""));
             PdfPCell v8 = new PdfPCell(new Paragraph(""));
 
-            PdfPCell t1 = new PdfPCell(new Paragraph("TOTAL\t\t\t\t" + score_total));
+            PdfPCell t1 = new PdfPCell(new Paragraph("TOTAL"));
             PdfPCell t2 = new PdfPCell(new Paragraph(""));
             PdfPCell t3 = new PdfPCell(new Paragraph(""));
             PdfPCell t4 = new PdfPCell(new Paragraph(""));
-            PdfPCell t5 = new PdfPCell(new Paragraph(""));
+            PdfPCell t5 = new PdfPCell(new Paragraph(score_total));
             PdfPCell t6 = new PdfPCell(new Paragraph(""));
             PdfPCell t7 = new PdfPCell(new Paragraph(""));
             PdfPCell t8 = new PdfPCell(new Paragraph(""));
@@ -1232,15 +1208,14 @@ public class ExamResult extends javax.swing.JFrame {
             table.addCell(sh7);
             table.addCell(sh8);
 
-            table.addCell(bat1);
-            table.addCell(bat2);
-            table.addCell(bat3);
-            table.addCell(bat4);
-            table.addCell(bat5);
-            table.addCell(bat6);
-            table.addCell(bat7);
-            table.addCell(bat8);
-
+//            table.addCell(bat1);
+//            table.addCell(bat2);
+//            table.addCell(bat3);
+//            table.addCell(bat4);
+//            table.addCell(bat5);
+//            table.addCell(bat6);
+//            table.addCell(bat7);
+//            table.addCell(bat8);
             table.addCell(ph1);
             table.addCell(ph2);
             table.addCell(ph3);
@@ -1350,6 +1325,90 @@ public class ExamResult extends javax.swing.JFrame {
             table.addCell(t8);
 
             document.add(table);
+
+            Paragraph total = new Paragraph();
+            total.add("Total score:  " + score_total + "   Out of: _______ " + "   Average score:  " + average_total
+                    + "    Position:  " + position_total + "   Out of: _______");
+
+            Paragraph result = new Paragraph();
+            result.add("RESULT: PASS/FAIL ____________________________________________________________");
+            result.setSpacingBefore(7f);
+
+            Paragraph form = new Paragraph();
+            form.add("Form Master's Report: ____________________________________________________________");
+            form.setSpacingBefore(7f);
+
+            Paragraph behavior = new Paragraph();
+            behavior.add("Behaviour: _____________________________________________________________________");
+            behavior.setSpacingBefore(7f);
+
+            Paragraph observe = new Paragraph();
+            observe.add("Special Observation: _____________________________________________________________");
+            observe.setSpacingBefore(7f);
+
+            Paragraph sign = new Paragraph();
+            sign.add("                                                                                      ___________________________________");
+            sign.setSpacingBefore(7f);
+
+            Paragraph signs = new Paragraph();
+            signs.add("                                                                                              Form Master's Signature and Date");
+
+            Paragraph principal = new Paragraph();
+            principal.add("Principal's Report: _______________________________________________________________");
+            principal.setSpacingBefore(7f);
+
+            Paragraph principals = new Paragraph();
+            principals.add("______________________________________________________________________________");
+            principals.setSpacingBefore(7f);
+
+            Paragraph next = new Paragraph();
+            next.add("Next Term Begins:_______________________________________________________________");
+            next.setSpacingBefore(7f);
+
+            Paragraph key = new Paragraph();
+            key.add("       KEY                                                                     Fees Owning: ________________________");
+            key.setSpacingBefore(7f);
+
+            Paragraph excel = new Paragraph();
+            excel.add("89-100 = A - EXCELLENT                                       Next Term Fee: ________________________");
+            excel.setSpacingBefore(4f);
+
+            Paragraph vgood = new Paragraph();
+            vgood.add(" 79-72 =  A- V. GOOD                                                     Total: ____________________________");
+            vgood.setSpacingBefore(4f);
+
+            Paragraph good = new Paragraph();
+            good.add(" 69-62 =  B- GOOD");
+            good.setSpacingBefore(4f);
+
+            Paragraph pass = new Paragraph();
+            pass.add(" 69-62 =  C- PASS");
+            pass.setSpacingBefore(4f);
+
+            Paragraph fair = new Paragraph();
+            fair.add(" 69-62 =  D- FAIR                                                               ________________________________");
+            fair.setSpacingBefore(4f);
+
+            Paragraph fail = new Paragraph();
+            fail.add(" 69-62 =  E- FAIL                                                                       Principal's Signature and Date");
+
+            document.add(total);
+            document.add(result);
+            document.add(form);
+            document.add(behavior);
+            document.add(observe);
+            document.add(sign);
+            document.add(signs);
+            document.add(principal);
+            document.add(principals);
+            document.add(next);
+            document.add(key);
+            document.add(excel);
+            document.add(vgood);
+            document.add(good);
+            document.add(pass);
+            document.add(fair);
+            document.add(fail);
             JOptionPane.showMessageDialog(this, "Result saved");
             document.close();
             pdfWriter.close();
@@ -1412,8 +1471,8 @@ public class ExamResult extends javax.swing.JFrame {
     private javax.swing.JTextField txtEcons;
     private javax.swing.JTextField txtEnglish;
     private javax.swing.JTextField txtFMaths;
-    private javax.swing.JTextField txtFirstName;
     private javax.swing.JTextField txtFrench;
+    private javax.swing.JTextField txtFullName;
     private javax.swing.JTextField txtGeography;
     private javax.swing.JTextField txtGovernment;
     private javax.swing.JTextField txtLit;

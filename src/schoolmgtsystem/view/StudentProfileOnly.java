@@ -20,7 +20,7 @@ import javax.swing.JFileChooser;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileNameExtensionFilter;
-import schoolmgtsystem.dbhelper.DBHandler;
+import schoolmgtsystem.model.dbhelper.DBHandler;
 
 /**
  *

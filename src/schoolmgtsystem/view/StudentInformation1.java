@@ -7,7 +7,7 @@ package schoolmgtsystem.view;
 
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
-import schoolmgtsystem.dbhelper.DBHandler;
+import schoolmgtsystem.model.dbhelper.DBHandler;
 
 /**
  *

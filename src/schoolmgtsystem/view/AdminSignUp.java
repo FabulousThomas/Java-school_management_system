@@ -12,7 +12,7 @@ import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
-import schoolmgtsystem.dbhelper.DBHandler;
+import schoolmgtsystem.model.dbhelper.DBHandler;
 
 /**
  *

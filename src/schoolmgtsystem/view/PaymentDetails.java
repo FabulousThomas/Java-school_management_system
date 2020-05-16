@@ -17,7 +17,7 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
-import schoolmgtsystem.dbhelper.DBHandler;
+import schoolmgtsystem.model.dbhelper.DBHandler;
 
 /**
  *
@@ -322,7 +322,7 @@ public class PaymentDetails extends javax.swing.JFrame {
 
         ExtensionClass.setFont(new java.awt.Font("Times New Roman", 1, 20)); // NOI18N
         ExtensionClass.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECT", "SS1", "SS2", "SS3", "JSS1", "JSS2", "JSS3", "PRIMARY1", "PRIMARY2", "PRIMARY3", "PRIMARY4", "PRIMARY5", "PRIMARY6", "NURSERY1", "NURSERY2" }));
-        jPanel2.add(ExtensionClass, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 130, 120, 25));
+        jPanel2.add(ExtensionClass, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 130, 140, 25));
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 850, 290));
 
@@ -464,7 +464,7 @@ public class PaymentDetails extends javax.swing.JFrame {
 //        Total.setText(total);
         Date obj = new Date();
         String date = obj.toLocaleString();
-
+        
         Area.setText("                BRIGHT STARS SCHOOL\n");
         Area.setText(Area.getText() + "                    PAYMENT RECIEPT\n\n");
         Area.setText(Area.getText() + "Date/Time:     " + date + "\n\n");
@@ -484,7 +484,7 @@ public class PaymentDetails extends javax.swing.JFrame {
         Area.setText(Area.getText() + "Sports Wear:       \t" + Sports.getText() + "\n");
         Area.setText(Area.getText() + "PTA:               \t\t" + PTA.getText() + "\n");
         Area.setText(Area.getText() + "Total              \t\t" + Total.getText() + "\n");
-
+        
 
     }//GEN-LAST:event_btnPreviewActionPerformed
 
@@ -498,7 +498,7 @@ public class PaymentDetails extends javax.swing.JFrame {
     }//GEN-LAST:event_btnPrintActionPerformed
 
     private void btnResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResetActionPerformed
-
+        
         Area.setText("");
         PaymentID.setText("");
         StudentID.setText("");
@@ -521,17 +521,17 @@ public class PaymentDetails extends javax.swing.JFrame {
     }//GEN-LAST:event_btnResetActionPerformed
 
     private void btnCloseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCloseMouseClicked
-
+        
         this.dispose();
     }//GEN-LAST:event_btnCloseMouseClicked
 
     private void btnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitActionPerformed
-
+        
         handler = new DBHandler();
         String ID = StudentID.getText();
         String total = Total.getText();
         ResultSet rs = null;
-
+        
         String insert = "INSERT INTO payment_details(StudentID,StudentName,RegistrationFee,TuitionFee,ExtensionClass,"
                 + "Uniform,Cadigan,SportsWear,Shoe,Books) VALUES(?,?,?,?,?,?,?,?,?,?)";
         try {
@@ -549,11 +549,11 @@ public class PaymentDetails extends javax.swing.JFrame {
                 pst.executeUpdate();
                 JOptionPane.showMessageDialog(this, "Inserted !");
             }
-
+            
         } catch (ClassNotFoundException | SQLException ex) {
             Logger.getLogger(PaymentDetails.class.getName()).log(Level.SEVERE, null, ex);
         }
-
+        
         String select = "SELECT * FROM payment_details WHERE StudentID=?";
         PreparedStatement pst;
         try {
@@ -568,11 +568,11 @@ public class PaymentDetails extends javax.swing.JFrame {
                 PaymentID.setText(ID);
                 Total.setText(total);
             }
-
+            
         } catch (ClassNotFoundException | SQLException ex) {
             Logger.getLogger(PaymentDetails.class.getName()).log(Level.SEVERE, null, ex);
         }
-
+        
 
     }//GEN-LAST:event_btnSubmitActionPerformed
 
@@ -631,7 +631,7 @@ public class PaymentDetails extends javax.swing.JFrame {
                         }
                     }
                 }
-
+                
             } catch (ClassNotFoundException | SQLException ex) {
                 Logger.getLogger(PaymentDetails.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -643,13 +643,13 @@ public class PaymentDetails extends javax.swing.JFrame {
     }//GEN-LAST:event_btEditActionPerformed
 
     private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
-
+        
         String insert = "UPDATE payment_details SET StudentName=?,RegistrationFee=?,TuitionFee=?,"
                 + "ExtensionClass=?,ExamFee=?,ResultBooklet=?,FirstAid=?,PTA=?,Uniform=?,"
                 + "Cadigan=?,SportsWear=?,Shoe=?,Books=? WHERE StudentID=?";
         try {
             try (PreparedStatement pst = handler.getdbConnection().prepareStatement(insert)) {
-
+                
                 pst.setString(1, Name.getText());
                 pst.setString(2, RegFee.getText());
                 pst.setString(3, TuitionFee.getText());
@@ -667,7 +667,7 @@ public class PaymentDetails extends javax.swing.JFrame {
                 pst.executeUpdate();
                 JOptionPane.showMessageDialog(this, "Updated !");
             }
-
+            
         } catch (ClassNotFoundException | SQLException ex) {
             Logger.getLogger(PaymentDetails.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -700,6 +700,8 @@ public class PaymentDetails extends javax.swing.JFrame {
                     FirstAid.setText(first);
                     String pta = rs.getString("PTA");
                     PTA.setText(pta);
+                    String Sclass = rs.getString("ExtensionClass");
+                    ExtensionClass.setSelectedItem(Sclass);
                     pst.close();
                     rs.close();
                     StudentID.setBackground(Color.white);
@@ -720,7 +722,7 @@ public class PaymentDetails extends javax.swing.JFrame {
                         }
                     }
                 }
-
+                
             } catch (ClassNotFoundException | SQLException ex) {
                 Logger.getLogger(PaymentDetails.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -734,7 +736,7 @@ public class PaymentDetails extends javax.swing.JFrame {
         String insert = "UPDATE payment_details SET ExamFee=?,ResultBooklet=?,FirstAid=?,PTA=? WHERE StudentID=?";
         try {
             try (PreparedStatement pst = handler.getdbConnection().prepareStatement(insert)) {
-
+                
                 pst.setString(1, ExamFee.getText());
                 pst.setString(2, ResultBooklet.getText());
                 pst.setString(3, FirstAid.getText());
@@ -743,7 +745,7 @@ public class PaymentDetails extends javax.swing.JFrame {
                 pst.executeUpdate();
                 JOptionPane.showMessageDialog(this, "Updated !");
             }
-
+            
         } catch (ClassNotFoundException | SQLException ex) {
             Logger.getLogger(PaymentDetails.class.getName()).log(Level.SEVERE, null, ex);
         }

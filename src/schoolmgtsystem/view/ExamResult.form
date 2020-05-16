@@ -121,11 +121,9 @@
             <Component class="javax.swing.JTable" name="jTable1">
               <Properties>
                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                  <Table columnCount="16" rowCount="0">
+                  <Table columnCount="14" rowCount="0">
                     <Column editable="true" title="Student ID" type="java.lang.Object"/>
-                    <Column editable="true" title="First Name" type="java.lang.Object"/>
-                    <Column editable="true" title="Surname" type="java.lang.Object"/>
-                    <Column editable="true" title="Course Code" type="java.lang.Object"/>
+                    <Column editable="true" title="Full Name" type="java.lang.Object"/>
                     <Column editable="true" title="Maths" type="java.lang.Object"/>
                     <Column editable="true" title="English" type="java.lang.Object"/>
                     <Column editable="true" title="Accounting" type="java.lang.Object"/>
@@ -409,7 +407,7 @@
                 </Constraint>
               </Constraints>
             </Component>
-            <Component class="javax.swing.JTextField" name="txtFirstName">
+            <Component class="javax.swing.JTextField" name="txtFullName">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>

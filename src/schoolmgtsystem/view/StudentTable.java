@@ -5,8 +5,8 @@
  */
 package schoolmgtsystem.view;
 
-import schoolmgtsystem.dbhelper.DBHandler;
-import schoolmgtsystem.model.CountFunction;
+import schoolmgtsystem.model.dbhelper.DBHandler;
+import schoolmgtsystem.controller.CountFunction;
 
 /**
  *

@@ -5,7 +5,7 @@
  */
 package schoolmgtsystem.view;
 
-import schoolmgtsystem.model.CountFunction;
+import schoolmgtsystem.controller.CountFunction;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -14,7 +14,7 @@ import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
-import schoolmgtsystem.dbhelper.DBHandler;
+import schoolmgtsystem.model.dbhelper.DBHandler;
 
 /**
  *
