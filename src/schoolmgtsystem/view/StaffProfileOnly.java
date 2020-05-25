@@ -215,7 +215,7 @@ public class StaffProfileOnly extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel3MouseClicked
 
     private void lblClickMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblClickMouseClicked
-        new ExamResult().show();
+        new ResultSSS().show();
         setVisible(true);
         this.dispose();
     }//GEN-LAST:event_lblClickMouseClicked

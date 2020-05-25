@@ -140,7 +140,7 @@ public class ResultView1 extends javax.swing.JFrame {
 
     private void btnCheckSSSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCheckSSSActionPerformed
        
-        new ExamResult().show();
+        new ResultSSS().show();
         this.dispose();
         
     }//GEN-LAST:event_btnCheckSSSActionPerformed

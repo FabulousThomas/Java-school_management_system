@@ -498,7 +498,7 @@ public class StudentProfile extends javax.swing.JFrame {
     private void btnResultActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResultActionPerformed
 
         handler = new DBHandler();
-        StudentResult sr = new StudentResult();
+        StudentResult_SSS sr = new StudentResult_SSS();
         StudentResult_JSS rj = new StudentResult_JSS();
         StudentResult_Nursery rn = new StudentResult_Nursery();
         StudentResult_Primary rp = new StudentResult_Primary();
@@ -521,9 +521,9 @@ public class StudentProfile extends javax.swing.JFrame {
             }
             if (counter == 1) {
                 if (adm.startsWith("S")) {
-                    StudentResult.txtStudentID.setText(sid);
-                    StudentResult.txtFullName.setText(sname);
-                    StudentResult.txtStudentID.setEditable(false);
+                    StudentResult_SSS.txtStudentID.setText(sid);
+                    StudentResult_SSS.txtFullName.setText(sname);
+                    StudentResult_SSS.txtStudentID.setEditable(false);
                     sr.show();
                 } else if (adm.startsWith("J")) {
                     StudentResult_JSS.txtStudentID.setText(sid);

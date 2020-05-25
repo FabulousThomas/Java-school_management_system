@@ -22,6 +22,7 @@ public class Home extends javax.swing.JFrame {
     public Home() {
         initComponents();
         setLocationRelativeTo(null);
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
     }
 
     /**
@@ -625,6 +626,7 @@ public class Home extends javax.swing.JFrame {
         panel = new JTextField("btn_exit");
         if (JOptionPane.showConfirmDialog(panel, "Do you want to Exit ?", "Confirm",
                 JOptionPane.YES_NO_OPTION) == JOptionPane.YES_NO_OPTION) {
+            setDefaultCloseOperation(EXIT_ON_CLOSE);
             this.dispose();
         }
 

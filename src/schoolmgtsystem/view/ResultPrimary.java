@@ -11,6 +11,7 @@ import com.itextpdf.text.Element;
 import com.itextpdf.text.Font;
 import com.itextpdf.text.Image;
 import com.itextpdf.text.Paragraph;
+import com.itextpdf.text.Phrase;
 import com.itextpdf.text.pdf.PdfPCell;
 import com.itextpdf.text.pdf.PdfPTable;
 import com.itextpdf.text.pdf.PdfWriter;
@@ -106,7 +107,7 @@ public class ResultPrimary extends javax.swing.JFrame {
         btnRecord = new javax.swing.JButton();
         btnGenerate = new javax.swing.JButton();
         btnReset = new javax.swing.JButton();
-        btnExit = new javax.swing.JButton();
+        btnPrint = new javax.swing.JButton();
         jLabel18 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -384,14 +385,14 @@ public class ResultPrimary extends javax.swing.JFrame {
         });
         jPanel4.add(btnReset, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 610, -1, -1));
 
-        btnExit.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        btnExit.setText("Exit");
-        btnExit.addActionListener(new java.awt.event.ActionListener() {
+        btnPrint.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        btnPrint.setText("Print");
+        btnPrint.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnExitActionPerformed(evt);
+                btnPrintActionPerformed(evt);
             }
         });
-        jPanel4.add(btnExit, new org.netbeans.lib.awtextra.AbsoluteConstraints(1160, 610, -1, -1));
+        jPanel4.add(btnPrint, new org.netbeans.lib.awtextra.AbsoluteConstraints(1160, 610, -1, -1));
 
         jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/schoolmgtsystem/IconImages/icons8_Left_30px_1.png"))); // NOI18N
         jLabel18.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -618,7 +619,7 @@ public class ResultPrimary extends javax.swing.JFrame {
 
                 }
             } catch (ClassNotFoundException ex) {
-                Logger.getLogger(ExamResult.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(ResultSSS.class.getName()).log(Level.SEVERE, null, ex);
             }
 
         } catch (SQLException e) {
@@ -648,23 +649,24 @@ public class ResultPrimary extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnResetActionPerformed
 
-    private void btnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitActionPerformed
+    private void btnPrintActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPrintActionPerformed
         // TODO add your handling code here:
 
-        int sel = JOptionPane.showConfirmDialog(this, "Do you want to Exit?");
+        int sel = JOptionPane.showConfirmDialog(this, "Do you want to print Result?");
         if (sel == 0) {
-            new Home().show();
-            this.dispose();
+            try {
+                printResult();
+            } catch (IOException ex) {
+                Logger.getLogger(ResultNursery.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
         if (sel == 1) {
-            new ResultPrimary().show();
-            this.dispose();
+            this.show();
         }
         if (sel == 2) {
-            new ResultPrimary().show();
-            this.dispose();
+            this.show();
         }
-    }//GEN-LAST:event_btnExitActionPerformed
+    }//GEN-LAST:event_btnPrintActionPerformed
 
     private void jLabel18MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel18MouseClicked
         new ResultView().show();
@@ -822,72 +824,69 @@ public class ResultPrimary extends javax.swing.JFrame {
 //            document.add(new Paragraph(content));
 //            document.add(new Paragraph(title));
             Image image = Image.getInstance("C:\\Users\\Thomas\\Documents\\NetBeansProjects\\SchoolMgtSystem\\Bright_Stars.png");
-            image.setAbsolutePosition(70, 742);
+            image.setAbsolutePosition(70, 738);
 
-            Font tiFont = new Font(Font.FontFamily.TIMES_ROMAN, 20, 20);
-            Paragraph ti = new Paragraph();
+            Font infofont = new Font(Font.FontFamily.TIMES_ROMAN, 11.5f, Font.BOLD);
+            Font detailsfont = new Font(Font.FontFamily.HELVETICA, 11f, Font.NORMAL);
+            Font namefont = new Font(Font.FontFamily.TIMES_ROMAN, 12.5f, Font.BOLD);
+            Font motofont = new Font(Font.FontFamily.TIMES_ROMAN, 9, Font.BOLD);
+
+            Paragraph ti = new Paragraph("", namefont);
             ti.add("BRIGHT STARS PRIMARY SCHOOL");
             ti.setAlignment(Element.ALIGN_CENTER);
-            ti.trimToSize();
-            ti.setFont(tiFont);
-            font = ti.getFont();
-//            ti.setSpacingAfter(20f);
-            font.setColor(135, 198, 240);
-//            font.setSize(30);
+//            font = ti.getFont();
+//            font.setSize(12.5f);
 
-            Paragraph sl = new Paragraph();
+            Paragraph sl = new Paragraph("", motofont);
             sl.add("(NURSERY, PRIMARY & SECONDARY)");
             sl.setAlignment(Element.ALIGN_CENTER);
             font = sl.getFont();
-//            sl.setSpacingAfter(20f);
-            font.setColor(135, 198, 240);
-            font.setSize(9);
+            font.setSize(10);
+            sl.setSpacingBefore(0f);
+            sl.setSpacingAfter(0f);
 
-            Paragraph sti = new Paragraph();
+            Paragraph sti = new Paragraph("", infofont);
             sti.add("Omorodion Osaretin Str, Off Okuwague\nEvbabogun Road, Off Sapele Road, Benin City");
             sti.setAlignment(Element.ALIGN_CENTER);
-            font = sti.getFont();
-            font.setColor(135, 198, 240);
+            sti.setSpacingBefore(0f);
+            sti.setSpacingAfter(0f);
 
-            Paragraph tele = new Paragraph();
-            tele.add("Tel: 07067183000" + " \tEmail: informbrightstars@yahoo.com");
+            Paragraph tele = new Paragraph("", infofont);
+            tele.add("TEL: 07067183000" + " \tEmail: informbrightstars@yahoo.com");
             tele.setAlignment(Element.ALIGN_CENTER);
-            font = tele.getFont();
-            font.setColor(135, 198, 240);
+            tele.setSpacingBefore(0f);
+            tele.setSpacingAfter(0f);
 
-            Paragraph mot = new Paragraph();
+            Paragraph mot = new Paragraph("", infofont);
             mot.add("MOTTO: Knowledge for Excellence");
             mot.setAlignment(Element.ALIGN_CENTER);
-            font = mot.getFont();
-            font.setColor(135, 198, 240);
+            mot.setSpacingBefore(0f);
+            mot.setSpacingAfter(0f);
 
-//            Paragraph img = new Paragraph();
-//            img.add(Image.getInstance("C:\\Users\\Thomas\\Documents\\NetBeansProjects\\SchoolMgtSystem\\Bright_Stars.png"));
-//            img.setAlignment(Element.ALIGN_CENTER);
-            Paragraph name = new Paragraph();
+            Paragraph name = new Paragraph("", detailsfont);
             name.setAlignment(Element.ALIGN_CENTER);
-            name.add("Name of Student: " + txtFullName.getText()
+            name.add("Name of pupil: " + txtFullName.getText()
                     + "   Sex: ____" + "   Age: ____" + "   Adm NO: " + txtStudentID.getText());
-            name.setSpacingBefore(10f);
+            name.setSpacingBefore(8f);
 
-            Paragraph house = new Paragraph();
+            Paragraph house = new Paragraph("", detailsfont);
             house.setAlignment(Element.ALIGN_CENTER);
             house.add("Assessment for: __________"
                     + " Term: ________" + " Class: __________" + " NO In class: ______" /*+ " Position: _______"*/);
-            house.setSpacingBefore(7f);
+            house.setSpacingBefore(5f);
 //            house.setSpacingAfter(10f);
 
-            Paragraph pos = new Paragraph();
+            Paragraph pos = new Paragraph("", detailsfont);
             pos.setAlignment(Element.ALIGN_CENTER);
             pos.add("Position: " + position_total + " School House: ________" + " 20___ / 20___ session  Attendance ____ Out of ____");
-            pos.setSpacingBefore(7f);
+            pos.setSpacingBefore(5f);
 //            pos.setSpacingAfter(10f);
 
-            Paragraph res = new Paragraph();
+            Paragraph res = new Paragraph("", detailsfont);
             res.setAlignment(Element.ALIGN_CENTER);
             res.add("Resumption: _________________");
-            res.setSpacingBefore(7f);
-            res.setSpacingAfter(10f);
+            res.setSpacingBefore(5f);
+            res.setSpacingAfter(8f);
 
             //Adding to the Document
             document.add(image);
@@ -915,190 +914,194 @@ public class ResultPrimary extends javax.swing.JFrame {
             float[] colWidth = {0.3f, 3f, 0.5f, 0.5f, 0.5f, 0.6f, 0.6f, 0.5f, 0.6f, 0.5f};
             table.setWidths(colWidth);
 
-            //adding values to the cells
-            PdfPCell c1 = new PdfPCell(new Paragraph(""));
-            PdfPCell c2 = new PdfPCell(new Paragraph(""));
-            PdfPCell c3 = new PdfPCell(new Paragraph(" MAX\n 100"));
-            PdfPCell c4 = new PdfPCell(new Paragraph(" 1ST TEST\n  20"));
-            PdfPCell c5 = new PdfPCell(new Paragraph(" 2ND TEST\n  20"));
-            PdfPCell c6 = new PdfPCell(new Paragraph("EXAM\n  60"));
-            PdfPCell c7 = new PdfPCell(new Paragraph("TOTAL\n  100"));
-            PdfPCell c8 = new PdfPCell(new Paragraph("POSITION"));
-            PdfPCell c9 = new PdfPCell(new Paragraph("REMARKS"));
-            PdfPCell c10 = new PdfPCell(new Paragraph("SIGN"));
+            //            DEFINING FONT SIZES FOR THE TABLE HEADER ANND TABLE CELLS
+            Font headerfont = new Font(Font.FontFamily.HELVETICA, 11, Font.BOLD);
+            Font cellfont = new Font(Font.FontFamily.HELVETICA, 10.8f, Font.NORMAL);
 
-            PdfPCell en1 = new PdfPCell(new Paragraph("1"));
-            PdfPCell en2 = new PdfPCell(new Paragraph("ENGLISH STUDIES"));
-            PdfPCell en3 = new PdfPCell(new Paragraph("100"));
-            PdfPCell en4 = new PdfPCell(new Paragraph(english1));
-            PdfPCell en5 = new PdfPCell(new Paragraph(english2));
-            PdfPCell en6 = new PdfPCell(new Paragraph(englishE));
-            PdfPCell en7 = new PdfPCell(new Paragraph(english_total));
+            //adding values to the cells
+            PdfPCell c1 = new PdfPCell(new Paragraph("", headerfont));
+            PdfPCell c2 = new PdfPCell(new Paragraph("", headerfont));
+            PdfPCell c3 = new PdfPCell(new Paragraph(" MAX\n 100", headerfont));
+            PdfPCell c4 = new PdfPCell(new Paragraph(" 1ST TEST\n  20", headerfont));
+            PdfPCell c5 = new PdfPCell(new Paragraph(" 2ND TEST\n  20", headerfont));
+            PdfPCell c6 = new PdfPCell(new Paragraph("EXAM\n  60", headerfont));
+            PdfPCell c7 = new PdfPCell(new Paragraph("TOTAL\n  100", headerfont));
+            PdfPCell c8 = new PdfPCell(new Paragraph("POSITION", headerfont));
+            PdfPCell c9 = new PdfPCell(new Paragraph("REMARKS", headerfont));
+            PdfPCell c10 = new PdfPCell(new Paragraph("SIGN", headerfont));
+
+            PdfPCell en1 = new PdfPCell(new Paragraph("1", cellfont));
+            PdfPCell en2 = new PdfPCell(new Paragraph("ENGLISH STUDIES", cellfont));
+            PdfPCell en3 = new PdfPCell(new Paragraph(" 100", cellfont));
+            PdfPCell en4 = new PdfPCell(new Paragraph("  " + english1, cellfont));
+            PdfPCell en5 = new PdfPCell(new Paragraph("  " + english2, cellfont));
+            PdfPCell en6 = new PdfPCell(new Paragraph("  " + englishE, cellfont));
+            PdfPCell en7 = new PdfPCell(new Paragraph("  " + english_total, cellfont));
             PdfPCell en8 = new PdfPCell(new Paragraph(""));
             PdfPCell en9 = new PdfPCell(new Paragraph(""));
             PdfPCell en10 = new PdfPCell(new Paragraph(""));
 
-            PdfPCell s1 = new PdfPCell(new Paragraph("2"));
-            PdfPCell s2 = new PdfPCell(new Paragraph("MATHEMATICS"));
-            PdfPCell s3 = new PdfPCell(new Paragraph(" 100"));
-            PdfPCell s4 = new PdfPCell(new Paragraph("  " + maths1));
-            PdfPCell s5 = new PdfPCell(new Paragraph("  " + maths2));
-            PdfPCell s6 = new PdfPCell(new Paragraph("  " + mathsE));
-            PdfPCell s7 = new PdfPCell(new Paragraph("  " + maths_total));
+            PdfPCell s1 = new PdfPCell(new Paragraph("2", cellfont));
+            PdfPCell s2 = new PdfPCell(new Paragraph("MATHEMATICS", cellfont));
+            PdfPCell s3 = new PdfPCell(new Paragraph(" 100", cellfont));
+            PdfPCell s4 = new PdfPCell(new Paragraph("  " + maths1, cellfont));
+            PdfPCell s5 = new PdfPCell(new Paragraph("  " + maths2, cellfont));
+            PdfPCell s6 = new PdfPCell(new Paragraph("  " + mathsE, cellfont));
+            PdfPCell s7 = new PdfPCell(new Paragraph("  " + maths_total, cellfont));
             PdfPCell s8 = new PdfPCell(new Paragraph(""));
             PdfPCell s9 = new PdfPCell(new Paragraph(""));
             PdfPCell s10 = new PdfPCell(new Paragraph(""));
 
-            PdfPCell e1 = new PdfPCell(new Paragraph("3"));
-            PdfPCell e2 = new PdfPCell(new Paragraph("C R S"));
-            PdfPCell e3 = new PdfPCell(new Paragraph(" 100"));
-            PdfPCell e4 = new PdfPCell(new Paragraph("  " + crs1));
-            PdfPCell e5 = new PdfPCell(new Paragraph("  " + crs2));
-            PdfPCell e6 = new PdfPCell(new Paragraph("  " + crsE));
-            PdfPCell e7 = new PdfPCell(new Paragraph("  " + crs_total));
+            PdfPCell e1 = new PdfPCell(new Paragraph("3", cellfont));
+            PdfPCell e2 = new PdfPCell(new Paragraph("C R S", cellfont));
+            PdfPCell e3 = new PdfPCell(new Paragraph(" 100", cellfont));
+            PdfPCell e4 = new PdfPCell(new Paragraph("  " + crs1, cellfont));
+            PdfPCell e5 = new PdfPCell(new Paragraph("  " + crs2, cellfont));
+            PdfPCell e6 = new PdfPCell(new Paragraph("  " + crsE, cellfont));
+            PdfPCell e7 = new PdfPCell(new Paragraph("  " + crs_total, cellfont));
             PdfPCell e8 = new PdfPCell(new Paragraph(""));
             PdfPCell e9 = new PdfPCell(new Paragraph(""));
             PdfPCell e10 = new PdfPCell(new Paragraph(""));
 
-            PdfPCell sh1 = new PdfPCell(new Paragraph("4"));
-            PdfPCell sh2 = new PdfPCell(new Paragraph("CIVIC EDUCATION"));
-            PdfPCell sh3 = new PdfPCell(new Paragraph(" 100"));
-            PdfPCell sh4 = new PdfPCell(new Paragraph("  " + civic1));
-            PdfPCell sh5 = new PdfPCell(new Paragraph("  " + civic2));
-            PdfPCell sh6 = new PdfPCell(new Paragraph("  " + civicE));
-            PdfPCell sh7 = new PdfPCell(new Paragraph("  " + civic_total));
+            PdfPCell sh1 = new PdfPCell(new Paragraph("4", cellfont));
+            PdfPCell sh2 = new PdfPCell(new Paragraph("CIVIC EDUCATION", cellfont));
+            PdfPCell sh3 = new PdfPCell(new Paragraph(" 100", cellfont));
+            PdfPCell sh4 = new PdfPCell(new Paragraph("  " + civic1, cellfont));
+            PdfPCell sh5 = new PdfPCell(new Paragraph("  " + civic2, cellfont));
+            PdfPCell sh6 = new PdfPCell(new Paragraph("  " + civicE, cellfont));
+            PdfPCell sh7 = new PdfPCell(new Paragraph("  " + civic_total, cellfont));
             PdfPCell sh8 = new PdfPCell(new Paragraph(""));
             PdfPCell sh9 = new PdfPCell(new Paragraph(""));
             PdfPCell sh10 = new PdfPCell(new Paragraph(""));
 //
-            PdfPCell hh1 = new PdfPCell(new Paragraph("5"));
-            PdfPCell hh2 = new PdfPCell(new Paragraph("SOCIAL STUDIES"));
-            PdfPCell hh3 = new PdfPCell(new Paragraph(" 100"));
-            PdfPCell hh4 = new PdfPCell(new Paragraph("  " + social1));
-            PdfPCell hh5 = new PdfPCell(new Paragraph("  " + social2));
-            PdfPCell hh6 = new PdfPCell(new Paragraph("  " + socialE));
-            PdfPCell hh7 = new PdfPCell(new Paragraph("  " + social_total));
+            PdfPCell hh1 = new PdfPCell(new Paragraph("5", cellfont));
+            PdfPCell hh2 = new PdfPCell(new Paragraph("SOCIAL STUDIES", cellfont));
+            PdfPCell hh3 = new PdfPCell(new Paragraph(" 100", cellfont));
+            PdfPCell hh4 = new PdfPCell(new Paragraph("  " + social1, cellfont));
+            PdfPCell hh5 = new PdfPCell(new Paragraph("  " + social2, cellfont));
+            PdfPCell hh6 = new PdfPCell(new Paragraph("  " + socialE, cellfont));
+            PdfPCell hh7 = new PdfPCell(new Paragraph("  " + social_total, cellfont));
             PdfPCell hh8 = new PdfPCell(new Paragraph(""));
             PdfPCell hh9 = new PdfPCell(new Paragraph(""));
             PdfPCell hh10 = new PdfPCell(new Paragraph(""));
 
-            PdfPCell co1 = new PdfPCell(new Paragraph("6"));
-            PdfPCell co2 = new PdfPCell(new Paragraph("SECURITY EDUCATION"));
-            PdfPCell co3 = new PdfPCell(new Paragraph(" 100"));
-            PdfPCell co4 = new PdfPCell(new Paragraph("  " + security1));
-            PdfPCell co5 = new PdfPCell(new Paragraph("  " + security2));
-            PdfPCell co6 = new PdfPCell(new Paragraph("  " + securityE));
-            PdfPCell co7 = new PdfPCell(new Paragraph("  " + security_total));
+            PdfPCell co1 = new PdfPCell(new Paragraph("6", cellfont));
+            PdfPCell co2 = new PdfPCell(new Paragraph("SECURITY EDUCATION", cellfont));
+            PdfPCell co3 = new PdfPCell(new Paragraph(" 100", cellfont));
+            PdfPCell co4 = new PdfPCell(new Paragraph("  " + security1, cellfont));
+            PdfPCell co5 = new PdfPCell(new Paragraph("  " + security2, cellfont));
+            PdfPCell co6 = new PdfPCell(new Paragraph("  " + securityE, cellfont));
+            PdfPCell co7 = new PdfPCell(new Paragraph("  " + security_total, cellfont));
             PdfPCell co8 = new PdfPCell(new Paragraph(""));
             PdfPCell co9 = new PdfPCell(new Paragraph(""));
             PdfPCell co10 = new PdfPCell(new Paragraph(""));
 //
-            PdfPCell ca1 = new PdfPCell(new Paragraph("7"));
-            PdfPCell ca2 = new PdfPCell(new Paragraph("BASIC SCIENCE"));
-            PdfPCell ca3 = new PdfPCell(new Paragraph(" 100"));
-            PdfPCell ca4 = new PdfPCell(new Paragraph("  " + bs1));
-            PdfPCell ca5 = new PdfPCell(new Paragraph("  " + bs2));
-            PdfPCell ca6 = new PdfPCell(new Paragraph("  " + bsE));
-            PdfPCell ca7 = new PdfPCell(new Paragraph("  " + bs_total));
+            PdfPCell ca1 = new PdfPCell(new Paragraph("7", cellfont));
+            PdfPCell ca2 = new PdfPCell(new Paragraph("BASIC SCIENCE", cellfont));
+            PdfPCell ca3 = new PdfPCell(new Paragraph(" 100", cellfont));
+            PdfPCell ca4 = new PdfPCell(new Paragraph("  " + bs1, cellfont));
+            PdfPCell ca5 = new PdfPCell(new Paragraph("  " + bs2, cellfont));
+            PdfPCell ca6 = new PdfPCell(new Paragraph("  " + bsE, cellfont));
+            PdfPCell ca7 = new PdfPCell(new Paragraph("  " + bs_total, cellfont));
             PdfPCell ca8 = new PdfPCell(new Paragraph(""));
             PdfPCell ca9 = new PdfPCell(new Paragraph(""));
             PdfPCell ca10 = new PdfPCell(new Paragraph(""));
 //
-            PdfPCell wr1 = new PdfPCell(new Paragraph("8"));
-            PdfPCell wr2 = new PdfPCell(new Paragraph("BASIC TECHNOLOGY"));
-            PdfPCell wr3 = new PdfPCell(new Paragraph(" 100"));
-            PdfPCell wr4 = new PdfPCell(new Paragraph("  " + bt1));
-            PdfPCell wr5 = new PdfPCell(new Paragraph("  " + bt2));
-            PdfPCell wr6 = new PdfPCell(new Paragraph("  " + btE));
-            PdfPCell wr7 = new PdfPCell(new Paragraph("  " + bt_total));
+            PdfPCell wr1 = new PdfPCell(new Paragraph("8", cellfont));
+            PdfPCell wr2 = new PdfPCell(new Paragraph("BASIC TECHNOLOGY", cellfont));
+            PdfPCell wr3 = new PdfPCell(new Paragraph(" 100", cellfont));
+            PdfPCell wr4 = new PdfPCell(new Paragraph("  " + bt1, cellfont));
+            PdfPCell wr5 = new PdfPCell(new Paragraph("  " + bt2, cellfont));
+            PdfPCell wr6 = new PdfPCell(new Paragraph("  " + btE, cellfont));
+            PdfPCell wr7 = new PdfPCell(new Paragraph("  " + bt_total, cellfont));
             PdfPCell wr8 = new PdfPCell(new Paragraph(""));
             PdfPCell wr9 = new PdfPCell(new Paragraph(""));
             PdfPCell wr10 = new PdfPCell(new Paragraph(""));
 //
-            PdfPCell nr1 = new PdfPCell(new Paragraph("9"));
-            PdfPCell nr2 = new PdfPCell(new Paragraph("PHYSICAL & HEALTH EDUCATION"));
-            PdfPCell nr3 = new PdfPCell(new Paragraph(" 100"));
-            PdfPCell nr4 = new PdfPCell(new Paragraph("  " + phe1));
-            PdfPCell nr5 = new PdfPCell(new Paragraph("  " + phe2));
-            PdfPCell nr6 = new PdfPCell(new Paragraph("  " + pheE));
-            PdfPCell nr7 = new PdfPCell(new Paragraph("  " + phe_total));
+            PdfPCell nr1 = new PdfPCell(new Paragraph("9", cellfont));
+            PdfPCell nr2 = new PdfPCell(new Paragraph("PHYSICAL & HEALTH EDUCATION", cellfont));
+            PdfPCell nr3 = new PdfPCell(new Paragraph(" 100", cellfont));
+            PdfPCell nr4 = new PdfPCell(new Paragraph("  " + phe1, cellfont));
+            PdfPCell nr5 = new PdfPCell(new Paragraph("  " + phe2, cellfont));
+            PdfPCell nr6 = new PdfPCell(new Paragraph("  " + pheE, cellfont));
+            PdfPCell nr7 = new PdfPCell(new Paragraph("  " + phe_total, cellfont));
             PdfPCell nr8 = new PdfPCell(new Paragraph(""));
             PdfPCell nr9 = new PdfPCell(new Paragraph(""));
             PdfPCell nr10 = new PdfPCell(new Paragraph(""));
 
-            PdfPCell v1 = new PdfPCell(new Paragraph("10"));
-            PdfPCell v2 = new PdfPCell(new Paragraph("INFORMATION TECHNOLOGY"));
-            PdfPCell v3 = new PdfPCell(new Paragraph(" 100"));
-            PdfPCell v4 = new PdfPCell(new Paragraph("  " + ict1));
-            PdfPCell v5 = new PdfPCell(new Paragraph("  " + ict2));
-            PdfPCell v6 = new PdfPCell(new Paragraph("  " + ictE));
-            PdfPCell v7 = new PdfPCell(new Paragraph("  " + ict_total));
+            PdfPCell v1 = new PdfPCell(new Paragraph("10", cellfont));
+            PdfPCell v2 = new PdfPCell(new Paragraph("INFORMATION TECHNOLOGY", cellfont));
+            PdfPCell v3 = new PdfPCell(new Paragraph(" 100", cellfont));
+            PdfPCell v4 = new PdfPCell(new Paragraph("  " + ict1, cellfont));
+            PdfPCell v5 = new PdfPCell(new Paragraph("  " + ict2, cellfont));
+            PdfPCell v6 = new PdfPCell(new Paragraph("  " + ictE, cellfont));
+            PdfPCell v7 = new PdfPCell(new Paragraph("  " + ict_total, cellfont));
             PdfPCell v8 = new PdfPCell(new Paragraph(""));
             PdfPCell v9 = new PdfPCell(new Paragraph(""));
             PdfPCell v10 = new PdfPCell(new Paragraph(""));
 //
-            PdfPCell q1 = new PdfPCell(new Paragraph("11"));
-            PdfPCell q2 = new PdfPCell(new Paragraph("HOME ECONOMICS"));
-            PdfPCell q3 = new PdfPCell(new Paragraph(" 100"));
-            PdfPCell q4 = new PdfPCell(new Paragraph("  " + home1));
-            PdfPCell q5 = new PdfPCell(new Paragraph("  " + home2));
-            PdfPCell q6 = new PdfPCell(new Paragraph("  " + homeE));
-            PdfPCell q7 = new PdfPCell(new Paragraph("  " + home_total));
+            PdfPCell q1 = new PdfPCell(new Paragraph("11", cellfont));
+            PdfPCell q2 = new PdfPCell(new Paragraph("HOME ECONOMICS", cellfont));
+            PdfPCell q3 = new PdfPCell(new Paragraph(" 100", cellfont));
+            PdfPCell q4 = new PdfPCell(new Paragraph("  " + home1, cellfont));
+            PdfPCell q5 = new PdfPCell(new Paragraph("  " + home2, cellfont));
+            PdfPCell q6 = new PdfPCell(new Paragraph("  " + homeE, cellfont));
+            PdfPCell q7 = new PdfPCell(new Paragraph("  " + home_total, cellfont));
             PdfPCell q8 = new PdfPCell(new Paragraph(""));
             PdfPCell q9 = new PdfPCell(new Paragraph(""));
             PdfPCell q10 = new PdfPCell(new Paragraph(""));
 
-            PdfPCell m1 = new PdfPCell(new Paragraph("12"));
-            PdfPCell m2 = new PdfPCell(new Paragraph("AGRICULTURAL SCIENCE"));
-            PdfPCell m3 = new PdfPCell(new Paragraph(" 100"));
-            PdfPCell m4 = new PdfPCell(new Paragraph("  " + agric1));
-            PdfPCell m5 = new PdfPCell(new Paragraph("  " + agric2));
-            PdfPCell m6 = new PdfPCell(new Paragraph("  " + agricE));
-            PdfPCell m7 = new PdfPCell(new Paragraph("  " + agric_total));
+            PdfPCell m1 = new PdfPCell(new Paragraph("12", cellfont));
+            PdfPCell m2 = new PdfPCell(new Paragraph("AGRICULTURAL SCIENCE", cellfont));
+            PdfPCell m3 = new PdfPCell(new Paragraph(" 100", cellfont));
+            PdfPCell m4 = new PdfPCell(new Paragraph("  " + agric1, cellfont));
+            PdfPCell m5 = new PdfPCell(new Paragraph("  " + agric2, cellfont));
+            PdfPCell m6 = new PdfPCell(new Paragraph("  " + agricE, cellfont));
+            PdfPCell m7 = new PdfPCell(new Paragraph("  " + agric_total, cellfont));
             PdfPCell m8 = new PdfPCell(new Paragraph(""));
             PdfPCell m9 = new PdfPCell(new Paragraph(""));
             PdfPCell m10 = new PdfPCell(new Paragraph(""));
 
-            PdfPCell ed1 = new PdfPCell(new Paragraph("13"));
-            PdfPCell ed2 = new PdfPCell(new Paragraph("EDO LANGUAGE"));
-            PdfPCell ed3 = new PdfPCell(new Paragraph(" 100"));
-            PdfPCell ed4 = new PdfPCell(new Paragraph("  " + edo1));
-            PdfPCell ed5 = new PdfPCell(new Paragraph("  " + edo2));
-            PdfPCell ed6 = new PdfPCell(new Paragraph("  " + edoE));
-            PdfPCell ed7 = new PdfPCell(new Paragraph("  " + edo_total));
+            PdfPCell ed1 = new PdfPCell(new Paragraph("13", cellfont));
+            PdfPCell ed2 = new PdfPCell(new Paragraph("EDO LANGUAGE", cellfont));
+            PdfPCell ed3 = new PdfPCell(new Paragraph(" 100", cellfont));
+            PdfPCell ed4 = new PdfPCell(new Paragraph("  " + edo1, cellfont));
+            PdfPCell ed5 = new PdfPCell(new Paragraph("  " + edo2, cellfont));
+            PdfPCell ed6 = new PdfPCell(new Paragraph("  " + edoE, cellfont));
+            PdfPCell ed7 = new PdfPCell(new Paragraph("  " + edo_total, cellfont));
             PdfPCell ed8 = new PdfPCell(new Paragraph(""));
             PdfPCell ed9 = new PdfPCell(new Paragraph(""));
             PdfPCell ed10 = new PdfPCell(new Paragraph(""));
 
-            PdfPCell ve1 = new PdfPCell(new Paragraph("14"));
-            PdfPCell ve2 = new PdfPCell(new Paragraph("VERBAL REASONING"));
-            PdfPCell ve3 = new PdfPCell(new Paragraph(" 100"));
-            PdfPCell ve4 = new PdfPCell(new Paragraph("  " + verbal1));
-            PdfPCell ve5 = new PdfPCell(new Paragraph("  " + verbal2));
-            PdfPCell ve6 = new PdfPCell(new Paragraph("  " + verbalE));
-            PdfPCell ve7 = new PdfPCell(new Paragraph("  " + verbal_total));
+            PdfPCell ve1 = new PdfPCell(new Paragraph("14", cellfont));
+            PdfPCell ve2 = new PdfPCell(new Paragraph("VERBAL REASONING", cellfont));
+            PdfPCell ve3 = new PdfPCell(new Paragraph(" 100", cellfont));
+            PdfPCell ve4 = new PdfPCell(new Paragraph("  " + verbal1, cellfont));
+            PdfPCell ve5 = new PdfPCell(new Paragraph("  " + verbal2, cellfont));
+            PdfPCell ve6 = new PdfPCell(new Paragraph("  " + verbalE, cellfont));
+            PdfPCell ve7 = new PdfPCell(new Paragraph("  " + verbal_total, cellfont));
             PdfPCell ve8 = new PdfPCell(new Paragraph(""));
             PdfPCell ve9 = new PdfPCell(new Paragraph(""));
             PdfPCell ve10 = new PdfPCell(new Paragraph(""));
 
-            PdfPCell qu1 = new PdfPCell(new Paragraph("15"));
-            PdfPCell qu2 = new PdfPCell(new Paragraph("QUANTITATIVE REASONING"));
-            PdfPCell qu3 = new PdfPCell(new Paragraph(" 100"));
-            PdfPCell qu4 = new PdfPCell(new Paragraph("  " + quan1));
-            PdfPCell qu5 = new PdfPCell(new Paragraph("  " + quan2));
-            PdfPCell qu6 = new PdfPCell(new Paragraph("  " + quanE));
-            PdfPCell qu7 = new PdfPCell(new Paragraph("  " + quan_total));
+            PdfPCell qu1 = new PdfPCell(new Paragraph("15", cellfont));
+            PdfPCell qu2 = new PdfPCell(new Paragraph("QUANTITATIVE REASONING", cellfont));
+            PdfPCell qu3 = new PdfPCell(new Paragraph(" 100", cellfont));
+            PdfPCell qu4 = new PdfPCell(new Paragraph("  " + quan1, cellfont));
+            PdfPCell qu5 = new PdfPCell(new Paragraph("  " + quan2, cellfont));
+            PdfPCell qu6 = new PdfPCell(new Paragraph("  " + quanE, cellfont));
+            PdfPCell qu7 = new PdfPCell(new Paragraph("  " + quan_total, cellfont));
             PdfPCell qu8 = new PdfPCell(new Paragraph(""));
             PdfPCell qu9 = new PdfPCell(new Paragraph(""));
             PdfPCell qu10 = new PdfPCell(new Paragraph(""));
 
             PdfPCell t1 = new PdfPCell(new Paragraph(""));
-            PdfPCell t2 = new PdfPCell(new Paragraph("TOTAL"));
+            PdfPCell t2 = new PdfPCell(new Paragraph("TOTAL", cellfont));
             PdfPCell t3 = new PdfPCell(new Paragraph(""));
             PdfPCell t4 = new PdfPCell(new Paragraph(""));
             PdfPCell t5 = new PdfPCell(new Paragraph(""));
             PdfPCell t6 = new PdfPCell(new Paragraph(""));
-            PdfPCell t7 = new PdfPCell(new Paragraph("  " + score_total));
+            PdfPCell t7 = new PdfPCell(new Paragraph("  " + score_total, cellfont));
             PdfPCell t8 = new PdfPCell(new Paragraph(""));
             PdfPCell t9 = new PdfPCell(new Paragraph(""));
             PdfPCell t10 = new PdfPCell(new Paragraph(""));
@@ -1293,7 +1296,7 @@ public class ResultPrimary extends javax.swing.JFrame {
 
             document.add(table);
 
-            Paragraph rating = new Paragraph("KEY TO RATING: 5=EXCELLENT   4=GOOD   3=AVERAGE   2=BELLOW AVERAGE   1=POOR");
+            Paragraph rating = new Paragraph("KEY TO RATING: 5=EXCELLENT   4=GOOD   3=AVERAGE   2=BELLOW AVERAGE   1=POOR", cellfont);
             rating.setAlignment(Element.ALIGN_CENTER);
             document.add(rating);
 
@@ -1307,249 +1310,145 @@ public class ResultPrimary extends javax.swing.JFrame {
             float[] colWidth1 = {4f, 0.3f, 0.3f, 0.3f, 0.3f, 0.3f, 4f, 0.3f, 0.3f, 0.3f, 0.3f, 0.3f};
             table1.setWidths(colWidth1);
 
-            PdfPCell cell1 = new PdfPCell(new Paragraph("CHARACTER DEVELOPMENT"));
-            PdfPCell cell2 = new PdfPCell(new Paragraph("5"));
-            PdfPCell cell3 = new PdfPCell(new Paragraph("4"));
-            PdfPCell cell4 = new PdfPCell(new Paragraph("3"));
-            PdfPCell cell5 = new PdfPCell(new Paragraph("2"));
-            PdfPCell cell6 = new PdfPCell(new Paragraph("1"));
-            PdfPCell cell7 = new PdfPCell(new Paragraph("   PRACTICAL SKILL"));
-            PdfPCell cell8 = new PdfPCell(new Paragraph("5"));
-            PdfPCell cell9 = new PdfPCell(new Paragraph("4"));
-            PdfPCell cell10 = new PdfPCell(new Paragraph("3"));
-            PdfPCell cell11 = new PdfPCell(new Paragraph("2"));
-            PdfPCell cell12 = new PdfPCell(new Paragraph("1"));
+            table1.addCell(new PdfPCell(new Phrase("CHARACTER DEVELOPMENT", cellfont)));
+            table1.addCell(new PdfPCell(new Phrase(" 5", cellfont)));
+            table1.addCell(new PdfPCell(new Phrase(" 4", cellfont)));
+            table1.addCell(new PdfPCell(new Phrase(" 3", cellfont)));
+            table1.addCell(new PdfPCell(new Phrase(" 2", cellfont)));
+            table1.addCell(new PdfPCell(new Phrase(" 1", cellfont)));
+            table1.addCell(new PdfPCell(new Phrase("   PRACTICAL SKILL", cellfont)));
+            table1.addCell(new PdfPCell(new Phrase(" 5", cellfont)));
+            table1.addCell(new PdfPCell(new Phrase(" 4", cellfont)));
+            table1.addCell(new PdfPCell(new Phrase(" 3", cellfont)));
+            table1.addCell(new PdfPCell(new Phrase(" 2", cellfont)));
+            table1.addCell(new PdfPCell(new Phrase(" 1", cellfont)));
 
-            PdfPCell row1 = new PdfPCell(new Paragraph("Appearance"));
-            PdfPCell row2 = new PdfPCell(new Paragraph(""));
-            PdfPCell row3 = new PdfPCell(new Paragraph(""));
-            PdfPCell row4 = new PdfPCell(new Paragraph(""));
-            PdfPCell row5 = new PdfPCell(new Paragraph(""));
-            PdfPCell row6 = new PdfPCell(new Paragraph(""));
-            PdfPCell row7 = new PdfPCell(new Paragraph("   Education Drama"));
-            PdfPCell row8 = new PdfPCell(new Paragraph(""));
-            PdfPCell row9 = new PdfPCell(new Paragraph(""));
-            PdfPCell row10 = new PdfPCell(new Paragraph(""));
-            PdfPCell row11 = new PdfPCell(new Paragraph(""));
-            PdfPCell row12 = new PdfPCell(new Paragraph(""));
+            table1.addCell(new PdfPCell(new Phrase("Appearance", cellfont)));
+            table1.addCell(new PdfPCell(new Phrase("")));
+            table1.addCell(new PdfPCell(new Phrase("")));
+            table1.addCell(new PdfPCell(new Phrase("")));
+            table1.addCell(new PdfPCell(new Phrase("")));
+            table1.addCell(new PdfPCell(new Phrase("")));
+            table1.addCell(new PdfPCell(new Phrase("   Education Drama", cellfont)));
+            table1.addCell(new PdfPCell(new Phrase("")));
+            table1.addCell(new PdfPCell(new Phrase("")));
+            table1.addCell(new PdfPCell(new Phrase("")));
+            table1.addCell(new PdfPCell(new Phrase("")));
+            table1.addCell(new PdfPCell(new Phrase("")));
 
-            PdfPCell row13 = new PdfPCell(new Paragraph("Appearance"));
-            PdfPCell row14 = new PdfPCell(new Paragraph(""));
-            PdfPCell row15 = new PdfPCell(new Paragraph(""));
-            PdfPCell row16 = new PdfPCell(new Paragraph(""));
-            PdfPCell row17 = new PdfPCell(new Paragraph(""));
-            PdfPCell row18 = new PdfPCell(new Paragraph(""));
-            PdfPCell row19 = new PdfPCell(new Paragraph("   Needle Work"));
-            PdfPCell row20 = new PdfPCell(new Paragraph(""));
-            PdfPCell row21 = new PdfPCell(new Paragraph(""));
-            PdfPCell row22 = new PdfPCell(new Paragraph(""));
-            PdfPCell row23 = new PdfPCell(new Paragraph(""));
-            PdfPCell row24 = new PdfPCell(new Paragraph(""));
+            table1.addCell(new PdfPCell(new Phrase("Appearance", cellfont)));
+            table1.addCell(new PdfPCell(new Phrase("")));
+            table1.addCell(new PdfPCell(new Phrase("")));
+            table1.addCell(new PdfPCell(new Phrase("")));
+            table1.addCell(new PdfPCell(new Phrase("")));
+            table1.addCell(new PdfPCell(new Phrase("")));
+            table1.addCell(new PdfPCell(new Phrase("   Needle Work", cellfont)));
+            table1.addCell(new PdfPCell(new Phrase("")));
+            table1.addCell(new PdfPCell(new Phrase("")));
+            table1.addCell(new PdfPCell(new Phrase("")));
+            table1.addCell(new PdfPCell(new Phrase("")));
+            table1.addCell(new PdfPCell(new Phrase("")));
 
-            PdfPCell row25 = new PdfPCell(new Paragraph("Appearance"));
-            PdfPCell row26 = new PdfPCell(new Paragraph(""));
-            PdfPCell row27 = new PdfPCell(new Paragraph(""));
-            PdfPCell row28 = new PdfPCell(new Paragraph(""));
-            PdfPCell row29 = new PdfPCell(new Paragraph(""));
-            PdfPCell row30 = new PdfPCell(new Paragraph(""));
-            PdfPCell row31 = new PdfPCell(new Paragraph("   Cookery"));
-            PdfPCell row32 = new PdfPCell(new Paragraph(""));
-            PdfPCell row33 = new PdfPCell(new Paragraph(""));
-            PdfPCell row34 = new PdfPCell(new Paragraph(""));
-            PdfPCell row35 = new PdfPCell(new Paragraph(""));
-            PdfPCell row36 = new PdfPCell(new Paragraph(""));
+            table1.addCell(new PdfPCell(new Phrase("Appearance", cellfont)));
+            table1.addCell(new PdfPCell(new Phrase("")));
+            table1.addCell(new PdfPCell(new Phrase("")));
+            table1.addCell(new PdfPCell(new Phrase("")));
+            table1.addCell(new PdfPCell(new Phrase("")));
+            table1.addCell(new PdfPCell(new Phrase("")));
+            table1.addCell(new PdfPCell(new Phrase("   Cookery", cellfont)));
+            table1.addCell(new PdfPCell(new Phrase("")));
+            table1.addCell(new PdfPCell(new Phrase("")));
+            table1.addCell(new PdfPCell(new Phrase("")));
+            table1.addCell(new PdfPCell(new Phrase("")));
+            table1.addCell(new PdfPCell(new Phrase("")));
 
-            PdfPCell row37 = new PdfPCell(new Paragraph("Appearance"));
-            PdfPCell row38 = new PdfPCell(new Paragraph(""));
-            PdfPCell row39 = new PdfPCell(new Paragraph(""));
-            PdfPCell row40 = new PdfPCell(new Paragraph(""));
-            PdfPCell row41 = new PdfPCell(new Paragraph(""));
-            PdfPCell row42 = new PdfPCell(new Paragraph(""));
-            PdfPCell row43 = new PdfPCell(new Paragraph("   Public Speech"));
-            PdfPCell row44 = new PdfPCell(new Paragraph(""));
-            PdfPCell row45 = new PdfPCell(new Paragraph(""));
-            PdfPCell row46 = new PdfPCell(new Paragraph(""));
-            PdfPCell row47 = new PdfPCell(new Paragraph(""));
-            PdfPCell row48 = new PdfPCell(new Paragraph(""));
+            table1.addCell(new PdfPCell(new Phrase("Appearance", cellfont)));
+            table1.addCell(new PdfPCell(new Phrase("")));
+            table1.addCell(new PdfPCell(new Phrase("")));
+            table1.addCell(new PdfPCell(new Phrase("")));
+            table1.addCell(new PdfPCell(new Phrase("")));
+            table1.addCell(new PdfPCell(new Phrase("")));
+            table1.addCell(new PdfPCell(new Phrase("   Public Speech", cellfont)));
+            table1.addCell(new PdfPCell(new Phrase("")));
+            table1.addCell(new PdfPCell(new Phrase("")));
+            table1.addCell(new PdfPCell(new Phrase("")));
+            table1.addCell(new PdfPCell(new Phrase("")));
+            table1.addCell(new PdfPCell(new Phrase("")));
 
-            PdfPCell row49 = new PdfPCell(new Paragraph("Appearance"));
-            PdfPCell row50 = new PdfPCell(new Paragraph(""));
-            PdfPCell row51 = new PdfPCell(new Paragraph(""));
-            PdfPCell row52 = new PdfPCell(new Paragraph(""));
-            PdfPCell row53 = new PdfPCell(new Paragraph(""));
-            PdfPCell row54 = new PdfPCell(new Paragraph(""));
-            PdfPCell row55 = new PdfPCell(new Paragraph("   Sports"));
-            PdfPCell row56 = new PdfPCell(new Paragraph(""));
-            PdfPCell row57 = new PdfPCell(new Paragraph(""));
-            PdfPCell row58 = new PdfPCell(new Paragraph(""));
-            PdfPCell row59 = new PdfPCell(new Paragraph(""));
-            PdfPCell row60 = new PdfPCell(new Paragraph(""));
+            table1.addCell(new PdfPCell(new Phrase("Appearance", cellfont)));
+            table1.addCell(new PdfPCell(new Phrase("")));
+            table1.addCell(new PdfPCell(new Phrase("")));
+            table1.addCell(new PdfPCell(new Phrase("")));
+            table1.addCell(new PdfPCell(new Phrase("")));
+            table1.addCell(new PdfPCell(new Phrase("")));
+            table1.addCell(new PdfPCell(new Phrase("   Sports", cellfont)));
+            table1.addCell(new PdfPCell(new Phrase("")));
+            table1.addCell(new PdfPCell(new Phrase("")));
+            table1.addCell(new PdfPCell(new Phrase("")));
+            table1.addCell(new PdfPCell(new Phrase("")));
+            table1.addCell(new PdfPCell(new Phrase("")));
 
-            PdfPCell row61 = new PdfPCell(new Paragraph("Appearance"));
-            PdfPCell row62 = new PdfPCell(new Paragraph(""));
-            PdfPCell row63 = new PdfPCell(new Paragraph(""));
-            PdfPCell row64 = new PdfPCell(new Paragraph(""));
-            PdfPCell row65 = new PdfPCell(new Paragraph(""));
-            PdfPCell row66 = new PdfPCell(new Paragraph(""));
-            PdfPCell row67 = new PdfPCell(new Paragraph("   Musical memes"));
-            PdfPCell row68 = new PdfPCell(new Paragraph(""));
-            PdfPCell row69 = new PdfPCell(new Paragraph(""));
-            PdfPCell row70 = new PdfPCell(new Paragraph(""));
-            PdfPCell row71 = new PdfPCell(new Paragraph(""));
-            PdfPCell row72 = new PdfPCell(new Paragraph(""));
+            table1.addCell(new PdfPCell(new Phrase("Appearance", cellfont)));
+            table1.addCell(new PdfPCell(new Phrase("")));
+            table1.addCell(new PdfPCell(new Phrase("")));
+            table1.addCell(new PdfPCell(new Phrase("")));
+            table1.addCell(new PdfPCell(new Phrase("")));
+            table1.addCell(new PdfPCell(new Phrase("")));
+            table1.addCell(new PdfPCell(new Phrase("   Musical memes", cellfont)));
+            table1.addCell(new PdfPCell(new Phrase("")));
+            table1.addCell(new PdfPCell(new Phrase("")));
+            table1.addCell(new PdfPCell(new Phrase("")));
+            table1.addCell(new PdfPCell(new Phrase("")));
+            table1.addCell(new PdfPCell(new Phrase("")));
 
-            PdfPCell row73 = new PdfPCell(new Paragraph("Appearance"));
-            PdfPCell row74 = new PdfPCell(new Paragraph(""));
-            PdfPCell row75 = new PdfPCell(new Paragraph(""));
-            PdfPCell row76 = new PdfPCell(new Paragraph(""));
-            PdfPCell row77 = new PdfPCell(new Paragraph(""));
-            PdfPCell row78 = new PdfPCell(new Paragraph(""));
-            PdfPCell row79 = new PdfPCell(new Paragraph("   Oral English"));
-            PdfPCell row80 = new PdfPCell(new Paragraph(""));
-            PdfPCell row81 = new PdfPCell(new Paragraph(""));
-            PdfPCell row82 = new PdfPCell(new Paragraph(""));
-            PdfPCell row83 = new PdfPCell(new Paragraph(""));
-            PdfPCell row84 = new PdfPCell(new Paragraph(""));
-
-            table1.addCell(cell1);
-            table1.addCell(cell2);
-            table1.addCell(cell3);
-            table1.addCell(cell4);
-            table1.addCell(cell5);
-            table1.addCell(cell6);
-            table1.addCell(cell7);
-            table1.addCell(cell8);
-            table1.addCell(cell9);
-            table1.addCell(cell10);
-            table1.addCell(cell11);
-            table1.addCell(cell12);
-
-            table1.addCell(row1);
-            table1.addCell(row2);
-            table1.addCell(row3);
-            table1.addCell(row4);
-            table1.addCell(row5);
-            table1.addCell(row6);
-            table1.addCell(row7);
-            table1.addCell(row8);
-            table1.addCell(row9);
-            table1.addCell(row10);
-            table1.addCell(row11);
-            table1.addCell(row12);
-
-            table1.addCell(row13);
-            table1.addCell(row14);
-            table1.addCell(row15);
-            table1.addCell(row16);
-            table1.addCell(row17);
-            table1.addCell(row18);
-            table1.addCell(row19);
-            table1.addCell(row20);
-            table1.addCell(row21);
-            table1.addCell(row22);
-            table1.addCell(row23);
-            table1.addCell(row24);
-
-            table1.addCell(row25);
-            table1.addCell(row26);
-            table1.addCell(row27);
-            table1.addCell(row28);
-            table1.addCell(row29);
-            table1.addCell(row30);
-            table1.addCell(row31);
-            table1.addCell(row32);
-            table1.addCell(row33);
-            table1.addCell(row34);
-            table1.addCell(row35);
-            table1.addCell(row36);
-
-            table1.addCell(row37);
-            table1.addCell(row38);
-            table1.addCell(row39);
-            table1.addCell(row40);
-            table1.addCell(row41);
-            table1.addCell(row42);
-            table1.addCell(row43);
-            table1.addCell(row44);
-            table1.addCell(row45);
-            table1.addCell(row46);
-            table1.addCell(row47);
-            table1.addCell(row48);
-
-            table1.addCell(row49);
-            table1.addCell(row50);
-            table1.addCell(row51);
-            table1.addCell(row52);
-            table1.addCell(row53);
-            table1.addCell(row54);
-            table1.addCell(row55);
-            table1.addCell(row56);
-            table1.addCell(row57);
-            table1.addCell(row58);
-            table1.addCell(row59);
-            table1.addCell(row60);
-
-            table1.addCell(row61);
-            table1.addCell(row62);
-            table1.addCell(row63);
-            table1.addCell(row64);
-            table1.addCell(row65);
-            table1.addCell(row66);
-            table1.addCell(row67);
-            table1.addCell(row68);
-            table1.addCell(row69);
-            table1.addCell(row70);
-            table1.addCell(row71);
-            table1.addCell(row72);
-
-            table1.addCell(row73);
-            table1.addCell(row74);
-            table1.addCell(row75);
-            table1.addCell(row76);
-            table1.addCell(row77);
-            table1.addCell(row78);
-            table1.addCell(row79);
-            table1.addCell(row80);
-            table1.addCell(row81);
-            table1.addCell(row82);
-            table1.addCell(row83);
-            table1.addCell(row84);
+            table1.addCell(new PdfPCell(new Phrase("Appearance", cellfont)));
+            table1.addCell(new PdfPCell(new Phrase("")));
+            table1.addCell(new PdfPCell(new Phrase("")));
+            table1.addCell(new PdfPCell(new Phrase("")));
+            table1.addCell(new PdfPCell(new Phrase("")));
+            table1.addCell(new PdfPCell(new Phrase("")));
+            table1.addCell(new PdfPCell(new Phrase("   Oral English", cellfont)));
+            table1.addCell(new PdfPCell(new Phrase("")));
+            table1.addCell(new PdfPCell(new Phrase("")));
+            table1.addCell(new PdfPCell(new Phrase("")));
+            table1.addCell(new PdfPCell(new Phrase("")));
+            table1.addCell(new PdfPCell(new Phrase("")));
 
             document.add(table1);
             /* OSAIGBOVOMWAN VICTORY OSASOGIE */
 
-            Paragraph credit = new Paragraph();
-            credit.add("Number of credit(s) ____ Student Average marks: " + average_total + "                                   Class Average: ________");
+            Paragraph credit = new Paragraph("", cellfont);
+            credit.add("Number of credit(s) ____ Student Average marks: " + average_total + "                                                Class Average: ________");
 
-            Paragraph remark = new Paragraph();
-            remark.add("Class Teacher Remarks: ____________________________" + "                  SCHOOL FEES:");
+            Paragraph remark = new Paragraph("", cellfont);
+            remark.add("Class Teacher Remarks: ____________________________" + "                                   SCHOOL FEES:");
             remark.setSpacingBefore(3f);
 
-            Paragraph sign = new Paragraph();
-            sign.add("Signature: __________________ Date: ___________" + "                                        Uniform: ________");
+            Paragraph sign = new Paragraph("", cellfont);
+            sign.add("Signature: _______________________ Date: ___________" + "                                               Uniform: ________");
             sign.setSpacingBefore(3f);
 
-            Paragraph principal = new Paragraph();
-            principal.add("Principal's Remark: ___________________________" + "                           Next Term Fees: ________");
+            Paragraph principal = new Paragraph("", cellfont);
+            principal.add("Principal's Remark: ________________________________" + "                                  Next Term Fees: ________");
             principal.setSpacingBefore(3f);
 
-            Paragraph signs = new Paragraph();
-            signs.add("Signature: __________________ Date: ___________" + "                        Outstanding Fees: ________");
+            Paragraph signs = new Paragraph("", cellfont);
+            signs.add("Signature: _______________________ Date: ___________" + "                               Outstanding Fees: ________");
             signs.setSpacingBefore(3f);
 
-            Paragraph explain = new Paragraph();
-            explain.add("EXPLANATION OF REMARKS " + "                                                           Other Fees: _____________");
+            Paragraph explain = new Paragraph("", cellfont);
+            explain.add("EXPLANATION OF REMARKS " + "                                                                             Other Fees: _____________");
             explain.setSpacingBefore(3f);
 
-            Paragraph fail = new Paragraph();
-            fail.add("28 - 39 FAIL         56 - 64 GOOD" + "                                                  TOTAL: ____________________");
+            Paragraph fail = new Paragraph("", cellfont);
+            fail.add("28 - 39 FAIL         56 - 64 GOOD" + "                                                                    TOTAL: ____________________");
             fail.setSpacingBefore(3f);
 
-            Paragraph pass = new Paragraph();
+            Paragraph pass = new Paragraph("", cellfont);
             pass.add("40 - 45 PASS       65 - 74 VERY GOOD");
             pass.setSpacingBefore(3f);
 
-            Paragraph credits = new Paragraph();
+            Paragraph credits = new Paragraph("", cellfont);
             credits.add("48 - 55 CREDIT   75 - 100 EXCELLENT");
             credits.setSpacingBefore(3f);
 
@@ -1574,8 +1473,8 @@ public class ResultPrimary extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnExit;
     private javax.swing.JButton btnGenerate;
+    private javax.swing.JButton btnPrint;
     private javax.swing.JButton btnRanking;
     private javax.swing.JButton btnRecord;
     private javax.swing.JButton btnReset;

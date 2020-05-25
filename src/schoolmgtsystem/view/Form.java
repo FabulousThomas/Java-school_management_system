@@ -446,7 +446,7 @@ static {
     }//GEN-LAST:event_btntimetableActionPerformed
 
     private void btncheckresultActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncheckresultActionPerformed
-           new StudentResult().show();
+           new StudentResult_SSS().show();
            setVisible(true);
           this.dispose();
     }//GEN-LAST:event_btncheckresultActionPerformed

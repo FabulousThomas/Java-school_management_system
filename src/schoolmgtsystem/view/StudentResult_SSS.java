@@ -11,6 +11,7 @@ import com.itextpdf.text.Element;
 import com.itextpdf.text.Font;
 import com.itextpdf.text.Image;
 import com.itextpdf.text.Paragraph;
+import com.itextpdf.text.Phrase;
 import com.itextpdf.text.pdf.PdfPCell;
 import com.itextpdf.text.pdf.PdfPTable;
 import com.itextpdf.text.pdf.PdfWriter;
@@ -35,16 +36,16 @@ import schoolmgtsystem.model.dbhelper.DBHandler;
  *
  * @author FabulousTHO
  */
-public class StudentResult extends javax.swing.JFrame {
+public class StudentResult_SSS extends javax.swing.JFrame {
 
     DBHandler handler;
-    private ArrayList<StudentResult> cardList;
+    private ArrayList<StudentResult_SSS> cardList;
 
     //String conStr = "jdbc:sqlserver://localhost;instanceName=SQLEXPRESS;databaseName=SchoolManagementSystem;user=sa;password=123456789";
     /**
      * Creates new form StudentResult
      */
-    public StudentResult() {
+    public StudentResult_SSS() {
         initComponents();
         setLocationRelativeTo(null);
     }
@@ -468,18 +469,12 @@ public class StudentResult extends javax.swing.JFrame {
 
     private void btnTranscriptActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTranscriptActionPerformed
 
-        txtTranscript.append("Excel International School(To be great is our priority)"
-                + "\n\tStudent Result"
+        txtTranscript.append("                              BRIGHT STARS SCHOOL\n                             (Knowledge for Excellence)"
+                + "\n                                        Student Result"
                 + "\n_____________________________________"
                 + "\nStudent ID:\t\t" + txtStudentID.getText()
                 + "\n_____________________________________"
                 + "\nFull Name:\t\t" + txtFullName.getText()
-                + "\n_____________________________________"
-                //                + "\nSurname:\t\t" + txtSurname.getText()
-                //                + "\n_____________________________________"
-                //                + "\nCourse Code:\t\t" + txtCourseCode.getSelectedItem()
-                //                + "\n_____________________________________"
-                + "\nMaths:\t\t" + txtMaths.getText()
                 + "\n_____________________________________"
                 + "\nEnglish:\t\t" + txtEnglish.getText()
                 + "\n_____________________________________"
@@ -514,11 +509,11 @@ public class StudentResult extends javax.swing.JFrame {
 //            }
 //        }
 //        if (sel == 1) {
-//            new StudentResult().show();
+//            new StudentResult_SSS().show();
 //            this.dispose();
 //        }
 //        if (sel == 2) {
-//            new StudentResult().show();
+//            new StudentResult_SSS().show();
 //            this.dispose();
 //        }
 
@@ -560,7 +555,7 @@ public class StudentResult extends javax.swing.JFrame {
 
             }
         } catch (ClassNotFoundException | SQLException ex) {
-            Logger.getLogger(StudentResult.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(StudentResult_SSS.class.getName()).log(Level.SEVERE, null, ex);
         }
 
 
@@ -694,8 +689,12 @@ public class StudentResult extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(StudentResult.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(StudentResult_SSS.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //UIManager.setLookAndFeel("com.jtattoo.plaf.aluminium.AluminiumLookAndFeel");
+        //</editor-fold>
+        //UIManager.setLookAndFeel("com.jtattoo.plaf.aluminium.AluminiumLookAndFeel");
         //</editor-fold>
         //UIManager.setLookAndFeel("com.jtattoo.plaf.aluminium.AluminiumLookAndFeel");
         //</editor-fold>
@@ -708,7 +707,7 @@ public class StudentResult extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> {
-            new StudentResult().setVisible(true);
+            new StudentResult_SSS().setVisible(true);
         });
     }
 
@@ -815,12 +814,6 @@ public class StudentResult extends javax.swing.JFrame {
 
         try {
 
-            String school = "BRIGHT STARS SCHOOL";
-            String slogan = "(NURSERY, PRIMARY & SECONDARY)";
-            String address = "Omorodion Osaretin Str, Off Okuwague\nEvbabogun Road, Off Sapele Road, Benin City";
-            String tel = "07067183000";
-            String motto = "Knowledge for Excellence";
-
             String english_total = txtEnglish.getText();
             String maths_total = txtMaths.getText();
             String comm_total = txtCommerce.getText();
@@ -848,49 +841,47 @@ public class StudentResult extends javax.swing.JFrame {
             PdfWriter pdfWriter = PdfWriter.getInstance(document, new FileOutputStream(file));
             document.open();
 
-//            document.add(new Paragraph(content));
-//            document.add(new Paragraph(title));
             Image image = Image.getInstance("C:\\Users\\Thomas\\Documents\\NetBeansProjects\\SchoolMgtSystem\\Bright_Stars.png");
-            image.setAbsolutePosition(70, 742);
+            image.setAbsolutePosition(70, 738);
 
-            Font tiFont = new Font(Font.FontFamily.TIMES_ROMAN, 20, 20);
-            Paragraph ti = new Paragraph();
+            Font infofont = new Font(Font.FontFamily.TIMES_ROMAN, 11.5f, Font.BOLD);
+            Font detailsfont = new Font(Font.FontFamily.HELVETICA, 11f, Font.NORMAL);
+            Font namefont = new Font(Font.FontFamily.TIMES_ROMAN, 12.5f, Font.BOLD);
+            Font motofont = new Font(Font.FontFamily.TIMES_ROMAN, 9, Font.BOLD);
+
+            Paragraph ti = new Paragraph("", namefont);
             ti.add("BRIGHT STARS SENIOR SECONDARY SCHOOL");
             ti.setAlignment(Element.ALIGN_CENTER);
-            ti.trimToSize();
-            ti.setFont(tiFont);
-            font = ti.getFont();
-//            ti.setSpacingAfter(20f);
-            font.setColor(135, 198, 240);
-//            font.setSize(30);
+//            font = ti.getFont();
+//            font.setSize(12.5f);
 
-            Paragraph sl = new Paragraph();
+            Paragraph sl = new Paragraph("", motofont);
             sl.add("(NURSERY, PRIMARY & SECONDARY)");
             sl.setAlignment(Element.ALIGN_CENTER);
             font = sl.getFont();
-//            sl.setSpacingAfter(20f);
-            font.setColor(135, 198, 240);
-            font.setSize(9);
+            font.setSize(10);
+            sl.setSpacingBefore(0f);
+            sl.setSpacingAfter(0f);
 
-            Paragraph sti = new Paragraph();
+            Paragraph sti = new Paragraph("", infofont);
             sti.add("Omorodion Osaretin Str, Off Okuwague\nEvbabogun Road, Off Sapele Road, Benin City");
             sti.setAlignment(Element.ALIGN_CENTER);
-            font = sti.getFont();
-            font.setColor(135, 198, 240);
+            sti.setSpacingBefore(0f);
+            sti.setSpacingAfter(0f);
 
-            Paragraph tele = new Paragraph();
-            tele.add("Tel: 07067183000" + " \tEmail: informbrightstars@yahoo.com");
+            Paragraph tele = new Paragraph("", infofont);
+            tele.add("TEL: 07067183000" + " \tEmail: informbrightstars@yahoo.com");
             tele.setAlignment(Element.ALIGN_CENTER);
-            font = tele.getFont();
-            font.setColor(135, 198, 240);
+            tele.setSpacingBefore(0f);
+            tele.setSpacingAfter(0f);
 
-            Paragraph mot = new Paragraph();
+            Paragraph mot = new Paragraph("", infofont);
             mot.add("MOTTO: Knowledge for Excellence");
             mot.setAlignment(Element.ALIGN_CENTER);
-            font = mot.getFont();
-            font.setColor(135, 198, 240);
+            mot.setSpacingBefore(0f);
+            mot.setSpacingAfter(0f);
 
-            Paragraph name = new Paragraph();
+            Paragraph name = new Paragraph("", detailsfont);
             name.setAlignment(Element.ALIGN_CENTER);
             name.add("Full Name: " + txtFullName.getText()
                     + "   Class: ________" + "   Term: ________");
@@ -909,65 +900,14 @@ public class StudentResult extends javax.swing.JFrame {
             document.add(mot);
             document.add(name);
 
-//            document.add(new Paragraph(subTitle));
-//            document.add(new Paragraph("Student ID: " + txtStudentID.getText()));
-//            document.add(new Paragraph("First Name: " + txtFullName.getText()));
-//            document.add(new Paragraph("Surname: " + txtSurname.getText()));
-//            document.add(new Paragraph("Course Code: " + txtCourseCode.getSelectedItem()));
-//            document.add(new Paragraph("DETAILED RESULT"));
-            PdfPTable table = new PdfPTable(8);
-            table.setWidthPercentage(105);
-            table.setSpacingBefore(11f);
-            table.setSpacingAfter(11f);
-
-            float[] colWidth = {2f, 0.5f, 0.5f, 0.5f, 0.5f, 0.5f, 0.5f, 0.5f};
-            table.setWidths(colWidth);
-
-            PdfPCell c1 = new PdfPCell(new Paragraph("SUBJECTS"));
-            PdfPCell c2 = new PdfPCell(new Paragraph("1ST\nTEST"));
-            PdfPCell c3 = new PdfPCell(new Paragraph("2ND\nTEST"));
-            PdfPCell c4 = new PdfPCell(new Paragraph("EXAM"));
-            PdfPCell c5 = new PdfPCell(new Paragraph("TOTAL"));
-            PdfPCell c6 = new PdfPCell(new Paragraph("GRADE"));
-            PdfPCell c7 = new PdfPCell(new Paragraph("POSITOIN"));
-            PdfPCell c8 = new PdfPCell(new Paragraph("SIGN"));
-
-            PdfPCell en1 = new PdfPCell(new Paragraph("ENGLISH LANGUAGE"));
-            PdfPCell en2 = new PdfPCell(new Paragraph(english1));
-            PdfPCell en3 = new PdfPCell(new Paragraph(english2));
-            PdfPCell en4 = new PdfPCell(new Paragraph(englishE));
-            PdfPCell en5 = new PdfPCell(new Paragraph(english_total));
-            PdfPCell en6 = new PdfPCell(new Paragraph(""));
-            PdfPCell en7 = new PdfPCell(new Paragraph(""));
-            PdfPCell en8 = new PdfPCell(new Paragraph(""));
-
-            PdfPCell s1 = new PdfPCell(new Paragraph("LITERATURE"));
-            PdfPCell s2 = new PdfPCell(new Paragraph(lit1));
-            PdfPCell s3 = new PdfPCell(new Paragraph(lit2));
-            PdfPCell s4 = new PdfPCell(new Paragraph(litE));
-            PdfPCell s5 = new PdfPCell(new Paragraph(lit_total));
-            PdfPCell s6 = new PdfPCell(new Paragraph(""));
-            PdfPCell s7 = new PdfPCell(new Paragraph(""));
-            PdfPCell s8 = new PdfPCell(new Paragraph(""));
-
-            PdfPCell e1 = new PdfPCell(new Paragraph("MATHEMATICS"));
-            PdfPCell e2 = new PdfPCell(new Paragraph(maths1));
-            PdfPCell e3 = new PdfPCell(new Paragraph(maths2));
-            PdfPCell e4 = new PdfPCell(new Paragraph(mathsE));
-            PdfPCell e5 = new PdfPCell(new Paragraph(maths_total));
-            PdfPCell e6 = new PdfPCell(new Paragraph(""));
-            PdfPCell e7 = new PdfPCell(new Paragraph(""));
-            PdfPCell e8 = new PdfPCell(new Paragraph(""));
-
-            PdfPCell sh1 = new PdfPCell(new Paragraph("COMPUTER"));
-            PdfPCell sh2 = new PdfPCell(new Paragraph(ict1));
-            PdfPCell sh3 = new PdfPCell(new Paragraph(ict2));
-            PdfPCell sh4 = new PdfPCell(new Paragraph(ictE));
-            PdfPCell sh5 = new PdfPCell(new Paragraph(ict_total));
-            PdfPCell sh6 = new PdfPCell(new Paragraph(""));
-            PdfPCell sh7 = new PdfPCell(new Paragraph(""));
-            PdfPCell sh8 = new PdfPCell(new Paragraph(""));
-
+//            PdfPCell c1 = new PdfPCell(new Paragraph("SUBJECTS"));
+//            PdfPCell c2 = new PdfPCell(new Paragraph("1ST\nTEST"));
+//            PdfPCell c3 = new PdfPCell(new Paragraph("2ND\nTEST"));
+//            PdfPCell c4 = new PdfPCell(new Paragraph("EXAM"));
+//            PdfPCell c5 = new PdfPCell(new Paragraph("TOTAL"));
+//            PdfPCell c6 = new PdfPCell(new Paragraph("GRADE"));
+//            PdfPCell c7 = new PdfPCell(new Paragraph("POSITOIN"));
+//            PdfPCell c8 = new PdfPCell(new Paragraph("SIGN"));
 //            PdfPCell bat1 = new PdfPCell(new Paragraph("FRENCH"));
 //            PdfPCell bat2 = new PdfPCell(new Paragraph(fre1));
 //            PdfPCell bat3 = new PdfPCell(new Paragraph(fre2));
@@ -976,343 +916,242 @@ public class StudentResult extends javax.swing.JFrame {
 //            PdfPCell bat6 = new PdfPCell(new Paragraph(""));
 //            PdfPCell bat7 = new PdfPCell(new Paragraph(""));
 //            PdfPCell bat8 = new PdfPCell(new Paragraph(""));
-            PdfPCell ph1 = new PdfPCell(new Paragraph("CHEMISTRY"));
-            PdfPCell ph2 = new PdfPCell(new Paragraph(chem1));
-            PdfPCell ph3 = new PdfPCell(new Paragraph(chem2));
-            PdfPCell ph4 = new PdfPCell(new Paragraph(chemE));
-            PdfPCell ph5 = new PdfPCell(new Paragraph(chem_total));
-            PdfPCell ph6 = new PdfPCell(new Paragraph(""));
-            PdfPCell ph7 = new PdfPCell(new Paragraph(""));
-            PdfPCell ph8 = new PdfPCell(new Paragraph(""));
+//            DEFINING THE TABLE WITH 8 COLUMNS
+            PdfPTable table = new PdfPTable(8);
+            table.setWidthPercentage(105);
+            table.setSpacingBefore(11f);
+            table.setSpacingAfter(11f);
 
-            PdfPCell ic1 = new PdfPCell(new Paragraph("PHYSICS"));
-            PdfPCell ic2 = new PdfPCell(new Paragraph(phy1));
-            PdfPCell ic3 = new PdfPCell(new Paragraph(phy2));
-            PdfPCell ic4 = new PdfPCell(new Paragraph(phyE));
-            PdfPCell ic5 = new PdfPCell(new Paragraph(phy_total));
-            PdfPCell ic6 = new PdfPCell(new Paragraph(""));
-            PdfPCell ic7 = new PdfPCell(new Paragraph(""));
-            PdfPCell ic8 = new PdfPCell(new Paragraph(""));
-//
-            PdfPCell hh1 = new PdfPCell(new Paragraph("GEOGRAPHY"));
-            PdfPCell hh2 = new PdfPCell(new Paragraph(geo1));
-            PdfPCell hh3 = new PdfPCell(new Paragraph(geo2));
-            PdfPCell hh4 = new PdfPCell(new Paragraph(geoE));
-            PdfPCell hh5 = new PdfPCell(new Paragraph(geo_total));
-            PdfPCell hh6 = new PdfPCell(new Paragraph(""));
-            PdfPCell hh7 = new PdfPCell(new Paragraph(""));
-            PdfPCell hh8 = new PdfPCell(new Paragraph(""));
+//            DEFINING COLUMN WIDTH
+            float[] colWidth = {1.7f, 0.3f, 0.3f, 0.3f, 0.4f, 0.5f, 0.5f, 0.4f};
+            table.setWidths(colWidth);
 
-            PdfPCell so1 = new PdfPCell(new Paragraph("BIOLOGY"));
-            PdfPCell so2 = new PdfPCell(new Paragraph(bio1));
-            PdfPCell so3 = new PdfPCell(new Paragraph(bio2));
-            PdfPCell so4 = new PdfPCell(new Paragraph(bioE));
-            PdfPCell so5 = new PdfPCell(new Paragraph(bio_total));
-            PdfPCell so6 = new PdfPCell(new Paragraph(""));
-            PdfPCell so7 = new PdfPCell(new Paragraph(""));
-            PdfPCell so8 = new PdfPCell(new Paragraph(""));
+//            DEFINING FONT SIZES FOR THE TABLE HEADER ANND TABLE CELLS
+            Font headerfont = new Font(Font.FontFamily.HELVETICA, 11, Font.BOLD);
+            Font cellfont = new Font(Font.FontFamily.HELVETICA, 10.8f, Font.NORMAL);
 
-            PdfPCell ci1 = new PdfPCell(new Paragraph("CHRISTIAN RELIGIOUS STUDIES"));
-            PdfPCell ci2 = new PdfPCell(new Paragraph(crs1));
-            PdfPCell ci3 = new PdfPCell(new Paragraph(crs2));
-            PdfPCell ci4 = new PdfPCell(new Paragraph(crsE));
-            PdfPCell ci5 = new PdfPCell(new Paragraph(crs_total));
-            PdfPCell ci6 = new PdfPCell(new Paragraph(""));
-            PdfPCell ci7 = new PdfPCell(new Paragraph(""));
-            PdfPCell ci8 = new PdfPCell(new Paragraph(""));
+//            ADDING CELLS TO THE TABLE
+            table.addCell(new PdfPCell(new Phrase("", headerfont)));
+            table.addCell(new PdfPCell(new Phrase("  1ST\n TEST", headerfont)));
+            table.addCell(new PdfPCell(new Phrase("  2ND\n TEST", headerfont)));
+            table.addCell(new PdfPCell(new Phrase("EXAM", headerfont)));
+            table.addCell(new PdfPCell(new Phrase("  TOTAL", headerfont)));
+            table.addCell(new PdfPCell(new Phrase("   GRADE", headerfont)));
+            table.addCell(new PdfPCell(new Phrase(" POSITION", headerfont)));
+            table.addCell(new PdfPCell(new Phrase("   SIGN", headerfont)));
 
-            PdfPCell co1 = new PdfPCell(new Paragraph("GOVERNMENT"));
-            PdfPCell co2 = new PdfPCell(new Paragraph(gov1));
-            PdfPCell co3 = new PdfPCell(new Paragraph(gov2));
-            PdfPCell co4 = new PdfPCell(new Paragraph(govE));
-            PdfPCell co5 = new PdfPCell(new Paragraph(gov_total));
-            PdfPCell co6 = new PdfPCell(new Paragraph(""));
-            PdfPCell co7 = new PdfPCell(new Paragraph(""));
-            PdfPCell co8 = new PdfPCell(new Paragraph(""));
+            table.addCell(new PdfPCell(new Phrase("ENGLISH LANGUAGE", cellfont)));
+            table.addCell(new PdfPCell(new Phrase("   " + english1, cellfont)));
+            table.addCell(new PdfPCell(new Phrase("   " + english2, cellfont)));
+            table.addCell(new PdfPCell(new Phrase("   " + englishE, cellfont)));
+            table.addCell(new PdfPCell(new Phrase("   " + english_total, cellfont)));
+            table.addCell(new PdfPCell(new Phrase("", cellfont)));
+            table.addCell(new PdfPCell(new Phrase("", cellfont)));
+            table.addCell(new PdfPCell(new Phrase("", cellfont)));
 
-            PdfPCell ca1 = new PdfPCell(new Paragraph("AGRICULTURAL SCIENCE"));
-            PdfPCell ca2 = new PdfPCell(new Paragraph(agric1));
-            PdfPCell ca3 = new PdfPCell(new Paragraph(agric2));
-            PdfPCell ca4 = new PdfPCell(new Paragraph(agricE));
-            PdfPCell ca5 = new PdfPCell(new Paragraph(agric_total));
-            PdfPCell ca6 = new PdfPCell(new Paragraph(""));
-            PdfPCell ca7 = new PdfPCell(new Paragraph(""));
-            PdfPCell ca8 = new PdfPCell(new Paragraph(""));
+            table.addCell(new PdfPCell(new Phrase("LITERATURE", cellfont)));
+            table.addCell(new PdfPCell(new Phrase("   " + lit1, cellfont)));
+            table.addCell(new PdfPCell(new Phrase("   " + lit2, cellfont)));
+            table.addCell(new PdfPCell(new Phrase("   " + litE, cellfont)));
+            table.addCell(new PdfPCell(new Phrase("   " + lit_total, cellfont)));
+            table.addCell(new PdfPCell(new Phrase("", cellfont)));
+            table.addCell(new PdfPCell(new Phrase("", cellfont)));
+            table.addCell(new PdfPCell(new Phrase("", cellfont)));
 
-            PdfPCell ag1 = new PdfPCell(new Paragraph("COMMERCE"));
-            PdfPCell ag2 = new PdfPCell(new Paragraph(comm1));
-            PdfPCell ag3 = new PdfPCell(new Paragraph(comm2));
-            PdfPCell ag4 = new PdfPCell(new Paragraph(commE));
-            PdfPCell ag5 = new PdfPCell(new Paragraph(comm_total));
-            PdfPCell ag6 = new PdfPCell(new Paragraph(""));
-            PdfPCell ag7 = new PdfPCell(new Paragraph(""));
-            PdfPCell ag8 = new PdfPCell(new Paragraph(""));
+            table.addCell(new PdfPCell(new Phrase("MATHEMATICS", cellfont)));
+            table.addCell(new PdfPCell(new Phrase("   " + maths1, cellfont)));
+            table.addCell(new PdfPCell(new Phrase("   " + maths2, cellfont)));
+            table.addCell(new PdfPCell(new Phrase("   " + mathsE, cellfont)));
+            table.addCell(new PdfPCell(new Phrase("   " + maths_total, cellfont)));
+            table.addCell(new PdfPCell(new Phrase("", cellfont)));
+            table.addCell(new PdfPCell(new Phrase("", cellfont)));
+            table.addCell(new PdfPCell(new Phrase("", cellfont)));
 
-            PdfPCell wr1 = new PdfPCell(new Paragraph("ECONOMICS"));
-            PdfPCell wr2 = new PdfPCell(new Paragraph(econ1));
-            PdfPCell wr3 = new PdfPCell(new Paragraph(econ2));
-            PdfPCell wr4 = new PdfPCell(new Paragraph(econE));
-            PdfPCell wr5 = new PdfPCell(new Paragraph(econ_total));
-            PdfPCell wr6 = new PdfPCell(new Paragraph(""));
-            PdfPCell wr7 = new PdfPCell(new Paragraph(""));
-            PdfPCell wr8 = new PdfPCell(new Paragraph(""));
+            table.addCell(new PdfPCell(new Phrase("COMPUTER", cellfont)));
+            table.addCell(new PdfPCell(new Phrase("   " + ict1, cellfont)));
+            table.addCell(new PdfPCell(new Phrase("   " + ict2, cellfont)));
+            table.addCell(new PdfPCell(new Phrase("   " + ictE, cellfont)));
+            table.addCell(new PdfPCell(new Phrase("   " + ict_total, cellfont)));
+            table.addCell(new PdfPCell(new Phrase("", cellfont)));
+            table.addCell(new PdfPCell(new Phrase("", cellfont)));
+            table.addCell(new PdfPCell(new Phrase("", cellfont)));
 
-            PdfPCell nr1 = new PdfPCell(new Paragraph("FINE ARTS"));
-            PdfPCell nr2 = new PdfPCell(new Paragraph(art1));
-            PdfPCell nr3 = new PdfPCell(new Paragraph(art2));
-            PdfPCell nr4 = new PdfPCell(new Paragraph(artE));
-            PdfPCell nr5 = new PdfPCell(new Paragraph(arts_total));
-            PdfPCell nr6 = new PdfPCell(new Paragraph(""));
-            PdfPCell nr7 = new PdfPCell(new Paragraph(""));
-            PdfPCell nr8 = new PdfPCell(new Paragraph(""));
+            table.addCell(new PdfPCell(new Phrase("CHEMISTRY", cellfont)));
+            table.addCell(new PdfPCell(new Phrase("   " + chem1, cellfont)));
+            table.addCell(new PdfPCell(new Phrase("   " + chem2, cellfont)));
+            table.addCell(new PdfPCell(new Phrase("   " + chemE, cellfont)));
+            table.addCell(new PdfPCell(new Phrase("   " + chem_total, cellfont)));
+            table.addCell(new PdfPCell(new Phrase("", cellfont)));
+            table.addCell(new PdfPCell(new Phrase("", cellfont)));
+            table.addCell(new PdfPCell(new Phrase("", cellfont)));
 
-            PdfPCell v1 = new PdfPCell(new Paragraph("ACCOUNTING"));
-            PdfPCell v2 = new PdfPCell(new Paragraph(acc1));
-            PdfPCell v3 = new PdfPCell(new Paragraph(acc2));
-            PdfPCell v4 = new PdfPCell(new Paragraph(accE));
-            PdfPCell v5 = new PdfPCell(new Paragraph(acc_total));
-            PdfPCell v6 = new PdfPCell(new Paragraph(""));
-            PdfPCell v7 = new PdfPCell(new Paragraph(""));
-            PdfPCell v8 = new PdfPCell(new Paragraph(""));
+            table.addCell(new PdfPCell(new Phrase("PHYSICS", cellfont)));
+            table.addCell(new PdfPCell(new Phrase("   " + phy1, cellfont)));
+            table.addCell(new PdfPCell(new Phrase("   " + phy2, cellfont)));
+            table.addCell(new PdfPCell(new Phrase("   " + phyE, cellfont)));
+            table.addCell(new PdfPCell(new Phrase("   " + phy_total, cellfont)));
+            table.addCell(new PdfPCell(new Phrase("", cellfont)));
+            table.addCell(new PdfPCell(new Phrase("", cellfont)));
+            table.addCell(new PdfPCell(new Phrase("", cellfont)));
 
-            PdfPCell t1 = new PdfPCell(new Paragraph("TOTAL"));
-            PdfPCell t2 = new PdfPCell(new Paragraph(""));
-            PdfPCell t3 = new PdfPCell(new Paragraph(""));
-            PdfPCell t4 = new PdfPCell(new Paragraph(""));
-            PdfPCell t5 = new PdfPCell(new Paragraph(score_total));
-            PdfPCell t6 = new PdfPCell(new Paragraph(""));
-            PdfPCell t7 = new PdfPCell(new Paragraph(""));
-            PdfPCell t8 = new PdfPCell(new Paragraph(""));
+            table.addCell(new PdfPCell(new Phrase("GEOGRAPHY", cellfont)));
+            table.addCell(new PdfPCell(new Phrase("   " + geo1, cellfont)));
+            table.addCell(new PdfPCell(new Phrase("   " + geo2, cellfont)));
+            table.addCell(new PdfPCell(new Phrase("   " + geoE, cellfont)));
+            table.addCell(new PdfPCell(new Phrase("   " + geo_total, cellfont)));
+            table.addCell(new PdfPCell(new Phrase("", cellfont)));
+            table.addCell(new PdfPCell(new Phrase("", cellfont)));
+            table.addCell(new PdfPCell(new Phrase("", cellfont)));
 
-            //Adding cells to the table.
-            table.addCell(c1);
-            table.addCell(c2);
-            table.addCell(c3);
-            table.addCell(c4);
-            table.addCell(c5);
-            table.addCell(c6);
-            table.addCell(c7);
-            table.addCell(c8);
+            table.addCell(new PdfPCell(new Phrase("BIOLOGY", cellfont)));
+            table.addCell(new PdfPCell(new Phrase("   " + bio1, cellfont)));
+            table.addCell(new PdfPCell(new Phrase("   " + bio2, cellfont)));
+            table.addCell(new PdfPCell(new Phrase("   " + bioE, cellfont)));
+            table.addCell(new PdfPCell(new Phrase("   " + bio_total, cellfont)));
+            table.addCell(new PdfPCell(new Phrase("", cellfont)));
+            table.addCell(new PdfPCell(new Phrase("", cellfont)));
+            table.addCell(new PdfPCell(new Phrase("", cellfont)));
 
-            table.addCell(en1);
-            table.addCell(en2);
-            table.addCell(en3);
-            table.addCell(en4);
-            table.addCell(en5);
-            table.addCell(en6);
-            table.addCell(en7);
-            table.addCell(en8);
+            table.addCell(new PdfPCell(new Phrase("CHRISTIAN RELIGIOUS STUDIES", cellfont)));
+            table.addCell(new PdfPCell(new Phrase("   " + crs1, cellfont)));
+            table.addCell(new PdfPCell(new Phrase("   " + crs2, cellfont)));
+            table.addCell(new PdfPCell(new Phrase("   " + crsE, cellfont)));
+            table.addCell(new PdfPCell(new Phrase("   " + crs_total, cellfont)));
+            table.addCell(new PdfPCell(new Phrase("", cellfont)));
+            table.addCell(new PdfPCell(new Phrase("", cellfont)));
+            table.addCell(new PdfPCell(new Phrase("", cellfont)));
 
-            table.addCell(s1);
-            table.addCell(s2);
-            table.addCell(s3);
-            table.addCell(s4);
-            table.addCell(s5);
-            table.addCell(s6);
-            table.addCell(s7);
-            table.addCell(s8);
+            table.addCell(new PdfPCell(new Phrase("GOVEERNMENT", cellfont)));
+            table.addCell(new PdfPCell(new Phrase("   " + gov1, cellfont)));
+            table.addCell(new PdfPCell(new Phrase("   " + gov2, cellfont)));
+            table.addCell(new PdfPCell(new Phrase("   " + govE, cellfont)));
+            table.addCell(new PdfPCell(new Phrase("   " + gov_total, cellfont)));
+            table.addCell(new PdfPCell(new Phrase("", cellfont)));
+            table.addCell(new PdfPCell(new Phrase("", cellfont)));
+            table.addCell(new PdfPCell(new Phrase("", cellfont)));
 
-            table.addCell(e1);
-            table.addCell(e2);
-            table.addCell(e3);
-            table.addCell(e4);
-            table.addCell(e5);
-            table.addCell(e6);
-            table.addCell(e7);
-            table.addCell(e8);
+            table.addCell(new PdfPCell(new Phrase("AGRICULTURAL SCIENCE", cellfont)));
+            table.addCell(new PdfPCell(new Phrase("   " + agric1, cellfont)));
+            table.addCell(new PdfPCell(new Phrase("   " + agric2, cellfont)));
+            table.addCell(new PdfPCell(new Phrase("   " + agricE, cellfont)));
+            table.addCell(new PdfPCell(new Phrase("   " + agric_total, cellfont)));
+            table.addCell(new PdfPCell(new Phrase("", cellfont)));
+            table.addCell(new PdfPCell(new Phrase("", cellfont)));
+            table.addCell(new PdfPCell(new Phrase("", cellfont)));
 
-            table.addCell(sh1);
-            table.addCell(sh2);
-            table.addCell(sh3);
-            table.addCell(sh4);
-            table.addCell(sh5);
-            table.addCell(sh6);
-            table.addCell(sh7);
-            table.addCell(sh8);
+            table.addCell(new PdfPCell(new Phrase("COMMERCE", cellfont)));
+            table.addCell(new PdfPCell(new Phrase("   " + comm1, cellfont)));
+            table.addCell(new PdfPCell(new Phrase("   " + comm2, cellfont)));
+            table.addCell(new PdfPCell(new Phrase("   " + commE, cellfont)));
+            table.addCell(new PdfPCell(new Phrase("   " + comm_total, cellfont)));
+            table.addCell(new PdfPCell(new Phrase("", cellfont)));
+            table.addCell(new PdfPCell(new Phrase("", cellfont)));
+            table.addCell(new PdfPCell(new Phrase("", cellfont)));
 
-//            table.addCell(bat1);
-//            table.addCell(bat2);
-//            table.addCell(bat3);
-//            table.addCell(bat4);
-//            table.addCell(bat5);
-//            table.addCell(bat6);
-//            table.addCell(bat7);
-//            table.addCell(bat8);
-            table.addCell(ph1);
-            table.addCell(ph2);
-            table.addCell(ph3);
-            table.addCell(ph4);
-            table.addCell(ph5);
-            table.addCell(ph6);
-            table.addCell(ph7);
-            table.addCell(ph8);
+            table.addCell(new PdfPCell(new Phrase("ECONOMICS", cellfont)));
+            table.addCell(new PdfPCell(new Phrase("   " + econ1, cellfont)));
+            table.addCell(new PdfPCell(new Phrase("   " + econ2, cellfont)));
+            table.addCell(new PdfPCell(new Phrase("   " + econE, cellfont)));
+            table.addCell(new PdfPCell(new Phrase("   " + econ_total, cellfont)));
+            table.addCell(new PdfPCell(new Phrase("", cellfont)));
+            table.addCell(new PdfPCell(new Phrase("", cellfont)));
+            table.addCell(new PdfPCell(new Phrase("", cellfont)));
 
-            table.addCell(ic1);
-            table.addCell(ic2);
-            table.addCell(ic3);
-            table.addCell(ic4);
-            table.addCell(ic5);
-            table.addCell(ic6);
-            table.addCell(ic7);
-            table.addCell(ic8);
+            table.addCell(new PdfPCell(new Phrase("FINE ARTS", cellfont)));
+            table.addCell(new PdfPCell(new Phrase("   " + art1, cellfont)));
+            table.addCell(new PdfPCell(new Phrase("   " + art2, cellfont)));
+            table.addCell(new PdfPCell(new Phrase("   " + artE, cellfont)));
+            table.addCell(new PdfPCell(new Phrase("   " + arts_total, cellfont)));
+            table.addCell(new PdfPCell(new Phrase("", cellfont)));
+            table.addCell(new PdfPCell(new Phrase("", cellfont)));
+            table.addCell(new PdfPCell(new Phrase("", cellfont)));
 
-            table.addCell(hh1);
-            table.addCell(hh2);
-            table.addCell(hh3);
-            table.addCell(hh4);
-            table.addCell(hh5);
-            table.addCell(hh6);
-            table.addCell(hh7);
-            table.addCell(hh8);
-//
-            table.addCell(so1);
-            table.addCell(so2);
-            table.addCell(so3);
-            table.addCell(so4);
-            table.addCell(so5);
-            table.addCell(so6);
-            table.addCell(so7);
-            table.addCell(so8);
+            table.addCell(new PdfPCell(new Phrase("ACCOUNTING", cellfont)));
+            table.addCell(new PdfPCell(new Phrase("   " + acc1, cellfont)));
+            table.addCell(new PdfPCell(new Phrase("   " + acc2, cellfont)));
+            table.addCell(new PdfPCell(new Phrase("   " + accE, cellfont)));
+            table.addCell(new PdfPCell(new Phrase("   " + acc_total, cellfont)));
+            table.addCell(new PdfPCell(new Phrase("", cellfont)));
+            table.addCell(new PdfPCell(new Phrase("", cellfont)));
+            table.addCell(new PdfPCell(new Phrase("", cellfont)));
 
-            table.addCell(ci1);
-            table.addCell(ci2);
-            table.addCell(ci3);
-            table.addCell(ci4);
-            table.addCell(ci5);
-            table.addCell(ci6);
-            table.addCell(ci7);
-            table.addCell(ci8);
-
-            table.addCell(co1);
-            table.addCell(co2);
-            table.addCell(co3);
-            table.addCell(co4);
-            table.addCell(co5);
-            table.addCell(co6);
-            table.addCell(co7);
-            table.addCell(co8);
-
-            table.addCell(ca1);
-            table.addCell(ca2);
-            table.addCell(ca3);
-            table.addCell(ca4);
-            table.addCell(ca5);
-            table.addCell(ca6);
-            table.addCell(ca7);
-            table.addCell(ca8);
-
-            table.addCell(ag1);
-            table.addCell(ag2);
-            table.addCell(ag3);
-            table.addCell(ag4);
-            table.addCell(ag5);
-            table.addCell(ag6);
-            table.addCell(ag7);
-            table.addCell(ag8);
-
-            table.addCell(wr1);
-            table.addCell(wr2);
-            table.addCell(wr3);
-            table.addCell(wr4);
-            table.addCell(wr5);
-            table.addCell(wr6);
-            table.addCell(wr7);
-            table.addCell(wr8);
-
-            table.addCell(nr1);
-            table.addCell(nr2);
-            table.addCell(nr3);
-            table.addCell(nr4);
-            table.addCell(nr5);
-            table.addCell(nr6);
-            table.addCell(nr7);
-            table.addCell(nr8);
-
-            table.addCell(v1);
-            table.addCell(v2);
-            table.addCell(v3);
-            table.addCell(v4);
-            table.addCell(v5);
-            table.addCell(v6);
-            table.addCell(v7);
-            table.addCell(v8);
-
-            table.addCell(t1);
-            table.addCell(t2);
-            table.addCell(t3);
-            table.addCell(t4);
-            table.addCell(t5);
-            table.addCell(t6);
-            table.addCell(t7);
-            table.addCell(t8);
+            table.addCell(new PdfPCell(new Phrase("TOTAL", cellfont)));
+            table.addCell(new PdfPCell(new Phrase("   ", cellfont)));
+            table.addCell(new PdfPCell(new Phrase("   ", cellfont)));
+            table.addCell(new PdfPCell(new Phrase("   ", cellfont)));
+            table.addCell(new PdfPCell(new Phrase("   " + score_total, cellfont)));
+            table.addCell(new PdfPCell(new Phrase("", cellfont)));
+            table.addCell(new PdfPCell(new Phrase("", cellfont)));
+            table.addCell(new PdfPCell(new Phrase("", cellfont)));
 
             document.add(table);
 
-            Paragraph total = new Paragraph();
-            total.add("Total score:  " + score_total + "   Out of: _______ " + "   Average score:  " + average_total
-                    + "    Position:  " + position_total + "   Out of: _______");
+            Paragraph total = new Paragraph(new Phrase("", cellfont));
+            total.add("Total score:    " + score_total + "        Out of: _______ " + "       Average score:    " + average_total
+                    + "       Position:    " + position_total + "        Out of: _______");
 
-            Paragraph result = new Paragraph();
-            result.add("RESULT: PASS/FAIL ____________________________________________________________");
-            result.setSpacingBefore(7f);
+            Paragraph result = new Paragraph(new Phrase("", cellfont));
+            result.add("RESULT: PASS/FAIL _____________________________________________________________________");
+            result.setSpacingBefore(5f);
 
-            Paragraph form = new Paragraph();
-            form.add("Form Master's Report: ____________________________________________________________");
-            form.setSpacingBefore(7f);
+            Paragraph form = new Paragraph(new Phrase("", cellfont));
+            form.add("Form Master's Report: ____________________________________________________________________");
+            form.setSpacingBefore(5f);
 
-            Paragraph behavior = new Paragraph();
-            behavior.add("Behaviour: _____________________________________________________________________");
-            behavior.setSpacingBefore(7f);
+            Paragraph behavior = new Paragraph(new Phrase("", cellfont));
+            behavior.add("Behaviour: _____________________________________________________________________________");
+            behavior.setSpacingBefore(5f);
 
-            Paragraph observe = new Paragraph();
-            observe.add("Special Observation: _____________________________________________________________");
-            observe.setSpacingBefore(7f);
+            Paragraph observe = new Paragraph(new Phrase("", cellfont));
+            observe.add("Special Observation: _____________________________________________________________________");
+            observe.setSpacingBefore(5f);
 
-            Paragraph sign = new Paragraph();
-            sign.add("                                                                                      ___________________________________");
-            sign.setSpacingBefore(7f);
+            Paragraph sign = new Paragraph(new Phrase("", cellfont));
+            sign.add("                                                                                                      ___________________________________");
+            sign.setSpacingBefore(5f);
 
-            Paragraph signs = new Paragraph();
-            signs.add("                                                                                              Form Master's Signature and Date");
+            Paragraph signs = new Paragraph(new Phrase("", cellfont));
+            signs.add("                                                                                                              Form Master's Signature and Date");
 
-            Paragraph principal = new Paragraph();
-            principal.add("Principal's Report: _______________________________________________________________");
-            principal.setSpacingBefore(7f);
+            Paragraph principal = new Paragraph(new Phrase("", cellfont));
+            principal.add("Principal's Report: _______________________________________________________________________");
+            principal.setSpacingBefore(5f);
 
-            Paragraph principals = new Paragraph();
-            principals.add("______________________________________________________________________________");
-            principals.setSpacingBefore(7f);
+            Paragraph principals = new Paragraph(new Phrase("", cellfont));
+            principals.add("______________________________________________________________________________________");
+            principals.setSpacingBefore(5f);
 
-            Paragraph next = new Paragraph();
-            next.add("Next Term Begins:_______________________________________________________________");
-            next.setSpacingBefore(7f);
+            Paragraph next = new Paragraph(new Phrase("", cellfont));
+            next.add("Next Term Begins:_______________________________________________________________________");
+            next.setSpacingBefore(5.5f);
 
-            Paragraph key = new Paragraph();
-            key.add("       KEY                                                                     Fees Owning: ________________________");
-            key.setSpacingBefore(7f);
+            Paragraph key = new Paragraph(new Phrase("", cellfont));
+            key.add("       KEY                                                                                       Fees Owning: ________________________");
+            key.setSpacingBefore(5f);
 
-            Paragraph excel = new Paragraph();
-            excel.add("89-100 = A - EXCELLENT                                       Next Term Fee: ________________________");
-            excel.setSpacingBefore(4f);
+            Paragraph excel = new Paragraph(new Phrase("", cellfont));
+            excel.add("89-100 = A - EXCELLENT                                                         Next Term Fee: ________________________");
+            excel.setSpacingBefore(3.5f);
 
-            Paragraph vgood = new Paragraph();
-            vgood.add(" 79-72 =  A- V. GOOD                                                     Total: ____________________________");
-            vgood.setSpacingBefore(4f);
+            Paragraph vgood = new Paragraph(new Phrase("", cellfont));
+            vgood.add(" 79-72 =  A - V. GOOD                                                                       Total: ____________________________");
+            vgood.setSpacingBefore(3.5f);
 
-            Paragraph good = new Paragraph();
-            good.add(" 69-62 =  B- GOOD");
-            good.setSpacingBefore(4f);
+            Paragraph good = new Paragraph(new Phrase("", cellfont));
+            good.add(" 69-62 =  B - GOOD");
+            good.setSpacingBefore(3.5f);
 
-            Paragraph pass = new Paragraph();
-            pass.add(" 69-62 =  C- PASS");
-            pass.setSpacingBefore(4f);
+            Paragraph pass = new Paragraph(new Phrase("", cellfont));
+            pass.add(" 69-62 =  C - PASS");
+            pass.setSpacingBefore(3.5f);
 
-            Paragraph fair = new Paragraph();
-            fair.add(" 69-62 =  D- FAIR                                                               ________________________________");
-            fair.setSpacingBefore(4f);
+            Paragraph fair = new Paragraph(new Phrase("", cellfont));
+            fair.add(" 69-62 =  D - FAIR                                                                                ________________________________");
+            fair.setSpacingBefore(3.5f);
+            fair.setSpacingAfter(0);
 
-            Paragraph fail = new Paragraph();
-            fail.add(" 69-62 =  E- FAIL                                                                       Principal's Signature and Date");
+            Paragraph fail = new Paragraph(new Phrase("", cellfont));
+            fail.add(" 69-62 =  E - FAIL                                                                                        Principal's Signature and Date");
 
             document.add(total);
             document.add(result);
