@@ -93,6 +93,8 @@ public class StudentResult_Nursery extends javax.swing.JFrame {
         txtMoral = new javax.swing.JTextField();
         jLabel28 = new javax.swing.JLabel();
         txtQuan = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        txtClass = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         txtTranscript = new javax.swing.JTextArea();
@@ -101,7 +103,7 @@ public class StudentResult_Nursery extends javax.swing.JFrame {
         btnGenerate = new javax.swing.JButton();
         btnReset = new javax.swing.JButton();
         jLabel18 = new javax.swing.JLabel();
-        btnExit = new javax.swing.JButton();
+        btnPrint = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -122,7 +124,7 @@ public class StudentResult_Nursery extends javax.swing.JFrame {
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, 107, -1));
 
         txtFullName.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jPanel1.add(txtFullName, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 140, 290, -1));
+        jPanel1.add(txtFullName, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 140, 300, -1));
 
         txtTotalScore.setEditable(false);
         txtTotalScore.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -277,6 +279,14 @@ public class StudentResult_Nursery extends javax.swing.JFrame {
         txtQuan.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jPanel1.add(txtQuan, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 260, 90, -1));
 
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel3.setText("Class");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 100, 60, -1));
+
+        txtClass.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        txtClass.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jPanel1.add(txtClass, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 100, 110, -1));
+
         jPanel4.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 0, 810, 590));
 
         jPanel2.setBackground(new java.awt.Color(204, 204, 255));
@@ -350,14 +360,14 @@ public class StudentResult_Nursery extends javax.swing.JFrame {
         });
         jPanel4.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 30, 30));
 
-        btnExit.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        btnExit.setText("Exit");
-        btnExit.addActionListener(new java.awt.event.ActionListener() {
+        btnPrint.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        btnPrint.setText("Print");
+        btnPrint.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnExitActionPerformed(evt);
+                btnPrintActionPerformed(evt);
             }
         });
-        jPanel4.add(btnExit, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 610, -1, 30));
+        jPanel4.add(btnPrint, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 610, -1, 30));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -505,41 +515,78 @@ public class StudentResult_Nursery extends javax.swing.JFrame {
 
     private void btnGenerateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerateActionPerformed
         // TODO add your handling code here:
+
+        handler = new DBHandler();
+
+        String str = "select * from nursery where StudentID = ?";
         try {
+            PreparedStatement preparedStatement = handler.getdbConnection().prepareStatement(str);
+            preparedStatement.setString(1, txtStudentID.getText());
 
+            ResultSet rs = preparedStatement.executeQuery();
+
+            while (rs.next()) {
+
+                txtStudentID.setText(rs.getString("StudentID"));
+                txtEnglish.setText(rs.getString("English_Total"));
+                txtSound.setText(rs.getString("Sound_Total"));
+                txtElem.setText(rs.getString("ES_Total"));
+                txtSocial.setText(rs.getString("Social_Total"));
+                txtHealth.setText(rs.getString("Health_Total"));
+                txtComputer.setText(rs.getString("Computer_Total"));
+                txtArts.setText(rs.getString("CCA_Total"));
+                txtWriting.setText(rs.getString("Writing_Total"));
+                txtRhymes.setText(rs.getString("Rhymes_Total"));
+                txtVerbal.setText(rs.getString("Verbal_Total"));
+                txtQuan.setText(rs.getString("Quan_Total"));
+                txtMoral.setText(rs.getString("Moral_Total"));
+
+            }
+        } catch (ClassNotFoundException | SQLException ex) {
+            Logger.getLogger(ResultSSS.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        String ID = txtStudentID.getText();
+        String getName_Class = "SELECT * FROM student_details WHERE StudentID = ?";
+        String validate = "SELECT StudentID FROM nursery WHERE StudentID = ?";
+
+        try {
             handler = new DBHandler();
+            ResultSet rs = null;
+            ResultSet rs1 = null;
+            PreparedStatement pst = handler.getdbConnection().prepareStatement(getName_Class);
+            PreparedStatement pst1 = handler.getdbConnection().prepareStatement(validate);
 
-            String str = "select * from nursery where StudentID = ?";
-            try {
-                PreparedStatement preparedStatement = handler.getdbConnection().prepareStatement(str);
-                preparedStatement.setString(1, txtStudentID.getText());
+            pst.setString(1, txtStudentID.getText());
+            pst1.setString(1, txtStudentID.getText());
 
-                ResultSet rs = preparedStatement.executeQuery();
+            rs = pst.executeQuery();
+            rs1 = pst1.executeQuery();
 
-                while (rs.next()) {
+            if (rs.next() && rs1.next()) {
 
-                    txtStudentID.setText(rs.getString("StudentID"));
-                    txtEnglish.setText(rs.getString("English_Total"));
-                    txtSound.setText(rs.getString("Sound_Total"));
-                    txtElem.setText(rs.getString("ES_Total"));
-                    txtSocial.setText(rs.getString("Social_Total"));
-                    txtHealth.setText(rs.getString("Health_Total"));
-                    txtComputer.setText(rs.getString("Computer_Total"));
-                    txtArts.setText(rs.getString("CCA_Total"));
-                    txtWriting.setText(rs.getString("Writing_Total"));
-                    txtRhymes.setText(rs.getString("Rhymes_Total"));
-                    txtVerbal.setText(rs.getString("Verbal_Total"));
-                    txtQuan.setText(rs.getString("Quan_Total"));
-                    txtMoral.setText(rs.getString("Moral_Total"));
+                getClassID = rs.getString("StudentID");
+                getAdmClass = rs.getString("AdmissionClass");
+                getSname = rs.getString("StudentName");
+                getSchoolID = rs1.getString("StudentID");
+
+                System.out.println(getClassID + ", " + getSchoolID);
+
+                if (getClassID.equals(getSchoolID)) {
+
+                    txtClass.setText(getAdmClass);
+                    txtFullName.setText(getSname);
 
                 }
-            } catch (ClassNotFoundException ex) {
-                Logger.getLogger(ResultSSS.class.getName()).log(Level.SEVERE, null, ex);
-            }
 
-        } catch (SQLException e) {
-            System.out.println(e);
+            } else {
+                System.out.println("Not Valid");
+                JOptionPane.showMessageDialog(this, "No Student ID as " + ID + " in Nursery");
+            }
+        } catch (ClassNotFoundException | SQLException ex) {
+            System.out.println(ex);
         }
+
     }//GEN-LAST:event_btnGenerateActionPerformed
 
     private void btnResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResetActionPerformed
@@ -568,7 +615,7 @@ public class StudentResult_Nursery extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_jLabel18MouseClicked
 
-    private void btnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitActionPerformed
+    private void btnPrintActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPrintActionPerformed
 
         int sel = JOptionPane.showConfirmDialog(this, "Do you want to print Result?");
         if (sel == 0) {
@@ -579,15 +626,13 @@ public class StudentResult_Nursery extends javax.swing.JFrame {
             }
         }
         if (sel == 1) {
-            new StudentResult_Nursery().show();
-            this.dispose();
+            this.show();
         }
         if (sel == 2) {
-            new StudentResult_Nursery().show();
-            this.dispose();
+            this.show();
         }
 
-    }//GEN-LAST:event_btnExitActionPerformed
+    }//GEN-LAST:event_btnPrintActionPerformed
 
     /**
      * @param args the command line arguments
@@ -818,7 +863,7 @@ public class StudentResult_Nursery extends javax.swing.JFrame {
 //            document.add(new Paragraph("DETAILED RESULT"));
             PdfPTable table = new PdfPTable(10);
             table.setWidthPercentage(105);
-            table.setSpacingBefore(11f);
+            table.setSpacingBefore(8f);
             table.setSpacingAfter(5f);
 
             float[] colWidth = {0.2f, 2f, 0.5f, 0.5f, 0.5f, 0.5f, 0.5f, 0.5f, 0.5f, 0.5f};
@@ -831,8 +876,8 @@ public class StudentResult_Nursery extends javax.swing.JFrame {
             PdfPCell c1 = new PdfPCell(new Paragraph("", headerfont));
             PdfPCell c2 = new PdfPCell(new Paragraph("", headerfont));
             PdfPCell c3 = new PdfPCell(new Paragraph(" MAX\n 100", headerfont));
-            PdfPCell c4 = new PdfPCell(new Paragraph(" 1ST TEST\n  20", headerfont));
-            PdfPCell c5 = new PdfPCell(new Paragraph(" 2ND TEST\n  20", headerfont));
+            PdfPCell c4 = new PdfPCell(new Paragraph(" 1ST TEST", headerfont));
+            PdfPCell c5 = new PdfPCell(new Paragraph(" 2ND TEST", headerfont));
             PdfPCell c6 = new PdfPCell(new Paragraph("EXAM\n  60", headerfont));
             PdfPCell c7 = new PdfPCell(new Paragraph("TOTAL\n  100", headerfont));
             PdfPCell c8 = new PdfPCell(new Paragraph("POSITION", headerfont));
@@ -1146,7 +1191,7 @@ public class StudentResult_Nursery extends javax.swing.JFrame {
             //Setting the width and spacing of the table
             PdfPTable table1 = new PdfPTable(12);
             table1.setWidthPercentage(105);
-            table1.setSpacingBefore(11f);
+            table1.setSpacingBefore(8f);
             table1.setSpacingAfter(5f);
 
             //Setting the number of columns
@@ -1315,8 +1360,8 @@ public class StudentResult_Nursery extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnExit;
     private javax.swing.JButton btnGenerate;
+    private javax.swing.JButton btnPrint;
     private javax.swing.JButton btnRanking;
     private javax.swing.JButton btnReset;
     private javax.swing.JButton btnTranscript;
@@ -1333,6 +1378,7 @@ public class StudentResult_Nursery extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -1345,6 +1391,7 @@ public class StudentResult_Nursery extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTextField txtArts;
     private javax.swing.JTextField txtAverage;
+    public static javax.swing.JTextField txtClass;
     private javax.swing.JTextField txtComputer;
     private javax.swing.JTextField txtElem;
     private javax.swing.JTextField txtEnglish;
@@ -1362,4 +1409,9 @@ public class StudentResult_Nursery extends javax.swing.JFrame {
     private javax.swing.JTextField txtVerbal;
     private javax.swing.JTextField txtWriting;
     // End of variables declaration//GEN-END:variables
+
+    String getClassID;
+    String getSchoolID;
+    String getAdmClass;
+    String getSname;
 }

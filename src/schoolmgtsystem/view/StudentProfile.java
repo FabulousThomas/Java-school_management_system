@@ -523,21 +523,25 @@ public class StudentProfile extends javax.swing.JFrame {
                 if (adm.startsWith("S")) {
                     StudentResult_SSS.txtStudentID.setText(sid);
                     StudentResult_SSS.txtFullName.setText(sname);
+                    StudentResult_SSS.txtClass.setText(adm);
                     StudentResult_SSS.txtStudentID.setEditable(false);
                     sr.show();
                 } else if (adm.startsWith("J")) {
                     StudentResult_JSS.txtStudentID.setText(sid);
                     StudentResult_JSS.txtFullName.setText(sname);
+                    StudentResult_JSS.txtClass.setText(adm);
                     StudentResult_JSS.txtStudentID.setEditable(false);
                     rj.show();
                 } else if (adm.startsWith("P")) {
                     StudentResult_Primary.txtStudentID.setText(sid);
                     StudentResult_Primary.txtFullName.setText(sname);
+                    StudentResult_Primary.txtClass.setText(adm);
                     StudentResult_Primary.txtStudentID.setEditable(false);
                     rp.show();
                 } else if (adm.startsWith("N")) {
                     StudentResult_Nursery.txtStudentID.setText(sid);
                     StudentResult_Nursery.txtFullName.setText(sname);
+                    StudentResult_Nursery.txtClass.setText(adm);
                     StudentResult_Nursery.txtStudentID.setEditable(false);
                     rn.show();
                 }

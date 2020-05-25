@@ -110,6 +110,8 @@ public class StudentResult_SSS extends javax.swing.JFrame {
         txtCivic = new javax.swing.JTextField();
         jLabel25 = new javax.swing.JLabel();
         txtEcons = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        txtClass = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         txtTranscript = new javax.swing.JTextArea();
@@ -145,20 +147,20 @@ public class StudentResult_SSS extends javax.swing.JFrame {
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel1.setText("Student ID");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(18, 51, 107, -1));
+        jLabel1.setText("Class");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 50, 50, -1));
 
         txtStudentID.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         txtStudentID.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jPanel1.add(txtStudentID, new org.netbeans.lib.awtextra.AbsoluteConstraints(172, 48, 80, -1));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel2.setText("First Name");
+        jLabel2.setText("Full Name");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 107, -1));
 
         txtFullName.setBackground(new java.awt.Color(255, 255, 255));
         txtFullName.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jPanel1.add(txtFullName, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 90, 240, -1));
+        jPanel1.add(txtFullName, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 90, 310, -1));
 
         txtTotalScore.setEditable(false);
         txtTotalScore.setBackground(new java.awt.Color(255, 255, 255));
@@ -383,6 +385,15 @@ public class StudentResult_SSS extends javax.swing.JFrame {
         txtEcons.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jPanel1.add(txtEcons, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 140, 90, -1));
 
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel4.setText("Student ID");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(18, 51, 107, -1));
+
+        txtClass.setEditable(false);
+        txtClass.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        txtClass.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jPanel1.add(txtClass, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 50, 110, -1));
+
         jPanel4.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 0, 810, 490));
 
         jPanel2.setBackground(new java.awt.Color(204, 204, 255));
@@ -525,12 +536,10 @@ public class StudentResult_SSS extends javax.swing.JFrame {
 
         try {
             handler = new DBHandler();
-
+            ResultSet rs = null;
             PreparedStatement pst = handler.getdbConnection().prepareStatement(str);
-
             pst.setString(1, txtStudentID.getText());
-
-            ResultSet rs = pst.executeQuery();
+            rs = pst.executeQuery();
             while (rs.next()) {
 
                 txtStudentID.setText(rs.getString("StudentID"));
@@ -552,10 +561,51 @@ public class StudentResult_SSS extends javax.swing.JFrame {
                 txtArts.setText(rs.getString("Arts_Total"));
                 txtComputer.setText(rs.getString("Computer_Total"));
 //                txtFrench.setText(rs.getString("French_Total"));
-
             }
+
         } catch (ClassNotFoundException | SQLException ex) {
             Logger.getLogger(StudentResult_SSS.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        String ID = txtStudentID.getText();
+        String getName_Class = "SELECT * FROM student_details WHERE StudentID = ?";
+        String validate = "SELECT StudentID FROM sss WHERE StudentID = ?";
+
+        try {
+            handler = new DBHandler();
+            ResultSet rs = null;
+            ResultSet rs1 = null;
+            PreparedStatement pst = handler.getdbConnection().prepareStatement(getName_Class);
+            PreparedStatement pst1 = handler.getdbConnection().prepareStatement(validate);
+
+            pst.setString(1, txtStudentID.getText());
+            pst1.setString(1, txtStudentID.getText());
+
+            rs = pst.executeQuery();
+            rs1 = pst1.executeQuery();
+
+            if (rs.next() && rs1.next()) {
+
+                getClassID = rs.getString("StudentID");
+                getAdmClass = rs.getString("AdmissionClass");
+                getSname = rs.getString("StudentName");
+                getSchoolID = rs1.getString("StudentID");
+
+                System.out.println(getClassID + ", " + getSchoolID);
+
+                if (getClassID.equals(getSchoolID)) {
+
+                    txtClass.setText(getAdmClass);
+                    txtFullName.setText(getSname);
+
+                }
+
+            } else {
+                System.out.println("Not Valid");
+                JOptionPane.showMessageDialog(this, "No Student ID as " + ID + " in Senior Secondary");
+            }
+        } catch (ClassNotFoundException | SQLException ex) {
+            System.out.println(ex);
         }
 
 
@@ -835,6 +885,8 @@ public class StudentResult_SSS extends javax.swing.JFrame {
             String score_total = txtTotalScore.getText();
             String average_total = txtAverage.getText();
             String position_total = txtPosition.getText();
+            String sClass = txtClass.getText();
+            String sName = txtFullName.getText();
 
             System.out.println("English Total " + english_total);
 
@@ -883,8 +935,8 @@ public class StudentResult_SSS extends javax.swing.JFrame {
 
             Paragraph name = new Paragraph("", detailsfont);
             name.setAlignment(Element.ALIGN_CENTER);
-            name.add("Full Name: " + txtFullName.getText()
-                    + "   Class: ________" + "   Term: ________");
+            name.add("Full Name: " + sName
+                    + "   Class: " + sClass + "   Term: ________");
             name.setSpacingBefore(7f);
             name.setSpacingAfter(10f);
 
@@ -919,8 +971,8 @@ public class StudentResult_SSS extends javax.swing.JFrame {
 //            DEFINING THE TABLE WITH 8 COLUMNS
             PdfPTable table = new PdfPTable(8);
             table.setWidthPercentage(105);
-            table.setSpacingBefore(11f);
-            table.setSpacingAfter(11f);
+            table.setSpacingBefore(8f);
+            table.setSpacingAfter(8f);
 
 //            DEFINING COLUMN WIDTH
             float[] colWidth = {1.7f, 0.3f, 0.3f, 0.3f, 0.4f, 0.5f, 0.5f, 0.4f};
@@ -1206,6 +1258,7 @@ public class StudentResult_SSS extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -1226,6 +1279,7 @@ public class StudentResult_SSS extends javax.swing.JFrame {
     private javax.swing.JTextField txtCRS;
     private javax.swing.JTextField txtChemistry;
     private javax.swing.JTextField txtCivic;
+    public static javax.swing.JTextField txtClass;
     private javax.swing.JTextField txtCommerce;
     private javax.swing.JTextField txtComputer;
     private javax.swing.JTextField txtEcons;
@@ -1244,4 +1298,8 @@ public class StudentResult_SSS extends javax.swing.JFrame {
     private javax.swing.JTextArea txtTranscript;
     // End of variables declaration//GEN-END:variables
 
+    String getClassID;
+    String getSchoolID;
+    String getAdmClass;
+    String getSname;
 }

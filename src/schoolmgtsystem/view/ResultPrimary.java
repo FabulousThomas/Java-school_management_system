@@ -99,6 +99,8 @@ public class ResultPrimary extends javax.swing.JFrame {
         jLabel28 = new javax.swing.JLabel();
         txtEdo = new javax.swing.JTextField();
         txtQuan = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        txtClass = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         txtTranscript = new javax.swing.JTextArea();
@@ -122,14 +124,14 @@ public class ResultPrimary extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel1.setText("Student ID");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 60, 107, -1));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 107, -1));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel2.setText("Full Name");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 100, 107, -1));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, 107, -1));
 
         txtFullName.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jPanel1.add(txtFullName, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 100, 260, -1));
+        jPanel1.add(txtFullName, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 130, 300, -1));
 
         txtTotalScore.setEditable(false);
         txtTotalScore.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -255,7 +257,7 @@ public class ResultPrimary extends javax.swing.JFrame {
 
         txtStudentID.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         txtStudentID.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jPanel1.add(txtStudentID, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 60, 90, -1));
+        jPanel1.add(txtStudentID, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 90, 90, -1));
 
         jLabel19.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel19.setText("Civic Education");
@@ -310,6 +312,14 @@ public class ResultPrimary extends javax.swing.JFrame {
         txtQuan.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         txtQuan.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jPanel1.add(txtQuan, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 290, 90, -1));
+
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel3.setText("Class");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 90, 60, -1));
+
+        txtClass.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        txtClass.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jPanel1.add(txtClass, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 90, 100, -1));
 
         jPanel4.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 0, 810, 590));
 
@@ -392,7 +402,7 @@ public class ResultPrimary extends javax.swing.JFrame {
                 btnPrintActionPerformed(evt);
             }
         });
-        jPanel4.add(btnPrint, new org.netbeans.lib.awtextra.AbsoluteConstraints(1160, 610, -1, -1));
+        jPanel4.add(btnPrint, new org.netbeans.lib.awtextra.AbsoluteConstraints(1180, 610, -1, -1));
 
         jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/schoolmgtsystem/IconImages/icons8_Left_30px_1.png"))); // NOI18N
         jLabel18.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -558,23 +568,6 @@ public class ResultPrimary extends javax.swing.JFrame {
                 + "\n_____________________________________"
         );
 
-        int sel = JOptionPane.showConfirmDialog(this, "Do you want to print Result?");
-        if (sel == 0) {
-            try {
-                printResult();
-            } catch (IOException ex) {
-                Logger.getLogger(ResultNursery.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }
-        if (sel == 1) {
-            new ResultPrimary().show();
-            this.dispose();
-        }
-        if (sel == 2) {
-            new ResultPrimary().show();
-            this.dispose();
-        }
-
     }//GEN-LAST:event_btnTranscriptActionPerformed
 
     private void btnRecordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRecordActionPerformed
@@ -587,44 +580,82 @@ public class ResultPrimary extends javax.swing.JFrame {
 
     private void btnGenerateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerateActionPerformed
         // TODO add your handling code here:
+
+        handler = new DBHandler();
+
+        String str = "select * from prime where StudentID = ?";
         try {
+            PreparedStatement preparedStatement = handler.getdbConnection().prepareStatement(str);
+            preparedStatement.setString(1, txtStudentID.getText());
 
+            ResultSet rs = preparedStatement.executeQuery();
+
+            while (rs.next()) {
+
+                txtStudentID.setText(rs.getString("StudentID"));
+                txtMaths.setText(rs.getString("Maths_Total"));
+                txtEnglish.setText(rs.getString("English_Total"));
+                txtCRS.setText(rs.getString("CRS_Total"));
+                txtBS.setText(rs.getString("BS_Total"));
+                txtBT.setText(rs.getString("BT_Total"));
+                txtPHE.setText(rs.getString("PHE_Total"));
+                txtICT.setText(rs.getString("ICT_Total"));
+                txtVerbal.setText(rs.getString("Verbal_Total"));
+                txtSocial.setText(rs.getString("Social_Total"));
+                txtCivic.setText(rs.getString("Civic_Total"));
+                txtSecurity.setText(rs.getString("Security_Total"));
+                txtHome.setText(rs.getString("Home_Total"));
+                txtAgric.setText(rs.getString("Agric_Total"));
+                txtEdo.setText(rs.getString("Edo_Total"));
+                txtQuan.setText(rs.getString("Quan_Total"));
+
+            }
+        } catch (ClassNotFoundException | SQLException ex) {
+            Logger.getLogger(ResultSSS.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        String ID = txtStudentID.getText();
+        String getName_Class = "SELECT * FROM student_details WHERE StudentID = ?";
+        String validate = "SELECT StudentID FROM prime WHERE StudentID = ?";
+
+        try {
             handler = new DBHandler();
+            ResultSet rs = null;
+            ResultSet rs1 = null;
+            PreparedStatement pst = handler.getdbConnection().prepareStatement(getName_Class);
+            PreparedStatement pst1 = handler.getdbConnection().prepareStatement(validate);
 
-            String str = "select * from prime where StudentID = ?";
-            try {
-                PreparedStatement preparedStatement = handler.getdbConnection().prepareStatement(str);
-                preparedStatement.setString(1, txtStudentID.getText());
+            pst.setString(1, txtStudentID.getText());
+            pst1.setString(1, txtStudentID.getText());
 
-                ResultSet rs = preparedStatement.executeQuery();
+            rs = pst.executeQuery();
+            rs1 = pst1.executeQuery();
 
-                while (rs.next()) {
+            if (rs.next() && rs1.next()) {
 
-                    txtStudentID.setText(rs.getString("StudentID"));
-                    txtMaths.setText(rs.getString("Maths_Total"));
-                    txtEnglish.setText(rs.getString("English_Total"));
-                    txtCRS.setText(rs.getString("CRS_Total"));
-                    txtBS.setText(rs.getString("BS_Total"));
-                    txtBT.setText(rs.getString("BT_Total"));
-                    txtPHE.setText(rs.getString("PHE_Total"));
-                    txtICT.setText(rs.getString("ICT_Total"));
-                    txtVerbal.setText(rs.getString("Verbal_Total"));
-                    txtSocial.setText(rs.getString("Social_Total"));
-                    txtCivic.setText(rs.getString("Civic_Total"));
-                    txtSecurity.setText(rs.getString("Security_Total"));
-                    txtHome.setText(rs.getString("Home_Total"));
-                    txtAgric.setText(rs.getString("Agric_Total"));
-                    txtEdo.setText(rs.getString("Edo_Total"));
-                    txtQuan.setText(rs.getString("Quan_Total"));
+                getClassID = rs.getString("StudentID");
+                getAdmClass = rs.getString("AdmissionClass");
+                getSname = rs.getString("StudentName");
+                getSchoolID = rs1.getString("StudentID");
+
+                System.out.println(getClassID + ", " + getSchoolID);
+
+                if (getClassID.equals(getSchoolID)) {
+
+                    txtClass.setText(getAdmClass);
+                    txtFullName.setText(getSname);
 
                 }
-            } catch (ClassNotFoundException ex) {
-                Logger.getLogger(ResultSSS.class.getName()).log(Level.SEVERE, null, ex);
-            }
 
-        } catch (SQLException e) {
-            System.out.println(e);
+            } else {
+                System.out.println("Not Valid");
+                JOptionPane.showMessageDialog(this, "No Student ID as " + ID + " in Primary");
+                txtStudentID.setText(getClassID);
+            }
+        } catch (ClassNotFoundException | SQLException ex) {
+            System.out.println(ex);
         }
+
     }//GEN-LAST:event_btnGenerateActionPerformed
 
     private void btnResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResetActionPerformed
@@ -908,8 +939,8 @@ public class ResultPrimary extends javax.swing.JFrame {
 //            document.add(new Paragraph("DETAILED RESULT"));
             PdfPTable table = new PdfPTable(10);
             table.setWidthPercentage(105);
-            table.setSpacingBefore(11f);
-            table.setSpacingAfter(11f);
+            table.setSpacingBefore(8f);
+            table.setSpacingAfter(8f);
 
             float[] colWidth = {0.3f, 3f, 0.5f, 0.5f, 0.5f, 0.6f, 0.6f, 0.5f, 0.6f, 0.5f};
             table.setWidths(colWidth);
@@ -1303,8 +1334,8 @@ public class ResultPrimary extends javax.swing.JFrame {
             //Setting the width and spacing of the table
             PdfPTable table1 = new PdfPTable(12);
             table1.setWidthPercentage(105);
-            table1.setSpacingBefore(11f);
-            table1.setSpacingAfter(11f);
+            table1.setSpacingBefore(8f);
+            table1.setSpacingAfter(5f);
 
             //Setting the number of columns
             float[] colWidth1 = {4f, 0.3f, 0.3f, 0.3f, 0.3f, 0.3f, 4f, 0.3f, 0.3f, 0.3f, 0.3f, 0.3f};
@@ -1495,6 +1526,7 @@ public class ResultPrimary extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -1511,6 +1543,7 @@ public class ResultPrimary extends javax.swing.JFrame {
     private javax.swing.JTextField txtBT;
     private javax.swing.JTextField txtCRS;
     private javax.swing.JTextField txtCivic;
+    public static javax.swing.JTextField txtClass;
     private javax.swing.JTextField txtEdo;
     private javax.swing.JTextField txtEnglish;
     public static javax.swing.JTextField txtFullName;
@@ -1527,4 +1560,9 @@ public class ResultPrimary extends javax.swing.JFrame {
     private javax.swing.JTextArea txtTranscript;
     private javax.swing.JTextField txtVerbal;
     // End of variables declaration//GEN-END:variables
+
+    String getClassID;
+    String getSchoolID;
+    String getAdmClass;
+    String getSname;
 }
