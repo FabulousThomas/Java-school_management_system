@@ -102,6 +102,7 @@ public class StudentSignup extends javax.swing.JFrame {
         jSeparator4 = new javax.swing.JSeparator();
         txtAdmissionClass = new javax.swing.JComboBox<>();
         txtClass = new javax.swing.JComboBox<>();
+        chkPassword = new javax.swing.JCheckBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocationByPlatform(true);
@@ -392,12 +393,22 @@ public class StudentSignup extends javax.swing.JFrame {
         jPanel1.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 250, 310, -1));
 
         txtAdmissionClass.setFont(new java.awt.Font("Dialog", 1, 13)); // NOI18N
-        txtAdmissionClass.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECT", "SS1", "SS2", "SS3", "JSS1", "JSS2", "JSS3", "PRIMARY1", "PRIMARY2", "PRIMARY3", "PRIMARY4", "PRIMARY5", "NURSERY1", "NURSERY2" }));
+        txtAdmissionClass.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECT", "SS1", "SS2", "SS3", "JSS1", "JSS2", "JSS3", "PRIMARY1", "PRIMARY2", "PRIMARY3", "PRIMARY4", "PRIMARY5", "PRIMARY6", "NURSERY1", "NURSERY2" }));
         jPanel1.add(txtAdmissionClass, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 110, 310, 20));
 
         txtClass.setFont(new java.awt.Font("Dialog", 1, 13)); // NOI18N
-        txtClass.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECT", "SS1", "SS2", "SS3", "JSS1", "JSS2", "JSS3", "PRIMARY1", "PRIMARY2", "PRIMARY3", "PRIMARY4", "PRIMARY5", "NURSERY1", "NURSERY2" }));
+        txtClass.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECT", "SS1", "SS2", "SS3", "JSS1", "JSS2", "JSS3", "PRIMARY1", "PRIMARY2", "PRIMARY3", "PRIMARY4", "PRIMARY5", "PRIMARY6", "NURSERY1", "NURSERY2" }));
         jPanel1.add(txtClass, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 230, 310, 20));
+
+        chkPassword.setBackground(new java.awt.Color(255, 255, 255));
+        chkPassword.setToolTipText("See password");
+        chkPassword.setIcon(new javax.swing.ImageIcon(getClass().getResource("/schoolmgtsystem/IconImages/icons8_Show_Password.png"))); // NOI18N
+        chkPassword.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chkPasswordActionPerformed(evt);
+            }
+        });
+        jPanel1.add(chkPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 330, -1, 20));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1130, 630));
 
@@ -516,6 +527,15 @@ public class StudentSignup extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(txtParentID, "Sorry, not editable");
     }//GEN-LAST:event_txtParentIDMouseClicked
 
+    private void chkPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkPasswordActionPerformed
+
+        if (chkPassword.isSelected()) {
+            txtPassword.setEchoChar((char) 0);
+        } else {
+            txtPassword.setEchoChar('*');
+        }
+    }//GEN-LAST:event_chkPasswordActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -598,6 +618,7 @@ public class StudentSignup extends javax.swing.JFrame {
     private javax.swing.JButton btnsignup;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
+    private javax.swing.JCheckBox chkPassword;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

@@ -456,7 +456,7 @@ public class StaffSignUp extends javax.swing.JFrame {
                 pst.setString(8, txtHome.getText());
                 pst.setDate(9, convertUtilDateToSqlDate(StartDate.getDate()));
                 pst.setDate(10, convertUtilDateToSqlDate(EndDate.getDate()));
-                
+
                 String gender;
                 if (RMale.isSelected()) {
                     gender = "Male";
@@ -466,7 +466,7 @@ public class StaffSignUp extends javax.swing.JFrame {
                 pst.setString(11, gender);
                 pst.setString(12, txtPassword.getText());
                 pst.setString(13, txtState.getText());
-                
+
                 int count = pst.executeUpdate();
                 JOptionPane.showMessageDialog(this, count + " Successful");
             }
@@ -528,7 +528,7 @@ public class StaffSignUp extends javax.swing.JFrame {
 
     private void btnPassportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPassportActionPerformed
         // TODO add your handling code here:
-        
+
         JFileChooser chooser = new JFileChooser();
         chooser.setCurrentDirectory(new File(System.getProperty("user.home")));
         FileNameExtensionFilter extensionFilter = new FileNameExtensionFilter("*.image", "jpg", "gif", "png");
@@ -547,10 +547,10 @@ public class StaffSignUp extends javax.swing.JFrame {
 
     private void btncancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncancelActionPerformed
         // TODO add your handling code here:
-        
+
         new Home().show();
         this.dispose();
-        
+
     }//GEN-LAST:event_btncancelActionPerformed
 
     /**

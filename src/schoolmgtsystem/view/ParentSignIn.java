@@ -74,6 +74,7 @@ public class ParentSignIn extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         forgotPassword = new javax.swing.JLabel();
         btnSignup = new javax.swing.JButton();
+        chkPassword = new javax.swing.JCheckBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocationByPlatform(true);
@@ -191,7 +192,7 @@ public class ParentSignIn extends javax.swing.JFrame {
             }
         });
         jPanel1.add(txtPassword);
-        txtPassword.setBounds(400, 270, 330, 20);
+        txtPassword.setBounds(400, 270, 300, 20);
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(0, 102, 204));
@@ -221,6 +222,16 @@ public class ParentSignIn extends javax.swing.JFrame {
         });
         jPanel1.add(btnSignup);
         btnSignup.setBounds(730, 10, 30, 30);
+
+        chkPassword.setBackground(new java.awt.Color(255, 255, 255));
+        chkPassword.setIcon(new javax.swing.ImageIcon(getClass().getResource("/schoolmgtsystem/IconImages/icons8_Show_Password.png"))); // NOI18N
+        chkPassword.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chkPasswordActionPerformed(evt);
+            }
+        });
+        jPanel1.add(chkPassword);
+        chkPassword.setBounds(700, 270, 28, 20);
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 780, 520));
 
@@ -326,6 +337,16 @@ public class ParentSignIn extends javax.swing.JFrame {
 
     }//GEN-LAST:event_forgotPasswordMouseClicked
 
+    private void chkPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkPasswordActionPerformed
+
+        if (chkPassword.isSelected()) {
+            txtPassword.setEchoChar((char) 0);
+        } else {
+            txtPassword.setEchoChar('*');
+        }
+
+    }//GEN-LAST:event_chkPasswordActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -368,6 +389,7 @@ public class ParentSignIn extends javax.swing.JFrame {
     private javax.swing.JButton btncancel;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
+    private javax.swing.JCheckBox chkPassword;
     private javax.swing.JLabel forgotPassword;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

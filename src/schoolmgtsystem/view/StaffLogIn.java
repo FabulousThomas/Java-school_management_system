@@ -77,6 +77,7 @@ public class StaffLogIn extends javax.swing.JFrame implements EventListener {
         btnCancel = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         btnSignup = new javax.swing.JButton();
+        chkPassword = new javax.swing.JCheckBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -141,7 +142,7 @@ public class StaffLogIn extends javax.swing.JFrame implements EventListener {
 
         txtPassword.setBackground(new java.awt.Color(255, 255, 255));
         txtPassword.setBorder(null);
-        jPanel1.add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 270, 320, 20));
+        jPanel1.add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 270, 300, 20));
 
         jSeparator3.setBackground(new java.awt.Color(0, 153, 204));
         jSeparator3.setForeground(new java.awt.Color(0, 153, 204));
@@ -191,6 +192,15 @@ public class StaffLogIn extends javax.swing.JFrame implements EventListener {
             }
         });
         jPanel1.add(btnSignup, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 20, -1, -1));
+
+        chkPassword.setBackground(new java.awt.Color(255, 255, 255));
+        chkPassword.setIcon(new javax.swing.ImageIcon(getClass().getResource("/schoolmgtsystem/IconImages/icons8_Show_Password.png"))); // NOI18N
+        chkPassword.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chkPasswordActionPerformed(evt);
+            }
+        });
+        jPanel1.add(chkPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 270, -1, 20));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 740, 520));
 
@@ -256,6 +266,16 @@ public class StaffLogIn extends javax.swing.JFrame implements EventListener {
 
     }//GEN-LAST:event_btnSignupActionPerformed
 
+    private void chkPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkPasswordActionPerformed
+
+        if (chkPassword.isSelected()) {
+            txtPassword.setEchoChar((char) 0);
+        } else {
+            txtPassword.setEchoChar('*');
+        }
+
+    }//GEN-LAST:event_chkPasswordActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -314,6 +334,7 @@ public class StaffLogIn extends javax.swing.JFrame implements EventListener {
     private javax.swing.JButton btnSignup;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
+    private javax.swing.JCheckBox chkPassword;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;

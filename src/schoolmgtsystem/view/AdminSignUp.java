@@ -69,6 +69,7 @@ public class AdminSignUp extends javax.swing.JFrame {
         txtUsername = new javax.swing.JTextField();
         jSeparator10 = new javax.swing.JSeparator();
         jLabel9 = new javax.swing.JLabel();
+        chkPassword = new javax.swing.JCheckBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocationByPlatform(true);
@@ -142,7 +143,7 @@ public class AdminSignUp extends javax.swing.JFrame {
         txtPassword.setBackground(new java.awt.Color(255, 255, 255));
         txtPassword.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         txtPassword.setBorder(null);
-        jPanel1.add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 390, 330, 20));
+        jPanel1.add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 390, 310, 20));
 
         jSeparator2.setBackground(new java.awt.Color(0, 51, 255));
         jSeparator2.setForeground(new java.awt.Color(0, 51, 255));
@@ -209,6 +210,15 @@ public class AdminSignUp extends javax.swing.JFrame {
         jLabel9.setForeground(new java.awt.Color(51, 51, 51));
         jLabel9.setText("Username");
         jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 60, -1, 20));
+
+        chkPassword.setBackground(new java.awt.Color(255, 255, 255));
+        chkPassword.setIcon(new javax.swing.ImageIcon(getClass().getResource("/schoolmgtsystem/IconImages/icons8_Show_Password.png"))); // NOI18N
+        chkPassword.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chkPasswordActionPerformed(evt);
+            }
+        });
+        jPanel1.add(chkPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 390, -1, 20));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 0, 450, 540));
 
@@ -306,6 +316,15 @@ public class AdminSignUp extends javax.swing.JFrame {
 
     }//GEN-LAST:event_btnSignUpActionPerformed
 
+    private void chkPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkPasswordActionPerformed
+
+        if (chkPassword.isSelected()) {
+            txtPassword.setEchoChar((char) 0);
+        } else {
+            txtPassword.setEchoChar('*');
+        }
+    }//GEN-LAST:event_chkPasswordActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -344,6 +363,7 @@ public class AdminSignUp extends javax.swing.JFrame {
     private javax.swing.JButton btnSignUp;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
+    private javax.swing.JCheckBox chkPassword;
     private javax.swing.JRadioButton female;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

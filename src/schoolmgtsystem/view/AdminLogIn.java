@@ -78,6 +78,7 @@ public class AdminLogIn extends javax.swing.JFrame {
         btnSignin = new javax.swing.JButton();
         Recover = new javax.swing.JLabel();
         btnSignup = new javax.swing.JButton();
+        chkPassword = new javax.swing.JCheckBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocationByPlatform(true);
@@ -171,7 +172,7 @@ public class AdminLogIn extends javax.swing.JFrame {
         txtPassword.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         txtPassword.setBorder(null);
         jPanel2.add(txtPassword);
-        txtPassword.setBounds(70, 290, 330, 20);
+        txtPassword.setBounds(70, 290, 300, 20);
 
         btnSignin.setBackground(new java.awt.Color(255, 255, 255));
         btnSignin.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -211,6 +212,16 @@ public class AdminLogIn extends javax.swing.JFrame {
         });
         jPanel2.add(btnSignup);
         btnSignup.setBounds(400, 20, 40, 30);
+
+        chkPassword.setBackground(new java.awt.Color(255, 255, 255));
+        chkPassword.setIcon(new javax.swing.ImageIcon(getClass().getResource("/schoolmgtsystem/IconImages/icons8_Show_Password.png"))); // NOI18N
+        chkPassword.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chkPasswordActionPerformed(evt);
+            }
+        });
+        jPanel2.add(chkPassword);
+        chkPassword.setBounds(370, 290, 28, 20);
 
         jPanel1.add(jPanel2);
         jPanel2.setBounds(300, 0, 460, 530);
@@ -300,6 +311,16 @@ public class AdminLogIn extends javax.swing.JFrame {
 
     }//GEN-LAST:event_btnSignupActionPerformed
 
+    private void chkPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkPasswordActionPerformed
+
+        if (chkPassword.isSelected()) {
+            txtPassword.setEchoChar((char) 0);
+        } else {
+            txtPassword.setEchoChar('*');
+        }
+
+    }//GEN-LAST:event_chkPasswordActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -345,6 +366,7 @@ public class AdminLogIn extends javax.swing.JFrame {
     private javax.swing.JLabel SignUp1;
     private javax.swing.JButton btnSignin;
     private javax.swing.JButton btnSignup;
+    private javax.swing.JCheckBox chkPassword;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

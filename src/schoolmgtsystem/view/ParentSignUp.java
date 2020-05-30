@@ -77,6 +77,7 @@ public class ParentSignUp extends javax.swing.JFrame {
         txtOffice = new javax.swing.JTextArea();
         jLabel15 = new javax.swing.JLabel();
         txtState = new javax.swing.JTextField();
+        chkPassword = new javax.swing.JCheckBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocationByPlatform(true);
@@ -329,6 +330,16 @@ public class ParentSignUp extends javax.swing.JFrame {
         });
         jPanel1.add(txtState, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 380, 330, 30));
 
+        chkPassword.setBackground(new java.awt.Color(255, 255, 255));
+        chkPassword.setToolTipText("See password");
+        chkPassword.setIcon(new javax.swing.ImageIcon(getClass().getResource("/schoolmgtsystem/IconImages/icons8_Show_Password.png"))); // NOI18N
+        chkPassword.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chkPasswordActionPerformed(evt);
+            }
+        });
+        jPanel1.add(chkPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 240, -1, 20));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -451,6 +462,15 @@ public class ParentSignUp extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtStateActionPerformed
 
+    private void chkPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkPasswordActionPerformed
+
+        if (chkPassword.isSelected()) {
+            txtPassword.setEchoChar((char) 0);
+        } else {
+            txtPassword.setEchoChar('*');
+        }
+    }//GEN-LAST:event_chkPasswordActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -491,6 +511,7 @@ public class ParentSignUp extends javax.swing.JFrame {
     private javax.swing.JButton btncancel;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
+    private javax.swing.JCheckBox chkPassword;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

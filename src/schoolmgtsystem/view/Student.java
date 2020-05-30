@@ -85,6 +85,7 @@ public class Student extends javax.swing.JFrame {
         btncancel = new javax.swing.JButton();
         btnSignIn = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
+        chkPassword = new javax.swing.JCheckBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocationByPlatform(true);
@@ -145,7 +146,7 @@ public class Student extends javax.swing.JFrame {
 
         txtPassword.setBackground(new java.awt.Color(255, 255, 255));
         txtPassword.setBorder(null);
-        jPanel2.add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 270, 280, 20));
+        jPanel2.add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 270, 260, 20));
 
         jSeparator6.setBackground(new java.awt.Color(0, 0, 255));
         jSeparator6.setForeground(new java.awt.Color(0, 0, 255));
@@ -191,6 +192,15 @@ public class Student extends javax.swing.JFrame {
         jLabel4.setForeground(new java.awt.Color(0, 102, 204));
         jLabel4.setText("Sign In ");
         jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 10, -1, 26));
+
+        chkPassword.setBackground(new java.awt.Color(255, 255, 255));
+        chkPassword.setIcon(new javax.swing.ImageIcon(getClass().getResource("/schoolmgtsystem/IconImages/icons8_Show_Password.png"))); // NOI18N
+        chkPassword.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chkPasswordActionPerformed(evt);
+            }
+        });
+        jPanel2.add(chkPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 270, -1, 20));
 
         jPanel1.add(jPanel2);
         jPanel2.setBounds(330, 0, 380, 480);
@@ -289,6 +299,16 @@ public class Student extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_btncancelActionPerformed
 
+    private void chkPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chkPasswordActionPerformed
+
+        if (chkPassword.isSelected()) {
+            txtPassword.setEchoChar((char) 0);
+        } else {
+            txtPassword.setEchoChar('*');
+        }
+
+    }//GEN-LAST:event_chkPasswordActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -340,6 +360,7 @@ public class Student extends javax.swing.JFrame {
     private javax.swing.JButton btncancel;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
+    private javax.swing.JCheckBox chkPassword;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
