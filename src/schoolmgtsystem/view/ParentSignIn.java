@@ -103,7 +103,7 @@ public class ParentSignIn extends javax.swing.JFrame {
         jPanel3.add(jSeparator7, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 390, 142, 10));
         jPanel3.add(jSeparator13, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 410, 116, 10));
 
-        jPanel1.add(jPanel3);
+        jPanel1.add(jPanel3);	
         jPanel3.setBounds(0, 0, 340, 520);
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
